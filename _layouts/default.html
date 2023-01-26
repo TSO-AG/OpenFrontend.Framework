@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="assets/framework/bootstrap.css">
+</head>
+<body>
+<main>
+    <div class="container">
+
+        <header class="d-flex flex-wrap py-3 mb-4 border-bottom">
+            <span class="fs-4">{{ page.title }}</span>
+        </header>
+
+
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-light">
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" aria-current="page">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                        Home
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <section>
+            {{ content }}
+        </section>
+
+    </div>
+</main>
+
+
+
+<footer>
+    <div class="container">
+        <p>&copy; TSO AG</p>
+    </div>
+</footer>
+</body>
+</html>

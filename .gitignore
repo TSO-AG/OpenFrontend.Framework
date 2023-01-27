@@ -1,7 +1,5 @@
 /node_modules
-/assets/framework/entrypoints.json
-/assets/framework/manifest.json
-/assets/framework/runtime.js
+/assets
 /_site
 /.sass-cache
 /.jekyll-cache

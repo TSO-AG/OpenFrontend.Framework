@@ -1,10 +1,4 @@
 # OpenFrontend.Framework
-
-## Users
-
-To use the OpenFrontend.Framework you can either use the pre-built assets (`/assets/framework`) or the source files (`/src`)
-that can be included in your own build process.
-
 ## Development
 
 ###  Install deps
@@ -12,12 +6,12 @@ that can be included in your own build process.
 We use Yarn and Jekyll. Install as described on https://jekyllrb.com/docs/.
 Then install the dependencies:
 
-1. `yarn`
+1. `yarn install`
 2. `bundle install`
 
 ### Build `src`
 
-For development purposes, use `encore dev` (and `--watch`). For production/before you commit, run `encore production`.
+For development purposes, use `yarn encore dev` (and `--watch`). For production/before you commit, run `yarn encore production`.
 
 ### Build documentation
 

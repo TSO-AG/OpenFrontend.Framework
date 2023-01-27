@@ -5,7 +5,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 }
 
 Encore
-    .setOutputPath('assets/framework/')
+    .setOutputPath('assets/')
     .setPublicPath('/')
     .addStyleEntry('bootstrap', './src/scss/bootstrap.scss')
     .enableSassLoader()

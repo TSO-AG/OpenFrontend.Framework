@@ -22,6 +22,7 @@
 
         {% assign componentPages = site.pages | where_exp: "page", "page.dir == '/components/'" | sort: "order" %}
         {% assign examplePages = site.pages | where_exp: "page", "page.dir == '/examples/'" | sort: "order" %}
+        {% assign exampleModuleTest = site.pages | where_exp: "page", "page.dir == '/module_test/'" | sort: "order" %}
 
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
             <div class="position-sticky pt-3">
@@ -39,6 +40,15 @@
                 </h6>
                 <ul class="nav flex-column mb-2">
                     {% for page in examplePages %}
+                    <li class="nav-item"><a class="nav-link" href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
+                    {% endfor %}
+                </ul>
+
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Modules</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    {% for page in exampleModuleTest %}
                     <li class="nav-item"><a class="nav-link" href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
                     {% endfor %}
                 </ul>

@@ -1,0 +1,73 @@
+img[sizes] {
+    width: auto;
+}
+
+*[class^='ce_'], *[class^='mod_'] {
+    margin-bottom: $content-element-margin-bottom;
+    margin-top: 0;
+}
+
+.mod_article {
+    margin-bottom: $article-margin-bottom;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.layout-header *[class^='mod_'],
+.layout-footer *[class^='mod_'] {
+    margin-bottom: 0;
+}
+
+// Float classes
+.float_left {
+    float: left;
+
+    &.image_container {
+        margin-right: $paragraph-margin-bottom;
+        margin-bottom: $paragraph-margin-bottom;
+
+        @include media-breakpoint-down(sm) {
+            margin-right: 0;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        float: none;
+    }
+}
+
+.float_right {
+    float: right;
+
+    &.image_container {
+        margin-bottom: $paragraph-margin-bottom;
+        margin-left: $paragraph-margin-bottom;
+
+        @include media-breakpoint-down(sm) {
+            margin-left: 0;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        float: none;
+    }
+}
+
+// Clear the text elements as they may have a floating image inside
+.ce_text {
+    @include clearfix;
+}
+
+// Hide invisible elements
+.invisible {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+}

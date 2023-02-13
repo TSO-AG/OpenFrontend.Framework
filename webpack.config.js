@@ -7,7 +7,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 Encore
     .setOutputPath('assets/framework/')
     .setPublicPath('/')
-    .addStyleEntry('bootstrap', './src/scss/bootstrap.scss')
+    .addEntry('open-frontend', './src/entrypoint.js')
     .enableSassLoader()
     .enableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()

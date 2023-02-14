@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <link rel="stylesheet" href="{{ open_frontend_asset('bootstrap.css') }}">
+</head>
+<body>
+<div class="container-md">
+
+    <header class="d-flex flex-wrap py-3 mb-4 border-bottom">
+        <a class="navbar-brand p-0 me-0 me-lg-2" href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box-multiple" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <rect x="7" y="3" width="14" height="14" rx="2" />
+                <path d="M17 17v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
+              </svg>
+            <span class="fs-3">Open.Frontend</span>
+        </a>
+    </header>
+
+    <div class="row">
+
+
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item"><a class="nav-link{{ page.url == '/installation' ? ' active disabled' : '' }}" href="/installation">Installation</a></li>
+                </ul>
+            </div>
+            <div class="position-sticky pt-3">
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Components</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    {% for component in open_frontend_get_data_provider('components') %}
+                    <li class="nav-item"><a class="nav-link{{ page.url == component.url ? ' active disabled' : '' }}" href="{{ component.url }}">{{ component.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+
+    <footer class="text-muted py-5">
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="#">Back to top</a>
+            </p>
+            <p class="mb-0">&copy; {{ "now"|date("Y") }} TSO AG</p>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>

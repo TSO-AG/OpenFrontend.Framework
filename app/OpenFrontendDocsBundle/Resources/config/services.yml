@@ -1,0 +1,23 @@
+services:
+    listener.mirror_build_directory:
+        class: OpenFrontendDocsBundle\EventListener\MirrorOpenFrontendBuildDirectoryListener
+        arguments:
+            - '%openfrontend.build_dir%'
+            - '%openfrontend.asset_path%'
+            - '%sculpin.output_dir%'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    twig.extension.asset:
+        class: OpenFrontendDocsBundle\Twig\AssetExtension
+        arguments:
+            - '%openfrontend.asset_path%'
+        tags:
+            - { name: twig.extension }
+
+    twig.extension.markdown:
+        class: OpenFrontendDocsBundle\Twig\DataProviderExtension
+        arguments:
+            - '@sculpin.data_provider_manager'
+        tags:
+            - { name: twig.extension }

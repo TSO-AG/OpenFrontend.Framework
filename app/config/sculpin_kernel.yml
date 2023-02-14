@@ -1,0 +1,19 @@
+parameters:
+    openfrontend.build_dir: '%sculpin.project_dir%/open-frontend-build'
+    openfrontend.asset_path: '_open_frontend'
+
+sculpin:
+    source_dir: '%sculpin.project_dir%/docs'
+    permalink: pretty
+
+sculpin_content_types:
+    posts:
+        enabled: false
+
+    components:
+        type: path
+        path: _components
+        singular_name: component
+        layout: default
+        enabled: true
+        permalink: component/:title

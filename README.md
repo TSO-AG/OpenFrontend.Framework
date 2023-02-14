@@ -1,28 +1,38 @@
 # OpenFrontend.Framework
-## Development
 
-###  Install deps
+If you are a user of the framework, see https://openfrontend.tourismusweb.site for our docs.
 
-We use Yarn and Jekyll. Install as described on https://jekyllrb.com/docs/.
-Then install the dependencies:
+## Contributing to the OpenFrontend.Framework
+
+### System requirements
+
+The OpenFrontend.Framework is based upon Bootstrap and self-documented in this repository using [Sculpin](https://sculpin.io).
+In order to contribute, you have to have
+
+- a functional JavaScript setup
+- a functional PHP setup
+
+On top of those, we use [Yarn](https://yarnpkg.com/getting-started/install) and [Composer](https://getcomposer.org/download/) which
+need to be installed on your system as well.
+
+### Install dependencies
+
+Installing dependencies is as easy as runing Yarn and Composer:
 
 1. `yarn install`
-2. `bundle install`
+2. `composer install`
 
-### Build `src`
+### Building the framework
 
-For development purposes, use `yarn encore dev` (and `--watch`). For production/before you commit, run `yarn encore production`.
+Everything regarding the framework itself resides in `src`.
 
-### Build documentation
+Development: Run `yarn encore dev` (and `--watch` if you want a file watcher). 
+Production/Before you commit: Run `yarn encore production`.
 
-For development purposes, use `bundle exec jekyll serve`. To see what GitHub pages will produce, use `bundle exec jekyll build`.
+### Building the documentation
 
-### Description of the directories
+Everything regarding the framework itself resides in `docs` plus the Sculpin specifics on root level. See Sculpin docs
+for more details.
 
-* `.jekyll-cache` - Jekyll cache directory
-* `_layouts` - contains the Jekyll layouts, used for the documentation
-* `_site` - contains the generated documentation
-* `assets/framework` - contains the framework generated using our build process. DO NOT manually adjust anything here.
-* `assets/docs` - contains assets required for the docs only
-* `node_modules` - Dependencies
-* `src` - contains the source files for the framework
+Development: Run `vendor/bin/sculpin generate --watch --server`.
+Production/Before you commit: Run `vendor/bin/sculpin generate --env=prod`.

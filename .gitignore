@@ -1,6 +1,12 @@
 /node_modules
-/assets
-/_site
-/.sass-cache
-/.jekyll-cache
-/.jekyll-metadata
+/open-frontend-build/entrypoints.json
+/open-frontend-build/manifest.json
+/open-frontend-build/runtime.js
+
+/.sculpin/
+/app/cache/*
+/app/config/sculpin_kernel_*.yml
+/app/config/sculpin_site_*.yml
+/app/logs/*
+/output_*/
+/vendor/

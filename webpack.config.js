@@ -6,10 +6,10 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 
 Encore
     .setOutputPath('assets/framework/')
-    .setPublicPath('/')
+    .setPublicPath('/framework/')
     .addEntry('open-frontend', './src/entrypoint.js')
     .enableSassLoader()
-    .enableSingleRuntimeChunk()
+    .disableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
 ;
 

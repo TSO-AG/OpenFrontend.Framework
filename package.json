@@ -1,5 +1,6 @@
 {
   "name": "openfrontend-framework",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev-server": "encore dev-server",

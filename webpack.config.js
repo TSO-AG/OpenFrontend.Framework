@@ -5,11 +5,14 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 }
 
 Encore
-    .setOutputPath('open-frontend-build/')
-    .setPublicPath('/')
-    .addStyleEntry('bootstrap', './src/scss/bootstrap.scss')
+    .setOutputPath('docs/assets/open-frontend')
+    .setPublicPath('/assets/open-frontend')
+    .setManifestKeyPrefix('')
+    .addEntry('open-frontend', './src/entrypoint.js')
     .enableSassLoader()
-    .enableSingleRuntimeChunk()
+    .enableVersioning()
+    .disableSingleRuntimeChunk()
+    .splitEntryChunks()
     .cleanupOutputBeforeBuild()
 ;
 

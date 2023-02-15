@@ -1,7 +1,5 @@
 /node_modules
-/open-frontend-build/entrypoints.json
-/open-frontend-build/manifest.json
-/open-frontend-build/runtime.js
+/docs/assets
 
 /.sculpin/
 /app/cache/*

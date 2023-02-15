@@ -1,6 +1,5 @@
 parameters:
-    openfrontend.build_dir: '%sculpin.project_dir%/open-frontend-build'
-    openfrontend.asset_path: '_open_frontend'
+    openfrontend.manifest_json_path: '%sculpin.project_dir%/docs/assets/open-frontend/manifest.json'
 
 sculpin:
     source_dir: '%sculpin.project_dir%/docs'

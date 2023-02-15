@@ -1,0 +1,21 @@
+{% set uid = open_frontend_short_uid() %}
+
+
+<ul class="nav nav-tabs" id="{{ uid }}Tab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="example-tab" data-bs-toggle="tab" data-bs-target="#example" type="button" role="tab" aria-controls="home" aria-selected="true">Example</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="html-tab" data-bs-toggle="tab" data-bs-target="#html" type="button" role="tab" aria-controls="profile" aria-selected="false">HTML</button>
+    </li>
+</ul>
+<div class="tab-content" id="{{ uid }}TabContent">
+    <div class="tab-pane fade show active" id="example" role="tabpanel" aria-labelledby="example-tab">
+        {{ html|raw }}
+    </div>
+    <div class="tab-pane fade" id="html" role="tabpanel" aria-labelledby="html-tab">
+        <pre>
+            {{ html }}
+        </pre>
+    </div>
+</div>

@@ -1,23 +1,26 @@
 services:
-    listener.mirror_build_directory:
-        class: OpenFrontendDocsBundle\EventListener\MirrorOpenFrontendBuildDirectoryListener
-        arguments:
-            - '%openfrontend.build_dir%'
-            - '%openfrontend.asset_path%'
-            - '%sculpin.output_dir%'
-        tags:
-            - { name: kernel.event_subscriber }
-
     twig.extension.asset:
         class: OpenFrontendDocsBundle\Twig\AssetExtension
         arguments:
-            - '%openfrontend.asset_path%'
+            - '%openfrontend.manifest_json_path%'
         tags:
             - { name: twig.extension }
 
-    twig.extension.markdown:
+    twig.extension.data_provider:
         class: OpenFrontendDocsBundle\Twig\DataProviderExtension
         arguments:
             - '@sculpin.data_provider_manager'
+        tags:
+            - { name: twig.extension }
+
+    twig.extension.short_uid:
+        class: OpenFrontendDocsBundle\Twig\ShortUidExtension
+        tags:
+            - { name: twig.extension }
+
+    twig.extension.html_example:
+        class: OpenFrontendDocsBundle\Twig\HtmlExampleExtension
+        arguments:
+            - '@sculpin_twig.twig'
         tags:
             - { name: twig.extension }

@@ -13,11 +13,12 @@ permalink: /installation
     </code>
 </pre>
 
-<p>The OpenFrontend does not come with a bundled file, which means you have to build it yourself. If you are using Webpack Encore, include the JS and SCSS files as follows:</p>
+<p>The OpenFrontend does not come with a bundled file, which means you have to build it yourself. If you are using Webpack Encore, include the JS and CSS files as follows:</p>
 
 <pre>
     <code>
         import 'openfrontend-framework';
+        import 'openfrontend-framework/dist/open-frontend.css';
     </code>
 </pre>
 
@@ -64,7 +65,7 @@ permalink: /installation
         import { loadForElements } from 'openfrontend-framework/js/helpers/module-loader';
 
         document.addEventListener('DOMContentLoaded', () => {
-            loadForElements(document.querySelectorAll('[data-bs-toggle]'), () => import('./components/tabs'));
+            loadForElements(document.querySelectorAll('[data-bs-toggle]'), () => import('openfrontend-framework/js/components/tabs'));
         });
     </code>
 </pre>

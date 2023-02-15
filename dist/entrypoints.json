@@ -1,0 +1,12 @@
+{
+  "entrypoints": {
+    "open-frontend": {
+      "css": [
+        "/open-frontend.css"
+      ],
+      "js": [
+        "/open-frontend.js"
+      ]
+    }
+  }
+}

@@ -1,4 +1,9 @@
 services:
+    listener.rebuild_on_assets_change:
+        class: OpenFrontendDocsBundle\EventListener\RebuildOnAssetsChangeListener
+        tags:
+            - { name: kernel.event_subscriber }
+
     twig.extension.asset:
         class: OpenFrontendDocsBundle\Twig\AssetExtension
         arguments:

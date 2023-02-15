@@ -4,8 +4,6 @@ parameters:
 sculpin:
     source_dir: '%sculpin.project_dir%/docs'
     permalink: pretty
-    exclude:
-        - 'assets/**'
 
 sculpin_content_types:
     posts:

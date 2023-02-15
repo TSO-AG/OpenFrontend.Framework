@@ -1,5 +1,0 @@
----
-permalink: none
----
-
-Sitemap: {{ site.url }}/sitemap.xml

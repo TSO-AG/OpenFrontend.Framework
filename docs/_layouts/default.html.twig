@@ -39,6 +39,36 @@
                     {% endfor %}
                 </ul>
             </div>
+            <div class="position-sticky pt-3">
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Layout</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    {% for layout in open_frontend_get_data_provider('layout') %}
+                    <li class="nav-item"><a class="nav-link{{ page.url == layout.url ? ' active disabled' : '' }}" href="{{ layout.url }}">{{ layout.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="position-sticky pt-3">
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Plugins</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    {% for plugin in open_frontend_get_data_provider('plugins') %}
+                    <li class="nav-item"><a class="nav-link{{ page.url == plugin.url ? ' active disabled' : '' }}" href="{{ plugin.url }}">{{ plugin.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="position-sticky pt-3">
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Snippets</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    {% for snippet in open_frontend_get_data_provider('snippets') %}
+                    <li class="nav-item"><a class="nav-link{{ page.url == snippet.url ? ' active disabled' : '' }}" href="{{ snippet.url }}">{{ snippet.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
         </nav>
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -50,13 +80,9 @@
 
     <footer class="text-muted py-5">
         <div class="container">
-            <p class="float-end mb-1">
-                <a href="#">Back to top</a>
-            </p>
             <p class="mb-0">&copy; {{ "now"|date("Y") }} TSO AG</p>
         </div>
     </footer>
-
 </div>
 
 </body>

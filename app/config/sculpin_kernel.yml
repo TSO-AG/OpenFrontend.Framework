@@ -11,8 +11,32 @@ sculpin_content_types:
 
     components:
         type: path
-        path: _components
+        path: _data_provider/components
         singular_name: component
         layout: default
         enabled: true
         permalink: component/:title
+
+    layout:
+        type: path
+        path: _data_provider/layout
+        singular_name: layout
+        layout: default
+        enabled: true
+        permalink: layout/:title
+
+    plugins:
+        type: path
+        path: _data_provider/plugins
+        singular_name: plugin
+        layout: default
+        enabled: true
+        permalink: plugin/:title
+
+    snippets:
+        type: path
+        path: _data_provider/snippets
+        singular_name: snippet
+        layout: default
+        enabled: true
+        permalink: snippet/:title

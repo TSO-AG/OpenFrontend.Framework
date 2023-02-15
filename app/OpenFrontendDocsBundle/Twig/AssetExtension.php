@@ -7,21 +7,9 @@ use Twig\TwigFunction;
 
 class AssetExtension extends AbstractExtension
 {
-    private array $manifest = [];
-
     public function __construct(private string $manifestJsonPath)
     {
-        if (!file_exists($this->manifestJsonPath)) {
-            throw new \RuntimeException('Must build the OpenFrontend assets first!');
-        }
 
-        $manifest = json_decode(file_get_contents($this->manifestJsonPath), true);
-
-        if (!\is_array($manifest)) {
-            throw new \RuntimeException('Invalid manifest.json content!');
-        }
-
-        $this->manifest = $manifest;
     }
 
     public function getFunctions()
@@ -33,10 +21,21 @@ class AssetExtension extends AbstractExtension
 
     public function pathForAsset(string $asset): string
     {
-        if (!array_key_exists($asset, $this->manifest)) {
+        // Do this on every call to support live reload
+        if (!file_exists($this->manifestJsonPath)) {
+            throw new \RuntimeException('Must build the OpenFrontend assets first!');
+        }
+
+        $manifest = json_decode(file_get_contents($this->manifestJsonPath), true);
+
+        if (!\is_array($manifest)) {
+            throw new \RuntimeException('Invalid manifest.json content!');
+        }
+
+        if (!array_key_exists($asset, $manifest)) {
             throw new \RuntimeException(sprintf('The asset "%s" is unknown.', $asset));
         }
 
-        return $this->manifest[$asset];
+        return $manifest[$asset];
     }
 }

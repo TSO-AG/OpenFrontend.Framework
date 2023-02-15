@@ -27,7 +27,6 @@ Installing dependencies is as easy as runing Yarn and Composer:
 Everything regarding the framework itself resides in `src`.
 
 Development: Run `yarn watch`.
-
 Production/Before you commit: Run `yarn build`.
 
 ### Building the documentation
@@ -35,5 +34,6 @@ Production/Before you commit: Run `yarn build`.
 Everything regarding the framework itself resides in `docs` plus the Sculpin specifics on root level. See Sculpin docs
 for more details.
 
-Development: Run `vendor/bin/sculpin generate --watch --server`.
-Production/Before you commit: Run `vendor/bin/sculpin generate --env=prod`.
+Development: Run `vendor/bin/sculpin generate --watch --server` (runs on port `8000` by default, if that is occupied for you,
+use `---port` to use a different one)
+Production: Run `vendor/bin/sculpin generate --env=prod`.

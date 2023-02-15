@@ -1,8 +1,10 @@
 /node_modules
-/assets/framework/entrypoints.json
-/assets/framework/manifest.json
-/assets/framework/runtime.js
-/_site
-/.sass-cache
-/.jekyll-cache
-/.jekyll-metadata
+/docs/assets
+
+/.sculpin/
+/app/cache/*
+/app/config/sculpin_kernel_*.yml
+/app/config/sculpin_site_*.yml
+/app/logs/*
+/output_*/
+/vendor/

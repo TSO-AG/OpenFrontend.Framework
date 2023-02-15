@@ -24,7 +24,7 @@ This will import all the CSS and JS files into your project build. You can compi
 $ encore production
 ```
 
-While the build is getting done, ensure you include the viewport meta tag in the <code>&lt;head&gt;</code> section of your website:
+While the build is getting done, ensure you include the viewport meta tag in the `<head>` section of your website:
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">

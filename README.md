@@ -26,8 +26,8 @@ Installing dependencies is as easy as runing Yarn and Composer:
 
 Everything regarding the framework itself resides in `src`.
 
-Development: Run `yarn encore dev` (and `--watch` if you want a file watcher). 
-Production: Run `yarn encore production`.
+Development: Run `yarn watch`.
+Production/Before you commit: Run `yarn build`.
 
 ### Building the documentation
 

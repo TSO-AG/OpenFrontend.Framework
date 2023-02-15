@@ -2,6 +2,8 @@
   "name": "openfrontend-framework",
   "version": "0.0.1",
   "private": true,
+  "main": "dist/open-frontend.js",
+  "style": "dist/open-frontend.css",
   "scripts": {
     "dev-server": "encore dev-server",
     "dev": "encore dev",

@@ -27,12 +27,13 @@ Installing dependencies is as easy as runing Yarn and Composer:
 Everything regarding the framework itself resides in `src`.
 
 Development: Run `yarn encore dev` (and `--watch` if you want a file watcher). 
-Production/Before you commit: Run `yarn encore production`.
+Production: Run `yarn encore production`.
 
 ### Building the documentation
 
 Everything regarding the framework itself resides in `docs` plus the Sculpin specifics on root level. See Sculpin docs
 for more details.
 
-Development: Run `vendor/bin/sculpin generate --watch --server`.
-Production/Before you commit: Run `vendor/bin/sculpin generate --env=prod`.
+Development: Run `vendor/bin/sculpin generate --watch --server` (runs on port `8000` by default, if that is occupied for you,
+use `---port` to use a different one)
+Production: Run `vendor/bin/sculpin generate --env=prod`.

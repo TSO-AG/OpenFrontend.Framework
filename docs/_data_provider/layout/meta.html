@@ -2,7 +2,7 @@
 title: Meta
 ---
 
-{% apply open_frontend_html_example %}
+{% set example %}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>[title]</title>
@@ -23,4 +23,6 @@ title: Meta
 <link rel="shortcut icon" type="image/x-icon" href="[source].ico">
 <link rel="icon" type="image/png" href="[source].png">
 <link rel="apple-touch-icon" sizes="180x180" href="[source].png">
-{% endapply %}
+{% endset %}
+
+{% include 'html_example.html' with {html: example} only %}

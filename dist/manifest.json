@@ -1,5 +1,9 @@
 {
   "open-frontend.css": "/open-frontend.css",
   "open-frontend.js": "/open-frontend.js",
-  "open-frontend-tabs.js": "/open-frontend-tabs.js"
+  "open-frontend-tabs.js": "/open-frontend-tabs.js",
+  "open-frontend-highlight.css": "/open-frontend-highlight.css",
+  "open-frontend-highlight.js": "/open-frontend-highlight.js",
+  "vendors-node_modules_highlight_js_styles_github_css-node_modules_highlight_js_es_index_js.js": "/vendors-node_modules_highlight_js_styles_github_css-node_modules_highlight_js_es_index_js.js",
+  "vendors-node_modules_bootstrap_js_dist_tab_js.js": "/vendors-node_modules_bootstrap_js_dist_tab_js.js"
 }

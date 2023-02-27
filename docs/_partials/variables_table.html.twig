@@ -4,18 +4,26 @@
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Type</th>
+        <th scope="col">Values</th>
         <th scope="col">Example</th>
     </tr>
     </thead>
     <tbody>
-    {% for variable in variables %}
+    {% for variableName,variableDefinition in variables %}
     <tr>
         <th scope="row">{{ loop.index }}</th>
-        <td>[{{ variable.name }}]</td>
-        <td>{{ variable.type }}</td>
+        <td>[{{ variableName }}]</td>
+        <td>{{ variableDefinition.type }}</td>
         <td>
-            {% if variable.example is defined %}
-            <span class="badge bg-secondary">{{ variable.example }}</span>
+            {% if variableDefinition.values is defined %}
+                {% for value in variableDefinition.values %}
+                <span class="badge bg-secondary">{{ value }}</span>
+                {% endfor %}
+            {% endif %}
+        </td>
+        <td>
+            {% if variableDefinition.example is defined %}
+            <span class="badge bg-secondary">{{ variableDefinition.example }}</span>
             {% endif %}
         </td>
     </tr>

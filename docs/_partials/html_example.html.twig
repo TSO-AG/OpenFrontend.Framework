@@ -12,16 +12,16 @@
     <div class="tab-pane fade show active" id="example-{{ uid }}" role="tabpanel" aria-labelledby="example-tab-{{ uid }}">
         {{ pre_html|default('')|raw }}
         {% if encode_html|default(false) %}
-            {{ html|e }}
+            {{ include(template_from_string(html|replace({'{% verbatim %}': '', '{% endverbatim %}': ''})), {example: true})|e }}
         {% else %}
-            {{ html }}
+            {{ include(template_from_string(html|replace({'{% verbatim %}': '', '{% endverbatim %}': ''})), {example: true}) }}
         {% endif %}
         {{ post_html|default('')|raw }}
     </div>
     <div class="tab-pane fade" id="html-{{ uid }}" role="tabpanel" aria-labelledby="html-tab-{{ uid }}">
         <pre>
 {{- pre_html|default('')|e|raw ~}}
-    {{ html|e|raw }}
+    {{ include(template_from_string(html|replace({'{% verbatim %}': '', '{% endverbatim %}': ''})), {example: false})|e|raw }}
 {{- post_html|default('')|e|raw -}}
         </pre>
     </div>

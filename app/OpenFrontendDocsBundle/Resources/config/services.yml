@@ -22,3 +22,8 @@ services:
         class: OpenFrontendDocsBundle\Twig\ShortUidExtension
         tags:
             - { name: twig.extension }
+
+    twig.extension.string_loader:
+        class: Twig\Extension\StringLoaderExtension
+        tags:
+            - { name: twig.extension }

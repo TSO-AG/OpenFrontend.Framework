@@ -5,6 +5,9 @@ sculpin:
     source_dir: '%sculpin.project_dir%/docs'
     permalink: pretty
 
+sculpin_markdown:
+    parser_class: OpenFrontendDocsBundle\Markdown\Parser
+
 sculpin_content_types:
     posts:
         enabled: false

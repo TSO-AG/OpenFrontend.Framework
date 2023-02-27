@@ -4,8 +4,8 @@ title: Link
 
 <h1>This is a Test</h1>
 
-{% apply open_frontend_html_example %}
-
+{% set example %}
 <a href="#">I am a link</a>
+{% endset %}
 
-{% endapply %}
+{% include 'html_example.html' with {html: example} only %}

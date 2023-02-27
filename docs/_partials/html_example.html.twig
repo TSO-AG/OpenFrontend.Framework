@@ -1,21 +1,28 @@
 {% set uid = open_frontend_short_uid() %}
 
-
-<ul class="nav nav-tabs" id="{{ uid }}Tab" role="tablist">
+<ul class="nav nav-tabs" id="Tab-{{ uid }}" role="tablist">
     <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="example-tab" data-bs-toggle="tab" data-bs-target="#example" type="button" role="tab" aria-controls="home" aria-selected="true">Example</button>
+        <button class="nav-link active" id="example-tab-{{ uid }}" data-bs-toggle="tab" data-bs-target="#example-{{ uid }}" type="button" role="tab" aria-controls="example-{{ uid }}" aria-selected="true">Example</button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="html-tab" data-bs-toggle="tab" data-bs-target="#html" type="button" role="tab" aria-controls="profile" aria-selected="false">HTML</button>
+        <button class="nav-link" id="html-tab-{{ uid }}" data-bs-toggle="tab" data-bs-target="#html-{{ uid }}" type="button" role="tab" aria-controls="html-{{ uid }}" aria-selected="false">HTML</button>
     </li>
 </ul>
-<div class="tab-content" id="{{ uid }}TabContent">
-    <div class="tab-pane fade show active" id="example" role="tabpanel" aria-labelledby="example-tab">
-        {{ html|raw }}
-    </div>
-    <div class="tab-pane fade" id="html" role="tabpanel" aria-labelledby="html-tab">
-        <pre>
+<div class="tab-content" id="TabContent-{{ uid }}">
+    <div class="tab-pane fade show active" id="example-{{ uid }}" role="tabpanel" aria-labelledby="example-tab-{{ uid }}">
+        {{ pre_html|default('')|raw }}
+        {% if encode_html|default(false) %}
+            {{ html|e }}
+        {% else %}
             {{ html }}
+        {% endif %}
+        {{ post_html|default('')|raw }}
+    </div>
+    <div class="tab-pane fade" id="html-{{ uid }}" role="tabpanel" aria-labelledby="html-tab-{{ uid }}">
+        <pre>
+{{- pre_html|default('')|e|raw ~}}
+    {{ html|e|raw }}
+{{- post_html|default('')|e|raw -}}
         </pre>
     </div>
 </div>

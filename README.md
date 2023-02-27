@@ -27,7 +27,7 @@ Installing dependencies is as easy as runing Yarn and Composer:
 Everything regarding the framework itself resides in `src`.
 
 Development: Run `yarn watch`.
-Production/Before you commit: Run `yarn build`.
+Production: Run `yarn build`.
 
 ### Building the documentation
 

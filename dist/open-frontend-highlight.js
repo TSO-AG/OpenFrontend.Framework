@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkopenfrontend_framework=self.webpackChunkopenfrontend_framework||[]).push([[910],{5341:(e,t,n)=>{n.r(t),n.d(t,{default:()=>f});var a=n(637);n(7640);const f=function(e){e.forEach((function(e){var t=""===e.dataset.ofHighlight?{}:{language:e.dataset.ofHighlight};a.Z.highlightElement(e,t)}))}}}]);

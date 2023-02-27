@@ -22,10 +22,3 @@ services:
         class: OpenFrontendDocsBundle\Twig\ShortUidExtension
         tags:
             - { name: twig.extension }
-
-    twig.extension.html_example:
-        class: OpenFrontendDocsBundle\Twig\HtmlExampleExtension
-        arguments:
-            - '@sculpin_twig.twig'
-        tags:
-            - { name: twig.extension }

@@ -71,7 +71,7 @@ description: The intended use of the component is described here.
 
 <h5>Code: {{ page.title }}</h5>
 
-{% apply open_frontend_html_example %}
+{% set example %}
 
 <h1>[{{ page.title }}Alpha]</h1>
 <p>[{{ page.title }}Bravo]</p>
@@ -80,6 +80,8 @@ description: The intended use of the component is described here.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/[{{ page.title }}Echo]" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <p><a href="[{{ page.title }}Foxtrott]" target="[{{ page.title }}Kilo]">[{{ page.title }}Lima]</a></p>
 
-{% endapply %}
+{% endset %}
+
+{% include 'html_example.html' with {html: example} only %}
 
 <hr>

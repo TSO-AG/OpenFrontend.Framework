@@ -92,8 +92,7 @@ description: Overview page which leads to further sub-pages. If applicable, also
 
 <h5>Code: {{ page.title }} - POI</h5>
 
-{% apply open_frontend_html_example %}
-
+{% set example_hotel %}
 <div class="card" style="width: 18rem;">
     <img src="https://via.placeholder.com/400x300?text=[{{ page.title }}Charlie].jpg" class="card-img-top" alt="">
     <div class="card-body">
@@ -101,14 +100,16 @@ description: Overview page which leads to further sub-pages. If applicable, also
         <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
     </div>
 </div>
+{% endset %}
 
-{% endapply %}
+{% include 'html_example.html' with {html: example_hotel} only %}
+
 <hr>
 
 <h5>Code: {{ page.title }} - Event</h5>
 
-{% apply open_frontend_html_example %}
 
+{% set example_event %}
 <div class="card" style="width: 18rem;">
     <img src="https://via.placeholder.com/400x300?text=[{{ page.title }}Charlie].jpg" class="card-img-top" alt="">
     <div class="card-body">
@@ -116,6 +117,8 @@ description: Overview page which leads to further sub-pages. If applicable, also
         <p class="card-text">Scharans, 14.02. - 17.02.23</p>
     </div>
 </div>
+{% endset %}
 
-{% endapply %}
+{% include 'html_example.html' with {html: example_event} only %}
+
 <hr>

@@ -15,7 +15,7 @@ sculpin_content_types:
     components:
         type: path
         path: _data_provider/components
-        singular_name: component
+        singular_name: default
         layout: default
         enabled: true
         permalink: component/:title

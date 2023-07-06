@@ -1,0 +1,23 @@
+{{ if eq .Page.Layout "docs" -}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+{{- end }}
+
+{{ $json := getJSON "_site/dist/manifest.json" }}
+
+{{with $json}}
+<link href="{{ index . "open-frontend.css" }}" rel="stylesheet">
+{{end}}
+
+{{- if (ne .Page.Layout "examples") }}
+{{- $targetDocsCssPath := path.Join "/docs/assets/css/docs.css" -}}
+{{- $sassOptions := dict "targetPath" $targetDocsCssPath "outputStyle" "expanded" "precision" 6 -}}
+{{- $postcssOptions := dict "use" "autoprefixer" "noMap" true -}}
+
+{{ if eq hugo.Environment "production" -}}
+  {{- $sassOptions = merge $sassOptions (dict "outputStyle" "compressed") -}}
+{{- end -}}
+
+{{- $style := resources.Get "scss/docs.scss" | toCSS $sassOptions | postCSS $postcssOptions }}
+
+<link href="{{ $style.Permalink | relURL }}" rel="stylesheet">
+{{- end }}

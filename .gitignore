@@ -8,3 +8,11 @@
 /app/logs/*
 /output_*/
 /vendor/
+
+# Ignore docs files
+/_site/
+/_site-dist/
+
+# Hugo files
+/resources/
+/.hugo_build.lock

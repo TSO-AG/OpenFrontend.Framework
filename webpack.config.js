@@ -24,12 +24,11 @@ function createDocsConfig() {
     Encore.reset();
 
     return Encore
-        .setOutputPath('docs/assets/open-frontend')
-        .setPublicPath('/assets/open-frontend')
+        .setOutputPath('_site-dist')
+        .setPublicPath('/dist')
         .setManifestKeyPrefix('')
         .addEntry('open-frontend', './src/entrypoint.js')
         .enableSassLoader()
-        .enableVersioning()
         .disableSingleRuntimeChunk()
         .splitEntryChunks()
         .cleanupOutputBeforeBuild()

@@ -1,4 +1,4 @@
-{{ $json := getJSON "_site/dist/manifest.json" }}
+{{ $json := getJSON "_site-dist/manifest.json" }}
 {{with $json}}
 <script src="{{ index . "open-frontend.js" }}"></script>
 {{end}}

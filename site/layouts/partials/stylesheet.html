@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 {{- end }}
 
-{{ $json := getJSON "_site/dist/manifest.json" }}
+{{ $json := getJSON "_site-dist/manifest.json" }}
 
 {{with $json}}
 <link href="{{ index . "open-frontend.css" }}" rel="stylesheet">

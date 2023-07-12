@@ -7,7 +7,7 @@
   "scripts": {
     "dist-build": "encore production --progress --config-name dist",
     "docs-build": "encore production --progress --config-name docs && hugo --cleanDestinationDir --printUnusedTemplates",
-    "docs-serve": "encore dev --watch --config-name docs & hugo server --port 9001 --disableFastRender --printUnusedTemplates"
+    "docs-serve": "encore dev --config-name docs && concurrently 'encore dev --watch --config-name docs' 'hugo server --port 9001 --disableFastRender --printUnusedTemplates'"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
@@ -19,6 +19,7 @@
     "@babel/preset-env": "^7.20.2",
     "@symfony/webpack-encore": "^4.0.0",
     "autoprefixer": "^10.4.14",
+    "concurrently": "^8.2.0",
     "hugo-bin": "^0.110.1",
     "postcss-cli": "^10.1.0",
     "sass": "^1.57.1",

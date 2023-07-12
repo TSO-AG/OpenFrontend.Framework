@@ -6,34 +6,30 @@ If you are a user of the framework, see https://openfrontend.tourismusweb.site f
 
 ### System requirements
 
-The OpenFrontend.Framework is based upon Bootstrap and self-documented in this repository using [Sculpin](https://sculpin.io).
+The OpenFrontend.Framework is based upon Bootstrap and self-documented in this repository using [Hugo](https://gohugo.io).
 In order to contribute, you have to have
 
 - a functional JavaScript setup
-- a functional PHP setup
 
-On top of those, we use [Yarn](https://yarnpkg.com/getting-started/install) and [Composer](https://getcomposer.org/download/) which
-need to be installed on your system as well.
+On top of those, we use [Yarn](https://yarnpkg.com/getting-started/install) which need to be installed on your system as well.
 
 ### Install dependencies
 
-Installing dependencies is as easy as runing Yarn and Composer:
+Installing dependencies is as easy as running Yarn:
 
 1. `yarn install`
-2. `composer install`
 
 ### Building the framework
 
 Everything regarding the framework itself resides in `src`.
 
-Development: Run `yarn watch`.
-Production: Run `yarn build`.
+1. Development: Run `yarn watch`
+2. Production: Run `yarn build`
 
 ### Building the documentation
 
-Everything regarding the framework itself resides in `docs` plus the Sculpin specifics on root level. See Sculpin docs
+Everything regarding the framework itself resides in `site` plus the Hugo specifics on root level. See Hugo docs
 for more details.
 
-Development: Run `vendor/bin/sculpin generate --watch --server` (runs on port `8000` by default, if that is occupied for you,
-use `---port` to use a different one)
-Production: Run `vendor/bin/sculpin generate --env=prod`.
+1. Development: Run `yarn docs-serve`
+2. Production: Run `yarn docs-build`

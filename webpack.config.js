@@ -4,6 +4,11 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
     Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
 }
 
+function configName(name, config) {
+    config.name = name;
+    return config;
+}
+
 function createDistConfig() {
     Encore.reset();
 
@@ -37,6 +42,6 @@ function createDocsConfig() {
 }
 
 module.exports = [
-    createDistConfig(),
-    createDocsConfig(),
+    configName('dist', createDistConfig()),
+    configName('docs', createDocsConfig()),
 ];

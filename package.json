@@ -5,12 +5,9 @@
   "main": "dist/open-frontend.js",
   "style": "dist/open-frontend.css",
   "scripts": {
-    "dev-server": "encore dev-server",
-    "dev": "encore dev",
-    "watch": "encore dev --watch",
-    "build": "encore production --progress",
-    "docs-build": "hugo --cleanDestinationDir --printUnusedTemplates",
-    "docs-serve": "hugo server --port 9001 --disableFastRender --printUnusedTemplates"
+    "dist-build": "encore production --progress --config-name dist",
+    "docs-build": "encore production --progress --config-name docs && hugo --cleanDestinationDir --printUnusedTemplates",
+    "docs-serve": "encore dev --watch --config-name docs & hugo server --port 9001 --disableFastRender --printUnusedTemplates"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",

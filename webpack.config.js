@@ -4,6 +4,11 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
     Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
 }
 
+function configName(name, config) {
+    config.name = name;
+    return config;
+}
+
 function createDistConfig() {
     Encore.reset();
 
@@ -24,12 +29,11 @@ function createDocsConfig() {
     Encore.reset();
 
     return Encore
-        .setOutputPath('docs/assets/open-frontend')
-        .setPublicPath('/assets/open-frontend')
+        .setOutputPath('_site-dist')
+        .setPublicPath('/dist')
         .setManifestKeyPrefix('')
         .addEntry('open-frontend', './src/entrypoint.js')
         .enableSassLoader()
-        .enableVersioning()
         .disableSingleRuntimeChunk()
         .splitEntryChunks()
         .cleanupOutputBeforeBuild()
@@ -38,6 +42,6 @@ function createDocsConfig() {
 }
 
 module.exports = [
-    createDistConfig(),
-    createDocsConfig(),
+    configName('dist', createDistConfig()),
+    configName('docs', createDocsConfig()),
 ];

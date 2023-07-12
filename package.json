@@ -5,22 +5,28 @@
   "main": "dist/open-frontend.js",
   "style": "dist/open-frontend.css",
   "scripts": {
-    "dev-server": "encore dev-server",
-    "dev": "encore dev",
-    "watch": "encore dev --watch",
-    "build": "encore production --progress"
+    "dist-build": "encore production --progress --config-name dist",
+    "docs-build": "encore production --progress --config-name docs && hugo --cleanDestinationDir --printUnusedTemplates",
+    "docs-serve": "encore dev --watch --config-name docs & hugo server --port 9001 --disableFastRender --printUnusedTemplates"
   },
   "dependencies": {
-    "bootstrap": "^5.2.3",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.0",
     "highlight.js": "^11.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "@symfony/webpack-encore": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "hugo-bin": "^0.110.1",
+    "postcss-cli": "^10.1.0",
     "sass": "^1.57.1",
     "sass-loader": "^13.0.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
+  },
+  "hugo-bin": {
+    "buildTags": "extended"
   }
 }

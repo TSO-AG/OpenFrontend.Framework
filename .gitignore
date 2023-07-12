@@ -1,10 +1,9 @@
 /node_modules
-/docs/assets
 
-/.sculpin/
-/app/cache/*
-/app/config/sculpin_kernel_*.yml
-/app/config/sculpin_site_*.yml
-/app/logs/*
-/output_*/
-/vendor/
+# Ignore docs files
+/_site/
+/_site-dist/
+
+# Hugo files
+/resources/
+/.hugo_build.lock

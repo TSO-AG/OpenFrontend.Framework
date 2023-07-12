@@ -34,6 +34,7 @@ function createDocsConfig() {
         .setManifestKeyPrefix('')
         .addEntry('open-frontend', './src/entrypoint.js')
         .enableSassLoader()
+        .enableVersioning(Encore.isProduction())
         .disableSingleRuntimeChunk()
         .splitEntryChunks()
         .cleanupOutputBeforeBuild()

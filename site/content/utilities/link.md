@@ -8,7 +8,7 @@ toc: true
 
 ## Link opacity
 
-Change the alpha opacity of the link `rgba()` color value with utilities. Please be aware that changes to a color's opacity can lead to links with [*insufficient* contrast]({{< docsref "getting-started/accessibility#color-contrast" >}}).
+Change the alpha opacity of the link `rgba()` color value with utilities. Please be aware that changes to a color's opacity can lead to links with [*insufficient* contrast]({{< docsref "/getting-started/accessibility#color-contrast" >}}).
 
 {{< example >}}
 <p><a class="link-opacity-10" href="#">Link opacity 10</a></p>

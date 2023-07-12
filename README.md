@@ -7,29 +7,38 @@ If you are a user of the framework, see https://openfrontend.tourismusweb.site f
 ### System requirements
 
 The OpenFrontend.Framework is based upon Bootstrap and self-documented in this repository using [Hugo](https://gohugo.io).
-In order to contribute, you have to have
-
-- a functional JavaScript setup
-
-On top of those, we use [Yarn](https://yarnpkg.com/getting-started/install) which need to be installed on your system as well.
+We use [Yarn](https://yarnpkg.com/getting-started/install) which need to be installed on your system to be able to contribute.
 
 ### Install dependencies
 
 Installing dependencies is as easy as running Yarn:
 
-1. `yarn install`
+```shell
+$ yarn install
+```
 
 ### Building the framework
 
-Everything regarding the framework itself resides in `src`.
+Everything regarding the framework itself resides in the `src.` folder. To build the distribution package,
+run the below command:
 
-1. Development: Run `yarn watch`
-2. Production: Run `yarn build`
+```shell
+$ yarn dist-build
+```
 
 ### Building the documentation
 
-Everything regarding the framework itself resides in `site` plus the Hugo specifics on root level. See Hugo docs
-for more details.
+Everything regarding the documentation itself resides in the `site` folder. The Hugo specifics are on the root level.
 
-1. Development: Run `yarn docs-serve`
-2. Production: Run `yarn docs-build`
+To build the documentation for production, run the command below:
+
+```shell
+$ yarn docs-build
+```
+
+For the development purposes run the command below to launch the documentation locally
+and watch the source files:
+
+```shell
+$ yarn docs-serve
+```

@@ -9,7 +9,7 @@
 
 <title>{{ if .IsHome }}{{ .Site.Title | markdownify }} · {{ .Site.Params.subtitle | markdownify }}{{ else }}{{ .Title | markdownify }} · {{ .Site.Title | markdownify }} {{ end }}</title>
 
-<base href="{{ .Site.BaseURL }} ">
+<base href="{{ .Site.BaseURL }}">
 <link rel="canonical" href="{{ .Permalink }}">
 
 {{- if eq .Page.Layout "docs" -}}

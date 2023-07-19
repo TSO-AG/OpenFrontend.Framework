@@ -9,6 +9,7 @@
 
 <title>{{ if .IsHome }}{{ .Site.Title | markdownify }} · {{ .Site.Params.subtitle | markdownify }}{{ else }}{{ .Title | markdownify }} · {{ .Site.Title | markdownify }} {{ end }}</title>
 
+<base href="{{ .Site.BaseURL }} ">
 <link rel="canonical" href="{{ .Permalink }}">
 
 {{- if eq .Page.Layout "docs" -}}
@@ -19,7 +20,7 @@
 <meta name="robots" content="{{ . }}">
 {{- end }}
 
-{{- $colorModeJS := "/assets/js/color-modes.js" -}}
+{{- $colorModeJS := "assets/js/color-modes.js" -}}
 <script src="{{ $colorModeJS | relURL }}"></script>
 
 {{ partial "stylesheet" . }}

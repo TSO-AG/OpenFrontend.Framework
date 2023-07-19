@@ -30,7 +30,7 @@ function createDocsConfig() {
 
     return Encore
         .setOutputPath('_site-dist')
-        .setPublicPath('/dist')
+        .setPublicPath('./dist')
         .setManifestKeyPrefix('')
         .addEntry('open-frontend', './src/entrypoint.js')
         .enableSassLoader()

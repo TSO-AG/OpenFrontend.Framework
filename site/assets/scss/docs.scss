@@ -57,3 +57,6 @@ $enable-cssgrid: true;
 // Load docs dependencies
 @import "syntax";
 @import "anchor";
+
+// Load custom styles for documentation
+@import "miscellaneous";

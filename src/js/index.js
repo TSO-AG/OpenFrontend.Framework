@@ -21,13 +21,4 @@ window.bootstrap = {
   get Tooltip() {
     return import('/node_modules/bootstrap/js/src/tooltip.js').then(v => v.default);
   },
-  // get Tooltip() {
-  //   return (
-  //     async() => {
-  //       return new Promise((resolve, reject) => {
-  //         import('/node_modules/bootstrap/js/src/tooltip.js').then(v => resolve(v.default))
-  //       })
-  //     }98
-  //   )();
-  // },
 }

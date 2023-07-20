@@ -1,0 +1,6 @@
+.link-external {
+  @include add-icon($link-external-icon, after, $icon-link-gap);
+  text-decoration-color: rgba(var(--#{$prefix}link-color-rgb), var(--#{$prefix}link-opacity, .5));
+  text-underline-offset: $icon-link-underline-offset;
+  backface-visibility: hidden;
+}

@@ -6,6 +6,16 @@ group: utilities
 toc: true
 ---
 
+## External link
+
+{{< example >}}
+
+<p>Enim dolor dolore nisi. Lorem aliqua est <a class="link-external" href="#">officia irure enim</a> do duis cupidatat labore consectetur tempor sint nostrud cillum anim. Pariatur elit ipsum aliquip veniam magna <a class="link-external" href="#">non proident</a> ipsum ut non et. </p>
+
+<p><a class="link-external" href="#">External link</a></p>
+
+{{< /example >}}
+
 ## Link opacity
 
 Change the alpha opacity of the link `rgba()` color value with utilities. Please be aware that changes to a color's opacity can lead to links with [*insufficient* contrast]({{< docsref "/getting-started/accessibility#color-contrast" >}}).

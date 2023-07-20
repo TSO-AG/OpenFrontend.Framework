@@ -1,4 +1,5 @@
 // Variables
+@import '../icons/variables';
 @import 'variables';
 
 // Configuration
@@ -40,3 +41,13 @@
 
 // Utilities
 @import '~bootstrap/scss/utilities/api';
+
+// Icon fonts
+@import '../icons/style';
+
+// Mixins
+@import "mixins";
+
+// Layout & components
+@import "links";
+

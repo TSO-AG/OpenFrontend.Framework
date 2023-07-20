@@ -1,0 +1,28 @@
+@mixin add-icon($icon: '', $position: before, $icon-gap: $icon-link-gap, $icon-size: $icon-link-icon-size, $icon-color: null) {
+  @if $icon {
+    &::#{$position} {
+      @extend .ofi;
+      content: $icon;
+      display: inline-block;
+      vertical-align: middle;
+
+      @if $icon-size {
+        font-size: $icon-size;
+      }
+
+      @if $icon-color {
+        color: $icon-color;
+      }
+
+      @if $icon-gap {
+        @if ($position == before) {
+          margin-right: $icon-gap;
+        }
+
+        @if ($position == after) {
+          margin-left: $icon-gap;
+        }
+      }
+    }
+  }
+}

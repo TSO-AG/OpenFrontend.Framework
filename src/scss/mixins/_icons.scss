@@ -4,7 +4,6 @@
       @extend .ofi;
       content: $icon;
       display: inline-block;
-      vertical-align: middle;
 
       @if $icon-size {
         font-size: $icon-size;

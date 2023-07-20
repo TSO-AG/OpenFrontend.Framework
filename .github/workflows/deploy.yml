@@ -41,7 +41,7 @@ jobs:
               run: yarn dist-build
 
             - name: Build the docs
-              run: yarn docs-build -- --baseURL $BASE_URL
+              run: yarn docs-build
 
             - name: Deploy
               uses: appleboy/scp-action@master

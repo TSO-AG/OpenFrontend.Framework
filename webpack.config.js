@@ -136,8 +136,20 @@ function createDistConfig() {
         .getWebpackConfig();
 }
 
-function createDocsConfig() {
-    return createConfigDraft('docs', '_site-dist', './dist')
+function createDocsConfig(baseUrl) {
+    let publicPath = '';
+
+    // Get the public path from base URL. Only the top level folders are support (e.g. https://domain.tld/folder).
+    if (baseUrl.length > 0) {
+        const regexp = new RegExp('^https?://[^/]+(/[^/]+)(/)?$');
+        const matches = regexp.exec(baseUrl);
+
+        if (matches !== null) {
+            publicPath = matches[1];
+        }
+    }
+
+    return createConfigDraft('_site-dist', `${publicPath}/dist`)
         .enableSourceMaps()
         .enableVersioning(Encore.isProduction())
         .getWebpackConfig();
@@ -149,7 +161,9 @@ function createNamedConfig(name, config) {
     return config;
 }
 
-module.exports = [
-    createNamedConfig('dist', createDistConfig()),
-    createNamedConfig('docs', createDocsConfig()),
-];
+module.exports = env => {
+    return [
+        createNamedConfig('dist', createDistConfig()),
+        createNamedConfig('docs', createDocsConfig(env.BASE_URL || '')),
+    ];
+}

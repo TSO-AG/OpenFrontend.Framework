@@ -1,6 +1,5 @@
 languageCode:           "en"
 title:                  "OpenFrontend.Framework"
-baseURL:                "https://openfrontend.tourismusweb.site"
 security:
   enableInlineShortcodes: true
   funcs:

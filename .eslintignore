@@ -1,0 +1,10 @@
+**/*.min.js
+**/dist/
+**/vendor/
+/_site/
+/_site-dist/
+/site/static/sw.js
+/site/layouts/partials/
+/webpack.config.js
+/site/content/getting-started/installation.md
+

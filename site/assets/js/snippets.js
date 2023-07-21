@@ -13,9 +13,9 @@
 
 /* global bootstrap: false */
 
+// eslint-disable-next-line unicorn/prefer-top-level-await
 (async () => {
   'use strict'
-
 
   // -------------------------------
   // Toasts
@@ -35,14 +35,13 @@
   // Instantiate all toasts in docs pages only
   document.querySelectorAll('.bd-example .toast')
     .forEach(toastNode => {
-
       bootstrap.Toast.then(Toast => {
         const toast = new Toast(toastNode, {
           autohide: false
         })
 
         toast.show()
-      });
+      })
     })
 
   // Instantiate all toasts in docs pages only
@@ -51,8 +50,7 @@
   const toastLiveExample = document.getElementById('liveToast')
 
   if (toastTrigger) {
-
-    const Toast = await bootstrap.Toast;
+    const Toast = await bootstrap.Toast
 
     const toastBootstrap = Toast.getOrCreateInstance(toastLiveExample)
     toastTrigger.addEventListener('click', () => {

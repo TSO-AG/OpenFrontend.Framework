@@ -45,10 +45,9 @@
    */
   function snippetButtonTooltip(selector, title) {
     document.querySelectorAll(selector).forEach(btn => {
-
       bootstrap.Tooltip.then(Tooltip => {
-        Tooltip.getOrCreateInstance(btn, {title});
-      });
+        Tooltip.getOrCreateInstance(btn, { title })
+      })
     })
   }
 
@@ -63,8 +62,8 @@
   clipboard.on('success', async event => {
     const iconFirstChild = event.trigger.querySelector('.bi').firstElementChild
 
-    const Tooltip = await bootstrap.Tooltip;
-    const tooltipBtn = Tooltip.getInstance(event.trigger);
+    const Tooltip = await bootstrap.Tooltip
+    const tooltipBtn = Tooltip.getInstance(event.trigger)
 
     // const tooltipBtn = bootstrap.Tooltip.getInstance(event.trigger)
     const namespace = 'http://www.w3.org/1999/xlink'
@@ -88,8 +87,8 @@
     const modifierKey = /mac/i.test(navigator.userAgent) ? '\u2318' : 'Ctrl-'
     const fallbackMsg = `Press ${modifierKey}C to copy`
 
-    const Tooltip = await bootstrap.Tooltip;
-    const tooltipBtn = Tooltip.getInstance(event.trigger);
+    const Tooltip = await bootstrap.Tooltip
+    const tooltipBtn = Tooltip.getInstance(event.trigger)
 
     tooltipBtn.setContent({ '.tooltip-inner': fallbackMsg })
     event.trigger.addEventListener('hidden.bs.tooltip', () => {

@@ -1,0 +1,4 @@
+**/*.min.css
+**/dist/
+/_site/
+/_site-dist/

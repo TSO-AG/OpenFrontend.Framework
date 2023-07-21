@@ -1,1 +1,1 @@
-import { Dropdown } from 'bootstrap';
+import { Dropdown } from 'bootstrap' // eslint-disable-line no-unused-vars

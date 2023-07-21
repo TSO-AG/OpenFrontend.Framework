@@ -1,0 +1,43 @@
+name: Lint
+
+on:
+  pull_request: ~
+
+permissions: read-all
+
+jobs:
+  css-lint:
+    name: CSS Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install JS dependencies
+        run: yarn install
+
+      - name: Run CSS lint
+        run: yarn css-lint
+
+  js-lint:
+    name: JavaScript Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install JS dependencies
+        run: yarn install
+
+      - name: Run JavaScript lint
+        run: yarn js-lint

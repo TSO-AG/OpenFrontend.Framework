@@ -17,8 +17,8 @@ The OpenFrontend does not come with a bundled file, which means you have to buil
 If you are using [Webpack Encore](https://github.com/symfony/webpack-encore), include the JS and CSS files as follows:
 
 ```js
-import 'openfrontend-framework';
-import 'openfrontend-framework/dist/open-frontend.css';
+import 'openfrontend-framework'
+import 'openfrontend-framework/dist/open-frontend.css'
 ```
 
 This will import all the CSS and JS files into your project build. You can compile your build using Webpack Encore now:
@@ -42,10 +42,10 @@ include the OpenFrontend in your own SCSS file:
 
 ```scss
 // Include my variables file
-@import 'my_variables';
+@import 'my_variables'
 
 // Include OpenFrontend SCSS files
-@import '~openfrontend-framework/src/scss/index';
+@import '~openfrontend-framework/src/scss/index'
 ```
 
 ## Using individual JavaScript components
@@ -67,7 +67,7 @@ This approach will significantly improve the loading time of your website withou
 However, you can also include specific components by yourself in your custom JavaScripe code:
 
 ```js
-import 'openfrontend-framework/js/components/tabs';
+import 'openfrontend-framework/js/components/tabs'
 ```
 
 Please note that some components _may_ have the default function to be executed, whereas some may not!

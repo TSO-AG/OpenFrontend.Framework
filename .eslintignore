@@ -1,0 +1,7 @@
+**/*.min.js
+**/dist/
+**/vendor/
+/_site/
+/_site-dist/
+/site/static/sw.js
+/site/layouts/partials/

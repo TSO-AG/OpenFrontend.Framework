@@ -9,10 +9,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Set environment variables based on branch
-              env:
-                GITHUB_REF_NAME: ${{ github.ref_name }}
               run: |
-                CLEANED_BRANCH_NAME=${GITHUB_REF_NAME//\//-}
+                GIT_BRANCH=$(echo ${github.event.ref} | sed -e "s#refs/heads/##g")
+                CLEANED_BRANCH_NAME=${GIT_BRANCH//\//-}
                 echo "TARGET_PATH=/var/www/vhosts/openfrontend.tourismusweb.site/dev.openfrontend.tourismusweb.site/$CLEANED_BRANCH_NAME" >> $GITHUB_ENV
 
             - name: Echo the target path

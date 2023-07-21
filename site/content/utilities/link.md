@@ -8,6 +8,8 @@ toc: true
 
 ## External link
 
+Use the `link-external` CSS class to indicate the links that lead to external pages.
+
 {{< example >}}
 <p>Enim dolor dolore nisi. Lorem aliqua est <a class="link-external" href="#">officia irure enim</a> do duis cupidatat labore consectetur tempor sint nostrud cillum anim. Pariatur elit ipsum aliquip veniam magna <a class="link-external" href="#">non proident</a> ipsum ut non et. </p>
 <p><a class="link-external" href="#">External link</a></p>

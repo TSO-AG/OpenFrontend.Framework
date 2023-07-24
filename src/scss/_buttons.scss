@@ -1,0 +1,21 @@
+.btn-icon {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: $btn-icon-gap;
+  align-items: center;
+
+  &::after {
+    width: 1px;
+    margin-left: calc((#{$btn-icon-gap} + 1px) * -1); // stylelint-disable-line function-disallowed-list
+    visibility: hidden;
+    content: "\00a0";
+  }
+}
+
+.btn-square {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  text-align: center;
+}

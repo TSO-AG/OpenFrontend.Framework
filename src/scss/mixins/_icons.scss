@@ -1,9 +1,9 @@
-@mixin add-icon($icon: '', $position: before, $icon-gap: $icon-link-gap, $icon-size: $icon-link-icon-size, $icon-color: null) {
+@mixin add-icon($icon: "", $position: before, $icon-gap: $icon-link-gap, $icon-size: $icon-link-icon-size, $icon-color: null) {
   @if $icon {
     &::#{$position} {
       @extend .ofi;
-      content: $icon;
       display: inline-block;
+      content: $icon;
 
       @if $icon-size {
         font-size: $icon-size;

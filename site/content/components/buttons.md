@@ -224,6 +224,72 @@ You can place a simple square button with equal width and height by adding the `
 
 {{< /example >}}
 
+## Circle buttons
+
+You can place a simple circle button with equal width and height by adding the `btn-circle` class.
+
+{{< example >}}
+<p>
+  <button type="button" class="btn btn-circle btn-primary">
+    <i class="ofi-cart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-circle btn-primary">
+    <i class="ofi-heart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-circle btn-primary">
+    <i class="ofi-caret-left-fill"></i>
+  </button>
+  <button type="button" class="btn btn-circle btn-primary">
+    <i class="ofi-caret-right-fill"></i>
+  </button>
+</p>
+
+<p>
+  <button type="button" class="btn btn-circle btn-outline-primary">
+    <i class="ofi-cart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-circle btn-outline-primary">
+    <i class="ofi-heart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-circle btn-outline-primary">
+    <i class="ofi-caret-left-fill"></i>
+  </button>
+  <button type="button" class="btn btn-circle btn-outline-primary">
+    <i class="ofi-caret-right-fill"></i>
+  </button>
+</p>
+
+<p>
+  <button type="button" class="btn btn-circle btn-primary btn-lg">
+    <i class="ofi-cart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-circle btn-primary btn-lg">
+    <i class="ofi-heart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-circle btn-primary btn-lg">
+    <i class="ofi-caret-left-fill"></i>
+  </button>
+  <button type="button" class="btn btn-circle btn-primary btn-lg">
+    <i class="ofi-caret-right-fill"></i>
+  </button>
+</p>
+
+<p>
+  <button type="button" class="btn btn-circle btn-primary btn-sm">
+    <i class="ofi-cart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-circle btn-primary btn-sm">
+    <i class="ofi-heart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-circle btn-primary btn-sm">
+    <i class="ofi-caret-left-fill"></i>
+  </button>
+  <button type="button" class="btn btn-circle btn-primary btn-sm">
+    <i class="ofi-caret-right-fill"></i>
+  </button>
+</p>
+
+{{< /example >}}
 ## Disabled state
 
 Make buttons look inactive by adding the `disabled` boolean attribute to any `<button>` element. Disabled buttons have `pointer-events: none` applied to, preventing hover and active states from triggering.

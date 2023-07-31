@@ -1,0 +1,46 @@
+.icon-circle {
+  // scss-docs-start icon-circle-css-vars
+  --#{$prefix}icon-circle-padding-x: #{$icon-circle-padding-x};
+  --#{$prefix}icon-circle-padding-y: #{$icon-circle-padding-y};
+  @include rfs($icon-circle-font-size, --#{$prefix}icon-circle-font-size);
+  --#{$prefix}icon-circle-color: #{$icon-circle-color};
+  --#{$prefix}icon-circle-bg: transparent;
+  --#{$prefix}icon-circle-border-radius: 50%;
+  --#{$prefix}icon-circle-padding: max(var(--#{$prefix}icon-circle-padding-y), var(--#{$prefix}icon-circle-padding-x));
+  // scss-docs-end icon-circle-css-vars
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  padding: var(--#{$prefix}icon-circle-padding);
+  color: var(--#{$prefix}icon-circle-color);
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: var(--#{$prefix}icon-circle-border-width) solid var(--#{$prefix}icon-circle--border-color);
+  @include border-radius(var(--#{$prefix}icon-circle-border-radius));
+  @include font-size(var(--#{$prefix}icon-circle-font-size));
+  @include gradient-bg(var(--#{$prefix}icon-circle-bg));
+}
+
+
+//
+// Alternate icons
+//
+
+// scss-docs-start icon-circle-variant-loops
+@each $color, $value in $theme-colors {
+  .icon-circle-#{$color} {
+    @include icon-circle-variant($value, $value);
+  }
+}
+// scss-docs-end icon-circle-variant-loops
+
+.icon-circle-lg {
+  @include icon-circle-size($icon-circle-padding-y-lg, $icon-circle-padding-x-lg, $icon-circle-font-size-lg);
+}
+
+.icon-circle-sm {
+  @include icon-circle-size($icon-circle-padding-y-sm, $icon-circle-padding-x-sm, $icon-circle-font-size-sm);
+}

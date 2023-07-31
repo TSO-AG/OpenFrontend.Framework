@@ -15,7 +15,7 @@ To insert your own icon, you can use the following code:
 {{< /example >}}
 In this code, `ofi-` is a constant prefix. The part that comes after it, in this case `question-circle-fill`, represents the name of the icon. You can replace `question-circle-fill` with the name of any other icon you wish to use.
 
-## All Icons
+## All icons
 
 The list of all available icons is below:
 

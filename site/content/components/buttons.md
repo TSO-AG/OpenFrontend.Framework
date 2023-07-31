@@ -95,6 +95,135 @@ You can even roll your own custom sizing with CSS variables:
 </button>
 {{< /example >}}
 
+## Icon buttons
+
+If you need to, you can add an icon to the buttons. Simply add the `btn-icon` class.
+
+{{< example >}}
+<p>
+  <button type="button" class="btn btn-icon btn-primary">
+    <i class="ofi-cart-fill"></i> Add to cart
+  </button>
+  <button type="button" class="btn btn-icon btn-primary">
+    More <i class="ofi-arrow-right"></i>
+  </button>
+  <button type="button" class="btn btn-icon btn-primary">
+    <i class="ofi-heart-fill"></i>
+  </button>
+</p>
+
+<p>
+  <button type="button" class="btn btn-icon btn-outline-primary">
+    <i class="ofi-cart-fill"></i> Add to cart
+  </button>
+  <button type="button" class="btn btn-icon btn-outline-primary">
+    More <i class="ofi-arrow-right"></i>
+  </button>
+  <button type="button" class="btn btn-icon btn-outline-primary">
+    <i class="ofi-heart-fill"></i>
+  </button>
+</p>
+
+<p>
+  <button type="button" class="btn btn-icon btn-primary btn-lg">
+    <i class="ofi-cart-fill"></i> Add to cart
+  </button>
+  <button type="button" class="btn btn-icon btn-primary btn-lg">
+    More <i class="ofi-arrow-right"></i>
+  </button>
+  <button type="button" class="btn btn-icon btn-primary btn-lg">
+    <i class="ofi-heart-fill"></i>
+  </button>
+</p>
+
+<p>
+  <button type="button" class="btn btn-icon btn-primary btn-sm">
+    <i class="ofi-cart-fill"></i> Add to cart
+  </button>
+  <button type="button" class="btn btn-icon btn-primary btn-sm">
+    More <i class="ofi-arrow-right"></i>
+  </button>
+  <button type="button" class="btn btn-icon btn-primary btn-sm">
+    <i class="ofi-heart-fill"></i>
+  </button>
+</p>
+
+{{< /example >}}
+
+### Sass variables
+
+Customize the icon link Sass variables to modify all icon link styles across your Bootstrap-powered project.
+
+{{< scss-docs name="btn-icon-variables" file="src/scss/_variables.scss" >}}
+
+
+## Square buttons
+
+You can place a simple square button with equal width and height by adding the `btn-square` class.
+
+{{< example >}}
+<p>
+  <button type="button" class="btn btn-square btn-primary">
+    <i class="ofi-cart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-square btn-primary">
+    <i class="ofi-heart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-square btn-primary">
+    <i class="ofi-caret-left-fill"></i>
+  </button>
+  <button type="button" class="btn btn-square btn-primary">
+    <i class="ofi-caret-right-fill"></i>
+  </button>
+</p>
+
+<p>
+  <button type="button" class="btn btn-square btn-outline-primary">
+    <i class="ofi-cart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-square btn-outline-primary">
+    <i class="ofi-heart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-square btn-outline-primary">
+    <i class="ofi-caret-left-fill"></i>
+  </button>
+  <button type="button" class="btn btn-square btn-outline-primary">
+    <i class="ofi-caret-right-fill"></i>
+  </button>
+</p>
+
+<p>
+  <button type="button" class="btn btn-square btn-primary btn-lg">
+    <i class="ofi-cart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-square btn-primary btn-lg">
+    <i class="ofi-heart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-square btn-primary btn-lg">
+    <i class="ofi-caret-left-fill"></i>
+  </button>
+  <button type="button" class="btn btn-square btn-primary btn-lg">
+    <i class="ofi-caret-right-fill"></i>
+  </button>
+</p>
+
+<p>
+  <button type="button" class="btn btn-square btn-primary btn-sm">
+    <i class="ofi-cart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-square btn-primary btn-sm">
+    <i class="ofi-heart-fill"></i>
+  </button>
+  <button type="button" class="btn btn-square btn-primary btn-sm">
+    <i class="ofi-caret-left-fill"></i>
+  </button>
+  <button type="button" class="btn btn-square btn-primary btn-sm">
+    <i class="ofi-caret-right-fill"></i>
+  </button>
+</p>
+
+{{< /example >}}
+
 ## Disabled state
 
 Make buttons look inactive by adding the `disabled` boolean attribute to any `<button>` element. Disabled buttons have `pointer-events: none` applied to, preventing hover and active states from triggering.

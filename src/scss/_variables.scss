@@ -15,6 +15,18 @@ $prefix: bs- !default;
 
 $link-external-icon: $ofi-link-external !default;
 
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+$input-btn-padding-y: .5em !default;
+$input-btn-padding-x: .75em !default;
+
+// Buttons
+
+// scss-docs-start btn-icon-variables
+$btn-icon-gap: .35em !default;
+// scss-docs-end btn-icon-variables
+
 // Typography
 
 $font-weight-normal: 400 !default;
@@ -29,3 +41,4 @@ $badge-padding-y:                   .75em !default;
 $badge-padding-x:                   .75em !default;
 $badge-border-radius:               var(--#{$prefix}border-radius-pill) !default;
 // scss-docs-end badge-variables
+

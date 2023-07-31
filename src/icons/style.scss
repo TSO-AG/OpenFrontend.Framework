@@ -3,9 +3,9 @@
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?ve6bi6') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?ve6bi6') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?ve6bi6##{$icomoon-font-family}') format('svg');
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?9znbqc') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?9znbqc') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?9znbqc##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,61 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ofi-arrow-right {
+  &:before {
+    content: $ofi-arrow-right; 
+  }
+}
+.ofi-arrow-left {
+  &:before {
+    content: $ofi-arrow-left; 
+  }
+}
+.ofi-arrow-down {
+  &:before {
+    content: $ofi-arrow-down; 
+  }
+}
+.ofi-arrow-up {
+  &:before {
+    content: $ofi-arrow-up; 
+  }
+}
+.ofi-caret-down-fill {
+  &:before {
+    content: $ofi-caret-down-fill; 
+  }
+}
+.ofi-caret-left-fill {
+  &:before {
+    content: $ofi-caret-left-fill; 
+  }
+}
+.ofi-caret-right-fill {
+  &:before {
+    content: $ofi-caret-right-fill; 
+  }
+}
+.ofi-caret-up-fill {
+  &:before {
+    content: $ofi-caret-up-fill; 
+  }
+}
+.ofi-heart {
+  &:before {
+    content: $ofi-heart; 
+  }
+}
+.ofi-heart-fill {
+  &:before {
+    content: $ofi-heart-fill; 
+  }
+}
+.ofi-cart-fill {
+  &:before {
+    content: $ofi-cart-fill; 
+  }
+}
 .ofi-link-external {
   &:before {
     content: $ofi-link-external; 

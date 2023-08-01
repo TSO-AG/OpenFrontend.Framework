@@ -1,3 +1,14 @@
 .sticky-top {
   position: sticky;
 }
+
+.bd-example-map-ratios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+
+  > * {
+    width: calc(50% - 1rem);
+  }
+}

@@ -7,7 +7,7 @@ export default els => {
     try {
       options = JSON.parse(el.dataset.ofTableSort)
     } catch (error) {
-      console.error(error)
+      console.error(error) // eslint-disable-line no-console
       options = {}
     }
 

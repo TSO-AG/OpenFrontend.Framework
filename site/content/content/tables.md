@@ -840,7 +840,7 @@ Use `.table-responsive{-sm|-md|-lg|-xl|-xxl}` as needed to create responsive tab
 
 ## Table Sorting
 
-OpenFrontend.Framework provides a table sorting feature that can be easily activated using the data-of-table-sort attribute.
+OpenFrontend.Framework provides a table sorting feature that can be easily activated using the `data-of-table-sort` attribute.
 To utilize this feature, add the `data-of-table-sort` attribute to your `<table>` tag, as shown below:
 
 <div class="bd-example">

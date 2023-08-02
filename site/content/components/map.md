@@ -12,7 +12,7 @@ The use of Google Maps within your OpenFrontend.Framework project is incredibly 
 
 {{< example >}}
 <div class="ratio ratio-16x9">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.254221913!2d-74.14482735958153!3d40.69763074405856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20SUSA!5e0!3m2!1spl!2suk!4v1690890541380!5m2!1spl!2suk" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe src="https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 {{< /example >}}
 
@@ -34,10 +34,9 @@ Incorporating OpenStreetMap into your project is similar to using Google Maps. H
 - In the popup, click on the `HTML` tab to reveal the embed code.
 - Paste this code within your project wherever you want the map to appear.
 
-
 {{< example >}}
 <div class="ratio ratio-16x9">
-  <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-74.54017639160158%2C40.307807189232435%2C-73.36944580078126%2C40.989228176893796&amp;layer=mapnik" loading="lazy"></iframe>
+<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375" loading="lazy"></iframe>
 </div>
 {{< /example >}}
 
@@ -47,19 +46,19 @@ To ensure your maps look great on all devices, our Map component supports respon
 
 {{< example class="bd-example-map-ratios" >}}
 <div class="ratio ratio-1x1">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.254221913!2d-74.14482735958153!3d40.69763074405856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20SUSA!5e0!3m2!1spl!2suk!4v1690890541380!5m2!1spl!2suk" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ <iframe src="https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
 <div class="ratio ratio-4x3">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.254221913!2d-74.14482735958153!3d40.69763074405856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20SUSA!5e0!3m2!1spl!2suk!4v1690890541380!5m2!1spl!2suk" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ <iframe src="https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
 <div class="ratio ratio-16x9">
-  <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-74.54017639160158%2C40.307807189232435%2C-73.36944580078126%2C40.989228176893796&amp;layer=mapnik" loading="lazy" ></iframe>
+  <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375" loading="lazy"></iframe>
 </div>
 
 <div class="ratio ratio-21x9">
-  <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-74.54017639160158%2C40.307807189232435%2C-73.36944580078126%2C40.989228176893796&amp;layer=mapnik" loading="lazy" ></iframe>
+  <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375" loading="lazy"></iframe>
 </div>
 {{< /example >}}
 

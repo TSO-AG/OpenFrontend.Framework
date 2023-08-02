@@ -36,7 +36,7 @@ Incorporating OpenStreetMap into your project is similar to using Google Maps. H
 
 {{< example >}}
 <div class="ratio ratio-16x9">
-<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375" loading="lazy"></iframe>
+  <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375" loading="lazy"></iframe>
 </div>
 {{< /example >}}
 

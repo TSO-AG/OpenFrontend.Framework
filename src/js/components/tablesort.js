@@ -6,7 +6,8 @@ export default els => {
 
     try {
       options = JSON.parse(el.dataset.ofTableSort)
-    } catch {
+    } catch (error) {
+      console.error(error)
       options = {}
     }
 

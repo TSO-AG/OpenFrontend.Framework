@@ -837,3 +837,79 @@ Use `.table-responsive{-sm|-md|-lg|-xl|-xxl}` as needed to create responsive tab
 
 - The factor variables (`$table-striped-bg-factor`, `$table-active-bg-factor` & `$table-hover-bg-factor`) are used to determine the contrast in table variants.
 - Apart from the light & dark table variants, theme colors are lightened by the `$table-bg-scale` variable.
+
+## Table Sorting
+
+OpenFrontend.Framework provides a table sorting feature that can be easily activated using the data-of-table-sort attribute.
+To utilize this feature, add the `data-of-table-sort` attribute to your `<table>` tag, as shown below:
+
+<div class="bd-example">
+  <table class="table" data-of-table-sort>
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>Bird</td>
+      <td>@twitter</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+```html
+<table class="table" data-of-table-sort>
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">First</th>
+    <th scope="col">Last</th>
+    <th scope="col">Handle</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>Mark</td>
+    <td>Otto</td>
+    <td>@mdo</td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Jacob</td>
+    <td>Thornton</td>
+    <td>@fat</td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td>Larry</td>
+    <td>Bird</td>
+    <td>@twitter</td>
+  </tr>
+  </tbody>
+</table>
+```
+When the `data-of-table-sort` attribute is present, the table will automatically be equipped with sorting functionality. The user can click on a column header to sort the table by the data in that column. Clicking again will reverse the sort order.
+
+### Sass variables
+
+{{< scss-docs name="table-sort-variables" file="src/scss/_variables.scss" >}}

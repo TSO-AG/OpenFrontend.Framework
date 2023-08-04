@@ -173,6 +173,7 @@ Example HTML Structure
 
 {{< highlight html >}}
 <div class="ratio ratio-16x9">
+  <!--The div element for the map -->
   <div id="map"></div>
 </div>
 {{< /highlight >}}

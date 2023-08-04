@@ -46,7 +46,10 @@ This section provides an example of how to embed Google Maps into your web page 
       new Marker({
         position: position,
         map: map,
-        title: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
+        title: 'TSO AG',
+        infoWindow: new google.maps.InfoWindow({
+          content: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
+        }),
       });
     }
 
@@ -96,7 +99,10 @@ Loading the Google Maps API and initializing the map
     new Marker({
       position: position,
       map: map,
-      title: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
+      title: 'TSO AG',
+      infoWindow: new google.maps.InfoWindow({
+        content: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
+      }),
     });
   }
 
@@ -277,7 +283,10 @@ To ensure your maps look great on all devices, our Map component supports respon
     new Marker({
       position: position,
       map: map,
-      title: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
+      title: 'TSO AG',
+      infoWindow: new google.maps.InfoWindow({
+        content: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
+      }),
     });
   }
 

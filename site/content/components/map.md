@@ -30,24 +30,24 @@ This section provides an example of how to embed Google Maps into your web page 
     let map
 
     async function initMap() {
-      const { Map } = await google.maps.importLibrary('maps')
+      const { Map } = await google.maps.importLibrary('maps');
+      const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
       const position = {
-        lat: 47.371674,
-        lng: 9.389664,
-      }
+        lat: 47.41340,
+        lng: 9.34799,
+      };
 
       map = new Map(document.getElementById('map'), {
         center: position,
         zoom: 14,
-      })
+      });
 
-      const marker = new Map.Marker({
-        position,
+      new AdvancedMarkerElement({
+        position: position,
+        map: map,
         title: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
-      })
-
-      marker.setMap(map)
+      });
     }
 
     initMap()
@@ -80,24 +80,24 @@ Loading the Google Maps API and initializing the map
   let map
 
   async function initMap() {
-    const { Map } = await google.maps.importLibrary('maps')
+    const { Map } = await google.maps.importLibrary('maps');
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
     const position = {
-      lat: 47.371674,
-      lng: 9.389664,
+      lat: 47.41340,
+      lng: 9.34799,
     }
 
     map = new Map(document.getElementById('map'), {
       center: position,
       zoom: 14,
-    })
+    });
 
-    const marker = new Map.Marker({
-      position,
+    new AdvancedMarkerElement({
+      position: position,
+      map: map,
       title: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
-    })
-
-    marker.setMap(map)
+    });
   }
 
   initMap()
@@ -262,6 +262,7 @@ To ensure your maps look great on all devices, our Map component supports respon
   // Generate Google Maps to #map1 and #map2
   async function initGoogleMap(id) {
     const { Map } = await google.maps.importLibrary('maps');
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
     const position = {
       lat: 47.371674,
@@ -273,12 +274,11 @@ To ensure your maps look great on all devices, our Map component supports respon
       zoom: 14,
     });
 
-    const marker = new Map.Marker({
-      position,
+    new AdvancedMarkerElement({
+      position: position,
+      map: map,
       title: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
     });
-
-    marker.setMap(map)
   }
 
   initGoogleMap('map1');

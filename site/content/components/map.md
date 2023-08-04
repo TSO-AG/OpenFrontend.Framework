@@ -30,7 +30,7 @@ This section provides an example of how to embed Google Maps into your web page 
     let map
 
     async function initMap() {
-      const { Map } = await google.maps.importLibrary('maps');
+      const { Map, InfoWindow } = await google.maps.importLibrary('maps');
       const { Marker } = await google.maps.importLibrary("marker");
 
       const position = {
@@ -43,13 +43,22 @@ This section provides an example of how to embed Google Maps into your web page 
         zoom: 14,
       });
 
-      new Marker({
+      const infowindow = new InfoWindow({
+        content: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
+        ariaLabel: "TSO AG",
+      });
+
+      const marker = new Marker({
         position: position,
         map: map,
         title: 'TSO AG',
-        infoWindow: new google.maps.InfoWindow({
-          content: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
-        }),
+      });
+
+      marker.addListener("click", () => {
+        infowindow.open({
+          anchor: marker,
+          map,
+        });
       });
     }
 
@@ -83,26 +92,35 @@ Loading the Google Maps API and initializing the map
   let map
 
   async function initMap() {
-    const { Map } = await google.maps.importLibrary('maps');
+    const { Map, InfoWindow } = await google.maps.importLibrary('maps');
     const { Marker } = await google.maps.importLibrary("marker");
 
     const position = {
       lat: 47.41340,
       lng: 9.34799,
-    }
+    };
 
     map = new Map(document.getElementById('map'), {
       center: position,
       zoom: 14,
     });
 
-    new Marker({
+    const infowindow = new InfoWindow({
+      content: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
+      ariaLabel: "TSO AG",
+    });
+
+    const marker = new Marker({
       position: position,
       map: map,
       title: 'TSO AG',
-      infoWindow: new google.maps.InfoWindow({
-        content: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
-      }),
+    });
+
+    marker.addListener("click", () => {
+      infowindow.open({
+        anchor: marker,
+        map,
+      });
     });
   }
 
@@ -267,7 +285,7 @@ To ensure your maps look great on all devices, our Map component supports respon
 <script>
   // Generate Google Maps to #map1 and #map2
   async function initGoogleMap(id) {
-    const { Map } = await google.maps.importLibrary('maps');
+    const { Map, InfoWindow } = await google.maps.importLibrary('maps');
     const { Marker } = await google.maps.importLibrary("marker");
 
     const position = {
@@ -280,13 +298,22 @@ To ensure your maps look great on all devices, our Map component supports respon
       zoom: 14,
     });
 
-    new Marker({
+    const infowindow = new InfoWindow({
+      content: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
+      ariaLabel: "TSO AG",
+    });
+
+    const marker = new Marker({
       position: position,
       map: map,
       title: 'TSO AG',
-      infoWindow: new google.maps.InfoWindow({
-        content: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
-      }),
+    });
+
+    marker.addListener("click", () => {
+      infowindow.open({
+        anchor: marker,
+        map,
+      });
     });
   }
 

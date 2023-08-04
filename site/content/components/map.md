@@ -44,7 +44,7 @@ This section provides an example of how to embed Google Maps into your web page 
       });
 
       const infowindow = new InfoWindow({
-        content: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
+        content: '<b>TSO AG</b><br>Fürstenlandstrasse 53<br>9000 St.Gallen',
         ariaLabel: "TSO AG",
       });
 
@@ -106,7 +106,7 @@ Loading the Google Maps API and initializing the map
     });
 
     const infowindow = new InfoWindow({
-      content: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
+      content: '<b>TSO AG</b><br>Fürstenlandstrasse 53<br>9000 St.Gallen',
       ariaLabel: "TSO AG",
     });
 
@@ -188,7 +188,7 @@ This section provides an example of how to integrate OpenStreetMap into your web
       }).addTo(map);
 
      L.marker(position).addTo(map)
-          .bindPopup("<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen");
+          .bindPopup("<b>TSO AG</b><br>Fürstenlandstrasse 53<br>9000 St.Gallen");
   }
   </script>
 </div>
@@ -235,7 +235,7 @@ Initializing the Map
   }).addTo(map);
 
   L.marker(position).addTo(map)
-    .bindPopup("<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen");
+    .bindPopup("<b>TSO AG</b><br>Fürstenlandstrasse 53<br>9000 St.Gallen");
 }
 </script>
 {{< /highlight >}}
@@ -299,7 +299,7 @@ To ensure your maps look great on all devices, our Map component supports respon
     });
 
     const infowindow = new InfoWindow({
-      content: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
+      content: '<b>TSO AG</b><br>Fürstenlandstrasse 53<br>9000 St.Gallen',
       ariaLabel: "TSO AG",
     });
 
@@ -338,7 +338,7 @@ To ensure your maps look great on all devices, our Map component supports respon
     }).addTo(map);
 
     L.marker(position).addTo(map)
-      .bindPopup("<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen");
+      .bindPopup("<b>TSO AG</b><br>Fürstenlandstrasse 53<br>9000 St.Gallen");
   }
 
   initOpenStreetMap('map3');

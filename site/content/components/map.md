@@ -31,7 +31,7 @@ This section provides an example of how to embed Google Maps into your web page 
 
     async function initMap() {
       const { Map } = await google.maps.importLibrary('maps');
-      const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+      const { Marker } = await google.maps.importLibrary("marker");
 
       const position = {
         lat: 47.41340,
@@ -43,7 +43,7 @@ This section provides an example of how to embed Google Maps into your web page 
         zoom: 14,
       });
 
-      new AdvancedMarkerElement({
+      new Marker({
         position: position,
         map: map,
         title: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
@@ -81,7 +81,7 @@ Loading the Google Maps API and initializing the map
 
   async function initMap() {
     const { Map } = await google.maps.importLibrary('maps');
-    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+    const { Marker } = await google.maps.importLibrary("marker");
 
     const position = {
       lat: 47.41340,
@@ -93,7 +93,7 @@ Loading the Google Maps API and initializing the map
       zoom: 14,
     });
 
-    new AdvancedMarkerElement({
+    new Marker({
       position: position,
       map: map,
       title: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',
@@ -262,11 +262,11 @@ To ensure your maps look great on all devices, our Map component supports respon
   // Generate Google Maps to #map1 and #map2
   async function initGoogleMap(id) {
     const { Map } = await google.maps.importLibrary('maps');
-    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+    const { Marker } = await google.maps.importLibrary("marker");
 
     const position = {
-      lat: 47.371674,
-      lng: 9.389664,
+      lat: 47.41340,
+      lng: 9.34799,
     };
 
     const map = new Map(document.getElementById(id), {
@@ -274,7 +274,7 @@ To ensure your maps look great on all devices, our Map component supports respon
       zoom: 14,
     });
 
-    new AdvancedMarkerElement({
+    new Marker({
       position: position,
       map: map,
       title: '<b>TSO AG</b><br>Fürstenlandstrasse 53, 9000 St.Gallen',

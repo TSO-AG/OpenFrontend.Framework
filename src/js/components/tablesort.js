@@ -3,7 +3,7 @@ const tablesort = require('tablesort') // eslint-disable-line no-undef
 tablesort.extend(
   'number',
   item => item.match(/^\d+$/),
-  (a, b) => parseFloat(b) - parseFloat(a),
+  (a, b) => Number.parseFloat(b) - Number.parseFloat(a),
 )
 
 export default els => {

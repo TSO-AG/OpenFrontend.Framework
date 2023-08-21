@@ -823,22 +823,8 @@ Use `.table-responsive{-sm|-md|-lg|-xl|-xxl}` as needed to create responsive tab
 {{< /tables.inline >}}
 {{< /highlight >}}
 
-## CSS
 
-### Sass variables
-
-{{< scss-docs name="table-variables" file="node_modules/bootstrap/scss/_variables.scss" >}}
-
-### Sass loops
-
-{{< scss-docs name="table-loop" file="node_modules/bootstrap/scss/_variables.scss" >}}
-
-### Customizing
-
-- The factor variables (`$table-striped-bg-factor`, `$table-active-bg-factor` & `$table-hover-bg-factor`) are used to determine the contrast in table variants.
-- Apart from the light & dark table variants, theme colors are lightened by the `$table-bg-scale` variable.
-
-## Table Sorting
+## Table sorting
 
 OpenFrontend.Framework provides a table sorting feature that can be easily activated using the `data-of-table-sort` attribute.
 To utilize this feature, add the `data-of-table-sort` attribute to your `<table>` tag, as shown below:
@@ -910,6 +896,33 @@ To utilize this feature, add the `data-of-table-sort` attribute to your `<table>
 ```
 When the `data-of-table-sort` attribute is present, the table will automatically be equipped with sorting functionality. The user can click on a column header to sort the table by the data in that column. Clicking again will reverse the sort order.
 
+### Extra options
+
+You can pass extra configuration as JSON value of the data attribute:
+
+```html
+<table class="table" data-of-table-sort="{'descending':true}">
+  …
+</table>
+```
+
+You can find all options on the [tablesort](https://tristen.ca/tablesort/demo/) plugin website.
+
 ### Sass variables
 
 {{< scss-docs name="table-sort-variables" file="src/scss/_variables.scss" >}}
+
+## CSS
+
+### Sass variables
+
+{{< scss-docs name="table-variables" file="node_modules/bootstrap/scss/_variables.scss" >}}
+
+### Sass loops
+
+{{< scss-docs name="table-loop" file="node_modules/bootstrap/scss/_variables.scss" >}}
+
+### Customizing
+
+- The factor variables (`$table-striped-bg-factor`, `$table-active-bg-factor` & `$table-hover-bg-factor`) are used to determine the contrast in table variants.
+- Apart from the light & dark table variants, theme colors are lightened by the `$table-bg-scale` variable.

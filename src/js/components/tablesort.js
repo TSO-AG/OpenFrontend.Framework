@@ -5,7 +5,7 @@ export default els => {
     let options
 
     try {
-      options = JSON.parse(el.dataset.ofTableSort)
+      options = JSON.parse(el.dataset.ofTableSort || '{}')
     } catch (error) {
       console.error(error) // eslint-disable-line no-console
       options = {}

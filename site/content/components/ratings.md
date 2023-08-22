@@ -39,14 +39,14 @@ You can preset a score for the Ratings component, which might represent an avera
 To display a rating without allowing further user interactions (e.g., in cases where you just want to show an average score), use the JSON configuration with the `readOnly` property
 
 {{< example >}}
-<div data-of-rating='{"score": 3, "readOnly": true }'></div>
+<div data-of-rating='{"score": 3, "readOnly": true}'></div>
 {{< /example >}}
 
 ### Half Ratings
 The Ratings component supports half-star increments, offering a more refined scoring system, especially useful for averages that fall between whole numbers. To enable this feature, it's essential to set the `half` attribute to `true` within the JSON configuration. You can also adjust the `number` property to define the maximum number of stars, if you wish to operate on scales other than the default 1-5.
 
 {{< example >}}
-<div data-of-rating='{"half": true, "number": 10, "score": 7.5 }'></div>
+<div data-of-rating='{"half": true, "number": 10, "score": 7.5}'></div>
 {{< /example >}}
 
 With this configuration, you'll have a 10-star rating system with the current score set at 7.5 stars.

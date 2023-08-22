@@ -2,10 +2,10 @@ import Raty from 'raty-js'
 
 export default els => {
   for (const el of els) {
-    const raty = new Raty(el, {
+    const rating = new Raty(el, {
       starType: 'i',
       click(number) {
-        const event = new CustomEvent('of.ratings.click', {
+        const event = new CustomEvent('clicked.of.rating', {
           detail: {
             rating: number
           }
@@ -14,7 +14,7 @@ export default els => {
         el.dispatchEvent(event)
       }
     })
-    raty.init()
-    el.raty = raty
+    rating.init()
+    el.rating = rating
   }
 }

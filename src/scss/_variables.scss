@@ -44,10 +44,10 @@ $badge-border-radius:               var(--#{$prefix}border-radius-pill) !default
 
 // Ratings
 
-// scss-docs-start ratings-variables
-$ratings-font-size: 1.5em !default;
-$ratings-off-color: #dee1e6 !default;
-$ratings-on-color: #f3c63f !default;
-$ratings-off-color-disabled: #edeef1 !default;
-$ratings-on-color-disabled: $ratings-on-color !default;
-// scss-docs-end ratings-variables
+// scss-docs-start rating-variables
+$rating-font-size: 1.5em !default;
+$rating-off-color: #dee1e6 !default;
+$rating-on-color: #f3c63f !default;
+$rating-off-color-disabled: #edeef1 !default;
+$rating-on-color-disabled: $rating-on-color !default;
+// scss-docs-end rating-variables

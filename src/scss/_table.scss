@@ -1,0 +1,17 @@
+th[role="columnheader"] { // stylelint-disable-line selector-no-qualifying-type
+  --#{$prefix}table-column-indicator: #{escape-svg($table-sort-indicator-default)};
+  padding-right: max($table-cell-padding-x, nth($table-sort-bg-size, 1) + $table-sort-padding-x);
+  cursor: pointer;
+  background-image: var(--#{$prefix}table-column-indicator);
+  background-repeat: no-repeat;
+  background-position: $table-sort-bg-position;
+  background-size: $table-sort-bg-size;
+
+  &[aria-sort="ascending"] { // stylelint-disable-line selector-no-qualifying-type
+    --#{$prefix}table-column-indicator: #{escape-svg($table-sort-indicator-asc)};
+  }
+
+  &[aria-sort="descending"] { // stylelint-disable-line selector-no-qualifying-type
+    --#{$prefix}table-column-indicator: #{escape-svg($table-sort-indicator-desc)};
+  }
+}

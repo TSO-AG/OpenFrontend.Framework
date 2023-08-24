@@ -30,7 +30,7 @@
   &::before {
     background: $rating-off-color;
     background: linear-gradient(to right, var(--ratings-on-color) 50%, var(--ratings-off-color) 50%);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }

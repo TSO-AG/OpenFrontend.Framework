@@ -6,7 +6,76 @@ group: forms
 toc: true
 ---
 
-## How to Use
+## Examples
+
+### Basic
+
+Datepicker without any config.
+
+{{< example >}}
+<input type="text" class="form-control form-datepicker" data-of-datepicker placeholder="Select Date...">
+{{< /example >}}
+
+### Human-friendly dates
+
+For a more user-friendly date and time format:
+
+```json
+{
+    "enableTime": true,
+    "dateFormat": "Y-m-d H:i"
+}
+```
+
+{{< example >}}
+<input type="text" class="form-control form-datepicker" data-of-datepicker='{"enableTime": true, "dateFormat": "Y-m-d H:i"}' placeholder="Select Date...">
+{{< /example >}}
+
+### Range calendar
+
+Select a range of dates using the range calendar.
+
+```json
+{
+    "mode": "range"
+}
+```
+
+{{< example >}}
+<input type="text" class="form-control form-datepicker" data-of-datepicker='{"mode": "range"}' placeholder="Select Date...">
+{{< /example >}}
+
+### Time picker
+
+For time-only selection:
+
+```json
+{
+    "enableTime": true,
+    "noCalendar": true,
+    "dateFormat": "H:i"
+}
+```
+
+{{< example >}}
+<input type="text" class="form-control form-timepicker" data-of-datepicker='{"enableTime": true, "noCalendar": true, "dateFormat": "H:i"}' placeholder="Select Date...">
+{{< /example >}}
+
+### Inline calendar
+
+Display the calendar in an always-open state with the `inline` option.
+
+```json
+{
+    "inline": true
+}
+```
+
+{{< example >}}
+<input type="text" class="form-control form-datepicker" data-of-datepicker='{"inline": true}' placeholder="Select Date...">
+{{< /example >}}
+
+## Usage
 To initialize the picker for form fields, add the attribute `data-of-datepicker` to the input element. The attribute can accept configurations in the form of a JSON string, allowing for easy customization of the picker's behavior.
 
 For a distinct visual appearance, you have the option of choosing between two classes for the input field:
@@ -34,75 +103,6 @@ Here is the list of all available options (alphabetically):
 | `mode` | `String` | `"mode"` | "single", "multiple", or "range" |
 | `noCalendar` | `Boolean` | `false` | Hides the day selection in calendar.<br>Use it along with enableTime to create a time picker. |
 {{< /bs-table >}}
-
-## Examples
-
-### Basic
-
-Datepicker without any config.
-
-{{< example >}}
-<input type="text" class="form-control form-datepicker" data-of-datepicker placeholder="Select Date...">
-{{< /example >}}
-
-### Human-friendly Dates
-
-For a more user-friendly date and time format:
-
-```json
-{
-    "enableTime": true,
-    "dateFormat": "Y-m-d H:i"
-}
-```
-
-{{< example >}}
-<input type="text" class="form-control form-datepicker" data-of-datepicker='{"enableTime": true, "dateFormat": "Y-m-d H:i"}' placeholder="Select Date...">
-{{< /example >}}
-
-### Range Calendar
-
-Select a range of dates using the range calendar.
-
-```json
-{
-    "mode": "range"
-}
-```
-
-{{< example >}}
-<input type="text" class="form-control form-datepicker" data-of-datepicker='{"mode": "range"}' placeholder="Select Date...">
-{{< /example >}}
-
-### Time Picker
-
-For time-only selection:
-
-```json
-{
-    "enableTime": true,
-    "noCalendar": true,
-    "dateFormat": "H:i"
-}
-```
-
-{{< example >}}
-<input type="text" class="form-control form-timepicker" data-of-datepicker='{"enableTime": true, "noCalendar": true, "dateFormat": "H:i"}' placeholder="Select Date...">
-{{< /example >}}
-
-### Inline Calendar
-
-Display the calendar in an always-open state with the `inline` option.
-
-```json
-{
-    "inline": true
-}
-```
-
-{{< example >}}
-<input type="text" class="form-control form-datepicker" data-of-datepicker='{"inline": true}' placeholder="Select Date...">
-{{< /example >}}
 
 ## CSS
 

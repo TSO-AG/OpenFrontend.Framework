@@ -6,15 +6,16 @@ group: content
 toc: true
 ---
 
-## How it Works
+## How it works
 
-The `controls` attribute adds audio controls, like play, pause, and volume.
+The `controls` attribute adds video controls, like play, pause, and volume.
 
-The `<source>` element allows you to specify alternative audio files which the browser may choose from. The browser will use the first recognized format.
+The `<source>` element allows you to specify alternative video files from which the browser may choose.
+The browser will use the first recognized format.
 
 ## Examples
 
-### The HTML <audio> Element
+### Local video
 
 The HTML `<video>` element is used to show a video on a web page.
 
@@ -35,28 +36,6 @@ The HTML `<video>` element is used to show a video on a web page.
   </video>
 </div>
 ```
-
-Notice that you can embed videos of various [aspect-ratio]({{< docsref "/helpers/ratio" >}}). To adjust the video, you might find our utility classes setting the [object-fit]({{< docsref "/utilities/object-fit#video" >}}) property useful.
-
-<div class="bd-example">
-  <div class="ratio ratio-21x9">
-    <video controls class="object-fit-cover">
-      <source src="/assets/media/sample-video.mp4" type="video/mp4">
-      <source src="/assets/media/sample-video.ogg" type="video/ogg">
-    </video>
-  </div>
-</div>
-
-```html
-<div class="ratio ratio-21x9">
-  <video controls class="object-fit-cover">
-    <source src="sample-video.mp4" type="video/mp4">
-    <source src="sample-video.ogg" type="video/ogg">
-  </video>
-</div>
-```
-
-### HTML `<video>` Autoplay
 
 To start a video automatically, use the `autoplay` attribute:
 
@@ -102,10 +81,36 @@ Add `muted` after `autoplay` to let your video start playing automatically (but 
 </div>
 ```
 
-### Youtube
+### YouTube video
+
+You can also embed a YouTube video using an `<iframe>`:
 
 {{< example >}}
 <div class="ratio ratio-16x9">
   <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="YouTube video" allowfullscreen></iframe>
 </div>
 {{< /example >}}
+
+### Aspect ratio
+
+Notice that you can embed videos of various [aspect ratios]({{< docsref "/helpers/ratio" >}}).
+
+To adjust the video fit, you might want to use the [object-fit]({{< docsref "/utilities/object-fit#video" >}}) utility.
+
+<div class="bd-example">
+  <div class="ratio ratio-4x3">
+    <video controls class="object-fit-cover">
+      <source src="/assets/media/sample-video.mp4" type="video/mp4">
+      <source src="/assets/media/sample-video.ogg" type="video/ogg">
+    </video>
+  </div>
+</div>
+
+```html
+<div class="ratio ratio-4x3">
+  <video controls class="object-fit-cover">
+    <source src="sample-video.mp4" type="video/mp4">
+    <source src="sample-video.ogg" type="video/ogg">
+  </video>
+</div>
+```

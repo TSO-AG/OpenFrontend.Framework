@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Date & time picker
-description: The Date & Time Picker component by OpenFrontend.Framework is an intuitive and user-friendly way to select dates and times in web forms.
+description: The date & time picker is designed for intuitive and user-friendly date and time selection in web forms.
 group: forms
 toc: true
 ---

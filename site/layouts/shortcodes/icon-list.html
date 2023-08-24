@@ -1,0 +1,12 @@
+<ul id="icons-list" class="row row-cols-3 row-cols-sm-4 row-cols-xl-5 list-unstyled">
+  {{ $json := getJSON "src/icons/selection.json" }}
+  {{ range $index, $icon := $json.icons }}
+
+  <li class="col mb-4">
+    <div class="px-3 py-4 mb-2 bg-body-secondary text-center rounded fs-2">
+      <i class="ofi-{{ $icon.properties.name }}"></i>
+    </div>
+    <div class="name text-muted text-decoration-none text-center pt-1">{{ $icon.properties.name }}</div>
+  </li>
+  {{ end }}
+</ul>

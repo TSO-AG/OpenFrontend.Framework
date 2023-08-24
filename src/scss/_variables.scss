@@ -11,13 +11,17 @@ $white:    #fff !default;
 
 $prefix: bs- !default;
 
+// Typography
+$font-size-base: 1rem !default;
+$font-weight-normal: 400 !default;
+
 // Links
 
 $link-external-icon: $ofi-link-external !default;
 
 // Buttons + Forms
 //
-// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+// Shared variables that are reassigned to `$input-` and `$icon-circle-` specific variables.
 $input-btn-padding-y: .5em !default;
 $input-btn-padding-x: .75em !default;
 
@@ -27,9 +31,22 @@ $input-btn-padding-x: .75em !default;
 $btn-icon-gap: .35em !default;
 // scss-docs-end btn-icon-variables
 
-// Typography
+// Icon Circle
+// scss-docs-start icon-circle-variables
+$icon-circle-color:                   var(--#{$prefix}body-color) !default;
+$icon-circle-padding-y:               $input-btn-padding-y !default;
+$icon-circle-padding-x:               $input-btn-padding-x !default;
+$icon-circle-font-size:               $font-size-base !default;
 
-$font-weight-normal: 400 !default;
+$icon-circle-padding-y-sm:            .25rem !default;
+$icon-circle-padding-x-sm:            .5rem !default;
+$icon-circle-font-size-sm:            $font-size-base * .875 !default;
+
+$icon-circle-padding-y-lg:            .5rem !default;
+$icon-circle-padding-x-lg:            1rem !default;
+$icon-circle-font-size-lg:            $font-size-base * 1.25 !default;
+
+// scss-docs-end icon-circle-variables
 
 // Badges
 

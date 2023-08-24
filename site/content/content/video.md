@@ -22,8 +22,8 @@ The HTML `<video>` element is used to show a video on a web page.
 <div class="bd-example">
   <div class="ratio ratio-16x9">
     <video controls>
-      <source src="/assets/media/sample-video.mp4" type="video/mp4">
-      <source src="/assets/media/sample-video.ogg" type="video/ogg">
+      <source src="assets/media/sample-video.mp4" type="video/mp4">
+      <source src="assets/media/sample-video.ogg" type="video/ogg">
     </video>
   </div>
 </div>
@@ -42,8 +42,8 @@ To start a video automatically, use the `autoplay` attribute:
 <div class="bd-example">
   <div class="ratio ratio-16x9">
     <video controls autoplay>
-      <source src="/assets/media/sample-video.mp4" type="video/mp4">
-      <source src="/assets/media/sample-video.ogg" type="video/ogg">
+      <source src="assets/media/sample-video.mp4" type="video/mp4">
+      <source src="assets/media/sample-video.ogg" type="video/ogg">
     </video>
   </div>
 </div>
@@ -66,8 +66,8 @@ Add `muted` after `autoplay` to let your video start playing automatically (but 
 <div class="bd-example">
   <div class="ratio ratio-16x9">
     <video autoplay muted>
-      <source src="/assets/media/sample-video.mp4" type="video/mp4">
-      <source src="/assets/media/sample-video.ogg" type="video/ogg">
+      <source src="assets/media/sample-video.mp4" type="video/mp4">
+      <source src="assets/media/sample-video.ogg" type="video/ogg">
     </video>
   </div>
 </div>
@@ -100,8 +100,8 @@ To adjust the video fit, you might want to use the [object-fit]({{< docsref "/ut
 <div class="bd-example">
   <div class="ratio ratio-4x3">
     <video controls class="object-fit-cover">
-      <source src="/assets/media/sample-video.mp4" type="video/mp4">
-      <source src="/assets/media/sample-video.ogg" type="video/ogg">
+      <source src="assets/media/sample-video.mp4" type="video/mp4">
+      <source src="assets/media/sample-video.ogg" type="video/ogg">
     </video>
   </div>
 </div>

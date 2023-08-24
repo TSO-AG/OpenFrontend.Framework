@@ -21,8 +21,8 @@ To embed an audio file in HTML, use the `<audio>` element:
 
 <div class="bd-example">
   <audio controls>
-    <source src="/assets/media/sample-audio.ogg" type="audio/ogg">
-    <source src="/assets/media/sample-audio.mp3" type="audio/mpeg">
+    <source src="assets/media/sample-audio.ogg" type="audio/ogg">
+    <source src="assets/media/sample-audio.mp3" type="audio/mpeg">
   </audio>
 </div>
 
@@ -39,15 +39,15 @@ To start the audio file automatically, use the autoplay attribute:
 
 <div class="bd-example">
   <audio controls autoplay>
-    <source src="/assets/media/sample-audio.ogg" type="audio/ogg">
-    <source src="/assets/media/sample-audio.mp3" type="audio/mpeg">
+    <source src="assets/media/sample-audio.ogg" type="audio/ogg">
+    <source src="assets/media/sample-audio.mp3" type="audio/mpeg">
   </audio>
 </div>
 
 ```html
 <audio controls autoplay>
-  <source src="/assets/media/sample-audio.ogg" type="audio/ogg">
-  <source src="/assets/media/sample-audio.mp3" type="audio/mpeg">
+  <source src="assets/media/sample-audio.ogg" type="audio/ogg">
+  <source src="assets/media/sample-audio.mp3" type="audio/mpeg">
 </audio>
 ```
 
@@ -63,8 +63,8 @@ Next to the player, you can also display the title and name of the file.
     </div>
     <div class="player-audio__player">
       <audio controls>
-        <source src="/assets/media/sample-audio.ogg" type="audio/ogg">
-        <source src="/assets/media/sample-audio.mp3" type="audio/mpeg">
+        <source src="assets/media/sample-audio.ogg" type="audio/ogg">
+        <source src="assets/media/sample-audio.mp3" type="audio/mpeg">
       </audio>
     </div>
   </div>

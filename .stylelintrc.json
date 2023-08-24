@@ -30,8 +30,7 @@
           {
             "ignore": "local"
           }
-        ],
-        "scss/selector-no-union-class-name": true
+        ]
       }
     },
     {

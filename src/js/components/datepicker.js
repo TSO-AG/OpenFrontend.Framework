@@ -12,6 +12,10 @@ export default els => {
     }
 
     flatpickr(el, {
+      altFormat: 'd.m.Y',
+      // eslint-disable-next-line camelcase
+      time_24hr: true,
+      dateFormat: 'd.m.Y',
       ...options,
     })
   }

@@ -23,12 +23,12 @@ For a more user-friendly date and time format:
 ```json
 {
     "enableTime": true,
-    "dateFormat": "Y-m-d H:i"
+    "dateFormat": "d.m.Y H:i"
 }
 ```
 
 {{< example >}}
-<input type="text" class="form-control form-datepicker" data-of-datepicker='{"enableTime": true, "dateFormat": "Y-m-d H:i"}' placeholder="Select Date...">
+<input type="text" class="form-control form-datepicker" data-of-datepicker='{"enableTime": true, "dateFormat": "d.m.Y H:i"}' placeholder="Select Date...">
 {{< /example >}}
 
 ### Range calendar
@@ -92,7 +92,7 @@ Here is the list of all available options (alphabetically):
 {{< bs-table "table" >}}
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
-| `dateFormat` | `String` | <span class="text-nowrap">`"Y-m-d"`</span> | A string of characters which are used to define how the date will be displayed in the input box. |
+| `dateFormat` | `String` | <span class="text-nowrap">`"d.m.Y"`</span> | A string of characters which are used to define how the date will be displayed in the input box. |
 | `defaultDate` | `String` | `null` | Sets the initial selected date(s). |
 | `defaultHour` | `Number` | `12` | Initial value of the hour element. |
 | `defaultMinute` | `Number` | `0` | Initial value of the minute element. |

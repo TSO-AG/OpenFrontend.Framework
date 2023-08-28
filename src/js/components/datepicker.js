@@ -16,6 +16,9 @@ export default els => {
       // eslint-disable-next-line camelcase
       time_24hr: true,
       dateFormat: 'd.m.Y',
+      locale: {
+        rangeSeparator: ' - '
+      },
       ...options,
     })
   }

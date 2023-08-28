@@ -58,7 +58,7 @@ For time-only selection:
 ```
 
 {{< example >}}
-<input type="text" class="form-control form-timepicker" data-of-datepicker='{"enableTime": true, "noCalendar": true, "dateFormat": "H:i"}' placeholder="Select Date...">
+<input type="text" class="form-control form-timepicker" data-of-datepicker='{"enableTime": true, "noCalendar": true, "dateFormat": "H:i"}' placeholder="Select time...">
 {{< /example >}}
 
 ### Inline calendar

@@ -11,6 +11,12 @@ export default els => {
       options = {}
     }
 
+    if (options.icon) {
+      options.starOn = `star-on-png ${options.icon}`
+      options.starOff = `star-off-png ${options.icon}`
+      options.starHalf = `star-half-png ${options.icon}`
+    }
+
     const rating = new Raty(el, {
       ...options,
       starType: 'i',

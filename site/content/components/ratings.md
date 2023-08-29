@@ -51,6 +51,20 @@ The Ratings component supports half-star increments, offering a more refined sco
 
 With this configuration, you'll have a 10-star rating system with the current score set at 7.5 stars.
 
+### Custom icon
+
+Easily customize your rating icon by setting the icon value to the desired icon class name. You can find the complete list of available icons [here]({{< docsref "/components/icons" >}}).
+
+
+{{< example >}}
+<div class="mb-2">
+  <div data-of-rating='{"half": true, "number": 10, "score": 7.5, "icon" : "ofi-heart"}'></div>
+</div>
+<div>
+  <div data-of-rating='{"half": true, "number": 10, "score": 7.5, "icon" : "ofi-heart-fill"}'></div>
+</div>
+{{< /example >}}
+
 ## Usage
 
 ### Options
@@ -66,6 +80,7 @@ Here is the list of all available options (alphabetically):
 | `number` | `Number` | `5` | The number of stars that will be presented. |
 | `readOnly` | `Boolean` | `false` | Turns the rating read-only. |
 | `score` | `Number` | `undefined` | Initial rating. |
+| `icon` | `String` | `null` | Icon class. |
 {{< /bs-table >}}
 
 ## CSS

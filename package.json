@@ -9,14 +9,13 @@
     "docs-build": "if [ -z ${BASE_URL+x} ]; then echo \"$BASE_URL is not defined\"; else encore production --progress --config-name docs --env=BASE_URL=$BASE_URL && hugo --cleanDestinationDir --printUnusedTemplates --baseURL $BASE_URL; fi",
     "docs-serve": "encore dev --config-name docs && concurrently 'encore dev --watch --config-name docs' 'hugo server --port 9001 --disableFastRender --printUnusedTemplates'",
     "css-lint": "stylelint \"**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache",
-    "js-lint": "eslint --cache --cache-location .cache/.eslintcache --report-unused-disable-directives --ext .html,.js,.md .",
-    "postinstall": "patch-package"
+    "js-lint": "eslint --cache --cache-location .cache/.eslintcache --report-unused-disable-directives --ext .html,.js,.md ."
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.0",
     "highlight.js": "^11.7.0",
-    "raty-js": "^4.1.0"
+    "raty-js": "^4.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -36,7 +35,6 @@
     "patch-package": "^8.0.0",
     "postcss-cli": "^10.1.0",
     "postcss-loader": "^7.3.3",
-    "postinstall-postinstall": "^2.1.0",
     "sass": "^1.57.1",
     "sass-loader": "^13.0.0",
     "stylelint": "^15.10.2",

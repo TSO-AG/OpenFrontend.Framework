@@ -5504,11 +5504,6 @@ postcss@^8.4.21, postcss@^8.4.25:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-postinstall-postinstall@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/postinstall-postinstall/-/postinstall-postinstall-2.1.0.tgz#4f7f77441ef539d1512c40bd04c71b06a4704ca3"
-  integrity sha512-7hQX6ZlZXIoRiWNrbMQaLzUUfH+sSx39u8EJ9HYuDc1kLo9IXKWjM5RSquZN1ad5GnH8CGFM78fsAAQi3OKEEQ==
-
 prelude-ls@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
@@ -5579,10 +5574,10 @@ range-parser@^1.2.1, range-parser@~1.2.1:
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
   integrity sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==
 
-raty-js@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/raty-js/-/raty-js-4.1.0.tgz#bfdbd4e29829eac96c359665babb53486ed90350"
-  integrity sha512-1mR50kE+/mdOseErh1pb2wRp+yx+FZfVLaeanxbfsxtB6izGquXNPI4XUnQ6u894hY0iKwztDLWG/SJTNHS3eg==
+raty-js@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/raty-js/-/raty-js-4.2.0.tgz#4e7aa97df4648382a85fbfdb7557924fcca072d4"
+  integrity sha512-IRkvGW783wmou+lHIIwLrJUfXYJEVuaPJJeXQHtihbV4srvel9zTCxLe8GLDdecdftg494b3LwNcSbnf2OW/zw==
 
 raw-body@2.5.1:
   version "2.5.1"

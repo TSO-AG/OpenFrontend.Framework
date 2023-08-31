@@ -21,8 +21,7 @@ In addition to our [border-radius utilities]({{< docsref "/utilities/borders" >}
 an image a rounded 1px border appearance.
 
 {{< example >}}
-{{< placeholder width="200" height="200" class="img-thumbnail" title="A generic square placeholder image with a white
-border around it, making it resemble a photograph taken with an old instant camera" >}}
+{{< placeholder width="200" height="200" class="img-thumbnail" title="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera" >}}
 {{< /example >}}
 
 ## Aligning images

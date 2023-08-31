@@ -1,0 +1,53 @@
+.cancel-on-png,
+.cancel-off-png,
+.star-on-png,
+.star-off-png,
+.star-half-png {
+  font-size: $rating-font-size;
+}
+
+.cancel-on-png,
+.cancel-off-png {
+  &::before {
+    content: "x";
+  }
+
+  //@include add-icon($ofi-heart, $icon-gap: 0);
+}
+
+.star-on-png,
+.star-off-png,
+.star-half-png {
+  &:not([class*="ofi-"]) {
+    @include add-icon($ofi-star-fill, $icon-gap: 0);
+  }
+}
+
+.star-on-png {
+  color: var(--ratings-on-color);
+}
+
+.star-off-png {
+  color: var(--ratings-off-color);
+}
+
+.star-half-png {
+
+  &::before {
+    background: $rating-off-color;
+    background: linear-gradient(to right, var(--ratings-on-color) 50%, var(--ratings-off-color) 50%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+[data-of-rating] {
+  display: inline-flex;
+  --ratings-off-color: #{$rating-off-color};
+  --ratings-on-color: #{$rating-on-color};
+
+  &[data-read-only] {
+    --ratings-off-color: #{$rating-off-color-disabled};
+    --ratings-on-color: #{$rating-on-color-disabled};
+  }
+}

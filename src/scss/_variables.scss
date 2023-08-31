@@ -103,6 +103,16 @@ $badge-padding-x:                   .75em !default;
 $badge-border-radius:               var(--#{$prefix}border-radius-pill) !default;
 // scss-docs-end badge-variables
 
+// Ratings
+
+// scss-docs-start rating-variables
+$rating-font-size: 1.5em !default;
+$rating-off-color: #dee1e6 !default;
+$rating-on-color: #f3c63f !default;
+$rating-off-color-disabled: #edeef1 !default;
+$rating-on-color-disabled: $rating-on-color !default;
+// scss-docs-end rating-variables
+
 // Table
 
 // scss-docs-start table-sort-variables

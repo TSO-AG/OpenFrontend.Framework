@@ -2,6 +2,24 @@
   position: sticky;
 }
 
+.bd-example-image-ratios {
+  --gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  align-items: flex-end;
+
+  > * {
+    width: calc(50% - (var(--gap) / 2)); // stylelint-disable-line function-disallowed-list
+  }
+
+  @include media-breakpoint-up(sm) {
+    > * {
+      width: calc(33.33333% - (var(--gap) * .67777)); // stylelint-disable-line function-disallowed-list
+    }
+  }
+}
+
 .bd-example-map-ratios {
   display: flex;
   flex-wrap: wrap;

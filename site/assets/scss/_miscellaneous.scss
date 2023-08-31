@@ -19,3 +19,20 @@
     }
   }
 }
+
+.bd-example-map-ratios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $grid-gutter-width;
+  align-items: flex-end;
+
+  > * {
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(sm) {
+    > * {
+      width: calc(50% - (#{$grid-gutter-width} / 2)); // stylelint-disable-line function-disallowed-list
+    }
+  }
+}

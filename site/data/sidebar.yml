@@ -43,6 +43,8 @@
     - title: Reboot
     - title: Typography
     - title: Images
+    - title: Audio
+    - title: Video
     - title: Tables
     - title: Figures
 
@@ -73,7 +75,9 @@
     - title: Close button
     - title: Collapse
     - title: Dropdowns
+    - title: Icons
     - title: List group
+    - title: Map
     - title: Modal
     - title: Navs & tabs
     - title: Offcanvas

@@ -3,9 +3,9 @@
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?9znbqc') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?9znbqc') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?9znbqc##{$icomoon-font-family}') format('svg');
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?u0qq1t') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?u0qq1t') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?u0qq1t##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ofi-question-circle-fill {
+  &:before {
+    content: $ofi-question-circle-fill; 
+  }
+}
 .ofi-arrow-right {
   &:before {
     content: $ofi-arrow-right; 

@@ -823,6 +823,209 @@ Use `.table-responsive{-sm|-md|-lg|-xl|-xxl}` as needed to create responsive tab
 {{< /tables.inline >}}
 {{< /highlight >}}
 
+
+## Table sorting
+
+OpenFrontend.Framework provides a table sorting feature that can be easily activated using the `data-of-table-sort` attribute.
+To utilize this feature, add the `data-of-table-sort` attribute to your `<table>` tag, as shown below:
+
+<div class="bd-example">
+  <table class="table" data-of-table-sort>
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>Bird</td>
+      <td>@twitter</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+```html
+<table class="table" data-of-table-sort>
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">First</th>
+    <th scope="col">Last</th>
+    <th scope="col">Handle</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>Mark</td>
+    <td>Otto</td>
+    <td>@mdo</td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Jacob</td>
+    <td>Thornton</td>
+    <td>@fat</td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td>Larry</td>
+    <td>Bird</td>
+    <td>@twitter</td>
+  </tr>
+  </tbody>
+</table>
+```
+When the `data-of-table-sort` attribute is present, the table will automatically be equipped with sorting functionality. The user can click on a column header to sort the table by the data in that column. Clicking again will reverse the sort order.
+
+### Extra options
+
+You can pass extra options as JSON value of the data attribute.
+
+<div class="bd-example">
+  <table class="table" data-of-table-sort='{"index": 1, "direction": "desc"}'>
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Born</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>John Doe</td>
+      <td>1992</td>
+    </tr>
+    <tr>
+      <td>Kevin Jones</td>
+      <td>1987</td>
+    </tr>
+    <tr>
+      <td>Donna Evans</td>
+      <td>2001</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+```html
+<table class="table" data-of-table-sort='{"index": 1, "direction": "desc"}'>
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Born</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>John Doe</td>
+    <td>1992</td>
+  </tr>
+  <tr>
+    <td>Kevin Jones</td>
+    <td>1987</td>
+  </tr>
+  <tr>
+    <td>Donna Evans</td>
+    <td>2001</td>
+  </tr>
+  </tbody>
+</table>
+```
+
+Here is the list of all available options (alphabetically):
+
+{{< bs-table "table" >}}
+| Option | Type | Default | Explanation |
+| --- | --- | --- | --- |
+| `direction` | `String` | `'asc'` | Initial sorting direction. Available options are: `asc`, `desc`. |
+| `index` | `Number` | `undefined` | Initial sorting column's index. Starting from `0`. |
+{{< /bs-table >}}
+
+### Sort by hidden values
+
+Sometimes text inside cells is not normalized. Using the `data-of-table-sort-value` attribute,
+you can use optional data to sort on.
+
+<div class="bd-example">
+  <table class="table" data-of-table-sort='{"index": 0}'>
+    <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Event</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td data-of-table-sort-value="40867200">19th April, 1971</td>
+      <td>First space station.</td>
+    </tr>
+    <tr>
+      <td data-of-table-sort-value="355881600">12th April 1981</td>
+      <td>First reusable crewed orbital spacecraft.</td>
+    </tr>
+    <tr>
+      <td data-of-table-sort-value="22982400">24th September, 1970</td>
+      <td>First automatic sample return from the Moon.</td>
+    </tr>
+    <tr>
+      <td data-of-table-sort-value="121132800">3rd November, 1973</td>
+      <td>First mission sent to study Mercury.</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+```html
+<table class="table" data-of-table-sort='{"index": 0}'>
+  <thead>
+  <tr>
+    <th scope="col">Date</th>
+    <th scope="col">Event</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td data-of-table-sort-value="40867200">19th April, 1971</td>
+    <td>First space station.</td>
+  </tr>
+  <tr>
+    <td data-of-table-sort-value="355881600">12th April 1981</td>
+    <td>First reusable crewed orbital spacecraft.</td>
+  </tr>
+  <tr>
+    <td data-of-table-sort-value="22982400">24th September, 1970</td>
+    <td>First automatic sample return from the Moon.</td>
+  </tr>
+  <tr>
+    <td data-of-table-sort-value="121132800">3rd November, 1973</td>
+    <td>First mission sent to study Mercury.</td>
+  </tr>
+  </tbody>
+</table>
+```
+
+### Sass variables
+
+{{< scss-docs name="table-sort-variables" file="src/scss/_variables.scss" >}}
+
 ## CSS
 
 ### Sass variables

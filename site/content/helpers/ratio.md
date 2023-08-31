@@ -31,6 +31,12 @@ Wrap any embed, like an `<iframe>`, in a parent element with `.ratio` and an asp
 Aspect ratios can be customized with modifier classes. By default the following ratio classes are provided:
 
 {{< example class="bd-example-ratios" >}}
+<div class="ratio ratio-9x16">
+  <div>9x16</div>
+</div>
+<div class="ratio ratio-3x4">
+  <div>3x4</div>
+</div>
 <div class="ratio ratio-1x1">
   <div>1x1</div>
 </div>
@@ -78,4 +84,4 @@ This CSS variable makes it easy to modify the aspect ratio across breakpoints. T
 
 Within `_variables.scss`, you can change the aspect ratios you want to use. Here's our default `$ratio-aspect-ratios` map. Modify the map as you like and recompile your Sass to put them to use.
 
-{{< scss-docs name="aspect-ratios" file="node_modules/bootstrap/scss/_variables.scss" >}}
+{{< scss-docs name="aspect-ratios" file="src/scss/_variables.scss" >}}

@@ -35,3 +35,23 @@
     }
   }
 }
+
+// scss-docs-start icon-circle-variant-mixin
+@mixin icon-circle-variant(
+  $background,
+  $border,
+  $color: color-contrast($background),
+) {
+  --#{$prefix}icon-circle-color: #{$color};
+  --#{$prefix}icon-circle-bg: #{$background};
+  --#{$prefix}icon-circle-border-color: #{$border};
+}
+// scss-docs-end icon-circle-variant-mixin
+
+// scss-docs-start icon-circle-size-mixin
+@mixin icon-circle-size($padding-y, $padding-x, $font-size) {
+  --#{$prefix}icon-circle-padding-y: #{$padding-y};
+  --#{$prefix}icon-circle-padding-x: #{$padding-x};
+  @include rfs($font-size, --#{$prefix}icon-circle-font-size);
+}
+// scss-docs-end icon-circle-size-mixin

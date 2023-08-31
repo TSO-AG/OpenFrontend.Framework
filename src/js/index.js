@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   loadForElements(document.querySelectorAll('[data-bs-toggle="modal"]'), () => import(/* webpackChunkName: "open-frontend-modal" */ './components/modal'))
   loadForElements(document.querySelectorAll('[data-bs-toggle="offcanvas"]'), () => import(/* webpackChunkName: "open-frontend-offcanvas" */ './components/offcanvas'))
   loadForElements(document.querySelectorAll('[data-of-highlight]'), () => import(/* webpackChunkName: "open-frontend-highlight" */ './components/highlight'))
+  loadForElements(document.querySelectorAll('[data-of-datepicker]'), () => import(/* webpackChunkName: "open-frontend-datepicker" */ './components/datepicker'))
+  loadForElements(document.querySelectorAll('[data-of-table-sort]'), () => import(/* webpackChunkName: "open-frontend-tablesort" */ './components/tablesort'))
   loadForElements(document.querySelectorAll('[data-of-rating]'), () => import(/* webpackChunkName: "open-frontend-rating" */ './components/rating'))
 })
 

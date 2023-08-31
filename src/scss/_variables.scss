@@ -11,15 +11,63 @@ $white:    #fff !default;
 
 $prefix: bs- !default;
 
+
+// Components
+
+// stylelint-disable function-disallowed-list
+// scss-docs-start aspect-ratios
+$aspect-ratios: (
+  "1x1": 100%,
+  "4x3": calc(3 / 4 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "21x9": calc(9 / 21 * 100%),
+  "3x4": calc(4 / 3 * 100%),
+  "9x16": calc(16 / 9 * 100%)
+) !default;
+// scss-docs-end aspect-ratios
+// stylelint-enable function-disallowed-list
+
+// Typography
+$font-size-base: 1rem !default;
+$font-weight-normal: 400 !default;
+
+
 // Links
 
 $link-external-icon: $ofi-link-external !default;
 
 // Buttons + Forms
 //
-// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+// Shared variables that are reassigned to `$input-` and `$icon-circle-` specific variables.
 $input-btn-padding-y: .5em !default;
 $input-btn-padding-x: .75em !default;
+
+// Forms
+
+// scss-docs-start form-datepicker-variables
+$form-select-indicator-padding: $input-btn-padding-x * 3 !default; // Extra padding for background-image
+$form-select-bg-position: left $input-btn-padding-x center !default;
+$form-select-bg-size: 16px 16px !default; // In pixels because image dimensions
+$form-datepicker-indicator-color: #000 !default;
+$form-timepicker-indicator-color: $form-datepicker-indicator-color !default;
+$form-datepicker-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='#{$form-datepicker-indicator-color}' d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z'/></svg>") !default;
+$form-timepicker-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='#{$form-timepicker-indicator-color}' d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z'/></svg>") !default;
+// scss-docs-end form-datepicker-variables
+
+// scss-docs-start calendar-variables
+$calendar-arrow-hover-color: #f64747 !default;
+$calendar-background: #fff !default;
+$calendar-border-color: #e6e6e6 !default;
+$calendar-month-foreground: #5a6171 !default;
+$calendar-month-background: transparent !default;
+$calendar-weekdays-background: transparent !default;
+$calendar-weekdays-foreground: #5a6171 !default;
+$calendar-day-foreground: #393939 !default;
+$calendar-day-hover-background: #e6e6e6 !default;
+$calendar-today-color: #959ea9 !default;
+$calendar-selected-day-background: #569ff7 !default;
+$calendar-selected-day-color: #fff !default;
+// scss-docs-end calendar-variables
 
 // Buttons
 
@@ -27,9 +75,22 @@ $input-btn-padding-x: .75em !default;
 $btn-icon-gap: .35em !default;
 // scss-docs-end btn-icon-variables
 
-// Typography
+// Icon Circle
+// scss-docs-start icon-circle-variables
+$icon-circle-color:                   var(--#{$prefix}body-color) !default;
+$icon-circle-padding-y:               $input-btn-padding-y !default;
+$icon-circle-padding-x:               $input-btn-padding-x !default;
+$icon-circle-font-size:               $font-size-base !default;
 
-$font-weight-normal: 400 !default;
+$icon-circle-padding-y-sm:            .25rem !default;
+$icon-circle-padding-x-sm:            .5rem !default;
+$icon-circle-font-size-sm:            $font-size-base * .875 !default;
+
+$icon-circle-padding-y-lg:            .5rem !default;
+$icon-circle-padding-x-lg:            1rem !default;
+$icon-circle-font-size-lg:            $font-size-base * 1.25 !default;
+
+// scss-docs-end icon-circle-variables
 
 // Badges
 
@@ -51,3 +112,28 @@ $rating-on-color: #f3c63f !default;
 $rating-off-color-disabled: #edeef1 !default;
 $rating-on-color-disabled: $rating-on-color !default;
 // scss-docs-end rating-variables
+
+// Table
+
+// scss-docs-start table-sort-variables
+$table-sort-padding-x:                .25rem !default;
+$table-sort-bg-position:              right $table-sort-padding-x center !default;
+$table-sort-bg-size:                  10px 18px !default; // In pixels because image dimensions
+
+$table-sort-indicator-color:          #ccc !default;
+$table-sort-indicator-color-active:   #000 !default;
+
+$table-sort-indicator-default:        url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 27'> <path fill='#{$table-sort-indicator-color}' d='M7.2,22.6l-4.8-5.5c-0.6-0.6-0.1-1.7,0.8-1.7h9.6c0.6,0,1,0.4,1,1c0,0.2-0.1,0.5-0.2,0.7l-4.8,5.5C8.4,23,7.7,23.1,7.2,22.6 C7.3,22.7,7.2,22.7,7.2,22.6L7.2,22.6z'/><path fill='#{$table-sort-indicator-color}' d='M8.5,4.3l4.8,5.5c0.6,0.6,0.1,1.7-0.8,1.7H3c-0.6,0-1-0.4-1-1c0-0.2,0.1-0.5,0.2-0.7L7,4.3C7.4,3.9,8,3.9,8.5,4.3 C8.5,4.3,8.5,4.3,8.5,4.3L8.5,4.3z'/></svg>") !default;
+$table-sort-indicator-asc:            url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 27'> <path fill='#{$table-sort-indicator-color-active}' d='M7.2,22.6l-4.8-5.5c-0.6-0.6-0.1-1.7,0.8-1.7h9.6c0.6,0,1,0.4,1,1c0,0.2-0.1,0.5-0.2,0.7l-4.8,5.5C8.4,23,7.7,23.1,7.2,22.6 C7.3,22.7,7.2,22.7,7.2,22.6L7.2,22.6z'/><path fill='#{$table-sort-indicator-color}' d='M8.5,4.3l4.8,5.5c0.6,0.6,0.1,1.7-0.8,1.7H3c-0.6,0-1-0.4-1-1c0-0.2,0.1-0.5,0.2-0.7L7,4.3C7.4,3.9,8,3.9,8.5,4.3 C8.5,4.3,8.5,4.3,8.5,4.3L8.5,4.3z'/></svg>") !default;
+$table-sort-indicator-desc:           url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 27'> <path fill='#{$table-sort-indicator-color}' d='M7.2,22.6l-4.8-5.5c-0.6-0.6-0.1-1.7,0.8-1.7h9.6c0.6,0,1,0.4,1,1c0,0.2-0.1,0.5-0.2,0.7l-4.8,5.5C8.4,23,7.7,23.1,7.2,22.6 C7.3,22.7,7.2,22.7,7.2,22.6L7.2,22.6z'/><path fill='#{$table-sort-indicator-color-active}' d='M8.5,4.3l4.8,5.5c0.6,0.6,0.1,1.7-0.8,1.7H3c-0.6,0-1-0.4-1-1c0-0.2,0.1-0.5,0.2-0.7L7,4.3C7.4,3.9,8,3.9,8.5,4.3 C8.5,4.3,8.5,4.3,8.5,4.3L8.5,4.3z'/></svg>") !default;
+// scss-docs-end table-sort-variables
+
+// Audio player
+// scss-docs-start audio-player-variables
+$audio-player-title-color: null !default;
+$audio-player-title-font-size: 1.15rem !default;
+$audio-player-title-font-weight: bolder !default;
+$audio-player-name-color: var(--#{$prefix}secondary-color) !default;
+$audio-player-name-font-size: .875rem !default;
+$audio-player-name-font-weight: normal !default;
+// scss-docs-end audio-player-variables

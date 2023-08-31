@@ -1,0 +1,15 @@
+@import "flatpickr";
+
+.form-datepicker,
+.form-timepicker {
+  --#{$prefix}form-datepicker-bg-img: #{escape-svg($form-datepicker-indicator)};
+  padding-left: $form-select-indicator-padding;
+  background-image: var(--#{$prefix}form-datepicker-bg-img);
+  background-repeat: no-repeat;
+  background-position: $form-select-bg-position;
+  background-size: $form-select-bg-size;
+}
+
+.form-timepicker {
+  --#{$prefix}form-datepicker-bg-img: #{escape-svg($form-timepicker-indicator)};
+}

@@ -4,13 +4,16 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
-
-$white:    #fff !default;
+$blue: #0d6efd !default;
+$primary: $blue !default;
+$white: #fff !default;
 
 // Prefix for :root CSS variables
 
 $prefix: bs- !default;
 
+// Spacing
+$spacer: 1rem !default;
 
 // Components
 
@@ -30,7 +33,6 @@ $aspect-ratios: (
 // Typography
 $font-size-base: 1rem !default;
 $font-weight-normal: 400 !default;
-
 
 // Links
 
@@ -137,3 +139,49 @@ $audio-player-name-color: var(--#{$prefix}secondary-color) !default;
 $audio-player-name-font-size: .875rem !default;
 $audio-player-name-font-weight: normal !default;
 // scss-docs-end audio-player-variables
+
+// Card
+// scss-docs-start card-variables
+$card-info-color: var(--#{$prefix}secondary-color) !default;
+$card-info-font-size: .8rem !default;
+$card-info-spacer-y: $spacer * .5 !default;
+// scss-docs-end card-variables
+
+// Price
+// scss-docs-start price-variables
+$price-row-gap: .125rem !default;
+$price-label-color: $primary !default;
+$price-label-font-size: .7em !default;
+$price-value-color: null !default;
+$price-value-font-size: 1.25rem !default;
+$price-value-font-weight: 700 !default;
+// scss-docs-end price-variables
+
+// Date box
+// scss-docs-start date-box-variables
+$date-box-row-gap: .125rem !default;
+$date-box-bg: #fff !default;
+$date-box-padding-x: 1rem !default;
+$date-box-padding-y: .75rem !default;
+$date-box-padding-day-color: $primary !default;
+$date-box-padding-day-font-size: 1.5rem !default;
+$date-box-padding-month-color: $primary !default;
+$date-box-padding-month-font-size: 1rem !default;
+// scss-docs-end date-box-variables
+
+// State
+// scss-docs-start state-variables
+$state-bg: #fff !default;
+$state-gap: .5em !default;
+$state-font-size: .75em !default;
+$state-font-weight: 700 !default;
+$state-color: #000 !default;
+$state-padding-y: .35em !default;
+$state-padding-x: .65em !default;
+$state-border-radius: var(--#{$prefix}border-radius) !default;
+$state-statuses: (
+  "open": #2ed05d,
+  "unknown": #ebbe5b,
+  "closed": #e55f60,
+) !default;
+// scss-docs-end state-variables

@@ -13,8 +13,8 @@
 
   &__content {
     position: absolute;
-    max-width: calc(50% - var(--#{$prefix}card-spacer-x));
-    max-height: calc(50% - var(--#{$prefix}card-spacer-y));
+    max-width: calc(50% - var(--#{$prefix}card-spacer-x)); // stylelint-disable-line function-disallowed-list
+    max-height: calc(50% - var(--#{$prefix}card-spacer-y)); // stylelint-disable-line function-disallowed-list
 
     &--no-gap {
       --#{$prefix}card-spacer-x: 0;
@@ -85,6 +85,6 @@
   gap: .5rem;
 
   .card-title {
-    @include text-truncate;
+    @include text-truncate();
   }
 }

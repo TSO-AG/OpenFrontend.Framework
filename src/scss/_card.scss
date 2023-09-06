@@ -3,6 +3,8 @@
   --#{$prefix}card-info-spacer-y: #{$card-info-spacer-y};
   --#{$prefix}card-info-color: #{$card-info-color};
   --#{$prefix}card-info-font-size: #{$card-info-font-size};
+  --#{$prefix}card-action-button-gap: #{$card-action-button-gap};
+  --#{$prefix}card-tags-spacer-y: #{$card-tags-spacer-y};
   // scss-docs-end card-css-vars
 }
 
@@ -53,6 +55,10 @@
   color: var(--#{$prefix}card-info-color);
 }
 
+.card-tags {
+  margin-bottom: var(--#{$prefix}card-tags-spacer-y);
+}
+
 .card-action {
   display: flex;
   align-items: center;
@@ -66,6 +72,19 @@
   }
 
   &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--#{$prefix}card-action-button-gap);
+    justify-content: flex-end;
     margin-left: auto;
+  }
+}
+
+.card-title-rating {
+  display: flex;
+  gap: .5rem;
+
+  .card-title {
+    @include text-truncate;
   }
 }

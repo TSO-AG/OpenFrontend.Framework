@@ -108,11 +108,16 @@ $badge-border-radius:               var(--#{$prefix}border-radius-pill) !default
 // Ratings
 
 // scss-docs-start rating-variables
+$rating-icon-gap: .2em !default;
 $rating-font-size: 1.5em !default;
 $rating-off-color: #dee1e6 !default;
 $rating-on-color: #f3c63f !default;
 $rating-off-color-disabled: #edeef1 !default;
 $rating-on-color-disabled: $rating-on-color !default;
+$rating-font-size: 1.5rem !default;
+$rating-font-size-sm: .75rem !default;
+$rating-font-size-lg: 1.75rem !default;
+
 // scss-docs-end rating-variables
 
 // Table
@@ -145,6 +150,8 @@ $audio-player-name-font-weight: normal !default;
 $card-info-color: var(--#{$prefix}secondary-color) !default;
 $card-info-font-size: .8rem !default;
 $card-info-spacer-y: $spacer * .5 !default;
+$card-action-button-gap: .25rem !default;
+$card-tags-spacer-y: $spacer * .75 !default;
 // scss-docs-end card-variables
 
 // Price
@@ -185,3 +192,31 @@ $state-statuses: (
   "closed": #e55f60,
 ) !default;
 // scss-docs-end state-variables
+
+// Rating
+// scss-docs-start user-rating
+$user-rating-gap: .25em !default;
+$user-rating-color: null !default;
+$user-rating-font-weight: 700 !default;
+$user-rating-icon-font-size: 1.25em !default;
+// scss-docs-end user-rating
+
+// Tag
+
+// scss-docs-start tag-list-variables
+$tag-list-gap-x: .5em !default;
+$tag-list-gap-y: .5em !default;
+// scss-docs-end tag-list-variables
+
+// scss-docs-start tag-variables
+$tag-font-size: .875em !default;
+$tag-font-weight: null !default;
+$tag-color: var(--#{$prefix}dark) !default;
+$tag-bg: var(--#{$prefix}gray-100) !default;
+$tag-padding-y: .35em !default;
+$tag-padding-x: .65em !default;
+$tag-border-radius: var(--#{$prefix}border-radius) !default;
+$tag-icon-font-size: 1.5em !default;
+$tag-icon-space-x: .1em !default;
+// scss-docs-end tag-variables
+

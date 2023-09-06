@@ -108,3 +108,23 @@
 
   }
 }
+
+// Rating - TWOF-88
+.user-rating {
+  // scss-docs-start user-rating-css-vars
+  --#{$prefix}user-rating-gap: #{$user-rating-gap};
+  --#{$prefix}user-rating-color: #{$user-rating-color};
+  --#{$prefix}user-rating-font-weight: #{$user-rating-font-weight};
+  --#{$prefix}user-rating-icon-font-size: #{$user-rating-icon-font-size};
+  // scss-docs-end user-rating-css-vars
+  display: flex;
+  gap: var(--#{$prefix}user-rating-gap);
+  align-items: center;
+  font-weight: var(--#{$prefix}user-rating-font-weight);
+  line-height: 1;
+  color: var(--#{$prefix}user-rating-color);
+
+  &__icon {
+    font-size: var(--#{$prefix}user-rating-icon-font-size);
+  }
+}

@@ -220,3 +220,27 @@ $tag-icon-font-size: 1.5em !default;
 $tag-icon-space-x: .1em !default;
 // scss-docs-end tag-variables
 
+// Labels
+// scss-docs-start labels-min-variables
+$labels-min-gap: .25rem !default;
+$labels-min-padding: .25rem !default;
+$labels-min-bg: var(--#{$prefix}body-bg) !default;
+$labels-min-border-width: var(--#{$prefix}border-width) !default;
+$labels-min-border-color: var(--#{$prefix}border-color) !default;
+$labels-min-border-radius: var(--#{$prefix}border-radius) !default;
+$labels-min-box-shadow: var(--#{$prefix}box-shadow-sm) !default;
+
+$labels-min-item-padding: .5rem !default;
+$labels-min-item-bg: var(--#{$prefix}gray-100) !default;
+$labels-min-item-border-width: var(--#{$prefix}border-width) !default;
+$labels-min-item-border-color: var(--#{$prefix}border-color) !default;
+$labels-min-item-border-radius: var(--#{$prefix}border-radius) !default;
+$labels-min-item-box-shadow: var(--#{$prefix}box-shadow-sm) !default;
+
+$labels-min-label-padding: .5rem !default;
+$labels-min-label-font-size: 1rem !default;
+$labels-min-label-font-weight: 700 !default;
+$labels-min-label-color: null !default;
+$labels-min-label-text-decoration: underline !default;
+// scss-docs-end labels-min-variables
+

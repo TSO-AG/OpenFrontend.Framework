@@ -1,0 +1,66 @@
+.labels-min {
+  // scss-docs-start labels-min-css-vars
+  --#{$prefix}labels-min-gap: #{$labels-min-gap};
+  --#{$prefix}labels-min-padding: #{$labels-min-padding};
+  --#{$prefix}labels-min-bg: #{$labels-min-bg};
+  --#{$prefix}labels-min-border-width: #{$labels-min-border-width};
+  --#{$prefix}labels-min-border-color: #{$labels-min-border-color};
+  --#{$prefix}labels-min-border-radius: #{$labels-min-border-radius};
+  --#{$prefix}labels-min-box-shadow: #{$labels-min-box-shadow};
+  --#{$prefix}labels-min-item-padding: #{$labels-min-item-padding};
+  --#{$prefix}labels-min-item-bg: #{$labels-min-item-bg};
+  --#{$prefix}labels-min-item-border-width: #{$labels-min-item-border-width};
+  --#{$prefix}labels-min-item-border-color: #{$labels-min-item-border-color};
+  --#{$prefix}labels-min-item-border-radius: #{$labels-min-item-border-radius};
+  --#{$prefix}labels-min-item-box-shadow: #{$labels-min-item-box-shadow};
+  --#{$prefix}labels-min-label-padding: #{$labels-min-label-padding};
+  --#{$prefix}labels-min-label-font-size: #{$labels-min-label-font-size};
+  --#{$prefix}labels-min-label-font-weight: #{$labels-min-label-font-weight};
+  --#{$prefix}labels-min-label-color: #{$labels-min-label-color};
+  --#{$prefix}labels-min-label-text-decoration: #{$labels-min-label-text-decoration};
+  // scss-docs-end labels-min-css-vars
+  display: flex;
+  gap: var(--#{$prefix}labels-min-gap);
+  max-width: fit-content;
+  padding: var(--#{$prefix}labels-min-padding);
+  line-height: 1;
+  background-color: var(--#{$prefix}labels-min-bg);
+  border: var(--#{$prefix}labels-min-border-width) solid var(--#{$prefix}labels-min-border-color);
+  @include border-radius(var(--#{$prefix}labels-min-border-radius));
+  @include box-shadow(var(--#{$prefix}labels-min-box-shadow));
+}
+
+.labels-min-item {
+  @include make-col();
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: var(--#{$prefix}aspect-ratio);
+  padding: var(--#{$prefix}labels-min-item-padding);
+  background-color: var(--#{$prefix}labels-min-item-bg);
+  border: var(--#{$prefix}labels-min-item-border-width) solid var(--#{$prefix}labels-min-item-border-color);
+  @include border-radius(var(--#{$prefix}labels-min-item-border-radius));
+  @include box-shadow(var(--#{$prefix}labels-min-label-text-decoration));
+
+  figure {
+    display: flex;
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    object-fit: contain;
+  }
+}
+
+.labels-min-label {
+  align-self: center;
+  padding: var(--#{$prefix}labels-min-label-padding);
+  font-size: var(--#{$prefix}labels-min-label-font-size);
+  font-weight: var(--#{$prefix}labels-min-label-font-weight);
+  color: var(--#{$prefix}labels-min-label-color);
+  text-decoration: var(--#{$prefix}labels-min-label-text-decoration);
+}

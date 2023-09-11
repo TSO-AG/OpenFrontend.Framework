@@ -71,6 +71,82 @@ Display the opening times table on your page using the HTML markup below:
 </table>
 {{< /example >}}
 
+### States
+
+You can use one of different states to show the current place status:
+
+<div class="bd-example">
+  <table class="opening-times">
+    <thead>
+    <tr>
+      <th style="width:50%">Opening times</th>
+      <th style="width:50%">
+        <span class="state state--open">open</span>
+      </th>
+    </tr>
+    </thead>
+  </table>
+
+  <table class="opening-times">
+    <thead>
+    <tr>
+      <th style="width:50%">Opening times</th>
+      <th style="width:50%">
+        <span class="state state--closed">closed</span>
+      </th>
+    </tr>
+    </thead>
+  </table>
+
+  <table class="opening-times">
+    <thead>
+    <tr>
+      <th style="width:50%">Opening times</th>
+      <th style="width:50%">
+        <span class="state state--unknown">unknown</span>
+      </th>
+    </tr>
+    </thead>
+  </table>
+</div>
+
+The HTML markup:
+
+{{< highlight html >}}
+<table class="opening-times">
+  <thead>
+  <tr>
+    <th>Opening times</th>
+    <th>
+      <span class="state state--open">open</span>
+    </th>
+  </tr>
+  </thead>
+</table>
+
+<table class="opening-times">
+  <thead>
+  <tr>
+    <th>Opening times</th>
+    <th>
+      <span class="state state--closed">closed</span>
+    </th>
+  </tr>
+  </thead>
+</table>
+
+<table class="opening-times">
+  <thead>
+  <tr>
+    <th>Opening times</th>
+    <th>
+      <span class="state state--unknown">unknown</span>
+    </th>
+  </tr>
+  </thead>
+</table>
+{{< /highlight >}}
+
 ## CSS
 
 ### Variables

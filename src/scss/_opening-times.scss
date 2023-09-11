@@ -1,0 +1,30 @@
+.opening-times {
+  // scss-docs-start opening-times-css-vars
+  --#{$prefix}opening-times-align: #{$opening-times-align};
+  --#{$prefix}opening-times-padding-x: #{$opening-times-padding-x};
+  --#{$prefix}opening-times-padding-y-head: #{$opening-times-padding-y-head};
+  --#{$prefix}opening-times-padding-y-body: #{$opening-times-padding-y-body};
+  // scss-docs-end opening-times-css-vars
+
+  @extend .table;
+  @extend .table-striped;
+
+  > :not(caption) > * > * {
+    padding: $table-cell-padding-y $table-cell-padding-x;
+  }
+
+  th {
+    padding: var(--#{$prefix}opening-times-padding-y-head) var(--#{$prefix}opening-times-padding-x);
+    vertical-align: middle;
+  }
+
+  td {
+    padding: var(--#{$prefix}opening-times-padding-y-body) var(--#{$prefix}opening-times-padding-x);
+    vertical-align: var(--#{$prefix}opening-times-align);
+  }
+
+  tbody td > * {
+    display: block;
+    white-space: nowrap;
+  }
+}

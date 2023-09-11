@@ -89,7 +89,6 @@ $icon-circle-font-size-sm:            $font-size-base * .875 !default;
 $icon-circle-padding-y-lg:            .5rem !default;
 $icon-circle-padding-x-lg:            1rem !default;
 $icon-circle-font-size-lg:            $font-size-base * 1.25 !default;
-
 // scss-docs-end icon-circle-variables
 
 // Badges
@@ -137,3 +136,11 @@ $audio-player-name-color: var(--#{$prefix}secondary-color) !default;
 $audio-player-name-font-size: .875rem !default;
 $audio-player-name-font-weight: normal !default;
 // scss-docs-end audio-player-variables
+
+// Opening times
+// scss-docs-start opening-times-variables
+$opening-times-align:          'middle' !default;
+$opening-times-padding-x:      .5rem !default;
+$opening-times-padding-y-head: 1rem !default;
+$opening-times-padding-y-body: .5rem !default;
+// scss-docs-end opening-times-variables

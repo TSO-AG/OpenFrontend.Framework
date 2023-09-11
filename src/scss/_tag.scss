@@ -4,6 +4,7 @@
   --#{$prefix}tag-list-gap-y: #{$tag-list-gap-y};
   // scss-docs-start tag-list-css-vars
   display: flex;
+  flex-wrap: wrap;
   row-gap: var(--#{$prefix}tag-list-gap-y);
   column-gap: var(--#{$prefix}tag-list-gap-x);
 }

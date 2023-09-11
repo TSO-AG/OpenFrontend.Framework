@@ -1,5 +1,18 @@
 .search-form {
+  label {
+    @include visually-hidden;
+  }
+
   &-inputs {
     @extend .input-group;
+
+    input {
+      @extend .form-control;
+    }
+
+    button {
+      @extend .btn;
+      @extend .btn-primary;
+    }
   }
 }

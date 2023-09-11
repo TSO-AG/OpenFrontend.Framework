@@ -8,20 +8,20 @@ toc: true
 
 ## Examples
 
-### Basic example
+### Search form
 This example demonstrates a quick and easy way to add the Search component to your webpage:
 
 {{< example >}}
-<form>
-    <label for="search-form-keywords" class="visually-hidden">Search</label>
+<form class="search-form">
+  <label for="search-form-keywords">Search</label>
 
-    <div class="input-group">
-        <input type="search" id="search-form-keywords" class="form-control" name="keywords" placeholder="Search…">
-        <button type="submit" class="btn btn-primary">
-            <i class="ofi-search"></i>
-            <span class="visually-hidden">Search</span>
-        </button>
-    </div>
+  <div class="search-form-inputs">
+    <input type="search" id="search-form-keywords" name="keywords" placeholder="Search…">
+    <button type="submit">
+      <i class="ofi-search"></i>
+      <span class="visually-hidden">Search</span>
+    </button>
+  </div>
 </form>
 {{< /example >}}
 
@@ -29,24 +29,23 @@ This example demonstrates a quick and easy way to add the Search component to yo
 You can add the autocomplete feature to the Search component using the `<datalist>` element, which allows a user to pick up the suggestions from the predefined list of options:
 
 {{< example >}}
-<form>
-    <label for="search-form-keywords" class="visually-hidden">Search</label>
+<form class="search-form">
+  <label for="search-form-keywords">Search</label>
 
-    <div class="input-group">
-        <input type="search" list="search-autocomplete" id="search-form-keywords" class="form-control" name="keywords" placeholder="Search…" autocomplete="off">
-        <button type="submit" class="btn btn-primary">
-            <i class="ofi-search"></i>
-            <span class="visually-hidden">Search</span>
-        </button>
-    </div>
+  <div class="search-form-inputs">
+    <input type="search" list="search-autocomplete" id="search-form-keywords" name="keywords" placeholder="Type something…" autocomplete="off">
+    <button type="submit">Search</button>
+  </div>
 
-    <datalist id="search-autocomplete">
-        <option value="Chocolate"></option>
-        <option value="Coconut"></option>
-        <option value="Mint"></option>
-        <option value="Strawberry"></option>
-        <option value="Vanilla"></option>
-    </datalist>
+  <div class="form-text">Hint: use the search suggestions for more accurate search results.</div>
+
+  <datalist id="search-autocomplete">
+    <option value="Chocolate"></option>
+    <option value="Coconut"></option>
+    <option value="Mint"></option>
+    <option value="Strawberry"></option>
+    <option value="Vanilla"></option>
+  </datalist>
 </form>
 {{< /example >}}
 

@@ -15,9 +15,9 @@ This section provides an example of how to add copyright links and text informat
 {{< example >}}
 <div class="copyright copyright-horizontal">
   <ul class="copyright-links">
-    <li><a href="#">Privacy policy</a></li>
-    <li><a href="#">Imprint</a></li>
-    <li><a href="#">AGB</a></li>
+    <li><a href="#" title="Privacy policy">Privacy policy</a></li>
+    <li><a href="#" title="Imprint">Imprint</a></li>
+    <li><a href="#" title="GTC">GTC</a></li>
   </ul>
 
   <div class="copyright-text">&copy; 2023 by Acme Inc.</div>
@@ -31,9 +31,9 @@ You can display the copyright information in the vertical layout as well:
 {{< example >}}
 <div class="copyright copyright-vertical">
   <ul class="copyright-links">
-    <li><a href="#">Privacy policy</a></li>
-    <li><a href="#">Imprint</a></li>
-    <li><a href="#">AGB</a></li>
+    <li><a href="#" title="Privacy policy">Privacy policy</a></li>
+    <li><a href="#" title="Imprint">Imprint</a></li>
+    <li><a href="#" title="GTC">GTC</a></li>
   </ul>
 
   <div class="copyright-text">&copy; 2023 by Acme Inc.</div>

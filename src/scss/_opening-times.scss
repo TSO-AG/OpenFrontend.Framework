@@ -13,6 +13,18 @@
     padding: $table-cell-padding-y $table-cell-padding-x;
   }
 
+  thead .state {
+    --#{$prefix}state-bg: none;
+    --#{$prefix}state-color: inherit;
+    padding-left: 0;
+
+    @each $color, $value in $state-statuses {
+      &.state--#{$color} {
+        --#{$prefix}state-color: #{$value};
+      }
+    }
+  }
+
   th {
     padding: var(--#{$prefix}opening-times-padding-y-head) var(--#{$prefix}opening-times-padding-x);
     vertical-align: middle;

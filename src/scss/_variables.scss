@@ -199,6 +199,8 @@ $state-statuses: (
   "unknown": #ebbe5b,
   "closed": #e55f60,
 ) !default;
+$state-icon-color: #fff !default;
+$state-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='#{$state-icon-color}' d='M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z'/></svg>") !default;
 // scss-docs-end state-variables
 
 // Rating
@@ -238,7 +240,7 @@ $labels-min-border-color: var(--#{$prefix}border-color) !default;
 $labels-min-border-radius: var(--#{$prefix}border-radius) !default;
 $labels-min-box-shadow: var(--#{$prefix}box-shadow-sm) !default;
 
-$labels-min-item-padding: .5rem !default;
+$labels-min-item-padding: .4rem !default;
 $labels-min-item-bg: var(--#{$prefix}gray-100) !default;
 $labels-min-item-border-width: var(--#{$prefix}border-width) !default;
 $labels-min-item-border-color: var(--#{$prefix}border-color) !default;

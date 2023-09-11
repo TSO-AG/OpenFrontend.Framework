@@ -67,17 +67,19 @@
   --#{$prefix}state-font-weight: #{$state-font-weight};
   --#{$prefix}state-color: #{$state-color};
   --#{$prefix}state-border-radius: #{$state-border-radius};
+  --#{$prefix}state-icon: #{escape-svg($state-icon)};
   // scss-docs-end state-css-vars
   display: inline-flex;
   column-gap: var(--#{$prefix}state-gap);
   padding: var(--#{$prefix}state-padding-y) var(--#{$prefix}state-padding-x);
-  @include font-size(var(--#{$prefix}state-font-size));
   font-weight: var(--#{$prefix}state-font-weight);
   line-height: 1;
   color: var(--#{$prefix}state-color);
   text-align: center;
+  text-transform: uppercase;
   white-space: nowrap;
   background-color: var(--#{$prefix}state-bg);
+  @include font-size(var(--#{$prefix}state-font-size));
   @include border-radius(var(--#{$prefix}state-border-radius));
 
   // Empty states collapse automatically
@@ -90,6 +92,8 @@
     height: 1em;
     content: "";
     background-color: var(--#{$prefix}state-badge-color);
+    background-image: var(--#{$prefix}state-icon);
+    background-size: contain;
     @include border-radius(50%);
   }
 
@@ -97,6 +101,10 @@
     &.state--#{$color} {
       --#{$prefix}state-badge-color: #{$value};
     }
+  }
+
+  &.state--open { // stylelint-disable-line selector-class-pattern
+    --#{$prefix}state-icon: null;
   }
 }
 

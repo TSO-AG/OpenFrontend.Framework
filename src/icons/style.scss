@@ -3,9 +3,9 @@
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?ishavp') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?ishavp') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?ishavp##{$icomoon-font-family}') format('svg');
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?wj9u4a') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?wj9u4a') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?wj9u4a##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,74 +26,79 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ofi-search {
+  &:before {
+    content: $ofi-search; 
+  }
+}
 .ofi-star-fill {
   &:before {
-    content: $ofi-star-fill;
+    content: $ofi-star-fill; 
   }
 }
 .ofi-question-circle-fill {
   &:before {
-    content: $ofi-question-circle-fill;
+    content: $ofi-question-circle-fill; 
   }
 }
 .ofi-arrow-right {
   &:before {
-    content: $ofi-arrow-right;
+    content: $ofi-arrow-right; 
   }
 }
 .ofi-arrow-left {
   &:before {
-    content: $ofi-arrow-left;
+    content: $ofi-arrow-left; 
   }
 }
 .ofi-arrow-down {
   &:before {
-    content: $ofi-arrow-down;
+    content: $ofi-arrow-down; 
   }
 }
 .ofi-arrow-up {
   &:before {
-    content: $ofi-arrow-up;
+    content: $ofi-arrow-up; 
   }
 }
 .ofi-caret-down-fill {
   &:before {
-    content: $ofi-caret-down-fill;
+    content: $ofi-caret-down-fill; 
   }
 }
 .ofi-caret-left-fill {
   &:before {
-    content: $ofi-caret-left-fill;
+    content: $ofi-caret-left-fill; 
   }
 }
 .ofi-caret-right-fill {
   &:before {
-    content: $ofi-caret-right-fill;
+    content: $ofi-caret-right-fill; 
   }
 }
 .ofi-caret-up-fill {
   &:before {
-    content: $ofi-caret-up-fill;
+    content: $ofi-caret-up-fill; 
   }
 }
 .ofi-heart {
   &:before {
-    content: $ofi-heart;
+    content: $ofi-heart; 
   }
 }
 .ofi-heart-fill {
   &:before {
-    content: $ofi-heart-fill;
+    content: $ofi-heart-fill; 
   }
 }
 .ofi-cart-fill {
   &:before {
-    content: $ofi-cart-fill;
+    content: $ofi-cart-fill; 
   }
 }
 .ofi-link-external {
   &:before {
-    content: $ofi-link-external;
+    content: $ofi-link-external; 
   }
 }
 

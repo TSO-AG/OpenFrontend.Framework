@@ -50,5 +50,12 @@ You can add the autocomplete feature to the Search component using the `<datalis
 {{< /example >}}
 
 ### Search results
+The markup below shows how you can display the search results on your page:
 
-@TODO
+{{< example >}}
+<div class="search-results">
+  <div class="search-result">
+    TODO
+  </div>
+</div>
+{{< /example >}}

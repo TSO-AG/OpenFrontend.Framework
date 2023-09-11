@@ -1,6 +1,6 @@
 .search-form {
   label {
-    @include visually-hidden;
+    @include visually-hidden ();
   }
 
   &-inputs {

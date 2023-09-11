@@ -72,11 +72,13 @@
     - title: Badge
     - title: Breadcrumb
     - title: Buttons
+    - title: Card
     - title: Button group
     - title: Close button
     - title: Collapse
     - title: Dropdowns
     - title: Icons
+    - title: Labels
     - title: List group
     - title: Map
     - title: Modal
@@ -86,6 +88,7 @@
     - title: Pagination
     - title: Ratings
     - title: Spinners
+    - title: Tags
     - title: Tooltips
 
 - title: Helpers

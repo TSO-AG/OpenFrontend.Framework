@@ -20,6 +20,7 @@ export default els => {
     const rating = new Raty(el, {
       ...options,
       starType: 'i',
+      space: false,
       click(number) {
         const event = new CustomEvent('clicked.of.rating', {
           detail: {

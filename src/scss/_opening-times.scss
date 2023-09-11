@@ -4,14 +4,13 @@
   --#{$prefix}opening-times-padding-x: #{$opening-times-padding-x};
   --#{$prefix}opening-times-padding-y-head: #{$opening-times-padding-y-head};
   --#{$prefix}opening-times-padding-y-body: #{$opening-times-padding-y-body};
+  --#{$prefix}opening-times-border-width: #{$opening-times-border-width};
+  --#{$prefix}opening-times-border-color: #{$opening-times-border-color};
   // scss-docs-end opening-times-css-vars
 
   @extend .table;
   @extend .table-striped;
-
-  > :not(caption) > * > * {
-    padding: $table-cell-padding-y $table-cell-padding-x;
-  }
+  border: var(--#{$prefix}opening-times-border-width) solid var(--#{$prefix}opening-times-border-color);
 
   thead .state {
     --#{$prefix}state-bg: none;
@@ -31,6 +30,7 @@
   }
 
   td {
+    --bs-border-width: 0;
     padding: var(--#{$prefix}opening-times-padding-y-body) var(--#{$prefix}opening-times-padding-x);
     vertical-align: var(--#{$prefix}opening-times-align);
   }

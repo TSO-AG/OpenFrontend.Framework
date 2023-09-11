@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadForElements(document.querySelectorAll('[data-of-datepicker]'), () => import(/* webpackChunkName: "open-frontend-datepicker" */ './components/datepicker'))
   loadForElements(document.querySelectorAll('[data-of-table-sort]'), () => import(/* webpackChunkName: "open-frontend-tablesort" */ './components/tablesort'))
   loadForElements(document.querySelectorAll('[data-of-rating]'), () => import(/* webpackChunkName: "open-frontend-rating" */ './components/rating'))
+  loadForElements(document.querySelectorAll('[data-of-video-play]'), () => import(/* webpackChunkName: "open-frontend-video-play" */ './components/video-play'))
 })
 
 window.bootstrap = {

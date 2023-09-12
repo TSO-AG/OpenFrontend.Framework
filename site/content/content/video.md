@@ -61,7 +61,7 @@ To start a video automatically, use the `autoplay` attribute:
 **Note**: Chromium browsers do not allow autoplay in most cases. However, muted autoplay is always allowed.
 {{< /callout >}}
 
-Add `muted` after `autoplay` to let your video start playing automatically (but muted):
+Add `muted` and `playsinline` after `autoplay` to let your video start playing automatically (but muted):
 
 <div class="bd-example">
   <div class="ratio ratio-16x9">
@@ -74,7 +74,7 @@ Add `muted` after `autoplay` to let your video start playing automatically (but 
 
 ```html
 <div class="ratio ratio-16x9">
-  <video autoplay muted>
+  <video autoplay muted playsinline>
     <source src="sample-video.mp4" type="video/mp4">
     <source src="sample-video.ogg" type="video/ogg">
   </video>

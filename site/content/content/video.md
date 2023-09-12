@@ -61,7 +61,7 @@ To start a video automatically, use the `autoplay` attribute:
 **Note**: mobile devices may not allow autoplay in most cases. However, muted autoplay is always allowed.
 {{< /callout >}}
 
-Add `muted` and `playsinline` after `autoplay` to let your video start playing automatically (but muted):
+Add the following attributes: `muted`, `playsinline` and `autoplay`, to let your video start playing automatically (but muted):
 
 <div class="bd-example">
   <div class="ratio ratio-16x9">

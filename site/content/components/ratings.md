@@ -88,62 +88,62 @@ You can also embed static HTML code for a simple rating display, some examples b
 
 {{< example >}}
 <div class="mb-1">
-  <div class="rating rating-lg">
-    <i class="star-on-png"></i>
-    <i class="star-on-png"></i>
-    <i class="star-on-png"></i>
-    <i class="star-half-png"></i>
-    <i class="star-off-png"></i>
+  <div class="rating rating-lg" role="img" aria-label="Rating: 3.5 out of 5 stars">
+    <i class="star-on-png" aria-hidden="true"></i>
+    <i class="star-on-png" aria-hidden="true"></i>
+    <i class="star-on-png" aria-hidden="true"></i>
+    <i class="star-half-png" aria-hidden="true"></i>
+    <i class="star-off-png" aria-hidden="true"></i>
   </div>
 </div>
 
 <div class="mb-1">
-  <div class="rating">
-    <i class="star-on-png"></i>
-    <i class="star-on-png"></i>
-    <i class="star-on-png"></i>
-    <i class="star-half-png"></i>
-    <i class="star-off-png"></i>
+  <div class="rating" role="img" aria-label="Rating: 3.5 out of 5 stars">
+    <i class="star-on-png" aria-hidden="true"></i>
+    <i class="star-on-png" aria-hidden="true"></i>
+    <i class="star-on-png" aria-hidden="true"></i>
+    <i class="star-half-png" aria-hidden="true"></i>
+    <i class="star-off-png" aria-hidden="true"></i>
   </div>
 </div>
 
 <div class="mb-4">
-  <div class="rating rating-sm">
-    <i class="star-on-png"></i>
-    <i class="star-on-png"></i>
-    <i class="star-on-png"></i>
-    <i class="star-half-png"></i>
-    <i class="star-off-png"></i>
+  <div class="rating rating-sm" role="img" aria-label="Rating: 3.5 out of 5 stars">
+    <i class="star-on-png" aria-hidden="true"></i>
+    <i class="star-on-png" aria-hidden="true"></i>
+    <i class="star-on-png" aria-hidden="true"></i>
+    <i class="star-half-png" aria-hidden="true"></i>
+    <i class="star-off-png" aria-hidden="true"></i>
   </div>
 </div>
 
 <div class="mb-1">
-  <div class="rating rating-lg">
-    <i class="star-on-png ofi-heart-fill"></i>
-    <i class="star-on-png ofi-heart-fill"></i>
-    <i class="star-on-png ofi-heart-fill"></i>
-    <i class="star-half-png ofi-heart-fill"></i>
-    <i class="star-off-png ofi-heart-fill"></i>
+  <div class="rating rating-lg" role="img" aria-label="Rating: 3.5 out of 5 stars">
+    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-half-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-off-png ofi-heart-fill" aria-hidden="true"></i>
   </div>
 </div>
 
 <div class="mb-1">
-  <div class="rating">
-    <i class="star-on-png ofi-heart-fill"></i>
-    <i class="star-on-png ofi-heart-fill"></i>
-    <i class="star-on-png ofi-heart-fill"></i>
-    <i class="star-half-png ofi-heart-fill"></i>
-    <i class="star-off-png ofi-heart-fill"></i>
+  <div class="rating" role="img" aria-label="Rating: 3.5 out of 5 stars">
+    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-half-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-off-png ofi-heart-fill" aria-hidden="true"></i>
   </div>
 </div>
 
 <div>
-  <div class="rating rating-sm">
-    <i class="star-on-png ofi-heart-fill"></i>
-    <i class="star-on-png ofi-heart-fill"></i>
-    <i class="star-on-png ofi-heart-fill"></i>
-    <i class="star-half-png ofi-heart-fill"></i>
-    <i class="star-off-png ofi-heart-fill"></i>
+  <div class="rating rating-sm" role="img" aria-label="Rating: 3.5 out of 5 stars">
+    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-half-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-off-png ofi-heart-fill" aria-hidden="true"></i>
   </div>
 </div>
 

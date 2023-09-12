@@ -49,13 +49,33 @@ You can add the autocomplete feature to the Search component using the `<datalis
 </form>
 {{< /example >}}
 
-### Search results
-The markup below shows how you can display the search results on your page:
+### Search result
+The markup below shows how you can display the search result on your page:
 
 {{< example >}}
-<div class="search-results">
-  <div class="search-result">
-    TODO
+<div class="search-result">
+  <figure class="search-result-image">
+    {{< placeholder width="200" height="200" text="Preview">}}
+  </figure>
+
+  <div class="search-result-content">
+    <h4><a href="#">Mea culpa</a></h4>
+    <p>Incididunt id commodo laboris. Laborum <mark>culpa</mark> anim excepteur duis tempor exercitation consectetur deserunt aliqua duis nostrud <mark>culpa</mark>. Mollit id ut id sunt magna amet.</p>
+    <p class="search-result-url">https://example.tld/lorem/mea-culpa.html</p>
   </div>
 </div>
 {{< /example >}}
+
+## CSS
+
+### Variables
+
+Search result variables:
+
+{{< scss-docs name="search-result-css-vars" file="src/scss/_search.scss" >}}
+
+### Sass variables
+
+Search result variables:
+
+{{< scss-docs name="search-result-variables" file="src/scss/_variables.scss" >}}

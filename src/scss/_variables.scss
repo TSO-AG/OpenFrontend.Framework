@@ -160,6 +160,11 @@ $card-info-font-size: .8rem !default;
 $card-info-spacer-y: $spacer * .5 !default;
 $card-action-button-gap: .25rem !default;
 $card-tags-spacer-y: $spacer * .75 !default;
+$card-title-link-color: null !default;
+$card-title-link-decoration: null !default;
+$card-title-link-hover-color: null !default;
+$card-title-link-hover-decoration: null !default;
+
 // scss-docs-end card-variables
 
 // Price

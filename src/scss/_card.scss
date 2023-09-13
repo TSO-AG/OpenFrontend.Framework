@@ -5,6 +5,10 @@
   --#{$prefix}card-info-font-size: #{$card-info-font-size};
   --#{$prefix}card-action-button-gap: #{$card-action-button-gap};
   --#{$prefix}card-tags-spacer-y: #{$card-tags-spacer-y};
+  --#{$prefix}card-title-link-color: #{$card-title-link-color};
+  --#{$prefix}card-title-link-decoration: #{$card-title-link-decoration};
+  --#{$prefix}card-title-link-hover-color: #{$card-title-link-hover-color};
+  --#{$prefix}card-title-link-hover-decoration: #{$card-title-link-hover-decoration};
   // scss-docs-end card-css-vars
 }
 
@@ -51,6 +55,10 @@
   }
 }
 
+.card-body {
+  position: relative;
+}
+
 .card-info {
   margin-bottom: var(--#{$prefix}card-info-spacer-y);
   font-size: var(--#{$prefix}card-info-font-size);
@@ -62,6 +70,7 @@
 }
 
 .card-action {
+  position: relative;
   display: flex;
   align-items: center;
   padding: var(--#{$prefix}card-cap-padding-y) var(--#{$prefix}card-cap-padding-x);
@@ -79,6 +88,11 @@
     gap: var(--#{$prefix}card-action-button-gap);
     justify-content: flex-end;
     margin-left: auto;
+
+    > *:not(.stretched-link) {
+      position: relative;
+      z-index: $stretched-link-z-index + 1;
+    }
   }
 }
 
@@ -88,6 +102,18 @@
 
   .card-title {
     @include text-truncate();
+  }
+}
+
+.card-title {
+  a {
+    color: var(--#{$prefix}card-title-link-color);
+    text-decoration: var(--#{$prefix}card-title-link-decoration);
+
+    &:hover {
+      color: var(--#{$prefix}card-title-link-hover-color);
+      text-decoration: var(--#{$prefix}card-title-link-hover-decoration);
+    }
   }
 }
 

@@ -56,7 +56,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
     <div class="card-title-rating">
-      <h3 class="card-title">Card title</h3>
+      <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
       <div class="card-title-star">
         <div class="rating rating-sm">
           <i class="star-on-png"></i>
@@ -101,7 +101,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -150,7 +150,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
     <div class="card-title-rating">
-      <h3 class="card-title">Card title</h3>
+      <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
       <div class="card-title-star">
         <div class="rating rating-sm">
           <i class="star-on-png"></i>
@@ -195,7 +195,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -241,7 +241,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
-    <h3 class="card-title">Card title</h3>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="card-tags">
       <div class="tag-list">
@@ -267,7 +267,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -312,7 +312,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
     <div class="card-title-rating">
-      <h3 class="card-title">Card title</h3>
+      <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
       <div class="card-title-star">
         <div class="rating rating-sm">
           <i class="star-on-png"></i>
@@ -348,7 +348,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -385,7 +385,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
-    <h3 class="card-title">Card title</h3>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="card-tags">
       <div class="tag-list">
@@ -414,7 +414,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -450,7 +450,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
   <div class="card-body">
     <h5 class="card-info">St. Gallen, 29.06.23 - 02.07.23</h5>
-    <h3 class="card-title">Card title</h3>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="card-tags">
       <div class="tag-list">
@@ -476,7 +476,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -500,7 +500,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
-    <h3 class="card-title">Card title</h3>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 
@@ -518,7 +518,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -547,7 +547,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
-    <h3 class="card-title">Card title</h3>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 
@@ -556,7 +556,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -577,7 +577,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
-    <h3 class="card-title">Card title</h3>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 
@@ -586,7 +586,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -1019,7 +1019,7 @@ Using a combination of grid and utility classes, cards can be made horizontal in
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
     <div class="card-title-rating">
-      <h3 class="card-title">Card title</h3>
+      <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
       <div class="card-title-star">
         <div class="rating rating-sm">
           <i class="star-on-png"></i>
@@ -1064,7 +1064,7 @@ Using a combination of grid and utility classes, cards can be made horizontal in
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>

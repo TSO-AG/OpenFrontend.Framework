@@ -80,7 +80,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <div class="user-rating__icon">
         <i class="ofi-people-fill"></i>
       </div>
-      <div class="user-rating__label">User user-rating:</div>
+      <div class="user-rating__label">User-Rating:</div>
       <div class="user-rating__score">
         <span class="user-rating__score-value text-success">4.5</span>/<span class="user-rating__score-total">5</span>
       </div>
@@ -174,7 +174,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <div class="user-rating__icon">
         <i class="ofi-people-fill"></i>
       </div>
-      <div class="user-rating__label">User user-rating:</div>
+      <div class="user-rating__label">User-Rating:</div>
       <div class="user-rating__score">
         <span class="user-rating__score-value text-success">4.5</span>/<span class="user-rating__score-total">5</span>
       </div>
@@ -336,7 +336,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <div class="user-rating__icon">
         <i class="ofi-people-fill"></i>
       </div>
-      <div class="user-rating__label">User user-rating:</div>
+      <div class="user-rating__label">User-Rating:</div>
       <div class="user-rating__score">
         <span class="user-rating__score-value text-success">4.5</span>/<span class="user-rating__score-total">5</span>
       </div>
@@ -399,7 +399,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <div class="user-rating__icon">
         <i class="ofi-people-fill"></i>
       </div>
-      <div class="user-rating__label">User user-rating:</div>
+      <div class="user-rating__label">User-Rating:</div>
       <div class="user-rating__score">
         <span class="user-rating__score-value text-success">4.5</span>/<span class="user-rating__score-total">5</span>
       </div>
@@ -1043,7 +1043,7 @@ Using a combination of grid and utility classes, cards can be made horizontal in
       <div class="user-rating__icon">
         <i class="ofi-people-fill"></i>
       </div>
-      <div class="user-rating__label">User user-rating:</div>
+      <div class="user-rating__label">User-Rating:</div>
       <div class="user-rating__score">
         <span class="user-rating__score-value text-success">4.5</span>/<span class="user-rating__score-total">5</span>
       </div>

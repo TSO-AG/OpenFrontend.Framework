@@ -179,8 +179,9 @@
   @container (max-width: 820px) {
     .card-media {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       gap: .5rem;
+      align-content: flex-start;
 
       &__visual {
         position: absolute;
@@ -196,11 +197,21 @@
       }
 
       &__content {
-        position: relative;
-        max-width: calc(100% - var(--#{$prefix}card-spacer-x) * 2); // stylelint-disable-line function-disallowed-list
+        &--top-left,
+        &--top-right {
+          position: relative;
+          max-width: unset;
+        }
+
+        &--top-left {
+          left: 0;
+          margin-left: var(--#{$prefix}card-spacer-x);
+        }
 
         &--top-right {
-          left: var(--bs-card-spacer-x);
+          right: 0;
+          margin-right: var(--#{$prefix}card-spacer-x);
+          margin-left: auto;
         }
 
         &--bottom-right {
@@ -215,7 +226,7 @@
     }
   }
 
-  @container (max-width: 520px) {
+  @container (max-width: 620px) {
     .card-media {
       &__content {
         &--top-left,

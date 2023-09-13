@@ -39,14 +39,14 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
         <span class="labels-min-label">+1</span>
       </div>
@@ -133,14 +133,14 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
         <span class="labels-min-label">+1</span>
       </div>
@@ -229,11 +229,11 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
       </div>
     </div>
@@ -295,14 +295,14 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
         <span class="labels-min-label">+1</span>
       </div>
@@ -376,8 +376,8 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
       </div>
     </div>
@@ -1002,14 +1002,14 @@ Using a combination of grid and utility classes, cards can be made horizontal in
     </div>
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
         <span class="labels-min-label">+1</span>
       </div>

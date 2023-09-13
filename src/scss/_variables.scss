@@ -245,14 +245,17 @@ $labels-min-border-color: var(--#{$prefix}border-color) !default;
 $labels-min-border-radius: var(--#{$prefix}border-radius) !default;
 $labels-min-box-shadow: var(--#{$prefix}box-shadow-sm) !default;
 
-$labels-min-item-padding: .4rem !default;
+$labels-min-item-padding: null !default;
 $labels-min-item-bg: var(--#{$prefix}gray-100) !default;
-$labels-min-item-border-width: var(--#{$prefix}border-width) !default;
-$labels-min-item-border-color: var(--#{$prefix}border-color) !default;
+$labels-min-item-border-style: null !default;
+$labels-min-item-border-width: null !default;
+$labels-min-item-border-color: null !default;
 $labels-min-item-border-radius: var(--#{$prefix}border-radius) !default;
-$labels-min-item-box-shadow: var(--#{$prefix}box-shadow-sm) !default;
+$labels-min-item-box-shadow: null !default;
+$labels-min-item-width: 36px !default;
+$labels-min-item-height: 36px !default;
 
-$labels-min-label-padding: .5rem !default;
+$labels-min-label-padding: 0 .4em !default;
 $labels-min-label-font-size: 1rem !default;
 $labels-min-label-font-weight: 700 !default;
 $labels-min-label-color: null !default;

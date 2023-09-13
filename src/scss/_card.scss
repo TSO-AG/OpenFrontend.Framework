@@ -22,12 +22,20 @@
 
   &__content {
     position: absolute;
-    max-width: calc(50% - var(--#{$prefix}card-spacer-x)); // stylelint-disable-line function-disallowed-list
-    max-height: calc(50% - var(--#{$prefix}card-spacer-y)); // stylelint-disable-line function-disallowed-list
 
     &--no-gap {
       --#{$prefix}card-spacer-x: 0;
       --#{$prefix}card-spacer-y: 0;
+    }
+
+    &--top-left,
+    &--bottom-left {
+      max-width: calc(40% - var(--#{$prefix}card-spacer-x)); // stylelint-disable-line function-disallowed-list
+    }
+
+    &--top-right,
+    &--bottom-right {
+      max-width: calc(60% - var(--#{$prefix}card-spacer-x)); // stylelint-disable-line function-disallowed-list
     }
 
     &--top-left {

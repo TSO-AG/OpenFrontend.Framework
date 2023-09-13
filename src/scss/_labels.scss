@@ -7,8 +7,11 @@
   --#{$prefix}labels-min-border-color: #{$labels-min-border-color};
   --#{$prefix}labels-min-border-radius: #{$labels-min-border-radius};
   --#{$prefix}labels-min-box-shadow: #{$labels-min-box-shadow};
+  --#{$prefix}labels-min-item-width: #{$labels-min-item-width};
+  --#{$prefix}labels-min-item-height: #{$labels-min-item-height};
   --#{$prefix}labels-min-item-padding: #{$labels-min-item-padding};
   --#{$prefix}labels-min-item-bg: #{$labels-min-item-bg};
+  --#{$prefix}labels-min-item-border-style: #{$labels-min-item-border-style};
   --#{$prefix}labels-min-item-border-width: #{$labels-min-item-border-width};
   --#{$prefix}labels-min-item-border-color: #{$labels-min-item-border-color};
   --#{$prefix}labels-min-item-border-radius: #{$labels-min-item-border-radius};
@@ -35,10 +38,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: var(--#{$prefix}labels-min-item-width);
+  height: var(--#{$prefix}labels-min-item-height);
   aspect-ratio: var(--#{$prefix}aspect-ratio);
   padding: var(--#{$prefix}labels-min-item-padding);
+  overflow: hidden;
   background-color: var(--#{$prefix}labels-min-item-bg);
-  border: var(--#{$prefix}labels-min-item-border-width) solid var(--#{$prefix}labels-min-item-border-color);
+  border: var(--#{$prefix}labels-min-item-border-width) var(--#{$prefix}labels-min-item-border-style) var(--#{$prefix}labels-min-item-border-color);
   @include border-radius(var(--#{$prefix}labels-min-item-border-radius));
   @include box-shadow(var(--#{$prefix}labels-min-label-text-decoration));
 
@@ -49,10 +55,9 @@
   }
 
   img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     vertical-align: middle;
-    object-fit: contain;
   }
 }
 

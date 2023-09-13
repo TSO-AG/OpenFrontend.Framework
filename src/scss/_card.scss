@@ -15,6 +15,11 @@
 .card-media {
   position: relative;
 
+  &:first-child {
+    @include border-radius(var(--#{$prefix}card-inner-border-radius) var(--#{$prefix}card-inner-border-radius) 0 0);
+    overflow: hidden;
+  }
+
   &__content {
     position: absolute;
     max-width: calc(50% - var(--#{$prefix}card-spacer-x)); // stylelint-disable-line function-disallowed-list
@@ -128,12 +133,15 @@
   grid-template-rows: auto auto 1fr auto;
   grid-template-columns: 30% 70%;
   gap: 0 0;
-  overflow: hidden;
   container-type: inline-size;
 
   .card-media {
     grid-area: media;
     height: 100%;
+
+    &:first-child {
+      @include border-radius(var(--#{$prefix}card-inner-border-radius) 0 0 var(--#{$prefix}card-inner-border-radius));
+    }
 
     &__visual {
       height: 100%;

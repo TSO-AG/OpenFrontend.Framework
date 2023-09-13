@@ -1,0 +1,10 @@
+.pagination-dropdown {
+  display: flex;
+
+  select {
+    cursor: pointer;
+    margin-left: $pagination-padding-x;
+    margin-right: $pagination-padding-x;
+    text-align: center;
+  }
+}

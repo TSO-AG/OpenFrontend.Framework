@@ -158,6 +158,29 @@ Or with `.justify-content-end`:
 </nav>
 {{< /example >}}
 
+## Dropdown pagination
+
+Alternatively, you can display the pagination as a dropdown:
+
+{{< example >}}
+<nav class="pagination-dropdown" aria-label="Page navigation example">
+  <button class="btn btn-square btn-primary">
+    <i class="ofi-arrow-left"></i>
+  </button>
+
+  <label for="pagination" class="visually-hidden">Pagination</label>
+  <select id="pagination" class="form-control">
+    <option>Page 1</option>
+    <option>Page 2</option>
+    <option>Page 3</option>
+  </select>
+
+  <button class="btn btn-square btn-primary">
+    <i class="ofi-arrow-right"></i>
+  </button>
+</nav>
+{{< /example >}}
+
 ## CSS
 
 ### Variables

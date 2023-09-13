@@ -15,21 +15,21 @@
   position: fixed;
   top: 0;
   left: 0;
-  visibility: hidden;
-  pointer-events: none;
+  z-index: var(--#{$prefix}ticker-z-index);
+  box-sizing: border-box;
   width: 100%;
   height: var(--#{$prefix}ticker-height);
-  z-index: var(--#{$prefix}ticker-z-index);
-  background-color: var(--#{$prefix}ticker-bg-color);
-  color: var(--#{$prefix}ticker-color);
   font-size: var(--#{$prefix}ticker-font-size);
   line-height: 1;
-  box-sizing: border-box;
+  color: var(--#{$prefix}ticker-color);
+  pointer-events: none;
+  visibility: hidden;
+  background-color: var(--#{$prefix}ticker-bg-color);
 
-  body.ticker-show & {
+  body.ticker-show & { // stylelint-disable-line selector-no-qualifying-type
     position: static;
-    visibility: visible;
     pointer-events: auto;
+    visibility: visible;
   }
 
   * {
@@ -39,8 +39,8 @@
 
 .ticker-items {
   position: relative;
-  height: 100%;
   max-width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -48,12 +48,12 @@
   position: absolute;
   top: 0;
   left: 100%;
-  min-width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
-  padding-left: var(--#{$prefix}ticker-item-padding);
+  min-width: 100%;
+  height: 100%;
   padding-right: var(--#{$prefix}ticker-item-padding);
+  padding-left: var(--#{$prefix}ticker-item-padding);
   white-space: nowrap;
 }
 

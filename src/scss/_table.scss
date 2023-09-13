@@ -1,3 +1,4 @@
+// stylelint-disable selector-max-attribute
 [data-of-table-sort] {
   // scss-docs-start table-sort-css-vars
   --#{$prefix}table-sort-padding-x: #{$table-sort-padding-x};

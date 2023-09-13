@@ -61,7 +61,7 @@ Here is the list of all available options (alphabetically):
 {{< bs-table "table" >}}
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
-| `bodyCssClass` | `String` | `ticker-show` | The CSS class that is added to the `<body>` element to show the ticker. |
+| `bodyCssClass` | `String` | `'ticker-show'` | The CSS class that is added to the `<body>` element to show the ticker. |
 | `pauseOnHover` | `Boolean` | `true` | Pause the scroll on mouse hover. |
 | `speedBreakpoint` | `Number` | `767` | The screen width in pixels determining the ticker speed on mobile/desktop. |
 | `speedDesktop` | `Number` | `2` | The ticker speed (pixels to move on each iteration) on desktop. |

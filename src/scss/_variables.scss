@@ -137,3 +137,18 @@ $audio-player-name-color: var(--#{$prefix}secondary-color) !default;
 $audio-player-name-font-size: .875rem !default;
 $audio-player-name-font-weight: normal !default;
 // scss-docs-end audio-player-variables
+
+// Ticker
+
+// scss-docs-start ticker-variables
+$ticker-bg-color:                          var(--bs-danger) !default;
+$ticker-color:                             #fff !default;
+$ticker-color-hover:                       inherit !default;
+$ticker-font-size:                         1rem !default;
+$ticker-height:                            3.5rem !default;
+$ticker-icon-spacing:                      1rem !default;
+$ticker-item-padding:                      3rem !default;
+$ticker-text-decoration:                   none !default;
+$ticker-text-decoration-hover:             underline !default;
+$ticker-z-index:                           10 !default;
+// scss-docs-end ticker-variables

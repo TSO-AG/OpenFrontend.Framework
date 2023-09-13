@@ -129,11 +129,12 @@ $table-sort-indicator-desc:           url("data:image/svg+xml, <svg xmlns='http:
 // scss-docs-end table-sort-variables
 
 // Audio player
+
 // scss-docs-start audio-player-variables
-$audio-player-title-color: null !default;
-$audio-player-title-font-size: 1.15rem !default;
-$audio-player-title-font-weight: bolder !default;
-$audio-player-name-color: var(--#{$prefix}secondary-color) !default;
-$audio-player-name-font-size: .875rem !default;
-$audio-player-name-font-weight: normal !default;
+$audio-player-title-color:                   null !default;
+$audio-player-title-font-size:               1.15rem !default;
+$audio-player-title-font-weight:             bolder !default;
+$audio-player-name-color:                    var(--#{$prefix}secondary-color) !default;
+$audio-player-name-font-size:                .875rem !default;
+$audio-player-name-font-weight:              normal !default;
 // scss-docs-end audio-player-variables

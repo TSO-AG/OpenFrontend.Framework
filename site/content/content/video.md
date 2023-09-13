@@ -58,7 +58,7 @@ To start a video automatically, use the `autoplay` attribute:
 ```
 
 {{< callout info >}}
-**Note**: mobile devices may not allow autoplay in most cases. However, muted autoplay is always allowed.
+**Note**: some browsers and devices will not allow autoplay in most cases. However, muted autoplay is always allowed. This particular example should be used for purely presentational videos, which do not have any sound.
 {{< /callout >}}
 
 Add the following attributes: `muted`, `playsinline` and `autoplay`, to let your video start playing automatically (but muted):

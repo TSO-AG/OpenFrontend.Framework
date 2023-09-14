@@ -1,64 +1,42 @@
 class Ticker {
   constructor(el) {
-    const config = JSON.parse(el.dataset.ofTicker);
+    const config = el.dataset.ofTicker ? JSON.parse(el.dataset.ofTicker) : {};
     config.bodyCssClass = config.bodyCssClass || 'ticker-show';
+    config.items = config.items || [];
     config.pauseOnHover = config.hasOwnProperty('pauseOnHover') ? config.pauseOnHover : true;
     config.speedBreakpoint = config.speedBreakpoint || 767;
     config.speedDesktop = config.speedDesktop || 2;
     config.speedMobile = config.speedMobile || 1;
 
-    if (!config.url) {
-      throw new Error('The endpoint URL must be specified');
-    }
-
-    this.ticker = [];
     this.el = el;
     this.config = config;
     this.interval = null;
+    this.items = config.items;
     this.paused = false;
 
-    this.tickerContainer = document.createElement('div');
-    this.tickerContainer.className = 'ticker-items';
-    this.el.append(this.tickerContainer);
+    this.itemsContainer = document.createElement('div');
+    this.itemsContainer.className = 'ticker-items';
+    this.el.append(this.itemsContainer);
 
     document.body.prepend(this.el);
-
-    this.fetchData().then(() => this.initTicker());
-
+    this.initTicker();
     window.addEventListener('resize', () => this.resizeTicker());
   }
 
-  setItems(ticker) {
-    this.ticker = ticker;
-  }
+  setItems(items) {
+    this.items = items;
 
-  fetchData() {
-    return fetch(this.config.url)
-      .then(response => {
-        const maxAge = /max-age=(\d+)/.exec(response.headers.get('cache-control'));
-        let timeout = 30; // in seconds
-
-        // Determine the timeout until the next request
-        if (maxAge !== null && maxAge[1] > 0) {
-          timeout = parseInt(maxAge[1]);
-        }
-
-        setTimeout(() => this.fetchData(), timeout * 1000);
-
-        // Set the ticker
-        return response.json().then(data => this.setItems(data));
-      })
-      .catch(error => {
-        this.hideTicker();
-        console.error(error);
-      })
-      ;
+    if (this.items.length === 0) {
+      this.hideTicker();
+    } else {
+      this.showTicker();
+    }
   }
 
   resizeTicker(updatePosition = true) {
     const width = this.el.getBoundingClientRect().width;
 
-    [...this.tickerContainer.children].forEach(el => {
+    [...this.itemsContainer.children].forEach(el => {
       el.style.minWidth = `${width}px`;
 
       if (updatePosition) {
@@ -68,13 +46,13 @@ class Ticker {
   }
 
   appendItems() {
-    if (this.ticker.length === 0) {
+    if (this.items.length === 0) {
       return;
     }
 
     const elementWidth = this.el.getBoundingClientRect().width;
 
-    this.ticker.forEach(item => {
+    this.items.forEach(item => {
       const div = document.createElement('div');
       div.className = 'ticker-item' + (item.cssClass ? ` ${item.cssClass}` : '');
       div.style.left = `${elementWidth}px`;
@@ -111,7 +89,7 @@ class Ticker {
         div.appendChild(span);
       }
 
-      this.tickerContainer.appendChild(div);
+      this.itemsContainer.appendChild(div);
     });
 
     this.resizeTicker(false);
@@ -119,7 +97,7 @@ class Ticker {
   }
 
   scrollTicker() {
-    if (this.tickerContainer.children.length === 0) {
+    if (this.itemsContainer.children.length === 0) {
       this.appendItems();
     }
 
@@ -128,7 +106,7 @@ class Ticker {
       return;
     }
 
-    const item = this.tickerContainer.children[0];
+    const item = this.itemsContainer.children[0];
 
     if (!item) {
       this.animationFrameId = requestAnimationFrame(this.scrollTicker.bind(this));
@@ -143,7 +121,7 @@ class Ticker {
       this.el.classList.remove(item.dataset.cssClass);
 
       // Hide ticker if there are ticker
-      if (this.tickerContainer.children.length === 1 && this.ticker.length === 0) {
+      if (this.itemsContainer.children.length === 1 && this.items.length === 0) {
         this.hideTicker();
       }
 
@@ -158,11 +136,11 @@ class Ticker {
 
       // Start scrolling the next element if the current one crosses the right border of the window
       if (itemBounds.right <= elementBounds.width) {
-        if (this.tickerContainer.children.length === 1) {
+        if (this.itemsContainer.children.length === 1) {
           this.appendItems();
         }
 
-        const nextItem = this.tickerContainer.children[1];
+        const nextItem = this.itemsContainer.children[1];
 
         if (nextItem) {
           nextItem.style.left = `${parseFloat(item.style.left) + itemBounds.width}px`
@@ -182,13 +160,9 @@ class Ticker {
     }
 
     this.scrollTicker();
-  }
 
-  destroyTicker() {
-    clearInterval(this.interval);
-
-    this.hideTicker();
-    this.tickerContainer.innerHTML = '';
+    this.el.ticker = this;
+    this.el.dispatchEvent(new CustomEvent('initialized.of.ticker'));
   }
 
   getTickerSpeed() {
@@ -200,7 +174,7 @@ class Ticker {
   }
 
   showTicker() {
-    if (this.ticker.length > 0) {
+    if (this.items.length > 0) {
       document.body.classList.add(this.config.bodyCssClass);
       this.paused = false;
     }
@@ -213,5 +187,11 @@ class Ticker {
 }
 
 export default els => {
-  new Ticker(els[0]);
+  const el = els[0];
+
+  if (!el) {
+    return;
+  }
+
+  new Ticker(el);
 }

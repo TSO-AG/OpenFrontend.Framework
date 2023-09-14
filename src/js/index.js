@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadForElements(document.querySelectorAll('[data-of-datepicker]'), () => import(/* webpackChunkName: "open-frontend-datepicker" */ './components/datepicker'))
   loadForElements(document.querySelectorAll('[data-of-table-sort]'), () => import(/* webpackChunkName: "open-frontend-tablesort" */ './components/tablesort'))
   loadForElements(document.querySelectorAll('[data-of-rating]'), () => import(/* webpackChunkName: "open-frontend-rating" */ './components/rating'))
-  loadForElements(document.querySelectorAll('[data-of-ticker]'), () => import(/* webpackChunkName: "open-frontend-rating" */ './components/ticker'))
+  loadForElements(document.querySelectorAll('[data-of-ticker]'), () => import(/* webpackChunkName: "open-frontend-ticker" */ './components/ticker'))
 })
 
 window.bootstrap = {

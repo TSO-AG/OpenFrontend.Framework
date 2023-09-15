@@ -46,12 +46,12 @@ You can fetch the items via Ajax request like shown below:
 <div id="ticker" class="ticker" data-of-ticker></div>
 
 <script>
-  const el = document.getElementById('ticker');
+  const element = document.getElementById('ticker');
 
-  el.addEventListener('initialized.of.ticker', () => {
+  element.addEventListener('initialized.of.ticker', () => {
     fetch('ticker.json')
       .then(r => r.json())
-      .then(items => el.ticker.setItems(items));
+      .then(items => element.ticker.setItems(items));
   });
 </script>
 {{< /example >}}
@@ -108,10 +108,10 @@ const items = [
 {{< /bs-table >}}
 
 ```js
-  const el = document.getElementById('ticker');
+  const element = document.getElementById('ticker');
 
-  el.addEventListener('initialized.of.ticker', () => {
-    el.ticker.setItems([...]);
+  element.addEventListener('initialized.of.ticker', () => {
+    element.ticker.setItems([...]);
   });
 ```
 

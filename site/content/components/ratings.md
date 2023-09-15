@@ -67,6 +67,29 @@ Easily customize your rating icon by setting the icon value to the desired icon 
 
 ## Usage
 
+### Methods
+
+{{< callout danger >}}
+The `element.rating` contains an instance of the rating, including all **private** properties and methods. Use with caution!
+{{< /callout >}}
+
+### Events
+
+{{< bs-table "table" >}}
+| Event | Description |
+| --- | --- |
+| `clicked.of.rating` | This event is fired when a rating star is clicked. |
+{{< /bs-table >}}
+
+```js
+  const element = document.getElementById('rating');
+
+  element.addEventListener('clicked.of.rating', (event) => {
+    alert(`Clicked rating: ${event.detail.rating}`);
+    element.rating.readOnly(true);
+  });
+```
+
 ### Options
 
 You can pass extra options as JSON value of the data attribute.
@@ -77,10 +100,10 @@ Here is the list of all available options (alphabetically):
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
 | `half` | `Boolean` | `false` | Enables half star selection. |
+| `icon` | `String` | `null` | Icon CSS class. |
 | `number` | `Number` | `5` | The number of stars that will be presented. |
 | `readOnly` | `Boolean` | `false` | Turns the rating read-only. |
 | `score` | `Number` | `undefined` | Initial rating. |
-| `icon` | `String` | `null` | Icon class. |
 {{< /bs-table >}}
 
 ## CSS

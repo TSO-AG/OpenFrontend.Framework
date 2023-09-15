@@ -1,9 +1,11 @@
 class Ticker {
   constructor(el) {
     const config = el.dataset.ofTicker ? JSON.parse(el.dataset.ofTicker) : {};
+    config.appendToBody = config.hasOwnProperty('appendToBody') ? config.appendToBody : false;
     config.bodyCssClass = config.bodyCssClass || 'ticker-show';
     config.items = config.items || [];
     config.pauseOnHover = config.hasOwnProperty('pauseOnHover') ? config.pauseOnHover : true;
+    config.prependToBody = config.hasOwnProperty('prependToBody') ? config.prependToBody : false;
     config.speedBreakpoint = config.speedBreakpoint || 767;
     config.speedDesktop = config.speedDesktop || 2;
     config.speedMobile = config.speedMobile || 1;
@@ -18,7 +20,6 @@ class Ticker {
     this.itemsContainer.className = 'ticker-items';
     this.el.append(this.itemsContainer);
 
-    document.body.prepend(this.el);
     this.initTicker();
     window.addEventListener('resize', () => this.resizeTicker());
   }
@@ -113,11 +114,18 @@ class Ticker {
       return;
     }
 
-    const elementBounds = this.el.getBoundingClientRect();
     const itemBounds = item.getBoundingClientRect();
 
+    if (!window.foobar) {
+      console.log(itemBounds);
+      window.foobar = item;
+    }
+
+    // const itemOffset = itemBounds.right;
+    const itemOffset = item.offsetWidth + item.offsetLeft;
+
     // Stop the animation if th element is out of the view already
-    if (itemBounds.right < 0) {
+    if (itemOffset < 0) {
       this.el.classList.remove(item.dataset.cssClass);
 
       // Hide ticker if there are ticker
@@ -135,7 +143,7 @@ class Ticker {
       }
 
       // Start scrolling the next element if the current one crosses the right border of the window
-      if (itemBounds.right <= elementBounds.width) {
+      if (itemOffset <= this.el.offsetWidth) {
         if (this.itemsContainer.children.length === 1) {
           this.appendItems();
         }
@@ -143,7 +151,7 @@ class Ticker {
         const nextItem = this.itemsContainer.children[1];
 
         if (nextItem) {
-          nextItem.style.left = `${parseFloat(item.style.left) + itemBounds.width}px`
+          nextItem.style.left = `${parseFloat(item.style.left) + item.offsetWidth}px`
         }
       }
     }
@@ -152,6 +160,12 @@ class Ticker {
   }
 
   initTicker() {
+    if (this.config.appendToBody) {
+      document.body.append(this.el);
+    } else if (this.config.prependToBody) {
+      document.body.prepend(this.el);
+    }
+
     this.appendItems();
 
     if (this.config.pauseOnHover) {
@@ -187,11 +201,7 @@ class Ticker {
 }
 
 export default els => {
-  const el = els[0];
-
-  if (!el) {
-    return;
+  for (const el of els) {
+    new Ticker(el);
   }
-
-  new Ticker(el);
 }

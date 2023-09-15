@@ -10,7 +10,6 @@ toc: true
 
 Things to know when using the ticker component:
 
-- Only one ticker on the page is supported.
 - Items to be displayed inside the ticker can be passed on initialization, but can also be updated using `ticker.setItems(items)` method.
 - The ticker will be shown/hidden automatically depending on the presence of the items.
 
@@ -20,59 +19,42 @@ Got all that? Great, let's see how they work with some examples.
 
 ### Initialize with items
 
-Use the below code to add a ticker to your page. The ticker will appear at the top of the page.
+Use the below code to add a sample ticker to your page:
 
+{{< example >}}
 <div class="ticker" data-of-ticker='{
   "items": [
     {
-      "content": "Elit laboris commodo elit dolore"
+      "content": "Warning! The OpenFrontend library is here!"
     },
     {
-      "content": "Duis aute reprehenderit voluptate",
+      "content": "You will love it from the first sight!",
       "cssClass": "bg-success",
       "icon": "ofi-heart",
       "newWindow": true,
-      "url": "https://domain.tld"
+      "url": "https://openfrontend.tourismusweb.site/"
     }
   ]
 }'></div>
-
-```html
-<div class="ticker" data-of-ticker='{
-  "items": [
-    {
-      "content": "Elit laboris commodo elit dolore"
-    },
-    {
-      "content": "Duis aute reprehenderit voluptate",
-      "cssClass": "bg-success",
-      "icon": "ofi-heart",
-      "newWindow": true,
-      "url": "https://domain.tld"
-    }
-  ]
-}'></div>
-```
-
-Scroll this page up ⬆️ to see the demo.
+{{< /example >}}
 
 ### Fetch items dynamically
 
 You can fetch the items via Ajax request like shown below:
 
-```html
+{{< example >}}
 <div id="ticker" class="ticker" data-of-ticker></div>
 
 <script>
   const el = document.getElementById('ticker');
 
   el.addEventListener('initialized.of.ticker', () => {
-    fetch('https://domain.tld/ticker.json')
+    fetch('ticker.json')
       .then(r => r.json())
       .then(items => el.ticker.setItems(items));
   });
 </script>
-```
+{{< /example >}}
 
 ## Usage
 
@@ -140,9 +122,11 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 {{< bs-table "table" >}}
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
-| `bodyCssClass` | `String` | `'ticker-show'` | The CSS class that is added to the `<body>` element to show the ticker. |
+| `appendToBody` | `Boolean` | `false` | The ticker element will be appended to the `<body>`. |
+| `bodyCssClass` | `String` | `'ticker-show'` | The CSS class that is added to the `<body>` to show the ticker. |
 | `items` | `Array` | `[]` | The items to be displayed. You can use `el.ticker.setItems()` to dynamically set the items. |
 | `pauseOnHover` | `Boolean` | `true` | Pause the scroll on mouse hover. |
+| `prependToBody` | `Boolean` | `false` | The ticker element will be prepended to the `<body>`. |
 | `speedBreakpoint` | `Number` | `767` | The screen width in pixels determining the ticker speed on mobile/desktop. |
 | `speedDesktop` | `Number` | `2` | The ticker speed (pixels to move on each iteration) on desktop. |
 | `speedMobile` | `Number` | `1` | The ticker speed (pixels to move on each iteration) on mobile devices. |

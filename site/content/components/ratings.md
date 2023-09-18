@@ -82,12 +82,12 @@ The `element.rating` contains an instance of the rating, including all **private
 {{< /bs-table >}}
 
 ```js
-  const element = document.getElementById('rating');
+const element = document.getElementById('rating')
 
-  element.addEventListener('clicked.of.rating', (event) => {
-    alert(`Clicked rating: ${event.detail.rating}`);
-    element.rating.readOnly(true);
-  });
+element.addEventListener('clicked.of.rating', event => {
+  // Clicked rating: event.detail.rating
+  element.rating.readOnly(true)
+})
 ```
 
 ### Options

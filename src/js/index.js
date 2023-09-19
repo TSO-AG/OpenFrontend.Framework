@@ -11,12 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
   loadForElements(document.querySelectorAll('[data-of-table-sort]'), () => import(/* webpackChunkName: "open-frontend-tablesort" */ './components/tablesort'))
   loadForElements(document.querySelectorAll('[data-of-rating]'), () => import(/* webpackChunkName: "open-frontend-rating" */ './components/rating'))
   loadForElements(document.querySelectorAll('[data-of-video-play]'), () => import(/* webpackChunkName: "open-frontend-video-play" */ './components/video-play'))
-  loadForElements(document.querySelectorAll('[data-of-ticker]'), () => import(/* webpackChunkName: "open-frontend-ticker" */ './components/ticker'))
+  loadForElements(document.querySelectorAll('[data-of-ticker]'), () => import(/* webpackChunkName: "open-frontend-ticker" */ './components/ticker'), 'initMultiple')
 })
 
 window.bootstrap = {
   OffCanvas(...args) {
     import('bootstrap/js/dist/offcanvas').then(v => new v.default(...args))
+  },
+  get Ticker() {
+    return new Promise(resolve => import(/* webpackChunkName: "open-frontend-ticker" */ './components/ticker').then(v => resolve(v.default)))
   },
   get Toast() {
     return import('bootstrap/js/dist/toast').then(v => v.default)
@@ -25,3 +28,4 @@ window.bootstrap = {
     return import('bootstrap/js/dist/tooltip').then(v => v.default)
   },
 }
+

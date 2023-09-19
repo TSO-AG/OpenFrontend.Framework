@@ -277,7 +277,7 @@ $opening-times-border-color:   var(--#{$prefix}border-color) !default;
 $search-result-border-width:  var(--#{$prefix}border-width) !default;
 $search-result-border-color:  var(--#{$prefix}border-color-translucent) !default;
 $search-result-border-radius: var(--#{$prefix}border-radius) !default;
-$search-result-image-ratio:   16 / 9 !default;
+$search-result-image-ratio:   calc(16 / 9) !default;
 $search-result-image-width:   25% !default;
 $search-result-padding-x:     1rem !default;
 $search-result-padding-y:     1rem !default;

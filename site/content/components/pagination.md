@@ -169,7 +169,7 @@ Alternatively, you can display the pagination as a dropdown:
   </button>
 
   <label for="pagination" class="visually-hidden">Pagination</label>
-  <select id="pagination" class="form-control">
+  <select id="pagination" class="form-select">
     <option>Page 1</option>
     <option>Page 2</option>
     <option>Page 3</option>

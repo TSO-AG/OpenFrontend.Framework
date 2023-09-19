@@ -1,0 +1,14 @@
+[
+  {
+    "content": "I am an item fetched via Ajax request."
+  },
+  {
+    "content": "You can use any data fetching method!",
+    "cssClass": "bg-info",
+    "icon": "ofi-star-fill"
+  },
+  {
+    "content": "Display as many items as you want!",
+    "cssClass": "bg-success"
+  }
+]

@@ -1,0 +1,72 @@
+.ticker {
+  // scss-docs-start ticker-css-vars
+  --#{$prefix}ticker-bg-color: #{$ticker-bg-color};
+  --#{$prefix}ticker-color: #{$ticker-color};
+  --#{$prefix}ticker-color-inherit: #{$ticker-color-hover};
+  --#{$prefix}ticker-font-size: #{$ticker-font-size};
+  --#{$prefix}ticker-height: #{$ticker-height};
+  --#{$prefix}ticker-icon-spacing: #{$ticker-icon-spacing};
+  --#{$prefix}ticker-item-padding: #{$ticker-item-padding};
+  --#{$prefix}ticker-item-justify-content: #{$ticker-item-justify-content};
+  --#{$prefix}ticker-text-decoration: #{$ticker-text-decoration};
+  --#{$prefix}ticker-text-decoration-hover: #{$ticker-text-decoration-hover};
+  --#{$prefix}ticker-z-index: #{$ticker-z-index};
+  // scss-docs-end ticker-css-vars
+
+  z-index: var(--#{$prefix}ticker-z-index);
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--#{$prefix}ticker-height);
+  font-size: var(--#{$prefix}ticker-font-size);
+  background-color: var(--#{$prefix}ticker-bg-color);
+  line-height: 1;
+  pointer-events: none;
+  visibility: hidden;
+
+  &.ticker-show {
+    position: static;
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  * {
+    box-sizing: inherit;
+  }
+}
+
+.ticker-items {
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ticker-item {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: var(--#{$prefix}ticker-item-justify-content);
+  min-width: 100%;
+  height: 100%;
+  padding-right: var(--#{$prefix}ticker-item-padding);
+  padding-left: var(--#{$prefix}ticker-item-padding);
+  background-color: var(--#{$prefix}ticker-bg-color);
+  color: var(--#{$prefix}ticker-color);
+  white-space: nowrap;
+}
+
+.ticker-icon {
+  margin-right: var(--#{$prefix}ticker-icon-spacing);
+}
+
+.ticker-link {
+  color: inherit;
+  text-decoration: var(--#{$prefix}ticker-text-decoration);
+
+  &:hover {
+    color: var(--#{$prefix}ticker-color-inherit);
+    text-decoration: var(--#{$prefix}ticker-text-decoration-hover);
+  }
+}

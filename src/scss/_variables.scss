@@ -276,3 +276,18 @@ $search-result-padding-x:     1rem !default;
 $search-result-padding-y:     1rem !default;
 $search-result-url-font-size: .85rem !default;
 // scss-docs-end search-result-variables
+
+// Ticker
+// scss-docs-start ticker-variables
+$ticker-bg-color:                          var(--bs-danger) !default;
+$ticker-color:                             #fff !default;
+$ticker-color-hover:                       inherit !default;
+$ticker-font-size:                         1rem !default;
+$ticker-height:                            3.5rem !default;
+$ticker-icon-spacing:                      1rem !default;
+$ticker-item-padding:                      3rem !default;
+$ticker-item-justify-content:              center !default;
+$ticker-text-decoration:                   none !default;
+$ticker-text-decoration-hover:             underline !default;
+$ticker-z-index:                           10 !default;
+// scss-docs-end ticker-variables

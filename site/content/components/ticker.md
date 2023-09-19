@@ -94,9 +94,9 @@ const items = [
     cssClass: 'bg-success', // custom CSS class (optional)
     icon: 'ofi-heart', // custom icon (optional)
     newWindow: true, // open link in a new window (optional)
-    url: "https:\/\/domain.tld", // URL of the link (optional)
+    url: 'https://domain.tld', // URL of the link (optional)
   }
-];
+]
 ```
 
 ### Events
@@ -108,11 +108,11 @@ const items = [
 {{< /bs-table >}}
 
 ```js
-  const element = document.getElementById('ticker');
+const element = document.getElementById('ticker')
 
-  element.addEventListener('initialized.of.ticker', () => {
-    element.ticker.setItems([...]);
-  });
+element.addEventListener('initialized.of.ticker', () => {
+  element.ticker.setItems([/* ... */])
+})
 ```
 
 ### Options

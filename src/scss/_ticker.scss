@@ -18,10 +18,10 @@
   width: 100%;
   height: var(--#{$prefix}ticker-height);
   font-size: var(--#{$prefix}ticker-font-size);
-  background-color: var(--#{$prefix}ticker-bg-color);
   line-height: 1;
   pointer-events: none;
   visibility: hidden;
+  background-color: var(--#{$prefix}ticker-bg-color);
 
   &.ticker-show {
     position: static;
@@ -52,9 +52,9 @@
   height: 100%;
   padding-right: var(--#{$prefix}ticker-item-padding);
   padding-left: var(--#{$prefix}ticker-item-padding);
-  background-color: var(--#{$prefix}ticker-bg-color);
   color: var(--#{$prefix}ticker-color);
   white-space: nowrap;
+  background-color: var(--#{$prefix}ticker-bg-color);
 }
 
 .ticker-icon {

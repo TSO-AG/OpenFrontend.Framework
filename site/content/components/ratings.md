@@ -169,7 +169,7 @@ The `element.rating` contains an instance of the rating, including all **private
 const element = document.getElementById('rating')
 
 element.addEventListener('clicked.of.rating', event => {
-  // Clicked rating: event.detail.rating
+  alert(`Clicked rating: ${event.detail.rating}`)
   element.rating.readOnly(true)
 })
 ```

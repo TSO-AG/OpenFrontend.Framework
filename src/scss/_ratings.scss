@@ -1,18 +1,8 @@
 .cancel-on-png,
-.cancel-off-png,
-.star-on-png,
-.star-off-png,
-.star-half-png {
-  font-size: $rating-font-size;
-}
-
-.cancel-on-png,
 .cancel-off-png {
   &::before {
     content: "x";
   }
-
-  //@include add-icon($ofi-heart, $icon-gap: 0);
 }
 
 .star-on-png,
@@ -24,30 +14,51 @@
 }
 
 .star-on-png {
-  color: var(--ratings-on-color);
+  color: var(--#{$prefix}ratings-on-color);
 }
 
 .star-off-png {
-  color: var(--ratings-off-color);
+  color: var(--#{$prefix}ratings-off-color);
 }
 
 .star-half-png {
 
   &::before {
     background: $rating-off-color;
-    background: linear-gradient(to right, var(--ratings-on-color) 50%, var(--ratings-off-color) 50%);
+    background: linear-gradient(to right, var(--#{$prefix}ratings-on-color) 50%, var(--#{$prefix}ratings-off-color) 50%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }
 
+.rating,
 [data-of-rating] {
+  --#{$prefix}rating-icon-gap: #{$rating-icon-gap};
+  --#{$prefix}rating-font-size: #{$rating-font-size};
   display: inline-flex;
-  --ratings-off-color: #{$rating-off-color};
-  --ratings-on-color: #{$rating-on-color};
+  gap: var(--#{$prefix}rating-icon-gap);
+  font-size: var(--#{$prefix}rating-font-size);
+}
+
+[data-of-rating] {
+  --#{$prefix}ratings-off-color: #{$rating-off-color};
+  --#{$prefix}ratings-on-color: #{$rating-on-color};
 
   &[data-read-only] {
-    --ratings-off-color: #{$rating-off-color-disabled};
-    --ratings-on-color: #{$rating-on-color-disabled};
+    --#{$prefix}ratings-off-color: #{$rating-off-color-disabled};
+    --#{$prefix}ratings-on-color: #{$rating-on-color-disabled};
   }
+}
+
+.rating {
+  --#{$prefix}ratings-off-color: #{$rating-off-color-disabled};
+  --#{$prefix}ratings-on-color: #{$rating-on-color-disabled};
+}
+
+.rating-lg {
+  --#{$prefix}rating-font-size: #{$rating-font-size-lg};
+}
+
+.rating-sm {
+  --#{$prefix}rating-font-size: #{$rating-font-size-sm};
 }

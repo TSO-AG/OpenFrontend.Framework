@@ -65,7 +65,113 @@ Easily customize your rating icon by setting the icon value to the desired icon 
 </div>
 {{< /example >}}
 
+### Size
+Fancy larger or smaller rating? Add `.rating-lg` or `.rating-sm` for additional sizes.
+
+{{< example >}}
+<div class="rating-lg" data-of-rating='{"score": 3}'></div>
+{{< /example >}}
+
+{{< example >}}
+<div class="rating-sm" data-of-rating='{"score": 3}'></div>
+{{< /example >}}
+
+You can even roll your own custom sizing with CSS variables:
+
+{{< example >}}
+<div data-of-rating='{"score": 3}' style="--bs-rating-font-size: .25rem;"></div>
+{{< /example >}}
+
+
+### Static HTML
+You can also embed static HTML code for a simple rating display, some examples below
+
+{{< example >}}
+<div class="mb-1">
+  <div class="rating rating-lg">
+    <i class="star-on-png"></i>
+    <i class="star-on-png"></i>
+    <i class="star-on-png"></i>
+    <i class="star-half-png"></i>
+    <i class="star-off-png"></i>
+  </div>
+</div>
+
+<div class="mb-1">
+  <div class="rating">
+    <i class="star-on-png"></i>
+    <i class="star-on-png"></i>
+    <i class="star-on-png"></i>
+    <i class="star-half-png"></i>
+    <i class="star-off-png"></i>
+  </div>
+</div>
+
+<div class="mb-4">
+  <div class="rating rating-sm">
+    <i class="star-on-png"></i>
+    <i class="star-on-png"></i>
+    <i class="star-on-png"></i>
+    <i class="star-half-png"></i>
+    <i class="star-off-png"></i>
+  </div>
+</div>
+
+<div class="mb-1">
+  <div class="rating rating-lg">
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-half-png ofi-heart-fill"></i>
+    <i class="star-off-png ofi-heart-fill"></i>
+  </div>
+</div>
+
+<div class="mb-1">
+  <div class="rating">
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-half-png ofi-heart-fill"></i>
+    <i class="star-off-png ofi-heart-fill"></i>
+  </div>
+</div>
+
+<div>
+  <div class="rating rating-sm">
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-half-png ofi-heart-fill"></i>
+    <i class="star-off-png ofi-heart-fill"></i>
+  </div>
+</div>
+
+{{< /example >}}
 ## Usage
+
+### Methods
+
+{{< callout danger >}}
+The `element.rating` contains an instance of the rating, including all **private** properties and methods. Use with caution!
+{{< /callout >}}
+
+### Events
+
+{{< bs-table "table" >}}
+| Event | Description |
+| --- | --- |
+| `clicked.of.rating` | This event is fired when a rating star is clicked. |
+{{< /bs-table >}}
+
+```js
+const element = document.getElementById('rating')
+
+element.addEventListener('clicked.of.rating', event => {
+  // Clicked rating: event.detail.rating
+  element.rating.readOnly(true)
+})
+```
 
 ### Options
 
@@ -77,10 +183,10 @@ Here is the list of all available options (alphabetically):
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
 | `half` | `Boolean` | `false` | Enables half star selection. |
+| `icon` | `String` | `null` | Icon CSS class. |
 | `number` | `Number` | `5` | The number of stars that will be presented. |
 | `readOnly` | `Boolean` | `false` | Turns the rating read-only. |
 | `score` | `Number` | `undefined` | Initial rating. |
-| `icon` | `String` | `null` | Icon class. |
 {{< /bs-table >}}
 
 ## CSS

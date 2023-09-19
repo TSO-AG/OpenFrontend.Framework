@@ -1,0 +1,92 @@
+.card {
+  // scss-docs-start card-css-vars
+  --#{$prefix}card-info-spacer-y: #{$card-info-spacer-y};
+  --#{$prefix}card-info-color: #{$card-info-color};
+  --#{$prefix}card-info-font-size: #{$card-info-font-size};
+  --#{$prefix}card-action-button-gap: #{$card-action-button-gap};
+  --#{$prefix}card-tags-spacer-y: #{$card-tags-spacer-y};
+  // scss-docs-end card-css-vars
+}
+
+.card-media {
+  position: relative;
+
+  &__content {
+    position: absolute;
+    max-width: calc(50% - var(--#{$prefix}card-spacer-x)); // stylelint-disable-line function-disallowed-list
+    max-height: calc(50% - var(--#{$prefix}card-spacer-y)); // stylelint-disable-line function-disallowed-list
+
+    &--no-gap {
+      --#{$prefix}card-spacer-x: 0;
+      --#{$prefix}card-spacer-y: 0;
+    }
+
+    &--top-left {
+      top: var(--#{$prefix}card-spacer-y);
+      left: var(--#{$prefix}card-spacer-x);
+    }
+
+    &--top-right {
+      top: var(--#{$prefix}card-spacer-y);
+      right: var(--#{$prefix}card-spacer-x);
+    }
+
+    &--bottom-left {
+      bottom: var(--#{$prefix}card-spacer-y);
+      left: var(--#{$prefix}card-spacer-x);
+    }
+
+    &--bottom-right {
+      right: var(--#{$prefix}card-spacer-x);
+      bottom: var(--#{$prefix}card-spacer-y);
+    }
+  }
+
+  &__visual {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.card-info {
+  margin-bottom: var(--#{$prefix}card-info-spacer-y);
+  font-size: var(--#{$prefix}card-info-font-size);
+  color: var(--#{$prefix}card-info-color);
+}
+
+.card-tags {
+  margin-bottom: var(--#{$prefix}card-tags-spacer-y);
+}
+
+.card-action {
+  display: flex;
+  align-items: center;
+  padding: var(--#{$prefix}card-cap-padding-y) var(--#{$prefix}card-cap-padding-x);
+  color: var(--#{$prefix}card-cap-color);
+  background-color: var(--#{$prefix}card-cap-bg);
+  border-top: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-border-color);
+
+  &:last-child {
+    @include border-radius(0 0 var(--#{$prefix}card-inner-border-radius) var(--#{$prefix}card-inner-border-radius));
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--#{$prefix}card-action-button-gap);
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+}
+
+.card-title-rating {
+  display: flex;
+  gap: .5rem;
+
+  .card-title {
+    @include text-truncate();
+  }
+}

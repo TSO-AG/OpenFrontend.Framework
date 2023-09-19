@@ -1,0 +1,46 @@
+.tag-list {
+  // scss-docs-start tag-list-css-vars
+  --#{$prefix}tag-list-gap-x: #{$tag-list-gap-x};
+  --#{$prefix}tag-list-gap-y: #{$tag-list-gap-y};
+  // scss-docs-start tag-list-css-vars
+  display: flex;
+  row-gap: var(--#{$prefix}tag-list-gap-y);
+  column-gap: var(--#{$prefix}tag-list-gap-x);
+}
+
+.tag {
+  // scss-docs-start tag-css-vars
+  --#{$prefix}tag-padding-x: #{$tag-padding-x};
+  --#{$prefix}tag-padding-y: #{$tag-padding-y};
+  @include rfs($tag-font-size, --#{$prefix}tag-font-size);
+  --#{$prefix}tag-font-weight: #{$tag-font-weight};
+  --#{$prefix}tag-color: #{$tag-color};
+  --#{$prefix}tag-bg: #{$tag-bg};
+  --#{$prefix}tag-border-radius: #{$tag-border-radius};
+  --#{$prefix}tag-icon-font-size: #{$tag-icon-font-size};
+  --#{$prefix}tag-icon-space-x: #{$tag-icon-space-x};
+  // scss-docs-end tag-css-vars
+
+  display: inline-flex;
+  align-items: center;
+  padding: var(--#{$prefix}tag-padding-y) var(--#{$prefix}tag-padding-x);
+  @include font-size(var(--#{$prefix}tag-font-size));
+  font-weight: var(--#{$prefix}tag-font-weight);
+  line-height: 1;
+  color: var(--#{$prefix}tag-color);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  @include border-radius(var(--#{$prefix}tag-border-radius));
+  @include gradient-bg(var(--#{$prefix}tag-bg));
+  // Empty tags collapse automatically
+  &:empty {
+    display: none;
+  }
+}
+
+.tag-icon {
+  margin-right: var(--#{$prefix}tag-icon-space-x);
+  font-size: var(--#{$prefix}tag-icon-font-size);
+  vertical-align: middle;
+}

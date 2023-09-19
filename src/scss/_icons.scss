@@ -1,12 +1,13 @@
 .icon-circle {
   // scss-docs-start icon-circle-css-vars
-  --#{$prefix}icon-circle-padding-x: #{$icon-circle-padding-x};
-  --#{$prefix}icon-circle-padding-y: #{$icon-circle-padding-y};
-  @include rfs($icon-circle-font-size, --#{$prefix}icon-circle-font-size);
   --#{$prefix}icon-circle-color: #{$icon-circle-color};
   --#{$prefix}icon-circle-bg: transparent;
   --#{$prefix}icon-circle-border-radius: 50%;
   --#{$prefix}icon-circle-padding: max(var(--#{$prefix}icon-circle-padding-y), var(--#{$prefix}icon-circle-padding-x));
+  --#{$prefix}icon-circle-padding-x: #{$icon-circle-padding-x};
+  --#{$prefix}icon-circle-padding-y: #{$icon-circle-padding-y};
+
+  @include rfs($icon-circle-font-size, --#{$prefix}icon-circle-font-size);
   // scss-docs-end icon-circle-css-vars
 
   display: inline-flex;

@@ -29,6 +29,7 @@
   --#{$prefix}search-result-url-font-size: #{$search-result-url-font-size};
   // scss-docs-end search-result-css-vars
 
+  position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;

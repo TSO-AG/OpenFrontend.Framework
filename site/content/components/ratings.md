@@ -65,6 +65,89 @@ Easily customize your rating icon by setting the icon value to the desired icon 
 </div>
 {{< /example >}}
 
+### Size
+Fancy larger or smaller rating? Add `.rating-lg` or `.rating-sm` for additional sizes.
+
+{{< example >}}
+<div class="rating-lg" data-of-rating='{"score": 3}'></div>
+{{< /example >}}
+
+{{< example >}}
+<div class="rating-sm" data-of-rating='{"score": 3}'></div>
+{{< /example >}}
+
+You can even roll your own custom sizing with CSS variables:
+
+{{< example >}}
+<div data-of-rating='{"score": 3}' style="--bs-rating-font-size: .25rem;"></div>
+{{< /example >}}
+
+
+### Static HTML
+You can also embed static HTML code for a simple rating display, some examples below
+
+{{< example >}}
+<div class="mb-1">
+  <div class="rating rating-lg">
+    <i class="star-on-png"></i>
+    <i class="star-on-png"></i>
+    <i class="star-on-png"></i>
+    <i class="star-half-png"></i>
+    <i class="star-off-png"></i>
+  </div>
+</div>
+
+<div class="mb-1">
+  <div class="rating">
+    <i class="star-on-png"></i>
+    <i class="star-on-png"></i>
+    <i class="star-on-png"></i>
+    <i class="star-half-png"></i>
+    <i class="star-off-png"></i>
+  </div>
+</div>
+
+<div class="mb-4">
+  <div class="rating rating-sm">
+    <i class="star-on-png"></i>
+    <i class="star-on-png"></i>
+    <i class="star-on-png"></i>
+    <i class="star-half-png"></i>
+    <i class="star-off-png"></i>
+  </div>
+</div>
+
+<div class="mb-1">
+  <div class="rating rating-lg">
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-half-png ofi-heart-fill"></i>
+    <i class="star-off-png ofi-heart-fill"></i>
+  </div>
+</div>
+
+<div class="mb-1">
+  <div class="rating">
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-half-png ofi-heart-fill"></i>
+    <i class="star-off-png ofi-heart-fill"></i>
+  </div>
+</div>
+
+<div>
+  <div class="rating rating-sm">
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-on-png ofi-heart-fill"></i>
+    <i class="star-half-png ofi-heart-fill"></i>
+    <i class="star-off-png ofi-heart-fill"></i>
+  </div>
+</div>
+
+{{< /example >}}
 ## Usage
 
 ### Methods

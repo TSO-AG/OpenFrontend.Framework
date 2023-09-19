@@ -1,0 +1,43 @@
+.opening-times {
+  // scss-docs-start opening-times-css-vars
+  --#{$prefix}opening-times-align: #{$opening-times-align};
+  --#{$prefix}opening-times-padding-x: #{$opening-times-padding-x};
+  --#{$prefix}opening-times-padding-y-head: #{$opening-times-padding-y-head};
+  --#{$prefix}opening-times-padding-y-body: #{$opening-times-padding-y-body};
+  --#{$prefix}opening-times-border-width: #{$opening-times-border-width};
+  --#{$prefix}opening-times-border-color: #{$opening-times-border-color};
+  // scss-docs-end opening-times-css-vars
+
+  @extend .table;
+  @extend .table-striped;
+  border: var(--#{$prefix}opening-times-border-width) solid var(--#{$prefix}opening-times-border-color);
+
+  thead .state {
+    --#{$prefix}state-bg: none;
+    --#{$prefix}state-color: inherit;
+    --#{$prefix}state-padding-x: 0;
+    --#{$prefix}state-padding-y: 0;
+
+    @each $color, $value in $state-statuses {
+      &.state--#{$color} {
+        --#{$prefix}state-color: #{$value};
+      }
+    }
+  }
+
+  th {
+    padding: var(--#{$prefix}opening-times-padding-y-head) var(--#{$prefix}opening-times-padding-x);
+    vertical-align: middle;
+  }
+
+  td {
+    --bs-border-width: 0;
+    padding: var(--#{$prefix}opening-times-padding-y-body) var(--#{$prefix}opening-times-padding-x);
+    vertical-align: var(--#{$prefix}opening-times-align);
+  }
+
+  tbody td > * {
+    display: block;
+    white-space: nowrap;
+  }
+}

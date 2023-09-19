@@ -1,0 +1,39 @@
+[data-of-video-play] {
+  // scss-docs-start video-play-css-vars
+  --#{$prefix}player-icon-size: #{$video-player-icon-size};
+  --#{$prefix}player-play-icon: #{escape-svg($video-player-icon-play)};
+  --#{$prefix}player-pause-icon: #{escape-svg($video-player-icon-pause)};
+  // scss-docs-end video-play-css-vars
+  position: relative;
+
+  &::after {
+    @include transition(opacity .15s);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--#{$prefix}player-icon-size);
+    height: var(--#{$prefix}player-icon-size);
+    pointer-events: none;
+    content: "";
+    background-image: var(--#{$prefix}player-play-icon);
+    background-size: contain;
+    transform: translate(-50%, -50%);
+  }
+
+  video {
+    cursor: pointer;
+  }
+
+  &.video-is-played {
+    &::after {
+      background-image: var(--#{$prefix}player-pause-icon);
+      opacity: 0;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}

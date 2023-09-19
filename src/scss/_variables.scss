@@ -4,13 +4,16 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
-
-$white:    #fff !default;
+$blue: #0d6efd !default;
+$primary: $blue !default;
+$white: #fff !default;
 
 // Prefix for :root CSS variables
 
 $prefix: bs- !default;
 
+// Spacing
+$spacer: 1rem !default;
 
 // Components
 
@@ -30,7 +33,6 @@ $aspect-ratios: (
 // Typography
 $font-size-base: 1rem !default;
 $font-weight-normal: 400 !default;
-
 
 // Links
 
@@ -106,11 +108,15 @@ $badge-border-radius:               var(--#{$prefix}border-radius-pill) !default
 // Ratings
 
 // scss-docs-start rating-variables
+$rating-icon-gap: .2em !default;
 $rating-font-size: 1.5em !default;
 $rating-off-color: #dee1e6 !default;
 $rating-on-color: #f3c63f !default;
 $rating-off-color-disabled: #edeef1 !default;
 $rating-on-color-disabled: $rating-on-color !default;
+$rating-font-size: 1.5rem !default;
+$rating-font-size-sm: .75rem !default;
+$rating-font-size-lg: 1.75rem !default;
 // scss-docs-end rating-variables
 
 // Table
@@ -139,3 +145,122 @@ $audio-player-name-color:             var(--#{$prefix}secondary-color) !default;
 $audio-player-name-font-size:         .875rem !default;
 $audio-player-name-font-weight:       normal !default;
 // scss-docs-end audio-player-variables
+
+// Video player
+// scss-docs-start video-player-variables
+$video-player-icon-size: 3rem !default;
+$video-player-icon-color: $primary !default;
+$video-player-icon-play: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$video-player-icon-color}'><path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/>   <path d='M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z'/></svg>") !default;
+$video-player-icon-pause: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$video-player-icon-color}'><path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/>   <path d='M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5z'/></svg>") !default;
+// scss-docs-end video-player-variables
+
+// Card
+// scss-docs-start card-variables
+$card-info-color: var(--#{$prefix}secondary-color) !default;
+$card-info-font-size: .8rem !default;
+$card-info-spacer-y: $spacer * .5 !default;
+$card-action-button-gap: .25rem !default;
+$card-tags-spacer-y: $spacer * .75 !default;
+// scss-docs-end card-variables
+
+// Price
+// scss-docs-start price-variables
+$price-row-gap: .125rem !default;
+$price-label-color: $primary !default;
+$price-label-font-size: .7em !default;
+$price-value-color: null !default;
+$price-value-font-size: 1.25rem !default;
+$price-value-font-weight: 700 !default;
+// scss-docs-end price-variables
+
+// Date box
+// scss-docs-start date-box-variables
+$date-box-row-gap: .125rem !default;
+$date-box-bg: #fff !default;
+$date-box-padding-x: 1rem !default;
+$date-box-padding-y: .75rem !default;
+$date-box-padding-day-color: $primary !default;
+$date-box-padding-day-font-size: 1.5rem !default;
+$date-box-padding-month-color: $primary !default;
+$date-box-padding-month-font-size: 1rem !default;
+// scss-docs-end date-box-variables
+
+// State
+// scss-docs-start state-variables
+$state-bg: #fff !default;
+$state-gap: .5em !default;
+$state-font-size: .75em !default;
+$state-font-weight: 700 !default;
+$state-color: #000 !default;
+$state-padding-y: .35em !default;
+$state-padding-x: .65em !default;
+$state-border-radius: var(--#{$prefix}border-radius) !default;
+$state-statuses: (
+  "open": #2ed05d,
+  "unknown": #ebbe5b,
+  "closed": #e55f60,
+) !default;
+$state-icon-color: #fff !default;
+$state-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='#{$state-icon-color}' d='M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z'/></svg>") !default;
+// scss-docs-end state-variables
+
+// Rating
+// scss-docs-start user-rating
+$user-rating-gap: .25em !default;
+$user-rating-color: null !default;
+$user-rating-font-weight: 700 !default;
+$user-rating-icon-font-size: 1.25em !default;
+// scss-docs-end user-rating
+
+// Tag
+
+// scss-docs-start tag-list-variables
+$tag-list-gap-x: .5em !default;
+$tag-list-gap-y: .5em !default;
+// scss-docs-end tag-list-variables
+
+// scss-docs-start tag-variables
+$tag-font-size: .875em !default;
+$tag-font-weight: null !default;
+$tag-color: var(--#{$prefix}dark) !default;
+$tag-bg: var(--#{$prefix}gray-100) !default;
+$tag-padding-y: .35em !default;
+$tag-padding-x: .65em !default;
+$tag-border-radius: var(--#{$prefix}border-radius) !default;
+$tag-icon-font-size: 1.5em !default;
+$tag-icon-space-x: .1em !default;
+// scss-docs-end tag-variables
+
+// Labels
+// scss-docs-start labels-min-variables
+$labels-min-gap: .25rem !default;
+$labels-min-padding: .25rem !default;
+$labels-min-bg: var(--#{$prefix}body-bg) !default;
+$labels-min-border-width: var(--#{$prefix}border-width) !default;
+$labels-min-border-color: var(--#{$prefix}border-color) !default;
+$labels-min-border-radius: var(--#{$prefix}border-radius) !default;
+$labels-min-box-shadow: var(--#{$prefix}box-shadow-sm) !default;
+
+$labels-min-item-padding: .4rem !default;
+$labels-min-item-bg: var(--#{$prefix}gray-100) !default;
+$labels-min-item-border-width: var(--#{$prefix}border-width) !default;
+$labels-min-item-border-color: var(--#{$prefix}border-color) !default;
+$labels-min-item-border-radius: var(--#{$prefix}border-radius) !default;
+$labels-min-item-box-shadow: var(--#{$prefix}box-shadow-sm) !default;
+
+$labels-min-label-padding: .5rem !default;
+$labels-min-label-font-size: 1rem !default;
+$labels-min-label-font-weight: 700 !default;
+$labels-min-label-color: null !default;
+$labels-min-label-text-decoration: underline !default;
+// scss-docs-end labels-min-variables
+
+// Opening times
+// scss-docs-start opening-times-variables
+$opening-times-align:          "middle" !default;
+$opening-times-padding-x:      1rem !default;
+$opening-times-padding-y-head: 1rem !default;
+$opening-times-padding-y-body: .5rem !default;
+$opening-times-border-width:   var(--#{$prefix}border-width) !default;
+$opening-times-border-color:   var(--#{$prefix}border-color) !default;
+// scss-docs-end opening-times-variables

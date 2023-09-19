@@ -15,7 +15,8 @@
   thead .state {
     --#{$prefix}state-bg: none;
     --#{$prefix}state-color: inherit;
-    padding-left: 0;
+    --#{$prefix}state-padding-x: 0;
+    --#{$prefix}state-padding-y: 0;
 
     @each $color, $value in $state-statuses {
       &.state--#{$color} {

@@ -1,0 +1,81 @@
+.search-form {
+  label {
+    @include visually-hidden ();
+  }
+
+  &-inputs {
+    @extend .input-group;
+
+    input {
+      @extend .form-control;
+    }
+
+    button {
+      @extend .btn;
+      @extend .btn-primary;
+    }
+  }
+}
+
+.search-result {
+  // scss-docs-start search-result-css-vars
+  --#{$prefix}search-result-border-width: #{$search-result-border-width};
+  --#{$prefix}search-result-border-color: #{$search-result-border-color};
+  --#{$prefix}search-result-border-radius: #{$search-result-border-radius};
+  --#{$prefix}search-result-padding-x: #{$search-result-padding-x};
+  --#{$prefix}search-result-padding-y: #{$search-result-padding-y};
+  --#{$prefix}search-result-image-ratio: #{$search-result-image-ratio};
+  --#{$prefix}search-result-image-width: #{$search-result-image-width};
+  --#{$prefix}search-result-url-font-size: #{$search-result-url-font-size};
+  // scss-docs-end search-result-css-vars
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: var(--#{$prefix}search-result-border-width) solid var(--#{$prefix}search-result-border-color);
+  @include border-radius(var(--#{$prefix}search-result-border-radius));
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+  }
+
+  &-image {
+    margin-bottom: 0;
+
+    @include media-breakpoint-up(md) {
+      width: 100%;
+      max-width: var(--#{$prefix}search-result-image-width);
+    }
+
+    > * {
+      width: 100%;
+      aspect-ratio: var(--#{$prefix}search-result-image-ratio);
+
+      @include media-breakpoint-up(md) {
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+        aspect-ratio: auto;
+      }
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    padding: var(--#{$prefix}search-result-padding-y) var(--#{$prefix}search-result-padding-x);
+  }
+
+  &-url {
+    @extend .text-muted;
+    @extend .text-truncate;
+    margin: auto 0 0;
+    font-size: var(--#{$prefix}search-result-url-font-size);
+  }
+
+  a {
+    @extend .stretched-link;
+    text-decoration: none;
+  }
+}

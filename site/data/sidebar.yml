@@ -76,6 +76,7 @@
     - title: Button group
     - title: Close button
     - title: Collapse
+    - title: Copyright
     - title: Dropdowns
     - title: Icons
     - title: Labels
@@ -84,10 +85,14 @@
     - title: Modal
     - title: Navs & tabs
     - title: Offcanvas
+    - title: Opening times
     - title: Pagination
     - title: Ratings
+    - title: Search
     - title: Spinners
+    - title: State
     - title: Tags
+    - title: Ticker
     - title: Tooltips
 
 - title: Helpers

@@ -3,11 +3,11 @@
 .form-datepicker,
 .form-timepicker {
   --#{$prefix}form-datepicker-bg-img: #{escape-svg($form-datepicker-indicator)};
-  padding-left: $form-select-indicator-padding;
+  padding-left: $form-datepicker-indicator-padding;
   background-image: var(--#{$prefix}form-datepicker-bg-img);
   background-repeat: no-repeat;
-  background-position: $form-select-bg-position;
-  background-size: $form-select-bg-size;
+  background-position: $form-datepicker-bg-position;
+  background-size: $form-datepicker-bg-size;
 }
 
 .form-timepicker {

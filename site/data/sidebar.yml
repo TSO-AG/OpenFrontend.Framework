@@ -72,20 +72,26 @@
     - title: Badge
     - title: Breadcrumb
     - title: Buttons
+    - title: Card
     - title: Button group
     - title: Close button
     - title: Collapse
+    - title: Copyright
     - title: Dropdowns
     - title: Icons
+    - title: Labels
     - title: List group
     - title: Map
     - title: Modal
     - title: Navs & tabs
     - title: Offcanvas
+    - title: Opening times
     - title: Pagination
     - title: Ratings
     - title: Search
     - title: Spinners
+    - title: State
+    - title: Tags
     - title: Tooltips
 
 - title: Helpers

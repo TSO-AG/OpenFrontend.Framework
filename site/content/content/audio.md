@@ -91,8 +91,8 @@ Next to the player, you can also display the title and name of the file.
 
 ## CSS
 
-### Sass variables
+{{< scss-docs name="audio-player-css-vars" file="src/scss/_player-audio.scss" >}}
 
-Variables are available for audio player.
+### Sass variables
 
 {{< scss-docs name="audio-player-variables" file="src/scss/_variables.scss" >}}

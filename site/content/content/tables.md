@@ -1022,6 +1022,10 @@ you can use optional data to sort on.
 </table>
 ```
 
+### CSS
+
+{{< scss-docs name="table-sort-css-vars" file="src/scss/_table.scss" >}}
+
 ### Sass variables
 
 {{< scss-docs name="table-sort-variables" file="src/scss/_variables.scss" >}}

@@ -58,14 +58,14 @@ To start a video automatically, use the `autoplay` attribute:
 ```
 
 {{< callout info >}}
-**Note**: Chromium browsers do not allow autoplay in most cases. However, muted autoplay is always allowed.
+**Note**: some browsers and devices will not allow autoplay in most cases. However, muted autoplay is always allowed. This particular example should be used for purely presentational videos, which do not have any sound.
 {{< /callout >}}
 
-Add `muted` after `autoplay` to let your video start playing automatically (but muted):
+Add the following attributes: `muted`, `playsinline` and `autoplay`, to let your video start playing automatically (but muted):
 
 <div class="bd-example">
   <div class="ratio ratio-16x9">
-    <video autoplay muted>
+    <video autoplay muted playsinline>
       <source src="assets/media/sample-video.mp4" type="video/mp4">
       <source src="assets/media/sample-video.ogg" type="video/ogg">
     </video>
@@ -74,7 +74,7 @@ Add `muted` after `autoplay` to let your video start playing automatically (but 
 
 ```html
 <div class="ratio ratio-16x9">
-  <video autoplay muted>
+  <video autoplay muted playsinline>
     <source src="sample-video.mp4" type="video/mp4">
     <source src="sample-video.ogg" type="video/ogg">
   </video>
@@ -114,3 +114,34 @@ To adjust the video fit, you might want to use the [object-fit]({{< docsref "/ut
   </video>
 </div>
 ```
+
+### Video play/pause button
+Easily integrate a play/pause button overlay on your video elements using the `data-of-video-play` attribute. This feature provides a user-friendly way to control video playback without the need for additional JavaScript.
+
+<div class="bd-example">
+  <div class="ratio ratio-16x9" data-of-video-play>
+    <video class="object-fit-cover">
+      <source src="assets/media/sample-video.mp4" type="video/mp4">
+      <source src="assets/media/sample-video.ogg" type="video/ogg">
+    </video>
+  </div>
+</div>
+
+```html
+<div class="ratio ratio-16x9" data-of-video-play>
+  <video class="object-fit-cover">
+    <source src="sample-video.mp4" type="video/mp4">
+    <source src="sample-video.ogg" type="video/ogg">
+  </video>
+</div>
+```
+
+## CSS
+
+### Variables
+Video player use local CSS variables for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
+
+{{< scss-docs name="video-play-css-vars" file="src/scss/_player-video.scss" >}}
+
+### Sass variables
+{{< scss-docs name="video-player-variables" file="src/scss/_variables.scss" >}}

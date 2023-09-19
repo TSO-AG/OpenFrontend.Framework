@@ -123,7 +123,6 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
 | `appendToBody` | `Boolean` | `false` | The ticker element will be appended to the `<body>`. |
-| `bodyCssClass` | `String` | `'ticker-show'` | The CSS class that is added to the `<body>` to show the ticker. |
 | `items` | `Array` | `[]` | The items to be displayed. You can use `el.ticker.setItems()` to dynamically set the items. |
 | `pauseOnHover` | `Boolean` | `true` | Pause the scroll on mouse hover. |
 | `prependToBody` | `Boolean` | `false` | The ticker element will be prepended to the `<body>`. |

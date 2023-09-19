@@ -1,8 +1,9 @@
+const SHOW_CSS_CLASS = 'ticker-show';
+
 class Ticker {
   constructor(el) {
     const config = el.dataset.ofTicker ? JSON.parse(el.dataset.ofTicker) : {};
     config.appendToBody = config.hasOwnProperty('appendToBody') ? config.appendToBody : false;
-    config.bodyCssClass = config.bodyCssClass || 'ticker-show';
     config.items = config.items || [];
     config.pauseOnHover = config.hasOwnProperty('pauseOnHover') ? config.pauseOnHover : true;
     config.prependToBody = config.hasOwnProperty('prependToBody') ? config.prependToBody : false;
@@ -189,13 +190,13 @@ class Ticker {
 
   showTicker() {
     if (this.items.length > 0) {
-      document.body.classList.add(this.config.bodyCssClass);
+      this.el.classList.add(SHOW_CSS_CLASS);
       this.paused = false;
     }
   }
 
   hideTicker() {
-    document.body.classList.remove(this.config.bodyCssClass);
+    this.el.classList.remove(SHOW_CSS_CLASS);
     this.paused = true;
   }
 }

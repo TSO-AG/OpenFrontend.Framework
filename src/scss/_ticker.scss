@@ -23,7 +23,7 @@
   pointer-events: none;
   visibility: hidden;
 
-  body.ticker-show & { // stylelint-disable-line selector-no-qualifying-type
+  &.ticker-show {
     position: static;
     pointer-events: auto;
     visibility: visible;

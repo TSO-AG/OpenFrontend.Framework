@@ -39,14 +39,14 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
         <span class="labels-min-label">+1</span>
       </div>
@@ -56,7 +56,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
     <div class="card-title-rating">
-      <h3 class="card-title">Card title</h3>
+      <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
       <div class="card-title-star">
         <div class="rating rating-sm">
           <i class="star-on-png"></i>
@@ -80,7 +80,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <div class="user-rating__icon">
         <i class="ofi-people-fill"></i>
       </div>
-      <div class="user-rating__label">User user-rating:</div>
+      <div class="user-rating__label">User-Rating:</div>
       <div class="user-rating__score">
         <span class="user-rating__score-value text-success">4.5</span>/<span class="user-rating__score-total">5</span>
       </div>
@@ -101,7 +101,101 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
+        More <i class="ofi-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+{{< /example >}}
+
+{{< example >}}
+
+<div class="card card-horizontal">
+  <div class="card-media">
+    <div class="card-media__visual">
+      {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
+    </div>
+    <div class="card-media__content card-media__content--top-left">
+      <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>
+    </div>
+    <div class="card-media__content card-media__content--top-right">
+      <div class="state state--open">
+        open
+      </div>
+    </div>
+    <div class="card-media__content card-media__content--bottom-left card-media__content--no-gap">
+      <div class="date-box">
+        <div class="date-box__day">12.</div>
+        <div class="date-box__month">OKT.</div>
+      </div>
+    </div>
+    <div class="card-media__content card-media__content--bottom-right">
+      <div class="labels-min">
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+        </div>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+        </div>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+        </div>
+        <span class="labels-min-label">+1</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-info">Lorem ipsum</h5>
+    <div class="card-title-rating">
+      <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
+      <div class="card-title-star">
+        <div class="rating rating-sm">
+          <i class="star-on-png"></i>
+          <i class="star-on-png"></i>
+          <i class="star-on-png"></i>
+          <i class="star-half-png"></i>
+          <i class="star-off-png"></i>
+        </div>
+      </div>
+    </div>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="card-tags">
+      <div class="tag-list">
+        <span class="tag">Tag 01</span>
+        <span class="tag text-bg-light">Tag 02</span>
+        <span class="tag text-bg-light">Another tag</span>
+        <span class="tag text-bg-light">…</span>
+      </div>
+    </div>
+    <div class="user-rating">
+      <div class="user-rating__icon">
+        <i class="ofi-people-fill"></i>
+      </div>
+      <div class="user-rating__label">User-Rating:</div>
+      <div class="user-rating__score">
+        <span class="user-rating__score-value text-success">4.5</span>/<span class="user-rating__score-total">5</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-action">
+    <div class="card-action__content">
+      <div class="price">
+        <div class="price__label">AB CHF</div>
+        <div class="price__value">15.00</div>
+      </div>
+    </div>
+    <div class="card-action__buttons">
       <button type="button" class="btn btn-icon btn-primary">
+        <i class="ofi-cart-fill"></i>
+      </button>
+      <button type="button" class="btn btn-icon btn-primary">
+        <i class="ofi-heart-fill"></i>
+      </button>
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -118,8 +212,8 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 <div class="card" style="max-width: 22rem;">
   <div class="card-media">
     <div class="card-media__visual">
-      <div class="ratio ratio-16x9" data-of-video-play>
-        <video class="object-fit-cover">
+      <div class="ratio ratio-16x9">
+        <video class="object-fit-cover" autoplay muted playsinline>
           <source src="assets/media/sample-video.mp4" type="video/mp4">
           <source src="assets/media/sample-video.ogg" type="video/ogg">
         </video>
@@ -135,11 +229,11 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
       </div>
     </div>
@@ -147,7 +241,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
-    <h3 class="card-title">Card title</h3>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="card-tags">
       <div class="tag-list">
@@ -173,7 +267,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -201,14 +295,14 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
         <span class="labels-min-label">+1</span>
       </div>
@@ -218,7 +312,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
     <div class="card-title-rating">
-      <h3 class="card-title">Card title</h3>
+      <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
       <div class="card-title-star">
         <div class="rating rating-sm">
           <i class="star-on-png"></i>
@@ -242,7 +336,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <div class="user-rating__icon">
         <i class="ofi-people-fill"></i>
       </div>
-      <div class="user-rating__label">User user-rating:</div>
+      <div class="user-rating__label">User-Rating:</div>
       <div class="user-rating__score">
         <span class="user-rating__score-value text-success">4.5</span>/<span class="user-rating__score-total">5</span>
       </div>
@@ -254,7 +348,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -282,8 +376,8 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
-        <div class="labels-min-item ratio-1x1">
-          <figure>{{< placeholder markup="img" width="22" height="22" text="Image" >}}</figure>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
         </div>
       </div>
     </div>
@@ -291,7 +385,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
-    <h3 class="card-title">Card title</h3>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="card-tags">
       <div class="tag-list">
@@ -305,7 +399,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <div class="user-rating__icon">
         <i class="ofi-people-fill"></i>
       </div>
-      <div class="user-rating__label">User user-rating:</div>
+      <div class="user-rating__label">User-Rating:</div>
       <div class="user-rating__score">
         <span class="user-rating__score-value text-success">4.5</span>/<span class="user-rating__score-total">5</span>
       </div>
@@ -320,7 +414,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -336,8 +430,8 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 <div class="card" style="max-width: 22rem;">
   <div class="card-media">
     <div class="card-media__visual">
-      <div class="ratio ratio-16x9" data-of-video-play>
-        <video class="object-fit-cover">
+      <div class="ratio ratio-16x9">
+        <video class="object-fit-cover" autoplay muted playsinline>
           <source src="assets/media/sample-video.mp4" type="video/mp4">
           <source src="assets/media/sample-video.ogg" type="video/ogg">
         </video>
@@ -356,7 +450,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
   <div class="card-body">
     <h5 class="card-info">St. Gallen, 29.06.23 - 02.07.23</h5>
-    <h3 class="card-title">Card title</h3>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="card-tags">
       <div class="tag-list">
@@ -382,7 +476,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -406,7 +500,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
-    <h3 class="card-title">Card title</h3>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 
@@ -424,7 +518,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -453,7 +547,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
-    <h3 class="card-title">Card title</h3>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 
@@ -462,7 +556,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -483,7 +577,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
   <div class="card-body">
     <h5 class="card-info">Lorem ipsum</h5>
-    <h3 class="card-title">Card title</h3>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 
@@ -492,7 +586,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>
-      <button type="button" class="btn btn-icon btn-primary">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
         More <i class="ofi-arrow-right"></i>
       </button>
     </div>
@@ -883,6 +977,100 @@ Using a combination of grid and utility classes, cards can be made horizontal in
     </div>
   </div>
 </div>
+{{< /example >}}
+
+{{< example >}}
+
+<div class="card card-horizontal">
+  <div class="card-media">
+    <div class="card-media__visual">
+      {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
+    </div>
+    <div class="card-media__content card-media__content--top-left">
+      <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>
+    </div>
+    <div class="card-media__content card-media__content--top-right">
+      <div class="state state--open">
+        open
+      </div>
+    </div>
+    <div class="card-media__content card-media__content--bottom-left card-media__content--no-gap">
+      <div class="date-box">
+        <div class="date-box__day">12.</div>
+        <div class="date-box__month">OKT.</div>
+      </div>
+    </div>
+    <div class="card-media__content card-media__content--bottom-right">
+      <div class="labels-min">
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+        </div>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+        </div>
+        <div class="labels-min-item">
+          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+        </div>
+        <span class="labels-min-label">+1</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-info">Lorem ipsum</h5>
+    <div class="card-title-rating">
+      <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
+      <div class="card-title-star">
+        <div class="rating rating-sm">
+          <i class="star-on-png"></i>
+          <i class="star-on-png"></i>
+          <i class="star-on-png"></i>
+          <i class="star-half-png"></i>
+          <i class="star-off-png"></i>
+        </div>
+      </div>
+    </div>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="card-tags">
+      <div class="tag-list">
+        <span class="tag">Tag 01</span>
+        <span class="tag text-bg-light">Tag 02</span>
+        <span class="tag text-bg-light">Another tag</span>
+        <span class="tag text-bg-light">…</span>
+      </div>
+    </div>
+    <div class="user-rating">
+      <div class="user-rating__icon">
+        <i class="ofi-people-fill"></i>
+      </div>
+      <div class="user-rating__label">User-Rating:</div>
+      <div class="user-rating__score">
+        <span class="user-rating__score-value text-success">4.5</span>/<span class="user-rating__score-total">5</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-action">
+    <div class="card-action__content">
+      <div class="price">
+        <div class="price__label">AB CHF</div>
+        <div class="price__value">15.00</div>
+      </div>
+    </div>
+    <div class="card-action__buttons">
+      <button type="button" class="btn btn-icon btn-primary">
+        <i class="ofi-cart-fill"></i>
+      </button>
+      <button type="button" class="btn btn-icon btn-primary">
+        <i class="ofi-heart-fill"></i>
+      </button>
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
+        More <i class="ofi-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
 {{< /example >}}
 
 ## Card styles

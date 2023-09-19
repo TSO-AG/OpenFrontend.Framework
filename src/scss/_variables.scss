@@ -47,9 +47,9 @@ $input-btn-padding-x: .75em !default;
 // Forms
 
 // scss-docs-start form-datepicker-variables
-$form-select-indicator-padding:               $input-btn-padding-x * 3 !default; // Extra padding for background-image
-$form-select-bg-position:                     left $input-btn-padding-x center !default;
-$form-select-bg-size:                         16px 16px !default; // In pixels because image dimensions
+$form-datepicker-indicator-padding:               $input-btn-padding-x * 3 !default; // Extra padding for background-image
+$form-datepicker-bg-position:                     left $input-btn-padding-x center !default;
+$form-datepicker-bg-size:                         16px 16px !default; // In pixels because image dimensions
 $form-datepicker-indicator-color:             #000 !default;
 $form-timepicker-indicator-color:             $form-datepicker-indicator-color !default;
 $form-datepicker-indicator:                   url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='#{$form-datepicker-indicator-color}' d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z'/></svg>") !default;
@@ -161,6 +161,10 @@ $card-info-font-size: .8rem !default;
 $card-info-spacer-y: $spacer * .5 !default;
 $card-action-button-gap: .25rem !default;
 $card-tags-spacer-y: $spacer * .75 !default;
+$card-title-link-color: null !default;
+$card-title-link-decoration: null !default;
+$card-title-link-hover-color: null !default;
+$card-title-link-hover-decoration: null !default;
 // scss-docs-end card-variables
 
 // Price
@@ -241,12 +245,15 @@ $labels-min-border-color: var(--#{$prefix}border-color) !default;
 $labels-min-border-radius: var(--#{$prefix}border-radius) !default;
 $labels-min-box-shadow: var(--#{$prefix}box-shadow-sm) !default;
 
-$labels-min-item-padding: .4rem !default;
+$labels-min-item-padding: null !default;
 $labels-min-item-bg: var(--#{$prefix}gray-100) !default;
-$labels-min-item-border-width: var(--#{$prefix}border-width) !default;
-$labels-min-item-border-color: var(--#{$prefix}border-color) !default;
+$labels-min-item-border-style: null !default;
+$labels-min-item-border-width: null !default;
+$labels-min-item-border-color: null !default;
 $labels-min-item-border-radius: var(--#{$prefix}border-radius) !default;
-$labels-min-item-box-shadow: var(--#{$prefix}box-shadow-sm) !default;
+$labels-min-item-box-shadow: null !default;
+$labels-min-item-width: 36px !default;
+$labels-min-item-height: 36px !default;
 
 $labels-min-label-padding: .5rem !default;
 $labels-min-label-font-size: 1rem !default;

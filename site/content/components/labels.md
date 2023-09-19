@@ -13,14 +13,14 @@ toc: true
 
 {{< example >}}
 <div class="labels-min">
-  <div class="labels-min-item ratio-1x1">
-    <figure>{{< placeholder markup="img" width="24" height="24" text="Image" >}}</figure>
+  <div class="labels-min-item">
+    <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
   </div>
-  <div class="labels-min-item ratio-1x1">
-    <figure>{{< placeholder markup="img" width="24" height="24" text="Image" >}}</figure>
+  <div class="labels-min-item">
+    <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
   </div>
-  <div class="labels-min-item ratio-1x1">
-    <figure>{{< placeholder markup="img" width="24" height="24" text="Image" >}}</figure>
+  <div class="labels-min-item">
+    <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
   </div>
   <span class="labels-min-label">+1</span>
 </div>

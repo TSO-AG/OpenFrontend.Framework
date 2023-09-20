@@ -298,3 +298,11 @@ $ticker-text-decoration:                   none !default;
 $ticker-text-decoration-hover:             underline !default;
 $ticker-z-index:                           10 !default;
 // scss-docs-end ticker-variables
+
+// Icon box
+// scss-docs-start icon-box-variables
+$icon-box-gap:              .5rem !default;
+$icon-box-margin-bottom:    1rem !default;
+$icon-box-icon-color:       $primary !default;
+$icon-box-icon-font-size:   null !default;
+// scss-docs-end icon-box-variables

@@ -298,3 +298,15 @@ $ticker-text-decoration:                   none !default;
 $ticker-text-decoration-hover:             underline !default;
 $ticker-z-index:                           10 !default;
 // scss-docs-end ticker-variables
+
+// Wrapper
+// scss-docs-start wrapper-variables
+$wrapper-padding-y: null !default;
+$wrapper-padding-x: null !default;
+$wrapper-color: null !default;
+$wrapper-bg-color: null !default;
+$wrapper-bg-color-light: var(--#{$prefix}light) !default;
+$wrapper-bg-color-dark: var(--#{$prefix}dark) !default;
+$wrapper-z-index: 1 !default;
+$wrapper-media-opacity: null !default;
+// scss-docs-end wrapper-variables

@@ -94,6 +94,7 @@
     - title: Tags
     - title: Ticker
     - title: Tooltips
+    - title: Wrapper
 
 - title: Helpers
   icon: magic

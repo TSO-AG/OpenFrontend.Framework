@@ -44,7 +44,7 @@ window.initOpenFrontend(container)
 
 ### Manual initialization
 
-You can also initialize the components yourself. This might be useful if you need to set custom options or interact with the component directly.
+You can also initialize the components yourself. This might be useful if you need to set dynamic (e.g. based on other JavaScript logic) options or interact with the component directly.
 
 For example, if you would like to initialize the [Tooltip]({{< docsref "/components/tooltips" >}}) component after the Ajax request completes:
 

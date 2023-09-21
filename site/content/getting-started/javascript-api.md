@@ -81,15 +81,15 @@ element.addEventListener('hidden.bs.tooltip', () => {
 Most of the components in the OpenFrontend library will accept the options as a JSON object passed to their unique data attribute. Every configuration object of each component is described on the component's page.
 
 ```html
-<div data-of-rating='{"score": 3}'></div>
+<div data-of-rating='{"readOnly": true, "score": 3}'></div>
 ```
 
 If you are initializing the component manually, you can pass the options object as a second argument:
 
 ```js
-await openFrontend.Component.then(component => component.getOrCreateInstance('#example', {
-  'animation': false,
-  'show': true,
+await openFrontend.Rating.then(component => component.getOrCreateInstance('#example', {
+  'readOnly': true,
+  'score': 3,
 }))
 ```
 

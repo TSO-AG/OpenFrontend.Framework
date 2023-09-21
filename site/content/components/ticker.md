@@ -75,7 +75,7 @@ The required markup for a ticker is only a `data` attribute and CSS class on the
 {{< /bs-table >}}
 
 ```js
-const component = await bootstrap.Ticker.then(component => component.getInstance('#example')) // Returns a Bootstrap ticker instance
+const ticker = await bootstrap.Ticker.then(component => component.getInstance('#example')) // Returns a Bootstrap ticker instance
 
 // setItems example
 ticker.setItems([])

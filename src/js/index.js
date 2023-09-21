@@ -18,9 +18,6 @@ window.bootstrap = {
   OffCanvas(...args) {
     import('bootstrap/js/dist/offcanvas').then(v => new v.default(...args))
   },
-  get Ticker() {
-    return new Promise(resolve => import(/* webpackChunkName: "open-frontend-ticker" */ './components/ticker').then(v => resolve(v.default)))
-  },
   get Toast() {
     return import('bootstrap/js/dist/toast').then(v => v.default)
   },
@@ -29,3 +26,8 @@ window.bootstrap = {
   },
 }
 
+window.openFrontend = {
+  get Ticker() {
+    return new Promise(resolve => import(/* webpackChunkName: "open-frontend-ticker" */ './components/ticker').then(v => resolve(v.default)))
+  },
+}

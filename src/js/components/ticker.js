@@ -37,10 +37,6 @@ class Ticker extends BaseComponent {
   constructor(element, config) {
     super(element, config)
 
-    if (!this._element) {
-      return
-    }
-
     this._items = this._config.items
     this._paused = false
 

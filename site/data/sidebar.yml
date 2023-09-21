@@ -7,6 +7,7 @@
   pages:
     - title: Introduction
     - title: Installation
+    - title: JavaScript API
     - title: Browsers & devices
     - title: Accessibility
     - title: RFS

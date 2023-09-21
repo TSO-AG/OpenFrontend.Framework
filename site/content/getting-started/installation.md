@@ -47,27 +47,3 @@ include the OpenFrontend in your own SCSS file:
 // Include OpenFrontend SCSS files
 @import '~openfrontend-framework/src/scss/index'
 ```
-
-## Using individual JavaScript components
-
-The OpenFrontend loads the JavaScript components lazily. That means the vast part of the JavaScript code
-is loaded only on demand and only if it's really needed.
-
-For example, the Tabs-related JavaScript code will be loaded only if specific elements are preset on the page:
-
-```js
-import { loadForElements } from 'openfrontend-framework/js/helpers/module-loader';
-
-document.addEventListener('DOMContentLoaded', () => {
-    loadForElements(document.querySelectorAll('[data-bs-toggle]'), () => import('openfrontend-framework/js/components/tabs'));
-});
-```
-
-This approach will significantly improve the loading time of your website without worrying about unused code overload.
-However, you can also include specific components by yourself in your custom JavaScripe code:
-
-```js
-import 'openfrontend-framework/js/components/tabs'
-```
-
-Please note that some components _may_ have the default function to be executed, whereas some may not!

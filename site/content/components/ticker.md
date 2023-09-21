@@ -51,7 +51,7 @@ You can fetch the items via Ajax request like shown below:
   element.addEventListener('initialized.of.ticker', () => {
     fetch('ticker.json')
       .then(r => r.json())
-      .then(items => bootstrap.Ticker.then(component => component.getInstance(element).setItems(items)));
+      .then(items => openFrontend.Ticker.then(component => component.getInstance(element).setItems(items)));
   });
 </script>
 {{< /example >}}
@@ -75,7 +75,7 @@ The required markup for a ticker is only a `data` attribute and CSS class on the
 {{< /bs-table >}}
 
 ```js
-const ticker = await bootstrap.Ticker.then(component => component.getInstance('#example')) // Returns a Bootstrap ticker instance
+const ticker = await openFrontend.Ticker.then(component => component.getInstance('#example')) // Returns a Bootstrap ticker instance
 
 // setItems example
 ticker.setItems([])
@@ -112,7 +112,7 @@ const items = [
 const element = document.getElementById('ticker')
 
 element.addEventListener('initialized.of.ticker', () => {
-  bootstrap.Ticker.then(component => component.getInstance(element).setItems([/* ... */]))
+  openFrontend.Ticker.then(component => component.getInstance(element).setItems([/* ... */]))
 })
 ```
 

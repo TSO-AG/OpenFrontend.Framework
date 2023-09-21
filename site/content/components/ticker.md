@@ -67,6 +67,22 @@ The required markup for a ticker is only a `data` attribute and CSS class on the
 <div class="ticker" data-of-ticker></div>
 ```
 
+### Options
+
+You can pass extra options as JSON value of the data attribute. Here is the list of all available options (alphabetically):
+
+{{< bs-table "table" >}}
+| Option | Type | Default | Explanation |
+| --- | --- | --- | --- |
+| `appendToBody` | `boolean` | `false` | The ticker element will be appended to the `<body>`. |
+| `items` | `array` | `[]` | The items to be displayed. Use the `setItems()` method to dynamically set ticker items. |
+| `pauseOnHover` | `boolean` | `true` | Pause the scroll on mouse hover. |
+| `prependToBody` | `boolean` | `false` | The ticker element will be prepended to the `<body>`. |
+| `speedDesktop` | `number` | `2` | The ticker speed (pixels to move on each iteration) on desktop. |
+| `speedMobile` | `number` | `1` | The ticker speed (pixels to move on each iteration) on mobile devices. |
+| `speedMobileQuery` | `string` | `'(max-width: 767px)'` | The CSS media query determining the ticker speed on mobile. |
+{{< /bs-table >}}
+
 ### Methods
 
 {{< bs-table "table" >}}
@@ -117,22 +133,6 @@ element.addEventListener('initialized.of.ticker', async () => {
   ticker.setItems([/* ... */])
 })
 ```
-
-### Options
-
-You can pass extra options as JSON value of the data attribute. Here is the list of all available options (alphabetically):
-
-{{< bs-table "table" >}}
-| Option | Type | Default | Explanation |
-| --- | --- | --- | --- |
-| `appendToBody` | `boolean` | `false` | The ticker element will be appended to the `<body>`. |
-| `items` | `array` | `[]` | The items to be displayed. Use the `setItems()` method to dynamically set ticker items. |
-| `pauseOnHover` | `boolean` | `true` | Pause the scroll on mouse hover. |
-| `prependToBody` | `boolean` | `false` | The ticker element will be prepended to the `<body>`. |
-| `speedDesktop` | `number` | `2` | The ticker speed (pixels to move on each iteration) on desktop. |
-| `speedMobile` | `number` | `1` | The ticker speed (pixels to move on each iteration) on mobile devices. |
-| `speedMobileQuery` | `string` | `'(max-width: 767px)'` | The CSS media query determining the ticker speed on mobile. |
-{{< /bs-table >}}
 
 ## CSS
 

@@ -153,6 +153,22 @@ You can also embed static HTML code for a simple rating display, some examples b
 
 ## Usage
 
+### Options
+
+You can pass extra options as JSON value of the data attribute.
+
+Here is the list of all available options (alphabetically):
+
+{{< bs-table "table" >}}
+| Option | Type | Default | Explanation |
+| --- | --- | --- | --- |
+| `half` | `boolean` | `false` | Enables half star selection. |
+| `icon` | `string` | `undefined` | Icon CSS class. |
+| `number` | `number` | `5` | The number of stars that will be presented. |
+| `readOnly` | `boolean` | `false` | Turns the rating read-only. |
+| `score` | `number` | `undefined` | Initial rating. |
+{{< /bs-table >}}
+
 ### Methods
 
 {{< bs-table "table" >}}
@@ -183,22 +199,6 @@ element.addEventListener('clicked.of.rating', event => {
   alert(`Clicked rating: ${event.detail.rating}`)
 })
 ```
-
-### Options
-
-You can pass extra options as JSON value of the data attribute.
-
-Here is the list of all available options (alphabetically):
-
-{{< bs-table "table" >}}
-| Option | Type | Default | Explanation |
-| --- | --- | --- | --- |
-| `half` | `boolean` | `false` | Enables half star selection. |
-| `icon` | `string` | `undefined` | Icon CSS class. |
-| `number` | `number` | `5` | The number of stars that will be presented. |
-| `readOnly` | `boolean` | `false` | Turns the rating read-only. |
-| `score` | `number` | `undefined` | Initial rating. |
-{{< /bs-table >}}
 
 ## CSS
 

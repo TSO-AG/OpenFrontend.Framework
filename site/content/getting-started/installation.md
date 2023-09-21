@@ -47,3 +47,7 @@ include the OpenFrontend in your own SCSS file:
 // Include OpenFrontend SCSS files
 @import '~openfrontend-framework/src/scss/index'
 ```
+
+## Create your custom JavaScript build
+
+Read more about the JavaScript concepts and how to create a custom build in the [JavaScript API]({{< docsref "/getting-started/javascript-api" >}}) section.

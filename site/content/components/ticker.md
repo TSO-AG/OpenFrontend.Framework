@@ -46,13 +46,14 @@ You can fetch the items via Ajax request like shown below:
 <div id="ticker" class="ticker" data-of-ticker></div>
 
 <script>
-  const element = document.getElementById('ticker');
+  const element = document.getElementById('ticker')
 
-  element.addEventListener('initialized.of.ticker', () => {
-    fetch('ticker.json')
-      .then(r => r.json())
-      .then(items => openFrontend.Ticker.then(component => component.getInstance(element).setItems(items)));
-  });
+  element.addEventListener('initialized.of.ticker', async () => {
+    const items = await fetch('ticker.json').then(r => r.json())
+    const ticker = await openFrontend.Ticker.then(component => component.getInstance(element))
+
+    ticker.setItems(items)
+  })
 </script>
 {{< /example >}}
 
@@ -111,8 +112,9 @@ const items = [
 ```js
 const element = document.getElementById('ticker')
 
-element.addEventListener('initialized.of.ticker', () => {
-  openFrontend.Ticker.then(component => component.getInstance(element).setItems([/* ... */]))
+element.addEventListener('initialized.of.ticker', async () => {
+  const ticker = await openFrontend.Ticker.then(component => component.getInstance(element))
+  ticker.setItems([/* ... */])
 })
 ```
 

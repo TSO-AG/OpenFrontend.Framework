@@ -22,17 +22,35 @@ For example, the [Ticker]({{< docsref "/components/ticker" >}}) component would 
 <div class="ticker" data-of-ticker></div>
 ```
 
+However, the component elements may be added to the DOM after the `DOMContentLoaded` event is fired (e.g., via Ajax request). In that case, OpenFrontend will *not* initialize them automatically.
+
+There are two ways to tackle this problem: initialize components semi-automatically or manually.
+
+### Semi-automatic initialization
+
+You can call the global method `initOpenFrontend(element)`, which will traverse through all elements inside the container and initialize the components just like it would do on the `DOMContentLoaded` event.
+
+For example, if you would like to initialize components on a newly added HTML buffer:
+
+```js
+const container = document.getElementById('#ajax-container')
+
+// Add new elements to the DOM
+container.innerHTML = await fetch('endpoint/buffer').then(r => r.text())
+
+// Initialize OpenFrontend for newly added elements
+window.initOpenFrontend(container)
+```
+
 ### Manual initialization
 
-It may happen that the component elements are added to the DOM after the `DOMContentLoaded` event is fired. In that case, OpenFrontend will *not* initialize them automatically.
-
-In that case, you have to access the API yourself and initialize the components manually.
+You can also initialize the components yourself. This might be useful if you need to set custom options or interact with the component directly.
 
 For example, if you would like to initialize the [Tooltip]({{< docsref "/components/tooltips" >}}) component after the Ajax request completes:
 
 ```js
-const content = await fetch('https://domain.tld/tooltip.json').then(r => r.text())
-const tooltip = await openFrontend.Tooltip.then(component => component.getOrCreateInstance('#tooltip'))
+const content = await fetch('endpoint/tooltip').then(r => r.text())
+const tooltip = await openFrontend.Tooltip.then(component => component.getOrCreateInstance('#tooltip', { 'animation': false }))
 
 tooltip.setContent(content)
 tooltip.show()
@@ -66,6 +84,15 @@ Most of the components in the OpenFrontend library will accept the options as a 
 <div data-of-rating='{"score": 3}'></div>
 ```
 
+If you are initializing the component manually, you can pass the options object as a second argument:
+
+```js
+await openFrontend.Component.then(component => component.getOrCreateInstance('#example', {
+  'animation': false,
+  'show': true,
+}))
+```
+
 ### Methods
 
 Apart from individual public methods, they share some methods that are common for all.
@@ -78,8 +105,10 @@ const component = await openFrontend.Component.then(component => component.getIn
 
 The `getOrCreateInstance()` method will return the current instance of the component on the given element. It will create a new instance if it does not exist yet. However, if the target element does not exist, it will return an incorrectly initialized instance or throw an error!
 
+Using this method, you can also pass the configuration options that will be used if the instance has to be created.
+
 ```js
-const component = await openFrontend.Component.then(component => component.getOrCreateInstance('#example'));
+const component = await openFrontend.Component.then(component => component.getOrCreateInstance('#example', { 'animation': false }));
 ```
 
 {{< callout danger >}}
@@ -98,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadForElements(document.querySelectorAll('[data-of-ticker]'), () => import(/* webpackChunkName: "open-frontend-ticker" */ 'openfrontend-framework/js/components/ticker'), 'initMultiple')
 });
 
-// Provide an API that allows to initialize and/or use components in a custom code
+// Provide an API that allows to initialize and/or use components in a custom code (optional)
 window.openFrontend = {
   get Ticker() {
     return new Promise(resolve => import(/* webpackChunkName: "open-frontend-ticker" */ 'openfrontend-framework/js/components/ticker').then(v => resolve(v.default)))

@@ -6,4 +6,4 @@ export function initMultiple(els) {
   }
 }
 
-export default Tooltip
+export { Tooltip as default } from 'bootstrap'

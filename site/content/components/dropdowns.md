@@ -1060,7 +1060,7 @@ Call the dropdowns via JavaScript:
 
 ```js
 const dropdownElementList = document.querySelectorAll('.dropdown-toggle')
-const dropdownList = [...dropdownElementList].map(async (element) => await openFrontend.Dropdown.then(component => component.getOrCreateInstance(element)))
+const dropdownList = await Promise.all([...dropdownElementList].map(element => openFrontend.Dropdown.then(component => component.getOrCreateInstance(element))))
 ```
 
 ### Options

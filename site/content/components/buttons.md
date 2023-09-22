@@ -404,7 +404,7 @@ const button = await openFrontend.Button.then(component => component.getOrCreate
 For example, to toggle all buttons
 
 ```js
-document.querySelectorAll('.btn').forEach(async (buttonElement) => {
+document.querySelectorAll('.btn').forEach(async buttonElement => {
   const button = await openFrontend.Button.then(component => component.getOrCreateInstance(buttonElement))
   button.toggle()
 })

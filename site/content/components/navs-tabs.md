@@ -609,7 +609,7 @@ Enable tabbable tabs via JavaScript (each tab needs to be activated individually
 
 ```js
 const triggerTabList = document.querySelectorAll('#myTab button')
-triggerTabList.forEach(async (triggerEl) => {
+triggerTabList.forEach(async triggerEl => {
   const tabTrigger = await openFrontend.Tab.then(component => component.getOrCreateInstance(triggerEl))
 
   triggerEl.addEventListener('click', event => {

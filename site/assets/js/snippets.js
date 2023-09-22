@@ -11,8 +11,6 @@
  * For details, see https://creativecommons.org/licenses/by/3.0/.
  */
 
-/* global bootstrap: false */
-
 // eslint-disable-next-line unicorn/prefer-top-level-await
 (async () => {
   'use strict'

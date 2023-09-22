@@ -5,7 +5,7 @@ export function loadForElements(els, importer, method = 'default') {
         method = 'initMultiple'
       }
 
-      if (typeof module[method] === 'function'){
+      if (typeof module[method] === 'function') {
         module[method](els)
       }
     })

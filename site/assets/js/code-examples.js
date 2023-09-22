@@ -9,7 +9,7 @@
  * For details, see https://creativecommons.org/licenses/by/3.0/.
  */
 
-/* global ClipboardJS: false, bootstrap: false */
+/* global ClipboardJS: false, openFrontend: false */
 
 (() => {
   'use strict'

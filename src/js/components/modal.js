@@ -1,4 +1,4 @@
-import {Modal} from 'bootstrap' // eslint-disable-line no-unused-vars
+import { Modal } from 'bootstrap'
 
 export function initMultiple(els) {
   for (const el of els) {
@@ -6,4 +6,4 @@ export function initMultiple(els) {
   }
 }
 
-export default Modal
+export { Modal as default } from 'bootstrap'

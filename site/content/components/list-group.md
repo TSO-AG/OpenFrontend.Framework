@@ -413,7 +413,7 @@ Enable tabbable list item via JavaScript (each list item needs to be activated i
 
 ```js
 const triggerTabList = document.querySelectorAll('#myTab a')
-triggerTabList.forEach(async (triggerEl) => {
+triggerTabList.forEach(async triggerEl => {
   const tabTrigger = await openFrontend.Tab.then(component => component.getOrCreateInstance(triggerEl))
 
   triggerEl.addEventListener('click', event => {

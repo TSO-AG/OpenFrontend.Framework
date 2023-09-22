@@ -134,7 +134,7 @@ Enable manually with:
 
 ```js
 const collapseElementList = document.querySelectorAll('.collapse')
-const collapseList = [...collapseElementList].map(async (element) => await openFrontend.Collapse.then(component => component.getOrCreateInstance(element)))
+const collapseList = await Promise.all([...collapseElementList].map(element => openFrontend.Collapse.then(component => component.getOrCreateInstance(element))))
 ```
 
 ### Options

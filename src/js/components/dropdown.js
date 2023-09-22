@@ -1,4 +1,4 @@
-import { Dropdown } from 'bootstrap' // eslint-disable-line no-unused-vars
+import { Dropdown } from 'bootstrap'
 
 export function initMultiple(els) {
   for (const el of els) {
@@ -6,4 +6,4 @@ export function initMultiple(els) {
   }
 }
 
-export default Dropdown
+export { Dropdown as default } from 'bootstrap'

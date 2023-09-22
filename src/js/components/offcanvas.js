@@ -1,4 +1,4 @@
-import {Offcanvas} from 'bootstrap' // eslint-disable-line no-unused-vars
+import { Offcanvas } from 'bootstrap'
 
 export function initMultiple(els) {
   for (const el of els) {
@@ -6,4 +6,4 @@ export function initMultiple(els) {
   }
 }
 
-export default Offcanvas;
+export { Offcanvas as default } from 'bootstrap'

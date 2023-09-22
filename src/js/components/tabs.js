@@ -1,4 +1,4 @@
-import {Tab} from 'bootstrap';
+import { Tab } from 'bootstrap'
 
 export function initMultiple(els) {
   for (const el of els) {
@@ -6,4 +6,4 @@ export function initMultiple(els) {
   }
 }
 
-export default Tab
+export { Tab as default } from 'bootstrap'

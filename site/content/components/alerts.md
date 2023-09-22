@@ -178,7 +178,7 @@ Initialize elements as alerts
 
 ```js
 const alertList = document.querySelectorAll('.alert')
-const alerts = [...alertList].map(async (element) => await openFrontend.Alert.then(component => component.getOrCreateInstance(element)))
+const alerts = await Promise.all([...alertList].map(element => openFrontend.Alert.then(component => component.getOrCreateInstance(element))))
 ```
 
 {{< callout info >}}

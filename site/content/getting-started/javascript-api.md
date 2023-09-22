@@ -50,7 +50,7 @@ For example, if you would like to initialize the [Tooltip]({{< docsref "/compone
 
 ```js
 const content = await fetch('endpoint/tooltip').then(r => r.text())
-const tooltip = await openFrontend.Tooltip.then(component => component.getOrCreateInstance('#tooltip', { 'animation': false }))
+const tooltip = await openFrontend.Tooltip.then(component => component.getOrCreateInstance('#tooltip', { animation: false }))
 
 tooltip.setContent(content)
 tooltip.show()
@@ -88,8 +88,8 @@ If you are initializing the component manually, you can pass the options object 
 
 ```js
 await openFrontend.Rating.then(component => component.getOrCreateInstance('#example', {
-  'readOnly': true,
-  'score': 3,
+  readOnly: true,
+  score: 3,
 }))
 ```
 
@@ -100,7 +100,7 @@ Apart from individual public methods, they share some methods that are common fo
 The `getInstance()` method will return the current instance of the component on the given element. It will return `null` if there is no instance on the element, or the element does not exist.
 
 ```js
-const component = await openFrontend.Component.then(component => component.getInstance('#example'));
+const component = await openFrontend.Component.then(component => component.getInstance('#example'))
 ```
 
 The `getOrCreateInstance()` method will return the current instance of the component on the given element. It will create a new instance if it does not exist yet. However, if the target element does not exist, it will return an incorrectly initialized instance or throw an error!
@@ -108,7 +108,7 @@ The `getOrCreateInstance()` method will return the current instance of the compo
 Using this method, you can also pass the configuration options that will be used if the instance has to be created.
 
 ```js
-const component = await openFrontend.Component.then(component => component.getOrCreateInstance('#example', { 'animation': false }));
+const component = await openFrontend.Component.then(component => component.getOrCreateInstance('#example', { animation: false }))
 ```
 
 {{< callout danger >}}
@@ -120,12 +120,12 @@ const component = await openFrontend.Component.then(component => component.getOr
 You can also create your custom JavaScript entry point if you need to limit or extend the existing features. Here is an example of lazy-loading using [Webpack](https://webpack.js.org/):
 
 ```js
-import { loadForElements } from 'openfrontend-framework/js/helpers/module-loader';
+import { loadForElements } from 'openfrontend-framework/js/helpers/module-loader'
 
 // Initialize the components as soon as they are present in the DOM
 document.addEventListener('DOMContentLoaded', () => {
   loadForElements(document.querySelectorAll('[data-of-ticker]'), () => import(/* webpackChunkName: "open-frontend-ticker" */ 'openfrontend-framework/js/components/ticker'), 'initMultiple')
-});
+})
 
 // Provide an API that allows to initialize and/or use components in a custom code (optional)
 window.openFrontend = {

@@ -13,28 +13,28 @@ toc: true
 #### Light
 {{< example >}}
 <div class="wrapper wrapper-bg-light">
-  <div class="d-flex justify-content-center align-items-center" style="height: 200px">Sample wrapper content</div>
+  <div class="d-flex justify-content-center align-items-center" style="min-height: 200px">Sample wrapper content</div>
 </div>
 {{< /example >}}
 
 #### Dark
 {{< example >}}
 <div class="wrapper wrapper-bg-dark">
-  <div class="d-flex justify-content-center align-items-center" style="height: 200px">Sample wrapper content</div>
+  <div class="d-flex justify-content-center align-items-center" style="min-height: 200px">Sample wrapper content</div>
 </div>
 {{< /example >}}
 
 #### Custom color
 {{< example >}}
 <div class="wrapper" style="--bs-wrapper-bg-color: #f47c00; --bs-wrapper-color: #fff;">
-  <div class="d-flex justify-content-center align-items-center" style="height: 200px">Sample wrapper content</div>
+  <div class="d-flex justify-content-center align-items-center" style="min-height: 200px">Sample wrapper content</div>
 </div>
 {{< /example >}}
 
 ### Background image
 {{< example >}}
 <div class="wrapper">
-  <div class="d-flex justify-content-center align-items-center" style="height: 200px">Sample wrapper content</div>
+  <div class="d-flex justify-content-center align-items-center" style="min-height: 200px">Sample wrapper content</div>
 
   <div class="wrapper-bg-media">
     <figure>
@@ -47,7 +47,7 @@ toc: true
 ### Background video
 {{< example >}}
 <div class="wrapper" style="--bs-wrapper-color: #fff;">
-  <div class="d-flex justify-content-center align-items-center" style="height: 200px">Sample wrapper content</div>
+  <div class="d-flex justify-content-center align-items-center" style="min-height: 200px">Sample wrapper content</div>
 
   <div class="wrapper-bg-media">
     <figure>
@@ -64,7 +64,7 @@ With the `--bs-wrapper-media-opacity` variable, we can control the transparency 
 
 {{< example >}}
 <div class="wrapper" style="--bs-wrapper-bg-color: #f47c00; --bs-wrapper-color: #fff; --bs-wrapper-media-opacity: 0.2">
-  <div class="d-flex justify-content-center align-items-center" style="height: 200px">Sample wrapper content</div>
+  <div class="d-flex justify-content-center align-items-center" style="min-height: 200px">Sample wrapper content</div>
 
   <div class="wrapper-bg-media">
     <figure>

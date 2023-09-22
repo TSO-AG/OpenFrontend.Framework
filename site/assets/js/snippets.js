@@ -18,48 +18,6 @@
   'use strict'
 
   // -------------------------------
-  // Toasts
-  // -------------------------------
-  // Used by 'Placement' example in docs or StackBlitz
-  const toastPlacement = document.getElementById('toastPlacement')
-  if (toastPlacement) {
-    document.getElementById('selectToastPlacement').addEventListener('change', function () {
-      if (!toastPlacement.dataset.originalClass) {
-        toastPlacement.dataset.originalClass = toastPlacement.className
-      }
-
-      toastPlacement.className = `${toastPlacement.dataset.originalClass} ${this.value}`
-    })
-  }
-
-  // Instantiate all toasts in docs pages only
-  document.querySelectorAll('.bd-example .toast')
-    .forEach(toastNode => {
-      bootstrap.Toast.then(Toast => {
-        const toast = new Toast(toastNode, {
-          autohide: false
-        })
-
-        toast.show()
-      })
-    })
-
-  // Instantiate all toasts in docs pages only
-  // js-docs-start live-toast
-  const toastTrigger = document.getElementById('liveToastBtn')
-  const toastLiveExample = document.getElementById('liveToast')
-
-  if (toastTrigger) {
-    const Toast = await bootstrap.Toast
-
-    const toastBootstrap = Toast.getOrCreateInstance(toastLiveExample)
-    toastTrigger.addEventListener('click', () => {
-      toastBootstrap.show()
-    })
-  }
-  // js-docs-end live-toast
-
-  // -------------------------------
   // Alerts
   // -------------------------------
   // Used in 'Show live alert' example in docs or StackBlitz
@@ -85,15 +43,6 @@
     })
   }
   // js-docs-end live-alert
-
-  // --------
-  // Carousels
-  // --------
-  // Instantiate all non-autoplaying carousels in docs or StackBlitz
-  document.querySelectorAll('.carousel:not([data-bs-ride="carousel"])')
-    .forEach(carousel => {
-      bootstrap.Carousel.getOrCreateInstance(carousel)
-    })
 
   // -------------------------------
   // Checks & Radios

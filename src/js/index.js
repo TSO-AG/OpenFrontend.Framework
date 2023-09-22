@@ -1,17 +1,29 @@
 import { loadForElements } from './helpers/module-loader'
 
-window.bootstrap = {
-  get Toast() {
-    return import('bootstrap/js/dist/toast').then(v => v.default)
-  },
-}
-
 window.openFrontend = {
+  get Alert() {
+    return new Promise(resolve => import(/* webpackChunkName: "open-frontend-alert" */ 'bootstrap/js/src/alert').then(v => resolve(v.default)))
+  },
+  get Button() {
+    return new Promise(resolve => import(/* webpackChunkName: "open-frontend-button" */ 'bootstrap/js/src/button').then(v => resolve(v.default)))
+  },
+  get Collapse() {
+    return new Promise(resolve => import(/* webpackChunkName: "open-frontend-collapse" */ 'bootstrap/js/src/collapse').then(v => resolve(v.default)))
+  },
+  get Dropdown() {
+    return new Promise(resolve => import(/* webpackChunkName: "open-frontend-dropdown" */ './components/dropdown').then(v => resolve(v.default)))
+  },
+  get Modal() {
+    return new Promise(resolve => import(/* webpackChunkName: "open-frontend-modal" */ './components/modal').then(v => resolve(v.default)))
+  },
   get OffCanvas() {
     return new Promise(resolve => import(/* webpackChunkName: "open-frontend-offcanvas" */ './components/offcanvas').then(v => resolve(v.default)))
   },
   get Rating() {
     return new Promise(resolve => import(/* webpackChunkName: "open-frontend-ticker" */ './components/rating').then(v => resolve(v.default)))
+  },
+  get Tab() {
+    return new Promise(resolve => import(/* webpackChunkName: "open-frontend-tabs" */ './components/tabs').then(v => resolve(v.default)))
   },
   get Ticker() {
     return new Promise(resolve => import(/* webpackChunkName: "open-frontend-ticker" */ './components/ticker').then(v => resolve(v.default)))

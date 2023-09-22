@@ -1,4 +1,3 @@
-import '@popperjs/core'
 import { Tooltip } from 'bootstrap'
 
 export function initMultiple(els) {

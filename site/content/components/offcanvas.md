@@ -284,13 +284,6 @@ While both ways to dismiss an offcanvas are supported, keep in mind that dismiss
 
 ### Via JavaScript
 
-Enable manually with:
-
-```js
-const offcanvasElementList = document.querySelectorAll('.offcanvas')
-const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
-```
-
 ### Options
 
 {{< markdown >}}
@@ -316,7 +309,7 @@ Activates your content as an offcanvas element. Accepts an optional options `obj
 You can create an offcanvas instance with the constructor, for example:
 
 ```js
-const bsOffcanvas = new bootstrap.Offcanvas('#myOffcanvas')
+const offcanvas = await openFrontend.Offcanvas.then(component => component.getOrCreateInstance('#myOffcanvas'))
 ```
 
 {{< bs-table "table" >}}

@@ -10,8 +10,6 @@ toc: true
 
 Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They're made interactive with the included Bootstrap dropdown JavaScript plugin. They're toggled by clicking, not by hovering; this is [an intentional design decision](https://markdotto.com/2012/02/27/bootstrap-explained-dropdowns/).
 
-Dropdowns are built on a third party library, [Popper](https://popper.js.org/), which provides dynamic positioning and viewport detection. Be sure to include [popper.min.js]({{< param "cdn.popper" >}}) before Bootstrap's JavaScript or use `bootstrap.bundle.min.js` / `bootstrap.bundle.js` which contains Popper. Popper isn't used to position dropdowns in navbars though as dynamic positioning isn't required.
-
 ## Accessibility
 
 The [<abbr title="Web Accessibility Initiative">WAI</abbr> <abbr title="Accessible Rich Internet Applications">ARIA</abbr>](https://www.w3.org/TR/wai-aria/) standard defines an actual [`role="menu"` widget](https://www.w3.org/TR/wai-aria/#menu), but this is specific to application-like menus which trigger actions or functions. <abbr title="Accessible Rich Internet Applications">ARIA</abbr> menus can only contain menu items, checkbox menu items, radio button menu items, radio button groups, and sub-menus.
@@ -1062,7 +1060,7 @@ Call the dropdowns via JavaScript:
 
 ```js
 const dropdownElementList = document.querySelectorAll('.dropdown-toggle')
-const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new bootstrap.Dropdown(dropdownToggleEl))
+const dropdownList = await Promise.all([...dropdownElementList].map(element => openFrontend.Dropdown.then(component => component.getOrCreateInstance(element))))
 ```
 
 ### Options
@@ -1085,13 +1083,13 @@ const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new bootst
 #### Using function with `popperConfig`
 
 ```js
-const dropdown = new bootstrap.Dropdown(element, {
+const dropdown = await openFrontend.Dropdown.then(component => component.getOrCreateInstance(element, {
   popperConfig(defaultBsPopperConfig) {
     // const newPopperConfig = {...}
     // use defaultBsPopperConfig if needed...
     // return newPopperConfig
   }
-})
+}))
 ```
 
 ### Methods
@@ -1100,8 +1098,8 @@ const dropdown = new bootstrap.Dropdown(element, {
 | Method | Description |
 | --- | --- |
 | `dispose` | Destroys an element's dropdown. (Removes stored data on the DOM element) |
-| `getInstance` | Static method which allows you to get the dropdown instance associated to a DOM element, you can use it like this: `bootstrap.Dropdown.getInstance(element)`. |
-| `getOrCreateInstance` | Static method which returns a dropdown instance associated to a DOM element or create a new one in case it wasn't initialized. You can use it like this: `bootstrap.Dropdown.getOrCreateInstance(element)`. |
+| `getInstance` | Static method which allows you to get the dropdown instance associated to a DOM element. |
+| `getOrCreateInstance` | Static method which returns a dropdown instance associated to a DOM element or create a new one in case it wasn't initialized. |
 | `hide` | Hides the dropdown menu of a given navbar or tabbed navigation. |
 | `show` | Shows the dropdown menu of a given navbar or tabbed navigation. |
 | `toggle` | Toggles the dropdown menu of a given navbar or tabbed navigation. |

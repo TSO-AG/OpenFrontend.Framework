@@ -56,6 +56,7 @@
     ],
     "no-console": "error",
     "no-negated-condition": "off",
+    "no-promise-executor-return": "off",
     "object-curly-spacing": [
       "error",
       "always"
@@ -162,7 +163,8 @@
       ],
       "extends": "plugin:markdown/recommended",
       "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaVersion": "latest"
       },
       "rules": {
         "no-alert": "off",

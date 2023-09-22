@@ -21,9 +21,11 @@ This example demonstrates a quick and easy way to add the Ratings component to y
 <script>
   const element = document.getElementById('rating');
 
-  element.addEventListener('clicked.of.rating', (event) => {
-    alert(`Clicked rating: ${event.detail.rating}`);
-    element.rating.readOnly(true);
+  element.addEventListener('clicked.of.rating', async (event) => {
+    alert(`Clicked rating: ${event.detail.rating}`)
+
+    const rating = await openFrontend.Rating.then(component => component.getInstance(element))
+    rating.setReadOnly(true)
   });
 </script>
 {{< /example >}}
@@ -151,11 +153,36 @@ You can also embed static HTML code for a simple rating display, some examples b
 
 ## Usage
 
+### Options
+
+You can pass extra options as JSON value of the data attribute.
+
+Here is the list of all available options (alphabetically):
+
+{{< bs-table "table" >}}
+| Option | Type | Default | Explanation |
+| --- | --- | --- | --- |
+| `half` | `boolean` | `false` | Enables half star selection. |
+| `icon` | `string` | `undefined` | Icon CSS class. |
+| `number` | `number` | `5` | The number of stars that will be presented. |
+| `readOnly` | `boolean` | `false` | Turns the rating read-only. |
+| `score` | `number` | `undefined` | Initial rating. |
+{{< /bs-table >}}
+
 ### Methods
 
-{{< callout danger >}}
-The `element.rating` contains an instance of the rating, including all **private** properties and methods. Use with caution!
-{{< /callout >}}
+{{< bs-table "table" >}}
+| Method | Description |
+| --- | --- |
+| `setReadOnly` | Switch the read-only mode on/off. Accepts a `boolean` value. |
+{{< /bs-table >}}
+
+```js
+const rating = await openFrontend.Rating.then(component => component.getInstance('#example')) // Returns a Bootstrap rating instance
+
+// setReadOnly example
+rating.setReadOnly(true)
+```
 
 ### Events
 
@@ -170,25 +197,8 @@ const element = document.getElementById('rating')
 
 element.addEventListener('clicked.of.rating', event => {
   alert(`Clicked rating: ${event.detail.rating}`)
-  element.rating.readOnly(true)
 })
 ```
-
-### Options
-
-You can pass extra options as JSON value of the data attribute.
-
-Here is the list of all available options (alphabetically):
-
-{{< bs-table "table" >}}
-| Option | Type | Default | Explanation |
-| --- | --- | --- | --- |
-| `half` | `Boolean` | `false` | Enables half star selection. |
-| `icon` | `String` | `null` | Icon CSS class. |
-| `number` | `Number` | `5` | The number of stars that will be presented. |
-| `readOnly` | `Boolean` | `false` | Turns the rating read-only. |
-| `score` | `Number` | `undefined` | Initial rating. |
-{{< /bs-table >}}
 
 ## CSS
 

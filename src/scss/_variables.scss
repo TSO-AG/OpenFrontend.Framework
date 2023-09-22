@@ -38,6 +38,9 @@ $font-weight-normal: 400 !default;
 
 $link-external-icon: $ofi-link-external !default;
 
+// Grid columns
+$grid-row-columns: 12 !default;
+
 // Buttons + Forms
 //
 // Shared variables that are reassigned to `$input-` and `$icon-circle-` specific variables.
@@ -298,3 +301,18 @@ $ticker-text-decoration:                   none !default;
 $ticker-text-decoration-hover:             underline !default;
 $ticker-z-index:                           10 !default;
 // scss-docs-end ticker-variables
+
+// Logos
+// scss-docs-start logos-variables
+$logo-list-gap: 1rem !default;
+$logo-list-margin-bottom: 1rem !default;
+$logo-list-item-max-width: null !default;
+$logo-list-item-max-height: null !default;
+$logo-list-item-bg: null !default;
+$logo-list-item-padding-y: null !default;
+$logo-list-item-padding-x: null !default;
+$logo-list-item-border-style: null !default;
+$logo-list-item-border-width: null !default;
+$logo-list-item-border-color: null !default;
+$logo-list-item-border-radius: null !default;
+// scss-docs-end logos-variables

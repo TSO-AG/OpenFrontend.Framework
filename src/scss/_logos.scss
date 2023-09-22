@@ -36,7 +36,7 @@
   text-align: center;
   background-color: var(--#{$prefix}logo-list-item-bg);
   border: var(--#{$prefix}logo-list-item-border-width) var(--#{$prefix}logo-list-item-border-style) var(--#{$prefix}logo-list-item-border-color);
-  border-radius: var(--#{$prefix}logo-list-item-border-radius);
+  @include border-radius(var(--#{$prefix}logo-list-item-border-radius));
 
   figure {
     display: flex;

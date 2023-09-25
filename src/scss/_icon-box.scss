@@ -1,0 +1,22 @@
+.icon-box {
+  // scss-docs-start icon-box-css-vars
+  --#{$prefix}icon-box-gap: #{$icon-box-gap};
+  --#{$prefix}icon-box-margin-bottom: #{$icon-box-margin-bottom};
+  --#{$prefix}icon-box-icon-color: #{$icon-box-icon-color};
+  --#{$prefix}icon-box-icon-font-size: #{$icon-box-icon-font-size};
+  // scss-docs-end icon-box-css-vars
+
+  display: flex;
+  gap: var(--#{$prefix}icon-box-gap);
+  margin-bottom: var(--#{$prefix}icon-box-margin-bottom);
+
+  &-center {
+    align-items: center;
+  }
+}
+
+.icon-box-icon {
+  min-width: 1em;
+  font-size: var(--#{$prefix}icon-box-icon-font-size);
+  color: var(--#{$prefix}icon-box-icon-color);
+}

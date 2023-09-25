@@ -346,3 +346,11 @@ $social-link-hover-color: #fff !default;
 $social-link-hover-border-color: null !default;
 $social-link-transition:  color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
 // scss-docs-end social-links-variables
+
+// Icon box
+// scss-docs-start icon-box-variables
+$icon-box-gap:              .5rem !default;
+$icon-box-margin-bottom:    1rem !default;
+$icon-box-icon-color:       $primary !default;
+$icon-box-icon-font-size:   null !default;
+// scss-docs-end icon-box-variables

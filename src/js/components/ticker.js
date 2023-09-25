@@ -1,44 +1,82 @@
-const SHOW_CSS_CLASS = 'ticker-show'
+import BaseComponent from 'bootstrap/js/src/base-component'
 
-class Ticker {
-  constructor(el) {
-    const config = el.dataset.ofTicker ? JSON.parse(el.dataset.ofTicker) : {}
-    config.appendToBody = Object.prototype.hasOwnProperty.call(config, 'appendToBody') ? config.appendToBody : false
-    config.items = config.items || []
-    config.pauseOnHover = Object.prototype.hasOwnProperty.call(config, 'pauseOnHover') ? config.pauseOnHover : true
-    config.prependToBody = Object.prototype.hasOwnProperty.call(config, 'prependToBody') ? config.prependToBody : false
-    config.speedBreakpoint = config.speedBreakpoint || 767
-    config.speedDesktop = config.speedDesktop || 2
-    config.speedMobile = config.speedMobile || 1
+/**
+ * Constants
+ */
+const NAME = 'ticker'
+const EVENT_TICKER_INITIALIZED = 'initialized.of.ticker'
 
-    this.el = el
-    this.config = config
-    this.interval = null
-    this.items = config.items
-    this.paused = false
+const CLASS_NAME_ICON = 'ticker-icon'
+const CLASS_NAME_ITEM = 'ticker-item'
+const CLASS_NAME_ITEMS = 'ticker-items'
+const CLASS_NAME_LINK = 'ticker-link'
+const CLASS_NAME_SHOW = 'ticker-show'
+const CLASS_NAME_TEXT = 'ticker-text'
 
-    this.itemsContainer = document.createElement('div')
-    this.itemsContainer.className = 'ticker-items'
-    this.el.append(this.itemsContainer)
+const DefaultType = {
+  appendToBody: 'boolean',
+  items: 'array',
+  pauseOnHover: 'boolean',
+  prependToBody: 'boolean',
+  speedMobileQuery: 'string',
+  speedDesktop: 'number',
+  speedMobile: 'number',
+}
 
-    this.initTicker()
-    window.addEventListener('resize', () => this.resizeTicker())
+const Default = {
+  appendToBody: false,
+  items: [],
+  pauseOnHover: true,
+  prependToBody: false,
+  speedDesktop: 2,
+  speedMobile: 1,
+  speedMobileQuery: '(max-width: 767px)',
+}
+
+class Ticker extends BaseComponent {
+  constructor(element, config) {
+    super(element, config)
+
+    this._items = this._config.items
+    this._paused = false
+
+    this._itemsElement = document.createElement('div')
+    this._itemsElement.className = CLASS_NAME_ITEMS
+    this._element.append(this._itemsElement)
+
+    this._initTicker()
+    window.addEventListener('resize', () => this._resizeTicker())
   }
 
-  setItems(items) {
-    this.items = items
+  // Getters
+  static get Default() {
+    return Default
+  }
 
-    if (this.items.length === 0) {
-      this.hideTicker()
+  static get DefaultType() {
+    return DefaultType
+  }
+
+  static get NAME() {
+    return NAME
+  }
+
+  // Public
+  setItems(items) {
+    this._items = items
+
+    if (this._items.length === 0) {
+      this._hideTicker()
     } else {
-      this.showTicker()
+      this._showTicker()
     }
   }
 
-  resizeTicker(updatePosition = true) {
-    const { width } = this.el.getBoundingClientRect()
+  // Private
+  _resizeTicker(updatePosition = true) {
+    const { width } = this._element.getBoundingClientRect()
 
-    for (const el of this.itemsContainer.children) {
+    for (const el of this._itemsElement.children) {
       el.style.minWidth = `${width}px`
 
       if (updatePosition) {
@@ -47,16 +85,16 @@ class Ticker {
     }
   }
 
-  appendItems() {
-    if (this.items.length === 0) {
+  _appendItems() {
+    if (this._items.length === 0) {
       return
     }
 
-    const elementWidth = this.el.getBoundingClientRect().width
+    const elementWidth = this._element.getBoundingClientRect().width
 
-    for (const item of this.items) {
+    for (const item of this._items) {
       const div = document.createElement('div')
-      div.className = `ticker-item${item.cssClass ? ` ${item.cssClass}` : ''}`
+      div.className = `${CLASS_NAME_ITEM}${item.cssClass ? ` ${item.cssClass}` : ''}`
       div.style.left = `${elementWidth}px`
 
       // Add the custom CSS class to the data attribute, which will be added to the main element
@@ -67,14 +105,14 @@ class Ticker {
 
       if (item.icon) {
         const i = document.createElement('i')
-        i.className = `ticker-icon ${item.icon}`
+        i.className = `${CLASS_NAME_ICON} ${item.icon}`
 
         div.append(i)
       }
 
       if (item.url) {
         const a = document.createElement('a')
-        a.className = 'ticker-link'
+        a.className = CLASS_NAME_LINK
         a.href = item.url
         a.textContent = item.content
 
@@ -85,33 +123,33 @@ class Ticker {
         div.append(a)
       } else {
         const span = document.createElement('span')
-        span.className = 'ticker-text'
+        span.className = CLASS_NAME_TEXT
         span.textContent = item.content
 
         div.append(span)
       }
 
-      this.itemsContainer.append(div)
+      this._itemsElement.append(div)
     }
 
-    this.resizeTicker(false)
-    this.showTicker()
+    this._resizeTicker(false)
+    this._showTicker()
   }
 
-  scrollTicker() {
-    if (this.itemsContainer.children.length === 0) {
-      this.appendItems()
+  _scrollTicker() {
+    if (this._itemsElement.children.length === 0) {
+      this._appendItems()
     }
 
-    if (this.paused) {
-      this.animationFrameId = requestAnimationFrame(this.scrollTicker.bind(this))
+    if (this._paused) {
+      this._animationFrameId = requestAnimationFrame(this._scrollTicker.bind(this))
       return
     }
 
-    const item = this.itemsContainer.children[0]
+    const item = this._itemsElement.children[0]
 
     if (!item) {
-      this.animationFrameId = requestAnimationFrame(this.scrollTicker.bind(this))
+      this._animationFrameId = requestAnimationFrame(this._scrollTicker.bind(this))
       return
     }
 
@@ -120,29 +158,29 @@ class Ticker {
 
     // Stop the animation if th element is out of the view already
     if (itemOffset < 0) {
-      this.el.classList.remove(item.dataset.cssClass)
+      this._element.classList.remove(item.dataset.cssClass)
 
       // Hide ticker if there are ticker
-      if (this.itemsContainer.children.length === 1 && this.items.length === 0) {
-        this.hideTicker()
+      if (this._itemsElement.children.length === 1 && this._items.length === 0) {
+        this._hideTicker()
       }
 
       item.remove()
     } else {
-      item.style.left = `${Number.parseFloat(item.style.left) - this.getTickerSpeed()}px`
+      item.style.left = `${Number.parseFloat(item.style.left) - this._getTickerSpeed()}px`
 
       // Add the CSS class to the main element if it's not there yet
-      if (item.dataset.cssClass && !this.el.classList.contains(item.dataset.cssClass)) {
-        this.el.classList.add(item.dataset.cssClass)
+      if (item.dataset.cssClass && !this._element.classList.contains(item.dataset.cssClass)) {
+        this._element.classList.add(item.dataset.cssClass)
       }
 
       // Start scrolling the next element if the current one crosses the right border of the window
-      if (itemOffset <= this.el.offsetWidth) {
-        if (this.itemsContainer.children.length === 1) {
-          this.appendItems()
+      if (itemOffset <= this._element.offsetWidth) {
+        if (this._itemsElement.children.length === 1) {
+          this._appendItems()
         }
 
-        const nextItem = this.itemsContainer.children[1]
+        const nextItem = this._itemsElement.children[1]
 
         if (nextItem) {
           nextItem.style.left = `${Number.parseFloat(item.style.left) + item.offsetWidth}px`
@@ -150,56 +188,56 @@ class Ticker {
       }
     }
 
-    this.animationFrameId = requestAnimationFrame(this.scrollTicker.bind(this))
+    this._animationFrameId = requestAnimationFrame(this._scrollTicker.bind(this))
   }
 
-  initTicker() {
-    if (this.config.appendToBody) {
-      document.body.append(this.el)
-    } else if (this.config.prependToBody) {
-      document.body.prepend(this.el)
+  _initTicker() {
+    if (this._config.appendToBody) {
+      document.body.append(this._element)
+    } else if (this._config.prependToBody) {
+      document.body.prepend(this._element)
     }
 
-    this.appendItems()
+    this._appendItems()
 
-    if (this.config.pauseOnHover) {
-      this.el.addEventListener('mouseenter', () => {
-        this.paused = true
+    if (this._config.pauseOnHover) {
+      this._element.addEventListener('mouseenter', () => {
+        this._paused = true
       })
-      this.el.addEventListener('mouseleave', () => {
-        this.paused = false
+      this._element.addEventListener('mouseleave', () => {
+        this._paused = false
       })
     }
 
-    this.scrollTicker()
-
-    this.el.ticker = this
-    this.el.dispatchEvent(new CustomEvent('initialized.of.ticker'))
+    this._scrollTicker()
+    this._element.dispatchEvent(new CustomEvent(EVENT_TICKER_INITIALIZED))
   }
 
-  getTickerSpeed() {
-    if (window.matchMedia(`(max-width: ${this.config.speedBreakpoint}px)`).matches) {
-      return this.config.speedMobile
+  _getTickerSpeed() {
+    if (window.matchMedia(this._config.speedMobileQuery).matches) {
+      return this._config.speedMobile
     }
 
-    return this.config.speedDesktop
+    return this._config.speedDesktop
   }
 
-  showTicker() {
-    if (this.items.length > 0) {
-      this.el.classList.add(SHOW_CSS_CLASS)
-      this.paused = false
+  _showTicker() {
+    if (this._items.length > 0) {
+      this._element.classList.add(CLASS_NAME_SHOW)
+      this._paused = false
     }
   }
 
-  hideTicker() {
-    this.el.classList.remove(SHOW_CSS_CLASS)
-    this.paused = true
+  _hideTicker() {
+    this._element.classList.remove(CLASS_NAME_SHOW)
+    this._paused = true
   }
 }
 
-export default els => {
+export function initMultiple(els) {
   for (const el of els) {
-    new Ticker(el) // eslint-disable-line no-new
+    Ticker.getOrCreateInstance(el, el.dataset.ofTicker ? JSON.parse(el.dataset.ofTicker) : {})
   }
 }
+
+export default Ticker

@@ -277,7 +277,7 @@ $opening-times-border-color:   var(--#{$prefix}border-color) !default;
 $search-result-border-width:  var(--#{$prefix}border-width) !default;
 $search-result-border-color:  var(--#{$prefix}border-color-translucent) !default;
 $search-result-border-radius: var(--#{$prefix}border-radius) !default;
-$search-result-image-ratio:   16 / 9 !default;
+$search-result-image-ratio:   #{calc(16 / 9)} !default;
 $search-result-image-width:   25% !default;
 $search-result-padding-x:     1rem !default;
 $search-result-padding-y:     1rem !default;
@@ -299,6 +299,7 @@ $ticker-text-decoration-hover:             underline !default;
 $ticker-z-index:                           10 !default;
 // scss-docs-end ticker-variables
 
+
 // Wrapper
 // scss-docs-start wrapper-variables
 $wrapper-padding-y: null !default;
@@ -310,3 +311,21 @@ $wrapper-bg-color-dark: #212529 !default;
 $wrapper-z-index: 1 !default;
 $wrapper-media-opacity: null !default;
 // scss-docs-end wrapper-variables
+
+// Social links
+// scss-docs-start social-links-variable
+$social-links-gap: .5rem !default;
+$social-link-bg: $primary !default;
+$social-link-color: #fff !default;
+$social-link-border-style: null !default;
+$social-link-border-width: null !default;
+$social-link-border-color: null !default;
+$social-link-border-radius: 50% !default;
+$social-link-font-size: 1rem !default;
+$social-link-width: 2em !default;
+$social-link-height: $social-link-width !default;
+$social-link-hover-bg: mix(#000, $social-link-bg, 15%) !default;
+$social-link-hover-color: #fff !default;
+$social-link-hover-border-color: null !default;
+$social-link-transition:  color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
+// scss-docs-end social-links-variables

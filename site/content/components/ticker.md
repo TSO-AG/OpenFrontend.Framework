@@ -46,13 +46,14 @@ You can fetch the items via Ajax request like shown below:
 <div id="ticker" class="ticker" data-of-ticker></div>
 
 <script>
-  const element = document.getElementById('ticker');
+  const element = document.getElementById('ticker')
 
-  element.addEventListener('initialized.of.ticker', () => {
-    fetch('ticker.json')
-      .then(r => r.json())
-      .then(items => element.ticker.setItems(items));
-  });
+  element.addEventListener('initialized.of.ticker', async () => {
+    const items = await fetch('ticker.json').then(r => r.json())
+    const ticker = await openFrontend.Ticker.then(component => component.getInstance(element))
+
+    ticker.setItems(items)
+  })
 </script>
 {{< /example >}}
 
@@ -66,19 +67,36 @@ The required markup for a ticker is only a `data` attribute and CSS class on the
 <div class="ticker" data-of-ticker></div>
 ```
 
+### Options
+
+You can pass extra options as JSON value of the data attribute. Here is the list of all available options (alphabetically):
+
+{{< bs-table "table" >}}
+| Option | Type | Default | Explanation |
+| --- | --- | --- | --- |
+| `appendToBody` | `boolean` | `false` | The ticker element will be appended to the `<body>`. |
+| `items` | `array` | `[]` | The items to be displayed. Use the `setItems()` method to dynamically set ticker items. |
+| `pauseOnHover` | `boolean` | `true` | Pause the scroll on mouse hover. |
+| `prependToBody` | `boolean` | `false` | The ticker element will be prepended to the `<body>`. |
+| `speedDesktop` | `number` | `2` | The ticker speed (pixels to move on each iteration) on desktop. |
+| `speedMobile` | `number` | `1` | The ticker speed (pixels to move on each iteration) on mobile devices. |
+| `speedMobileQuery` | `string` | `'(max-width: 767px)'` | The CSS media query determining the ticker speed on mobile. |
+{{< /bs-table >}}
+
 ### Methods
-
-All methods listed below are available directly on the ticker instance `element.ticker`.
-
-{{< callout danger >}}
-The `element.ticker` contains an instance of the ticker, including all **private** properties and methods. Use with caution! The public methods are listed below and are safe to use.
-{{< /callout >}}
 
 {{< bs-table "table" >}}
 | Method | Description |
 | --- | --- |
 | `setItems` | Set the array of items. See the item data structure below for details. |
 {{< /bs-table >}}
+
+```js
+const ticker = await openFrontend.Ticker.then(component => component.getInstance('#example')) // Returns a Bootstrap ticker instance
+
+// setItems example
+ticker.setItems([])
+```
 
 #### Item data structure
 
@@ -110,26 +128,11 @@ const items = [
 ```js
 const element = document.getElementById('ticker')
 
-element.addEventListener('initialized.of.ticker', () => {
-  element.ticker.setItems([/* ... */])
+element.addEventListener('initialized.of.ticker', async () => {
+  const ticker = await openFrontend.Ticker.then(component => component.getInstance(element))
+  ticker.setItems([/* ... */])
 })
 ```
-
-### Options
-
-You can pass extra options as JSON value of the data attribute. Here is the list of all available options (alphabetically):
-
-{{< bs-table "table" >}}
-| Option | Type | Default | Explanation |
-| --- | --- | --- | --- |
-| `appendToBody` | `Boolean` | `false` | The ticker element will be appended to the `<body>`. |
-| `items` | `Array` | `[]` | The items to be displayed. You can use `el.ticker.setItems()` to dynamically set the items. |
-| `pauseOnHover` | `Boolean` | `true` | Pause the scroll on mouse hover. |
-| `prependToBody` | `Boolean` | `false` | The ticker element will be prepended to the `<body>`. |
-| `speedBreakpoint` | `Number` | `767` | The screen width in pixels determining the ticker speed on mobile/desktop. |
-| `speedDesktop` | `Number` | `2` | The ticker speed (pixels to move on each iteration) on desktop. |
-| `speedMobile` | `Number` | `1` | The ticker speed (pixels to move on each iteration) on mobile devices. |
-{{< /bs-table >}}
 
 ## CSS
 

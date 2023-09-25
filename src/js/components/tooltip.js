@@ -1,6 +1,9 @@
-import '@popperjs/core'
 import { Tooltip } from 'bootstrap'
 
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-// eslint-disable-next-line no-unused-vars
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl))
+export function initMultiple(els) {
+  for (const el of els) {
+    Tooltip.getOrCreateInstance(el)
+  }
+}
+
+export { Tooltip as default } from 'bootstrap'

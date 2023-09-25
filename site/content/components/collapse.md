@@ -134,7 +134,7 @@ Enable manually with:
 
 ```js
 const collapseElementList = document.querySelectorAll('.collapse')
-const collapseList = [...collapseElementList].map(collapseEl => new bootstrap.Collapse(collapseEl))
+const collapseList = await Promise.all([...collapseElementList].map(element => openFrontend.Collapse.then(component => component.getOrCreateInstance(element))))
 ```
 
 ### Options
@@ -161,17 +161,17 @@ Activates your content as a collapsible element. Accepts an optional options `ob
 You can create a collapse instance with the constructor, for example:
 
 ```js
-const bsCollapse = new bootstrap.Collapse('#myCollapse', {
+const collapse = await openFrontend.Collapse.then(component => component.getOrCreateInstance('#myCollapse', {
   toggle: false
-})
+}))
 ```
 
 {{< bs-table >}}
 | Method | Description |
 | --- | --- |
 | `dispose` | Destroys an element's collapse. (Removes stored data on the DOM element) |
-| `getInstance` | Static method which allows you to get the collapse instance associated to a DOM element, you can use it like this: `bootstrap.Collapse.getInstance(element)`. |
-| `getOrCreateInstance` | Static method which returns a collapse instance associated to a DOM element or create a new one in case it wasn't initialized. You can use it like this: `bootstrap.Collapse.getOrCreateInstance(element)`. |
+| `getInstance` | Static method which allows you to get the collapse instance associated to a DOM element. |
+| `getOrCreateInstance` | Static method which returns a collapse instance associated to a DOM element or create a new one in case it wasn't initialized. |
 | `hide` | Hides a collapsible element. **Returns to the caller before the collapsible element has actually been hidden** (e.g., before the `hidden.bs.collapse` event occurs). |
 | `show` | Shows a collapsible element. **Returns to the caller before the collapsible element has actually been shown** (e.g., before the `shown.bs.collapse` event occurs). |
 | `toggle` | Toggles a collapsible element to shown or hidden. **Returns to the caller before the collapsible element has actually been shown or hidden** (i.e. before the `shown.bs.collapse` or `hidden.bs.collapse` event occurs). |

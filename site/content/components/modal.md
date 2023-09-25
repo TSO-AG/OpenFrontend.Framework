@@ -800,9 +800,10 @@ While both ways to dismiss a modal are supported, keep in mind that dismissing f
 Create a modal with a single line of JavaScript:
 
 ```js
-const myModal = new bootstrap.Modal(document.getElementById('myModal'), options)
+const myModal = await openFrontend.Modal.then(component => component.getOrCreateInstance(document.getElementById('myModal'), options))
+
 // or
-const myModalAlternative = new bootstrap.Modal('#myModal', options)
+const myModalAlternative = await openFrontend.Modal.then(component => component.getOrCreateInstance('#myModal', options))
 ```
 
 ### Options
@@ -830,9 +831,9 @@ const myModalAlternative = new bootstrap.Modal('#myModal', options)
 Activates your content as a modal. Accepts an optional options `object`.
 
 ```js
-const myModal = new bootstrap.Modal('#myModal', {
+const myModal = await openFrontend.Modal.then(component => component.getOrCreateInstance('#myModal', {
   keyboard: false
-})
+}))
 ```
 
 {{< bs-table "table" >}}

@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Social links
-description: View a list of social media links
+description: Display a list of social media links
 group: components
 toc: true
 ---

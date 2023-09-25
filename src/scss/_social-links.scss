@@ -1,0 +1,44 @@
+.social-links {
+  // scss-docs-start social-links-css-vars
+  --#{$prefix}social-links-gap: #{$social-links-gap};
+  --#{$prefix}social-link-bg: #{$social-link-bg};
+  --#{$prefix}social-link-color: #{$social-link-color};
+  --#{$prefix}social-link-border-style: #{$social-link-border-style};
+  --#{$prefix}social-link-border-width: #{$social-link-border-width};
+  --#{$prefix}social-link-border-color: #{$social-link-border-color};
+  --#{$prefix}social-link-border-radius: #{$social-link-border-radius};
+  --#{$prefix}social-link-font-size: #{$social-link-font-size};
+  --#{$prefix}social-link-width: #{$social-link-width};
+  --#{$prefix}social-link-height: #{$social-link-height};
+  --#{$prefix}social-link-hover-bg: #{$social-link-hover-bg};
+  --#{$prefix}social-link-hover-color: #{$social-link-hover-color};
+  --#{$prefix}social-link-hover-border-color: #{$social-link-hover-border-color};
+  // scss-docs-end social-links-css-vars
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--#{$prefix}social-links-gap);
+  margin-bottom: 0;
+  @include list-unstyled();
+  @include transition($social-link-transition);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--#{$prefix}social-link-width);
+  height: var(--#{$prefix}social-link-height);
+  font-size: var(--#{$prefix}social-link-font-size);
+  color: var(--#{$prefix}social-link-color);
+  text-decoration: none;
+  background-color: var(--#{$prefix}social-link-bg);
+  border: var(--#{$prefix}social-link-border-width) var(--#{$prefix}social-link-border-style) var(--#{$prefix}social-link-border-color);
+  @include border-radius(var(--#{$prefix}social-link-border-radius));
+
+  &:hover {
+    color: var(--#{$prefix}social-link-hover-color);
+    background-color: var(--#{$prefix}social-link-hover-bg);
+    border: var(--#{$prefix}social-link-border-width) var(--#{$prefix}social-link-border-style) var(--#{$prefix}social-link-hover-border-color);
+  }
+}

@@ -389,23 +389,23 @@ Add `data-bs-toggle="button"` to toggle a button's `active` state. If you're pre
 You can create a button instance with the button constructor, for example:
 
 ```js
-const bsButton = new bootstrap.Button('#myButton')
+const button = await openFrontend.Button.then(component => component.getOrCreateInstance('#myButton'))
 ```
 
 {{< bs-table "table" >}}
 | Method | Description |
 | --- | --- |
 | `dispose` | Destroys an element's button. (Removes stored data on the DOM element) |
-| `getInstance` | Static method which allows you to get the button instance associated to a DOM element, you can use it like this: `bootstrap.Button.getInstance(element)`. |
-| `getOrCreateInstance` | Static method which returns a button instance associated to a DOM element or create a new one in case it wasn't initialized. You can use it like this: `bootstrap.Button.getOrCreateInstance(element)`. |
+| `getInstance` | Static method which allows you to get the button instance associated to a DOM element. |
+| `getOrCreateInstance` | Static method which returns a button instance associated to a DOM element or create a new one in case it wasn't initialized. |
 | `toggle` | Toggles push state. Gives the button the appearance that it has been activated. |
 {{< /bs-table >}}
 
 For example, to toggle all buttons
 
 ```js
-document.querySelectorAll('.btn').forEach(buttonElement => {
-  const button = bootstrap.Button.getOrCreateInstance(buttonElement)
+document.querySelectorAll('.btn').forEach(async buttonElement => {
+  const button = await openFrontend.Button.then(component => component.getOrCreateInstance(buttonElement))
   button.toggle()
 })
 ```

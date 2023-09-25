@@ -9,7 +9,7 @@
  * For details, see https://creativecommons.org/licenses/by/3.0/.
  */
 
-/* global ClipboardJS: false, bootstrap: false */
+/* global ClipboardJS: false, openFrontend: false */
 
 (() => {
   'use strict'
@@ -45,8 +45,8 @@
    */
   function snippetButtonTooltip(selector, title) {
     document.querySelectorAll(selector).forEach(btn => {
-      bootstrap.Tooltip.then(Tooltip => {
-        Tooltip.getOrCreateInstance(btn, { title })
+      openFrontend.Tooltip.then(component => {
+        component.getOrCreateInstance(btn, { title })
       })
     })
   }
@@ -62,10 +62,8 @@
   clipboard.on('success', async event => {
     const iconFirstChild = event.trigger.querySelector('.bi').firstElementChild
 
-    const Tooltip = await bootstrap.Tooltip
-    const tooltipBtn = Tooltip.getInstance(event.trigger)
+    const tooltipBtn = await openFrontend.Tooltip.then(component => component.getInstance(event.trigger))
 
-    // const tooltipBtn = bootstrap.Tooltip.getInstance(event.trigger)
     const namespace = 'http://www.w3.org/1999/xlink'
     const originalXhref = iconFirstChild.getAttributeNS(namespace, 'href')
     const originalTitle = event.trigger.title
@@ -87,8 +85,7 @@
     const modifierKey = /mac/i.test(navigator.userAgent) ? '\u2318' : 'Ctrl-'
     const fallbackMsg = `Press ${modifierKey}C to copy`
 
-    const Tooltip = await bootstrap.Tooltip
-    const tooltipBtn = Tooltip.getInstance(event.trigger)
+    const tooltipBtn = await openFrontend.Tooltip.then(component => component.getInstance(event.trigger))
 
     tooltipBtn.setContent({ '.tooltip-inner': fallbackMsg })
     event.trigger.addEventListener('hidden.bs.tooltip', () => {

@@ -7,6 +7,7 @@
   pages:
     - title: Introduction
     - title: Installation
+    - title: JavaScript API
     - title: Browsers & devices
     - title: Accessibility
     - title: RFS
@@ -72,8 +73,8 @@
     - title: Badge
     - title: Breadcrumb
     - title: Buttons
-    - title: Card
     - title: Button group
+    - title: Card
     - title: Close button
     - title: Collapse
     - title: Copyright
@@ -90,11 +91,13 @@
     - title: Pagination
     - title: Ratings
     - title: Search
+    - title: Social links
     - title: Spinners
     - title: State
     - title: Tags
     - title: Ticker
     - title: Tooltips
+    - title: Wrapper
 
 - title: Helpers
   icon: magic

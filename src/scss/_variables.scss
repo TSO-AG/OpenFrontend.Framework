@@ -298,3 +298,21 @@ $ticker-text-decoration:                   none !default;
 $ticker-text-decoration-hover:             underline !default;
 $ticker-z-index:                           10 !default;
 // scss-docs-end ticker-variables
+
+// Social links
+// scss-docs-start social-links-variable
+$social-links-gap: .5rem !default;
+$social-link-bg: $primary !default;
+$social-link-color: #fff !default;
+$social-link-border-style: null !default;
+$social-link-border-width: null !default;
+$social-link-border-color: null !default;
+$social-link-border-radius: 50% !default;
+$social-link-font-size: 1rem !default;
+$social-link-width: 2em !default;
+$social-link-height: $social-link-width !default;
+$social-link-hover-bg: mix(#000, $social-link-bg, 15%) !default;
+$social-link-hover-color: #fff !default;
+$social-link-hover-border-color: null !default;
+$social-link-transition:  color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
+// scss-docs-end social-links-variables

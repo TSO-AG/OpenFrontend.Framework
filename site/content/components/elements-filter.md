@@ -87,8 +87,9 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 {{< bs-table "table" >}}
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
-| `activeClass` | `string` | `active` | The CSS class of active toggler. |
-| `hideClass` | `string` | `d-none` | The CSS class of hidden element. |
+| `activeClass` | `string` | `'active'` | The CSS class of active toggler. |
+| `hideClass` | `string` | `'d-none'` | The CSS class of hidden element. |
+| `initialFilter` | `string` | `undefined` | The value of a filter that should be active when the component is initialized. |
 | `target` | `object\|string` | `undefined` | **Required.** The selector or the target element that is a direct parent to filterable elements. |
 | `urlHashId` | `string` | `undefined` | A unique ID which will be used to update the current URL hash when elements are filtered. If none is provided, the URL hash will not change. |
 {{< /bs-table >}}

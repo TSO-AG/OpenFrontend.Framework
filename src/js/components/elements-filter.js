@@ -5,10 +5,13 @@ import BaseComponent from 'bootstrap/js/src/base-component'
  */
 const NAME = 'elements_filter'
 const EVENT_COMPONENT_INITIALIZED = 'initialized.of.elements_filter'
+const ALL_VALUES_WILDCARD = '*'
+const MULTIPLE_VALUES_SEPARATOR = ','
 
 const DefaultType = {
   activeClass: 'string',
   hideClass: 'string',
+  initialFilter: '(string|undefined)',
   target: '(string|object|undefined)',
   urlHashId: '(string|undefined)',
 }
@@ -16,6 +19,7 @@ const DefaultType = {
 const Default = {
   activeClass: 'active',
   hideClass: 'd-none',
+  initialFilter: undefined,
   target: undefined,
   urlHashId: undefined,
 }
@@ -29,6 +33,16 @@ class ElementsFilter extends BaseComponent {
 
     if (this._togglerElements.length > 0) {
       this._initTogglers();
+    }
+
+    let preventInitialFilter = false;
+
+    if (this._config.urlHashId) {
+      preventInitialFilter = this._initUrlHash();
+    }
+
+    if (this._config.initialFilter && !preventInitialFilter) {
+      this.filter(this._config.initialFilter);
     }
 
     this._element.dispatchEvent(new CustomEvent(EVENT_COMPONENT_INITIALIZED))
@@ -56,6 +70,9 @@ class ElementsFilter extends BaseComponent {
       callback = value;
     } else if (valueType === 'string') {
       callback = this._filterElementCallback(value);
+
+      // Set the active toggler but only if the value is a string
+      this._togglerElements.forEach(el => el.dataset.ofElementsFilterToggle === value ? el.classList.add(this._config.activeClass) : el.classList.remove(this._config.activeClass));
     } else {
       throw new Error(`Unsupported value type: ${valueType}. Supported values are "function" and "string".`)
     }
@@ -74,24 +91,59 @@ class ElementsFilter extends BaseComponent {
           return;
         }
 
-        // Filter the elements
-        this.filter(toggler.dataset.ofElementsFilterToggle);
+        const value = toggler.dataset.ofElementsFilterToggle;
 
-        // Change the active CSS class
-        this._togglerElements.forEach(el => el.dataset.ofElementsFilterToggle === toggler.dataset.ofElementsFilterToggle ? el.classList.add(this._config.activeClass) : el.classList.remove(this._config.activeClass))
+        this.filter(value);
+
+        // Update the URL hash
+        if (this._config.urlHashId) {
+          window.history.replaceState(null, '', window.location.href.split('#')[0] + this._formatUrlHash(value));
+        }
       });
     })
   }
 
+  _initUrlHash() {
+    window.addEventListener('hashchange', () => this._checkUrlHash());
+
+    return this._checkUrlHash();
+  }
+
+  _checkUrlHash() {
+    const hash = window.location.hash;
+
+    if (!hash || !hash.startsWith('#' + this._config.urlHashId)) {
+      return false;
+    }
+
+    const value = hash.substring(this._config.urlHashId.length + 2); // strip hash and prefix divider
+
+    if (!value) {
+      return false;
+    }
+
+    this.filter(value);
+
+    return true;
+  }
+
+  _formatUrlHash(value) {
+    if (value === ALL_VALUES_WILDCARD) {
+      return '';
+    }
+
+    return `#${this._config.urlHashId}-${value}`;
+  }
+
   _filterElementCallback(value) {
-    const values = value.split(',');
+    const values = value.split(MULTIPLE_VALUES_SEPARATOR);
 
     return function (element) {
-      if (values.includes('*')) {
+      if (values.includes(ALL_VALUES_WILDCARD)) {
         return true;
       }
 
-      const itemValue = element.dataset.ofElementsFilterItem.split(',');
+      const itemValue = element.dataset.ofElementsFilterItem.split(MULTIPLE_VALUES_SEPARATOR);
 
       // Return true if at least one of the values matches
       for (let v of values) {

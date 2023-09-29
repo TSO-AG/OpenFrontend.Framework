@@ -1,0 +1,49 @@
+.combo-box {
+  // scss-docs-start combo-box-css-vars
+  --#{$prefix}combo-box-padding-x: #{$combo-box-padding-x};
+  --#{$prefix}combo-box-padding-y: #{$combo-box-padding-y};
+  --#{$prefix}combo-box-color: #{$combo-box-color};
+  --#{$prefix}combo-box-bg: #{$combo-box-bg};
+  --#{$prefix}combo-box-border-color: #{$combo-box-border-color};
+  --#{$prefix}combo-box-border-radius: #{$combo-box-border-radius};
+  --#{$prefix}combo-box-border-width: #{$combo-box-border-width};
+  --#{$prefix}combo-box-divider-bg: #{$combo-box-divider-bg};
+  --#{$prefix}combo-box-divider-margin-y: #{$combo-box-divider-margin-y};
+  // scss-docs-end combo-box-css-vars
+
+  padding: var(--#{$prefix}combo-box-padding-y) var(--#{$prefix}combo-box-padding-x);
+  color: var(--#{$prefix}combo-box-color);
+  background-color: var(--#{$prefix}combo-box-bg);
+  background-clip: padding-box;
+  border: var(--#{$prefix}combo-box-border-width) solid var(--#{$prefix}combo-box-border-color);
+  @include border-radius(var(--#{$prefix}combo-box-border-radius));
+}
+
+.combo-box-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.combo-box-label {
+  .form-label {
+    display: block;
+    margin-bottom: 0;
+  }
+}
+
+.combo-box-divider {
+  height: 0;
+  margin: var(--#{$prefix}combo-box-divider-margin-y) 0;
+  overflow: hidden;
+  border-top: 1px solid var(--#{$prefix}combo-box-divider-bg);
+  opacity: 1; // Revisit in v6 to de-dupe styles that conflict with <hr> element
+}
+
+// Reset some styles if the combo box is inside a drodpown menu
+.dropdown-menu .combo-box {
+  --#{$prefix}combo-box-bg: none;
+  --#{$prefix}combo-box-border-color: none;
+  --#{$prefix}combo-box-border-radius: 0;
+  --#{$prefix}combo-box-border-width: 0;
+}
+

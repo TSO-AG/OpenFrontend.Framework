@@ -354,3 +354,16 @@ $icon-box-margin-bottom:    1rem !default;
 $icon-box-icon-color:       $primary !default;
 $icon-box-icon-font-size:   null !default;
 // scss-docs-end icon-box-variables
+
+// Combo box
+// scss-docs-start combo-box-variables
+$combo-box-padding-x:                1rem !default;
+$combo-box-padding-y:                .5rem !default;
+$combo-box-color:                    var(--#{$prefix}body-color) !default;
+$combo-box-bg:                       var(--#{$prefix}body-bg) !default;
+$combo-box-border-color:             var(--#{$prefix}border-color-translucent) !default;
+$combo-box-border-radius:            var(--#{$prefix}border-radius) !default;
+$combo-box-border-width:             var(--#{$prefix}border-width) !default;
+$combo-box-divider-bg:               $combo-box-border-color !default;
+$combo-box-divider-margin-y:         $spacer * .5 !default;
+// scss-docs-end combo-box-variables

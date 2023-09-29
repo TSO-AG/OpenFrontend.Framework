@@ -42,19 +42,19 @@ class QuantityPicker extends BaseComponent {
 
   // Public
   getMin() {
-    return parseInt(this._input.min) || null;
+    return this._parseNumber(this._input.min, null);
   }
 
   getMax() {
-    return parseInt(this._input.max) || null;
+    return this._parseNumber(this._input.max, null);
   }
 
   getStep() {
-    return parseInt(this._input.step) || 1;
+    return this._parseNumber(this._input.step, 1);
   }
 
   getValue() {
-    return parseInt(this._input.value) || 0;
+    return this._parseNumber(this._input.value, 0);
   }
 
   // Private
@@ -102,6 +102,12 @@ class QuantityPicker extends BaseComponent {
     }
 
     return nextValue;
+  }
+
+  _parseNumber(value, fallback) {
+    value = parseInt(value);
+
+    return Number.isNaN(value) ? fallback : value;
   }
 }
 

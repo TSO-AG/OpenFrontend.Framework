@@ -42,7 +42,7 @@ Use utilities to modify a `.badge` and position it in the corner of a link or bu
 {{< example >}}
 <button type="button" class="btn btn-primary position-relative">
   Inbox
-  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+  <span class="position-absolute top-0 start-100 translate-middle badge bg-danger">
     99+
     <span class="visually-hidden">unread messages</span>
   </span>
@@ -75,17 +75,6 @@ Set a `background-color` with contrasting foreground `color` with [our `.text-bg
 {{< partial "callouts/warning-color-assistive-technologies.md" >}}
 {{< /callout >}}
 
-## Pill badges
-
-Use the `.rounded-pill` utility class to make badges more rounded with a larger `border-radius`.
-
-{{< example >}}
-{{< badge.inline >}}
-{{- range (index $.Site.Data "theme-colors") }}
-<span class="badge rounded-pill text-bg-{{ .name }}">{{ .name | title }}</span>{{- end -}}
-{{< /badge.inline >}}
-{{< /example >}}
-
 ## CSS
 
 ### Variables
@@ -96,4 +85,4 @@ As part of Bootstrap's evolving CSS variables approach, badges now use local CSS
 
 ### Sass variables
 
-{{< scss-docs name="badge-variables" file="node_modules/bootstrap/scss/_variables.scss" >}}
+{{< scss-docs name="badge-variables" file="src/scss/_variables.scss" >}}

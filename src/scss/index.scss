@@ -1,6 +1,6 @@
 // Variables
-@import '../icons/variables';
-@import 'variables';
+@import "../icons/variables";
+@import "variables";
 
 // Configuration
 @import "~bootstrap/scss/functions";
@@ -35,18 +35,40 @@
 @import "~bootstrap/scss/tooltip";
 @import "~bootstrap/scss/spinners";
 @import "~bootstrap/scss/offcanvas";
+@import "~bootstrap/scss/card";
 
 // Helpers
 @import "~bootstrap/scss/helpers";
 
 // Utilities
-@import '~bootstrap/scss/utilities/api';
+@import "~bootstrap/scss/utilities/api";
 
 // Icon fonts
-@import '../icons/style';
+@import "../icons/style";
 
 // Mixins
 @import "mixins";
 
 // Layout & components
+@import "buttons";
+@import "copyright";
 @import "links";
+@import "form/datepicker";
+@import "images";
+@import "icons";
+@import "table";
+@import "opening-times";
+@import "pagination";
+@import "player-audio";
+@import "player-video";
+@import "ratings";
+@import "search";
+@import "card";
+@import "tag";
+@import "card-molecules";
+@import "labels";
+@import "ticker";
+@import "logos";
+@import "wrapper";
+@import "social-links";
+@import "icon-box";

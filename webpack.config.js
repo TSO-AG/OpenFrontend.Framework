@@ -48,6 +48,7 @@ function createConfigDraft(outputPath, publicPath) {
     .cleanupOutputBeforeBuild()
     .disableSingleRuntimeChunk()
     .enableSassLoader()
+    .enablePostCssLoader()
     .setManifestKeyPrefix('')
     .setOutputPath(outputPath)
     .setPublicPath(publicPath)

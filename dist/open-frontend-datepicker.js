@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkopenfrontend_framework=self.webpackChunkopenfrontend_framework||[]).push([[644],{5478:function(e,r,a){a.r(r);var t=a(8527);r.default=e=>{for(const r of e){let e;try{e=JSON.parse(r.dataset.ofDatepicker||"{}")}catch(r){console.error(r),e={}}(0,t.Z)(r,{altFormat:"d.m.Y",time_24hr:!0,dateFormat:"d.m.Y",locale:{rangeSeparator:" - "},...e})}}}}]);

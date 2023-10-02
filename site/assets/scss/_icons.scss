@@ -1,0 +1,11 @@
+// Icons
+//
+// Custom icons for the docs.
+
+// scss-docs-start icon-circle-css-vars-example
+.icon-circle-bd-primary {
+  --bs-icon-circle-color: var(--bs-white);
+  --bs-icon-circle-bg: var(--bd-ofi-color-bg);
+  --bs-icon-circle-border-color: var(--bd-ofi-color-bg);
+}
+// scss-docs-end icon-circle-css-vars-example

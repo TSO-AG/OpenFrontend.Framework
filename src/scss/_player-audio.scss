@@ -1,0 +1,35 @@
+.player-audio {
+  // scss-docs-start audio-player-css-vars
+  --#{$prefix}audio-player-title-color: #{$audio-player-title-color};
+  --#{$prefix}audio-player-title-font-size: #{$audio-player-title-font-size};
+  --#{$prefix}audio-player-title-font-weight: #{$audio-player-title-font-weight};
+
+  --#{$prefix}audio-player-name-color: #{$audio-player-name-color};
+  --#{$prefix}audio-player-name-font-size: #{$audio-player-name-font-size};
+  --#{$prefix}audio-player-name-font-weight: #{$audio-player-name-font-weight};
+  // scss-docs-end audio-player-css-vars
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  container-type: inline-size;
+
+  &__content {
+    @include make-col();
+    min-width: 50%;
+  }
+
+  &__title {
+    font-size: var(--#{$prefix}audio-player-title-font-size);
+    font-weight: var(--#{$prefix}audio-player-title-font-weight);
+    color: var(--#{$prefix}audio-player-title-color);
+  }
+
+  &__name {
+    font-size: var(--#{$prefix}audio-player-name-font-size);
+    font-weight: var(--#{$prefix}audio-player-name-font-weight);
+    color: var(--#{$prefix}audio-player-name-color);
+  }
+}

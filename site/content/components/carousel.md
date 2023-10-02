@@ -292,7 +292,6 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 | `reverseDirection` | `boolean` | `false` | Enables autoplay in reverse direction |
 | `stopOnLastSlide` | `boolean` | `false` | Enable this parameter and autoplay will be stopped when it reaches last slide (has no effect in loop mode). |
 | `waitForTransition` | `boolean` | `true` | When enabled autoplay will wait for wrapper transition to continue. Can be disabled in case of using Virtual Translate when your slider may not have transition. |
-| `delay` | `number` | `3000` | Delay between transitions (in ms). |
 {{< /bs-table >}}
 
 ## CSS

@@ -17,6 +17,7 @@
     "flatpickr": "^4.6.13",
     "highlight.js": "^11.7.0",
     "raty-js": "^4.2.0",
+    "swiper": "^10.3.1",
     "tablesort": "^5.3.0"
   },
   "devDependencies": {

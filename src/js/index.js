@@ -7,6 +7,9 @@ window.openFrontend = {
   get Button() {
     return new Promise(resolve => import(/* webpackChunkName: "open-frontend-button" */ 'bootstrap/js/src/button').then(v => resolve(v.default)))
   },
+  get Carousel() {
+    return new Promise(resolve => import(/* webpackChunkName: "open-frontend-carousel" */ './components/carousel').then(v => resolve(v.default)))
+  },
   get Collapse() {
     return new Promise(resolve => import(/* webpackChunkName: "open-frontend-collapse" */ 'bootstrap/js/src/collapse').then(v => resolve(v.default)))
   },
@@ -45,6 +48,7 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-of-rating]'), () => import(/* webpackChunkName: "open-frontend-rating" */ './components/rating'))
   loadForElements(element.querySelectorAll('[data-of-video-play]'), () => import(/* webpackChunkName: "open-frontend-video-play" */ './components/video-play'))
   loadForElements(element.querySelectorAll('[data-of-ticker]'), () => import(/* webpackChunkName: "open-frontend-ticker" */ './components/ticker'))
+  loadForElements(element.querySelectorAll('[data-of-carousel]'), () => import(/* webpackChunkName: "open-frontend-carousel" */ './components/carousel'))
 }
 
 document.addEventListener('DOMContentLoaded', () => window.initOpenFrontend(document))

@@ -152,12 +152,12 @@ const select = document.getElementById('#select')
 select.addEventListener('change', () => {
   elementsFilter.filter(element => {
     if (select.value === 'all') {
-        return true
+      return true
     }
 
     return element.dataset.internalValue === select.value
   })
-});
+})
 ```
 
 ### Events

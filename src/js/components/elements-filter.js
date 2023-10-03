@@ -28,21 +28,21 @@ class ElementsFilter extends BaseComponent {
   constructor(element, config) {
     super(element, config)
 
-    this._targetElement = (typeof this._config.target === 'string') ? document.querySelector(this._config.target) : this._config.target;
-    this._togglerElements = [...this._element.querySelectorAll('[data-of-elements-filter-toggle]')];
+    this._targetElement = (typeof this._config.target === 'string') ? document.querySelector(this._config.target) : this._config.target
+    this._togglerElements = [...this._element.querySelectorAll('[data-of-elements-filter-toggle]')]
 
     if (this._togglerElements.length > 0) {
-      this._initTogglers();
+      this._initTogglers()
     }
 
-    let preventInitialFilter = false;
+    let preventInitialFilter = false
 
     if (this._config.urlHashId) {
-      preventInitialFilter = this._initUrlHash();
+      preventInitialFilter = this._initUrlHash()
     }
 
     if (this._config.initialFilter && !preventInitialFilter) {
-      this.filter(this._config.initialFilter);
+      this.filter(this._config.initialFilter)
     }
 
     this._element.dispatchEvent(new CustomEvent(EVENT_COMPONENT_INITIALIZED))
@@ -63,96 +63,100 @@ class ElementsFilter extends BaseComponent {
 
   // Public
   filter(value) {
-    const valueType = typeof value;
-    let callback;
+    const valueType = typeof value
+    let callback
 
     if (valueType === 'function') {
-      callback = value;
+      callback = value
     } else if (valueType === 'string') {
-      callback = this._filterElementCallback(value);
+      callback = this._filterElementCallback(value)
 
       // Set the active toggler but only if the value is a string
-      this._togglerElements.forEach(el => el.dataset.ofElementsFilterToggle === value ? el.classList.add(this._config.activeClass) : el.classList.remove(this._config.activeClass));
+      for (const el of this._togglerElements) {
+        el.dataset.ofElementsFilterToggle === value ? el.classList.add(this._config.activeClass) : el.classList.remove(this._config.activeClass)
+      }
     } else {
       throw new Error(`Unsupported value type: ${valueType}. Supported values are "function" and "string".`)
     }
 
-    [...this._targetElement.children].forEach(element => callback(element) ? element.classList.remove(this._config.hideClass) : element.classList.add(this._config.hideClass));
+    for (const element of this._targetElement.children) {
+      callback(element) ? element.classList.remove(this._config.hideClass) : element.classList.add(this._config.hideClass)
+    }
   }
 
   // Private
   _initTogglers() {
-    this._togglerElements.forEach(toggler => {
+    for (const toggler of this._togglerElements) {
       toggler.addEventListener('click', e => {
-        e.preventDefault();
+        e.preventDefault()
 
         // Do nothing if the toggler is already active
         if (toggler.classList.contains(this._config.activeClass)) {
-          return;
+          return
         }
 
-        const value = toggler.dataset.ofElementsFilterToggle;
+        const value = toggler.dataset.ofElementsFilterToggle
 
-        this.filter(value);
+        this.filter(value)
 
         // Update the URL hash
         if (this._config.urlHashId) {
-          window.history.replaceState(null, '', window.location.href.split('#')[0] + this._formatUrlHash(value));
+          window.history.replaceState(null, '', window.location.href.split('#')[0] + this._formatUrlHash(value))
         }
-      });
-    })
+      })
+    }
   }
 
   _initUrlHash() {
-    window.addEventListener('hashchange', () => this._checkUrlHash());
+    window.addEventListener('hashchange', () => this._checkUrlHash())
 
-    return this._checkUrlHash();
+    return this._checkUrlHash()
   }
 
   _checkUrlHash() {
-    const hash = window.location.hash;
+    const { hash } = window.location
 
-    if (!hash || !hash.startsWith('#' + this._config.urlHashId)) {
-      return false;
+    if (!hash || !hash.startsWith(`#${this._config.urlHashId}`)) {
+      return false
     }
 
-    const value = hash.substring(this._config.urlHashId.length + 2); // strip hash and prefix divider
+    const value = hash.slice(Math.max(0, this._config.urlHashId.length + 2)) // strip hash and prefix divider
 
     if (!value) {
-      return false;
+      return false
     }
 
-    this.filter(value);
+    this.filter(value)
 
-    return true;
+    return true
   }
 
   _formatUrlHash(value) {
     if (value === ALL_VALUES_WILDCARD) {
-      return '';
+      return ''
     }
 
-    return `#${this._config.urlHashId}-${value}`;
+    return `#${this._config.urlHashId}-${value}`
   }
 
   _filterElementCallback(value) {
-    const values = value.split(MULTIPLE_VALUES_SEPARATOR);
+    const values = value.split(MULTIPLE_VALUES_SEPARATOR)
 
     return function (element) {
       if (values.includes(ALL_VALUES_WILDCARD)) {
-        return true;
+        return true
       }
 
-      const itemValue = element.dataset.ofElementsFilterItem.split(MULTIPLE_VALUES_SEPARATOR);
+      const itemValue = element.dataset.ofElementsFilterItem.split(MULTIPLE_VALUES_SEPARATOR)
 
       // Return true if at least one of the values matches
-      for (let v of values) {
+      for (const v of values) {
         if (itemValue.includes(v)) {
-          return true;
+          return true
         }
       }
 
-      return false;
+      return false
     }
   }
 }

@@ -10,6 +10,9 @@ window.openFrontend = {
   get Collapse() {
     return new Promise(resolve => import(/* webpackChunkName: "open-frontend-collapse" */ 'bootstrap/js/src/collapse').then(v => resolve(v.default)))
   },
+  get ComboBox() {
+    return new Promise(resolve => import(/* webpackChunkName: "open-frontend-combo-box" */ './components/combo-box').then(v => resolve(v.default)))
+  },
   get Dropdown() {
     return new Promise(resolve => import(/* webpackChunkName: "open-frontend-dropdown" */ './components/dropdown').then(v => resolve(v.default)))
   },
@@ -43,6 +46,7 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-bs-toggle="modal"]'), () => import(/* webpackChunkName: "open-frontend-modal" */ './components/modal'))
   loadForElements(element.querySelectorAll('[data-bs-toggle="offcanvas"]'), () => import(/* webpackChunkName: "open-frontend-offcanvas" */ './components/offcanvas'))
   loadForElements(element.querySelectorAll('[data-of-highlight]'), () => import(/* webpackChunkName: "open-frontend-highlight" */ './components/highlight'))
+  loadForElements(element.querySelectorAll('[data-of-combo-box]'), () => import(/* webpackChunkName: "open-frontend-combo-box" */ './components/combo-box'))
   loadForElements(element.querySelectorAll('[data-of-datepicker]'), () => import(/* webpackChunkName: "open-frontend-datepicker" */ './components/datepicker'))
   loadForElements(element.querySelectorAll('[data-of-table-sort]'), () => import(/* webpackChunkName: "open-frontend-tablesort" */ './components/tablesort'))
   loadForElements(element.querySelectorAll('[data-of-quantity-picker]'), () => import(/* webpackChunkName: "open-frontend-quantity-picker" */ './components/quantity-picker'))

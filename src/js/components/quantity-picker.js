@@ -63,6 +63,7 @@ class QuantityPicker extends BaseComponent {
       e.preventDefault();
 
       this._input.value = this._getNextValue(factor);
+      this._input.dispatchEvent(new Event('change'))
       this._onChange();
     });
 

@@ -56,6 +56,7 @@
     ],
     "no-console": "error",
     "no-negated-condition": "off",
+    "no-new": "off",
     "no-promise-executor-return": "off",
     "object-curly-spacing": [
       "error",

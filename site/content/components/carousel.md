@@ -7,23 +7,22 @@ toc: true
 ---
 
 ## Usage
-The Carousel component can be implemented with HTML markup and attribute configurations.
+The carousel component can be implemented with HTML markup and attribute configurations.
+
+The component uses the [Swiper](https://swiperjs.com/) library.
 
 ## Examples
 
 ### Basic example
 
 {{< example >}}
-<!-- Carousel main container -->
 <div class="carousel">
   <div class="swiper" data-of-carousel='{
-      "paginationEl": "#carousel-pagination-1",
-      "navigationNextEl": "#carousel-btn-next-1",
-      "navigationPrevEl": "#carousel-btn-prev-1"
+      "pagination": "#carousel-pagination-1",
+      "navigationNext": "#carousel-btn-next-1",
+      "navigationPrev": "#carousel-btn-prev-1"
   }'>
-    <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
-      <!-- Slides -->
       <div class="swiper-slide">
         {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="Slide 1" >}}
       </div>
@@ -36,10 +35,8 @@ The Carousel component can be implemented with HTML markup and attribute configu
     </div>
   </div>
 
-  <!-- If we need pagination -->
   <div class="carousel-pagination carousel-pagination--bottom-center" id="carousel-pagination-1"></div>
 
-  <!-- If we need navigation buttons -->
   <div class="carousel-navigation carousel-navigation--center">
      <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-1">
       <i class="ofi-caret-left-fill"></i>
@@ -52,16 +49,16 @@ The Carousel component can be implemented with HTML markup and attribute configu
 {{< /example >}}
 
 ### Slides per view
-You can specify the number of slides to show in the viewport with the `slidesPerView` attribute. The `spaceBetween` attribute specifies the space (in px) between slides.
+You can specify the number of slides to show in the viewport with the `slidesPerView` attribute. The `spaceBetween` attribute specifies the space (in pixels) between slides.
 
 {{< example >}}
 <div class="carousel">
   <div class="swiper" data-of-carousel='{
       "slidesPerView": 3,
       "spaceBetween": 24,
-      "paginationEl": "#carousel-pagination-2",
-      "navigationNextEl": "#carousel-btn-next-2",
-      "navigationPrevEl": "#carousel-btn-prev-2"
+      "pagination": "#carousel-pagination-2",
+      "navigationNext": "#carousel-btn-next-2",
+      "navigationPrev": "#carousel-btn-prev-2"
   }'>
     <div class="swiper-wrapper">
       <div class="swiper-slide">
@@ -126,9 +123,9 @@ Autoplay starts automatically cycling through slides. Loop continues play after 
       "speed": 600,
       "slidesPerView": 3,
       "spaceBetween": 24,
-      "paginationEl": "#carousel-pagination-3",
-      "navigationNextEl": "#carousel-btn-next-3",
-      "navigationPrevEl": "#carousel-btn-prev-3"
+      "pagination": "#carousel-pagination-3",
+      "navigationNext": "#carousel-btn-next-3",
+      "navigationPrev": "#carousel-btn-prev-3"
   }'>
     <div class="swiper-wrapper">
       <div class="swiper-slide">
@@ -160,12 +157,12 @@ Autoplay starts automatically cycling through slides. Loop continues play after 
 {{< /example >}}
 
 ### Pagination position
-You can place the pagination on different positions.
+You can place the pagination in different positions.
 
 {{< example >}}
 <div class="carousel">
   <div class="swiper" data-of-carousel='{
-      "paginationEl": "#carousel-pagination-4"
+      "pagination": "#carousel-pagination-4"
   }'>
     <div class="swiper-wrapper">
       <div class="swiper-slide">
@@ -217,8 +214,8 @@ You can configure different slide display settings based on different viewport w
   <div class="swiper" data-of-carousel='{
       "slidesPerView": 1,
       "spaceBetween": 10,
-      "navigationNextEl": "#carousel-btn-next-5",
-      "navigationPrevEl": "#carousel-btn-prev-5",
+      "navigationNext": "#carousel-btn-next-5",
+      "navigationPrev": "#carousel-btn-prev-5",
       "breakpoints": {
         "sm": {
           "slidesPerView": 2
@@ -272,27 +269,43 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 | --- | --- | --- | --- |
 | `autoplay` | `object\|boolean` | `undefined` | Object with autoplay parameters or boolean `true` to enable with default settings. |
 | `breakpoints` | `object` | `undefined` | Allows to set different parameter for different responsive breakpoints (screen sizes). Not all parameters can be changed in breakpoints, changing these properties will have an effect: `slidesPerView`,  `spaceBetween`. |
-| `loop` | `boolean` | `false` | Set to `true` to enable continuous loop mode. Because of nature of how the loop mode works (it will rearrange slides), total number of slides must be >= slidesPerView * 2. |
-| `navigationNextEl` | `object\|string` | `undefined` | The selector of the element that will work like "next" button after click on it . |
-| `navigationPrevEl` | `object\|string` | `undefined` | The selector of the element that will work like "prev" button after click on it. |
-| `paginationEl` | `object\|string` | `undefined` | The selector or the pagination element. |
-| `slidesPerView` | `number\|"auto"` | `1` | Number of slides per view (slides visible at the same time on slider's container). |
-| `spaceBetween` | `string\|number` | `0` | Distance between slides in px. |
-| `speed` | `number` | `300` | Duration of transition between slides (in ms). |
+| `loop` | `boolean` | `false` | Set to `true` to enable continuous loop mode. Because of nature of how the loop mode works (it will rearrange slides), total number of slides must be `>= slidesPerView * 2`. |
+| `navigationNext` | `object\|string` | `undefined` | The selector of the element that will work like "next" button after click on it . |
+| `navigationPrev` | `object\|string` | `undefined` | The selector of the element that will work like "prev" button after click on it. |
+| `pagination` | `object\|string` | `undefined` | The selector or the pagination element. |
+| `slidesPerView` | `number\|string` | `1` | Number of slides per view (slides visible at the same time on slider's container). Pass the `'auto'` value to automatically determine the number. |
+| `spaceBetween` | `string\|number` | `0` | Distance between slides in pixels. |
+| `speed` | `number` | `300` | Duration of transition between slides (in milliseconds). |
 {{< /bs-table >}}
 
-#### Autoplay Parameters
+#### Autoplay parameters
 
 {{< bs-table "table" >}}
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
-| `delay` | `number` | `3000` | Delay between transitions (in ms). |
+| `delay` | `number` | `3000` | Delay between transitions (in milliseconds). |
 | `disableOnInteraction` | `boolean` | `true` | Set to `false` and autoplay will not be disabled after user interactions (swipes), it will be restarted every time after interaction. |
 | `pauseOnMouseEnter` | `boolean` | `false` | When enabled autoplay will be paused on pointer (mouse) enter over Swiper container. |
-| `reverseDirection` | `boolean` | `false` | Enables autoplay in reverse direction |
+| `reverseDirection` | `boolean` | `false` | Enables autoplay in reverse direction. |
 | `stopOnLastSlide` | `boolean` | `false` | Enable this parameter and autoplay will be stopped when it reaches last slide (has no effect in loop mode). |
 | `waitForTransition` | `boolean` | `true` | When enabled autoplay will wait for wrapper transition to continue. Can be disabled in case of using Virtual Translate when your slider may not have transition. |
 {{< /bs-table >}}
+
+### Events
+
+{{< bs-table "table" >}}
+| Event | Description |
+| --- | --- |
+| `initialized.of.carousel` | This event is fired immediately when the carousel is ready. |
+{{< /bs-table >}}
+
+```js
+const element = document.getElementById('carousel')
+
+element.addEventListener('initialized.of.carousel', () => {
+  // do something
+})
+```
 
 ## CSS
 

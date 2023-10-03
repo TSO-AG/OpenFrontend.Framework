@@ -4,21 +4,30 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 
 Swiper.use([Navigation, Autoplay, Pagination])
 
+let cssRoot
+
+function getCssRoot() {
+  if (!cssRoot) {
+    cssRoot = getComputedStyle(document.documentElement)
+  }
+
+  return cssRoot
+}
+
 /**
  * Constants
  */
-
 const NAME = 'carousel'
-const CSS_ROOT = getComputedStyle(document.documentElement)
+const EVENT_CAROUSEL_INITIALIZED = 'initialized.of.carousel'
 const REGEX_BREAKPOINT_VALUE = /(\d+)(?!.*\d)/g
 
 const DefaultType = {
   autoplay: '(object|boolean|undefined)',
   breakpoints: '(object|undefined)',
   loop: 'boolean',
-  navigationNextEl: '(string|undefined)',
-  navigationPrevEl: '(string|undefined)',
-  paginationEl: '(object|string|undefined)',
+  navigationNext: '(string|undefined)',
+  navigationPrev: '(string|undefined)',
+  pagination: '(object|string|undefined)',
   slidesPerView: '(string|number|undefined)',
   spaceBetween: '(string|number|undefined)',
   speed: 'number',
@@ -28,9 +37,9 @@ const Default = {
   autoplay: false,
   breakpoints: undefined,
   loop: false,
-  navigationNextEl: undefined,
-  navigationPrevEl: undefined,
-  paginationEl: undefined,
+  navigationNext: undefined,
+  navigationPrev: undefined,
+  pagination: undefined,
   slidesPerView: 1,
   spaceBetween: 0,
   speed: 300,
@@ -61,8 +70,6 @@ class Carousel extends BaseComponent {
     return NAME
   }
 
-  // Public
-
   // Private
   _initCarousel() {
     const options = {
@@ -70,30 +77,35 @@ class Carousel extends BaseComponent {
       slidesPerView: this._config.slidesPerView,
       spaceBetween: this._config.spaceBetween,
       speed: this._config.speed,
+      on: {
+        init: () => {
+          this._element.dispatchEvent(new CustomEvent(EVENT_CAROUSEL_INITIALIZED))
+        }
+      },
     }
 
     if (this._config.autoplay) {
       options.autoplay = { ...this._config.autoplay }
     }
 
-    if (this._config.paginationEl) {
+    if (this._config.pagination) {
       options.pagination = {
-        el: this._config.paginationEl,
+        el: this._config.pagination,
         bulletActiveClass: 'carousel-pagination-bullet-active',
         bulletClass: 'carousel-pagination-bullet',
         clickable: true,
       }
     }
 
-    if (this._config.navigationPrevEl || this._config.navigationNextEl) {
+    if (this._config.navigationPrev || this._config.navigationNext) {
       options.navigation = {}
 
-      if (this._config.navigationNextEl) {
-        options.navigation.nextEl = this._config.navigationNextEl
+      if (this._config.navigationNext) {
+        options.navigation.nextEl = this._config.navigationNext
       }
 
-      if (this._config.navigationPrevEl) {
-        options.navigation.prevEl = this._config.navigationPrevEl
+      if (this._config.navigationPrev) {
+        options.navigation.prevEl = this._config.navigationPrev
       }
     }
 
@@ -101,36 +113,40 @@ class Carousel extends BaseComponent {
       options.breakpoints = this._prepareBreakpointConfiguration(this._config.breakpoints)
     }
 
-    this._carousel = new Swiper(this._element, options)
+    new Swiper(this._element, options)
   }
 
-  _prepareBreakpointConfiguration(breakpoints) {
-    const newBreakpoints = {}
+  _prepareBreakpointConfiguration(inputBreakpoints) {
+    const parsedBreakpoints = {}
 
-    // eslint-disable-next-line guard-for-in
-    for (const key in breakpoints) {
-      const matchedValue = key.match(REGEX_BREAKPOINT_VALUE)
-      const breakpointValue = matchedValue ? matchedValue[0] : this._getBreakpointValue(key)
+    for (const key in inputBreakpoints) {
+      if (!Object.prototype.hasOwnProperty.call(inputBreakpoints, key)) {
+        continue
+      }
 
-      if (breakpointValue) {
-        const currentBreakpoint = breakpoints[key]
-        this._typeCheckConfig(currentBreakpoint, BreakpointType)
+      const breakpointValue = this._getBreakpoint(key) || this._getBreakpoint(getCssRoot().getPropertyValue(`--breakpoint-${key}`))
 
-        // Breakpoint should only have allowed properties
-        const filtered = Object.entries(currentBreakpoint).filter(([key]) => Object.prototype.hasOwnProperty.call(BreakpointType, key))
+      if (!breakpointValue) {
+        continue
+      }
 
-        if (filtered.length > 0) {
-          newBreakpoints[breakpointValue] = Object.fromEntries(filtered)
-        }
+      this._typeCheckConfig(inputBreakpoints[key], BreakpointType)
+
+      // Breakpoint should only have allowed properties
+      const filtered = Object.entries(inputBreakpoints[key]).filter(([key]) => Object.prototype.hasOwnProperty.call(BreakpointType, key))
+
+      if (filtered.length > 0) {
+        parsedBreakpoints[breakpointValue] = Object.fromEntries(filtered)
       }
     }
 
-    return newBreakpoints
+    return parsedBreakpoints
   }
 
-  _getBreakpointValue(name) {
-    const value = CSS_ROOT.getPropertyValue(`--breakpoint-${name}`)
-    return value ? value.match(REGEX_BREAKPOINT_VALUE)[0] : undefined
+  _getBreakpoint(value) {
+    const matches = value.match(REGEX_BREAKPOINT_VALUE)
+
+    return matches ? matches[0] : undefined
   }
 }
 

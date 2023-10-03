@@ -1,5 +1,5 @@
 import BaseComponent from 'bootstrap/js/src/base-component'
-import {getElement} from 'bootstrap/js/src/util';
+import { getElement } from 'bootstrap/js/src/util'
 
 function defaultFormatter(data) {
   const chunks = []
@@ -8,7 +8,7 @@ function defaultFormatter(data) {
     const value = this.getValue(field)
 
     if (!value) {
-      continue;
+      continue
     }
 
     chunks.push(this.getSummary(field, value))
@@ -39,7 +39,7 @@ class ComboBox extends BaseComponent {
     super(element, config)
 
     this._config.format = this._config.format || defaultFormatter.bind(this)
-    this._fields = [...this._element.querySelectorAll('input, select')].filter(field => !!field.name)
+    this._fields = [...this._element.querySelectorAll('input, select')].filter(field => Boolean(field.name))
     this._target = getElement(this._config.target)
 
     this._initFields()
@@ -65,7 +65,9 @@ class ComboBox extends BaseComponent {
   getData() {
     const data = {}
 
-    this._fields.forEach(field => data[field.name] = field)
+    for (const field of this._fields) {
+      data[field.name] = field
+    }
 
     return data
   }
@@ -84,14 +86,14 @@ class ComboBox extends BaseComponent {
   }
 
   getValue(field) {
-    let value = field.value
+    let { value } = field
 
     // Handle the input[type="number"] the correctly, mostly for the case that "0" is an empty value
     if (field.type === 'number') {
-      value = parseInt(value);
+      value = Number.parseInt(value, 10)
     } else if (field.type === 'checkbox') {
       // Handle the checkboxes
-      value = field.checked;
+      value = field.checked
     }
 
     return value
@@ -99,13 +101,13 @@ class ComboBox extends BaseComponent {
 
   // Private
   _initFields() {
-    this._fields.forEach(field => {
+    for (const field of this._fields) {
       field.addEventListener('change', () => this._onChange())
 
       if (field.tagName.toLowerCase() === 'input' || field.tagName.toLowerCase() === 'textarea') {
         field.addEventListener('keyup', () => this._onChange())
       }
-    });
+    }
   }
 
   _onChange() {

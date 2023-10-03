@@ -240,9 +240,9 @@ Create a new instance of the combo box component with the `format` and `target` 
 ```js
 openFrontend.ComboBox.then(component => new component(document.getElementById('custom-combo-box'), {
   target: document.getElementById('custom-guests'),
-  format: function (data) {
-    const guests = parseInt(data.adults.value) + parseInt(data.children.value)
-    const rooms = parseInt(data.rooms.value)
+  format(data) {
+    const guests = Number.parseInt(data.adults.value) + Number.parseInt(data.children.value)
+    const rooms = Number.parseInt(data.rooms.value)
     const chunks = [
       `${guests} Guest${guests > 1 ? 's' : ''}`,
       `${rooms} Room${rooms > 1 ? 's' : ''}`,
@@ -252,7 +252,7 @@ openFrontend.ComboBox.then(component => new component(document.getElementById('c
       chunks.push(data.pickup.labels[0].textContent)
     }
 
-    return chunks.join(', ');
+    return chunks.join(', ')
   }
 }))
 ```

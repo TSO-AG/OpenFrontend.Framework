@@ -15,11 +15,11 @@ class QuantityPicker extends BaseComponent {
   constructor(element, config) {
     super(element, config)
 
-    this._input = this._element.querySelector('input[type="number"]');
-    this._input.addEventListener('change', () => this._onChange());
+    this._input = this._element.querySelector('input[type="number"]')
+    this._input.addEventListener('change', () => this._onChange())
 
-    this._minusButton = this._element.querySelector('[data-of-quantity-picker-minus]');
-    this._plusButton = this._element.querySelector('[data-of-quantity-picker-plus]');
+    this._minusButton = this._element.querySelector('[data-of-quantity-picker-minus]')
+    this._plusButton = this._element.querySelector('[data-of-quantity-picker-plus]')
 
     this._initButton(this._minusButton, -1)
     this._initButton(this._plusButton, 1)
@@ -42,42 +42,42 @@ class QuantityPicker extends BaseComponent {
 
   // Public
   getMin() {
-    return this._parseNumber(this._input.min, null);
+    return this._parseNumber(this._input.min, null)
   }
 
   getMax() {
-    return this._parseNumber(this._input.max, null);
+    return this._parseNumber(this._input.max, null)
   }
 
   getStep() {
-    return this._parseNumber(this._input.step, 1);
+    return this._parseNumber(this._input.step, 1)
   }
 
   getValue() {
-    return this._parseNumber(this._input.value, 0);
+    return this._parseNumber(this._input.value, 0)
   }
 
   // Private
   _initButton(button, factor) {
     button.addEventListener('click', e => {
-      e.preventDefault();
+      e.preventDefault()
 
-      this._input.value = this._getNextValue(factor);
+      this._input.value = this._getNextValue(factor)
       this._input.dispatchEvent(new Event('change'))
-      this._onChange();
-    });
+      this._onChange()
+    })
 
-    this._onChange();
+    this._onChange()
   }
 
   _updateButton(button, limit, factor) {
     if (limit === null) {
-      return;
+      return
     }
 
-    const nextValue = this.getValue() + (this.getStep() * factor);
+    const nextValue = this.getValue() + (this.getStep() * factor)
 
-    button.disabled = (factor > 0) ? (nextValue > limit) : (nextValue < limit);
+    button.disabled = (factor > 0) ? (nextValue > limit) : (nextValue < limit)
   }
 
   _onChange() {
@@ -87,28 +87,28 @@ class QuantityPicker extends BaseComponent {
   }
 
   _getNextValue(factor) {
-    const min = this.getMin();
-    const max = this.getMax();
+    const min = this.getMin()
+    const max = this.getMax()
 
-    let nextValue = this.getValue() + (this.getStep() * factor);
+    let nextValue = this.getValue() + (this.getStep() * factor)
 
     // The next value cannot be lower than the limit
     if (min !== null && nextValue < min) {
-      nextValue = min;
+      nextValue = min
     }
 
     // The next value cannot be bigger than the limit
     if (max !== null && nextValue > max) {
-      nextValue = max;
+      nextValue = max
     }
 
-    return nextValue;
+    return nextValue
   }
 
   _parseNumber(value, fallback) {
-    value = parseInt(value);
+    value = Number.parseInt(value, 10)
 
-    return Number.isNaN(value) ? fallback : value;
+    return Number.isNaN(value) ? fallback : value
   }
 }
 

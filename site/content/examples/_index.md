@@ -15,10 +15,10 @@ aliases: "/examples/"
     {{- $len := len $entry.examples -}}
     {{ if (eq $i 0) }}<div class="row">{{ end }}
         <div class="col-sm-6 col-md-3 mb-3">
-          <a class="d-block link-offset-1" href="/examples/{{ $example.name | urlize }}/">
-            <img class="img-thumbnail mb-3" srcset="/assets/img/examples/{{ $example.name | urlize }}.png,
-                                                    /assets/img/examples/{{ $example.name | urlize }}@2x.png 2x"
-                                            src="/assets/img/examples/{{ $example.name | urlize }}.png"
+          <a class="d-block link-offset-1" href="examples/{{ $example.name | urlize }}/">
+            <img class="img-thumbnail mb-3" srcset="assets/img/examples/{{ $example.name | urlize }}.png,
+                                                    assets/img/examples/{{ $example.name | urlize }}@2x.png 2x"
+                                            src="assets/img/examples/{{ $example.name | urlize }}.png"
                                             alt=""
                                             width="480" height="300"
                                             loading="lazy">

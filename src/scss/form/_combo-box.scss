@@ -7,8 +7,12 @@
   --#{$prefix}combo-box-border-color: #{$combo-box-border-color};
   --#{$prefix}combo-box-border-radius: #{$combo-box-border-radius};
   --#{$prefix}combo-box-border-width: #{$combo-box-border-width};
+  --#{$prefix}combo-box-row-gap: #{$combo-box-row-gap};
+  --#{$prefix}combo-box-field-width: #{$combo-box-field-width};
   --#{$prefix}combo-box-divider-bg: #{$combo-box-divider-bg};
   --#{$prefix}combo-box-divider-margin-y: #{$combo-box-divider-margin-y};
+  --#{$prefix}combo-box-divider-height: #{$combo-box-divider-height};
+  --#{$prefix}combo-box-divider-style: #{$combo-box-divider-style};
   // scss-docs-end combo-box-css-vars
 
   padding: var(--#{$prefix}combo-box-padding-y) var(--#{$prefix}combo-box-padding-x);
@@ -21,6 +25,8 @@
 
 .combo-box-row {
   display: flex;
+  gap: var(--#{$prefix}combo-box-row-gap);
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -31,11 +37,15 @@
   }
 }
 
+.combo-box-field {
+  width: var(--#{$prefix}combo-box-field-width);
+}
+
 .combo-box-divider {
   height: 0;
   margin: var(--#{$prefix}combo-box-divider-margin-y) 0;
   overflow: hidden;
-  border-top: 1px solid var(--#{$prefix}combo-box-divider-bg);
+  border-top: var(--#{$prefix}combo-box-divider-height) var(--#{$prefix}combo-box-divider-style) var(--#{$prefix}combo-box-divider-bg);
   opacity: 1; // Revisit in v6 to de-dupe styles that conflict with <hr> element
 }
 

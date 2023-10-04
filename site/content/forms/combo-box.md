@@ -17,7 +17,7 @@ toc: true
       <label for="inline-guests" class="form-label">Guests</label>
       <div class="form-text">Adults and children</div>
     </div>
-    <div class="combo-box-input">
+    <div class="combo-box-field">
       <div class="input-group" data-of-quantity-picker>
         <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
         <input type="number" id="inline-guests" class="form-control text-center" value="5" min="1" max="10" readonly>
@@ -31,8 +31,8 @@ toc: true
       <label for="inline-rooms" class="form-label">Rooms</label>
       <div class="form-text">Max 8 rooms</div>
     </div>
-    <div class="combo-box-input">
-      <div class="input-group w-auto" data-of-quantity-picker>
+    <div class="combo-box-field">
+      <div class="input-group" data-of-quantity-picker>
         <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
         <input type="number" id="inline-rooms" class="form-control text-center" value="1" min="1" max="8" readonly>
         <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
@@ -45,7 +45,7 @@ toc: true
       <label for="inline-animals" class="form-label">Animals</label>
       <div class="form-text">We love animals!</div>
     </div>
-    <div class="combo-box-input">
+    <div class="combo-box-field" style="--bs-combo-box-field-width: auto">
       <input type="checkbox" id="inline-animals" class="form-check-input" value="1">
     </div>
   </div>
@@ -55,7 +55,7 @@ toc: true
       <label for="inline-pickup" class="form-label">Airport pickup</label>
       <div class="form-text">Do you need a ride?</div>
     </div>
-    <div class="combo-box-input">
+    <div class="combo-box-field">
       <select id="inline-pickup" class="form-select">
         <option value="no">No, thanks.</option>
         <option value="yes">Yes, please!</option>
@@ -68,7 +68,7 @@ toc: true
       <label for="inline-postal" class="form-label">Postal code</label>
       <div class="form-text">Your current location</div>
     </div>
-    <div class="combo-box-input">
+    <div class="combo-box-field">
       <input type="text" id="inline-postal" class="form-control">
     </div>
   </div>
@@ -91,7 +91,7 @@ You can display the combo box component as a fancy dropdown widget. You can use 
           <label for="dropdown-adults" class="form-label">Adults</label>
           <div class="form-text">Ages 13 or above</div>
         </div>
-        <div class="combo-box-input">
+        <div class="combo-box-field">
           <div class="input-group" data-of-quantity-picker>
             <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
             <input type="number" id="dropdown-adults" name="adults" class="form-control text-center" value="2" min="1" max="10" readonly>
@@ -105,8 +105,8 @@ You can display the combo box component as a fancy dropdown widget. You can use 
           <label for="dropdown-children" class="form-label">Children</label>
           <div class="form-text">Ages 13 below</div>
         </div>
-        <div class="combo-box-input">
-          <div class="input-group w-auto" data-of-quantity-picker>
+        <div class="combo-box-field" >
+          <div class="input-group" data-of-quantity-picker>
             <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
             <input type="number" id="dropdown-children" class="form-control text-center" value="0" min="0" max="10" readonly>
             <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
@@ -119,8 +119,8 @@ You can display the combo box component as a fancy dropdown widget. You can use 
           <label for="dropdown-rooms" class="form-label">Rooms</label>
           <div class="form-text">Max 8 rooms</div>
         </div>
-        <div class="combo-box-input">
-          <div class="input-group w-auto" data-of-quantity-picker>
+        <div class="combo-box-field">
+          <div class="input-group" data-of-quantity-picker>
             <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
             <input type="number" id="dropdown-rooms" name="rooms" class="form-control text-center" value="1" min="1" max="8" readonly>
             <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
@@ -133,7 +133,7 @@ You can display the combo box component as a fancy dropdown widget. You can use 
           <label for="dropdown-animals" class="form-label">Animals</label>
           <div class="form-text">We love animals!</div>
         </div>
-        <div class="combo-box-input">
+        <div class="combo-box-field" style="--bs-combo-box-field-width: auto">
           <input type="checkbox" id="dropdown-animals" name="animals" class="form-check-input" value="1">
         </div>
       </div>
@@ -143,7 +143,7 @@ You can display the combo box component as a fancy dropdown widget. You can use 
           <label for="dropdown-pickup" class="form-label">Airport pickup</label>
           <div class="form-text">Do you need a ride?</div>
         </div>
-        <div class="combo-box-input">
+        <div class="combo-box-field">
           <select id="dropdown-pickup" class="form-select" name="pickup">
             <option value="no">No, thanks.</option>
             <option value="yes">Yes, please!</option>
@@ -156,7 +156,7 @@ You can display the combo box component as a fancy dropdown widget. You can use 
           <label for="dropdown-postal" class="form-label">Postal code</label>
           <div class="form-text">Your current location</div>
         </div>
-        <div class="combo-box-input">
+        <div class="combo-box-field">
           <input type="text" name="postal" id="dropdown-postal" class="form-control">
         </div>
       </div>
@@ -181,7 +181,7 @@ The default formatter has a hardcoded way of generating a summary. You can also 
           <label for="custom-adults" class="form-label">Adults</label>
           <div class="form-text">Ages 13 or above</div>
         </div>
-        <div class="combo-box-input">
+        <div class="combo-box-field">
           <div class="input-group" data-of-quantity-picker>
             <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
             <input type="number" id="custom-adults" name="adults" class="form-control text-center" value="2" min="1" max="10" readonly>
@@ -195,8 +195,8 @@ The default formatter has a hardcoded way of generating a summary. You can also 
           <label for="custom-children" class="form-label">Children</label>
           <div class="form-text">Ages 13 below</div>
         </div>
-        <div class="combo-box-input">
-          <div class="input-group w-auto" data-of-quantity-picker>
+        <div class="combo-box-field">
+          <div class="input-group" data-of-quantity-picker>
             <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
             <input type="number" id="custom-children" name="children" class="form-control text-center" value="0" min="0" max="10" readonly>
             <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
@@ -209,8 +209,8 @@ The default formatter has a hardcoded way of generating a summary. You can also 
           <label for="custom-rooms" class="form-label">Rooms</label>
           <div class="form-text">Max 8 rooms</div>
         </div>
-        <div class="combo-box-input">
-          <div class="input-group w-auto" data-of-quantity-picker>
+        <div class="combo-box-field">
+          <div class="input-group" data-of-quantity-picker>
             <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
             <input type="number" id="custom-rooms" name="rooms" class="form-control text-center" value="1" min="1" max="8" readonly>
             <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
@@ -223,7 +223,7 @@ The default formatter has a hardcoded way of generating a summary. You can also 
           <label for="custom-pickup" class="form-label">Airport pickup</label>
           <div class="form-text">Do you need a ride?</div>
         </div>
-        <div class="combo-box-input">
+        <div class="combo-box-field">
           <select id="custom-pickup" class="form-select" name="pickup">
             <option value="no">No, thanks.</option>
             <option value="yes">Yes, please!</option>

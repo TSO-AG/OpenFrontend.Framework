@@ -364,6 +364,10 @@ $combo-box-bg:                       var(--#{$prefix}body-bg) !default;
 $combo-box-border-color:             var(--#{$prefix}border-color-translucent) !default;
 $combo-box-border-radius:            var(--#{$prefix}border-radius) !default;
 $combo-box-border-width:             var(--#{$prefix}border-width) !default;
+$combo-box-row-gap:                  1.5rem !default;
+$combo-box-field-width:              9em !default;
 $combo-box-divider-bg:               $combo-box-border-color !default;
 $combo-box-divider-margin-y:         $spacer * .5 !default;
+$combo-box-divider-height:           1px !default;
+$combo-box-divider-style:            solid !default;
 // scss-docs-end combo-box-variables

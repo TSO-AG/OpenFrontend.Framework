@@ -604,8 +604,8 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       {{< placeholder markup="img" width="100%" height="100" text="Responsive image" >}}
     </div>
     <div class="card-media__content card-media__content--top-right">
-      <div class="state state--open">
-        open
+      <div class="state state-simple state--open">
+        <span class="visually-hidden">open</span>
       </div>
     </div>
   </div>

@@ -106,6 +106,17 @@
   &.state--open { // stylelint-disable-line selector-class-pattern
     --#{$prefix}state-icon: null;
   }
+
+  .card-media & {
+    vertical-align: top;
+  }
+}
+
+.state-simple {
+  --#{$prefix}state-bg: none;
+  --#{$prefix}state-padding-x: 0;
+  --#{$prefix}state-padding-y: 0;
+  --#{$prefix}state-border-radius: 0;
 }
 
 // Rating - TWOF-88

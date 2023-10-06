@@ -57,6 +57,12 @@
     "no-console": "error",
     "no-negated-condition": "off",
     "no-promise-executor-return": "off",
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowTernary": true
+      }
+    ],
     "object-curly-spacing": [
       "error",
       "always"

@@ -4,7 +4,7 @@ import BaseComponent from 'bootstrap/js/src/base-component'
  * Constants
  */
 const NAME = 'ticker'
-const EVENT_TICKER_INITIALIZED = 'initialized.of.ticker'
+const EVENT_COMPONENT_INITIALIZED = 'initialized.of.ticker'
 
 const CLASS_NAME_ICON = 'ticker-icon'
 const CLASS_NAME_ITEM = 'ticker-item'
@@ -210,7 +210,7 @@ class Ticker extends BaseComponent {
     }
 
     this._scrollTicker()
-    this._element.dispatchEvent(new CustomEvent(EVENT_TICKER_INITIALIZED))
+    this._element.dispatchEvent(new CustomEvent(EVENT_COMPONENT_INITIALIZED))
   }
 
   _getTickerSpeed() {

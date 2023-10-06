@@ -40,13 +40,13 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="A" >}}</figure>
         </div>
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="B" >}}</figure>
         </div>
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="C" >}}</figure>
         </div>
         <span class="labels-min-label">+1</span>
       </div>
@@ -69,12 +69,12 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="card-tags">
-      <div class="tag-list">
-        <span class="tag">Tag 01</span>
-        <span class="tag text-bg-light">Tag 02</span>
-        <span class="tag text-bg-light">Another tag</span>
-        <span class="tag text-bg-light">…</span>
-      </div>
+      <ul class="tag-list">
+        <li class="tag">Tag 01</li>
+        <li class="tag text-bg-light">Tag 02</li>
+        <li class="tag text-bg-light">Another tag</li>
+        <li class="tag text-bg-light">…</li>
+      </ul>
     </div>
     <div class="user-rating">
       <div class="user-rating__icon">
@@ -134,13 +134,13 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="A" >}}</figure>
         </div>
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="B" >}}</figure>
         </div>
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="C" >}}</figure>
         </div>
         <span class="labels-min-label">+1</span>
       </div>
@@ -163,12 +163,12 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="card-tags">
-      <div class="tag-list">
-        <span class="tag">Tag 01</span>
-        <span class="tag text-bg-light">Tag 02</span>
-        <span class="tag text-bg-light">Another tag</span>
-        <span class="tag text-bg-light">…</span>
-      </div>
+      <ul class="tag-list">
+        <li class="tag">Tag 01</li>
+        <li class="tag text-bg-light">Tag 02</li>
+        <li class="tag text-bg-light">Another tag</li>
+        <li class="tag text-bg-light">…</li>
+      </ul>
     </div>
     <div class="user-rating">
       <div class="user-rating__icon">
@@ -230,10 +230,10 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="A" >}}</figure>
         </div>
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="B" >}}</figure>
         </div>
       </div>
     </div>
@@ -244,12 +244,12 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="card-tags">
-      <div class="tag-list">
-        <span class="tag">Tag 01</span>
-        <span class="tag text-bg-light">Tag 02</span>
-        <span class="tag text-bg-light">Another tag</span>
-        <span class="tag text-bg-light">…</span>
-      </div>
+      <ul class="tag-list">
+        <li class="tag">Tag 01</li>
+        <li class="tag text-bg-light">Tag 02</li>
+        <li class="tag text-bg-light">Another tag</li>
+        <li class="tag text-bg-light">…</li>
+      </ul>
     </div>
   </div>
 
@@ -296,13 +296,13 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="A" >}}</figure>
         </div>
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="B" >}}</figure>
         </div>
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="C" >}}</figure>
         </div>
         <span class="labels-min-label">+1</span>
       </div>
@@ -325,12 +325,12 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="card-tags">
-      <div class="tag-list">
-        <span class="tag">Tag 01</span>
-        <span class="tag text-bg-light">Tag 02</span>
-        <span class="tag text-bg-light">Another tag</span>
-        <span class="tag text-bg-light">…</span>
-      </div>
+      <ul class="tag-list">
+        <ul class="tag">Tag 01</ul>
+        <ul class="tag text-bg-light">Tag 02</ul>
+        <li class="tag text-bg-light">Another tag</li>
+        <li class="tag text-bg-light">…</li>
+      </ul>
     </div>
     <div class="user-rating">
       <div class="user-rating__icon">
@@ -377,7 +377,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="A" >}}</figure>
         </div>
       </div>
     </div>
@@ -388,12 +388,12 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="card-tags">
-      <div class="tag-list">
-        <span class="tag">Tag 01</span>
-        <span class="tag text-bg-light">Tag 02</span>
-        <span class="tag text-bg-light">Another tag</span>
-        <span class="tag text-bg-light">…</span>
-      </div>
+      <ul class="tag-list">
+        <li class="tag">Tag 01</li>
+        <li class="tag text-bg-light">Tag 02</li>
+        <li class="tag text-bg-light">Another tag</li>
+        <li class="tag text-bg-light">…</li>
+      </ul>
     </div>
     <div class="user-rating">
       <div class="user-rating__icon">
@@ -453,12 +453,12 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="card-tags">
-      <div class="tag-list">
-        <span class="tag">Tag 01</span>
-        <span class="tag text-bg-light">Tag 02</span>
-        <span class="tag text-bg-light">Another tag</span>
-        <span class="tag text-bg-light">…</span>
-      </div>
+      <ul class="tag-list">
+        <li class="tag">Tag 01</li>
+        <li class="tag text-bg-light">Tag 02</li>
+        <li class="tag text-bg-light">Another tag</li>
+        <li class="tag text-bg-light">…</li>
+      </ul>
     </div>
   </div>
 
@@ -1003,13 +1003,13 @@ Using a combination of grid and utility classes, cards can be made horizontal in
     <div class="card-media__content card-media__content--bottom-right">
       <div class="labels-min">
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="A" >}}</figure>
         </div>
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="B" >}}</figure>
         </div>
         <div class="labels-min-item">
-          <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+          <figure>{{< placeholder markup="img" width="36" height="36" text="C" >}}</figure>
         </div>
         <span class="labels-min-label">+1</span>
       </div>
@@ -1032,12 +1032,12 @@ Using a combination of grid and utility classes, cards can be made horizontal in
     </div>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="card-tags">
-      <div class="tag-list">
-        <span class="tag">Tag 01</span>
-        <span class="tag text-bg-light">Tag 02</span>
-        <span class="tag text-bg-light">Another tag</span>
-        <span class="tag text-bg-light">…</span>
-      </div>
+      <ul class="tag-list">
+        <li class="tag">Tag 01</li>
+        <li class="tag text-bg-light">Tag 02</li>
+        <li class="tag text-bg-light">Another tag</li>
+        <li class="tag text-bg-light">…</li>
+      </ul>
     </div>
     <div class="user-rating">
       <div class="user-rating__icon">

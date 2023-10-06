@@ -9,8 +9,7 @@
 - category: Content
   description: "@Todo"
   examples:
-    - name: Home
-      description: "@LOREM"
+    - name: POI List
     - name: Routing
       description: "@todo"
 

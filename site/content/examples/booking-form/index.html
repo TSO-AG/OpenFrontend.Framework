@@ -1,0 +1,103 @@
+---
+layout: examples
+title: Booking form
+body_class: ""
+---
+
+<div class="container">
+  <div class="p-4 py-md-5">
+    <form class="row col-auto">
+      <div class="col flex-grow-1">
+        <label for="booking-location" class="form-label">Location</label>
+        <input type="text" class="form-control" id="booking-location" list="booking-location-list" placeholder="Select location">
+        <datalist id="booking-location-list">
+          <option value="San Francisco">
+          <option value="New York">
+          <option value="Seattle">
+          <option value="Los Angeles">
+          <option value="Chicago">
+        </datalist>
+      </div>
+
+      <div class="col flex-grow-1">
+        <label for="booking-dates" class="form-label">Check in - out</label>
+        <input type="text" id="booking-dates" class="form-control form-datepicker" data-of-datepicker='{"mode": "range"}' placeholder="Select dates">
+      </div>
+
+      <div class="col flex-grow-1">
+        <div id="booking-combo-box" class="dropdown">
+          <label for="booking-guests" class="form-label">Guests & rooms</label>
+          <input type="text" id="booking-guests" class="form-select" data-bs-auto-close="outside" data-bs-toggle="dropdown" readonly>
+
+          <div class="dropdown-menu">
+            <div class="combo-box">
+              <div class="combo-box-row">
+                <div class="combo-box-label">
+                  <label for="booking-adults" class="form-label">Adults</label>
+                  <div class="form-text">Ages 13 or above</div>
+                </div>
+                <div class="combo-box-field">
+                  <div class="input-group" data-of-quantity-picker>
+                    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+                    <input type="number" id="booking-adults" name="adults" class="form-control text-center" value="2" min="1" max="10" readonly>
+                    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="combo-box-divider"></div>
+              <div class="combo-box-row">
+                <div class="combo-box-label">
+                  <label for="booking-children" class="form-label">Children</label>
+                  <div class="form-text">Ages 13 below</div>
+                </div>
+                <div class="combo-box-field">
+                  <div class="input-group" data-of-quantity-picker>
+                    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+                    <input type="number" id="booking-children" name="children" class="form-control text-center" value="0" min="0" max="10" readonly>
+                    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="combo-box-divider"></div>
+              <div class="combo-box-row">
+                <div class="combo-box-label">
+                  <label for="booking-rooms" class="form-label">Rooms</label>
+                  <div class="form-text">Max 8 rooms</div>
+                </div>
+                <div class="combo-box-field">
+                  <div class="input-group" data-of-quantity-picker>
+                    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+                    <input type="number" id="booking-rooms" name="rooms" class="form-control text-center" value="1" min="1" max="8" readonly>
+                    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col flex-grow-0 d-flex align-items-end">
+        <button class="btn btn-primary btn-icon"><span class="visually-hidden">Search</span><i class="ofi-search"></i></button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    openFrontend.ComboBox.then(component => new component(document.getElementById('booking-combo-box'), {
+      target: document.getElementById('booking-guests'),
+      format(data) {
+        const guests = Number.parseInt(data.adults.value) + Number.parseInt(data.children.value)
+        const rooms = Number.parseInt(data.rooms.value)
+        const chunks = [
+          `${guests} Guest${guests > 1 ? 's' : ''}`,
+          `${rooms} Room${rooms > 1 ? 's' : ''}`,
+        ]
+
+        return chunks.join(', ')
+      }
+    }))
+  });
+</script>

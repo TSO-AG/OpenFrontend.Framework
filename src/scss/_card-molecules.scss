@@ -103,10 +103,6 @@
     }
   }
 
-  &.state--open { // stylelint-disable-line selector-class-pattern
-    --#{$prefix}state-icon: null;
-  }
-
   .card-media & {
     vertical-align: top;
   }

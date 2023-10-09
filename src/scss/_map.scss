@@ -1,0 +1,46 @@
+@mixin map-marker-reset {
+  .map-marker {
+    color: $body-color;
+    line-height: $line-height-base;
+    font-family: $font-family-base;
+    @include font-size($font-size-base);
+    font-weight: $font-weight-base;
+
+    p {
+      margin-top: 0;
+      @include margin-bottom($paragraph-margin-bottom);
+    }
+
+    a {
+      color: $link-color;
+    }
+  }
+}
+
+.map-marker {
+  display: flex;
+}
+
+.map-marker-image {
+  width: 50%;
+  padding-right: $grid-gutter-width / 2;
+
+  figure {
+    margin: 0;
+  }
+}
+
+.map-marker-content {
+  padding-left: $grid-gutter-width / 2;
+  width: 50%;
+}
+
+// Reset styles provided by Google Maps
+.gm-style .gm-style-iw  {
+  @include map-marker-reset
+}
+
+// Reset styles provided by OSM
+.leaflet-popup-content {
+  @include map-marker-reset
+}

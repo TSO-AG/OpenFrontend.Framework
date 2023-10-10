@@ -6,8 +6,12 @@
   --#{$prefix}wrapper-bg-color: #{$wrapper-bg-color};
   --#{$prefix}wrapper-z-index: #{$wrapper-z-index};
   --#{$prefix}wrapper-media-opacity: #{$wrapper-media-opacity};
+  --#{$prefix}wrapper-text-shadow: #{$wrapper-text-shadow};
   // scss-docs-end wrapper-css-vars
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   z-index: var(--#{$prefix}wrapper-z-index);
   padding: var(--#{$prefix}wrapper-padding-y) var(--#{$prefix}wrapper-padding-x);
@@ -16,12 +20,26 @@
 
   &-bg-light {
     --#{$prefix}wrapper-bg-color: #{$wrapper-bg-color-light};
-    --#{$prefix}wrapper-color: color-contrast($wrapper-bg-color-light);
+    --#{$prefix}wrapper-color: #{color-contrast($wrapper-bg-color-light)};
   }
 
   &-bg-dark {
     --#{$prefix}wrapper-bg-color: #{$wrapper-bg-color-dark};
     --#{$prefix}wrapper-color: #{color-contrast($wrapper-bg-color-dark)};
+  }
+}
+
+.wrapper-zoom {
+  overflow: hidden;
+
+  .wrapper-bg-media {
+    @include transition($wrapper-media-zoom-transition);
+  }
+
+  &:hover {
+    .wrapper-bg-media {
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -46,5 +64,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+.wrapper-content {
+  @include font-size(1.2rem);
+  text-shadow: var(--#{$prefix}wrapper-text-shadow);
+
+  a {
+    text-shadow: none;
   }
 }

@@ -7,13 +7,13 @@
   --#{$prefix}wrapper-z-index: #{$wrapper-z-index};
   --#{$prefix}wrapper-media-opacity: #{$wrapper-media-opacity};
   --#{$prefix}wrapper-text-shadow: #{$wrapper-text-shadow};
+  position: relative;
+  z-index: var(--#{$prefix}wrapper-z-index);
   // scss-docs-end wrapper-css-vars
 
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  z-index: var(--#{$prefix}wrapper-z-index);
   padding: var(--#{$prefix}wrapper-padding-y) var(--#{$prefix}wrapper-padding-x);
   color: var(--#{$prefix}wrapper-color);
   background-color: var(--#{$prefix}wrapper-bg-color);

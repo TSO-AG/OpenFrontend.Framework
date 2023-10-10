@@ -650,7 +650,7 @@ If you want to present multiple images, you can also add a carousel to the card.
 <div class="card" style="width: 18rem;">
   <div class="card-media">
     <div class="carousel">
-      <div class="swiper" data-of-carousel='{"pagination": "#carousel-pagination"}'>
+      <div class="swiper" data-of-carousel='{"autoplay": true, "pagination": "#carousel-pagination"}'>
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             {{< placeholder width="286" height="180" class="d-block w-100" background="#777" text="Slide 1" >}}

@@ -45,6 +45,7 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-of-highlight]'), () => import(/* webpackChunkName: "of-highlight" */ './components/highlight'))
   loadForElements(element.querySelectorAll('[data-of-elements-filter]'), () => import(/* webpackChunkName: "of-datepicker" */ './components/elements-filter'))
   loadForElements(element.querySelectorAll('[data-of-datepicker]'), () => import(/* webpackChunkName: "of-datepicker" */ './components/datepicker'))
+  loadForElements(element.querySelectorAll('[data-of-lightbox]'), () => import(/* webpackChunkName: "of-lightbox" */ './components/lightbox'))
   loadForElements(element.querySelectorAll('[data-of-table-sort]'), () => import(/* webpackChunkName: "of-tablesort" */ './components/tablesort'))
   loadForElements(element.querySelectorAll('[data-of-rating]'), () => import(/* webpackChunkName: "of-rating" */ './components/rating'))
   loadForElements(element.querySelectorAll('[data-of-video-play]'), () => import(/* webpackChunkName: "of-video-play" */ './components/video-play'))

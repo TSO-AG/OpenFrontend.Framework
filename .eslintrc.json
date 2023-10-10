@@ -184,6 +184,26 @@
         "unicorn/prefer-node-protocol": "off",
         "unicorn/prefer-top-level-await": "off"
       }
+    },
+    {
+      "files": [
+        "site/content/examples/**"
+      ],
+      "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": "latest"
+      },
+      "rules": {
+        "camelcase": "off",
+        "import/no-unresolved": "off",
+        "new-cap": "off",
+        "no-alert": "off",
+        "no-console": "off",
+        "radix": "off",
+        "unicorn/no-unused-properties": "off",
+        "unicorn/prefer-node-protocol": "off",
+        "unicorn/prefer-top-level-await": "off"
+      }
     }
   ]
 }

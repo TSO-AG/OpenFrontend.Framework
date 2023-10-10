@@ -86,7 +86,7 @@ body_class: ""
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    openFrontend.ComboBox.then(component => new component(document.getElementById('booking-combo-box'), {
+    window.openFrontend.ComboBox.then(component => new component(document.getElementById('booking-combo-box'), {
       target: document.getElementById('booking-guests'),
       format(data) {
         const guests = Number.parseInt(data.adults.value) + Number.parseInt(data.children.value)
@@ -99,5 +99,5 @@ body_class: ""
         return chunks.join(', ')
       }
     }))
-  });
+  })
 </script>

@@ -565,6 +565,41 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
 {{< /example >}}
 
+## CardPeople
+{{< example >}}
+<div class="card" style="max-width: 22rem;">
+  <div class="card-media">
+    <div class="card-media__visual">
+      {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
+    </div>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-info">Chief executive officer</h5>
+    <h3 class="card-title">John Doe</h3>
+
+    <div class="icon-box mt-1">
+      <div class="icon-box-icon">
+        <i class="ofi-telephone-fill"></i>
+      </div>
+      <div class="icon-box-content">
+        <div><a href="#">+41 71 274 99 19</a></div>
+        <div><a href="#">+41 79 732 43 46</a></div>
+      </div>
+    </div>
+
+    <div class="icon-box mb-0">
+      <div class="icon-box-icon">
+        <i class="ofi-at-fill"></i>
+      </div>
+      <div class="icon-box-content">
+        <a href="#">john.doe@example.com</a>
+      </div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
 ## CardStory
 {{< example >}}
 

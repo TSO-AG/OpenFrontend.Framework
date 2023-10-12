@@ -7,15 +7,14 @@
   --#{$prefix}wrapper-z-index: #{$wrapper-z-index};
   --#{$prefix}wrapper-media-opacity: #{$wrapper-media-opacity};
   --#{$prefix}wrapper-text-shadow: #{$wrapper-text-shadow};
+  --#{$prefix}wrapper-font-size: #{$wrapper-font-size};
+  --#{$prefix}wrapper-zoom-transform: #{$wrapper-zoom-transform};
+  // scss-docs-end wrapper-css-vars
   position: relative;
   z-index: var(--#{$prefix}wrapper-z-index);
-  // scss-docs-end wrapper-css-vars
-
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  padding: var(--#{$prefix}wrapper-padding-y) var(--#{$prefix}wrapper-padding-x);
-  color: var(--#{$prefix}wrapper-color);
   background-color: var(--#{$prefix}wrapper-bg-color);
 
   &-bg-light {
@@ -38,7 +37,7 @@
 
   &:hover {
     .wrapper-bg-media {
-      transform: scale(1.1);
+      transform: var(--#{$prefix}wrapper-zoom-transform);
     }
   }
 }
@@ -68,8 +67,14 @@
 }
 
 .wrapper-content {
-  @include font-size(1.2rem);
+  padding: var(--#{$prefix}wrapper-padding-y) var(--#{$prefix}wrapper-padding-x);
+  font-size: var(--#{$prefix}wrapper-font-size);
+  color: var(--#{$prefix}wrapper-color);
   text-shadow: var(--#{$prefix}wrapper-text-shadow);
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
 
   a {
     text-shadow: none;

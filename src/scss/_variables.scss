@@ -319,8 +319,8 @@ $logo-list-item-border-radius: null !default;
 
 // Wrapper
 // scss-docs-start wrapper-variables
-$wrapper-padding-y: 1rem !default;
-$wrapper-padding-x: 1rem !default;
+$wrapper-padding-y: 1.5rem !default;
+$wrapper-padding-x: 1.5rem !default;
 $wrapper-color: #fff !default;
 $wrapper-bg-color: null !default;
 $wrapper-bg-color-light: #f8f9fa !default;
@@ -329,6 +329,8 @@ $wrapper-z-index: 1 !default;
 $wrapper-media-opacity: null !default;
 $wrapper-media-zoom-transition: all .5s ease-in-out !default;
 $wrapper-text-shadow: 2px 3px 5px rgba(0, 0, 0, .5) !default;
+$wrapper-font-size: 1.2rem !default;
+$wrapper-zoom-transform: scale(1.1) !default;
 // scss-docs-end wrapper-variables
 
 // Social links

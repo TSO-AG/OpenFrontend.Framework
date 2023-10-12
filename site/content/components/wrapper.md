@@ -13,28 +13,28 @@ toc: true
 #### Light color
 {{< example >}}
 <div class="wrapper wrapper-bg-light py-5">
-  <div class="wrapper-content">Sample wrapper content</div>
+  <div class="wrapper-content text-center">Sample wrapper content</div>
 </div>
 {{< /example >}}
 
 #### Dark color
 {{< example >}}
 <div class="wrapper wrapper-bg-dark py-5">
-  <div class="wrapper-content">Sample wrapper content</div>
+  <div class="wrapper-content text-center">Sample wrapper content</div>
 </div>
 {{< /example >}}
 
 #### Custom color
 {{< example >}}
 <div class="wrapper py-5" style="--bs-wrapper-bg-color: #f47c00; --bs-wrapper-color: #fff">
-  <div class="wrapper-content">Sample wrapper content</div>
+  <div class="wrapper-content text-center">Sample wrapper content</div>
 </div>
 {{< /example >}}
 
 #### Image
 {{< example >}}
 <div class="wrapper" style="min-height: 400px">
-  <div class="wrapper-content">Sample wrapper content</div>
+  <div class="wrapper-content text-center">Sample wrapper content</div>
 
   <div class="wrapper-bg-media">
     <figure>
@@ -47,7 +47,7 @@ toc: true
 #### Video
 {{< example >}}
 <div class="wrapper" style="--bs-wrapper-color: #fff; min-height: 400px">
-  <div class="wrapper-content">Sample wrapper content</div>
+  <div class="wrapper-content text-center">Sample wrapper content</div>
 
   <div class="wrapper-bg-media">
     <figure>
@@ -64,7 +64,7 @@ With the `--bs-wrapper-media-opacity` variable, we can control the transparency 
 
 {{< example >}}
 <div class="wrapper" style="--bs-wrapper-bg-color: #f47c00; --bs-wrapper-color: #fff; --bs-wrapper-media-opacity: 0.2; min-height: 400px">
-  <div class="wrapper-content">Sample wrapper content</div>
+  <div class="wrapper-content text-center">Sample wrapper content</div>
 
   <div class="wrapper-bg-media">
     <figure>

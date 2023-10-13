@@ -361,5 +361,7 @@ $icon-box-icon-font-size:   null !default;
 
 // Masonry
 // scss-docs-start masonry-variables
-
+$masonry-gap: 5px !default;
+$masonry-breakpoint: md !default;
+$masonry-group-breakpoint: xl !default;
 // scss-docs-end masonry-variables

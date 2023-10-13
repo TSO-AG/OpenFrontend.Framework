@@ -1,137 +1,167 @@
 .masonry {
-  display: grid;
-  gap: 5px;
   // scss-docs-start masonry-css-vars
-
+  --#{$prefix}masonry-gap: #{$masonry-gap};
   // scss-docs-end masonry-css-vars
+  display: grid;
+  gap: var(--#{$prefix}masonry-gap);
+}
 
-  .wrapper {
-    height: 100%;
+.masonry-item,
+.masonry-group-item {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    flex-grow: 1;
+  }
+}
+
+// Group
+.masonry-group-2 {
+  @include media-breakpoint-up($masonry-group-breakpoint) {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 // Layout 1
-.masonry-layout-1 {
-  display: grid;
-  grid-template-rows: repeat(4, auto);
-  grid-template-columns: repeat(4, 1fr);
+.masonry-square-1 {
+  @include media-breakpoint-up($masonry-breakpoint) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
 
-  @include media-breakpoint-down(md) {
-    > * {
-      grid-column: 1 / 5;
+.masonry-square-2 {
+  @include media-breakpoint-up($masonry-breakpoint) {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+
+    > .masonry-item {
+      grid-area: span 1 / span 2;
     }
   }
+}
 
-  @include media-breakpoint-up(md) {
-    --order-level-1: 1;
-    --order-level-2: 20;
-    --order-level-3: 30;
-    --order-level-4: 40;
-    --order-level-5: 50;
-    --order-level-6: 60;
-    --order: var(--order-level-1);
+.masonry-square-3 {
+  @include media-breakpoint-up($masonry-breakpoint) {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
-    > * {
-      order: var(--order);
+    > .masonry-item {
+      grid-area: span 1 / span 1;
 
-      &:nth-child(10n) ~ * {
-        --order: var(--order-level-2);
-      }
-
-      &:nth-child(20n) ~ * {
-        --order: var(--order-level-3);
-      }
-
-      &:nth-child(30n) ~ * {
-        --order: var(--order-level-4);
-      }
-
-      &:nth-child(40n) ~ * {
-        --order: var(--order-level-5);
-      }
-
-      &:nth-child(50n) ~ * {
-        --order: var(--order-level-6);
+      &:nth-child(3n + 3) {
+        grid-area: span 1 / span 2;
       }
     }
   }
+}
 
-  @include media-breakpoint-between(md, xxl) {
-    > :nth-child(10n + 1) {
-      grid-area: span 1 / span 4;
-    }
+.masonry-square-4 {
+  @include media-breakpoint-up($masonry-breakpoint) {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
-    > :nth-child(10n + 2) {
-      grid-area: span 1 / span 2;
-    }
+    > .masonry-item {
+      grid-area: span 1 / span 1;
 
-    > :nth-child(10n + 3) {
-      grid-area: span 1 / span 2;
-    }
-
-    > :nth-child(10n + 4) {
-      grid-area: span 2 / span 4;
-    }
-
-    > :nth-child(10n + 5) {
-      grid-area: span 1 / span 2;
-    }
-
-    > :nth-child(10n + 6) {
-      grid-area: span 1 / span 2;
-    }
-
-    > :nth-child(10n + 7) {
-      grid-area: span 1 / span 4;
-    }
-
-    > :nth-child(10n + 8) {
-      grid-area: span 1 / span 2;
-    }
-
-    > :nth-child(10n + 9) {
-      grid-area: span 1 / span 2;
-      order: calc(var(--order) + 1); // stylelint-disable-line function-disallowed-list
-    }
-
-    > :nth-child(10n + 10) {
-      grid-area: span 2 / span 2;
-    }
-  }
-
-  @include media-breakpoint-up(xxl) {
-    > :nth-child(10n + 1) {
-      grid-area: span 1 / span 2;
-    }
-
-    > :nth-child(10n + 2) {
-      order: calc(var(--order) + 2); // stylelint-disable-line function-disallowed-list
-
-      ~ * {
-        order: calc(var(--order) + 2); // stylelint-disable-line function-disallowed-list
-
-        &:nth-child(10n + 1) {
-          order: var(--order);
-        }
+      &:nth-child(3n + 1) {
+        grid-area: span 1 / span 2;
       }
     }
+  }
+}
 
-    > :nth-child(10n + 4) {
-      grid-area: span 2 / span 2;
-      order: var(--order);
+.masonry-square-5 {
+  @include media-breakpoint-up($masonry-breakpoint) {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+
+    > .masonry-item {
+      grid-area: span 1 / span 1;
+
+      &:nth-child(3n + 1) {
+        grid-area: span 2 / span 1;
+      }
     }
+  }
+}
 
-    > :nth-child(10n + 7) {
-      grid-area: span 1 / span 2;
-      order: calc(var(--order) + 3); // stylelint-disable-line function-disallowed-list
+.masonry-square-6 {
+  @include media-breakpoint-up($masonry-breakpoint) {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+
+    > .masonry-item {
+      grid-area: span 1 / span 1;
+
+      &:nth-child(3n + 2) {
+        order: 1;
+      }
+
+      &:nth-child(3n + 3) {
+        grid-area: span 2 / span 1;
+      }
     }
+  }
+}
 
-    > :nth-child(10n + 9) {
-      order: calc(var(--order) + 4); // stylelint-disable-line function-disallowed-list
+.masonry-square-7 {
+  @include media-breakpoint-up($masonry-breakpoint) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+
+    > .masonry-item {
+      grid-area: span 1 / span 1;
     }
+  }
+}
 
-    > :nth-child(10n + 10) {
-      grid-area: span 2 / span 1;
+.masonry-horizontal-1 {
+  @include media-breakpoint-up($masonry-breakpoint) {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    > .masonry-item {
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+  }
+}
+
+.masonry-horizontal-2 {
+  @include media-breakpoint-up($masonry-breakpoint) {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    > .masonry-item {
+      grid-area: span 1 / span 1;
+
+      &:nth-child(even) {
+        grid-area: span 1 / span 2;
+      }
+    }
+  }
+}
+
+.masonry-horizontal-3 {
+  @include media-breakpoint-up($masonry-breakpoint) {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    > .masonry-item {
+      grid-area: span 1 / span 1;
+
+      &:nth-child(odd) {
+        grid-area: span 1 / span 2;
+      }
+    }
+  }
+}
+
+.masonry-horizontal-4 {
+  @include media-breakpoint-up($masonry-breakpoint) {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    > .masonry-item {
+      grid-area: span 1 / span 1;
     }
   }
 }

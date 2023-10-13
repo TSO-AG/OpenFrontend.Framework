@@ -1,29 +1,46 @@
 @mixin map-marker-reset {
   .map-marker {
-    font-family: $font-family-base;
-    font-weight: $font-weight-base;
-    line-height: $line-height-base;
-    color: $body-color;
-    @include font-size($font-size-base);
-
     p {
       margin-top: 0;
       @include margin-bottom($paragraph-margin-bottom);
-    }
-
-    a {
-      color: $link-color;
     }
   }
 }
 
 .map-marker {
+  // scss-docs-start map-marker-css-vars
+  @include rfs($map-marker-font-size, --#{$prefix}map-marker-font-size);
+  --#{$prefix}map-marker-font-family: #{$map-marker-font-family};
+  --#{$prefix}map-marker-font-weight: #{$map-marker-font-weight};
+  --#{$prefix}map-marker-line-height: #{$map-marker-line-height};
+  --#{$prefix}map-marker-color: #{$map-marker-color};
+  --#{$prefix}map-marker-title-font-size: #{$map-marker-title-font-size};
+  --#{$prefix}map-marker-title-color: #{$map-marker-title-color};
+  --#{$prefix}map-marker-title-margin-bottom: #{$map-marker-title-margin-bottom};
+  --#{$prefix}map-marker-info-color: #{$map-marker-info-color};
+  --#{$prefix}map-marker-info-margin-bottom: #{$map-marker-info-margin-bottom};
+  --#{$prefix}map-marker-link-color: #{$map-marker-link-color};
+  --#{$prefix}map-marker-image-max-width: #{$map-marker-image-max-width};
+  // scss-docs-end map-marker-css-vars
+
   display: flex;
+  gap: 1em;
+  font-family: var(--#{$prefix}map-marker-font-family);
+  font-size: var(--#{$prefix}map-marker-font-size);
+  font-weight: var(--#{$prefix}map-marker-font-weight);
+  line-height: var(--#{$prefix}map-marker-line-height);
+  color: var(--#{$prefix}map-marker-color);
+
+  a {
+    --#{$prefix}link-color-rgb: initial;
+    color: var(--#{$prefix}map-marker-link-color);
+  }
 }
 
 .map-marker-image {
+  flex: 0 0 auto;
   width: 50%;
-  padding-right: $grid-gutter-width / 2;
+  max-width: var(--#{$prefix}map-marker-image-max-width);
 
   figure {
     margin: 0;
@@ -31,16 +48,30 @@
 }
 
 .map-marker-content {
-  width: 50%;
-  padding-left: $grid-gutter-width / 2;
+  @include make-col();
+  align-self: center;
+}
+
+.map-marker-info {
+  margin-bottom: var(--#{$prefix}map-marker-info-margin-bottom);
+  color: var(--#{$prefix}map-marker-info-color);
+}
+
+.map-marker-title {
+  margin-bottom: var(--#{$prefix}map-marker-title-margin-bottom);
+  font-size: var(--#{$prefix}map-marker-title-font-size);
+  color: var(--#{$prefix}card-title-color, $headings-color);
 }
 
 // Reset styles provided by Google Maps
-.gm-style .gm-style-iw  {
-  @include map-marker-reset ();
+.gm-style .gm-style-iw {
+  @include map-marker-reset();
 }
 
 // Reset styles provided by OSM
 .leaflet-popup-content {
-  @include map-marker-reset ();
+  html & {
+    margin: 12px;
+  }
+  @include map-marker-reset();
 }

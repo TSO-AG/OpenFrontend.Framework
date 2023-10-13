@@ -21,14 +21,16 @@ This section provides an example of how to embed Google Maps into your web page 
     <div class="map-marker position-relative">
       <div class="map-marker-image">
         <figure>
-          {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
+          {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
         </figure>
       </div>
       <div class="map-marker-content">
-        <p>Product family | Place</p>
-        <p>DD.MM.YY - DD.MM.YY</p>
-        <h4>Title</h4>
-        <a href="#" class="stretched-link">View details</a>
+        <div class="map-marker-info">Product family | Place</div>
+        <div class="map-marker-info">DD.MM.YY - DD.MM.YY</div>
+        <h4 class="map-marker-title">Title</h4>
+        <a href="#" class="icon-link icon-link-hover stretched-link">
+          View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+        </a>
       </div>
     </div>
   </div>
@@ -94,14 +96,16 @@ Example HTML Structure
       <div class="map-marker position-relative">
         <div class="map-marker-image">
           <figure>
-            {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
+            {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
           </figure>
         </div>
         <div class="map-marker-content">
-          <p>Product family | Place</p>
-          <p>DD.MM.YY - DD.MM.YY</p>
-          <h4>Title</h4>
-          <a href="#" class="stretched-link">View details</a>
+          <div class="map-marker-info">Product family | Place</div>
+          <div class="map-marker-info">DD.MM.YY - DD.MM.YY</div>
+          <h4 class="map-marker-title">Title</h4>
+          <a href="#" class="icon-link icon-link-hover stretched-link">
+            View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -198,14 +202,16 @@ This section provides an example of how to integrate OpenStreetMap into your web
     <div class="map-marker position-relative">
       <div class="map-marker-image">
         <figure>
-          {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
+          {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
         </figure>
       </div>
       <div class="map-marker-content">
-        <p>Product family | Place</p>
-        <p>DD.MM.YY - DD.MM.YY</p>
-        <h4>Title</h4>
-        <a href="#" class="stretched-link">View details</a>
+        <div class="map-marker-info">Product family | Place</div>
+        <div class="map-marker-info">DD.MM.YY - DD.MM.YY</div>
+        <h4 class="map-marker-title">Title</h4>
+        <a href="#" class="icon-link icon-link-hover stretched-link">
+          View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+        </a>
       </div>
     </div>
   </div>
@@ -237,7 +243,7 @@ This section provides an example of how to integrate OpenStreetMap into your web
       }).addTo(map);
 
      L.marker(position).addTo(map)
-          .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 485, maxWidth: 485 });
+          .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 360, maxWidth: 360 });
   }
   </script>
 </div>
@@ -254,17 +260,18 @@ Example HTML Structure
     <div class="map-marker position-relative">
       <div class="map-marker-image">
         <figure>
-          {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
+          {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
         </figure>
       </div>
       <div class="map-marker-content">
-        <p>Product family | Place</p>
-        <p>DD.MM.YY - DD.MM.YY</p>
-        <h4>Title</h4>
-        <a href="#" class="stretched-link">View details</a>
+        <div class="map-marker-info">Product family | Place</div>
+        <div class="map-marker-info">DD.MM.YY - DD.MM.YY</div>
+        <h4 class="map-marker-title">Title</h4>
+        <a href="#" class="icon-link icon-link-hover stretched-link">
+          View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+        </a>
       </div>
     </div>
-  </div>
 </div>
 {{< /highlight >}}
 
@@ -301,7 +308,7 @@ Initializing the Map
   }).addTo(map);
 
   L.marker(position).addTo(map)
-    .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 485, maxWidth: 485 });
+    .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 360, maxWidth: 360 });
 }
 </script>
 {{< /highlight >}}
@@ -411,4 +418,14 @@ To ensure your maps look great on all devices, our Map component supports respon
   initOpenStreetMap('map4');
 </script>
 {{< /example >}}
+
+## CSS
+
+### Variables
+{{< scss-docs name="map-marker-css-vars" file="src/scss/_map.scss" >}}
+
+### Sass variables
+{{< scss-docs name="map-marker-variables" file="src/scss/_variables.scss" >}}
+
+
 

@@ -354,3 +354,19 @@ $icon-box-margin-bottom:    1rem !default;
 $icon-box-icon-color:       $primary !default;
 $icon-box-icon-font-size:   null !default;
 // scss-docs-end icon-box-variables
+
+// Map marker
+// scss-docs-start map-marker-variables
+$map-marker-font-size:                14px !default;
+$map-marker-font-family:              var(--#{$prefix}body-font-family) !default;
+$map-marker-font-weight:              var(--#{$prefix}body-font-weight) !default;
+$map-marker-line-height:              var(--#{$prefix}body-line-height) !default;
+$map-marker-color:                    var(--#{$prefix}gray-900) !default;
+$map-marker-title-font-size:          1.4em !default;
+$map-marker-title-color:              null !default;
+$map-marker-title-margin-bottom:      .5em !default;
+$map-marker-info-color:               var(--#{$prefix}gray-600) !default;
+$map-marker-info-margin-bottom:       .15em !default;
+$map-marker-link-color:               $primary !default;
+$map-marker-image-max-width:          null !default;
+// scss-docs-end map-marker-variables

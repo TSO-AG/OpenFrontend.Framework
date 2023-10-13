@@ -5,9 +5,9 @@ body_class: ""
 ---
 
 <div class="container">
-  <div class="p-4 py-md-5">
-    <form class="row col-auto">
-      <div class="col flex-grow-1">
+  <div class="py-5">
+    <form class="row col-auto g-3">
+      <div class="col-12 col-md">
         <label for="booking-location" class="form-label">Location</label>
         <input type="text" class="form-control" id="booking-location" list="booking-location-list" placeholder="Select location">
         <datalist id="booking-location-list">
@@ -19,12 +19,12 @@ body_class: ""
         </datalist>
       </div>
 
-      <div class="col flex-grow-1">
+      <div class="col-12 col-md">
         <label for="booking-dates" class="form-label">Check in - out</label>
         <input type="text" id="booking-dates" class="form-control form-datepicker" data-of-datepicker='{"mode": "range"}' placeholder="Select dates">
       </div>
 
-      <div class="col flex-grow-1">
+      <div class="col">
         <div id="booking-combo-box" class="dropdown">
           <label for="booking-guests" class="form-label">Guests & rooms</label>
           <input type="text" id="booking-guests" class="form-select" data-bs-auto-close="outside" data-bs-toggle="dropdown" readonly>
@@ -77,7 +77,7 @@ body_class: ""
         </div>
       </div>
 
-      <div class="col flex-grow-0 d-flex align-items-end">
+      <div class="col-auto d-flex align-items-end">
         <button class="btn btn-primary btn-icon"><span class="visually-hidden">Search</span><i class="ofi-search"></i></button>
       </div>
     </form>

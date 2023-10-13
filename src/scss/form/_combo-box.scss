@@ -8,6 +8,7 @@
   --#{$prefix}combo-box-border-radius: #{$combo-box-border-radius};
   --#{$prefix}combo-box-border-width: #{$combo-box-border-width};
   --#{$prefix}combo-box-row-gap: #{$combo-box-row-gap};
+  --#{$prefix}combo-box-label-min-width: #{$combo-box-label-min-width};
   --#{$prefix}combo-box-field-width: #{$combo-box-field-width};
   --#{$prefix}combo-box-divider-bg: #{$combo-box-divider-bg};
   --#{$prefix}combo-box-divider-margin-y: #{$combo-box-divider-margin-y};
@@ -31,6 +32,8 @@
 }
 
 .combo-box-label {
+  min-width: var(--#{$prefix}combo-box-label-min-width);
+
   .form-label {
     display: block;
     margin-bottom: 0;
@@ -38,6 +41,7 @@
 }
 
 .combo-box-field {
+  flex-shrink: 0;
   width: var(--#{$prefix}combo-box-field-width);
 }
 

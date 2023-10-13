@@ -115,7 +115,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 <div class="card card-horizontal">
   <div class="card-media">
     <div class="card-media__visual">
-      {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
+      {{< placeholder markup="img" width="100%" height="200" class="img-fluid" text="Responsive image" >}}
     </div>
     <div class="card-media__content card-media__content--top-left">
       <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>
@@ -630,6 +630,29 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
 {{< /example >}}
 
+## CardMini
+{{< example >}}
+
+<div class="card card-mini">
+  <div class="card-media">
+    <div class="card-media__visual">
+      {{< placeholder markup="img" width="100%" height="100" text="Responsive image" >}}
+    </div>
+    <div class="card-media__content card-media__content--top-right">
+      <div class="state state-simple state--open">
+        <span class="visually-hidden">open</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-info">Lorem ipsum</h5>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
+  </div>
+</div>
+
+{{< /example >}}
+
 ## Content types
 
 Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what's supported.
@@ -1019,7 +1042,7 @@ Using a combination of grid and utility classes, cards can be made horizontal in
 <div class="card card-horizontal">
   <div class="card-media">
     <div class="card-media__visual">
-      {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
+      {{< placeholder markup="img" width="100%" height="200" class="img-fluid" text="Responsive image" >}}
     </div>
     <div class="card-media__content card-media__content--top-left">
       <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>

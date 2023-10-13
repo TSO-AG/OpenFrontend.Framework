@@ -1029,6 +1029,7 @@ you can use optional data to sort on.
 ### Sass variables
 
 {{< scss-docs name="table-sort-variables" file="src/scss/_variables.scss" >}}
+{{< scss-docs name="table-sort-dark-variables" file="src/scss/_variables-dark.scss" >}}
 
 ## CSS
 

@@ -1,0 +1,13 @@
+// Dark color mode variables
+//
+// Custom variables for the `[data-bs-theme="dark"]` theme. Use this as a starting point for your own custom color modes by creating a new theme-specific file like `_variables-dark.scss` and adding the variables you need.
+
+$body-color-dark: $gray-500 !default;
+
+// Forms
+// scss-docs-start form-datepicker-dark-variables
+$form-datepicker-indicator-color-dark: $body-color-dark !default;
+$form-timepicker-indicator-color-dark: $form-datepicker-indicator-color-dark !default;
+$form-datepicker-indicator-dark: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='#{$form-datepicker-indicator-color-dark}' d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z'/></svg>") !default;
+$form-timepicker-indicator-dark: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='#{$form-timepicker-indicator-color-dark}' d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z'/></svg>") !default;
+// scss-docs-end form-datepicker-dark-variables

@@ -13,3 +13,15 @@
 .form-timepicker {
   --#{$prefix}form-datepicker-bg-img: #{escape-svg($form-timepicker-indicator)};
 }
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .form-datepicker {
+      --#{$prefix}form-datepicker-bg-img: #{escape-svg($form-datepicker-indicator-dark)};
+    }
+
+    .form-timepicker {
+      --#{$prefix}form-datepicker-bg-img: #{escape-svg($form-timepicker-indicator-dark)};
+    }
+  }
+}

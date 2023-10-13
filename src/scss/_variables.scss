@@ -4,9 +4,19 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
-$blue: #0d6efd !default;
-$primary: $blue !default;
+
+// scss-docs-start gray-color-variables
 $white: #fff !default;
+$gray-500: #adb5bd !default;
+// scss-docs-end gray-color-variables
+
+// scss-docs-start color-variables
+$blue: #0d6efd !default;
+// scss-docs-end color-variables
+
+// scss-docs-start theme-color-variables
+$primary: $blue !default;
+// scss-docs-end theme-color-variables
 
 // Prefix for :root CSS variables
 
@@ -168,6 +178,8 @@ $card-title-link-color: null !default;
 $card-title-link-decoration: null !default;
 $card-title-link-hover-color: null !default;
 $card-title-link-hover-decoration: null !default;
+$card-horizontal-media-width: 225px !default;
+$card-mini-media-width: 125px !default;
 // scss-docs-end card-variables
 
 // Price
@@ -372,3 +384,43 @@ $combo-box-divider-margin-y:         $spacer * .5 !default;
 $combo-box-divider-height:           1px !default;
 $combo-box-divider-style:            solid !default;
 // scss-docs-end combo-box-variables
+
+// Carousel
+// scss-docs-start carousel-variables
+$carousel-theme-color:                              $primary !default;
+$carousel-offset-x:                                 12px !default;
+$carousel-offset-y:                                 12px !default;
+$carousel-pagination-left:                          $carousel-offset-x !default;
+$carousel-pagination-right:                         $carousel-offset-x !default;
+$carousel-pagination-bottom:                        $carousel-offset-y !default;
+$carousel-pagination-top:                           $carousel-offset-y !default;
+$carousel-pagination-bullet-size:                   8px !default;
+$carousel-pagination-bullet-width:                  $carousel-pagination-bullet-size !default;
+$carousel-pagination-bullet-height:                 $carousel-pagination-bullet-size !default;
+$carousel-pagination-bullet-border-radius:          50% !default;
+$carousel-pagination-bullet-inactive-color:         #000 !default;
+$carousel-pagination-bullet-inactive-opacity:       .2 !default;
+$carousel-pagination-bullet-opacity:                1 !default;
+$carousel-pagination-bullet-horizontal-gap:         4px !default;
+$carousel-pagination-bullet-vertical-gap:           6px !default;
+// scss-docs-end carousel-variables
+
+// Heading
+$headings-action-margin-bottom: 1rem !default;
+
+// Map marker
+// scss-docs-start map-marker-variables
+$map-marker-font-size:                14px !default;
+$map-marker-font-family:              var(--#{$prefix}body-font-family) !default;
+$map-marker-font-weight:              var(--#{$prefix}body-font-weight) !default;
+$map-marker-line-height:              var(--#{$prefix}body-line-height) !default;
+$map-marker-color:                    var(--#{$prefix}gray-900) !default;
+$map-marker-title-font-size:          1.4em !default;
+$map-marker-title-color:              null !default;
+$map-marker-title-margin-bottom:      .5em !default;
+$map-marker-info-color:               var(--#{$prefix}gray-600) !default;
+$map-marker-info-margin-bottom:       .15em !default;
+$map-marker-link-color:               $primary !default;
+$map-marker-image-max-width:          null !default;
+// scss-docs-end map-marker-variables
+

@@ -1,0 +1,5 @@
+:root {
+  @each $name, $pixel-value in $grid-breakpoints {
+    --breakpoint-#{$name}: #{$pixel-value};
+  }
+}

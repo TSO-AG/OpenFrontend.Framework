@@ -7,6 +7,9 @@ window.openFrontend = {
   get Button() {
     return new Promise(resolve => import(/* webpackChunkName: "of-button" */ 'bootstrap/js/src/button').then(v => resolve(v.default)))
   },
+  get Carousel() {
+    return new Promise(resolve => import(/* webpackChunkName: "open-frontend-carousel" */ './components/carousel').then(v => resolve(v.default)))
+  },
   get Collapse() {
     return new Promise(resolve => import(/* webpackChunkName: "of-collapse" */ 'bootstrap/js/src/collapse').then(v => resolve(v.default)))
   },
@@ -50,6 +53,7 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-bs-toggle="offcanvas"]'), () => import(/* webpackChunkName: "of-offcanvas" */ './components/offcanvas'))
   loadForElements(element.querySelectorAll('[data-of-combo-box]'), () => import(/* webpackChunkName: "of-combo-box" */ './components/combo-box'))
   loadForElements(element.querySelectorAll('[data-of-highlight]'), () => import(/* webpackChunkName: "of-highlight" */ './components/highlight'))
+  loadForElements(element.querySelectorAll('[data-of-carousel]'), () => import(/* webpackChunkName: "of-carousel" */ './components/carousel'))
   loadForElements(element.querySelectorAll('[data-of-elements-filter]'), () => import(/* webpackChunkName: "of-datepicker" */ './components/elements-filter'))
   loadForElements(element.querySelectorAll('[data-of-datepicker]'), () => import(/* webpackChunkName: "of-datepicker" */ './components/datepicker'))
   loadForElements(element.querySelectorAll('[data-of-table-sort]'), () => import(/* webpackChunkName: "of-tablesort" */ './components/tablesort'))

@@ -4,244 +4,93 @@ title: POI List
 body_class: ""
 ---
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <p class="mb-0 fw-bold"><i class="ofi-star-fill"></i> Filter</p>
-
-      <div class="accordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#poi-list-filter-region" aria-expanded="true" aria-controls="poi-list-filter-region">
-              Region
-            </button>
-          </h2>
-          <div id="poi-list-filter-region" class="accordion-collapse collapse show">
-            <div class="accordion-body">
-              <div class="row">
-                <div class="col col-8">
-                  <label for="poi-list-filter-location" class="form-label">Ort</label>
-
-                  <div class="input-group">
-                    <button class="btn btn-icon btn-outline-secondary" type="button"><i class="ofi-geo-alt-fill"></i></button>
-                    <input type="text" id="poi-list-filter-location" class="form-control" placeholder="St. Gallen">
-                  </div>
-                </div>
-                <div class="col col-4">
-                  <label for="poi-list-filter-distance" class="form-label">Umkreis</label>
-                  <select id="poi-list-filter-distance" class="form-select">
-                    <option value="center">Zentrum</option>
-                    <option value="5">5km</option>
-                    <option value="10" selected>10km</option>
-                    <option value="15">15km</option>
-                    <option value="20">20km</option>
-                    <option value="25">25km</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#poi-list-filter-categories" aria-controls="poi-list-filter-categories">
-              Kategorien
-            </button>
-          </h2>
-          <div id="poi-list-filter-categories" class="accordion-collapse collapse show">
-            <div class="accordion-body">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="poi-list-filter-category-1">
-                <label class="form-check-label" for="poi-list-filter-category-1">
-                  Aussergewöhnlich
-                </label>
-                <span class="badge bg-secondary">53</span>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="poi-list-filter-category-2">
-                <label class="form-check-label" for="poi-list-filter-category-2">
-                  Abenteuer
-                </label>
-                <span class="badge bg-secondary">19</span>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="poi-list-filter-category-3">
-                <label class="form-check-label" for="poi-list-filter-category-3">
-                  Bewegung
-                </label>
-                <span class="badge bg-secondary">39</span>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="poi-list-filter-category-4">
-                <label class="form-check-label" for="poi-list-filter-category-4">
-                  Entspannung
-                </label>
-                <span class="badge bg-secondary">32</span>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="poi-list-filter-category-5">
-                <label class="form-check-label" for="poi-list-filter-category-5">
-                  Kulinarik
-                </label>
-                <span class="badge bg-secondary">54</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#poi-list-filter-seasons" aria-expanded="false" aria-controls="poi-list-filter-seasons">
-              Saison
-            </button>
-          </h2>
-          <div id="poi-list-filter-seasons" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="poi-list-filter-season-1">
-                <label class="form-check-label" for="poi-list-filter-season-1">
-                  Herbst
-                </label>
-                <span class="badge bg-secondary">98</span>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="poi-list-filter-season-2">
-                <label class="form-check-label" for="poi-list-filter-season-2">
-                  Frühling
-                </label>
-                <span class="badge bg-secondary">74</span>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="poi-list-filter-season-3">
-                <label class="form-check-label" for="poi-list-filter-season-3">
-                  Sommer
-                </label>
-                <span class="badge bg-secondary">321</span>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="poi-list-filter-season-4">
-                <label class="form-check-label" for="poi-list-filter-season-4">
-                  Winter
-                </label>
-                <span class="badge bg-secondary">24</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#poi-list-filter-time" aria-expanded="false" aria-controls="poi-list-filter-time">
-              Zeitbedarf
-            </button>
-          </h2>
-          <div id="poi-list-filter-time" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="poi-list-filter-time-1">
-                <label class="form-check-label" for="poi-list-filter-time-1">
-                  &lt; 1h
-                </label>
-                <span class="badge bg-secondary">11</span>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="poi-list-filter-time-2">
-                <label class="form-check-label" for="poi-list-filter-time-2">
-                  1-2h
-                </label>
-                <span class="badge bg-secondary">31</span>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="poi-list-filter-time-3">
-                <label class="form-check-label" for="poi-list-filter-time-3">
-                  halber Tag
-                </label>
-                <span class="badge bg-secondary">62</span>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="poi-list-filter-time-4">
-                <label class="form-check-label" for="poi-list-filter-season-4">
-                  ganzer Tag
-                </label>
-                <span class="badge bg-secondary">141</span>
-              </div>
-            </div>
-          </div>
-        </div>
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        {{< poi-list-filter id="poi-list-grid-view" >}}
       </div>
 
-      <div class="row row-cols-auto">
+      <div class="col-md-8">
+        {{< poi-list-sorting id="poi-list-grid-view" active-view="grid" >}}
+
         <div>
-          <button type="button" class="btn btn-outline-primary">Filter löschen</button>
+          <div class="row gy-4">
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+          </div>
         </div>
-        <div class="flex-grow-1">
-          <button type="button" class="btn btn-primary w-100">34 Egerbnisse anzeigen</button>
+
+        <div>
+          {{< poi-list-pagination id="poi-list-grid-view" >}}
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="col-md-8">
-      <div class="d-flex justify-content-end">
-        <div class="row">
-          <div class="col">
-            <label for="poi-list-sorting" class="form-label">Sortierung</label>
-            <select id="poi-list-sorting" class="form-select">
-              <option value="result">Beste Ergebnisse</option>
-              <option value="alphabetical">Alphabetisch</option>
-              <option value="location">Ortname</option>
-            </select>
-          </div>
+<div class="b-example-divider"></div>
 
-          <div class="col">
-            <div class="form-label">Ansicht</div>
-
-            <div class="btn-group">
-              <button class="btn btn-icon btn-primary" type="button"><i class="ofi-grid-fill"></i></button>
-              <button class="btn btn-icon btn-outline-primary" type="button"><i class="ofi-list"></i></button>
-              <button class="btn btn-icon btn-outline-primary" type="button"><i class="ofi-map-fill"></i></button>
-            </div>
-          </div>
-        </div>
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        {{< poi-list-filter id="poi-list-list-view" >}}
       </div>
 
-      <div>
-        <div class="row gy-4">
-          <div class="col-md-4">
-            {{< poi-card >}}
-          </div>
-          <div class="col-md-4">
-            {{< poi-card >}}
-          </div>
-          <div class="col-md-4">
-            {{< poi-card >}}
-          </div>
-          <div class="col-md-4">
-            {{< poi-card >}}
-          </div>
-          <div class="col-md-4">
-            {{< poi-card >}}
-          </div>
-          <div class="col-md-4">
-            {{< poi-card >}}
-          </div>
+      <div class="col-md-8">
+        {{< poi-list-sorting id="poi-list-list-view" active-view="list" >}}
+
+        <div>
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+        </div>
+
+        <div>
+          {{< poi-list-pagination id="poi-list-list-view" >}}
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
-      <div>
-        <nav class="pagination-dropdown" aria-label="POI list pagination">
-          <button class="btn btn-square btn-primary">
-            <i class="ofi-caret-left-fill"></i>
-          </button>
+<div class="b-example-divider"></div>
 
-          <label for="pagination" class="visually-hidden">Pagination</label>
-          <select id="pagination" class="form-select w-auto">
-            <option>Page 1</option>
-            <option>Page 2</option>
-            <option>Page 3</option>
-          </select>
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        {{< poi-list-filter id="poi-list-map-view" >}}
+      </div>
 
-          <button class="btn btn-square btn-primary">
-            <i class="ofi-caret-right-fill"></i>
-          </button>
-        </nav>
+      <div class="col-md-8">
+        {{< poi-list-sorting id="poi-list-map-view" active-view="map" >}}
+
+        <div>
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375" loading="lazy"></iframe>
+          </div>
+        </div>
       </div>
     </div>
   </div>

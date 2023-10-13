@@ -281,7 +281,7 @@ toc: true
 
 ### Square layout 8
 {{< example >}}
-<div class="masonry masonry-square-7">
+<div class="masonry masonry-square-8">
   <div class="masonry-item">
     <div class="wrapper py-5 text-bg-primary">
       <div class="wrapper-content text-center">1</div>

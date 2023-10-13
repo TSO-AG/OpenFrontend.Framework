@@ -1,4 +1,4 @@
-// Price - TWOF-85
+// Price
 .price {
   // scss-docs-start price-css-vars
   --#{$prefix}price-row-gap: #{$price-row-gap};
@@ -25,7 +25,7 @@
   }
 }
 
-// EventDate - TWOF-53
+// EventDate
 .date-box {
   // scss-docs-start date-box-css-vars
   --#{$prefix}date-box-row-gap: #{$date-box-row-gap};
@@ -56,7 +56,7 @@
   }
 }
 
-// State - TWOF-95
+// State
 .state {
   // scss-docs-start state-css-vars
   --#{$prefix}state-bg: #{$state-bg};
@@ -115,7 +115,7 @@
   --#{$prefix}state-border-radius: 0;
 }
 
-// Rating - TWOF-88
+// Rating
 .user-rating {
   // scss-docs-start user-rating-css-vars
   --#{$prefix}user-rating-gap: #{$user-rating-gap};

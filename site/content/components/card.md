@@ -700,6 +700,38 @@ Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-t
 </div>
 {{< /example >}}
 
+### Carousel
+
+If you want to present multiple images, you can also add a carousel to the card. Do not forget to embed it with the `.card-media` wrapper.
+
+{{< example >}}
+<div class="card" style="width: 18rem;">
+  <div class="card-media">
+    <div class="carousel">
+      <div class="swiper" data-of-carousel='{"autoplay": true, "pagination": "#carousel-pagination"}'>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            {{< placeholder width="286" height="180" class="d-block w-100" background="#777" text="Slide 1" >}}
+          </div>
+          <div class="swiper-slide">
+            {{< placeholder width="286" height="180" class="d-block w-100" background="#666" text="Slide 2" >}}
+          </div>
+          <div class="swiper-slide">
+            {{< placeholder width="286" height="180" class="d-block w-100" background="#555" text="Slide 3" >}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="carousel-pagination" class="carousel-pagination carousel-pagination--top-right"></div>
+  </div>
+
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+{{< /example >}}
+
 ### List groups
 
 Create lists of content in a card with a flush list group.

@@ -367,6 +367,29 @@ $icon-box-icon-color:       $primary !default;
 $icon-box-icon-font-size:   null !default;
 // scss-docs-end icon-box-variables
 
+// Carousel
+// scss-docs-start carousel-variables
+$carousel-theme-color:                              $primary !default;
+$carousel-offset-x:                                 12px !default;
+$carousel-offset-y:                                 12px !default;
+$carousel-pagination-left:                          $carousel-offset-x !default;
+$carousel-pagination-right:                         $carousel-offset-x !default;
+$carousel-pagination-bottom:                        $carousel-offset-y !default;
+$carousel-pagination-top:                           $carousel-offset-y !default;
+$carousel-pagination-bullet-size:                   8px !default;
+$carousel-pagination-bullet-width:                  $carousel-pagination-bullet-size !default;
+$carousel-pagination-bullet-height:                 $carousel-pagination-bullet-size !default;
+$carousel-pagination-bullet-border-radius:          50% !default;
+$carousel-pagination-bullet-inactive-color:         #000 !default;
+$carousel-pagination-bullet-inactive-opacity:       .2 !default;
+$carousel-pagination-bullet-opacity:                1 !default;
+$carousel-pagination-bullet-horizontal-gap:         4px !default;
+$carousel-pagination-bullet-vertical-gap:           6px !default;
+// scss-docs-end carousel-variables
+
+// Heading
+$headings-action-margin-bottom: 1rem !default;
+
 // Map marker
 // scss-docs-start map-marker-variables
 $map-marker-font-size:                14px !default;

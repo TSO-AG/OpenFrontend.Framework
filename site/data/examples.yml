@@ -1,0 +1,21 @@
+- category: Snippets
+  description: "Common patterns for building sites and apps that build on existing components and utilities with custom CSS and more."
+  examples:
+    - name: Headers
+      description: "Display your branding, navigation, search, and more with these header components"
+    - name: Footers
+      description: "Finish every page strong with an awesome footer, big or small."
+
+- category: Content
+  description: "@Todo"
+  examples:
+    - name: Home
+      description: "@LOREM"
+    - name: Routing
+      description: "@todo"
+
+- category: Pages
+  description: "@TODO"
+  examples:
+    - name: Home page
+      description: "@LOREM"

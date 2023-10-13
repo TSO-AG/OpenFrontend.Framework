@@ -168,6 +168,8 @@ $card-title-link-color: null !default;
 $card-title-link-decoration: null !default;
 $card-title-link-hover-color: null !default;
 $card-title-link-hover-decoration: null !default;
+$card-horizontal-media-width: 225px !default;
+$card-mini-media-width: 125px !default;
 // scss-docs-end card-variables
 
 // Price
@@ -377,3 +379,19 @@ $carousel-pagination-bullet-vertical-gap:           6px !default;
 
 // Heading
 $headings-action-margin-bottom: 1rem !default;
+
+// Map marker
+// scss-docs-start map-marker-variables
+$map-marker-font-size:                14px !default;
+$map-marker-font-family:              var(--#{$prefix}body-font-family) !default;
+$map-marker-font-weight:              var(--#{$prefix}body-font-weight) !default;
+$map-marker-line-height:              var(--#{$prefix}body-line-height) !default;
+$map-marker-color:                    var(--#{$prefix}gray-900) !default;
+$map-marker-title-font-size:          1.4em !default;
+$map-marker-title-color:              null !default;
+$map-marker-title-margin-bottom:      .5em !default;
+$map-marker-info-color:               var(--#{$prefix}gray-600) !default;
+$map-marker-info-margin-bottom:       .15em !default;
+$map-marker-link-color:               $primary !default;
+$map-marker-image-max-width:          null !default;
+// scss-docs-end map-marker-variables

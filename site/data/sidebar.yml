@@ -72,19 +72,20 @@
     - title: Alerts
     - title: Badge
     - title: Breadcrumb
-    - title: Buttons
     - title: Button group
+    - title: Buttons
     - title: Card
     - title: Carousel
     - title: Close button
     - title: Collapse
     - title: Copyright
     - title: Dropdowns
-    - title: Icons
+    - title: Elements filter
     - title: Icon box
+    - title: Icons
     - title: Labels
-    - title: Logos
     - title: List group
+    - title: Logos
     - title: Map
     - title: Modal
     - title: Navs & tabs

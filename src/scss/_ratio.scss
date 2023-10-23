@@ -1,0 +1,28 @@
+.aspect {
+  width: 100%;
+}
+
+// Make aspect ratio responsive
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+    @each $key, $ratio in $aspect-ratios {
+      .aspect#{$infix}-#{$key} {
+        aspect-ratio: (100% / $ratio);
+      }
+
+      .aspect#{$infix}-auto {
+        aspect-ratio: auto;
+      }
+
+      .ratio#{$infix}-#{$key} {
+        --#{$prefix}aspect-ratio: #{$ratio};
+      }
+
+      .ratio#{$infix}-auto {
+        --#{$prefix}aspect-ratio: null;
+      }
+    }
+  }
+}

@@ -51,6 +51,42 @@ Aspect ratios can be customized with modifier classes. By default the following 
 </div>
 {{< /example >}}
 
+We have introduced an optional `.aspect` class to maintain aspect ratios.
+
+The `.aspect` class is recommended for content that is primarily text-based, where the height should adapt to the amount of content. Unlike the `.ratio` class which maintains a specific width-to-height ratio, `.aspect` will allow the box height to increase based on the length of the text contained within it. This helps prevent text from being truncated or wrapping to multiple lines when the containing element has a fixed aspect ratio.
+
+{{< example class="bd-example-ratios" >}}
+<div class="aspect aspect-9x16">
+  <div>9x16</div>
+</div>
+<div class="aspect aspect-3x4">
+  <div>3x4</div>
+</div>
+<div class="aspect aspect-1x1">
+  <div>1x1</div>
+</div>
+<div class="aspect aspect-4x3">
+  <div>4x3</div>
+</div>
+<div class="aspect aspect-16x9">
+  <div>16x9</div>
+</div>
+<div class="aspect aspect-21x9">
+  <div>21x9</div>
+</div>
+<div class="aspect aspect-21x9">
+ This box has proportions of 21x9 but since the amount of content is quite large - the height of the box has been adjusted.
+</div>
+{{< /example >}}
+
+
+## Responsive ratios
+{{< example >}}
+<div class="ratio ratio-16x9 ratio-md-1x1 ratio-xl-21x9">
+ <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="YouTube video" allowfullscreen></iframe>
+</div>
+{{< /example >}}
+
 ## Custom ratios
 
 Each `.ratio-*` class includes a CSS custom property (or CSS variable) in the selector. You can override this CSS variable to create custom aspect ratios on the fly with some quick math on your part.

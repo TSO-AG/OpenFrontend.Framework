@@ -159,6 +159,33 @@ The hidden link will make the whole wrapper clickable, but will not display any 
 </div>
 {{< /example >}}
 
+#### Date & Status
+{{< example >}}
+<div class="wrapper">
+  <div class="wrapper-content-top-right">
+    <div class="state state--open">open</div>
+  </div>
+
+  <div class="wrapper-content wrapper-content-padding-y-xl text-center">
+    <h2>Your next destination</h2>
+    <p>Escape ordinary, experience majestic views!</p>
+  </div>
+
+  <div class="wrapper-content-bottom-left">
+   <div class="date-box">
+      <div class="date-box__day">12.</div>
+      <div class="date-box__month">OKT.</div>
+    </div>
+  </div>
+
+  <div class="wrapper-bg-media">
+    <figure>
+      <img src="assets/media/sample-image.jpg" alt="">
+    </figure>
+  </div>
+</div>
+{{< /example >}}
+
 ## CSS
 
 ### Variables

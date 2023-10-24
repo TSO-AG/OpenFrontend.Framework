@@ -11,8 +11,7 @@
 - category: Content
   description: "@Todo"
   examples:
-    - name: Home
-      description: "@LOREM"
+    - name: POI Detail
     - name: Routing
       description: "@todo"
 

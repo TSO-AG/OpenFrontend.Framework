@@ -22,8 +22,60 @@ $primary: $blue !default;
 
 $prefix: bs- !default;
 
+// Responsive values
+$responsive-values: (
+  section-margin: (
+    xs: 3rem,
+    md: 4rem,
+  ),
+  element-margin: (
+    xs: 1.5rem,
+    md: 2rem,
+  ),
+) !default;
+
 // Spacing
 $spacer: 1rem !default;
+
+$custom-spacers: (
+  section: var(--#{$prefix}section-margin),
+  element: var(--#{$prefix}element-margin),
+) !default;
+
+/* stylelint-disable function-disallowed-list */
+$negative-custom-spacers: (
+  n-section: calc(var(--#{$prefix}section-margin) * -1),
+  n-element: calc(var(--#{$prefix}element-margin) * -1),
+) !default;
+/* stylelint-enable */
+
+$utilities: (
+  "of-margin-top": (
+    responsive: true,
+    property: margin-top,
+    class: mt,
+    values: $custom-spacers
+  ),
+  "of-margin-bottom": (
+    responsive: true,
+    property: margin-bottom,
+    class: mb,
+    values: $custom-spacers
+  ),
+  "of-nagative-margin-top": (
+    responsive: true,
+    property: margin-top,
+    class: mt,
+    values: $negative-custom-spacers
+  ),
+  "of-nagative-margin-bottom": (
+    responsive: true,
+    property: margin-bottom,
+    class: mb,
+    values: $negative-custom-spacers
+  ),
+) !default;
+// scss-docs-end spacer-variables-maps
 
 // Components
 

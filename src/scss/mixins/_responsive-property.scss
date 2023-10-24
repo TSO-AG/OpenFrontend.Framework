@@ -1,0 +1,31 @@
+@mixin responsive-property($property, $map, $reverse: false, $map-name: $responsive-values, $breakpoints: $grid-breakpoints) {
+  @if ($reverse) {
+    $reverse: -1;
+  } @else {
+    $reverse: 1;
+  }
+
+  @if type-of($map) == "string" {
+    @if (map-has-key($map-name, $map)) {
+      $map: map_get($map-name, $map);
+    } @else {
+      @warn "The '#{$map}' property does not exist in the $custom-spacers variable";
+    }
+  }
+
+  @each $breakpoint, $value in $map {
+    @if type-of($value) == "number" {
+      $value: $reverse * $value;
+    }
+
+    @if map-has-key($breakpoints, $breakpoint) {
+      @include media-breakpoint-up($breakpoint) {
+        #{$property}: $value;
+      }
+    } @else {
+      @media (min-width: $breakpoint) {
+        #{$property}: $value;
+      }
+    }
+  }
+}

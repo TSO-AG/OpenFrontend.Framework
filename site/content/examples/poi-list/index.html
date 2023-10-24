@@ -1,0 +1,97 @@
+---
+layout: examples
+title: POI List
+body_class: ""
+---
+
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        {{< poi-list-filter id="poi-list-grid-view" >}}
+      </div>
+
+      <div class="col-md-8">
+        {{< poi-list-sorting id="poi-list-grid-view" active-view="grid" >}}
+
+        <div>
+          <div class="row gy-4">
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+          </div>
+        </div>
+
+        <div>
+          {{< poi-list-pagination id="poi-list-grid-view" >}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        {{< poi-list-filter id="poi-list-list-view" >}}
+      </div>
+
+      <div class="col-md-8">
+        {{< poi-list-sorting id="poi-list-list-view" active-view="list" >}}
+
+        <div>
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+        </div>
+
+        <div>
+          {{< poi-list-pagination id="poi-list-list-view" >}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        {{< poi-list-filter id="poi-list-map-view" >}}
+      </div>
+
+      <div class="col-md-8">
+        {{< poi-list-sorting id="poi-list-map-view" active-view="map" >}}
+
+        <div>
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

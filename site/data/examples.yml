@@ -12,6 +12,7 @@
   description: "@Todo"
   examples:
     - name: POI Detail
+    - name: POI List
     - name: Routing
       description: "@todo"
 

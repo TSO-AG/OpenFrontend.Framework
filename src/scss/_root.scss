@@ -1,0 +1,4 @@
+:root {
+  @include responsive-property("--#{$prefix}section-margin", section-margin);
+  @include responsive-property("--#{$prefix}element-margin", element-margin);
+}

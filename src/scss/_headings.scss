@@ -1,0 +1,12 @@
+.heading-action {
+  --#{$prefix}headings-action-margin-bottom: #{$headings-action-margin-bottom};
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--#{$prefix}headings-action-margin-bottom);
+
+  > * {
+    margin-bottom: 0;
+  }
+}

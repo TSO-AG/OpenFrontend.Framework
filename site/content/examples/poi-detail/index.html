@@ -1,0 +1,415 @@
+---
+layout: examples
+title: POI Detail
+body_class: ""
+---
+
+<div class="container">
+  <div class="d-flex">
+    <h1>Hotel Walhalla</h1>
+    <div class="rating rating-sm">
+      <i class="star-on-png"></i>
+      <i class="star-on-png"></i>
+      <i class="star-on-png"></i>
+      <i class="star-half-png"></i>
+      <i class="star-off-png"></i>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="mb-element">
+        {{< placeholder width="100%" height="500" text="Responsive image" >}}
+      </div>
+
+      <div class="mb-section">
+        <h2>Ein Hotel mit Stil - im Herzen der Stadt St.Gallen, nur ein paar Schritte vom Bahnhof entfernt.</h2>
+
+        <p>
+          Das Hotel Walhalla gehört seit dem 19. Jahrhundert zum St.Galler Stadtbild. Erstmals beherbergte der Bau Hotelgäste im Jahr 1887. Um den Gästen weiterhin
+          ein zeitgemässes Ambiente zu bieten, wurde das Hotel Walhalla im Mai 2018 für eine umfangreiche Renovierung geschlossen. Das Traditionshaus verfügt, seit
+          der Eröffnung im September 2019, neu über 100 Zimmer mit komfortabler Ausstattung, der Brasserie Walhalla mit Schweizer Spezialitäten und der Walhalla
+          Bar, mit einer grossen Auswahl an lokalen und internationalen Getränken und Snacks. Mit der zentralen Lage am Bahnhof St.Gallen und dem erweiterten
+          Seminarbereich mit sechs Räumen und modernster Seminartechnik bietet das Hotel optimale Voraussetzungen für Veranstaltungen.
+        </p>
+      </div>
+
+      <div class="mb-section">
+        <ul class="nav nav-underline mb-3" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="poi-detail-images" data-bs-toggle="tab" data-bs-target="#poi-detail-images-pane" type="button" role="tab" aria-controls="poi-detail-images-pane" aria-selected="true">Bilder</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="poi-detail-videos" data-bs-toggle="tab" data-bs-target="#poi-detail-videos-pane" type="button" role="tab" aria-controls="poi-detail-videos-pane" aria-selected="false">Videos</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="poi-detail-live" data-bs-toggle="tab" data-bs-target="#poi-detail-live-pane" type="button" role="tab" aria-controls="poi-detail-live-pane" aria-selected="false">Live Kamera 360°</button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane show active" id="poi-detail-images-pane" role="tabpanel" aria-labelledby="poi-detail-images" tabindex="0">
+            {{< placeholder width="200" height="200" class="img-thumbnail" text="Gallery 1" >}}
+            {{< placeholder width="200" height="200" class="img-thumbnail" text="Gallery 2" >}}
+            {{< placeholder width="200" height="200" class="img-thumbnail" text="Gallery 3" >}}
+          </div>
+          <div class="tab-pane" id="poi-detail-videos-pane" role="tabpanel" aria-labelledby="poi-detail-videos" tabindex="0">
+            <div class="ratio ratio-16x9">
+              <div class="ratio ratio-16x9">
+                <video controls>
+                  <source src="../../assets/media/sample-video.mp4" type="video/mp4">
+                  <source src="../../assets/media/sample-video.ogg" type="video/ogg">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="poi-detail-live-pane" role="tabpanel" aria-labelledby="poi-detail-live" tabindex="0">
+            {{< placeholder width="100%" height="200" class="img-thumbnail" text="Live Kamera 360°" >}}
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-section">
+        <h3>Räumlichkeiten</h3>
+
+        <div class="table-responsive">
+          <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Säle</th>
+            <th>Seminar</th>
+            <th>Bankett</th>
+            <th>Konzert</th>
+            <th>U-Form</th>
+            <th>Block</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Heinrich Graf III</td>
+            <td>24</td>
+            <td>30</td>
+            <td>56</td>
+            <td>20</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>Heinrich Graf I</td>
+            <td>12</td>
+            <td>20</td>
+            <td>30</td>
+            <td>20</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Heinrich Graf I-III</td>
+            <td>78</td>
+            <td>100</td>
+            <td>168</td>
+            <td>40</td>
+            <td>78</td>
+          </tr>
+          <tr>
+            <td>Heinrich Graf II</td>
+            <td>24</td>
+            <td>30</td>
+            <td>56</td>
+            <td>20</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>Mario Botta</td>
+            <td>18</td>
+            <td>20</td>
+            <td>48</td>
+            <td>16</td>
+            <td>18</td>
+          </tr>
+          <tr>
+            <td>Le Corbusier</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>Santiago Calatrava</td>
+            <td>24</td>
+            <td>40</td>
+            <td>70</td>
+            <td>28</td>
+            <td>24</td>
+          </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <div class="mb-section">
+        <h3>Angebot</h3>
+
+        <div class="mb-element">
+          <ul class="tag-list">
+            <li class="tag">Veloabstellraum</li>
+            <li class="tag">Parkplätze</li>
+            <li class="tag">Bar / Bistro</li>
+            <li class="tag">Haustiere erlaubt</li>
+            <li class="tag">Gratis W-LAN</li>
+            <li class="tag">Terrassen-/Gartensitzplätze</li>
+            <li class="tag">Restaurant/Café</li>
+            <li class="tag">Rollstuhlgerecht</li>
+          </ul>
+        </div>
+
+        <div class="accordion" id="poi-detail-accordions">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#poi-detail-awards" aria-expanded="true" aria-controls="poi-detail-awards">Auszeichnungen</button>
+            </h2>
+            <div id="poi-detail-awards" class="accordion-collapse collapse show" data-bs-parent="#poi-detail-accordions">
+              <div class="accordion-body">
+                <p>Commodo non duis amet consequat aliquip magna cupidatat labore. Tempor aute sit non aliqua ad ex in aliqua labore deserunt enim. Voluptate magna et laboris adipisicing eu commodo excepteur est consequat duis aliquip aliquip tempor dolor. Fugiat minim sit sint ea anim reprehenderit aute deserunt do et quis enim aliquip. Occaecat ipsum deserunt anim qui ex duis ex eu laborum est veniam voluptate dolore labore ad. Sit aliquip anim eu non Lorem commodo quis deserunt reprehenderit in ea officia. Exercitation nulla consequat culpa cupidatat labore dolor adipisicing sunt aute cupidatat sint id.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#poi-detail-more-info" aria-expanded="false" aria-controls="poi-detail-more-info">Weitere Informationen</button>
+            </h2>
+            <div id="poi-detail-more-info" class="accordion-collapse collapse" data-bs-parent="#poi-detail-accordions">
+              <div class="accordion-body">
+                <p>Reprehenderit dolore pariatur velit adipisicing aliquip ullamco eu incididunt excepteur est do mollit. Sit pariatur labore fugiat. Aute consectetur id enim aliquip qui adipisicing aliqua cupidatat cupidatat veniam nostrud non quis veniam. Magna non non voluptate Lorem sit reprehenderit aliqua minim. Mollit proident excepteur nulla tempor. Lorem exercitation ipsum esse elit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-section">
+        <h3>Bewertungen</h3>
+
+        <div class="user-rating mb-element">
+          <div class="user-rating__icon">
+            <i class="ofi-people-fill"></i>
+          </div>
+          <div class="user-rating__label">User-Rating:</div>
+          <div class="user-rating__score">
+            <span class="user-rating__score-value text-success">4.5</span>/<span class="user-rating__score-total">5</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="ratio ratio-16x9">
+            {{< placeholder width="100%" height="100%" text="iFrame" title="false" >}}
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-section">
+        <div class="row">
+          <div class="col-lg-6">
+            <table class="opening-times">
+              <thead>
+              <tr>
+                <th>Öffnungszeiten</th>
+                <th>
+                  <span class="state state--open">Geöffnet</span>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Monday</td>
+                <td>
+                  <span>08:00 - 12:00</span>
+                  <span>13:30 - 17:00</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Tuesday</td>
+                <td>
+                  <span>08:00 - 12:00</span>
+                  <span>13:30 - 17:00</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td>
+                  <span>08:00 - 12:00</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Thursday</td>
+                <td>
+                  <span>08:00 - 20:00</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td>
+                  <span>closed</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td>
+                  <span>12:00 - 17:00</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td>
+                  <span>closed</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-lg-6">
+            <p class="fw-bold">Nationalfeiertag</p>
+            <p>
+              Am 31.07.2023 schliessen wir das Bistro um 16.00
+              Uhr. Am 01.08.2023 bleibt Bistro und Restaurant
+              geschlossen.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-section">
+        <div class="row">
+          <div class="col-lg-6 mb-element mb-lg-0">
+            <h3>Kontakt</h3>
+            <p>
+              Hotel Restaurant Walhalla<br>
+              Poststrasse 27<br>
+              9001 St. Gallen
+            </p>
+            <p><a class="link-external" href="#">Auf Karte anzeigen (Google)</a></p>
+            <p><a class="link-external" href="#">+41 71 228 28 00</a></p>
+            <p><a class="link-external" href="#">www.hotelwalhalla.ch</a></p>
+            <p><a class="link-external" href="#">info@hotelwalhalla.ch</a></p>
+          </div>
+          <div class="col-lg-6">
+            <h3>Standort</h3>
+            <div>
+              <div class="ratio ratio-16x9">
+                <iframe src="https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="sticky-top">
+        <h3>Angebot</h3>
+        <button class="btn btn-primary w-100">Jetzt Buchen</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-section">
+    <h2>Weitere Angebote</h2>
+
+    <!-- TODO: make it a carousel -->
+
+    <div class="row gy-4">
+      <div class="col-md-6 col-xl-3">
+        {{< poi-card >}}
+      </div>
+      <div class="col-md-6 col-xl-3">
+        {{< poi-card >}}
+      </div>
+      <div class="col-md-6 col-xl-3">
+        {{< poi-card >}}
+      </div>
+      <div class="col-md-6 col-xl-3">
+        {{< poi-card >}}
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-section">
+    <h2>Partner</h2>
+
+    <!-- TODO: make it a carousel -->
+
+    <div class="logo-list" style="--bs-logo-list-item-bg: #f8f9fa; --bs-logo-list-item-padding-y: 10px; --bs-logo-list-item-padding-x: 10px; --bs-logo-list-item-border-radius: 5px; --bs-logo-list-item-border-width: 1px; --bs-logo-list-item-border-style: solid; --bs-logo-list-item-border-color: #dee2e6;  --bs-logo-list-item-max-width: 160px; --bs-logo-list-item-max-height: 80px">
+      <div>
+        <div class="logo-list-item">
+          <figure>
+            <a href="#">
+              {{< placeholder markup="img" width="120" height="60" text="Partner 1" >}}
+            </a>
+          </figure>
+        </div>
+      </div>
+      <div>
+        <div class="logo-list-item">
+          <figure>
+            <a href="#">
+              {{< placeholder markup="img" width="60" height="60" text="Partner 2" >}}
+            </a>
+          </figure>
+        </div>
+      </div>
+      <div>
+        <div class="logo-list-item">
+          <figure>
+            <a href="#">
+              {{< placeholder markup="img" width="120" height="45" text="Partner 3" >}}
+            </a>
+          </figure>
+        </div>
+      </div>
+      <div>
+        <div class="logo-list-item">
+          <figure>
+            <a href="#">
+              {{< placeholder markup="img" width="90" height="70" text="Partner 4" >}}
+            </a>
+          </figure>
+        </div>
+      </div>
+      <div>
+        <div class="logo-list-item">
+          <figure>
+            <a href="#">
+              {{< placeholder markup="img" width="120" height="80" text="Partner 5" >}}
+            </a>
+          </figure>
+        </div>
+      </div>
+      <div>
+        <div class="logo-list-item">
+          <figure>
+            <a href="#">
+              {{< placeholder markup="img" width="120" height="60" text="Partner 6" >}}
+            </a>
+          </figure>
+        </div>
+      </div>
+      <div>
+        <div class="logo-list-item">
+          <figure>
+            <a href="#">
+              {{< placeholder markup="img" width="120" height="75" text="Partner 7" >}}
+            </a>
+          </figure>
+        </div>
+      </div>
+      <div>
+        <div class="logo-list-item">
+          <figure>
+            <a href="#">
+              {{< placeholder markup="img" width="120" height="40" text="Partner 8" >}}
+            </a>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

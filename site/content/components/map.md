@@ -17,6 +17,24 @@ This section provides an example of how to embed Google Maps into your web page 
     <div id="map"></div>
   </div>
 
+  <div id="map-marker-google" class="visually-hidden">
+    <div class="map-marker position-relative">
+      <div class="map-marker-image">
+        <figure>
+          {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+        </figure>
+      </div>
+      <div class="map-marker-content">
+        <div class="map-marker-info">Product family | Place</div>
+        <div class="map-marker-info">DD.MM.YY - DD.MM.YY</div>
+        <h4 class="map-marker-title">Title</h4>
+        <a href="#" class="icon-link icon-link-hover stretched-link">
+          View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <script>
     (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
       key: "AIzaSyB5gDRkUqJ8psAwkNBbhrhr54BEfAfCAVw",
@@ -44,7 +62,7 @@ This section provides an example of how to embed Google Maps into your web page 
       });
 
       const infowindow = new InfoWindow({
-        content: '<b>TSO AG</b><br>Fürstenlandstrasse 53<br>9000 St.Gallen',
+        content: document.getElementById('map-marker-google').children[0],
         ariaLabel: "TSO AG",
       });
 
@@ -72,6 +90,25 @@ Example HTML Structure
   <div class="ratio ratio-16x9">
     <!--The div element for the map -->
     <div id="map"></div>
+
+    <!--The div element for the map marker -->
+    <div id="map-marker-google" class="visually-hidden">
+      <div class="map-marker position-relative">
+        <div class="map-marker-image">
+          <figure>
+            {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+          </figure>
+        </div>
+        <div class="map-marker-content">
+          <div class="map-marker-info">Product family | Place</div>
+          <div class="map-marker-info">DD.MM.YY - DD.MM.YY</div>
+          <h4 class="map-marker-title">Title</h4>
+          <a href="#" class="icon-link icon-link-hover stretched-link">
+            View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 {{< /highlight >}}
 
@@ -106,7 +143,7 @@ Loading the Google Maps API and initializing the map
     });
 
     const infowindow = new InfoWindow({
-      content: '<b>TSO AG</b><br>Fürstenlandstrasse 53<br>9000 St.Gallen',
+      content: document.getElementById('map-marker-google').children[0],
       ariaLabel: "TSO AG",
     });
 
@@ -161,6 +198,24 @@ This section provides an example of how to integrate OpenStreetMap into your web
     <div id="mapOpenStreetMap"></div>
   </div>
 
+  <div id="map-marker-osm" class="visually-hidden">
+    <div class="map-marker position-relative">
+      <div class="map-marker-image">
+        <figure>
+          {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+        </figure>
+      </div>
+      <div class="map-marker-content">
+        <div class="map-marker-info">Product family | Place</div>
+        <div class="map-marker-info">DD.MM.YY - DD.MM.YY</div>
+        <h4 class="map-marker-title">Title</h4>
+        <a href="#" class="icon-link icon-link-hover stretched-link">
+          View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
@@ -188,7 +243,7 @@ This section provides an example of how to integrate OpenStreetMap into your web
       }).addTo(map);
 
      L.marker(position).addTo(map)
-          .bindPopup("<b>TSO AG</b><br>Fürstenlandstrasse 53<br>9000 St.Gallen");
+          .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 360, maxWidth: 360 });
   }
   </script>
 </div>
@@ -199,6 +254,24 @@ Example HTML Structure
 <div class="ratio ratio-16x9">
   <!--The div element for the map -->
   <div id="map"></div>
+
+  <!--The div element for the map marker -->
+  <div id="map-marker-osm" class="visually-hidden">
+    <div class="map-marker position-relative">
+      <div class="map-marker-image">
+        <figure>
+          {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+        </figure>
+      </div>
+      <div class="map-marker-content">
+        <div class="map-marker-info">Product family | Place</div>
+        <div class="map-marker-info">DD.MM.YY - DD.MM.YY</div>
+        <h4 class="map-marker-title">Title</h4>
+        <a href="#" class="icon-link icon-link-hover stretched-link">
+          View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+        </a>
+      </div>
+    </div>
 </div>
 {{< /highlight >}}
 
@@ -235,7 +308,7 @@ Initializing the Map
   }).addTo(map);
 
   L.marker(position).addTo(map)
-    .bindPopup("<b>TSO AG</b><br>Fürstenlandstrasse 53<br>9000 St.Gallen");
+    .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 360, maxWidth: 360 });
 }
 </script>
 {{< /highlight >}}
@@ -345,4 +418,14 @@ To ensure your maps look great on all devices, our Map component supports respon
   initOpenStreetMap('map4');
 </script>
 {{< /example >}}
+
+## CSS
+
+### Variables
+{{< scss-docs name="map-marker-css-vars" file="src/scss/_map.scss" >}}
+
+### Sass variables
+{{< scss-docs name="map-marker-variables" file="src/scss/_variables.scss" >}}
+
+
 

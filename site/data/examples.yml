@@ -7,12 +7,14 @@
       description: "Finish every page strong with an awesome footer, big or small."
     - name: Masonry
       description: "@todo"
+    - name: Booking form
+      description: "Display a nicely looking booking form with a modern guest picker."
 
 - category: Content
   description: "@Todo"
   examples:
-    - name: Home
-      description: "@LOREM"
+    - name: POI Detail
+    - name: POI List
     - name: Routing
       description: "@todo"
 

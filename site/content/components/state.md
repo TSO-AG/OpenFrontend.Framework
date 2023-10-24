@@ -16,6 +16,16 @@ toc: true
 <span class="state state--closed">closed</span>
 {{< /example >}}
 
+## Icon without text
+
+{{< example >}}
+<div class="bg-light p-3">
+  <span class="state state-simple state--open"><span class="visually-hidden">open</span></span>
+  <span class="state state-simple state--unknown"><span class="visually-hidden">unknown</span></span>
+  <span class="state state-simple state--closed"><span class="visually-hidden">closed</span></span>
+</div>
+{{< /example >}}
+
 ## CSS
 
 ### Variables

@@ -1,6 +1,7 @@
 // Variables
 @import "../icons/variables";
 @import "variables";
+@import "variables-dark";
 
 // Configuration
 @import "~bootstrap/scss/functions";
@@ -50,12 +51,16 @@
 @import "mixins";
 
 // Layout & components
+@import "root";
 @import "buttons";
 @import "copyright";
 @import "links";
 @import "form/datepicker";
+@import "form/combo-box";
+@import "form/form-number";
 @import "images";
 @import "icons";
+@import "map";
 @import "table";
 @import "opening-times";
 @import "pagination";
@@ -74,3 +79,5 @@
 @import "icon-box";
 @import "masonry";
 @import "ratio";
+@import "carousel";
+@import "headings";

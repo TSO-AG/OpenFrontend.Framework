@@ -5,6 +5,8 @@
       description: "Display your branding, navigation, search, and more with these header components"
     - name: Footers
       description: "Finish every page strong with an awesome footer, big or small."
+    - name: Booking form
+      description: "Display a nicely looking booking form with a modern guest picker."
 
 - category: Content
   description: "@Todo"

@@ -24,14 +24,14 @@
 }
 
 // Layout 1
-.masonry-square-1 {
+.masonry-vertical-1 {
   @include media-breakpoint-up($masonry-breakpoint) {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
   }
 }
 
-.masonry-square-2 {
+.masonry-vertical-2 {
   @include media-breakpoint-up($masonry-breakpoint) {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
@@ -42,7 +42,7 @@
   }
 }
 
-.masonry-square-3 {
+.masonry-vertical-3 {
   @include media-breakpoint-up($masonry-breakpoint) {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
@@ -55,7 +55,7 @@
   }
 }
 
-.masonry-square-4 {
+.masonry-vertical-4 {
   @include media-breakpoint-up($masonry-breakpoint) {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
@@ -68,7 +68,7 @@
   }
 }
 
-.masonry-square-5 {
+.masonry-vertical-5 {
   @include media-breakpoint-up($masonry-breakpoint) {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
@@ -81,7 +81,7 @@
   }
 }
 
-.masonry-square-6 {
+.masonry-vertical-6 {
   @include media-breakpoint-up($masonry-breakpoint) {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
@@ -94,13 +94,13 @@
   }
 }
 
-.masonry-square-7 {
+.masonry-vertical-7 {
   @include media-breakpoint-up($masonry-breakpoint) {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.masonry-square-8 {
+.masonry-vertical-8 {
   @include media-breakpoint-up($masonry-breakpoint) {
     grid-template-columns: 1fr 1fr;
   }

@@ -109,13 +109,13 @@
   icon: magic
   icon_color: orange
   pages:
+    - title: Aspect ratio
     - title: Clearfix
     - title: Color & background
     - title: Colored links
     - title: Focus ring
     - title: Icon link
     - title: Position
-    - title: Ratio
     - title: Stacks
     - title: Stretched link
     - title: Text truncation

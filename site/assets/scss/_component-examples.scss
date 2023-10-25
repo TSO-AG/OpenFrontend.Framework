@@ -173,7 +173,8 @@
 
 // Ratio helpers
 .bd-example-ratios {
-  .ratio {
+  .ratio,
+  .aspect {
     display: inline-block;
     width: 10rem;
     color: var(--bs-secondary-color);
@@ -186,19 +187,6 @@
       justify-content: center;
     }
   }
-
-  .aspect {
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    width: 10rem;
-    margin-bottom: 5px;
-    color: var(--bs-secondary-color);
-    vertical-align: bottom;
-    background-color: var(--bs-tertiary-bg);
-    border: var(--bs-border-width) solid var(--bs-border-color);
-  }
 }
 
 .bd-example-ratios-breakpoint {
@@ -207,6 +195,14 @@
 
     @include media-breakpoint-up(md) {
       --bs-aspect-ratio: 50%; // 2x1
+    }
+  }
+
+  .aspect-4x3 {
+    width: 16rem;
+
+    @include media-breakpoint-up(md) {
+      --bs-aspect-ratio: 2 / 1; // 2x1
     }
   }
 }

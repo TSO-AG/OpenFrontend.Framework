@@ -13,9 +13,7 @@ toc: true
 This section provides an example of how to embed Google Maps into your web page using OpenFrontend.Framework and Google Maps JavaScript API.
 
 <div class="bd-example">
-  <div class="ratio ratio-16x9">
-    <div id="map"></div>
-  </div>
+  <div id="map" class="aspect aspect-16x9"></div>
 
   <div id="map-marker-google" class="visually-hidden">
     <div class="map-marker position-relative">
@@ -87,9 +85,9 @@ This section provides an example of how to embed Google Maps into your web page 
 Example HTML Structure
 
 {{< highlight html >}}
-  <div class="ratio ratio-16x9">
+  <div>
     <!--The div element for the map -->
-    <div id="map"></div>
+    <div id="map" class="aspect aspect-16x9"></div>
 
     <!--The div element for the map marker -->
     <div id="map-marker-google" class="visually-hidden">
@@ -175,9 +173,7 @@ For comprehensive details on the options and methods available with the Google M
 The use of Google Maps within your OpenFrontend.Framework project is incredibly easy. Below is a simple code snippet that demonstrates how to embed a Google Map.
 
 {{< example >}}
-<div class="ratio ratio-16x9">
-  <iframe src="https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
+<iframe class="w-100 aspect aspect-16x9" src="https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 {{< /example >}}
 
 To embed a Google Map:
@@ -194,9 +190,7 @@ To embed a Google Map:
 This section provides an example of how to integrate OpenStreetMap into your web page using the Leaflet.js library.
 
 <div class="bd-example">
-  <div class="ratio ratio-16x9">
-    <div id="mapOpenStreetMap"></div>
-  </div>
+  <div id="mapOpenStreetMap" class="aspect aspect-16x9"></div>
 
   <div id="map-marker-osm" class="visually-hidden">
     <div class="map-marker position-relative">
@@ -251,9 +245,9 @@ This section provides an example of how to integrate OpenStreetMap into your web
 Example HTML Structure
 
 {{< highlight html >}}
-<div class="ratio ratio-16x9">
+<div>
   <!--The div element for the map -->
-  <div id="map"></div>
+  <div id="map" class="aspect aspect-16x9"></div>
 
   <!--The div element for the map marker -->
   <div id="map-marker-osm" class="visually-hidden">
@@ -329,30 +323,28 @@ Incorporating OpenStreetMap into your project is similar to using Google Maps. H
 - Paste this code within your project wherever you want the map to appear.
 
 {{< example >}}
-<div class="ratio ratio-16x9">
-  <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375" loading="lazy"></iframe>
-</div>
+<iframe class="w-100 aspect aspect-16x9" src="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375" loading="lazy"></iframe>
 {{< /example >}}
 
 ## Responsive Maps
 
-To ensure your maps look great on all devices, our Map component supports responsive maps. Here is how you can leverage [Ratios]({{< docsref "/helpers/ratio" >}}) helpers to create responsive maps:
+To ensure your maps look great on all devices, our Map component supports responsive maps. Here is how you can leverage [Ratios]({{< docsref "/helpers/aspect-ratio" >}}) helpers to create responsive maps:
 
 {{< example class="bd-example-map-ratios" >}}
-<div class="ratio ratio-1x1">
-  <div id="map1"></div>
+<div>
+  <div id="map1" class="aspect aspect-1x1"></div>
 </div>
 
-<div class="ratio ratio-4x3">
-  <div id="map2"></div>
+<div>
+  <div id="map2" class="aspect aspect-4x3"></div>
 </div>
 
-<div class="ratio ratio-16x9">
-  <div id="map3"></div>
+<div>
+  <div id="map3" class="aspect aspect-16x9"></div>
 </div>
 
-<div class="ratio ratio-21x9">
-  <div id="map4"></div>
+<div>
+  <div id="map4" class="aspect aspect-21x9"></div>
 </div>
 
 <script>

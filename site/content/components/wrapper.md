@@ -144,7 +144,7 @@ The hidden link will make the whole wrapper clickable, but will not display any 
 <div class="wrapper wrapper-zoom" style="min-height: 400px">
   <div class="wrapper-content">
     <h2>Earth from space</h2>
-    <p>Touch the stars, gaze at Earth's grace!</p>
+    <p class="mb-0">Touch the stars, gaze at Earth's grace!</p>
     <a href="#" class="stretched-link"><span class="visually-hidden">Book now</span></a>
   </div>
 
@@ -161,14 +161,15 @@ The hidden link will make the whole wrapper clickable, but will not display any 
 
 #### Date & Status
 {{< example >}}
-<div class="wrapper">
+<div class="wrapper wrapper-zoom">
   <div class="wrapper-content-top-right">
     <div class="state state--open">open</div>
   </div>
 
   <div class="wrapper-content wrapper-content-padding-y-xl text-center">
     <h2>Your next destination</h2>
-    <p>Escape ordinary, experience majestic views!</p>
+    <p class="mb-0">Escape ordinary, experience majestic views!</p>
+    <a href="#" class="stretched-link"><span class="visually-hidden">Book now</span></a>
   </div>
 
   <div class="wrapper-content-bottom-left">

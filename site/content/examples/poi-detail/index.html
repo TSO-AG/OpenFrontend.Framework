@@ -54,14 +54,10 @@ body_class: ""
             {{< placeholder width="200" height="200" class="img-thumbnail" text="Gallery 3" >}}
           </div>
           <div class="tab-pane" id="poi-detail-videos-pane" role="tabpanel" aria-labelledby="poi-detail-videos" tabindex="0">
-            <div class="ratio ratio-16x9">
-              <div class="ratio ratio-16x9">
-                <video controls>
-                  <source src="../../assets/media/sample-video.mp4" type="video/mp4">
-                  <source src="../../assets/media/sample-video.ogg" type="video/ogg">
-                </video>
-              </div>
-            </div>
+            <video controls class="aspect aspect-16x9">
+              <source src="../../assets/media/sample-video.mp4" type="video/mp4">
+              <source src="../../assets/media/sample-video.ogg" type="video/ogg">
+            </video>
           </div>
           <div class="tab-pane" id="poi-detail-live-pane" role="tabpanel" aria-labelledby="poi-detail-live" tabindex="0">
             {{< placeholder width="100%" height="200" class="img-thumbnail" text="Live Kamera 360°" >}}
@@ -200,8 +196,8 @@ body_class: ""
         </div>
 
         <div>
-          <div class="ratio ratio-16x9">
-            {{< placeholder width="100%" height="100%" text="iFrame" title="false" >}}
+          <div class="aspect aspect-16x9">
+            {{< placeholder width="100%" height="100%" text="iFrame" title="false" class="aspect aspect-16x9 object-fit-cover" >}}
           </div>
         </div>
       </div>
@@ -294,9 +290,7 @@ body_class: ""
           <div class="col-lg-6">
             <h3>Standort</h3>
             <div>
-              <div class="ratio ratio-16x9">
-                <iframe src="https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
+              <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375" class="w-100 aspect aspect-16x9" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>

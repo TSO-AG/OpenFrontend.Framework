@@ -383,14 +383,22 @@ $logo-list-item-border-radius: null !default;
 
 // Wrapper
 // scss-docs-start wrapper-variables
-$wrapper-padding-y: null !default;
-$wrapper-padding-x: null !default;
-$wrapper-color: null !default;
+$wrapper-padding-y: 1.5rem !default;
+$wrapper-padding-y-lg: 2.5rem !default;
+$wrapper-padding-y-xl: 5.5rem !default;
+$wrapper-padding-x: 1.5rem !default;
+$wrapper-color: #fff !default;
 $wrapper-bg-color: null !default;
 $wrapper-bg-color-light: #f8f9fa !default;
 $wrapper-bg-color-dark: #212529 !default;
 $wrapper-z-index: 1 !default;
 $wrapper-media-opacity: null !default;
+$wrapper-media-zoom-transition: all .5s ease-in-out !default;
+$wrapper-text-shadow: 2px 3px 5px rgba(0, 0, 0, .5) !default;
+$wrapper-font-size: 1.2rem !default;
+$wrapper-zoom-transform: scale(1.1) !default;
+$wrapper-content-top-right-y: 10px !default;
+$wrapper-content-top-right-x: $wrapper-content-top-right-y !default;
 // scss-docs-end wrapper-variables
 
 // Social links
@@ -418,6 +426,13 @@ $icon-box-margin-bottom:    1rem !default;
 $icon-box-icon-color:       $primary !default;
 $icon-box-icon-font-size:   null !default;
 // scss-docs-end icon-box-variables
+
+// Masonry
+// scss-docs-start masonry-variables
+$masonry-gap: 5px !default;
+$masonry-breakpoint: md !default;
+$masonry-group-breakpoint: xl !default;
+// scss-docs-end masonry-variables
 
 // Combo box
 // scss-docs-start combo-box-variables
@@ -475,4 +490,3 @@ $map-marker-info-margin-bottom:       .15em !default;
 $map-marker-link-color:               $primary !default;
 $map-marker-image-max-width:          null !default;
 // scss-docs-end map-marker-variables
-

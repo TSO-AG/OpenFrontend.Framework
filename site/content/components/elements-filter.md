@@ -38,40 +38,40 @@ The togglers should receive the `data-of-elements-filter-toggle` attribute with 
 
 <div id="single-example" class="row gy-3">
   <div class="col-md-2" data-of-elements-filter-item="green">
-    <div class="ratio ratio-1x1 rounded-5 bg-success"></div>
+    <div class="aspect aspect-1x1 rounded-5 bg-success"></div>
   </div>
   <div class="col-md-2" data-of-elements-filter-item="green">
-    <div class="ratio ratio-1x1 rounded-5 bg-success"></div>
+    <div class="aspect aspect-1x1 rounded-5 bg-success"></div>
   </div>
   <div class="col-md-2" data-of-elements-filter-item="red">
-    <div class="ratio ratio-1x1 rounded-5 bg-danger"></div>
+    <div class="aspect aspect-1x1 rounded-5 bg-danger"></div>
   </div>
   <div class="col-md-2" data-of-elements-filter-item="yellow">
-    <div class="ratio ratio-1x1 rounded-5 bg-warning"></div>
+    <div class="aspect aspect-1x1 rounded-5 bg-warning"></div>
   </div>
   <div class="col-md-2" data-of-elements-filter-item="green">
-    <div class="ratio ratio-1x1 rounded-5 bg-success"></div>
+    <div class="aspect aspect-1x1 rounded-5 bg-success"></div>
   </div>
   <div class="col-md-2" data-of-elements-filter-item="yellow">
-    <div class="ratio ratio-1x1 rounded-5 bg-warning"></div>
+    <div class="aspect aspect-1x1 rounded-5 bg-warning"></div>
   </div>
   <div class="col-md-2" data-of-elements-filter-item="red">
-    <div class="ratio ratio-1x1 rounded-5 bg-danger"></div>
+    <div class="aspect aspect-1x1 rounded-5 bg-danger"></div>
   </div>
   <div class="col-md-2" data-of-elements-filter-item="yellow">
-    <div class="ratio ratio-1x1 rounded-5 bg-warning"></div>
+    <div class="aspect aspect-1x1 rounded-5 bg-warning"></div>
   </div>
   <div class="col-md-2" data-of-elements-filter-item="green">
-    <div class="ratio ratio-1x1 rounded-5 bg-success"></div>
+    <div class="aspect aspect-1x1 rounded-5 bg-success"></div>
   </div>
   <div class="col-md-2" data-of-elements-filter-item="red">
-    <div class="ratio ratio-1x1 rounded-5 bg-danger"></div>
+    <div class="aspect aspect-1x1 rounded-5 bg-danger"></div>
   </div>
   <div class="col-md-2" data-of-elements-filter-item="green">
-    <div class="ratio ratio-1x1 rounded-5 bg-success"></div>
+    <div class="aspect aspect-1x1 rounded-5 bg-success"></div>
   </div>
   <div class="col-md-2" data-of-elements-filter-item="red">
-    <div class="ratio ratio-1x1 rounded-5 bg-danger"></div>
+    <div class="aspect aspect-1x1 rounded-5 bg-danger"></div>
   </div>
 </div>
 {{< /example >}}

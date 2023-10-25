@@ -212,7 +212,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 <div class="card" style="max-width: 22rem;">
   <div class="card-media">
     <div class="card-media__visual">
-      <div class="ratio ratio-16x9">
+      <div class="aspect aspect-16x9">
         <video class="object-fit-cover" autoplay muted playsinline>
           <source src="assets/media/sample-video.mp4" type="video/mp4">
           <source src="assets/media/sample-video.ogg" type="video/ogg">
@@ -430,7 +430,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 <div class="card" style="max-width: 22rem;">
   <div class="card-media">
     <div class="card-media__visual">
-      <div class="ratio ratio-16x9">
+      <div class="aspect aspect-16x9">
         <video class="object-fit-cover" autoplay muted playsinline>
           <source src="assets/media/sample-video.mp4" type="video/mp4">
           <source src="assets/media/sample-video.ogg" type="video/ogg">

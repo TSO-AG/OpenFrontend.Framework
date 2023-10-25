@@ -338,19 +338,19 @@ To ensure your maps look great on all devices, our Map component supports respon
 
 {{< example class="bd-example-map-ratios" >}}
 <div class="aspect aspect-1x1">
-  <div id="map1" class="aspect-content"></div>
+  <div id="map1"></div>
 </div>
 
 <div class="aspect aspect-4x3">
-  <div id="map2" class="aspect-content"></div>
+  <div id="map2""></div>
 </div>
 
 <div class="aspect aspect-16x9">
-  <div id="map3" class="aspect-content"></div>
+  <div id="map3"></div>
 </div>
 
 <div class="aspect aspect-21x9">
-  <div id="map4" class="aspect-content"></div>
+  <div id="map4"></div>
 </div>
 
 <script>

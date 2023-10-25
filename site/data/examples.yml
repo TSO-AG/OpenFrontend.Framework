@@ -2,24 +2,26 @@
   description: "Common patterns for building sites and apps that build on existing components and utilities with custom CSS and more."
   examples:
     - name: Headers
-      description: "Display your branding, navigation, search, and more with these header components"
+      description: "Display your branding, navigation, search, and more with these header components."
     - name: Footers
       description: "Finish every page strong with an awesome footer, big or small."
     - name: Masonry
-      description: "@todo"
+      description: "Masonry is an example of a design solution that creates visually appealing and optimally organized layouts."
     - name: Booking form
       description: "Display a nicely looking booking form with a modern guest picker."
 
 - category: Content
-  description: "@Todo"
+  description: "Content templates for websites provide a consistent and structured layout to present information, ensuring a uniform and professional appearance across various web pages."
   examples:
     - name: POI Detail
+      description: "A POI detail page template presents detailed information about a specific location or attraction in a structured and accessible format."
     - name: POI List
+      description: "A POI list page template showcases an organized list of points of interest, making it easy for users to browse and select specific locations or attractions."
     - name: Routing
-      description: "@todo"
+      description: "A routing page template provides a structured format for displaying general content on a website in a consistent and coherent manner."
 
 - category: Pages
-  description: "@TODO"
+  description: "Pages are built with OpenFrontend components that can be used as a starting point for creating multiple web pages with a similar design and structure."
   examples:
     - name: Home page
-      description: "@LOREM"
+      description: "A home page template is a predefined layout for the primary page of a website, guiding user navigation and content presentation."

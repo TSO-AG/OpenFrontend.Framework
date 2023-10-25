@@ -34,7 +34,7 @@
 }
 
 .wrapper-zoom {
-  overflow: hidden;
+  overflow: hidden !important; // stylelint-disable-line declaration-no-important
 
   .wrapper-bg-media {
     @include transition($wrapper-media-zoom-transition);

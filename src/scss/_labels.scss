@@ -1,52 +1,52 @@
-.labels-min {
-  // scss-docs-start labels-min-css-vars
-  --#{$prefix}labels-min-gap: #{$labels-min-gap};
-  --#{$prefix}labels-min-padding: #{$labels-min-padding};
-  --#{$prefix}labels-min-bg: #{$labels-min-bg};
-  --#{$prefix}labels-min-border-width: #{$labels-min-border-width};
-  --#{$prefix}labels-min-border-color: #{$labels-min-border-color};
-  --#{$prefix}labels-min-border-radius: #{$labels-min-border-radius};
-  --#{$prefix}labels-min-box-shadow: #{$labels-min-box-shadow};
-  --#{$prefix}labels-min-item-width: #{$labels-min-item-width};
-  --#{$prefix}labels-min-item-height: #{$labels-min-item-height};
-  --#{$prefix}labels-min-item-padding: #{$labels-min-item-padding};
-  --#{$prefix}labels-min-item-bg: #{$labels-min-item-bg};
-  --#{$prefix}labels-min-item-border-style: #{$labels-min-item-border-style};
-  --#{$prefix}labels-min-item-border-width: #{$labels-min-item-border-width};
-  --#{$prefix}labels-min-item-border-color: #{$labels-min-item-border-color};
-  --#{$prefix}labels-min-item-border-radius: #{$labels-min-item-border-radius};
-  --#{$prefix}labels-min-item-box-shadow: #{$labels-min-item-box-shadow};
-  --#{$prefix}labels-min-label-padding: #{$labels-min-label-padding};
-  --#{$prefix}labels-min-label-font-size: #{$labels-min-label-font-size};
-  --#{$prefix}labels-min-label-font-weight: #{$labels-min-label-font-weight};
-  --#{$prefix}labels-min-label-color: #{$labels-min-label-color};
-  --#{$prefix}labels-min-label-text-decoration: #{$labels-min-label-text-decoration};
-  // scss-docs-end labels-min-css-vars
+.labels {
+  // scss-docs-start labels-css-vars
+  --#{$prefix}labels-gap: #{$labels-gap};
+  --#{$prefix}labels-padding: #{$labels-padding};
+  --#{$prefix}labels-bg: #{$labels-bg};
+  --#{$prefix}labels-border-width: #{$labels-border-width};
+  --#{$prefix}labels-border-color: #{$labels-border-color};
+  --#{$prefix}labels-border-radius: #{$labels-border-radius};
+  --#{$prefix}labels-box-shadow: #{$labels-box-shadow};
+  --#{$prefix}labels-item-width: #{$labels-item-width};
+  --#{$prefix}labels-item-height: #{$labels-item-height};
+  --#{$prefix}labels-item-padding: #{$labels-item-padding};
+  --#{$prefix}labels-item-bg: #{$labels-item-bg};
+  --#{$prefix}labels-item-border-style: #{$labels-item-border-style};
+  --#{$prefix}labels-item-border-width: #{$labels-item-border-width};
+  --#{$prefix}labels-item-border-color: #{$labels-item-border-color};
+  --#{$prefix}labels-item-border-radius: #{$labels-item-border-radius};
+  --#{$prefix}labels-item-box-shadow: #{$labels-item-box-shadow};
+  --#{$prefix}labels-label-padding: #{$labels-label-padding};
+  --#{$prefix}labels-label-font-size: #{$labels-label-font-size};
+  --#{$prefix}labels-label-font-weight: #{$labels-label-font-weight};
+  --#{$prefix}labels-label-color: #{$labels-label-color};
+  --#{$prefix}labels-label-text-decoration: #{$labels-label-text-decoration};
+  // scss-docs-end labels-css-vars
   display: flex;
-  gap: var(--#{$prefix}labels-min-gap);
+  gap: var(--#{$prefix}labels-gap);
   max-width: fit-content;
-  padding: var(--#{$prefix}labels-min-padding);
+  padding: var(--#{$prefix}labels-padding);
   line-height: 1;
-  background-color: var(--#{$prefix}labels-min-bg);
-  border: var(--#{$prefix}labels-min-border-width) solid var(--#{$prefix}labels-min-border-color);
-  @include border-radius(var(--#{$prefix}labels-min-border-radius));
-  @include box-shadow(var(--#{$prefix}labels-min-box-shadow));
+  background-color: var(--#{$prefix}labels-bg);
+  border: var(--#{$prefix}labels-border-width) solid var(--#{$prefix}labels-border-color);
+  @include border-radius(var(--#{$prefix}labels-border-radius));
+  @include box-shadow(var(--#{$prefix}labels-box-shadow));
 }
 
-.labels-min-item {
+.labels-item {
   @include make-col();
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: var(--#{$prefix}labels-min-item-width);
-  height: var(--#{$prefix}labels-min-item-height);
+  width: var(--#{$prefix}labels-item-width);
+  height: var(--#{$prefix}labels-item-height);
   aspect-ratio: var(--#{$prefix}aspect-ratio);
-  padding: var(--#{$prefix}labels-min-item-padding);
+  padding: var(--#{$prefix}labels-item-padding);
   overflow: hidden;
-  background-color: var(--#{$prefix}labels-min-item-bg);
-  border: var(--#{$prefix}labels-min-item-border-width) var(--#{$prefix}labels-min-item-border-style) var(--#{$prefix}labels-min-item-border-color);
-  @include border-radius(var(--#{$prefix}labels-min-item-border-radius));
-  @include box-shadow(var(--#{$prefix}labels-min-label-text-decoration));
+  background-color: var(--#{$prefix}labels-item-bg);
+  border: var(--#{$prefix}labels-item-border-width) var(--#{$prefix}labels-item-border-style) var(--#{$prefix}labels-item-border-color);
+  @include border-radius(var(--#{$prefix}labels-item-border-radius));
+  @include box-shadow(var(--#{$prefix}labels-label-text-decoration));
 
   figure {
     display: flex;
@@ -61,11 +61,11 @@
   }
 }
 
-.labels-min-label {
+.labels-label {
   align-self: center;
-  padding: var(--#{$prefix}labels-min-label-padding);
-  font-size: var(--#{$prefix}labels-min-label-font-size);
-  font-weight: var(--#{$prefix}labels-min-label-font-weight);
-  color: var(--#{$prefix}labels-min-label-color);
-  text-decoration: var(--#{$prefix}labels-min-label-text-decoration);
+  padding: var(--#{$prefix}labels-label-padding);
+  font-size: var(--#{$prefix}labels-label-font-size);
+  font-weight: var(--#{$prefix}labels-label-font-weight);
+  color: var(--#{$prefix}labels-label-color);
+  text-decoration: var(--#{$prefix}labels-label-text-decoration);
 }

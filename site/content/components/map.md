@@ -13,7 +13,9 @@ toc: true
 This section provides an example of how to embed Google Maps into your web page using OpenFrontend.Framework and Google Maps JavaScript API.
 
 <div class="bd-example">
-  <div id="map" class="aspect aspect-16x9"></div>
+  <div class="aspect aspect-16x9">
+    <div id="map" class="aspect aspect-16x9"></div>
+  </div>
 
   <div id="map-marker-google" class="visually-hidden">
     <div class="map-marker position-relative">
@@ -87,7 +89,9 @@ Example HTML Structure
 {{< highlight html >}}
   <div>
     <!--The div element for the map -->
-    <div id="map" class="aspect aspect-16x9"></div>
+    <div class="aspect aspect-16x9">
+      <div id="map"></div>
+    </div>
 
     <!--The div element for the map marker -->
     <div id="map-marker-google" class="visually-hidden">
@@ -247,7 +251,9 @@ Example HTML Structure
 {{< highlight html >}}
 <div>
   <!--The div element for the map -->
-  <div id="map" class="aspect aspect-16x9"></div>
+  <div class="aspect aspect-16x9">
+    <div id="map"></div>
+  </div>
 
   <!--The div element for the map marker -->
   <div id="map-marker-osm" class="visually-hidden">
@@ -331,20 +337,20 @@ Incorporating OpenStreetMap into your project is similar to using Google Maps. H
 To ensure your maps look great on all devices, our Map component supports responsive maps. Here is how you can leverage [Ratios]({{< docsref "/helpers/aspect-ratio" >}}) helpers to create responsive maps:
 
 {{< example class="bd-example-map-ratios" >}}
-<div>
-  <div id="map1" class="aspect aspect-1x1"></div>
+<div class="aspect aspect-1x1">
+  <div id="map1" class="aspect-content"></div>
 </div>
 
-<div>
-  <div id="map2" class="aspect aspect-4x3"></div>
+<div class="aspect aspect-4x3">
+  <div id="map2" class="aspect-content"></div>
 </div>
 
-<div>
-  <div id="map3" class="aspect aspect-16x9"></div>
+<div class="aspect aspect-16x9">
+  <div id="map3" class="aspect-content"></div>
 </div>
 
-<div>
-  <div id="map4" class="aspect aspect-21x9"></div>
+<div class="aspect aspect-21x9">
+  <div id="map4" class="aspect-content"></div>
 </div>
 
 <script>

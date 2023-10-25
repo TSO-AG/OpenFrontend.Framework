@@ -14,7 +14,7 @@ This section provides an example of how to embed Google Maps into your web page 
 
 <div class="bd-example">
   <div class="aspect aspect-16x9">
-    <div id="map" class="aspect aspect-16x9"></div>
+    <div id="map" class="overflow-hidden"></div>
   </div>
 
   <div id="map-marker-google" class="visually-hidden">
@@ -90,7 +90,7 @@ Example HTML Structure
   <div>
     <!--The div element for the map -->
     <div class="aspect aspect-16x9">
-      <div id="map"></div>
+      <div id="map" class="overflow-hidden"></div>
     </div>
 
     <!--The div element for the map marker -->
@@ -194,7 +194,9 @@ To embed a Google Map:
 This section provides an example of how to integrate OpenStreetMap into your web page using the Leaflet.js library.
 
 <div class="bd-example">
-  <div id="mapOpenStreetMap" class="aspect aspect-16x9"></div>
+  <div class="aspect aspect-16x9">
+    <div id="mapOpenStreetMap" class="overflow-hidden"></div>
+  </div>
 
   <div id="map-marker-osm" class="visually-hidden">
     <div class="map-marker position-relative">
@@ -252,7 +254,7 @@ Example HTML Structure
 <div>
   <!--The div element for the map -->
   <div class="aspect aspect-16x9">
-    <div id="map"></div>
+    <div id="map" class="overflow-hidden"></div>
   </div>
 
   <!--The div element for the map marker -->
@@ -338,19 +340,19 @@ To ensure your maps look great on all devices, our Map component supports respon
 
 {{< example class="bd-example-map-ratios" >}}
 <div class="aspect aspect-1x1">
-  <div id="map1"></div>
+  <div id="map1" class="overflow-hidden"></div>
 </div>
 
 <div class="aspect aspect-4x3">
-  <div id="map2""></div>
+  <div id="map2" class="overflow-hidden"></div>
 </div>
 
 <div class="aspect aspect-16x9">
-  <div id="map3"></div>
+  <div id="map3" class="overflow-hidden"></div>
 </div>
 
 <div class="aspect aspect-21x9">
-  <div id="map4"></div>
+  <div id="map4" class="overflow-hidden"></div>
 </div>
 
 <script>

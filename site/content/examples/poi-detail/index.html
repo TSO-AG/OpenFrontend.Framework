@@ -54,7 +54,7 @@ body_class: ""
             {{< placeholder width="200" height="200" class="img-thumbnail" text="Gallery 3" >}}
           </div>
           <div class="tab-pane" id="poi-detail-videos-pane" role="tabpanel" aria-labelledby="poi-detail-videos" tabindex="0">
-            <video controls class="aspect aspect-16x9">
+            <video controls class="w-100 aspect aspect-16x9">
               <source src="../../assets/media/sample-video.mp4" type="video/mp4">
               <source src="../../assets/media/sample-video.ogg" type="video/ogg">
             </video>
@@ -297,7 +297,7 @@ body_class: ""
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4 mb-section">
       <div class="sticky-top">
         <h3>Angebot</h3>
         <button class="btn btn-primary w-100">Jetzt Buchen</button>
@@ -306,22 +306,62 @@ body_class: ""
   </div>
 
   <div class="mb-section">
-    <h2>Weitere Angebote</h2>
+    <div class="heading-action">
+      <h2>Weitere Angebote</h2>
+      <div>
+        <div class="carousel-navigation">
+          <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-3">
+            <i class="ofi-caret-left-fill"></i>
+          </button>
+          <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-3">
+            <i class="ofi-caret-right-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
 
-    <!-- TODO: make it a carousel -->
-
-    <div class="row gy-4">
-      <div class="col-md-6 col-xl-3">
-        {{< poi-card >}}
-      </div>
-      <div class="col-md-6 col-xl-3">
-        {{< poi-card >}}
-      </div>
-      <div class="col-md-6 col-xl-3">
-        {{< poi-card >}}
-      </div>
-      <div class="col-md-6 col-xl-3">
-        {{< poi-card >}}
+    <div class="carousel">
+      <div class="swiper" data-of-carousel='{
+      "loop": true,
+      "slidesPerView": 1,
+      "spaceBetween": 24,
+      "navigationNext": "#carousel-btn-next-3",
+      "navigationPrev": "#carousel-btn-prev-3",
+       "breakpoints": {
+        "md": {
+          "slidesPerView": 2
+        },
+        "lg": {
+          "slidesPerView": 3
+        },
+        "xxl": {
+          "slidesPerView": 4
+        }
+      }
+  }'>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+        </div>
       </div>
     </div>
   </div>

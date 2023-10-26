@@ -274,6 +274,7 @@ Example HTML Structure
         </a>
       </div>
     </div>
+  </div>
 </div>
 {{< /highlight >}}
 

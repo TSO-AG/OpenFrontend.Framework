@@ -153,27 +153,21 @@ Each class adjusts the position of the pagination according to its description (
         </div>
       </div>
       <div class="swiper-slide">
-        <div class="wrapper wrapper-zoom">
-          <div class="wrapper-content-top-right">
-            <div class="state state--open">open</div>
-          </div>
-          <div class="wrapper-content wrapper-content-padding-y-xl wrapper-content-padding-x-xl text-center">
-            <h2>Your next destination</h2>
-            <p class="mb-0">Escape ordinary, experience majestic views!</p>
+        <div class="wrapper wrapper-zoom" style="min-height: 400px">
+          <div class="wrapper-content wrapper-content-padding-x-xl text-center">
+            <h2>Earth from space</h2>
+            <p class="mb-0">Touch the stars, gaze at Earth's grace!</p>
             <a href="#" class="stretched-link"><span class="visually-hidden">Book now</span></a>
-          </div>
-          <div class="wrapper-content-bottom-left">
-           <div class="date-box">
-              <div class="date-box__day">12.</div>
-              <div class="date-box__month">OKT.</div>
-            </div>
           </div>
           <div class="wrapper-bg-media">
             <figure>
-              <img src="assets/media/sample-image.jpg" alt="">
+              <video autoplay muted playsinline loop>
+                <source src="assets/media/sample-video.mp4" type="video/mp4">
+                <source src="assets/media/sample-video.ogg" type="video/ogg">
+              </video>
             </figure>
           </div>
-      </div>
+        </div>
       </div>
       <div class="swiper-slide">
         {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Slide 3" >}}

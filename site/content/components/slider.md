@@ -153,11 +153,10 @@ Each class adjusts the position of the pagination according to its description (
         </div>
       </div>
       <div class="swiper-slide">
-        <div class="wrapper wrapper-zoom" style="min-height: 400px">
+        <div class="wrapper">
           <div class="wrapper-content wrapper-content-padding-x-xl text-center">
             <h2>Earth from space</h2>
-            <p class="mb-0">Touch the stars, gaze at Earth's grace!</p>
-            <a href="#" class="stretched-link"><span class="visually-hidden">Book now</span></a>
+            <p>Touch the stars, gaze at Earth's grace!</p>
           </div>
           <div class="wrapper-bg-media">
             <figure>

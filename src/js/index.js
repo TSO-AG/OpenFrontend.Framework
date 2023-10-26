@@ -8,7 +8,7 @@ window.openFrontend = {
     return new Promise(resolve => import(/* webpackChunkName: "of-button" */ 'bootstrap/js/src/button').then(v => resolve(v.default)))
   },
   get Carousel() {
-    return new Promise(resolve => import(/* webpackChunkName: "open-frontend-carousel" */ './components/carousel').then(v => resolve(v.default)))
+    return new Promise(resolve => import(/* webpackChunkName: "of-carousel" */ './components/carousel').then(v => resolve(v.default)))
   },
   get Collapse() {
     return new Promise(resolve => import(/* webpackChunkName: "of-collapse" */ 'bootstrap/js/src/collapse').then(v => resolve(v.default)))
@@ -33,6 +33,9 @@ window.openFrontend = {
   },
   get Rating() {
     return new Promise(resolve => import(/* webpackChunkName: "of-ticker" */ './components/rating').then(v => resolve(v.default)))
+  },
+  get Slider() {
+    return new Promise(resolve => import(/* webpackChunkName: "of-slider" */ './components/slider').then(v => resolve(v.default)))
   },
   get Tab() {
     return new Promise(resolve => import(/* webpackChunkName: "of-tabs" */ './components/tabs').then(v => resolve(v.default)))

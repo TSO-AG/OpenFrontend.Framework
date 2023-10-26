@@ -51,6 +51,10 @@
 @import "~bootstrap/scss/helpers/text-truncation";
 @import "~bootstrap/scss/helpers/vr";
 
+// Vendor (slider, carousel)
+@import "swiper/scss";
+@import "swiper/css/effect-fade";
+
 // Utilities
 @import "~bootstrap/scss/utilities/api";
 

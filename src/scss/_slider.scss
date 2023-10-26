@@ -1,3 +1,6 @@
+@import "swiper/scss";
+@import "swiper/css/effect-fade";
+
 :root {
   // scss-docs-start slider-css-vars
   --#{$prefix}slider-theme-color: #{$slider-theme-color};

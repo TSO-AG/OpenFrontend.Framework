@@ -1,7 +1,6 @@
 import BaseComponent from 'bootstrap/js/src/base-component'
 import Swiper from 'swiper'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
-import 'swiper/css' // eslint-disable-line import/no-unresolved
 
 Swiper.use([Navigation, Autoplay, Pagination])
 

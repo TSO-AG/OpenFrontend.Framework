@@ -1,0 +1,24 @@
+.page-menu-wrapper {
+  // scss-docs-start page-menu-css-vars
+  --#{$prefix}page-menu-padding-x: #{if($page-menu-padding-x == null, 0, $page-menu-padding-x)};
+  --#{$prefix}page-menu-padding-y: #{$page-menu-padding-y};
+  --#{$prefix}page-menu-background-color: #{$page-menu-light-background};
+  --#{$prefix}page-menu-color: #{$page-menu-light-color};
+  --#{$prefix}page-menu-box-shadow: #{$page-menu-box-shadow};
+  // scss-docs-end page-menu-css-vars
+
+  color: var(--#{$prefix}page-menu-color);
+  background-color: var(--#{$prefix}page-menu-background-color);
+  box-shadow: var(--#{$prefix}page-menu-background-color);
+}
+
+.page-menu {
+  padding: var(--#{$prefix}page-menu-padding-y) var(--#{$prefix}page-menu-padding-x);
+}
+
+.page-menu-wrapper-dark {
+  // scss-docs-start page-menu-dark-css-vars
+  --#{$prefix}page-menu-background-color: #{$page-menu-dark-background};
+  --#{$prefix}page-menu-color: #{$page-menu-dark-color};
+  // scss-docs-end page-menu-dark-css-vars
+}

@@ -1,0 +1,230 @@
+---
+layout: docs
+title: Header
+description: TODO
+group: components
+aliases:
+  - "/components/"
+toc: true
+---
+
+## Examples
+
+### Layout 1
+{{< example class="bd-example-header" >}}
+<header class="header">
+  <div class="container">
+    <div class="header-brand">
+      <a href="#">
+        {{< placeholder width="200" height="60" alt="Logo" text="Logo" >}}
+      </a>
+    </div>
+    <div class="header-content">
+      <div class="d-none d-lg-block">
+        <a href="#" class="header-link">
+          <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+          <span class="header-link-text">Account</span>
+        </a>
+      </div>
+      <div class="d-none d-lg-block">
+        <a href="#" class="header-link">
+          <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+          <span class="header-link-text">Warenkorb</span>
+        </a>
+      </div>
+      <div class="d-none d-lg-block">
+        <a href="#" class="header-link">
+          <span class="header-link-icon">
+            <i class="ofi-heart-fill"></i>
+            <span class="header-link-icon-badge">
+              <span class="badge bg-danger">12</span>
+            </span>
+          </span>
+          <span class="header-link-text">Favouriten</span>
+        </a>
+      </div>
+      <div>
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-translate"></i></span>
+            <span class="header-link-text">Spreche</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Deutsch</a></li>
+            <li><a class="dropdown-item" href="#">Englisch</a></li>
+            <li><a class="dropdown-item" href="#">Französisch</a></li>
+          </ul>
+        </div>
+      </div>
+      <a href="#" class="header-link">
+        <span class="header-link-icon"><i class="ofi-search"></i></span>
+        <span class="header-link-text">Suche</span>
+      </a>
+      <div>
+        <button class="header-link" type="button" data-bs-toggle="collapse"
+                data-bs-target="#pageMenu" aria-controls="pageMenu"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="header-link-icon"><i class="ofi-list"></i></span>
+          <span class="header-link-text">Menu</span>
+        </button>
+        <div class="collapse header-collapse page-menu-wrapper" id="pageMenu">
+          <div class="container">
+             {{< page-menu >}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{{< /example >}}
+
+### Layout 2
+{{< example class="bd-example-header">}}
+<header class="header">
+  <div class="container">
+    <div class="header-content d-none d-lg-flex">
+      <a href="#" class="header-link">
+        <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+        <span class="header-link-text">Account</span>
+      </a>
+      <a href="#" class="header-link">
+        <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+        <span class="header-link-text">Warenkorb</span>
+      </a>
+      <a href="#" class="header-link">
+      <span class="header-link-icon">
+        <i class="ofi-heart-fill"></i>
+        <span class="header-link-icon-badge">
+          <span class="badge bg-danger">2</span>
+        </span>
+      </span>
+        <span class="header-link-text">Favouriten</span>
+      </a>
+    </div>
+    <div class="header-brand">
+      <a href="#">
+        {{< placeholder width="200" height="60" alt="Logo" text="Logo" >}}
+      </a>
+    </div>
+    <div class="header-content">
+      <div>
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-translate"></i></span>
+            <span class="header-link-text">Spreche</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Deutsch</a></li>
+            <li><a class="dropdown-item" href="#">Englisch</a></li>
+            <li><a class="dropdown-item" href="#">Französisch</a></li>
+          </ul>
+        </div>
+      </div>
+      <a href="#" class="header-link">
+        <span class="header-link-icon"><i class="ofi-search"></i></span>
+        <span class="header-link-text">Suche</span>
+      </a>
+      <div>
+        <button class="header-link" type="button" data-bs-toggle="collapse"
+                data-bs-target="#pageMenu2" aria-controls="pageMenu2"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="header-link-icon"><i class="ofi-list"></i></span>
+          <span class="header-link-text">Menu</span>
+        </button>
+        <div class="collapse header-collapse page-menu-wrapper" id="pageMenu2">
+          <div class="container">
+            {{< page-menu >}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{{< /example >}}
+
+### Dark header
+{{< example class="bd-example-header" >}}
+<header class="header header-dark">
+  <div class="container">
+    <div class="header-brand">
+      <a href="#">
+        {{< placeholder width="200" height="60" alt="Logo" text="Logo" >}}
+      </a>
+    </div>
+    <div class="header-content">
+      <div class="d-none d-lg-block">
+        <a href="#" class="header-link">
+          <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+          <span class="header-link-text">Account</span>
+        </a>
+      </div>
+      <div class="d-none d-lg-block">
+        <a href="#" class="header-link">
+          <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+          <span class="header-link-text">Warenkorb</span>
+        </a>
+      </div>
+      <div class="d-none d-lg-block">
+        <a href="#" class="header-link">
+          <span class="header-link-icon">
+            <i class="ofi-heart-fill"></i>
+            <span class="header-link-icon-badge">
+              <span class="badge bg-danger">12</span>
+            </span>
+          </span>
+          <span class="header-link-text">Favouriten</span>
+        </a>
+      </div>
+      <div>
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-translate"></i></span>
+            <span class="header-link-text">Spreche</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Deutsch</a></li>
+            <li><a class="dropdown-item" href="#">Englisch</a></li>
+            <li><a class="dropdown-item" href="#">Französisch</a></li>
+          </ul>
+        </div>
+      </div>
+      <a href="#" class="header-link">
+        <span class="header-link-icon"><i class="ofi-search"></i></span>
+        <span class="header-link-text">Suche</span>
+      </a>
+      <div>
+        <button class="header-link" type="button" data-bs-toggle="collapse"
+                data-bs-target="#pageMenu3" aria-controls="pageMenu3"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="header-link-icon"><i class="ofi-list"></i></span>
+          <span class="header-link-text">Menu</span>
+        </button>
+        <div class="collapse header-collapse page-menu-wrapper page-menu-wrapper-dark" id="pageMenu3">
+          <div class="container">
+             {{< page-menu >}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{{< /example >}}
+
+## CSS
+
+### Variables
+
+{{< scss-docs name="header-css-vars" file="src/scss/_header.scss" >}}
+
+Customization through CSS variables can be seen on the `.header-dark` class where we override specific values without adding duplicate CSS selectors.
+
+{{< scss-docs name="header-dark-css-vars" file="src/scss/_header.scss" >}}
+
+### Sass variables
+Variables for all headers:
+
+{{< scss-docs name="header-variables" file="src/scss/_variables.scss" >}}
+
+Variables for the [dark header](#dark-header):
+
+{{< scss-docs name="header-dark-variables" file="src/scss/_variables.scss" >}}

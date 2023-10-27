@@ -387,6 +387,8 @@ $wrapper-padding-y: 1.5rem !default;
 $wrapper-padding-y-lg: 2.5rem !default;
 $wrapper-padding-y-xl: 5.5rem !default;
 $wrapper-padding-x: 1.5rem !default;
+$wrapper-padding-x-lg: 2.5rem !default;
+$wrapper-padding-x-xl: 4.5rem !default;
 $wrapper-color: #fff !default;
 $wrapper-bg-color: null !default;
 $wrapper-bg-color-light: #f8f9fa !default;
@@ -471,6 +473,27 @@ $carousel-pagination-bullet-opacity:                1 !default;
 $carousel-pagination-bullet-horizontal-gap:         4px !default;
 $carousel-pagination-bullet-vertical-gap:           6px !default;
 // scss-docs-end carousel-variables
+
+// Slider
+// scss-docs-start slider-variables
+$slider-theme-color:                              $primary !default;
+$slider-offset-x:                                 12px !default;
+$slider-offset-y:                                 12px !default;
+$slider-pagination-left:                          $slider-offset-x !default;
+$slider-pagination-right:                         $slider-offset-x !default;
+$slider-pagination-bottom:                        $slider-offset-y !default;
+$slider-pagination-top:                           $slider-offset-y !default;
+$slider-pagination-bullet-size:                   8px !default;
+$slider-pagination-bullet-width:                  $slider-pagination-bullet-size !default;
+$slider-pagination-bullet-height:                 $slider-pagination-bullet-size !default;
+$slider-pagination-bullet-border-radius:          50% !default;
+$slider-pagination-bullet-inactive-color:         #000 !default;
+$slider-pagination-bullet-inactive-opacity:       .2 !default;
+$slider-pagination-bullet-opacity:                1 !default;
+$slider-pagination-bullet-horizontal-gap:         4px !default;
+$slider-pagination-bullet-vertical-gap:           6px !default;
+$slider-navigation-offset-x:                      $slider-offset-x !default;
+// scss-docs-end slider-variables
 
 // Heading
 $headings-action-margin-bottom: 1rem !default;

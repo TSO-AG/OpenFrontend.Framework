@@ -4,6 +4,8 @@
   --#{$prefix}wrapper-padding-y-lg: #{$wrapper-padding-y-lg};
   --#{$prefix}wrapper-padding-y-xl: #{$wrapper-padding-y-xl};
   --#{$prefix}wrapper-padding-x: #{$wrapper-padding-x};
+  --#{$prefix}wrapper-padding-x-lg: #{$wrapper-padding-x-lg};
+  --#{$prefix}wrapper-padding-x-xl: #{$wrapper-padding-x-xl};
   --#{$prefix}wrapper-color: #{$wrapper-color};
   --#{$prefix}wrapper-bg-color: #{$wrapper-bg-color};
   --#{$prefix}wrapper-z-index: #{$wrapper-z-index};
@@ -92,6 +94,14 @@
 
 .wrapper-content-padding-y-xl {
   --#{$prefix}wrapper-padding-y: var(--#{$prefix}wrapper-padding-y-xl);
+}
+
+.wrapper-content-padding-x-lg {
+  --#{$prefix}wrapper-padding-x: var(--#{$prefix}wrapper-padding-x-lg);
+}
+
+.wrapper-content-padding-x-xl {
+  --#{$prefix}wrapper-padding-x: var(--#{$prefix}wrapper-padding-x-xl);
 }
 
 .wrapper-content-top-right {

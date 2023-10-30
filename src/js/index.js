@@ -61,6 +61,7 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-of-rating]'), () => import(/* webpackChunkName: "of-rating" */ './components/rating'))
   loadForElements(element.querySelectorAll('[data-of-video-play]'), () => import(/* webpackChunkName: "of-video-play" */ './components/video-play'))
   loadForElements(element.querySelectorAll('[data-of-ticker]'), () => import(/* webpackChunkName: "of-ticker" */ './components/ticker'))
+  loadForElements(element.querySelectorAll('[data-of-page-navigation]'), () => import(/* webpackChunkName: "of-page-navigation" */ './components/page-navigation'))
 }
 
 document.addEventListener('DOMContentLoaded', () => window.initOpenFrontend(document))

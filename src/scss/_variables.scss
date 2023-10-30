@@ -542,6 +542,22 @@ $page-menu-box-shadow:                0 1rem 1rem rgba(0, 0, 0, .075) !default;
 // scss-docs-end page-menu-variables
 
 // scss-docs-start page-menu-dark-variables
+$page-menu-breakpoint:                md !default;
 $page-menu-dark-background:           $header-dark-background-color !default;
 $page-menu-dark-color:                $header-dark-color !default;
 // scss-docs-end page-menu-dark-variables
+
+// scss-docs-start page-navigation-variables
+$page-nav-transition:                    left .3s ease-in-out !default;
+$page-nav-submenu-icon:                  $ofi-arrow-right !default;
+$page-nav-link-padding-y:                .5rem !default;
+$page-nav-link-padding-x:                1rem !default;
+$page-nav-link-font-size:                null !default;
+$page-nav-link-font-weight:              null !default;
+$page-nav-link-color:                    var(--#{$prefix}link-color) !default;
+$page-nav-link-hover-color:              var(--#{$prefix}link-hover-color) !default;
+$page-nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
+$page-nav-link-disabled-color:           var(--#{$prefix}secondary-color) !default;
+$page-nav-link-back-icon-color:          $primary !default;
+$page-nav-link-back-icon:                url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'> <path fill='#{$page-nav-link-back-icon-color}' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>") !default;
+// scss-docs-end page-navigation-variables

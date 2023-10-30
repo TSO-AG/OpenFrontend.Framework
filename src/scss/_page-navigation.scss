@@ -1,0 +1,189 @@
+%panel-link-nav-back {
+  pointer-events: none;
+
+  &::before {
+    display: flex;
+    align-items: center;
+    padding: var(--#{$prefix}page-nav-link-padding-y) calc(var(--#{$prefix}page-nav-link-padding-x) + 1em); // stylelint-disable-line function-disallowed-list
+    font-weight: var(--#{$prefix}page-nav-link-font-weight);
+    color: var(--#{$prefix}page-nav-link-color);
+    text-decoration: if($link-decoration == none, null, none);
+    pointer-events: auto;
+    cursor: pointer;
+    content: " Back";
+    background-image: var(--#{$prefix}page-nav-link-back-icon);
+    background-repeat: no-repeat;
+    background-position: left calc(var(--#{$prefix}page-nav-link-padding-x) - .5em) center; // stylelint-disable-line function-disallowed-list
+    background-size: 1em auto;
+    @include font-size(var(--#{$prefix}page-nav-link-font-size));
+  }
+
+  > li {
+    pointer-events: auto;
+  }
+}
+
+.page-nav {
+  // scss-docs-start page-nav-css-vars
+  --#{$prefix}page-nav-link-padding-x: #{$page-nav-link-padding-x};
+  --#{$prefix}page-nav-link-padding-y: #{$page-nav-link-padding-y};
+  @include rfs($page-nav-link-font-size, --#{$prefix}page-nav-link-font-size);
+  --#{$prefix}page-nav-link-font-weight: #{$page-nav-link-font-weight};
+  --#{$prefix}page-nav-link-color: #{$page-nav-link-color};
+  --#{$prefix}page-nav-link-hover-color: #{$page-nav-link-hover-color};
+  --#{$prefix}page-nav-link-disabled-color: #{$page-nav-link-disabled-color};
+  --#{$prefix}page-nav-link-back-icon: #{escape-svg($page-nav-link-back-icon)};
+  // scss-docs-end page-nav-css-vars
+  container-type: inline-size;
+  min-height: var(--page-nav-panel-height, 0);
+  overflow: hidden;
+
+  nav {
+    --columns: 1;
+    --menu-width: 100%;
+    --menu-width-offset: calc(100% / var(--columns)); // stylelint-disable-line function-disallowed-list
+    position: relative;
+    height: 100%;
+    margin-right: calc(100% - var(--menu-width-offset)); // stylelint-disable-line function-disallowed-list
+  }
+
+  ul {
+    @include list-unstyled();
+    position: absolute;
+    top: 0;
+    left: var(--menu-width);
+    width: var(--menu-width);
+    height: 100%;
+    margin-bottom: 0;
+    @include transition($page-nav-transition);
+  }
+
+  .page-nav-level-1 {
+    position: relative;
+    left: 0;
+
+    ul {
+      @extend %panel-link-nav-back;
+    }
+  }
+
+  .active-panel,
+  .active-panel-parent {
+    left: 0;
+    z-index: 2;
+  }
+
+  @container (min-width: 25em) {
+    nav {
+      --columns: 2;
+      height: 100%;
+
+      .page-nav-level-2 {
+        left: 100%;
+        opacity: 0;
+
+        &::before {
+          display: none;
+        }
+
+        &.active-panel,
+        &.active-panel-parent {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @container (min-width: 35em) {
+    nav {
+      --columns: 3;
+
+      .page-nav-level-3 {
+        left: 100%;
+        opacity: 0;
+
+        &::before {
+          display: none;
+        }
+
+        &.active-panel,
+        &.active-panel-parent {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.page-nav-submenu {
+  display: flex;
+  @include add-icon($page-nav-submenu-icon, after);
+
+  &::after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    margin-left: auto;
+  }
+}
+
+.page-nav-link {
+  display: block;
+  padding: var(--#{$prefix}page-nav-link-padding-y) var(--#{$prefix}page-nav-link-padding-x);
+  @include font-size(var(--#{$prefix}page-nav-link-font-size));
+  font-weight: var(--#{$prefix}page-nav-link-font-weight);
+  color: var(--#{$prefix}page-nav-link-color);
+  text-decoration: if($link-decoration == none, null, none);
+  background: none;
+  border: 0;
+  @include transition($page-nav-link-transition);
+
+  &:hover,
+  &:focus,
+  .active-level > & {
+    color: var(--#{$prefix}page-nav-link-hover-color);
+    text-decoration: if($link-hover-decoration == underline, none, null);
+  }
+
+  &:focus-visible {
+    outline: 0;
+  }
+
+  // Disabled state lightens text
+  &.disabled {
+    color: var(--#{$prefix}page-nav-link-disabled-color);
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+
+// TODO - Remove this test code
+// stylelint-disable
+.page-nav {
+  ul {
+    background: $gray-100;
+
+    ul {
+      background: $gray-200;
+
+      ul {
+        background: $gray-300;
+
+        ul {
+          background: $gray-400;
+
+          ul {
+            background: $gray-500;
+
+            ul {
+              background: $gray-600;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// stylelint-enable

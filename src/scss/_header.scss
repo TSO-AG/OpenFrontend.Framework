@@ -137,6 +137,16 @@
   text-decoration: var(--#{$prefix}header-link-text-decoration);
 }
 
+.header-link-row {
+  flex-direction: row;
+  justify-content: flex-start;
+
+  .header-link-icon {
+    margin-right: var(--#{$prefix}header-link-icon-margin-bottom);
+    margin-bottom: 0;
+  }
+}
+
 // Header brand
 .header-brand {
   @include font-size(var(--#{$prefix}header-brand-font-size));

@@ -13,7 +13,13 @@
 }
 
 .page-menu {
+  display: grid;
+  gap: 1.5rem;
   padding: var(--#{$prefix}page-menu-padding-y) var(--#{$prefix}page-menu-padding-x);
+
+  @include media-breakpoint-up($page-menu-breakpoint) {
+    grid-template-columns: 1fr 23em;
+  }
 }
 
 .page-menu-wrapper-dark {
@@ -21,4 +27,13 @@
   --#{$prefix}page-menu-background-color: #{$page-menu-dark-background};
   --#{$prefix}page-menu-color: #{$page-menu-dark-color};
   // scss-docs-end page-menu-dark-css-vars
+}
+
+.page-menu-mobile-content {
+  display: grid;
+  gap: 1rem;
+
+  @include media-breakpoint-up($page-menu-breakpoint) {
+    display: none;
+  }
 }

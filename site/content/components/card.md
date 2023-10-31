@@ -38,17 +38,17 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       </div>
     </div>
     <div class="card-media__content card-media__content--bottom-right">
-      <div class="labels-min">
-        <div class="labels-min-item">
+      <div class="labels">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="A" >}}</figure>
         </div>
-        <div class="labels-min-item">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="B" >}}</figure>
         </div>
-        <div class="labels-min-item">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="C" >}}</figure>
         </div>
-        <span class="labels-min-label">+1</span>
+        <span class="labels-label">+1</span>
       </div>
     </div>
   </div>
@@ -115,7 +115,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 <div class="card card-horizontal">
   <div class="card-media">
     <div class="card-media__visual">
-      {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
+      {{< placeholder markup="img" width="100%" height="200" class="img-fluid" text="Responsive image" >}}
     </div>
     <div class="card-media__content card-media__content--top-left">
       <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>
@@ -132,17 +132,17 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       </div>
     </div>
     <div class="card-media__content card-media__content--bottom-right">
-      <div class="labels-min">
-        <div class="labels-min-item">
+      <div class="labels">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="A" >}}</figure>
         </div>
-        <div class="labels-min-item">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="B" >}}</figure>
         </div>
-        <div class="labels-min-item">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="C" >}}</figure>
         </div>
-        <span class="labels-min-label">+1</span>
+        <span class="labels-label">+1</span>
       </div>
     </div>
   </div>
@@ -212,7 +212,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 <div class="card" style="max-width: 22rem;">
   <div class="card-media">
     <div class="card-media__visual">
-      <div class="ratio ratio-16x9">
+      <div class="aspect aspect-16x9">
         <video class="object-fit-cover" autoplay muted playsinline>
           <source src="assets/media/sample-video.mp4" type="video/mp4">
           <source src="assets/media/sample-video.ogg" type="video/ogg">
@@ -228,11 +228,11 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       </div>
     </div>
     <div class="card-media__content card-media__content--bottom-right">
-      <div class="labels-min">
-        <div class="labels-min-item">
+      <div class="labels">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="A" >}}</figure>
         </div>
-        <div class="labels-min-item">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="B" >}}</figure>
         </div>
       </div>
@@ -294,17 +294,17 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       </div>
     </div>
     <div class="card-media__content card-media__content--bottom-right">
-      <div class="labels-min">
-        <div class="labels-min-item">
+      <div class="labels">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="A" >}}</figure>
         </div>
-        <div class="labels-min-item">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="B" >}}</figure>
         </div>
-        <div class="labels-min-item">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="C" >}}</figure>
         </div>
-        <span class="labels-min-label">+1</span>
+        <span class="labels-label">+1</span>
       </div>
     </div>
   </div>
@@ -375,8 +375,8 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       </div>
     </div>
     <div class="card-media__content card-media__content--bottom-right">
-      <div class="labels-min">
-        <div class="labels-min-item">
+      <div class="labels">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="A" >}}</figure>
         </div>
       </div>
@@ -430,7 +430,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 <div class="card" style="max-width: 22rem;">
   <div class="card-media">
     <div class="card-media__visual">
-      <div class="ratio ratio-16x9">
+      <div class="aspect aspect-16x9">
         <video class="object-fit-cover" autoplay muted playsinline>
           <source src="assets/media/sample-video.mp4" type="video/mp4">
           <source src="assets/media/sample-video.ogg" type="video/ogg">
@@ -630,6 +630,29 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
 {{< /example >}}
 
+## CardMini
+{{< example >}}
+
+<div class="card card-mini">
+  <div class="card-media">
+    <div class="card-media__visual">
+      {{< placeholder markup="img" width="100%" height="100" text="Responsive image" >}}
+    </div>
+    <div class="card-media__content card-media__content--top-right">
+      <div class="state state-simple state--open">
+        <span class="visually-hidden">open</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-info">Lorem ipsum</h5>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
+  </div>
+</div>
+
+{{< /example >}}
+
 ## Content types
 
 Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what's supported.
@@ -671,6 +694,38 @@ Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-t
 {{< example >}}
 <div class="card" style="width: 18rem;">
   {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+{{< /example >}}
+
+### Carousel
+
+If you want to present multiple images, you can also add a carousel to the card. Do not forget to embed it with the `.card-media` wrapper.
+
+{{< example >}}
+<div class="card" style="width: 18rem;">
+  <div class="card-media">
+    <div class="carousel">
+      <div class="swiper" data-of-carousel='{"autoplay": true, "pagination": "#carousel-pagination"}'>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            {{< placeholder width="286" height="180" class="d-block w-100" background="#777" text="Slide 1" >}}
+          </div>
+          <div class="swiper-slide">
+            {{< placeholder width="286" height="180" class="d-block w-100" background="#666" text="Slide 2" >}}
+          </div>
+          <div class="swiper-slide">
+            {{< placeholder width="286" height="180" class="d-block w-100" background="#555" text="Slide 3" >}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="carousel-pagination" class="carousel-pagination carousel-pagination--top-right"></div>
+  </div>
+
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
@@ -1019,7 +1074,7 @@ Using a combination of grid and utility classes, cards can be made horizontal in
 <div class="card card-horizontal">
   <div class="card-media">
     <div class="card-media__visual">
-      {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
+      {{< placeholder markup="img" width="100%" height="200" class="img-fluid" text="Responsive image" >}}
     </div>
     <div class="card-media__content card-media__content--top-left">
       <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>
@@ -1036,17 +1091,17 @@ Using a combination of grid and utility classes, cards can be made horizontal in
       </div>
     </div>
     <div class="card-media__content card-media__content--bottom-right">
-      <div class="labels-min">
-        <div class="labels-min-item">
+      <div class="labels">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="A" >}}</figure>
         </div>
-        <div class="labels-min-item">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="B" >}}</figure>
         </div>
-        <div class="labels-min-item">
+        <div class="labels-item">
           <figure>{{< placeholder markup="img" width="36" height="36" text="C" >}}</figure>
         </div>
-        <span class="labels-min-label">+1</span>
+        <span class="labels-label">+1</span>
       </div>
     </div>
   </div>

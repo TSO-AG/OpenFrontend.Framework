@@ -1,0 +1,145 @@
+:root {
+  // scss-docs-start slider-css-vars
+  --#{$prefix}slider-theme-color: #{$slider-theme-color};
+  --#{$prefix}slider-pagination-color: var(--#{$prefix}slider-theme-color);
+  --#{$prefix}slider-pagination-left: #{$slider-pagination-left};
+  --#{$prefix}slider-pagination-right: #{$slider-pagination-right};
+  --#{$prefix}slider-pagination-bottom: #{$slider-pagination-bottom};
+  --#{$prefix}slider-pagination-top: #{$slider-pagination-top};
+  --#{$prefix}slider-pagination-bullet-size: #{$slider-pagination-bullet-size};
+  --#{$prefix}slider-pagination-bullet-width: #{$slider-pagination-bullet-width};
+  --#{$prefix}slider-pagination-bullet-height: #{$slider-pagination-bullet-height};
+  --#{$prefix}slider-pagination-bullet-border-radius: #{$slider-pagination-bullet-border-radius};
+  --#{$prefix}slider-pagination-bullet-inactive-color: #{$slider-pagination-bullet-inactive-color};
+  --#{$prefix}slider-pagination-bullet-inactive-opacity: #{$slider-pagination-bullet-inactive-opacity};
+  --#{$prefix}slider-pagination-bullet-opacity: #{$slider-pagination-bullet-opacity};
+  --#{$prefix}slider-pagination-bullet-horizontal-gap: #{$slider-pagination-bullet-horizontal-gap};
+  --#{$prefix}slider-pagination-bullet-vertical-gap: #{$slider-pagination-bullet-vertical-gap};
+  --#{$prefix}slider-navigation-offset-x: #{$slider-navigation-offset-x};
+  // scss-docs-end slider-css-vars
+  --swiper-theme-color: var(--#{$prefix}slider-theme-color);
+}
+
+.slider {
+  position: relative;
+
+  .swiper-slide {
+    display: flex;
+    height: auto;
+
+    > * {
+      flex-grow: 1;
+    }
+  }
+}
+
+// Carousel navigation
+.slider-navigation {
+  $this: &;
+  position: absolute;
+  top: 50%;
+  right: var(--#{$prefix}slider-navigation-offset-x);
+  left: var(--#{$prefix}slider-navigation-offset-x);
+  z-index: 2;
+  display: flex;
+  gap: .5rem;
+  justify-content: space-between;
+  pointer-events: none;
+  transform: translateY(-50%);
+
+  button {
+    pointer-events: auto;
+  }
+}
+
+// Carousel pagination
+.slider-pagination {
+  position: absolute;
+  top: var(--#{$prefix}slider-pagination-top);
+  right: var(--#{$prefix}slider-pagination-left);
+  bottom: var(--#{$prefix}slider-pagination-bottom);
+  left: var(--#{$prefix}slider-pagination-left);
+  z-index: 10;
+  display: flex;
+  row-gap: var(--#{$prefix}slider-pagination-bullet-horizontal-gap);
+  column-gap: var(--#{$prefix}slider-pagination-bullet-vertical-gap);
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  @include transition(300ms opacity);
+
+  &.slider-pagination-hidden {
+    opacity: 0;
+  }
+
+  .slider-pagination-disabled > &,
+  &.slider-pagination-disabled {
+    display: none;
+  }
+
+  &--top-left {
+    --#{$prefix}slider-pagination-bottom: auto;
+    justify-content: flex-start;
+  }
+
+  &--top-center {
+    --#{$prefix}slider-pagination-bottom: auto;
+  }
+
+  &--top-right {
+    --#{$prefix}slider-pagination-bottom: auto;
+    justify-content: flex-end;
+  }
+
+  &--bottom-left {
+    --#{$prefix}slider-pagination-top: auto;
+    justify-content: flex-start;
+  }
+
+  &--bottom-center {
+    --#{$prefix}slider-pagination-top: auto;
+
+  }
+
+  &--bottom-right {
+    --#{$prefix}slider-pagination-top: auto;
+    justify-content: flex-end;
+  }
+}
+
+/* Bullets */
+.slider-pagination-bullet {
+  width: var(--#{$prefix}slider-pagination-bullet-width);
+  height: var(--#{$prefix}slider-pagination-bullet-height);
+  pointer-events: auto;
+  cursor: pointer;
+  background: var(--#{$prefix}slider-pagination-bullet-inactive-color);
+  opacity: var(--#{$prefix}slider-pagination-bullet-inactive-opacity);
+  @include border-radius(var(--#{$prefix}slider-pagination-bullet-border-radius));
+
+  @at-root button#{&} {
+    padding: 0;
+    margin: 0;
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .slider-pagination-clickable & {
+    cursor: pointer;
+  }
+
+  &:only-child {
+    display: none;
+  }
+}
+
+.slider-pagination-bullet-active {
+  background: var(--#{$prefix}slider-pagination-color);
+  opacity: var(--#{$prefix}slider-pagination-bullet-opacity);
+}
+
+.slider-pagination-lock {
+  display: none;
+}

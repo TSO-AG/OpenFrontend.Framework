@@ -1,0 +1,146 @@
+:root {
+  // scss-docs-start carousel-css-vars
+  --#{$prefix}carousel-theme-color: #{$carousel-theme-color};
+  --#{$prefix}carousel-pagination-color: var(--#{$prefix}carousel-theme-color);
+  --#{$prefix}carousel-pagination-left: #{$carousel-pagination-left};
+  --#{$prefix}carousel-pagination-right: #{$carousel-pagination-right};
+  --#{$prefix}carousel-pagination-bottom: #{$carousel-pagination-bottom};
+  --#{$prefix}carousel-pagination-top: #{$carousel-pagination-top};
+  --#{$prefix}carousel-pagination-bullet-size: #{$carousel-pagination-bullet-size};
+  --#{$prefix}carousel-pagination-bullet-width: #{$carousel-pagination-bullet-width};
+  --#{$prefix}carousel-pagination-bullet-height: #{$carousel-pagination-bullet-height};
+  --#{$prefix}carousel-pagination-bullet-border-radius: #{$carousel-pagination-bullet-border-radius};
+  --#{$prefix}carousel-pagination-bullet-inactive-color: #{$carousel-pagination-bullet-inactive-color};
+  --#{$prefix}carousel-pagination-bullet-inactive-opacity: #{$carousel-pagination-bullet-inactive-opacity};
+  --#{$prefix}carousel-pagination-bullet-opacity: #{$carousel-pagination-bullet-opacity};
+  --#{$prefix}carousel-pagination-bullet-horizontal-gap: #{$carousel-pagination-bullet-horizontal-gap};
+  --#{$prefix}carousel-pagination-bullet-vertical-gap: #{$carousel-pagination-bullet-vertical-gap};
+  // scss-docs-end carousel-css-vars
+  --swiper-theme-color: var(--#{$prefix}carousel-theme-color);
+}
+
+.carousel {
+  position: relative;
+}
+
+// Carousel navigation
+.carousel-navigation {
+  $this: &;
+  display: flex;
+  gap: .5rem;
+
+  &--center {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    justify-content: space-between;
+    pointer-events: none;
+    transform: translateY(-50%);
+
+    button {
+      pointer-events: auto;
+    }
+
+    .carousel-button-prev {
+      transform: translateX(-50%);
+    }
+
+    .carousel-button-next {
+      transform: translateX(50%);
+    }
+  }
+}
+
+// Carousel pagination
+.carousel-pagination {
+  position: absolute;
+  top: var(--#{$prefix}carousel-pagination-top);
+  right: var(--#{$prefix}carousel-pagination-left);
+  bottom: var(--#{$prefix}carousel-pagination-bottom);
+  left: var(--#{$prefix}carousel-pagination-left);
+  z-index: 10;
+  display: flex;
+  row-gap: var(--#{$prefix}carousel-pagination-bullet-horizontal-gap);
+  column-gap: var(--#{$prefix}carousel-pagination-bullet-vertical-gap);
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  @include transition(300ms opacity);
+
+  &.carousel-pagination-hidden {
+    opacity: 0;
+  }
+
+  .carousel-pagination-disabled > &,
+  &.carousel-pagination-disabled {
+    display: none;
+  }
+
+  &--top-left {
+    --#{$prefix}carousel-pagination-bottom: auto;
+    justify-content: flex-start;
+  }
+
+  &--top-center {
+    --#{$prefix}carousel-pagination-bottom: auto;
+  }
+
+  &--top-right {
+    --#{$prefix}carousel-pagination-bottom: auto;
+    justify-content: flex-end;
+  }
+
+  &--bottom-left {
+    --#{$prefix}carousel-pagination-top: auto;
+    justify-content: flex-start;
+  }
+
+  &--bottom-center {
+    --#{$prefix}carousel-pagination-top: auto;
+
+  }
+
+  &--bottom-right {
+    --#{$prefix}carousel-pagination-top: auto;
+    justify-content: flex-end;
+  }
+}
+
+/* Bullets */
+.carousel-pagination-bullet {
+  width: var(--#{$prefix}carousel-pagination-bullet-width);
+  height: var(--#{$prefix}carousel-pagination-bullet-height);
+  pointer-events: auto;
+  cursor: pointer;
+  background: var(--#{$prefix}carousel-pagination-bullet-inactive-color);
+  opacity: var(--#{$prefix}carousel-pagination-bullet-inactive-opacity);
+  @include border-radius(var(--#{$prefix}carousel-pagination-bullet-border-radius));
+
+  @at-root button#{&} {
+    padding: 0;
+    margin: 0;
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .carousel-pagination-clickable & {
+    cursor: pointer;
+  }
+
+  &:only-child {
+    display: none;
+  }
+}
+
+.carousel-pagination-bullet-active {
+  background: var(--#{$prefix}carousel-pagination-color);
+  opacity: var(--#{$prefix}carousel-pagination-bullet-opacity);
+}
+
+.carousel-pagination-lock {
+  display: none;
+}

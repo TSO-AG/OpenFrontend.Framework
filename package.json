@@ -18,6 +18,7 @@
     "glightbox": "^3.2.0",
     "highlight.js": "^11.7.0",
     "raty-js": "^4.2.0",
+    "swiper": "^11.0.2",
     "tablesort": "^5.3.0"
   },
   "devDependencies": {

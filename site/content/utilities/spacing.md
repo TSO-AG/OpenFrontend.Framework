@@ -98,6 +98,49 @@ The syntax is nearly the same as the default, positive margin utilities, but wit
 }
 ```
 
+## Layout spacing
+OpenFrontend.Framework enhances Bootstrap features by providing custom classes for better management of layout and spacing.
+
+OpenFrontend.Framework Classes:
+
+1. These classes apply margins to sections.
+
+- `mb-section` - applies a bottom margin to a section.
+- `mt-section` - applies a top margin to a section.
+- `mb-n-section` - applies a negative bottom margin to a section.
+- `mt-n-section` applies a negative top margin to a section.
+
+2. These classes cater to individual elements.
+
+- `mb-element` - applies a bottom margin to an element.
+- `mt-element` - applies a top margin to an element.
+- `mb-n-element` - applies a negative bottom margin to an element.
+- `mt-n-element` - applies a negative top margin for an element.
+
+The negative margin classes can assist in overriding default margins or generating specific layout effects.
+
+{{< example class="bd-example-cssgrid" >}}
+
+<div class="mb-element wrapper wrapper-bg-dark py-5">
+  <div class="wrapper-content text-center">Sample wrapper content</div>
+</div>
+
+<div class="mb-section wrapper wrapper-bg-light py-5">
+  <div class="wrapper-content text-center">Sample wrapper content</div>
+</div>
+
+<div class="mb-section wrapper wrapper-bg-dark py-5">
+  <div class="wrapper-content text-center">Sample wrapper content</div>
+</div>
+
+<div class="mt-n-section wrapper wrapper-bg-light py-5">
+  <div class="wrapper-content text-center">Sample wrapper content</div>
+</div>
+
+{{< /example >}}
+
+These custom classes by OpenFrontend.Framework offer more flexibility in building and spacing your designs, leading to cleaner, well-structured, and effective designs. Keep coding and crafting wonderful applications!
+
 ## Gap
 
 When using `display: grid` or `display: flex`, you can make use of `gap` utilities on the parent element. This can save on having to add margin utilities to individual children of a grid or flex container. Gap utilities are responsive by default, and are generated via our utilities API, based on the `$spacers` Sass map.

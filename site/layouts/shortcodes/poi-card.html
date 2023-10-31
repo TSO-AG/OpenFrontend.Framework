@@ -1,0 +1,79 @@
+<div class="card{{ if eq (.Get "layout") "horizontal" }} card-horizontal mb-3{{ end }}">
+  <div class="card-media">
+    <div class="card-media__visual">
+      <svg class="bd-placeholder-img img-fluid" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Responsive image</text></svg>
+    </div>
+    <div class="card-media__content card-media__content--top-right">
+      <div class="state state--open">
+        open
+      </div>
+    </div>
+    <div class="card-media__content card-media__content--bottom-right">
+      <div class="labels">
+        <div class="labels-item">
+          <figure><img class="bd-placeholder-img" alt="Placeholder : A" width="36" height="36" src="data:image/svg+xml,%3Csvg%20style='font-size:%201.125rem;%20font-family:system-ui,-apple-system,%22Segoe%20UI%22,Roboto,%22Helvetica%20Neue%22,%22Noto%20Sans%22,%22Liberation%20Sans%22,Arial,sans-serif,%22Apple%20Color%20Emoji%22,%22Segoe%20UI%20Emoji%22,%22Segoe%20UI%20Symbol%22,%22Noto%20Color%20Emoji%22;%20-webkit-user-select:%20none;%20-moz-user-select:%20none;%20user-select:%20none;%20text-anchor:%20middle;'%20width='36'%20height='36'%20xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EPlaceholder%3C/title%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%23868e96'%3E%3C/rect%3E%3Ctext%20x='50%25'%20y='50%25'%20fill='%23dee2e6'%20dy='.3em'%3EA%3C/text%3E%3C/svg%3E"></figure>
+        </div>
+        <div class="labels-item">
+          <figure><img class="bd-placeholder-img" alt="Placeholder : B" width="36" height="36" src="data:image/svg+xml,%3Csvg%20style='font-size:%201.125rem;%20font-family:system-ui,-apple-system,%22Segoe%20UI%22,Roboto,%22Helvetica%20Neue%22,%22Noto%20Sans%22,%22Liberation%20Sans%22,Arial,sans-serif,%22Apple%20Color%20Emoji%22,%22Segoe%20UI%20Emoji%22,%22Segoe%20UI%20Symbol%22,%22Noto%20Color%20Emoji%22;%20-webkit-user-select:%20none;%20-moz-user-select:%20none;%20user-select:%20none;%20text-anchor:%20middle;'%20width='36'%20height='36'%20xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EPlaceholder%3C/title%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%23868e96'%3E%3C/rect%3E%3Ctext%20x='50%25'%20y='50%25'%20fill='%23dee2e6'%20dy='.3em'%3EB%3C/text%3E%3C/svg%3E"></figure>
+        </div>
+        <div class="labels-item">
+          <figure><img class="bd-placeholder-img" alt="Placeholder : C" width="36" height="36" src="data:image/svg+xml,%3Csvg%20style='font-size:%201.125rem;%20font-family:system-ui,-apple-system,%22Segoe%20UI%22,Roboto,%22Helvetica%20Neue%22,%22Noto%20Sans%22,%22Liberation%20Sans%22,Arial,sans-serif,%22Apple%20Color%20Emoji%22,%22Segoe%20UI%20Emoji%22,%22Segoe%20UI%20Symbol%22,%22Noto%20Color%20Emoji%22;%20-webkit-user-select:%20none;%20-moz-user-select:%20none;%20user-select:%20none;%20text-anchor:%20middle;'%20width='36'%20height='36'%20xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EPlaceholder%3C/title%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%23868e96'%3E%3C/rect%3E%3Ctext%20x='50%25'%20y='50%25'%20fill='%23dee2e6'%20dy='.3em'%3EC%3C/text%3E%3C/svg%3E"></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-info">Lorem ipsum</h5>
+    <div class="card-title-rating">
+      <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
+      <div class="card-title-star">
+        <div class="rating rating-sm">
+          <i class="star-on-png"></i>
+          <i class="star-on-png"></i>
+          <i class="star-on-png"></i>
+          <i class="star-half-png"></i>
+          <i class="star-off-png"></i>
+        </div>
+      </div>
+    </div>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="card-tags">
+      <div class="tag-list">
+        <span class="tag">Tag 01</span>
+        <span class="tag text-bg-light">Tag 02</span>
+        <span class="tag text-bg-light">Another tag</span>
+        <span class="tag text-bg-light">…</span>
+      </div>
+    </div>
+    <div class="user-rating">
+      <div class="user-rating__icon">
+        <i class="ofi-people-fill"></i>
+      </div>
+      <div class="user-rating__label">User-Rating:</div>
+      <div class="user-rating__score">
+        <span class="user-rating__score-value text-success">4.5</span>/<span class="user-rating__score-total">5</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-action">
+    <div class="card-action__content">
+      <div class="price">
+        <div class="price__label">AB CHF</div>
+        <div class="price__value">15.00</div>
+      </div>
+    </div>
+    <div class="card-action__buttons">
+      <button type="button" class="btn btn-icon btn-primary">
+        <i class="ofi-cart-fill"></i>
+      </button>
+      <button type="button" class="btn btn-icon btn-primary">
+        <i class="ofi-heart-fill"></i>
+      </button>
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
+        More <i class="ofi-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>

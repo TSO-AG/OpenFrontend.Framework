@@ -1,0 +1,165 @@
+---
+layout: examples
+title: POI List
+body_class: ""
+---
+
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        {{< poi-list-filter id="poi-list-grid-view" >}}
+      </div>
+
+      <div class="col-md-8">
+        {{< poi-list-sorting id="poi-list-grid-view" active-view="grid" >}}
+
+        <div>
+          <div class="row gy-4">
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+            <div class="col-md-4">
+              {{< poi-card >}}
+            </div>
+          </div>
+        </div>
+
+        <div>
+          {{< poi-list-pagination id="poi-list-grid-view" >}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        {{< poi-list-filter id="poi-list-list-view" >}}
+      </div>
+
+      <div class="col-md-8">
+        {{< poi-list-sorting id="poi-list-list-view" active-view="list" >}}
+
+        <div>
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+          {{< poi-card layout="horizontal" >}}
+        </div>
+
+        <div>
+          {{< poi-list-pagination id="poi-list-list-view" >}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        {{< poi-list-filter id="poi-list-map-view" >}}
+      </div>
+
+      <div class="col-md-8">
+        {{< poi-list-sorting id="poi-list-map-view" active-view="map" >}}
+
+        <div>
+          <div class="aspect aspect-16x9">
+            <div id="mapOpenStreetMap" class="overflow-hidden"></div>
+          </div>
+
+          <div id="map-marker-osm-1" class="visually-hidden">
+            <div class="map-marker position-relative">
+              <div class="map-marker-image">
+                <figure>
+                  {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+                </figure>
+              </div>
+              <div class="map-marker-content">
+                <div class="map-marker-info">Product family | Place</div>
+                <div class="map-marker-info">DD.MM.YY - DD.MM.YY</div>
+                <h4 class="map-marker-title">Title</h4>
+                <a href="#" class="icon-link icon-link-hover stretched-link">
+                  View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div id="map-marker-osm-2" class="visually-hidden">
+            <div class="map-marker position-relative">
+              <div class="map-marker-image">
+                <figure>
+                  {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+                </figure>
+              </div>
+              <div class="map-marker-content">
+                <div class="map-marker-info">Product family | Place</div>
+                <div class="map-marker-info">DD.MM.YY - DD.MM.YY</div>
+                <h4 class="map-marker-title">Title</h4>
+                <a href="#" class="icon-link icon-link-hover stretched-link">
+                  View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+                integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+                crossorigin=""/>
+
+          <!-- Make sure you put this AFTER Leaflet's CSS -->
+          <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+                  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+                  crossorigin=""></script>
+
+          <script>
+            {
+              let map = L.map('mapOpenStreetMap', {
+                zoomControl: false
+              }).setView([47.41340, 9.34799], 13);
+
+              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              }).addTo(map);
+
+              L.control.zoom({
+                position: 'bottomright'
+              }).addTo(map);
+
+              L.marker([47.41140, 9.37299]).addTo(map)
+                .bindPopup(document.getElementById('map-marker-osm-1').children[0], { minWidth: 360, maxWidth: 360 });
+
+              L.marker([47.41640, 9.32899]).addTo(map)
+                .bindPopup(document.getElementById('map-marker-osm-2').children[0], { minWidth: 360, maxWidth: 360 });
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

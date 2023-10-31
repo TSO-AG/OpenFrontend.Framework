@@ -173,7 +173,8 @@
 
 // Ratio helpers
 .bd-example-ratios {
-  .ratio {
+  .ratio,
+  .aspect {
     display: inline-block;
     width: 10rem;
     color: var(--bs-secondary-color);
@@ -187,12 +188,21 @@
     }
   }
 }
+
 .bd-example-ratios-breakpoint {
   .ratio-4x3 {
     width: 16rem;
 
     @include media-breakpoint-up(md) {
       --bs-aspect-ratio: 50%; // 2x1
+    }
+  }
+
+  .aspect-4x3 {
+    width: 16rem;
+
+    @include media-breakpoint-up(md) {
+      --bs-aspect-ratio: 2 / 1; // 2x1
     }
   }
 }

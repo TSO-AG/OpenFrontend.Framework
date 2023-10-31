@@ -32,3 +32,13 @@
     }
   }
 }
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    [data-of-table-sort] {
+      --#{$prefix}table-sort-indicator-default: #{escape-svg($table-sort-indicator-default-dark)};
+      --#{$prefix}table-sort-indicator-asc: #{escape-svg($table-sort-indicator-asc-dark)};
+      --#{$prefix}table-sort-indicator-desc: #{escape-svg($table-sort-indicator-desc-dark)};
+    }
+  }
+}

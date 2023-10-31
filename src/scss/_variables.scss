@@ -406,6 +406,7 @@ $wrapper-content-top-right-x: $wrapper-content-top-right-y !default;
 // Social links
 // scss-docs-start social-links-variable
 $social-links-gap: .5rem !default;
+$social-links-gap-lg: 1.5rem !default;
 $social-link-bg: $primary !default;
 $social-link-color: #fff !default;
 $social-link-border-style: null !default;
@@ -413,12 +414,18 @@ $social-link-border-width: null !default;
 $social-link-border-color: null !default;
 $social-link-border-radius: 50% !default;
 $social-link-font-size: 1rem !default;
+$social-link-font-size-lg: 1.5rem !default;
 $social-link-width: 2em !default;
+$social-link-width-lg: 2em !default;
 $social-link-height: $social-link-width !default;
+$social-link-height-lg: $social-link-width-lg !default;
 $social-link-hover-bg: mix(#000, $social-link-bg, 15%) !default;
 $social-link-hover-color: #fff !default;
 $social-link-hover-border-color: null !default;
-$social-link-transition:  color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
+$social-link-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
+$social-link-label-color: var(--#{$prefix}body-color) !default;
+$social-link-label-hover-color: var(--#{$prefix}body-color) !default;
+$social-link-label-font-size: var(--#{$prefix}body-font-size) !default;
 // scss-docs-end social-links-variables
 
 // Icon box

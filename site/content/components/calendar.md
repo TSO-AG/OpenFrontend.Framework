@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     events: [
       {
         title: "All day event",
-        start: event1.setDate(event1.getDate() - 5),
+        start: event1.setDate(event1.getDate() - 2),
         allDay: true,
       },
       {
@@ -79,7 +79,7 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 {{< bs-table "table" >}}
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
-| `events` | `array` | `[]` | The events to be displayed. |
+| `events` | `array` | `[]` | The events to be displayed. See the data structure below. |
 {{< /bs-table >}}
 
 ### Event data structure

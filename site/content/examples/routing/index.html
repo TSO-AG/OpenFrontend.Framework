@@ -30,8 +30,14 @@ body_class: ""
     </nav>
 
     <div>
-      <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#share-modal"><i class="ofi-share"></i> Teilen</button>
-      <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#favorites-modal"><i class="ofi-star-fill"></i> Merken</button>
+      <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#share-modal" aria-labelledby="share-modal-label">
+        <i class="ofi-share"></i>
+        <span class="d-none d-lg-inline">Teilen</span>
+      </button>
+      <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
+        <i class="ofi-star-fill"></i>
+        <span class="d-none d-lg-inline">Merken</span>
+      </button>
     </div>
   </div>
 

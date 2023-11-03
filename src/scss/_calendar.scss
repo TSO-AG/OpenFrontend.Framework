@@ -3,3 +3,28 @@
   // TODO
   // scss-docs-end calendar-css-vars
 }
+
+.calendar {
+  .fc-event {
+    cursor: pointer;
+  }
+}
+
+.calendar-event {
+  max-width: 200px;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.calendar-event-image {
+  img {
+    @extend .img-fluid;
+  }
+}
+
+.calendar-event-date {
+  @extend small;
+  @extend .text-muted;
+}

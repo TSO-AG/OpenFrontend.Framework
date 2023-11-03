@@ -58,7 +58,8 @@ class Calendar extends BaseComponent {
   // Private
   _initCalendar() {
     const options = {
-      events: this._config.events,
+      events: this._config.events.map((event, index) => ({...event, id: index})),
+      eventClick: e => this._openEventPopover(e.el, e.event),
       eventTimeFormat: {
         hour: 'numeric',
         minute: '2-digit',
@@ -78,6 +79,41 @@ class Calendar extends BaseComponent {
     this._calendar.render()
 
     this._element.dispatchEvent(new CustomEvent(EVENT_CALENDAR_INITIALIZED))
+  }
+
+  async _openEventPopover(eventEl, calendarEvent) {
+    const eventData = this._config.events[calendarEvent.id];
+
+    if (!eventData || !eventData.content) {
+      return
+    }
+
+    const popover = await openFrontend.Popover.then(component => component.getOrCreateInstance(eventEl, {
+      content: eventData.content,
+      html: true,
+      placement: 'auto',
+      sanitize: false,
+    }))
+
+    if (popover._isShown()) {
+      popover.hide()
+      popover.removeClickListener()
+    } else {
+      this._hidePopoverOnClickOutside(popover)
+      popover.show()
+    }
+  }
+
+  _hidePopoverOnClickOutside(popover) {
+    const outsideClickListener = event => {
+      if (popover._element !== event.target && !popover.tip.contains(event.target)) {
+        popover.hide()
+        popover.removeClickListener()
+      }
+    }
+
+    popover.removeClickListener = () => document.removeEventListener('click', outsideClickListener)
+    document.addEventListener('click', outsideClickListener)
   }
 }
 

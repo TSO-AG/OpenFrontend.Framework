@@ -24,21 +24,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const event2 = new Date();
   const event3 = new Date();
 
+  const dummyContent = `
+<div class="calendar-event">
+  <figure class="calendar-event-image">
+    <img src="assets/media/sample-image.jpg" alt="">
+  </figure>
+  <p class="calendar-event-date">December 16 @ 12:00 - 13:30</p>
+  <h6>Yoga at the Park</h6>
+  <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
+</div>
+`;
+
   openFrontend.Calendar.then(component => component.getOrCreateInstance('#calendar', {
     events: [
       {
-        title: "All day event",
+        title: 'All day event',
+        content: dummyContent,
         start: event1.setDate(event1.getDate() - 2),
         allDay: true,
       },
       {
-        title: "Multiple days event",
+        title: 'Multiple days event',
+        content: dummyContent,
         start: event2.setDate(event2.getDate() + 2),
         end: event2.setDate(event2.getDate() + 3),
         allDay: true,
       },
       {
-        title: "Exact time event",
+        title: 'Exact time event',
+        content: dummyContent,
         start: event3.setHours(8, 30, 0),
         end: event3.setHours(11, 0, 0),
         allDay: false,
@@ -53,17 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
   "events": [
     {
       "title": "All day event",
+      "content": "<div class=\"calendar-event\">…</div>",
       "start": "YYYY-MM-DD",
       "allDay": true
     },
     {
       "title": "Multiple days event",
+      "content": "<div class=\"calendar-event\">…</div>",
       "start": "YYYY-MM-DD",
       "end": "YYYY-MM-DD",
       "allDay": true
     },
     {
       "title": "Exact time event",
+      "content": "<div class=\"calendar-event\">…</div>",
       "start": "YYYY-MM-DD\Thh:mm:ss",
       "end": "YYYY-MM-DD\Thh:mm:ss",
       "allDay": false
@@ -92,17 +109,22 @@ The `start` and `end` must be provided in the `YYYY-MM-DD` date format, or if th
 const events = [
   {
     title: 'All day event',
-    start: '2010-01-01'
+    content: '<div class="calendar-event">…</div>',
+    start: '2010-01-01',
+    allDay: true
   },
   {
     title: 'Multiple days event',
+    content: '<div class="calendar-event">…</div>',
     start: '2013-01-05',
-    end: '2010-01-07'
+    end: '2010-01-07',
+    allDay: true
   },
   {
     title: 'Event at specific time',
+    content: '<div class="calendar-event">…</div>',
     start: '2010-01-09T12:30:00',
-    allDay: false // will make the time show
+    allDay: false
   }
 ];
 ```

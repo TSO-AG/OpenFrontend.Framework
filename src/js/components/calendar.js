@@ -65,6 +65,7 @@ class Calendar extends BaseComponent {
         minute: '2-digit',
         meridiem: false,
       },
+      firstDay: 1,
       headerToolbar: {
         start: 'title',
         center: '',

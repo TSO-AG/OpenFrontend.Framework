@@ -4,12 +4,6 @@
   // scss-docs-end calendar-css-vars
 }
 
-.calendar {
-  .fc-event {
-    cursor: pointer;
-  }
-}
-
 .calendar-event {
   max-width: 200px;
 
@@ -27,4 +21,29 @@
 .calendar-event-date {
   @extend small;
   @extend .text-muted;
+}
+
+.calendar {
+  .fc-event {
+    cursor: pointer;
+  }
+
+  .fc-dayGridMonth-button,
+  .fc-listMonth-button {
+    @extend .btn-outline-primary;
+  }
+
+  .fc-next-button,
+  .fc-prev-button,
+  .fc-today-button {
+    @extend .btn-primary;
+  }
+
+  .fc-popover {
+    z-index: calc(var(--bs-popover-zindex) - 1);
+
+    .popover-header {
+      padding: var(--bs-popover-header-padding-y) var(--bs-popover-header-padding-x);
+    }
+  }
 }

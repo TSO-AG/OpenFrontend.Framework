@@ -20,9 +20,8 @@ The component uses the [FullCalendar](https://fullcalendar.io/) library.
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const event1 = new Date();
-  const event2 = new Date();
-  const event3 = new Date();
+  const now = new Date();
+  const nextMonth = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0);
 
   const dummyContent = `
 <div class="calendar-event">
@@ -35,27 +34,92 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 `;
 
+  function getDate(day, hour = 0, minutes = 0) {
+    return new Date(now.getFullYear(), now.getMonth(), day, hour, minutes);
+  }
+
   openFrontend.Calendar.then(component => component.getOrCreateInstance('#calendar', {
     events: [
       {
         title: 'All day event',
         content: dummyContent,
-        start: event1.setDate(event1.getDate() - 2),
+        start: getDate(8),
         allDay: true,
       },
       {
         title: 'Multiple days event',
         content: dummyContent,
-        start: event2.setDate(event2.getDate() + 2),
-        end: event2.setDate(event2.getDate() + 3),
+        start: getDate(6),
+        end: getDate(10),
         allDay: true,
       },
       {
         title: 'Exact time event',
         content: dummyContent,
-        start: event3.setHours(8, 30, 0),
-        end: event3.setHours(11, 0, 0),
+        start: getDate(10, 8, 30),
+        end: getDate(10, 11, 0),
         allDay: false,
+      },
+      {
+        title: 'Dummy event 1',
+        content: dummyContent,
+        start: getDate(14),
+        allDay: true,
+      },
+      {
+        title: 'Dummy event 2',
+        content: dummyContent,
+        start: getDate(22),
+        allDay: true,
+      },
+      {
+        title: 'Dummy event 3',
+        content: dummyContent,
+        start: getDate(22),
+        end: getDate(25),
+        allDay: true,
+      },
+      {
+        title: 'Dummy event 4',
+        content: dummyContent,
+        start: getDate(27, 10, 0),
+        end: getDate(27, 12, 0),
+        allDay: false,
+      },
+      {
+        title: 'Dummy event 5',
+        content: dummyContent,
+        start: getDate(27, 14, 0),
+        end: getDate(27, 16, 0),
+        allDay: false,
+      },
+      {
+        title: 'Dummy event 6',
+        content: dummyContent,
+        start: getDate(27, 18, 0),
+        end: getDate(27, 20, 0),
+        allDay: false,
+      },
+      {
+        title: 'Dummy event 7',
+        content: dummyContent,
+        start: getDate(27, 22, 0),
+        end: getDate(27, 23, 30),
+        allDay: false,
+      },
+      {
+        title: 'Dummy event 8',
+        content: dummyContent,
+        start: getDate(22, 15, 0),
+        end: getDate(22, 18, 0),
+        allDay: false,
+      },
+      {
+        title: 'Next month event',
+        content: dummyContent,
+        start: nextMonth.setMonth(nextMonth.getMonth() + 1),
+        end: nextMonth.setDate(nextMonth.getDate() + 14),
+        allDay: true,
       },
     ],
   }))

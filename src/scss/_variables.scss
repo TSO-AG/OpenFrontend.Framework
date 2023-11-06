@@ -548,16 +548,23 @@ $page-menu-dark-color:                $header-dark-color !default;
 // scss-docs-end page-menu-dark-variables
 
 // scss-docs-start page-navigation-variables
-$page-nav-transition:                    left .3s ease-in-out !default;
-$page-nav-submenu-icon:                  $ofi-arrow-right !default;
+$page-nav-transition:                    left .3s ease-in-out, transform .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out !default;
+$page-nav-panel-bg:                      var(--#{$prefix}body-bg) !default;
 $page-nav-link-padding-y:                .5rem !default;
 $page-nav-link-padding-x:                1rem !default;
 $page-nav-link-font-size:                null !default;
 $page-nav-link-font-weight:              null !default;
-$page-nav-link-color:                    var(--#{$prefix}link-color) !default;
+$page-nav-link-color:                    var(--#{$prefix}body-color) !default;
 $page-nav-link-hover-color:              var(--#{$prefix}link-hover-color) !default;
 $page-nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
 $page-nav-link-disabled-color:           var(--#{$prefix}secondary-color) !default;
-$page-nav-link-back-icon-color:          $primary !default;
-$page-nav-link-back-icon:                url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'> <path fill='#{$page-nav-link-back-icon-color}' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>") !default;
+$page-nav-link-toggle-color:             $page-nav-link-color !default;
+$page-nav-link-toggle-hover-color:       $page-nav-link-hover-color !default;
+$page-nav-link-toggle-width:             2em !default;
+$page-nav-link-toggle-border-width:      null !default;
+$page-nav-link-toggle-border-color:      null !default;
+$page-nav-link-toggle-border-style:      null !default;
+$page-nav-link-toggle-icon-transition:   transform .3s ease-in-out !default;
+$page-nav-link-back-color:               var(--#{$prefix}link-color) !default;
+$page-nav-link-back-hover-color:         var(--#{$prefix}link-hover-color) !default;
 // scss-docs-end page-navigation-variables

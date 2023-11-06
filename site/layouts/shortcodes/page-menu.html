@@ -42,27 +42,50 @@
   </div>
 
   <div class="page-nav" data-of-page-navigation>
-    <nav>
+    <nav role="navigation">
       <ul class="page-nav-level-1">
         <li>
           <a href="#" class="page-nav-link active" aria-current="page">Mehr</a>
         </li>
-        <li class="page-nav-submenu">
+        <li class="page-nav-submenu" aria-haspopup="true">
           <a class="page-nav-link" href="#">Inspirieren</a>
+          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+            <i class="ofi-arrow-right"><span class="visually-hidden">Expand submenu Inspirieren</span></i>
+          </button>
           <ul class="page-nav-level-2">
+            <li class="page-nav-back">
+              <button class="page-nav-back-link" data-of-page-menu-close>
+                <i class="ofi-arrow-left"></i>Back
+              </button>
+            </li>
             <li>
               <a class="page-nav-link" href="#">Lorem ipsum 2 - 1</a>
             </li>
-            <li class="page-nav-submenu">
+            <li class="page-nav-submenu" aria-haspopup="true">
               <a class="page-nav-link" href="#">Lorem ipsum 2 - 2</a>
+              <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                <i class="ofi-arrow-right"><span class="visually-hidden">Expand submenu Lorem ipsum 2 - 2</span></i>
+              </button>
               <ul class="page-nav-level-3">
+                <li class="page-nav-back">
+                  <button class="page-nav-back-link" data-of-page-menu-close>
+                    <i class="ofi-arrow-left"></i>Back
+                  </button>
+                </li>
                 <li>
                   <a class="page-nav-link" href="#">Lorem ipsum 2 - 2 - 1</a>
                 </li>
-                <li class="page-nav-submenu">
+                <li class="page-nav-submenu" aria-haspopup="true">
                   <a class="page-nav-link" href="#">Lorem ipsum 2 - 2 - 2</a>
-
+                  <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                    <i class="ofi-arrow-right"><span class="visually-hidden">Expand submenu Lorem ipsum 2 - 2 - 2</span></i>
+                  </button>
                   <ul class="page-nav-level-4">
+                    <li class="page-nav-back">
+                      <button class="page-nav-back-link" data-of-page-menu-close>
+                        <i class="ofi-arrow-left"></i>Back
+                      </button>
+                    </li>
                     <li>
                       <a class="page-nav-link" href="#">Lorem ipsum 2 - 2 - 2 - 1</a>
                     </li>
@@ -91,20 +114,42 @@
             <li>
               <a class="page-nav-link" href="#">Lorem ipsum 2 - 4</a>
             </li>
-            <li class="page-nav-submenu">
+            <li class="page-nav-submenu" aria-haspopup="true">
               <a class="page-nav-link" href="#">Lorem ipsum 2 - 5</a>
+              <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                <i class="ofi-arrow-right"><span class="visually-hidden">Expand submenu Lorem ipsum 2 - 5</span></i>
+              </button>
               <ul class="page-nav-level-3">
+                <li class="page-nav-back">
+                  <button class="page-nav-back-link" data-of-page-menu-close>
+                    <i class="ofi-arrow-left"></i>Back
+                  </button>
+                </li>
                 <li>
                   <a class="page-nav-link" href="#">Lorem ipsum 2 - 5 - 1</a>
                 </li>
-                <li class="page-nav-submenu">
+                <li class="page-nav-submenu" aria-haspopup="true">
                   <a class="page-nav-link" href="#">Lorem ipsum 2 - 5 - 2</a>
-
+                  <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                    <i class="ofi-arrow-right"><span class="visually-hidden">Expand submenu Lorem ipsum 2 - 5 - 2</span></i>
+                  </button>
                   <ul class="page-nav-level-4">
-                    <li class="page-nav-submenu">
+                    <li class="page-nav-back">
+                      <button class="page-nav-back-link" data-of-page-menu-close>
+                        <i class="ofi-arrow-left"></i>Back
+                      </button>
+                    </li>
+                    <li class="page-nav-submenu" aria-haspopup="true">
                       <a class="page-nav-link" href="#">Lorem ipsum 2 - 5 - 2 - 1</a>
-
+                      <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                        <i class="ofi-arrow-right"><span class="visually-hidden">Expand submenu Lorem ipsum 2 - 5 - 2 - 1</span></i>
+                      </button>
                       <ul class="page-nav-level-5">
+                        <li class="page-nav-back">
+                          <button class="page-nav-back-link" data-of-page-menu-close>
+                            <i class="ofi-arrow-left"></i>Back
+                          </button>
+                        </li>
                         <li>
                           <a class="page-nav-link" href="#">Lorem ipsum 2 - 5 - 2 - 1 - 1</a>
                         </li>
@@ -123,13 +168,12 @@
                       <a class="page-nav-link" href="#">Lorem ipsum 2 - 5 - 2 - 2</a>
                     </li>
                     <li>
-                      <a class="page-nav-link" href="#">Lorem ipsum 2 - 5- 2- 3</a>
+                      <a class="page-nav-link" href="#">Lorem ipsum 2 - 5 - 2- 3</a>
                     </li>
                     <li>
                       <a class="page-nav-link" href="#">Lorem ipsum 2 - 5 - 2 - 4</a>
                     </li>
                   </ul>
-
                 </li>
                 <li>
                   <a class="page-nav-link" href="#">Lorem ipsum 2 - 5 - 3</a>
@@ -138,9 +182,17 @@
             </li>
           </ul>
         </li>
-        <li class="page-nav-submenu">
+        <li class="page-nav-submenu" aria-haspopup="true">
           <a href="#" class="page-nav-link">Buchen</a>
+          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+            <i class="ofi-arrow-right"><span class="visually-hidden">Expand submenu Buchen</span></i>
+          </button>
           <ul class="page-nav-level-2">
+            <li class="page-nav-back">
+              <button class="page-nav-back-link" data-of-page-menu-close>
+                <i class="ofi-arrow-left"></i>Back
+              </button>
+            </li>
             <li>
               <a class="page-nav-link" href="#">Lorem ipsum 3 - 1</a>
             </li>

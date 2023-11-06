@@ -11,21 +11,21 @@ const CLASS_NAME_PANEL_PARENT = 'active-panel-parent'
 const PANEL_HEIGHT_PROPERTY_NAME = '--page-nav-panel-height'
 
 const DefaultType = {
-  back: 'string',
-  submenuSelector: 'string',
+  togglePanelButtonsSelector: 'string',
+  closePanelButtonsSelector: 'string',
 }
 
 const Default = {
-  back: 'Back',
-  submenuSelector: 'li.page-nav-submenu',
+  togglePanelButtonsSelector: '[data-of-page-menu-toggle]',
+  closePanelButtonsSelector: '[data-of-page-menu-close]',
 }
 
 class PageNavigation extends BaseComponent {
   constructor(element, config) {
     super(element, config)
-    this._submenuLinks = element.querySelectorAll(this._config.submenuSelector)
-    this._panels = element.querySelectorAll('ul')
-    this._initTogglers()
+    this._togglePanelButtons = element.querySelectorAll(this._config.togglePanelButtonsSelector)
+    this._closePanelButtons = element.querySelectorAll(this._config.closePanelButtonsSelector)
+    this._initTriggers()
   }
 
   // Getters
@@ -44,23 +44,32 @@ class PageNavigation extends BaseComponent {
   // Public
 
   // Private
-  _initTogglers() {
+  _initTriggers() {
     // Open panel on click
-    for (const submenu of this._submenuLinks) {
-      submenu.addEventListener('click', e => {
-        if (e.target === submenu) {
-          e.preventDefault()
-          this._openPanel(submenu)
+    for (const toggleButton of this._togglePanelButtons) {
+      const submenu = toggleButton.closest('li')
+      const panel = submenu.querySelector('ul')
+
+      toggleButton.addEventListener('click', e => {
+        e.preventDefault()
+        if (submenu.classList.contains(CLASS_NAME_SUBMENU_ACTIVE)) {
+          this._closePanel(panel)
+        } else {
+          submenu.classList.add(CLASS_NAME_SUBMENU_ACTIVE)
+          this._openPanel(panel)
           this._closeSiblings(submenu)
-          this._setHighestPanelHeight()
         }
+
+        this._setHighestPanelHeight()
       })
     }
 
     // Close panel when 'Back' is clicked
-    for (const panel of this._panels) {
-      panel.addEventListener('click', e => {
-        if (e.target === panel && panel.classList.contains(CLASS_NAME_PANEL_ACTIVE)) {
+    for (const button of this._closePanelButtons) {
+      button.addEventListener('click', e => {
+        e.preventDefault()
+        const panel = button.closest('ul')
+        if (panel?.classList.contains(CLASS_NAME_PANEL_ACTIVE)) {
           this._closePanel(panel)
           this._setHighestPanelHeight()
         }
@@ -68,28 +77,36 @@ class PageNavigation extends BaseComponent {
     }
   }
 
-  _openPanel(submenu) {
-    const panel = submenu.querySelector('ul')
-    const parent = submenu.parentElement.closest('ul')
-
-    submenu.classList.add(CLASS_NAME_SUBMENU_ACTIVE)
-
-    if (submenu) {
-      panel.classList.add(CLASS_NAME_PANEL_ACTIVE)
-    }
-
-    if (parent) {
-      parent.classList.add(CLASS_NAME_PANEL_PARENT)
-    }
+  _openPanel(panel) {
+    this._activateMenuPanel(panel)
+    this._activateMenuPanelParent(panel)
   }
 
   _closePanel(panel) {
-    if (!panel) {
-      return
-    }
+    this._deactivateMenuPanel(panel)
+    this._deactivateMenuPanelParent(panel)
+    this._closeAllPanelChild(panel)
+  }
 
+  _activateMenuPanel(panel) {
+    panel.classList.add(CLASS_NAME_PANEL_ACTIVE)
+    panel.parentElement.querySelector(this._config.submenuSelector)?.setAttribute('aria-expanded', 'true')
+  }
+
+  _deactivateMenuPanel(panel) {
     panel.classList.remove(CLASS_NAME_PANEL_ACTIVE)
+    panel.parentElement.querySelector(this._config.submenuSelector)?.setAttribute('aria-expanded', 'false')
+  }
 
+  _activateMenuPanelParent(panel) {
+    const parentPanel = panel.parentElement.closest('ul')
+
+    if (parentPanel) {
+      parentPanel.classList.add(CLASS_NAME_PANEL_PARENT)
+    }
+  }
+
+  _deactivateMenuPanelParent(panel) {
     const parentPanel = panel.parentElement.closest('ul')
     const parenSubmenu = panel.parentElement.closest('li')
 
@@ -122,7 +139,7 @@ class PageNavigation extends BaseComponent {
     this._element.style.removeProperty(PANEL_HEIGHT_PROPERTY_NAME)
 
     for (const panel of panels) {
-      const panelHeight = panel.scrollHeight // @TODO - do not include hidden children for height calculation
+      const panelHeight = panel.scrollHeight
       if (panelHeight > maxHeight) {
         maxHeight = panelHeight
       }

@@ -1,0 +1,25 @@
+.header-search-wrapper {
+  // scss-docs-start header-search-css-vars
+  --#{$prefix}header-search-padding-x: #{if($header-search-padding-x == null, 0, $header-search-padding-x)};
+  --#{$prefix}header-search-padding-y: #{$header-search-padding-y};
+  --#{$prefix}header-search-background-color: #{$header-search-light-background};
+  --#{$prefix}header-search-color: #{$header-search-light-color};
+  --#{$prefix}header-search-box-shadow: #{$header-search-box-shadow};
+  // scss-docs-end header-search-css-vars
+
+  color: var(--#{$prefix}header-search-color);
+  background-color: var(--#{$prefix}header-search-background-color);
+  box-shadow: var(--#{$prefix}header-search-background-color);
+}
+
+.header-search {
+  padding: var(--#{$prefix}header-search-padding-y) var(--#{$prefix}header-search-padding-x);
+}
+
+.header-search-wrapper-dark {
+  // scss-docs-start header-search-dark-css-vars
+  --#{$prefix}header-search-background-color: #{$header-search-dark-background};
+  --#{$prefix}header-search-color: #{$header-search-dark-color};
+  // scss-docs-end header-search-dark-css-vars
+}
+

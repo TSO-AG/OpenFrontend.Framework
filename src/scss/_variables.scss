@@ -534,6 +534,7 @@ $header-dark-brand-hover-color:       $header-dark-active-color !default;
 
 // Page menu
 // scss-docs-start page-menu-variables
+$page-menu-breakpoint:                md !default;
 $page-menu-padding-y:                 $spacer !default;
 $page-menu-padding-x:                 0 !default;
 $page-menu-light-background:          $header-light-background-color !default;
@@ -542,7 +543,6 @@ $page-menu-box-shadow:                0 1rem 1rem rgba(0, 0, 0, .075) !default;
 // scss-docs-end page-menu-variables
 
 // scss-docs-start page-menu-dark-variables
-$page-menu-breakpoint:                md !default;
 $page-menu-dark-background:           $header-dark-background-color !default;
 $page-menu-dark-color:                $header-dark-color !default;
 // scss-docs-end page-menu-dark-variables
@@ -568,3 +568,17 @@ $page-nav-link-toggle-icon-transition:   transform .3s ease-in-out !default;
 $page-nav-link-back-color:               var(--#{$prefix}link-color) !default;
 $page-nav-link-back-hover-color:         var(--#{$prefix}link-hover-color) !default;
 // scss-docs-end page-navigation-variables
+
+// Header search
+// scss-docs-start header-search-variables
+$header-search-padding-y:                 $spacer !default;
+$header-search-padding-x:                 0 !default;
+$header-search-light-background:          $header-light-background-color !default;
+$header-search-light-color:               $header-light-color !default;
+$header-search-box-shadow:                0 1rem 1rem rgba(0, 0, 0, .075) !default;
+// scss-docs-end header-search-variables
+
+// scss-docs-start page-menu-dark-variables
+$header-search-dark-background:           $header-dark-background-color !default;
+$header-search-dark-color:                $header-dark-color !default;
+// scss-docs-end page-menu-dark-variables

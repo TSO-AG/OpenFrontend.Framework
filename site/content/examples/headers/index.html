@@ -9,7 +9,7 @@ body_class: ""
 <main>
   <h1 class="visually-hidden">Headers examples</h1>
 
-  <header class="header">
+  <header class="header" data-of-header>
     <div class="container">
       <div class="header-brand">
         <a href="#">
@@ -55,15 +55,34 @@ body_class: ""
             </ul>
           </div>
         </div>
-        <a href="#" class="header-link">
-          <span class="header-link-icon"><i class="ofi-search"></i></span>
-          <span class="header-link-text">Suche</span>
-        </a>
+        <div>
+          <a href="#" class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch"
+             aria-controls="headerSearch"
+             aria-expanded="false" aria-label="Toggle header search">
+            <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
+            <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+            <span class="header-link-text">Suche</span>
+          </a>
+          <div class="collapse header-collapse header-search-wrapper" id="headerSearch">
+            <div class="container">
+              <div class="header-search">
+                <form>
+                  <div class="input-group">
+                    <input type="text" class="form-control form-control-lg" placeholder="Suche" aria-label="Suche">
+                    <button class="btn btn-icon btn-primary btn-lg" type="submit" aria-label="Suche starten"><i
+                      class="ofi-search" aria-hidden="true"></i></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
         <div>
           <button class="header-link" type="button" data-bs-toggle="collapse"
                   data-bs-target="#pageMenu" aria-controls="pageMenu"
                   aria-expanded="false" aria-label="Toggle navigation">
-            <span class="header-link-icon"><i class="ofi-list"></i></span>
+            <span class="header-link-icon d-none-collapsed"><i class="ofi-list"></i></span>
+            <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
             <span class="header-link-text">Menu</span>
           </button>
 
@@ -80,7 +99,7 @@ body_class: ""
 
   <div class="b-example-divider"></div>
 
-  <div class="header" style="z-index: 8">
+  <div class="header" style="z-index: 8" data-of-header>
     <div class="container">
       <div class="header-content d-none d-lg-flex">
         <a href="#" class="header-link">
@@ -121,15 +140,35 @@ body_class: ""
             </ul>
           </div>
         </div>
-        <a href="#" class="header-link">
-          <span class="header-link-icon"><i class="ofi-search"></i></span>
-          <span class="header-link-text">Suche</span>
-        </a>
+
+        <div>
+          <a href="#" class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch2"
+             aria-controls="headerSearch2"
+             aria-expanded="false" aria-label="Toggle header search">
+            <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
+            <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+            <span class="header-link-text">Suche</span>
+          </a>
+          <div class="collapse header-collapse header-search-wrapper" id="headerSearch2">
+            <div class="container">
+              <div class="header-search">
+                <form>
+                  <div class="input-group">
+                    <input type="text" class="form-control form-control-lg" placeholder="Suche" aria-label="Suche">
+                    <button class="btn btn-icon btn-primary btn-lg" type="submit" aria-label="Suche starten"><i
+                      class="ofi-search" aria-hidden="true"></i></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
         <div>
           <button class="header-link" type="button" data-bs-toggle="collapse"
                   data-bs-target="#pageMenu2" aria-controls="pageMenu2"
                   aria-expanded="false" aria-label="Toggle navigation">
-            <span class="header-link-icon"><i class="ofi-list"></i></span>
+            <span class="header-link-icon d-none-collapsed"><i class="ofi-list"></i></span>
+            <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
             <span class="header-link-text">Menu</span>
           </button>
 
@@ -146,7 +185,7 @@ body_class: ""
 
   <div class="b-example-divider"></div>
 
-  <header class="header header-dark" style="z-index: 7">
+  <header class="header header-dark" style="z-index: 7" data-of-header>
     <div class="container">
       <div class="header-brand">
         <a href="#">
@@ -192,15 +231,34 @@ body_class: ""
             </ul>
           </div>
         </div>
-        <a href="#" class="header-link">
-          <span class="header-link-icon"><i class="ofi-search"></i></span>
-          <span class="header-link-text">Suche</span>
-        </a>
+        <div>
+          <a href="#" class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch3"
+             aria-controls="headerSearch3"
+             aria-expanded="false" aria-label="Toggle header search">
+            <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
+            <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+            <span class="header-link-text">Suche</span>
+          </a>
+          <div class="collapse header-collapse header-search-wrapper" id="headerSearch3">
+            <div class="container">
+              <div class="header-search">
+                <form>
+                  <div class="input-group">
+                    <input type="text" class="form-control form-control-lg" placeholder="Suche" aria-label="Suche">
+                    <button class="btn btn-icon btn-primary btn-lg" type="submit" aria-label="Suche starten"><i
+                      class="ofi-search" aria-hidden="true"></i></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
         <div>
           <button class="header-link" type="button" data-bs-toggle="collapse"
                   data-bs-target="#pageMenu3" aria-controls="pageMenu3"
                   aria-expanded="false" aria-label="Toggle navigation">
-            <span class="header-link-icon"><i class="ofi-list"></i></span>
+            <span class="header-link-icon d-none-collapsed"><i class="ofi-list"></i></span>
+            <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
             <span class="header-link-text">Menu</span>
           </button>
 
@@ -217,7 +275,7 @@ body_class: ""
 
   <div class="b-example-divider"></div>
 
-  <header class="header header-transparent" style="z-index: 6">
+  <header class="header header-transparent" style="z-index: 6" data-of-header>
     <div class="container">
       <div class="header-brand">
         <a href="#">
@@ -262,14 +320,33 @@ body_class: ""
             </ul>
           </div>
         </div>
-        <a href="#" class="header-link">
-          <span class="header-link-icon"><i class="ofi-search"></i></span>
-          <span class="header-link-text">Suche</span>
-        </a>
+        <div>
+          <a href="#" class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch4"
+             aria-controls="headerSearch4"
+             aria-expanded="false" aria-label="Toggle header search">
+            <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
+            <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+            <span class="header-link-text">Suche</span>
+          </a>
+          <div class="collapse header-collapse header-search-wrapper" id="headerSearch4">
+            <div class="container">
+              <div class="header-search">
+                <form>
+                  <div class="input-group">
+                    <input type="text" class="form-control form-control-lg" placeholder="Suche" aria-label="Suche">
+                    <button class="btn btn-icon btn-primary btn-lg" type="submit" aria-label="Suche starten"><i
+                      class="ofi-search" aria-hidden="true"></i></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
         <div>
           <button class="header-link" type="button" data-bs-toggle="collapse" data-bs-target="#pageMenu4"
                   aria-controls="pageMenu4" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="header-link-icon"><i class="ofi-list"></i></span>
+            <span class="header-link-icon d-none-collapsed"><i class="ofi-list"></i></span>
+            <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
             <span class="header-link-text">Menu</span>
           </button>
 
@@ -284,3 +361,26 @@ body_class: ""
   </header>
   {{< section-banner >}}
 </main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const isClickOutside = (event, collapseElement) => !collapseElement.contains(event.target);
+
+    const closeAllCollapses = () => {
+      document.querySelectorAll('.header-collapse.show')
+        .forEach(async collapse => {
+          const elementsFilter = await openFrontend.Collapse.then(component => component.getInstance(collapse))
+          elementsFilter.hide();
+        });
+    };
+
+    document.addEventListener('click', event => {
+      document.querySelectorAll('.header-collapse.show')
+        .forEach(collapse => {
+          if (isClickOutside(event, collapse)) {
+            closeAllCollapses();
+          }
+        });
+    });
+  });
+</script>

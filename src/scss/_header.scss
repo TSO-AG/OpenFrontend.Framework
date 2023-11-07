@@ -172,6 +172,11 @@
   top: 100%;
   right: 0;
   left: 0;
+  max-height: calc(95vh - var(--bs-header-height)); // stylelint-disable-line function-disallowed-list
+
+  &.show {
+    overflow-y: auto;
+  }
 }
 
 // Header themes

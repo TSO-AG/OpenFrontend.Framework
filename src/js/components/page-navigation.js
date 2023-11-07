@@ -151,7 +151,7 @@ class PageNavigation extends BaseComponent {
 
 export function initMultiple(els) {
   for (const el of els) {
-    PageNavigation.getOrCreateInstance(el, el.dataset.ofPageRating ? JSON.parse(el.dataset.ofRating) : {})
+    PageNavigation.getOrCreateInstance(el, el.dataset.ofPageNavigation ? JSON.parse(el.dataset.ofNavigation) : {})
   }
 }
 

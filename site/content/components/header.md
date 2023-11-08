@@ -12,7 +12,7 @@ toc: true
 
 ### Layout 1
 {{< example class="bd-example-header" >}}
-<header class="header">
+<header class="header" data-of-header>
   <div class="container">
     <div class="header-brand">
       <a href="#">
@@ -98,7 +98,7 @@ toc: true
 
 ### Layout 2
 {{< example class="bd-example-header">}}
-<header class="header">
+<header class="header" data-of-header>
   <div class="container">
     <div class="header-content d-none d-lg-flex">
       <a href="#" class="header-link">
@@ -180,7 +180,7 @@ toc: true
 
 ### Dark header
 {{< example class="bd-example-header" >}}
-<header class="header header-dark">
+<header class="header header-dark" data-of-header>
   <div class="container">
     <div class="header-brand">
       <a href="#">
@@ -232,7 +232,7 @@ toc: true
           <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
           <span class="header-link-text">Suche</span>
         </a>
-        <div class="collapse header-collapse header-search-wrapper" id="headerSearch3">
+        <div class="collapse header-collapse header-search-wrapper header-search-wrapper-dark" id="headerSearch3">
           <div class="container">
             <div class="header-search">
               <form>

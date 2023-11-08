@@ -181,3 +181,17 @@
     cursor: default;
   }
 }
+
+.page-menu-wrapper-dark {
+  .page-nav {
+    --#{$prefix}page-nav-bg: #{$page-nav-dark-panel-dark-bg};
+    --#{$prefix}page-nav-link-color: #{$page-nav-dark-link-color};
+    --#{$prefix}page-nav-link-hover-color: #{$page-nav-dark-link-hover-color};
+    --#{$prefix}page-nav-link-disabled-color: #{$page-nav-dark-link-disabled-color};
+    --#{$prefix}page-nav-link-toggle-color: #{$page-nav-dark-link-toggle-color};
+    --#{$prefix}page-nav-link-toggle-hover-color: #{$page-nav-dark-link-toggle-hover-color};
+    --#{$prefix}page-nav-link-back-color: #{$page-nav-dark-link-back-color};
+    --#{$prefix}page-nav-link-back-hover-color: #{$page-nav-dark-link-back-hover-color};
+  }
+}
+

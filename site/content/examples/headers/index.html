@@ -361,26 +361,3 @@ body_class: ""
   </header>
   {{< section-banner >}}
 </main>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const isClickOutside = (event, collapseElement) => !collapseElement.contains(event.target);
-
-    const closeAllCollapses = () => {
-      document.querySelectorAll('.header-collapse.show')
-        .forEach(async collapse => {
-          const elementsFilter = await openFrontend.Collapse.then(component => component.getInstance(collapse))
-          elementsFilter.hide();
-        });
-    };
-
-    document.addEventListener('click', event => {
-      document.querySelectorAll('.header-collapse.show')
-        .forEach(collapse => {
-          if (isClickOutside(event, collapse)) {
-            closeAllCollapses();
-          }
-        });
-    });
-  });
-</script>

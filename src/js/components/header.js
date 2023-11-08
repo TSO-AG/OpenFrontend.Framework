@@ -36,7 +36,24 @@ class Header extends BaseComponent {
 
   // Private
   _initTriggers() {
-    // TODO
+    document.addEventListener('click', event => {
+      for (const collapse of [...this._headerCollapseElements].filter(collapse => collapse.classList.contains('show'))) {
+        if (this._isClickOutsideCollapse(event, collapse)) {
+          this._closeCollapses(collapse)
+        }
+      }
+    })
+  }
+
+  _isClickOutsideCollapse(event, collapseElement) {
+    return !collapseElement.contains(event.target)
+  }
+
+  async _closeCollapses(collapseElement) {
+    const collapse = await window.openFrontend.Collapse.then(component => component.getInstance(collapseElement))
+    if (collapse) {
+      collapse.hide()
+    }
   }
 
   _setHeaderHeight() {

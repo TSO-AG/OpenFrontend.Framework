@@ -360,4 +360,97 @@ body_class: ""
     </div>
   </header>
   {{< section-banner >}}
+
+  <div class="b-example-divider"><div>
+
+  <header class="header" style="z-index: 7; --bs-header-sticky-background-color: #f47c00; --bs-header-sticky-padding-y: 10px; --bs-header-sticky-color: #fff" data-of-header='{
+  "sticky": true
+  }'>
+    <div class="container">
+      <div class="header-brand">
+        <a href="#">
+          <img class="bd-placeholder-img" alt="Logo" width="200" height="60"
+               src="data:image/svg+xml,%3Csvg%20style='font-size:%201.125rem;%20font-family:system-ui,-apple-system,%22Segoe%20UI%22,Roboto,%22Helvetica%20Neue%22,%22Noto%20Sans%22,%22Liberation%20Sans%22,Arial,sans-serif,%22Apple%20Color%20Emoji%22,%22Segoe%20UI%20Emoji%22,%22Segoe%20UI%20Symbol%22,%22Noto%20Color%20Emoji%22;%20-webkit-user-select:%20none;%20-moz-user-select:%20none;%20user-select:%20none;%20text-anchor:%20middle;'%20width='200'%20height='60'%20xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EPlaceholder%3C/title%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%23868e96'%3E%3C/rect%3E%3Ctext%20x='50%25'%20y='50%25'%20fill='%23dee2e6'%20dy='.3em'%3ELogo%3C/text%3E%3C/svg%3E">
+        </a>
+      </div>
+      <div class="header-content">
+        <div class="d-none d-lg-block">
+          <a href="#" class="header-link">
+            <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+            <span class="header-link-text">Account</span>
+          </a>
+        </div>
+        <div class="d-none d-lg-block">
+          <a href="#" class="header-link">
+            <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+            <span class="header-link-text">Warenkorb</span>
+          </a>
+        </div>
+        <div class="d-none d-lg-block">
+          <a href="#" class="header-link">
+            <span class="header-link-icon">
+              <i class="ofi-heart-fill"></i>
+              <span class="header-link-icon-badge">
+                <span class="badge bg-danger">12</span>
+              </span>
+            </span>
+            <span class="header-link-text">Favouriten</span>
+          </a>
+        </div>
+        <div>
+          <div class="dropdown">
+            <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="header-link-icon"><i class="ofi-translate"></i></span>
+              <span class="header-link-text">Spreche</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Deutsch</a></li>
+              <li><a class="dropdown-item" href="#">Englisch</a></li>
+              <li><a class="dropdown-item" href="#">Französisch</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <a href="#" class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch5"
+             aria-controls="headerSearch5"
+             aria-expanded="false" aria-label="Toggle header search">
+            <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
+            <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+            <span class="header-link-text">Suche</span>
+          </a>
+          <div class="collapse header-collapse header-search-wrapper" id="headerSearch5">
+            <div class="container">
+              <div class="header-search">
+                <form>
+                  <div class="input-group">
+                    <input type="text" class="form-control form-control-lg" placeholder="Suche" aria-label="Suche">
+                    <button class="btn btn-icon btn-primary btn-lg" type="submit" aria-label="Suche starten"><i
+                        class="ofi-search" aria-hidden="true"></i></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="header-link" type="button" data-bs-toggle="collapse" data-bs-target="#pageMenu5"
+                  aria-controls="pageMenu4" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="header-link-icon d-none-collapsed"><i class="ofi-list"></i></span>
+            <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+            <span class="header-link-text">Menu</span>
+          </button>
+
+          <div class="collapse header-collapse page-menu-wrapper" id="pageMenu5">
+            <div class="container">
+              {{< page-menu >}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  {{< section-banner >}}
+  <div class="wrapper wrapper-bg-light" style="min-height: 1200px">
+    <div class="wrapper-content text-center">Sample wrapper content</div>
+  </div>
 </main>

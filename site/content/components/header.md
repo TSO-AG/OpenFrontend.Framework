@@ -29,7 +29,7 @@ toc: true
       <div class="d-none d-lg-block">
         <a href="#" class="header-link">
           <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
-          <span class="header-link-text">Warenkorb</span>
+          <span class="header-link-text">Cart</span>
         </a>
       </div>
       <div class="d-none d-lg-block">
@@ -40,19 +40,19 @@ toc: true
               <span class="badge bg-danger">12</span>
             </span>
           </span>
-          <span class="header-link-text">Favouriten</span>
+          <span class="header-link-text">Favorites</span>
         </a>
       </div>
       <div>
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="header-link-icon"><i class="ofi-translate"></i></span>
-            <span class="header-link-text">Spreche</span>
+            <span class="header-link-text">Language</span>
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Deutsch</a></li>
-            <li><a class="dropdown-item" href="#">Englisch</a></li>
-            <li><a class="dropdown-item" href="#">Französisch</a></li>
+            <li><a class="dropdown-item" href="#">German</a></li>
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">French</a></li>
           </ul>
         </div>
       </div>
@@ -62,15 +62,17 @@ toc: true
            aria-expanded="false" aria-label="Toggle header search">
           <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
           <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
-          <span class="header-link-text">Suche</span>
+          <span class="header-link-text">Search</span>
         </a>
         <div class="collapse header-collapse header-search-wrapper" id="headerSearch">
           <div class="container">
             <div class="header-search">
               <form>
                 <div class="input-group">
-                  <input type="text" class="form-control form-control-lg" placeholder="Suche" aria-label="Suche">
-                  <button class="btn btn-icon btn-primary btn-lg" type="submit" aria-label="Suche starten"><i class="ofi-search" aria-hidden="true"></i></button>
+                  <input type="text" class="form-control form-control-lg" placeholder="Keywords" aria-label="Keywords">
+                  <button class="btn btn-icon btn-primary btn-lg" type="submit" aria-label="Start search">
+                    <i class="ofi-search" aria-hidden="true"></i>
+                  </button>
                 </div>
               </form>
             </div>
@@ -144,15 +146,17 @@ toc: true
            aria-expanded="false" aria-label="Toggle header search">
           <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
           <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
-          <span class="header-link-text">Suche</span>
+          <span class="header-link-text">Search</span>
         </a>
         <div class="collapse header-collapse header-search-wrapper" id="headerSearch2">
           <div class="container">
             <div class="header-search">
               <form>
                 <div class="input-group">
-                  <input type="text" class="form-control form-control-lg" placeholder="Suche" aria-label="Suche">
-                  <button class="btn btn-icon btn-primary btn-lg" type="submit" aria-label="Suche starten"><i class="ofi-search" aria-hidden="true"></i></button>
+                  <input type="text" class="form-control form-control-lg" placeholder="Keywords" aria-label="Keywords">
+                  <button class="btn btn-icon btn-primary btn-lg" type="submit" aria-label="Start search">
+                    <i class="ofi-search" aria-hidden="true"></i>
+                  </button>
                 </div>
               </form>
             </div>
@@ -237,8 +241,10 @@ toc: true
             <div class="header-search">
               <form>
                 <div class="input-group">
-                  <input type="text" class="form-control form-control-lg" placeholder="Suche" aria-label="Suche">
-                  <button class="btn btn-icon btn-primary btn-lg" type="submit" aria-label="Suche starten"><i class="ofi-search" aria-hidden="true"></i></button>
+                  <input type="text" class="form-control form-control-lg" placeholder="Keywords" aria-label="Keywords">
+                  <button class="btn btn-icon btn-primary btn-lg" type="submit" aria-label="Start search">
+                    <i class="ofi-search" aria-hidden="true"></i>
+                  </button>
                 </div>
               </form>
             </div>

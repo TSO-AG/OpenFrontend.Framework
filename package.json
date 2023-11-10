@@ -12,7 +12,6 @@
     "js-lint": "eslint --report-unused-disable-directives --ext .html,.js,.md ."
   },
   "dependencies": {
-    "@fullcalendar/bootstrap5": "^6.1.9",
     "@fullcalendar/core": "^6.1.9",
     "@fullcalendar/daygrid": "^6.1.9",
     "@fullcalendar/list": "^6.1.9",

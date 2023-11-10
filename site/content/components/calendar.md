@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <p class="calendar-event-date">December 16 @ 12:00 - 13:30</p>
   <h6>Yoga at the Park</h6>
   <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
+  <a href="#" target="_blank" class="stretched-link">Read more …</a>
 </div>
 `;
 
@@ -152,6 +153,22 @@ document.addEventListener('DOMContentLoaded', () => {
   ]
 }'></div>
 {{< /highlight >}}
+
+## Event markup
+
+You can use any markup in the event popover. The recommended event markup is presented below:
+
+```html
+<div class="calendar-event">
+  <figure class="calendar-event-image">
+    <img src="assets/media/sample-image.jpg" alt="">
+  </figure>
+  <p class="calendar-event-date">December 16 @ 12:00 - 13:30</p>
+  <h6>Yoga at the Park</h6>
+  <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
+  <a href="#" class="stretched-link">Read more …</a>
+</div>
+```
 
 ## Options
 

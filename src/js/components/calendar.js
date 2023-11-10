@@ -1,16 +1,23 @@
 import BaseComponent from 'bootstrap/js/src/base-component'
 import {Calendar as FullCalendar, createPlugin} from '@fullcalendar/core'
-import {BootstrapTheme as BootstrapThemeCore} from '@fullcalendar/bootstrap5/internal.js';
+import {Theme} from '@fullcalendar/core/internal.js';
 import dayGridPlugin from '@fullcalendar/daygrid'
 import listPlugin from '@fullcalendar/list';
 
 // Create the Bootstrap theme
-class BootstrapTheme extends BootstrapThemeCore {}
+class BootstrapTheme extends Theme {}
 
+BootstrapTheme.prototype.classes = {
+  root: 'fc-theme-bootstrap',
+  tableCellShaded: 'calendar-table-cell-shaded',
+  buttonGroup: 'btn-group',
+  button: 'btn',
+  buttonActive: 'active',
+  popover: 'popover',
+  popoverHeader: 'popover-header',
+  popoverContent: 'popover-body',
+};
 BootstrapTheme.prototype.baseIconClass = '';
-
-BootstrapTheme.prototype.classes.button = 'btn'
-
 BootstrapTheme.prototype.iconClasses = {
   prev: 'ofi-caret-left-fill',
   next: 'ofi-caret-right-fill',
@@ -19,6 +26,12 @@ BootstrapTheme.prototype.iconClasses = {
   dayGridMonth: 'ofi-grid-fill',
   listMonth: 'ofi-list',
 }
+BootstrapTheme.prototype.rtlIconClasses = {
+  prev: 'ofi-caret-left-fill',
+  next: 'ofi-caret-right-fill',
+  prevYear: 'ofi-caret-left-fill',
+  nextYear: 'ofi-caret-right-fill',
+};
 
 const bootstrapThemePlugin = createPlugin({
   name: 'bootstrap',
@@ -35,6 +48,14 @@ const EVENT_CALENDAR_INITIALIZED = 'initialized.of.calendar'
 
 const DefaultType = {
   events: 'array',
+}
+
+const DefaultEventType = {
+  allDay: 'boolean',
+  content: 'string',
+  end: 'date|number|string|undefined',
+  start: 'date|number|string',
+  title: 'string',
 }
 
 const Default = {
@@ -63,6 +84,8 @@ class Calendar extends BaseComponent {
 
   // Private
   _initCalendar() {
+    this._config.events.forEach(event => this._typeCheckConfig(event, DefaultEventType))
+
     const options = {
       events: this._config.events.map((event, index) => ({...event, id: index})),
       eventClick: e => this._openEventPopover(e),
@@ -90,7 +113,7 @@ class Calendar extends BaseComponent {
   }
 
   async _openEventPopover(info) {
-    const eventData = this._config.events[info.event.id];
+    const eventData = this._config.events[info.event.id]
 
     if (!eventData || !eventData.content) {
       return

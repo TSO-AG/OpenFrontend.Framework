@@ -1,29 +1,22 @@
-:root {
-  // scss-docs-start calendar-css-vars
-  // TODO
-  // scss-docs-end calendar-css-vars
-}
-
-.calendar-event {
-  max-width: 200px;
-
-  > *:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.calendar-event-image {
-  img {
-    @extend .img-fluid;
-  }
-}
-
-.calendar-event-date {
-  @extend small;
-  @extend .text-muted;
-}
-
 .calendar {
+  // scss-docs-start calendar-css-vars
+  --#{$prefix}calendar-border-color: #{$calendar-border-color};
+  --#{$prefix}calendar-border-width: #{$calendar-border-width};
+  --#{$prefix}calendar-day-other-bg-color: #{$calendar-day-other-bg-color};
+  --#{$prefix}calendar-day-other-color: #{$calendar-day-other-color};
+  --#{$prefix}calendar-event-bg-color: #{$calendar-event-bg-color};
+  --#{$prefix}calendar-event-border-color: #{$calendar-event-border-color};
+  --#{$prefix}calendar-event-max-width: #{$calendar-event-max-width};
+  --#{$prefix}calendar-list-event-hover-bg-color: #{$calendar-list-event-hover-bg-color};
+  --#{$prefix}calendar-table-cell-shaded: #{$calendar-table-cell-shaded};
+  --#{$prefix}calendar-today-bg-color: #{$calendar-today-bg-color};
+  // scss-docs-end calendar-css-vars
+
+  --fc-event-bg-color: var(--#{$prefix}calendar-event-bg-color);
+  --fc-event-border-color: var(--#{$prefix}calendar-event-border-color);
+  --fc-list-event-hover-bg-color: var(--#{$prefix}calendar-list-event-hover-bg-color);
+  --fc-today-bg-color: var(--#{$prefix}calendar-today-bg-color);
+
   .fc-event {
     cursor: pointer;
   }
@@ -40,10 +33,63 @@
   }
 
   .fc-popover {
-    z-index: calc(var(--bs-popover-zindex) - 1);
+    z-index: calc(var(--#{$prefix}popover-zindex) - 1);
 
     .popover-header {
-      padding: var(--bs-popover-header-padding-y) var(--bs-popover-header-padding-x);
+      padding: var(--#{$prefix}popover-header-padding-y) var(--#{$prefix}popover-header-padding-x);
     }
   }
+
+  .fc-list,
+  .fc-scrollgrid,
+  td,
+  th {
+    border: var(--#{$prefix}calendar-border-width) solid var(--#{$prefix}calendar-border-color);
+  }
+
+  .fc-scrollgrid {
+    border-bottom-width: 0;
+    border-right-width: 0
+  }
+
+  .fc-day-other {
+    background-color: var(--#{$prefix}calendar-day-other-bg-color);
+
+    .fc-daygrid-day-top {
+      color: var(--#{$prefix}calendar-day-other-color);
+      opacity: 1;
+    }
+  }
+
+  .calendar-table-cell-shaded {
+    background-color: var(--#{$prefix}calendar-table-cell-shaded);
+  }
+
+  a:not([href]) {
+    color: inherit;
+    text-decoration: inherit
+  }
+}
+
+.calendar-event {
+  max-width: var(--#{$prefix}calendar-event-max-width);
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-bottom: $headings-margin-bottom;
+  }
+}
+
+.calendar-event-image {
+  img {
+    @extend .img-fluid;
+  }
+}
+
+.calendar-event-date {
+  @extend small;
+  @extend .text-muted;
 }

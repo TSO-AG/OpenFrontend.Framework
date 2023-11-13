@@ -51,6 +51,10 @@
 @import "~bootstrap/scss/helpers/text-truncation";
 @import "~bootstrap/scss/helpers/vr";
 
+// Vendor (slider, carousel)
+@import "swiper/scss";
+@import "swiper/css/effect-fade";
+
 // Utilities
 @import "~bootstrap/scss/utilities/api";
 
@@ -89,6 +93,7 @@
 @import "icon-box";
 @import "masonry";
 @import "carousel";
+@import "slider";
 @import "headings";
 @import "aspect-ratio";
 @import "header";

@@ -8,7 +8,7 @@ window.openFrontend = {
     return new Promise(resolve => import(/* webpackChunkName: "of-button" */ 'bootstrap/js/src/button').then(v => resolve(v.default)))
   },
   get Carousel() {
-    return new Promise(resolve => import(/* webpackChunkName: "open-frontend-carousel" */ './components/carousel').then(v => resolve(v.default)))
+    return new Promise(resolve => import(/* webpackChunkName: "of-carousel" */ './components/carousel').then(v => resolve(v.default)))
   },
   get Collapse() {
     return new Promise(resolve => import(/* webpackChunkName: "of-collapse" */ './components/collapse').then(v => resolve(v.default)))
@@ -34,6 +34,9 @@ window.openFrontend = {
   get Rating() {
     return new Promise(resolve => import(/* webpackChunkName: "of-ticker" */ './components/rating').then(v => resolve(v.default)))
   },
+  get Slider() {
+    return new Promise(resolve => import(/* webpackChunkName: "of-slider" */ './components/slider').then(v => resolve(v.default)))
+  },
   get Tab() {
     return new Promise(resolve => import(/* webpackChunkName: "of-tabs" */ './components/tabs').then(v => resolve(v.default)))
   },
@@ -55,6 +58,7 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-of-combo-box]'), () => import(/* webpackChunkName: "of-combo-box" */ './components/combo-box'))
   loadForElements(element.querySelectorAll('[data-of-highlight]'), () => import(/* webpackChunkName: "of-highlight" */ './components/highlight'))
   loadForElements(element.querySelectorAll('[data-of-carousel]'), () => import(/* webpackChunkName: "of-carousel" */ './components/carousel'))
+  loadForElements(element.querySelectorAll('[data-of-slider]'), () => import(/* webpackChunkName: "of-slider" */ './components/slider'))
   loadForElements(element.querySelectorAll('[data-of-elements-filter]'), () => import(/* webpackChunkName: "of-datepicker" */ './components/elements-filter'))
   loadForElements(element.querySelectorAll('[data-of-datepicker]'), () => import(/* webpackChunkName: "of-datepicker" */ './components/datepicker'))
   loadForElements(element.querySelectorAll('[data-of-table-sort]'), () => import(/* webpackChunkName: "of-tablesort" */ './components/tablesort'))

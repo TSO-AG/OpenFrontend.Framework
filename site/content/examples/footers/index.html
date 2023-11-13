@@ -4,6 +4,18 @@ title: Footers
 body_class: ""
 ---
 
+<style>
+  .footer-link {
+    color: var(--bs-link-color);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+  }
+
+  .footer-link:hover {
+    color: var(--bs-link-hover-color);
+  }
+</style>
+
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="bootstrap" viewBox="0 0 118 94">
     <title>Bootstrap</title>
@@ -13,18 +25,18 @@ body_class: ""
 
 <div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <p class="col-md-4 mb-0 text-body-secondary">&copy; {{< year >}} Company, Inc</p>
+    <p class="col-md-4 mb-0">&copy; {{< year >}} Company, Inc</p>
 
     <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
       <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
     </a>
 
     <ul class="nav col-md-4 justify-content-end">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2">About</a></li>
     </ul>
   </footer>
 </div>
@@ -37,14 +49,34 @@ body_class: ""
       <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
         <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
       </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">&copy; {{< year >}} Company, Inc</span>
+      <span class="mb-3 mb-md-0">&copy; {{< year >}} Company, Inc</span>
     </div>
 
     <ul class="social-links">
-      <li><a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Instagram" ><i class="ofi-instagram"><span class="visually-hidden">Instagram</span></i></a></li>
-      <li><a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Facebook" ><i class="ofi-facebook"><span class="visually-hidden">Facebook</span></i></a></li>
-      <li><a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="TikTok" ><i class="ofi-tiktok"><span class="visually-hidden">TikTok</span></i></a></li>
-      <li><a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="YouTube" ><i class="ofi-youtube"><span class="visually-hidden">YouTube</span></i></a></li>
+      <li>
+        <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Instagram">
+          <span class="social-link-icon"><i class="ofi-instagram"></i></span>
+          <span class="visually-hidden">Instagram</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Facebook">
+          <span class="social-link-icon"><i class="ofi-facebook"></i></span>
+          <span class="visually-hidden">Facebook</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="TikTok">
+          <span class="social-link-icon"><i class="ofi-tiktok"></i></span>
+          <span class="visually-hidden">TikTok</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="YouTube">
+          <span class="social-link-icon"><i class="ofi-youtube"></i></span>
+          <span class="visually-hidden">YouTube</span>
+        </a>
+      </li>
     </ul>
   </footer>
 </div>
@@ -54,13 +86,13 @@ body_class: ""
 <div class="container">
   <footer class="py-3 my-4">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2">About</a></li>
     </ul>
-    <p class="text-center text-body-secondary">&copy; {{< year >}} Company, Inc</p>
+    <p class="text-center">&copy; {{< year >}} Company, Inc</p>
   </footer>
 </div>
 
@@ -82,33 +114,33 @@ body_class: ""
     <div class="col mb-3">
       <h5>Section</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
       </ul>
     </div>
 
     <div class="col mb-3">
       <h5>Section</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
       </ul>
     </div>
 
     <div class="col mb-3">
       <h5>Section</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
       </ul>
     </div>
   </footer>
@@ -123,33 +155,33 @@ body_class: ""
       <div class="col-6 col-md-2 mb-3">
         <h5>Section</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
         </ul>
       </div>
 
       <div class="col-6 col-md-2 mb-3">
         <h5>Section</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
         </ul>
       </div>
 
       <div class="col-6 col-md-2 mb-3">
         <h5>Section</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
         </ul>
       </div>
 
@@ -169,10 +201,30 @@ body_class: ""
     <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
       <p>&copy; {{< year >}} Company, Inc. All rights reserved.</p>
       <ul class="social-links">
-        <li><a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Instagram" ><i class="ofi-instagram"><span class="visually-hidden">Instagram</span></i></a></li>
-        <li><a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Facebook" ><i class="ofi-facebook"><span class="visually-hidden">Facebook</span></i></a></li>
-        <li><a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="TikTok" ><i class="ofi-tiktok"><span class="visually-hidden">TikTok</span></i></a></li>
-        <li><a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="YouTube" ><i class="ofi-youtube"><span class="visually-hidden">YouTube</span></i></a></li>
+        <li>
+          <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Instagram">
+            <span class="social-link-icon"><i class="ofi-instagram"></i></span>
+            <span class="visually-hidden">Instagram</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Facebook">
+            <span class="social-link-icon"><i class="ofi-facebook"></i></span>
+            <span class="visually-hidden">Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="TikTok">
+            <span class="social-link-icon"><i class="ofi-tiktok"></i></span>
+            <span class="visually-hidden">TikTok</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="YouTube">
+            <span class="social-link-icon"><i class="ofi-youtube"></i></span>
+            <span class="visually-hidden">YouTube</span>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -194,11 +246,11 @@ body_class: ""
         </p>
 
         <p>
-          <a href="#">+41 71 227 37 37</a>
+          <a href="#" class="footer-link">+41 71 227 37 37</a>
         </p>
 
         <p>
-          <a href="#">info@st.gallen-bodensee.ch</a>
+          <a href="#" class="footer-link">info@st.gallen-bodensee.ch</a>
         </p>
       </div>
 
@@ -236,30 +288,83 @@ body_class: ""
         </form>
 
         <ul class="social-links">
-          <li><a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Instagram" ><i class="ofi-instagram"><span class="visually-hidden">Instagram</span></i></a></li>
-          <li><a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Facebook" ><i class="ofi-facebook"><span class="visually-hidden">Facebook</span></i></a></li>
-          <li><a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="TikTok" ><i class="ofi-tiktok"><span class="visually-hidden">TikTok</span></i></a></li>
-          <li><a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="YouTube" ><i class="ofi-youtube"><span class="visually-hidden">YouTube</span></i></a></li>
+          <li>
+            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Instagram">
+              <span class="social-link-icon"><i class="ofi-instagram"></i></span>
+              <span class="visually-hidden">Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Facebook">
+              <span class="social-link-icon"><i class="ofi-facebook"></i></span>
+              <span class="visually-hidden">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="TikTok">
+              <span class="social-link-icon"><i class="ofi-tiktok"></i></span>
+              <span class="visually-hidden">TikTok</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="YouTube">
+              <span class="social-link-icon"><i class="ofi-youtube"></i></span>
+              <span class="visually-hidden">YouTube</span>
+            </a>
+          </li>
         </ul>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col-6 col-md-2 mb-3">
-          <h5>Labels</h5>
+    <div class="row">
+      <h5>Labels</h5>
 
-          <!-- TODO: make it labels max when available -->
-
-          <div class="labels">
-            <div class="labels-item">
-              <figure>{{< placeholder markup="img" width="36" height="36" text="A" >}}</figure>
+      <div>
+        <div class="logos logos-row justify-content-start" style="--bs-logos-item-bg: #f8f9fa; --bs-logos-item-padding-y: 10px; --bs-logos-item-padding-x: 10px; --bs-logos-item-border-radius: 5px; --bs-logos-item-border-width: 1px; --bs-logos-item-border-style: solid; --bs-logos-item-border-color: #dee2e6;  --bs-logos-item-max-width: 80px; --bs-logos-item-max-height: 80px">
+          <div>
+            <div class="logos-item">
+              <figure>
+                <a href="#">
+                  {{< placeholder markup="img" width="120" height="60">}}
+                </a>
+              </figure>
             </div>
-            <div class="labels-item">
-              <figure>{{< placeholder markup="img" width="36" height="36" text="B" >}}</figure>
+          </div>
+          <div>
+            <div class="logos-item">
+              <figure>
+                <a href="#">
+                  {{< placeholder markup="img" width="60" height="60">}}
+                </a>
+              </figure>
             </div>
-            <div class="labels-item">
-              <figure>{{< placeholder markup="img" width="36" height="36" text="C" >}}</figure>
+          </div>
+          <div>
+            <div class="logos-item">
+              <figure>
+                <a href="#">
+                  {{< placeholder markup="img" width="120" height="45">}}
+                </a>
+              </figure>
             </div>
-            <span class="labels-label">+1</span>
+          </div>
+          <div>
+            <div class="logos-item">
+              <figure>
+                <a href="#">
+                  {{< placeholder markup="img" width="90" height="70">}}
+                </a>
+              </figure>
+            </div>
+          </div>
+          <div>
+            <div class="logos-item">
+              <figure>
+                <a href="#">
+                  {{< placeholder markup="img" width="120" height="80">}}
+                </a>
+              </figure>
+            </div>
           </div>
         </div>
       </div>
@@ -267,13 +372,13 @@ body_class: ""
 
     <div class="copyright copyright-horizontal border-top py-4 my-4">
       <ul class="copyright-links">
-        <li><a href="#">Datenschutz</a></li>
-        <li><a href="#">Impressum</a></li>
-        <li><a href="#">AGB</a></li>
-        <li><a href="#">Cookies</a></li>
+        <li><a href="#" class="footer-link">Datenschutz</a></li>
+        <li><a href="#" class="footer-link">Impressum</a></li>
+        <li><a href="#" class="footer-link">AGB</a></li>
+        <li><a href="#" class="footer-link">Cookies</a></li>
       </ul>
 
-      <div class="copyright-text">&copy; 2023 by St.Gallen-Bodensee Tourismus, <a href="#" class="link-external">powered by TSO AG</a></div>
+      <div class="copyright-text">&copy; 2023 by St.Gallen-Bodensee Tourismus, <a href="#" class="footer-link">powered by TSO AG</a></div>
     </div>
   </footer>
 </div>

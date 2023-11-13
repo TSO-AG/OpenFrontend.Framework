@@ -1,0 +1,303 @@
+// Header
+//
+// Provide a static header from which we expand to create full-width, fixed, and
+// other header variations.
+
+.header {
+  // scss-docs-start header-css-vars
+  --#{$prefix}header-padding-x: #{if($header-padding-x == null, 0, $header-padding-x)};
+  --#{$prefix}header-padding-y: #{$header-padding-y};
+  --#{$prefix}header-background-color: #{$header-light-background-color};
+  --#{$prefix}header-color: #{$header-light-color};
+  --#{$prefix}header-hover-color: #{$header-light-hover-color};
+  --#{$prefix}header-disabled-color: #{$header-light-disabled-color};
+  --#{$prefix}header-active-color: #{$header-light-active-color};
+  @include rfs($header-content-gap, --#{$prefix}header-content-gap);
+  --#{$prefix}header-brand-font-size: #{$header-brand-font-size};
+  --#{$prefix}header-brand-color: #{$header-light-brand-color};
+  --#{$prefix}header-brand-hover-color: #{$header-light-brand-hover-color};
+  --#{$prefix}header-link-padding-x: #{$header-nav-link-padding-x};
+  --#{$prefix}header-link-padding-y: #{$header-nav-link-padding-y};
+  @include rfs($header-nav-link-font-size, --#{$prefix}header-link-font-size);
+  --#{$prefix}header-link-font-weight: #{$header-nav-link-font-weight};
+  --#{$prefix}header-link-color: #{$header-nav-link-color};
+  --#{$prefix}header-link-decoration: #{$header-nav-link-hover-color};
+  --#{$prefix}header-link-hover-color: #{$header-nav-link-hover-color};
+  --#{$prefix}header-link-hover-decoration: #{$header-nav-link-hover-decoration};
+  --#{$prefix}header-link-disabled-color: #{$header-nav-link-disabled-color};
+  --#{$prefix}header-link-active-color: #{$header-nav-link-active-color};
+  --#{$prefix}header-link-icon-font-size: #{$header-nav-link-icon-font-size};
+  --#{$prefix}header-link-icon-margin-bottom: #{$header-nav-link-icon-margin-bottom};
+  --#{$prefix}header-link-icon-margin-right: #{$header-nav-link-icon-margin-right};
+  --#{$prefix}header-link-badge-font-size: #{$header-nav-link-badge-font-size};
+  --#{$prefix}header-link-badge-width: #{$header-nav-link-badge-width};
+  --#{$prefix}header-sticky-padding-x: #{if($header-sticky-padding-x == null, 0, $header-sticky-padding-x)};
+  --#{$prefix}header-sticky-padding-y: #{$header-sticky-padding-y};
+  --#{$prefix}header-sticky-background-color: #{$header-sticky-light-background-color};
+  --#{$prefix}header-sticky-color: #{$header-sticky-light-color};
+  --#{$prefix}header-sticky-hover-color: #{$header-sticky-light-hover-color};
+  --#{$prefix}header-sticky-disabled-color: #{$header-sticky-light-disabled-color};
+  --#{$prefix}header-sticky-active-color: #{$header-sticky-light-active-color};
+  @include rfs($header-sticky-content-gap, --#{$prefix}header-sticky-content-gap);
+  --#{$prefix}header-sticky-brand-font-size: #{$header-sticky-brand-font-size};
+  --#{$prefix}header-sticky-brand-color: #{$header-sticky-light-brand-color};
+  --#{$prefix}header-sticky-brand-hover-color: #{$header-sticky-light-brand-hover-color};
+  --#{$prefix}header-sticky-link-padding-x: #{$header-sticky-nav-link-padding-x};
+  --#{$prefix}header-sticky-link-padding-y: #{$header-sticky-nav-link-padding-y};
+  @include rfs($header-sticky-nav-link-font-size, --#{$prefix}header-sticky-link-font-size);
+  --#{$prefix}header-sticky-link-color: #{$header-sticky-nav-link-color};
+  --#{$prefix}header-sticky-link-decoration: #{$header-sticky-nav-link-hover-color};
+  --#{$prefix}header-sticky-link-hover-color: #{$header-sticky-nav-link-hover-color};
+  --#{$prefix}header-sticky-link-hover-decoration: #{$header-sticky-nav-link-hover-decoration};
+  --#{$prefix}header-sticky-link-disabled-color: #{$header-sticky-nav-link-disabled-color};
+  --#{$prefix}header-sticky-link-active-color: #{$header-sticky-nav-link-active-color};
+  --#{$prefix}header-sticky-link-icon-font-size: #{$header-sticky-nav-link-icon-font-size};
+  --#{$prefix}header-sticky-link-icon-margin-bottom: #{$header-sticky-nav-link-icon-margin-bottom};
+  --#{$prefix}header-sticky-link-badge-font-size: #{$header-sticky-nav-link-badge-font-size};
+  --#{$prefix}header-sticky-link-badge-width: #{$header-sticky-nav-link-badge-width};
+  --#{$prefix}header-transparent-color: #{$header-transparent-color};
+  --#{$prefix}header-transparent-hover-color: #{$header-transparent-hover-color};
+  --#{$prefix}header-transparent-disabled-color: #{$header-transparent-disabled-color};
+  --#{$prefix}header-transparent-active-color: #{$header-transparent-active-color};
+  // scss-docs-end header-css-vars
+
+  position: relative;
+  z-index: 9;
+  display: flex;
+  gap: var(--#{$prefix}header-content-gap);
+  align-items: center;
+  justify-content: space-between; // space out brand from logo
+  padding: var(--#{$prefix}header-padding-y) var(--#{$prefix}header-padding-x);
+  color: var(--#{$prefix}header-color);
+  background-color: var(--#{$prefix}header-background-color);
+  @include gradient-bg();
+
+  // Because flex properties aren't inherited, we need to redeclare these first
+  // few properties so that content nested within behave properly.
+  // The `flex-wrap` property is inherited to simplify the expanded headers
+  %container-flex-properties {
+    display: flex;
+    flex-wrap: inherit;
+    gap: var(--#{$prefix}header-content-gap);
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  > .container,
+  > .container-fluid {
+    @extend %container-flex-properties;
+  }
+
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    > .container#{breakpoint-infix($breakpoint, $container-max-widths)} {
+      @extend %container-flex-properties;
+    }
+  }
+}
+
+// Header content
+.header-content {
+  display: flex;
+  gap: var(--#{$prefix}header-content-gap);
+  align-items: center;
+}
+
+// Header-link
+.header-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--#{$prefix}header-link-padding-y) var(--#{$prefix}header-link-padding-x);
+  font-size: var(--#{$prefix}header-link-font-size);
+  line-height: 1;
+  color: var(--#{$prefix}header-link-color);
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+
+  &:hover,
+  &:focus {
+    color: var(--#{$prefix}header-link-hover-color);
+    text-decoration: if($link-hover-decoration == underline, none, null);
+    --#{$prefix}header-link-decoration: var(--#{$prefix}header-link-hover-decoration);
+  }
+
+  &.disabled {
+    color: var(--#{$prefix}header-link-disabled-color);
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &.active,
+  &.show {
+    color: var(--#{$prefix}header-link-active-color);
+  }
+}
+
+.header-link-icon {
+  position: relative;
+  display: block;
+  margin-bottom: var(--#{$prefix}header-link-icon-margin-bottom);
+  font-size: var(--#{$prefix}header-link-icon-font-size);
+}
+
+.header-link-icon-badge {
+  position: absolute;
+  bottom: 100%;
+  left: 100%;
+  transform: translate(-50%, 50%);
+
+  .badge {
+    --bs-badge-font-size: var(--#{$prefix}header-link-badge-font-size);
+    --bs-badge-padding-y: 0;
+    --bs-badge-padding-x: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--#{$prefix}header-link-badge-width);
+    aspect-ratio: 1;
+  }
+}
+
+.header-link-text {
+  font-weight: var(--#{$prefix}header-link-font-weight);
+  text-align: center;
+  text-decoration: var(--#{$prefix}header-link-text-decoration);
+}
+
+.header-link-row {
+  flex-direction: row;
+  justify-content: flex-start;
+
+  .header-link-icon {
+    margin-right: var(--#{$prefix}header-link-icon-margin-right);
+    margin-bottom: 0;
+  }
+}
+
+// Header brand
+.header-brand {
+  @include font-size(var(--#{$prefix}header-brand-font-size));
+  color: var(--#{$prefix}header-brand-color);
+  text-decoration: if($link-decoration == none, null, none);
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    color: var(--#{$prefix}header-brand-hover-color);
+    text-decoration: if($link-hover-decoration == underline, none, null);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// Header collapse
+.header-collapse {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  max-height: calc(95vh - var(--bs-header-height)); // stylelint-disable-line function-disallowed-list
+
+  &.show {
+    overflow-y: auto;
+  }
+}
+
+// Header themes
+//
+// Styles for switching between headers with light or dark background.
+
+.header-light {
+  @include deprecate("`.header-light`", "v5.2.0", "v6.0.0", true);
+}
+
+.header-dark {
+  // scss-docs-start header-dark-css-vars
+  --#{$prefix}header-background-color: #{$header-dark-background-color};
+  --#{$prefix}header-color: #{$header-dark-color};
+  --#{$prefix}header-hover-color: #{$header-dark-hover-color};
+  --#{$prefix}header-disabled-color: #{$header-dark-disabled-color};
+  --#{$prefix}header-active-color: #{$header-dark-active-color};
+  --#{$prefix}header-brand-color: #{$header-dark-brand-color};
+  --#{$prefix}header-brand-hover-color: #{$header-dark-brand-hover-color};
+  // scss-docs-end header-dark-css-vars
+}
+
+.header-transparent {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 9;
+  --#{$prefix}header-background-color: transparent;
+}
+
+.header-transparent-link {
+  --#{$prefix}header-link-color: var(--#{$prefix}header-transparent-color);
+  --#{$prefix}header-link-hover-color: var(--#{$prefix}header-transparent-hover-color);
+  --#{$prefix}header-link-disabled-color: var(--#{$prefix}header-transparent-disabled-color);
+  --#{$prefix}header-link-active-color: var(--#{$prefix}header-transparent-active-color);
+}
+
+// Sticky Header
+.header-placeholder {
+  height: var(--#{$prefix}header-sticky-height);
+  margin-bottom: calc(var(--#{$prefix}header-sticky-height) * -1); // stylelint-disable-line function-disallowed-list
+
+  + .header {
+    position: absolute;
+    right: 0;
+    left: 0;
+    @include transition(all .3s);
+  }
+
+  + .header-sticky {
+    position: fixed;
+    top: 0;
+
+    // Header stuck
+    &.header-stuck {
+      transform: translateY(-100%);
+
+      &.header-stuck-is-stuck {
+        transition-delay: 0s;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.header-sticky-init {
+  @include transition(none !important);
+}
+
+.header-sticky {
+  --#{$prefix}header-padding-x: var(--#{$prefix}header-sticky-padding-x);
+  --#{$prefix}header-padding-y: var(--#{$prefix}header-sticky-padding-y);
+  --#{$prefix}header-background-color: var(--#{$prefix}header-sticky-background-color);
+  --#{$prefix}header-color: var(--#{$prefix}header-sticky-color);
+  --#{$prefix}header-hover-color: var(--#{$prefix}header-sticky-hover-color);
+  --#{$prefix}header-disabled-color: var(--#{$prefix}header-sticky-disabled-color);
+  --#{$prefix}header-active-color: var(--#{$prefix}header-sticky-active-color);
+  --#{$prefix}header-content-gap: var(--#{$prefix}header-sticky-content-gap);
+  --#{$prefix}header-brand-font-size: var(--#{$prefix}header-sticky-brand-font-size);
+  --#{$prefix}header-brand-color: var(--#{$prefix}header-sticky-brand-color);
+  --#{$prefix}header-brand-hover-color: var(--#{$prefix}header-sticky-brand-hover-color);
+  --#{$prefix}header-link-padding-x: var(--#{$prefix}header-sticky-link-padding-x);
+  --#{$prefix}header-link-padding-y: var(--#{$prefix}header-sticky-link-padding-y);
+  --#{$prefix}header-link-font-size: var(--#{$prefix}header-sticky-link-font-size);
+  --#{$prefix}header-link-color: var(--#{$prefix}header-sticky-link-color);
+  --#{$prefix}header-link-decoration: var(--#{$prefix}header-sticky-link-decoration);
+  --#{$prefix}header-link-hover-color: var(--#{$prefix}header-sticky-link-hover-color);
+  --#{$prefix}header-link-hover-decoration: var(--#{$prefix}header-sticky-link-hover-decoration);
+  --#{$prefix}header-link-disabled-color: var(--#{$prefix}header-sticky-link-disabled-color);
+  --#{$prefix}header-link-active-color: var(--#{$prefix}header-sticky-link-active-color);
+  --#{$prefix}header-link-icon-font-size: var(--#{$prefix}header-sticky-link-icon-font-size);
+  --#{$prefix}header-link-icon-margin-bottom: var(--#{$prefix}header-sticky-link-icon-margin-bottom);
+  --#{$prefix}header-link-badge-font-size: var(--#{$prefix}header-sticky-link-badge-font-size);
+  --#{$prefix}header-link-badge-width: var(--#{$prefix}header-sticky-link-badge-width);
+}

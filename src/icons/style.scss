@@ -3,9 +3,9 @@
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?e9mixh') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?e9mixh') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?e9mixh##{$icomoon-font-family}') format('svg');
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?a7pdm9') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?a7pdm9') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?a7pdm9##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ofi-translate {
+  &:before {
+    content: $ofi-translate; 
+  }
+}
+.ofi-person-circle {
+  &:before {
+    content: $ofi-person-circle; 
+  }
+}
+.ofi-x-lg {
+  &:before {
+    content: $ofi-x-lg; 
+  }
+}
 .ofi-copy {
   &:before {
     content: $ofi-copy; 

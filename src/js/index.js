@@ -11,7 +11,7 @@ window.openFrontend = {
     return new Promise(resolve => import(/* webpackChunkName: "of-carousel" */ './components/carousel').then(v => resolve(v.default)))
   },
   get Collapse() {
-    return new Promise(resolve => import(/* webpackChunkName: "of-collapse" */ 'bootstrap/js/src/collapse').then(v => resolve(v.default)))
+    return new Promise(resolve => import(/* webpackChunkName: "of-collapse" */ './components/collapse').then(v => resolve(v.default)))
   },
   get ComboBox() {
     return new Promise(resolve => import(/* webpackChunkName: "of-combo-box" */ './components/combo-box').then(v => resolve(v.default)))
@@ -52,6 +52,7 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-bs-toggle="tab"]'), () => import(/* webpackChunkName: "of-tabs" */ './components/tabs'))
   loadForElements(element.querySelectorAll('[data-bs-toggle="tooltip"]'), () => import(/* webpackChunkName: "of-tooltip" */ './components/tooltip'))
   loadForElements(element.querySelectorAll('[data-bs-toggle="dropdown"]'), () => import(/* webpackChunkName: "of-dropdown" */ './components/dropdown'))
+  loadForElements(element.querySelectorAll('[data-bs-toggle="collapse"]'), () => import(/* webpackChunkName: "of-collapse" */ './components/collapse'))
   loadForElements(element.querySelectorAll('[data-bs-toggle="modal"]'), () => import(/* webpackChunkName: "of-modal" */ './components/modal'))
   loadForElements(element.querySelectorAll('[data-bs-toggle="offcanvas"]'), () => import(/* webpackChunkName: "of-offcanvas" */ './components/offcanvas'))
   loadForElements(element.querySelectorAll('[data-of-combo-box]'), () => import(/* webpackChunkName: "of-combo-box" */ './components/combo-box'))
@@ -65,6 +66,8 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-of-rating]'), () => import(/* webpackChunkName: "of-rating" */ './components/rating'))
   loadForElements(element.querySelectorAll('[data-of-video-play]'), () => import(/* webpackChunkName: "of-video-play" */ './components/video-play'))
   loadForElements(element.querySelectorAll('[data-of-ticker]'), () => import(/* webpackChunkName: "of-ticker" */ './components/ticker'))
+  loadForElements(element.querySelectorAll('[data-of-page-navigation]'), () => import(/* webpackChunkName: "of-page-navigation" */ './components/page-navigation'))
+  loadForElements(element.querySelectorAll('[data-of-header]'), () => import(/* webpackChunkName: "of-page-navigation" */ './components/header'))
 }
 
 document.addEventListener('DOMContentLoaded', () => window.initOpenFrontend(document))

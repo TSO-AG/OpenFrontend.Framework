@@ -521,3 +521,135 @@ $map-marker-info-margin-bottom:       .15em !default;
 $map-marker-link-color:               $primary !default;
 $map-marker-image-max-width:          null !default;
 // scss-docs-end map-marker-variables
+
+// Header
+// scss-docs-start header-variables
+$header-padding-y:                           $spacer * 1 !default;
+$header-padding-y:                           $spacer * 1 !default;
+$header-padding-x:                           null !default;
+$header-brand-font-size:                     1.25rem !default;
+$header-content-gap:                         1.5rem !default;
+$header-nav-link-padding-x:                  0 !default;
+$header-nav-link-padding-y:                  0 !default;
+$header-nav-link-font-size:                  null !default;
+$header-nav-link-font-weight:                null !default;
+$header-nav-link-color:                      var(--#{$prefix}header-color) !default;
+$header-nav-link-decoration:                 null !default;
+$header-nav-link-hover-color:                var(--#{$prefix}link-hover-color) !default;
+$header-nav-link-active-color:               var(--#{$prefix}header-active-color) !default;
+$header-nav-link-hover-decoration:           underline !default;
+$header-nav-link-disabled-color:             var(--#{$prefix}header-disabled-color) !default;
+$header-nav-link-transition:                 color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
+$header-nav-link-icon-font-size:             1.5em !default;
+$header-nav-link-icon-margin-bottom:         .25rem !default;
+$header-nav-link-icon-margin-right:          .75rem !default;
+$header-nav-link-badge-font-size:            .4em !default;
+$header-nav-link-badge-width:                2.25em !default;
+$header-light-background-color:              var(--#{$prefix}body-bg) !default;
+$header-light-color:                         rgba(var(--#{$prefix}emphasis-color-rgb), .65) !default;
+$header-light-hover-color:                   rgba(var(--#{$prefix}emphasis-color-rgb), .8) !default;
+$header-light-active-color:                  rgba(var(--#{$prefix}emphasis-color-rgb), 1) !default;
+$header-light-disabled-color:                rgba(var(--#{$prefix}emphasis-color-rgb), .3) !default;
+$header-light-brand-color:                   $header-light-active-color !default;
+$header-light-brand-hover-color:             $header-light-active-color !default;
+$header-sticky-padding-y:                    $header-padding-y !default;
+$header-sticky-padding-x:                    $header-padding-x !default;
+$header-sticky-brand-font-size:              $header-brand-font-size !default;
+$header-sticky-content-gap:                  $header-content-gap !default;
+$header-sticky-nav-link-padding-x:           $header-nav-link-padding-x !default;
+$header-sticky-nav-link-padding-y:           $header-nav-link-padding-y !default;
+$header-sticky-nav-link-font-size:           $header-nav-link-font-size !default;
+$header-sticky-nav-link-color:               $header-nav-link-color !default;
+$header-sticky-nav-link-decoration:          $header-nav-link-decoration !default;
+$header-sticky-nav-link-hover-color:         $header-nav-link-hover-color !default;
+$header-sticky-nav-link-active-color:        $header-nav-link-active-color !default;
+$header-sticky-nav-link-hover-decoration:    $header-nav-link-hover-decoration !default;
+$header-sticky-nav-link-disabled-color:      $header-nav-link-disabled-color !default;
+$header-sticky-nav-link-icon-font-size:      $header-nav-link-icon-font-size !default;
+$header-sticky-nav-link-icon-margin-bottom:  $header-nav-link-icon-margin-bottom !default;
+$header-sticky-nav-link-badge-font-size:     $header-nav-link-badge-font-size !default;
+$header-sticky-nav-link-badge-width:         $header-nav-link-badge-width !default;
+$header-sticky-light-background-color:       $header-light-background-color !default;
+$header-sticky-light-color:                  $header-light-color !default;
+$header-sticky-light-hover-color:            $header-light-hover-color !default;
+$header-sticky-light-active-color:           $header-light-active-color !default;
+$header-sticky-light-disabled-color:         $header-light-disabled-color !default;
+$header-sticky-light-brand-color:            $header-light-brand-color !default;
+$header-sticky-light-brand-hover-color:      $header-light-brand-hover-color !default;
+$header-transparent-color:                   $white !default;
+$header-transparent-hover-color:             rgba($white, .75) !default;
+$header-transparent-active-color:            $white !default;
+$header-transparent-disabled-color:          rgba($white, .25) !default;
+// scss-docs-end header-variables
+
+// scss-docs-start header-dark-variables
+$header-dark-background-color:        var(--#{$prefix}dark) !default;
+$header-dark-color:                   rgba($white, .55) !default;
+$header-dark-hover-color:             rgba($white, .75) !default;
+$header-dark-active-color:            $white !default;
+$header-dark-disabled-color:          rgba($white, .25) !default;
+$header-dark-brand-color:             $header-dark-active-color !default;
+$header-dark-brand-hover-color:       $header-dark-active-color !default;
+// scss-docs-end header-dark-variables
+
+// Page menu
+// scss-docs-start page-menu-variables
+$page-menu-breakpoint:                lg !default;
+$page-menu-padding-y:                 $spacer !default;
+$page-menu-padding-x:                 0 !default;
+$page-menu-light-background:          $header-light-background-color !default;
+$page-menu-light-color:               $header-light-color !default;
+$page-menu-box-shadow:                0 1rem 1rem rgba(0, 0, 0, .075) !default;
+// scss-docs-end page-menu-variables
+
+// scss-docs-start page-menu-dark-variables
+$page-menu-dark-background:           $header-dark-background-color !default;
+$page-menu-dark-color:                $header-dark-color !default;
+// scss-docs-end page-menu-dark-variables
+
+// scss-docs-start page-navigation-variables
+$page-nav-transition:                    left .3s ease-in-out, transform .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out !default;
+$page-nav-panel-bg:                      var(--#{$prefix}body-bg) !default;
+$page-nav-link-padding-y:                .5rem !default;
+$page-nav-link-padding-x:                1rem !default;
+$page-nav-link-font-size:                null !default;
+$page-nav-link-font-weight:              null !default;
+$page-nav-link-color:                    var(--#{$prefix}body-color) !default;
+$page-nav-link-hover-color:              var(--#{$prefix}link-hover-color) !default;
+$page-nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
+$page-nav-link-disabled-color:           var(--#{$prefix}secondary-color) !default;
+$page-nav-link-toggle-color:             $page-nav-link-color !default;
+$page-nav-link-toggle-hover-color:       $page-nav-link-hover-color !default;
+$page-nav-link-toggle-width:             2em !default;
+$page-nav-link-toggle-border-width:      null !default;
+$page-nav-link-toggle-border-color:      null !default;
+$page-nav-link-toggle-border-style:      null !default;
+$page-nav-link-toggle-icon-transition:   transform .3s ease-in-out !default;
+$page-nav-link-back-color:               var(--#{$prefix}link-color) !default;
+$page-nav-link-back-hover-color:         var(--#{$prefix}link-hover-color) !default;
+// scss-docs-end page-navigation-variables
+
+// scss-docs-start page-navigation-dark-variables
+$page-nav-dark-panel-dark-bg: var(--#{$prefix}dark) !default;
+$page-nav-dark-link-color: rgba($white, .55) !default;
+$page-nav-dark-link-hover-color: rgba($white, .75) !default;
+$page-nav-dark-link-disabled-color: rgba($white, .25) !default;
+$page-nav-dark-link-toggle-color: rgba($white, .55) !default;
+$page-nav-dark-link-toggle-hover-color: rgba($white, .75) !default;
+$page-nav-dark-link-back-color: rgba($white, .55) !default;
+$page-nav-dark-link-back-hover-color: rgba($white, .75) !default;
+// scss-docs-start page-navigation-dark-variables
+
+// Header search
+// scss-docs-start header-search-variables
+$header-search-padding-y:                 $spacer !default;
+$header-search-padding-x:                 0 !default;
+$header-search-light-background:          $header-light-background-color !default;
+$header-search-light-color:               $header-light-color !default;
+$header-search-box-shadow:                0 1rem 1rem rgba(0, 0, 0, .075) !default;
+// scss-docs-end header-search-variables
+
+// scss-docs-start page-menu-dark-variables
+$header-search-dark-background:           $header-dark-background-color !default;
+$header-search-dark-color:                $header-dark-color !default;
+// scss-docs-end page-menu-dark-variables

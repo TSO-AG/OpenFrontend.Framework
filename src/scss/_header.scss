@@ -28,6 +28,7 @@
   --#{$prefix}header-link-active-color: #{$header-nav-link-active-color};
   --#{$prefix}header-link-icon-font-size: #{$header-nav-link-icon-font-size};
   --#{$prefix}header-link-icon-margin-bottom: #{$header-nav-link-icon-margin-bottom};
+  --#{$prefix}header-link-icon-margin-right: #{$header-nav-link-icon-margin-right};
   --#{$prefix}header-link-badge-font-size: #{$header-nav-link-badge-font-size};
   --#{$prefix}header-link-badge-width: #{$header-nav-link-badge-width};
   --#{$prefix}header-sticky-padding-x: #{if($header-sticky-padding-x == null, 0, $header-sticky-padding-x)};
@@ -54,6 +55,10 @@
   --#{$prefix}header-sticky-link-icon-margin-bottom: #{$header-sticky-nav-link-icon-margin-bottom};
   --#{$prefix}header-sticky-link-badge-font-size: #{$header-sticky-nav-link-badge-font-size};
   --#{$prefix}header-sticky-link-badge-width: #{$header-sticky-nav-link-badge-width};
+  --#{$prefix}header-transparent-color: #{$header-transparent-color};
+  --#{$prefix}header-transparent-hover-color: #{$header-transparent-hover-color};
+  --#{$prefix}header-transparent-disabled-color: #{$header-transparent-disabled-color};
+  --#{$prefix}header-transparent-active-color: #{$header-transparent-active-color};
   // scss-docs-end header-css-vars
 
   position: relative;
@@ -166,7 +171,7 @@
   justify-content: flex-start;
 
   .header-link-icon {
-    margin-right: var(--#{$prefix}header-link-icon-margin-bottom);
+    margin-right: var(--#{$prefix}header-link-icon-margin-right);
     margin-bottom: 0;
   }
 }
@@ -228,8 +233,14 @@
   right: 0;
   left: 0;
   z-index: 9;
-  --#{$prefix}header-color: #{$white};
   --#{$prefix}header-background-color: transparent;
+}
+
+.header-transparent-link {
+  --#{$prefix}header-link-color: var(--#{$prefix}header-transparent-color);
+  --#{$prefix}header-link-hover-color: var(--#{$prefix}header-transparent-hover-color);
+  --#{$prefix}header-link-disabled-color: var(--#{$prefix}header-transparent-disabled-color);
+  --#{$prefix}header-link-active-color: var(--#{$prefix}header-transparent-active-color);
 }
 
 // Sticky Header

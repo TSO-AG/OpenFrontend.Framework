@@ -511,6 +511,7 @@ $header-nav-link-disabled-color:             var(--#{$prefix}header-disabled-col
 $header-nav-link-transition:                 color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
 $header-nav-link-icon-font-size:             1.5em !default;
 $header-nav-link-icon-margin-bottom:         .25rem !default;
+$header-nav-link-icon-margin-right:          .75rem !default;
 $header-nav-link-badge-font-size:            .4em !default;
 $header-nav-link-badge-width:                2.25em !default;
 $header-light-background-color:              var(--#{$prefix}body-bg) !default;
@@ -544,6 +545,10 @@ $header-sticky-light-active-color:           $header-light-active-color !default
 $header-sticky-light-disabled-color:         $header-light-disabled-color !default;
 $header-sticky-light-brand-color:            $header-light-brand-color !default;
 $header-sticky-light-brand-hover-color:      $header-light-brand-hover-color !default;
+$header-transparent-color:                   $white !default;
+$header-transparent-hover-color:             rgba($white, .75) !default;
+$header-transparent-active-color:            $white !default;
+$header-transparent-disabled-color:          rgba($white, .25) !default;
 // scss-docs-end header-variables
 
 // scss-docs-start header-dark-variables
@@ -558,7 +563,7 @@ $header-dark-brand-hover-color:       $header-dark-active-color !default;
 
 // Page menu
 // scss-docs-start page-menu-variables
-$page-menu-breakpoint:                md !default;
+$page-menu-breakpoint:                lg !default;
 $page-menu-padding-y:                 $spacer !default;
 $page-menu-padding-x:                 0 !default;
 $page-menu-light-background:          $header-light-background-color !default;

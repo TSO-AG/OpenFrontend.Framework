@@ -1,11 +1,9 @@
 <div class="page-menu">
   <div class="page-menu-mobile-content">
     <div>
-      <form class="search-form">
-        <label for="search-form-keywords">Search</label>
-
+      <form class="search-form search-form-lg">
         <div class="search-form-inputs">
-          <input type="search" id="search-form-keywords" name="keywords" placeholder="Search…">
+          <input type="search" name="keywords" placeholder="Keywords" aria-label="Keywords">
           <button type="submit">
             <i class="ofi-search"></i>
             <span class="visually-hidden">Search</span>
@@ -14,30 +12,82 @@
       </form>
     </div>
 
-    <div>
-      <a href="#" class="header-link header-link-row">
-        <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
-        <span class="header-link-text">Account</span>
-      </a>
-    </div>
-
-    <div>
-      <a href="#" class="header-link header-link-row">
-        <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
-        <span class="header-link-text">Warenkorb</span>
-      </a>
-    </div>
-
-    <div>
-      <a href="#" class="header-link header-link-row">
-            <span class="header-link-icon">
-              <i class="ofi-heart-fill"></i>
-              <span class="header-link-icon-badge">
-                <span class="badge bg-danger">12</span>
-              </span>
+    <div class="accordion" id="pageMenuMobile">
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageMenuMobileAccount" aria-expanded="false" aria-controls="pageMenuMobileAccount">
+            <span class="header-link header-link-row">
+              <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+              <span class="header-link-text">Account</span>
             </span>
-        <span class="header-link-text">Favouriten</span>
-      </a>
+          </button>
+        </div>
+        <div id="pageMenuMobileAccount" class="accordion-collapse collapse" data-bs-parent="#pageMenuMobile">
+          <div class="accordion-body">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Register</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageMenuMobileCart" aria-expanded="false" aria-controls="pageMenuMobileCart">
+            <span class="header-link header-link-row">
+              <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+              <span class="header-link-text">Cart</span>
+            </span>
+          </button>
+        </div>
+        <div id="pageMenuMobileCart" class="accordion-collapse collapse" data-bs-parent="#pageMenuMobile">
+          <div class="accordion-body">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Overview</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Checkout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageMenuMobileFavorites" aria-expanded="false" aria-controls="pageMenuMobileFavorites">
+            <span class="header-link header-link-row">
+              <span class="header-link-icon">
+                <i class="ofi-heart-fill"></i>
+                <span class="header-link-icon-badge">
+                  <span class="badge bg-danger">12</span>
+                </span>
+              </span>
+              <span class="header-link-text">Favorites</span>
+            </span>
+          </button>
+        </div>
+        <div id="pageMenuMobileFavorites" class="accordion-collapse collapse" data-bs-parent="#pageMenuMobile">
+          <div class="accordion-body">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Next Trip</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Xmas Dinner</a>
+              </li>
+              <li><hr></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Edit Favorites</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

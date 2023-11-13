@@ -22,7 +22,8 @@
   }
 }
 
-.page-menu-wrapper-dark {
+.page-menu-wrapper-dark,
+.header[data-bs-theme="dark"] .page-menu-wrapper {
   // scss-docs-start page-menu-dark-css-vars
   --#{$prefix}page-menu-background-color: #{$page-menu-dark-background};
   --#{$prefix}page-menu-color: #{$page-menu-dark-color};

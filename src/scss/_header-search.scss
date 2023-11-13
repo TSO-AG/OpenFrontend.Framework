@@ -16,7 +16,8 @@
   padding: var(--#{$prefix}header-search-padding-y) var(--#{$prefix}header-search-padding-x);
 }
 
-.header-search-wrapper-dark {
+.header-search-wrapper-dark,
+.header[data-bs-theme="dark"] .header-search-wrapper {
   // scss-docs-start header-search-dark-css-vars
   --#{$prefix}header-search-background-color: #{$header-search-dark-background};
   --#{$prefix}header-search-color: #{$header-search-dark-color};

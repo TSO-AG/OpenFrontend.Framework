@@ -17,6 +17,18 @@
   }
 }
 
+.search-form-lg {
+  .search-form-inputs {
+    input {
+      @extend .form-control-lg;
+    }
+
+    button {
+      @extend .btn-lg;
+    }
+  }
+}
+
 .search-result {
   // scss-docs-start search-result-css-vars
   --#{$prefix}search-result-border-width: #{$search-result-border-width};

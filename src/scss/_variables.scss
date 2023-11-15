@@ -221,6 +221,7 @@ $video-player-icon-pause: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/
 
 // Card
 // scss-docs-start card-variables
+$card-cap-bg: transparent !default;
 $card-info-color: var(--#{$prefix}secondary-color) !default;
 $card-info-font-size: .8rem !default;
 $card-info-spacer-y: $spacer * .5 !default;

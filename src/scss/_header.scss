@@ -249,7 +249,6 @@
   margin-bottom: calc(var(--#{$prefix}header-sticky-height) * -1); // stylelint-disable-line function-disallowed-list
 
   + .header {
-    position: absolute;
     right: 0;
     left: 0;
     @include transition(all .3s);

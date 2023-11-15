@@ -11,7 +11,7 @@ const STICKY_HEADER_PLACEHOLDER_CLASS = 'header-placeholder'
 const STICKY_HEADER_INIT_CLASS = 'header-sticky-init'
 const STICKY_HEADER_STUCK_INIT_CLASS = 'header-stuck'
 const STICKY_HEADER_STUCK_CLASS = 'header-stuck-is-stuck'
-const STICKY_HEADER_HEIGHT_PROPERTY_NAME = '--bs-sticky-header-height'
+const STICKY_HEADER_HEIGHT_PROPERTY_NAME = '--bs-header-sticky-height'
 
 const DefaultType = {
   sticky: '(boolean|object|undefined)',
@@ -125,6 +125,7 @@ class Header extends BaseComponent {
     this._element.classList.remove(STICKY_HEADER_CLASS)
     const stickyHeaderHeight = this._element.getBoundingClientRect().height
     this._headerPlaceholder.style.setProperty(STICKY_HEADER_HEIGHT_PROPERTY_NAME, `${stickyHeaderHeight}px`)
+    this._element.style.setProperty(STICKY_HEADER_HEIGHT_PROPERTY_NAME, `${stickyHeaderHeight}px`)
 
     setTimeout(() => {
       this._element.classList.remove(STICKY_HEADER_INIT_CLASS)

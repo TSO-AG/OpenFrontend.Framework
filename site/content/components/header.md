@@ -339,6 +339,117 @@ toc: true
 </header>
 {{< /example >}}
 
+### Sticky Header
+{{< example class="bd-example-header" >}}
+<header class="header" style="z-index: 1021; --bs-header-sticky-background-color: #eaeaea; --bs-header-sticky-color: #595959; --bs-header-sticky-padding-y: 10px;" data-of-header='{
+  "sticky": true
+  }'>
+  <div class="container">
+    <div class="header-brand">
+      <a href="#">
+        {{< placeholder width="200" height="60" alt="Logo" text="Logo" >}}
+      </a>
+    </div>
+    <div class="header-content">
+      <div class="d-none d-lg-block">
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+            <span class="header-link-text">Account</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Login</a></li>
+            <li><a class="dropdown-item" href="#">Register</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-none d-lg-block">
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+            <span class="header-link-text">Cart</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Overview</a></li>
+            <li><a class="dropdown-item" href="#">Checkout</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-none d-lg-block">
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon">
+              <i class="ofi-heart-fill"></i>
+              <span class="header-link-icon-badge">
+                <span class="badge bg-danger">12</span>
+              </span>
+            </span>
+            <span class="header-link-text">Favorites</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Next Trip</a></li>
+            <li><a class="dropdown-item" href="#">Xmas Dinner</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Edit Favorites</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-translate"></i></span>
+            <span class="header-link-text">Language</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">German</a></li>
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">French</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <button class="header-link" class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch"
+           aria-controls="headerSearch"
+           aria-expanded="false" aria-label="Toggle header search">
+          <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
+          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-text">Search</span>
+        </button>
+        <div class="collapse header-collapse header-search-wrapper" id="headerSearch">
+          <div class="container">
+            <div class="header-search">
+              <form class="search-form search-form-lg">
+                <div class="search-form-inputs">
+                  <input type="search" name="keywords" placeholder="Keywords" aria-label="Keywords">
+                  <button type="submit">
+                    <i class="ofi-search"></i>
+                    <span class="visually-hidden">Search</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="header-link" type="button" data-bs-toggle="collapse"
+                data-bs-target="#pageMenu" aria-controls="pageMenu"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="header-link-icon d-none-collapsed"><i class="ofi-list"></i></span>
+          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-text">Menu</span>
+        </button>
+        <div class="collapse header-collapse page-menu-wrapper" id="pageMenu">
+          <div class="container">
+             {{< page-menu >}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{{< /example >}}
+
 ## CSS
 
 ### Variables

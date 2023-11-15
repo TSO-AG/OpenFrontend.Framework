@@ -9,7 +9,8 @@
   --#{$prefix}wrapper-color: #{$wrapper-color};
   --#{$prefix}wrapper-bg-color: #{$wrapper-bg-color};
   --#{$prefix}wrapper-z-index: #{$wrapper-z-index};
-  --#{$prefix}wrapper-media-opacity: #{$wrapper-media-opacity};
+  --#{$prefix}wrapper-media-overlay: #{$wrapper-media-overlay};
+  --#{$prefix}wrapper-media-overlay-opacity: #{$wrapper-media-overlay-opacity};
   --#{$prefix}wrapper-text-shadow: #{$wrapper-text-shadow};
   --#{$prefix}wrapper-font-size: #{$wrapper-font-size};
   --#{$prefix}wrapper-zoom-transform: #{$wrapper-zoom-transform};
@@ -56,7 +57,14 @@
   bottom: 0;
   left: 0;
   z-index: -1;
-  opacity: var(--#{$prefix}wrapper-media-opacity);
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: var(--#{$prefix}wrapper-media-overlay);
+    opacity: var(--#{$prefix}wrapper-media-overlay-opacity);
+  }
 
   figure,
   picture {

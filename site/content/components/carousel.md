@@ -16,7 +16,7 @@ The component uses the [Swiper](https://swiperjs.com/) library.
 ### Basic example
 
 {{< example >}}
-<div class="carousel">
+<div class="carousel carousel-navigation-center-overlay">
   <div class="swiper" data-of-carousel='{
       "pagination": "#carousel-pagination-1",
       "navigationNext": "#carousel-btn-next-1",
@@ -37,7 +37,7 @@ The component uses the [Swiper](https://swiperjs.com/) library.
 
   <div class="carousel-pagination carousel-pagination--bottom-center" id="carousel-pagination-1"></div>
 
-  <div class="carousel-navigation carousel-navigation--center">
+  <div class="carousel-navigation">
      <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-1">
       <i class="ofi-caret-left-fill"></i>
     </button>
@@ -52,7 +52,7 @@ The component uses the [Swiper](https://swiperjs.com/) library.
 You can specify the number of slides to show in the viewport with the `slidesPerView` attribute. The `spaceBetween` attribute specifies the space (in pixels) between slides.
 
 {{< example >}}
-<div class="carousel">
+<div class="carousel carousel-navigation-center">
   <div class="swiper" data-of-carousel='{
       "slidesPerView": 3,
       "spaceBetween": 24,
@@ -87,7 +87,7 @@ You can specify the number of slides to show in the viewport with the `slidesPer
 
   <div class="carousel-pagination carousel-pagination--bottom-center" id="carousel-pagination-2"></div>
 
-  <div class="carousel-navigation carousel-navigation--center">
+  <div class="carousel-navigation">
      <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-2">
       <i class="ofi-caret-left-fill"></i>
     </button>
@@ -156,13 +156,14 @@ Autoplay starts automatically cycling through slides. Loop continues play after 
 </div>
 {{< /example >}}
 
-### Pagination position
-You can place the pagination in different positions.
+### Navigation position
 
 {{< example >}}
-<div class="carousel">
+<div class="carousel carousel-navigation-center">
   <div class="swiper" data-of-carousel='{
-      "pagination": "#carousel-pagination-4"
+      "pagination": "#carousel-pagination-4",
+      "navigationNext": "#carousel-btn-next-4",
+      "navigationPrev": "#carousel-btn-prev-4"
   }'>
     <div class="swiper-wrapper">
       <div class="swiper-slide">
@@ -177,7 +178,107 @@ You can place the pagination in different positions.
     </div>
   </div>
 
-  <div id="carousel-pagination-4" class="carousel-pagination carousel-pagination--top-right"></div>
+  <div class="carousel-pagination carousel-pagination--bottom-center" id="carousel-pagination-4"></div>
+
+  <div class="carousel-navigation">
+     <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-4">
+      <i class="ofi-caret-left-fill"></i>
+    </button>
+    <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-4">
+      <i class="ofi-caret-right-fill"></i>
+    </button>
+  </div>
+</div>
+{{< /example >}}
+
+{{< example >}}
+<div class="carousel carousel-navigation-center-inside">
+  <div class="swiper" data-of-carousel='{
+      "pagination": "#carousel-pagination-5",
+      "navigationNext": "#carousel-btn-next-5",
+      "navigationPrev": "#carousel-btn-prev-5"
+  }'>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="Slide 1" >}}
+      </div>
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Slide 2" >}}
+      </div>
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Slide 3" >}}
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-pagination carousel-pagination--bottom-center" id="carousel-pagination-5"></div>
+
+  <div class="carousel-navigation">
+     <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-5">
+      <i class="ofi-caret-left-fill"></i>
+    </button>
+    <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-5">
+      <i class="ofi-caret-right-fill"></i>
+    </button>
+  </div>
+</div>
+{{< /example >}}
+
+{{< example >}}
+<div class="carousel carousel-navigation-center-overlay">
+  <div class="swiper" data-of-carousel='{
+      "pagination": "#carousel-pagination-6",
+      "navigationNext": "#carousel-btn-next-6",
+      "navigationPrev": "#carousel-btn-prev-6"
+  }'>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="Slide 1" >}}
+      </div>
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Slide 2" >}}
+      </div>
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Slide 3" >}}
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-pagination carousel-pagination--bottom-center" id="carousel-pagination-6"></div>
+
+  <div class="carousel-navigation">
+     <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-6">
+      <i class="ofi-caret-left-fill"></i>
+    </button>
+    <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-6">
+      <i class="ofi-caret-right-fill"></i>
+    </button>
+  </div>
+</div>
+{{< /example >}}
+
+### Pagination position
+You can place the pagination in different positions.
+
+{{< example >}}
+<div class="carousel">
+  <div class="swiper" data-of-carousel='{
+      "pagination": "#carousel-pagination-7"
+  }'>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="Slide 1" >}}
+      </div>
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Slide 2" >}}
+      </div>
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Slide 3" >}}
+      </div>
+    </div>
+  </div>
+
+  <div id="carousel-pagination-7" class="carousel-pagination carousel-pagination--top-right"></div>
 </div>
 {{< /example >}}
 
@@ -200,10 +301,10 @@ You can configure different slide display settings based on different viewport w
     <h3>Example heading</h3>
     <div>
         <div class="carousel-navigation">
-         <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-5">
+         <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-8">
           <i class="ofi-caret-left-fill"></i>
         </button>
-        <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-5">
+        <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-8">
           <i class="ofi-caret-right-fill"></i>
         </button>
         </div>
@@ -214,8 +315,8 @@ You can configure different slide display settings based on different viewport w
   <div class="swiper" data-of-carousel='{
       "slidesPerView": 1,
       "spaceBetween": 10,
-      "navigationNext": "#carousel-btn-next-5",
-      "navigationPrev": "#carousel-btn-prev-5",
+      "navigationNext": "#carousel-btn-next-8",
+      "navigationPrev": "#carousel-btn-prev-8",
       "breakpoints": {
         "sm": {
           "slidesPerView": 2

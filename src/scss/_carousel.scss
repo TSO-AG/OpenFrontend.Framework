@@ -15,12 +15,18 @@
   --#{$prefix}carousel-pagination-bullet-opacity: #{$carousel-pagination-bullet-opacity};
   --#{$prefix}carousel-pagination-bullet-horizontal-gap: #{$carousel-pagination-bullet-horizontal-gap};
   --#{$prefix}carousel-pagination-bullet-vertical-gap: #{$carousel-pagination-bullet-vertical-gap};
+  --#{$prefix}carousel-navigation-center-padding-x: #{$carousel-navigation-center-padding-x};
+  --#{$prefix}carousel-navigation-center-inside-offset-x: #{$carousel-navigation-center-inside-offset-x};
   // scss-docs-end carousel-css-vars
   --swiper-theme-color: var(--#{$prefix}carousel-theme-color);
 }
 
 .carousel {
   position: relative;
+
+  .swiper-slide {
+    height: auto;
+  }
 }
 
 // Carousel navigation
@@ -29,7 +35,9 @@
   display: flex;
   gap: .5rem;
 
-  &--center {
+  .carousel-navigation-center &,
+  .carousel-navigation-center-inside &,
+  .carousel-navigation-center-overlay & {
     position: absolute;
     top: 50%;
     right: 0;
@@ -42,7 +50,19 @@
     button {
       pointer-events: auto;
     }
+  }
 
+  @at-root .carousel-navigation-center {
+    padding-right: var(--#{$prefix}carousel-navigation-center-padding-x);
+    padding-left: var(--#{$prefix}carousel-navigation-center-padding-x);
+  }
+
+  .carousel-navigation-center-inside & {
+    padding-right: var(--#{$prefix}carousel-navigation-center-inside-offset-x);
+    padding-left: var(--#{$prefix}carousel-navigation-center-inside-offset-x);
+  }
+
+  .carousel-navigation-center-overlay & {
     .carousel-button-prev {
       transform: translateX(-50%);
     }
@@ -74,6 +94,12 @@
     opacity: 0;
   }
 
+  &--static {
+    position: static;
+    margin-top: var(--#{$prefix}carousel-pagination-top);
+    margin-bottom: var(--#{$prefix}carousel-pagination-bottom);
+  }
+
   .carousel-pagination-disabled > &,
   &.carousel-pagination-disabled {
     display: none;
@@ -100,7 +126,6 @@
 
   &--bottom-center {
     --#{$prefix}carousel-pagination-top: auto;
-
   }
 
   &--bottom-right {

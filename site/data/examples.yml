@@ -25,3 +25,7 @@
   examples:
     - name: Home page
       description: "A home page template is a predefined layout for the primary page of a website, guiding user navigation and content presentation."
+    - name: Home page 2
+      description: "A home page template is a predefined layout for the primary page of a website, guiding user navigation and content presentation."
+    - name: Home page 3
+      description: "A home page template is a predefined layout for the primary page of a website, guiding user navigation and content presentation."

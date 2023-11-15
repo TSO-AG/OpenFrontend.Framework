@@ -1,17 +1,24 @@
+{{- $title := .Get "title" | default "Your next destination" -}}
+{{- $text := .Get "text" | default "Escape ordinary, experience majestic views!" -}}
+{{- $btn_text := .Get "btn_text" | default "Find out more" -}}
+{{- $btn_class := .Get "btn_class" | default "btn-light btn-sm" -}}
+{{- $img_src := .Get "img_src" | default "../../assets/media/sample-image.jpg" -}}
+{{- $class := .Get "class" | default "" -}}
+
 <div class="wrapper" style="min-height: 400px; --bs-wrapper-padding-x: 0">
   <div class="container">
     <div class="wrapper-content">
-      <h2>Your next destination</h2>
-      <p>Escape ordinary, experience majestic views!</p>
+      <h2>{{ $title }}</h2>
+      <p>{{ $text }}</p>
       <p>
-        <a href="#" class="btn btn-light btn-sm icon-link">Find out more <i class="ofi-arrow-right"></i></a>
+        <a href="#" class="btn {{ $btn_class }} icon-link">{{ $btn_text }}<i class="ofi-arrow-right"></i></a>
       </p>
     </div>
   </div>
 
   <div class="wrapper-bg-media">
     <figure>
-      <img src="../../assets/media/sample-image.jpg" alt="">
+      <img src="{{ $img_src }}" alt="">
     </figure>
   </div>
 </div>

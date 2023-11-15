@@ -1,7 +1,23 @@
+{{- $info := .Get "info" | default "Lorem ipsum" -}}
+{{- $title := .Get "title" | default "Card title" -}}
+{{- $text := .Get "text" | default "Some quick example text to build on the card title and make up the bulk of the card's content." -}}
+{{- $btn_text := .Get "btn_text" | default "Find out more" -}}
+{{- $img_src := .Get "img_src" -}}
+{{- $img_width := .Get "img_width" | default "100%" -}}
+{{- $img_height := .Get "img_height" | default "200" -}}
+{{- $price_label := .Get "price_label" | default "AB CHF" -}}
+{{- $price := .Get "price" | default "15.00" -}}
+{{- $hide_btn_cart := .Get "hide_btn_cart" | default "false" -}}
+
 <div class="card{{ if eq (.Get "layout") "horizontal" }} card-horizontal mb-3{{ end }}">
   <div class="card-media">
     <div class="card-media__visual">
-      <svg class="bd-placeholder-img img-fluid" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Responsive image</text></svg>
+      {{- if $img_src -}}
+      <img src="{{ $img_src }}" alt="" width="{{ $img_width }}" height="{{ $img_height }}">
+      {{- else -}}
+      <svg class="bd-placeholder-img img-fluid" width="{{ $img_width }}" height="{{ $img_height }}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Responsive image</text></svg>
+      {{- end -}}
+
     </div>
     <div class="card-media__content card-media__content--top-right">
       <div class="state state--open">
@@ -24,9 +40,9 @@
   </div>
 
   <div class="card-body">
-    <h5 class="card-info">Lorem ipsum</h5>
+    <h5 class="card-info">{{ $info }}</h5>
     <div class="card-title-rating">
-      <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
+      <h4 class="card-title"><a href="#" class="stretched-link">{{ $title}} </a></h4>
       <div class="card-title-star">
         <div class="rating rating-sm">
           <i class="star-on-png"></i>
@@ -37,7 +53,7 @@
         </div>
       </div>
     </div>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">{{ $text }}</p>
     <div class="card-tags">
       <div class="tag-list">
         <span class="tag">Tag 01</span>
@@ -60,14 +76,16 @@
   <div class="card-action">
     <div class="card-action__content">
       <div class="price">
-        <div class="price__label">AB CHF</div>
-        <div class="price__value">15.00</div>
+        <div class="price__label">{{ $price_label}}</div>
+        <div class="price__value">{{ $price }}</div>
       </div>
     </div>
     <div class="card-action__buttons">
+      {{- if eq $hide_btn_cart "false" -}}
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-cart-fill"></i>
       </button>
+      {{- end -}}
       <button type="button" class="btn btn-icon btn-primary">
         <i class="ofi-heart-fill"></i>
       </button>

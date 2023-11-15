@@ -4,4 +4,515 @@ title: Home
 body_class: ""
 ---
 
-@TODO
+<header class="header" data-of-header='{
+  "sticky": true
+  }'>
+  <div class="container">
+    <div class="header-brand">
+      <a href="#">
+        <img class="bd-placeholder-img" alt="Logo" width="200" height="60" src="data:image/svg+xml,%3Csvg%20style='font-size:%201.125rem;%20font-family:system-ui,-apple-system,%22Segoe%20UI%22,Roboto,%22Helvetica%20Neue%22,%22Noto%20Sans%22,%22Liberation%20Sans%22,Arial,sans-serif,%22Apple%20Color%20Emoji%22,%22Segoe%20UI%20Emoji%22,%22Segoe%20UI%20Symbol%22,%22Noto%20Color%20Emoji%22;%20-webkit-user-select:%20none;%20-moz-user-select:%20none;%20user-select:%20none;%20text-anchor:%20middle;'%20width='200'%20height='60'%20xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EPlaceholder%3C/title%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%23868e96'%3E%3C/rect%3E%3Ctext%20x='50%25'%20y='50%25'%20fill='%23dee2e6'%20dy='.3em'%3ELogo%3C/text%3E%3C/svg%3E">
+      </a>
+    </div>
+    <div class="header-content">
+      <div class="d-none d-lg-block">
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+            <span class="header-link-text">Account</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Login</a></li>
+            <li><a class="dropdown-item" href="#">Register</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-none d-lg-block">
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+            <span class="header-link-text">Cart</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Overview</a></li>
+            <li><a class="dropdown-item" href="#">Checkout</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-none d-lg-block">
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="header-link-icon">
+                <i class="ofi-heart-fill"></i>
+                <span class="header-link-icon-badge">
+                  <span class="badge bg-danger">12</span>
+                </span>
+              </span>
+            <span class="header-link-text">Favorites</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Next Trip</a></li>
+            <li><a class="dropdown-item" href="#">Xmas Dinner</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Edit Favorites</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-translate"></i></span>
+            <span class="header-link-text">Language</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">German</a></li>
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">French</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <button class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch"
+                aria-controls="headerSearch"
+                aria-expanded="false" aria-label="Toggle header search">
+          <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
+          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-text">Search</span>
+        </button>
+        <div class="collapse header-collapse header-search-wrapper" id="headerSearch">
+          <div class="container">
+            <div class="header-search">
+              <form class="search-form search-form-lg">
+                <div class="search-form-inputs">
+                  <input type="search" name="keywords" placeholder="Keywords" aria-label="Keywords">
+                  <button type="submit">
+                    <i class="ofi-search"></i>
+                    <span class="visually-hidden">Search</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="header-link" type="button" data-bs-toggle="collapse"
+                data-bs-target="#pageMenu" aria-controls="pageMenu"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="header-link-icon d-none-collapsed"><i class="ofi-list"></i></span>
+          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-text">Menu</span>
+        </button>
+
+        <div class="collapse header-collapse page-menu-wrapper" id="pageMenu">
+          <div class="container">
+            {{< page-menu >}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrapper" style="min-height: clamp(300px, 45vw, 700px); --bs-wrapper-padding-x: 0">
+  <div class="container">
+    <div class="wrapper-content">
+      <h2>Unterkünfte in St.Gallen</h2>
+      <p>Luxus-Hotel oder B&amp;B, in der Altstadt oder am ее: ürich bietet jedem eine passende Unterkunft.</p>
+      <p>
+        <a href="#" class="btn btn-primary icon-link">Alle Unterkünfte anzeigen<i class="ofi-arrow-right"></i></a>
+      </p>
+    </div>
+  </div>
+
+  <div class="wrapper-bg-media">
+    <figure>
+      <img src="../../assets/img/samples/img-1.jpg" alt="">
+    </figure>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb justify-content-end">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Übernachten</li>
+    </ol>
+  </nav>
+</div>
+
+<main class="mt-5">
+  <div class="container">
+    <div class="mb-section">
+      <h1>Übernachten</h1>
+      <p>Finden Sie Ihre perfekte Unterkunft bei Schweiz Tourismus aus einer breiten Auswahl von Hotels,
+        Ferienwohnungen, Gruppenunterkünften, Alphütten, Bauernhöfen, Herbergen & Hostels, Bed & Breakfasts und
+        Campingplätzen.</p>
+    </div>
+
+    <div class="mb-section">
+      <div class="mb-element">
+        <div class="masonry masonry-group-2">
+          <div class="masonry-group-item">
+            <div class="masonry masonry-vertical-4">
+              <div class="masonry-item">
+                <div class="wrapper text-bg-primary">
+                  <div class="wrapper-content wrapper-content-padding-y-lg">
+                    <h2>Hotels in deiner Nähe</h2>
+                    <p>Diese begehrten Hotels haben nurnoch wenige Zimmer, Verpasse deine Chance nicht.</p>
+                    <p>
+                      <a href="#" class="btn btn-light icon-link stretched-link">Hotel finden<i
+                        class="ofi-arrow-right"></i></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
+                <div class="wrapper wrapper-zoom">
+                  <div class="wrapper-content-top-right">
+                    <div class="state state--open"><span class="visually-hidden">open</span></div>
+                  </div>
+                  <div class="wrapper-content wrapper-content-padding-y-lg text-center">
+                    <h2>Hotel<br>Walhalla</h2>
+                    <p class="mb-0">Hotel</p>
+                    <a href="#" class="stretched-link"><span class="visually-hidden">Read more</span></a>
+                  </div>
+                  <div class="wrapper-bg-media">
+                    <figure>
+                      <img src="../../assets/img/samples/img-2.jpg" alt="">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+              <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
+                <div class="wrapper wrapper-zoom">
+                  <div class="wrapper-content-top-right">
+                    <div class="state state--unknown"><span class="visually-hidden">unknown</span></div>
+                  </div>
+                  <div class="wrapper-content wrapper-content-padding-y-lg text-center">
+                    <h2>Hotel<br>Metropol</h2>
+                    <p class="mb-0">Hotel</p>
+                    <a href="#" class="stretched-link"><span class="visually-hidden">Read more</span></a>
+                  </div>
+                  <div class="wrapper-bg-media">
+                    <figure>
+                      <img src="../../assets/img/samples/img-3.jpg" alt="">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="masonry-group-item">
+            <div class="masonry masonry-vertical-1">
+              <div class="masonry-item">
+                <div class="aspect aspect-16x9 aspect-md-21x9 aspect-xl-1x1">
+                  <iframe
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-element">
+        <div class="masonry masonry-group-2">
+          <div class="masonry-group-item">
+            <div class="masonry masonry-vertical-7">
+              <div class="masonry-item aspect aspect-md-3x4 aspect-xl-9x16">
+                <div class="wrapper text-bg-primary">
+                  <div class="wrapper-content wrapper-content-padding-y-lg">
+                    <h2>Ferienwohnungen</h2>
+                    <p>Kultur, Geschichte, Neues, Tradition, Unbekanntes in St. Gallen</p>
+                    <p>
+                      <a href="#" class="btn btn-light icon-link stretched-link">Wohnung finden <i
+                        class="ofi-arrow-right"></i></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+                <div class="wrapper wrapper-zoom">
+                  <div class="wrapper-content wrapper-content-padding-y-lg text-center">
+                    <h2>Urban Style</h2>
+                    <p class="mb-0">Gossau</p>
+                    <a href="#" class="stretched-link"><span class="visually-hidden">Read more</span></a>
+                  </div>
+                  <div class="wrapper-bg-media">
+                    <figure>
+                      <img src="../../assets/img/samples/img-4.jpg" alt="">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="masonry-group-item">
+            <div class="masonry masonry-vertical-7">
+              <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+                <div class="wrapper wrapper-zoom">
+                  <div class="wrapper-content wrapper-content-padding-y-lg text-center">
+                    <h2>Wohnung nähe St.Gallen</h2>
+                    <p class="mb-0">Abtwil</p>
+                    <a href="#" class="stretched-link"><span class="visually-hidden">Read more</span></a>
+                  </div>
+                  <div class="wrapper-bg-media">
+                    <figure>
+                      <img src="../../assets/img/samples/img-5.jpg" alt="">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+              <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+                <div class="wrapper wrapper-zoom">
+                  <div class="wrapper-content wrapper-content-padding-y-lg text-center">
+                    <h2>Eigentums- wohnung</h2>
+                    <p class="mb-0">St.Gallen</p>
+                    <a href="#" class="stretched-link"><span class="visually-hidden">Read more</span></a>
+                  </div>
+                  <div class="wrapper-bg-media">
+                    <figure>
+                      <img src="../../assets/img/samples/img-6.jpg" alt="">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="masonry masonry-vertical-7">
+          <div class="masonry-item aspect aspect-16x9 aspect-md-1x1">
+            <div class="wrapper wrapper-zoom">
+              <div class="wrapper-content wrapper-content-padding-y-lg text-center">
+                <h2>Bed & Breakfast</h2>
+                <p class="mb-0">Die günstige Alternative</p>
+                <a href="#" class="stretched-link"><span class="visually-hidden">Read more</span></a>
+              </div>
+              <div class="wrapper-bg-media">
+                <figure>
+                  <img src="../../assets/img/samples/img-7.jpg" alt="">
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="masonry-item aspect aspect-16x9 aspect-md-1x1">
+            <div class="wrapper wrapper-zoom">
+              <div class="wrapper-content wrapper-content-padding-y-lg text-center">
+                <h2>Camping</h2>
+                <p class="mb-0">Für Freiheitsliebende</p>
+                <a href="#" class="stretched-link"><span class="visually-hidden">Read more</span></a>
+              </div>
+              <div class="wrapper-bg-media">
+                <figure>
+                  <img src="../../assets/img/samples/img-8.jpg" alt="">
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-section">
+      <h3 class="text-center">Partner</h3>
+      <div class="logos logo-carousel">
+        <div class="carousel">
+          <div class="swiper" data-of-carousel='{
+            "slidesPerView": 1,
+            "spaceBetween": 24,
+            "loop": true,
+            "pagination": "#carousel-pagination-1",
+            "navigationNext": "#carousel-btn-next-1",
+            "navigationPrev": "#carousel-btn-prev-1",
+             "breakpoints": {
+             "sm": {
+                "slidesPerView": 2
+              },
+              "md": {
+                "slidesPerView": 3
+              },
+              "lg": {
+                "slidesPerView": 4
+              },
+              "xxl": {
+                "slidesPerView": 6
+              }
+            }
+          }'>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="logos-item">
+                  <figure>
+                    <a href="#">
+                      <img src="../../assets/img/samples/logo-1.png" alt="" width="175" height="125">
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="logos-item">
+                  <figure>
+                    <a href="#">
+                      <img src="../../assets/img/samples/logo-2.png" alt="" width="175" height="125">
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="logos-item">
+                  <figure>
+                    <a href="#">
+                      <img src="../../assets/img/samples/logo-3.png" alt="" width="175" height="125">
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="logos-item">
+                  <figure>
+                    <a href="#">
+                      <img src="../../assets/img/samples/logo-4.png" alt="" width="175" height="125">
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="logos-item">
+                  <figure>
+                    <a href="#">
+                      <img src="../../assets/img/samples/logo-5.png" alt="" width="175" height="125">
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="logos-item">
+                  <figure>
+                    <a href="#">
+                      <img src="../../assets/img/samples/logo-6.png" alt="" width="175" height="125">
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="logos-item">
+                  <figure>
+                    <a href="#">
+                      {{< placeholder width="175" height="125" text="Logo" >}}
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="logos-item">
+                  <figure>
+                    <a href="#">
+                      {{< placeholder width="175" height="125" text="Logo" >}}
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="logos-item">
+                  <figure>
+                    <a href="#">
+                      {{< placeholder width="175" height="125" text="Logo" >}}
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="logos-item">
+                  <figure>
+                    <a href="#">
+                      {{< placeholder width="175" height="125" text="Logo" >}}
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="logos-item">
+                  <figure>
+                    <a href="#">
+                      {{< placeholder width="175" height="125" text="Logo" >}}
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="logos-item">
+                  <figure>
+                    <a href="#">
+                      {{< placeholder width="175" height="125" text="Logo" >}}
+                    </a>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-pagination carousel-pagination--bottom-center" id="carousel-pagination-1"></div>
+
+          <div class="carousel-navigation carousel-navigation--center">
+            <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-1">
+              <i class="ofi-caret-left-fill"></i>
+            </button>
+            <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-1">
+              <i class="ofi-caret-right-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-3 mb-3">
+        <h5>Kontakt</h5>
+
+        <p>
+          St. Gallen Bodensee Tourismus<br>
+          Bankgasse 9<br>
+          9001 St. Gallen
+        </p>
+
+        <p>
+          <a href="#" class="footer-link">+41 71 227 37 37</a>
+        </p>
+
+        <p>
+          <a href="#" class="footer-link">info@st.gallen-bodensee.ch</a>
+        </p>
+      </div>
+
+      <div class="col-6 col-md-3 mb-3">
+        <h5>Unternehmen</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Mitarbeiter</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Karriere</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Partner</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Geschäftsberichte</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-5 offset-md-1 mb-3">
+        <form>
+          <h5>Subscribe to our newsletter</h5>
+          <p>Monthly digest of what's new and exciting from us.</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Email address</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</footer>
+

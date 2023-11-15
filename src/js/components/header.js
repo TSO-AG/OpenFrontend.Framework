@@ -112,11 +112,12 @@ class Header extends BaseComponent {
   _createHeaderPlaceholder() {
     this._headerPlaceholder = document.createElement('div')
     this._headerPlaceholder.classList.add(STICKY_HEADER_PLACEHOLDER_CLASS)
-    this._element.parentNode.insertBefore(this._headerPlaceholder, this._element)
 
     if (getComputedStyle(this._element).getPropertyValue('position') === 'absolute') {
       this._headerPlaceholder.style.setProperty('position', 'absolute')
     }
+
+    this._element.parentNode.insertBefore(this._headerPlaceholder, this._element)
   }
 
   _resizeStickyHeader() {

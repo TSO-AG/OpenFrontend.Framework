@@ -10,8 +10,11 @@
   --#{$prefix}calendar-list-event-hover-bg-color: #{$calendar-list-event-hover-bg-color};
   --#{$prefix}calendar-table-cell-shaded: #{$calendar-table-cell-shaded};
   --#{$prefix}calendar-today-bg-color: #{$calendar-today-bg-color};
+  --#{$prefix}calendar-mini-event-bg-color: #{$calendar-mini-event-bg-color};
+  --#{$prefix}calendar-mini-event-color: #{$calendar-mini-event-color};
   // scss-docs-end calendar-css-vars
 
+  --fc-border-color: var(--#{$prefix}calendar-border-color);
   --fc-event-bg-color: var(--#{$prefix}calendar-event-bg-color);
   --fc-event-border-color: var(--#{$prefix}calendar-event-border-color);
   --fc-list-event-hover-bg-color: var(--#{$prefix}calendar-list-event-hover-bg-color);
@@ -61,8 +64,77 @@
     }
   }
 
-  .calendar-table-cell-shaded {
+  .fc-day-disabled {
+    background-color: var(--#{$prefix}calendar-day-other-bg-color);
+  }
+
+  .fc-cell-shaded,
+  .fc-of-table-cell-shaded {
     background-color: var(--#{$prefix}calendar-table-cell-shaded);
+  }
+
+  .fc-multimonth-daygrid {
+    background: transparent;
+  }
+
+  .fc-miniView-view {
+    .fc-daygrid-day-frame {
+      height: 100%;
+    }
+
+    .fc-daygrid-day-top {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      pointer-events: none;
+    }
+  }
+
+  .fc-of-mini-event-day {
+    .fc-daygrid-day-top {
+      background: var(--#{$prefix}calendar-mini-event-bg-color);
+      color: var(--#{$prefix}calendar-mini-event-color);
+    }
+
+    .fc-daygrid-day-events {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+    }
+
+    .fc-daygrid-event-harness {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      z-index: 1;
+    }
+
+    .fc-daygrid-day-bottom {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      z-index: 2;
+
+      &:empty {
+        display: none;
+      }
+    }
+
+    a.fc-daygrid-block-event,
+    a.fc-daygrid-more-link {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      opacity: 0;
+    }
+
+    .fc-daygrid-day-bg {
+      display: none;
+    }
   }
 
   a:not([href]) {
@@ -92,4 +164,12 @@
 .calendar-event-date {
   @extend small;
   @extend .text-muted;
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .calendar {
+      --#{$prefix}calendar-today-bg-color: #{$calendar-today-bg-color-dark};
+    }
+  }
 }

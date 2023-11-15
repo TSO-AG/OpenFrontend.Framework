@@ -518,12 +518,14 @@ $map-marker-image-max-width:          null !default;
 // scss-docs-start calendar-variables
 $calendar-border-color:               var(--#{$prefix}border-color-translucent) !default;
 $calendar-border-width:               var(--#{$prefix}border-width) !default;
-$calendar-day-other-bg-color:         var(--#{$prefix}gray-100) !default;
+$calendar-day-other-bg-color:         rgba(0, 0, 0, .05) !default;
 $calendar-day-other-color:            var(--#{$prefix}gray-500) !default;
 $calendar-event-bg-color:             var(--#{$prefix}primary) !default;
 $calendar-event-border-color:         var(--#{$prefix}primary) !default;
 $calendar-event-max-width:            250px !default;
 $calendar-list-event-hover-bg-color:  var(--#{$prefix}gray-100) !default;
 $calendar-table-cell-shaded:          var(--#{$prefix}gray-200) !default;
-$calendar-today-bg-color:             rgba(255, 220, 40, .15) !default;
+$calendar-today-bg-color:             var(--#{$prefix}warning-bg-subtle) !default;
+$calendar-mini-event-bg-color:        var(--#{$prefix}primary) !default;
+$calendar-mini-event-color:           $white !default;
 // scss-docs-end calendar-variables

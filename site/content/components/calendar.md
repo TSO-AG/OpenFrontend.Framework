@@ -12,10 +12,12 @@ The calendar component can be implemented with HTML markup and attribute configu
 
 The component uses the [FullCalendar](https://fullcalendar.io/) library.
 
-## Example
+## Examples
+
+### Full layout
 
 <div class="bd-example">
-  <div id="calendar" class="calendar"></div>
+  <div id="calendar-full" class="calendar"></div>
 </div>
 
 <script>
@@ -39,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return new Date(now.getFullYear(), now.getMonth(), day, hour, minutes);
   }
 
-  openFrontend.Calendar.then(component => component.getOrCreateInstance('#calendar', {
+  openFrontend.Calendar.then(component => component.getOrCreateInstance('#calendar-full', {
     events: [
       {
         title: 'All day event',
@@ -154,6 +156,137 @@ document.addEventListener('DOMContentLoaded', () => {
 }'></div>
 {{< /highlight >}}
 
+### Mini layout
+
+<div class="bd-example">
+  <div id="calendar-mini" class="calendar"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const now = new Date();
+  const nextMonth = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0);
+  const futureDate = new Date();
+
+  const dummyContent = `
+<div class="calendar-event">
+  <figure class="calendar-event-image">
+    <img src="assets/media/sample-image.jpg" alt="">
+  </figure>
+  <p class="calendar-event-date">December 16 @ 12:00 - 13:30</p>
+  <h6>Yoga at the Park</h6>
+  <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
+  <a href="#" target="_blank" class="stretched-link">Read more …</a>
+</div>
+`;
+
+  function getDate(day, hour = 0, minutes = 0) {
+    return new Date(now.getFullYear(), now.getMonth(), day, hour, minutes);
+  }
+
+  openFrontend.Calendar.then(component => component.getOrCreateInstance('#calendar-mini', {
+    layout: 'mini',
+    events: [
+      {
+        title: 'All day event',
+        content: dummyContent,
+        start: getDate(8),
+        allDay: true,
+      },
+      {
+        title: 'Multiple days event',
+        content: dummyContent,
+        start: getDate(6),
+        end: getDate(10),
+        allDay: true,
+      },
+      {
+        title: 'Exact time event',
+        content: dummyContent,
+        start: getDate(10, 8, 30),
+        end: getDate(10, 11, 0),
+        allDay: false,
+      },
+      {
+        title: 'Dummy event 1',
+        content: dummyContent,
+        start: getDate(14),
+        allDay: true,
+      },
+      {
+        title: 'Dummy event 2',
+        content: dummyContent,
+        start: getDate(22),
+        allDay: true,
+      },
+      {
+        title: 'Dummy event 3',
+        content: dummyContent,
+        start: getDate(22),
+        end: getDate(25),
+        allDay: true,
+      },
+      {
+        title: 'Dummy event 4',
+        content: dummyContent,
+        start: getDate(27, 10, 0),
+        end: getDate(27, 12, 0),
+        allDay: false,
+      },
+      {
+        title: 'Dummy event 5',
+        content: dummyContent,
+        start: getDate(27, 14, 0),
+        end: getDate(27, 16, 0),
+        allDay: false,
+      },
+      {
+        title: 'Dummy event 6',
+        content: dummyContent,
+        start: getDate(27, 18, 0),
+        end: getDate(27, 20, 0),
+        allDay: false,
+      },
+      {
+        title: 'Dummy event 7',
+        content: dummyContent,
+        start: getDate(27, 22, 0),
+        end: getDate(27, 23, 30),
+        allDay: false,
+      },
+      {
+        title: 'Dummy event 8',
+        content: dummyContent,
+        start: getDate(22, 15, 0),
+        end: getDate(22, 18, 0),
+        allDay: false,
+      },
+      {
+        title: 'Next month event',
+        content: dummyContent,
+        start: nextMonth.setMonth(nextMonth.getMonth() + 1),
+        end: nextMonth.setDate(nextMonth.getDate() + 14),
+        allDay: true,
+      },
+      {
+        title: 'Future event 1',
+        content: dummyContent,
+        start: futureDate.setMonth(futureDate.getMonth() + 2),
+        end: futureDate.setDate(futureDate.getDate() + 5),
+        allDay: true,
+      },
+    ],
+  }))
+})
+</script>
+
+{{< highlight html >}}
+<div class="calendar" data-of-calendar='{
+  "layout": "mini",
+  "events": […]
+}'></div>
+{{< /highlight >}}
+
 ## Event markup
 
 You can use any markup in the event popover. The recommended event markup is presented below:
@@ -178,6 +311,8 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
 | `events` | `array` | `[]` | The events to be displayed. See the data structure below. |
+| `layout` | `string` | `'full'` | The layout to be used. See the examples above. Available options: `full`, `mini`. |
+| `miniMonthMinWidth` | `number` | `300` | The minimum width for one month in pixels. Applies only if the `layout` is set to `mini`. |
 {{< /bs-table >}}
 
 ### Event data structure
@@ -236,3 +371,5 @@ element.addEventListener('initialized.of.calendar', () => {
 ### Sass variables
 
 {{< scss-docs name="calendar-variables" file="src/scss/_variables.scss" >}}
+
+{{< scss-docs name="calendar-dark-variables" file="src/scss/_variables-dark.scss" >}}

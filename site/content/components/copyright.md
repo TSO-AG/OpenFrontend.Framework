@@ -39,3 +39,9 @@ You can display the copyright information in the vertical layout as well:
   <div class="copyright-text">&copy; 2023 by Acme Inc.</div>
 </div>
 {{< /example >}}
+
+## CSS
+
+### Sass variables
+
+{{< scss-docs name="copyright-variables" file="src/scss/_variables.scss" >}}

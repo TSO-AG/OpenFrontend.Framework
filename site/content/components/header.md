@@ -76,7 +76,7 @@ toc: true
           </ul>
         </div>
       </div>
-      <div>
+      <div class="d-none d-lg-block">
         <button class="header-link" class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch"
            aria-controls="headerSearch"
            aria-expanded="false" aria-label="Toggle header search">
@@ -187,7 +187,7 @@ toc: true
           </ul>
         </div>
       </div>
-      <div>
+      <div class="d-none d-lg-block">
         <button class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch2"
            aria-controls="headerSearch2"
            aria-expanded="false" aria-label="Toggle header search">
@@ -296,7 +296,7 @@ toc: true
           </ul>
         </div>
       </div>
-      <div>
+      <div class="d-none d-lg-block">
         <button class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch3"
            aria-controls="headerSearch3"
            aria-expanded="false" aria-label="Toggle header search">
@@ -407,7 +407,7 @@ toc: true
           </ul>
         </div>
       </div>
-      <div>
+      <div class="d-none d-lg-block">
         <button class="header-link" class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch"
            aria-controls="headerSearch"
            aria-expanded="false" aria-label="Toggle header search">

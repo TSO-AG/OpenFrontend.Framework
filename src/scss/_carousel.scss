@@ -170,7 +170,7 @@
   overflow: hidden;
 
   .swiper-watch-progress {
-    --slide-opacity: 0;
+    --slide-opacity: .2;
     overflow: visible;
 
     .swiper-slide {
@@ -182,10 +182,6 @@
     .swiper-slide-visible {
       --slide-opacity: 1;
       pointer-events: auto;
-
-      ~ .swiper-slide:not(.swiper-slide-visible) {
-        opacity: .2;
-      }
     }
   }
 }

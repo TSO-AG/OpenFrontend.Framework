@@ -4,141 +4,13 @@ title: Routing
 body_class: ""
 ---
 
-<header class="header header-transparent" style="--bs-header-sticky-background-color: #eaeaea; --bs-header-sticky-color: #595959; --bs-header-sticky-padding-y: 10px;" data-of-header='{
-  "sticky": true
-  }'>
-  <div class="container">
-    <div class="header-brand">
-      <a href="#">
-        <img class="bd-placeholder-img" alt="Logo" width="200" height="60"
-             src="data:image/svg+xml,%3Csvg%20style='font-size:%201.125rem;%20font-family:system-ui,-apple-system,%22Segoe%20UI%22,Roboto,%22Helvetica%20Neue%22,%22Noto%20Sans%22,%22Liberation%20Sans%22,Arial,sans-serif,%22Apple%20Color%20Emoji%22,%22Segoe%20UI%20Emoji%22,%22Segoe%20UI%20Symbol%22,%22Noto%20Color%20Emoji%22;%20-webkit-user-select:%20none;%20-moz-user-select:%20none;%20user-select:%20none;%20text-anchor:%20middle;'%20width='200'%20height='60'%20xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EPlaceholder%3C/title%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%23868e96'%3E%3C/rect%3E%3Ctext%20x='50%25'%20y='50%25'%20fill='%23dee2e6'%20dy='.3em'%3ELogo%3C/text%3E%3C/svg%3E">
-      </a>
-    </div>
-    <div class="header-content">
-      <div class="d-none d-lg-block">
-        <div class="dropdown">
-          <button class="header-link header-transparent-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
-            <span class="header-link-text">Account</span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Login</a></li>
-            <li><a class="dropdown-item" href="#">Register</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="d-none d-lg-block">
-        <div class="dropdown">
-          <button class="header-link header-transparent-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
-            <span class="header-link-text">Cart</span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Overview</a></li>
-            <li><a class="dropdown-item" href="#">Checkout</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="d-none d-lg-block">
-        <div class="dropdown">
-          <button class="header-link header-transparent-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <span class="header-link-icon">
-                <i class="ofi-heart-fill"></i>
-                <span class="header-link-icon-badge">
-                  <span class="badge bg-danger">12</span>
-                </span>
-              </span>
-            <span class="header-link-text">Favorites</span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Next Trip</a></li>
-            <li><a class="dropdown-item" href="#">Xmas Dinner</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Edit Favorites</a></li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <div class="dropdown">
-          <button class="header-link header-transparent-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-translate"></i></span>
-            <span class="header-link-text">Language</span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">German</a></li>
-            <li><a class="dropdown-item" href="#">English</a></li>
-            <li><a class="dropdown-item" href="#">French</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="d-none d-lg-block">
-        <button class="header-link header-transparent-link" data-bs-toggle="collapse" data-bs-target="#headerSearch"
-                aria-controls="headerSearch"
-                aria-expanded="false" aria-label="Toggle header search">
-          <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
-          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
-          <span class="header-link-text">Search</span>
-        </button>
-        <div class="collapse header-collapse header-search-wrapper" id="headerSearch">
-          <div class="container">
-            <div class="header-search">
-              <form class="search-form search-form-lg">
-                <div class="search-form-inputs">
-                  <input type="search" name="keywords" placeholder="Keywords" aria-label="Keywords">
-                  <button type="submit">
-                    <i class="ofi-search"></i>
-                    <span class="visually-hidden">Search</span>
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <button class="header-link header-transparent-link" type="button" data-bs-toggle="collapse"
-                data-bs-target="#pageMenu" aria-controls="pageMenu"
-                aria-expanded="false" aria-label="Toggle navigation">
-          <span class="header-link-icon d-none-collapsed"><i class="ofi-list"></i></span>
-          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
-          <span class="header-link-text">Menu</span>
-        </button>
-
-        <div class="collapse header-collapse page-menu-wrapper" id="pageMenu">
-          <div class="container">
-            {{< page-menu >}}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="wrapper wrapper-content-padding-y-xl" style="min-height: clamp(300px, 45vw, 700px); --bs-wrapper-padding-x: 0; padding-top: var(--bs-header-height, 92px)">
-  <div class="container">
-    <div class="wrapper-content">
-      <h2>Traumhafte Unterkünfte</h2>
-      <p>Luxus-Hotel oder B&B, in der Altstadt oder<br> am See: Hier findet jeder eine passende Unterkunft.</p>
-      <p>
-        <a href="#" class="btn btn-primary icon-link">Zur Hotelsuche<i class="ofi-arrow-right"></i></a>
-      </p>
-    </div>
-  </div>
-
-  <div class="wrapper-bg-media">
-    <figure>
-      <img src="../../assets/img/samples/img-17.jpg" alt="">
-    </figure>
-  </div>
-</div>
-
 <div class="container mt-3">
   <div class="row gx-2 gy-2 justify-content-between">
     <div class="col">
       <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Übernachten</li>
+          <li class="breadcrumb-item active" aria-current="page">Routing</li>
         </ol>
       </nav>
     </div>
@@ -146,11 +18,11 @@ body_class: ""
       <div>
         <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#share-modal" aria-labelledby="share-modal-label">
           <i class="ofi-share"></i>
-          <span class="d-none d-lg-inline">Teilen</span>
+          <span class="d-none d-lg-inline">Share</span>
         </button>
         <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
           <i class="ofi-star-fill"></i>
-          <span class="d-none d-lg-inline">Merken</span>
+          <span class="d-none d-lg-inline">Favorite</span>
         </button>
       </div>
     </div>
@@ -162,18 +34,14 @@ body_class: ""
     <div class="mb-section">
       <div class="row">
         <div class="col-xl-10 col-xxl-9">
-          <h1>Das ist ein Titel der ein wenig länger ist.</h1>
+          <h1>Lorem ipsum dolor sit amet</h1>
 
           <p class="fw-bold">
-            Das ist ein Lead der noch länger ist. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+            Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.
           </p>
 
-          <p>
-            Und dies ist ein fliesstext der so richtig lang ist. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-            dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          <p class="mb-0">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
           </p>
         </div>
       </div>
@@ -187,7 +55,7 @@ body_class: ""
               <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
                 <div class="wrapper wrapper-zoom">
                   <div class="wrapper-content-top-right">
-                    <div class="state state--open">Offen</div>
+                    <div class="state state--open">Open</div>
                   </div>
                   <div class="wrapper-content wrapper-content-padding-y-lg">
                     <h2>Hotel Walhalla</h2>
@@ -195,7 +63,7 @@ body_class: ""
                   </div>
                   <div class="wrapper-bg-media">
                     <figure>
-                      <img src="../../assets/img/samples/img-10.jpg" alt="">
+                      {{< placeholder width="100%" height="300" text="Image" >}}
                     </figure>
                   </div>
                 </div>
@@ -207,7 +75,7 @@ body_class: ""
               <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
                 <div class="wrapper wrapper-zoom">
                   <div class="wrapper-content-top-right">
-                    <div class="state state--open">Geöffnet</div>
+                    <div class="state state--open">Open</div>
                   </div>
                   <div class="wrapper-content wrapper-content-padding-y-lg">
                     <h2>Fly Hotel</h2>
@@ -215,7 +83,7 @@ body_class: ""
                   </div>
                   <div class="wrapper-bg-media">
                     <figure>
-                      <img src="../../assets/img/samples/img-11.jpg" alt="">
+                      {{< placeholder width="100%" height="300" text="Image" >}}
                     </figure>
                   </div>
                 </div>
@@ -223,7 +91,7 @@ body_class: ""
               <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
                 <div class="wrapper wrapper-zoom">
                   <div class="wrapper-content-top-right">
-                    <div class="state state--open">Geöffnet</div>
+                    <div class="state state--open">Open</div>
                   </div>
                   <div class="wrapper-content wrapper-content-padding-y-lg">
                     <h2>Haus zur Tanne</h2>
@@ -231,7 +99,7 @@ body_class: ""
                   </div>
                   <div class="wrapper-bg-media">
                     <figure>
-                      <img src="../../assets/img/samples/img-12.jpg" alt="">
+                      {{< placeholder width="100%" height="300" text="Image" >}}
                     </figure>
                   </div>
                 </div>
@@ -239,7 +107,7 @@ body_class: ""
               <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
                 <div class="wrapper wrapper-zoom">
                   <div class="wrapper-content-top-right">
-                    <div class="state state--open">Geöffnet</div>
+                    <div class="state state--open">Open</div>
                   </div>
                   <div class="wrapper-content wrapper-content-padding-y-lg">
                     <h2>Walensee Gasthaus</h2>
@@ -247,7 +115,7 @@ body_class: ""
                   </div>
                   <div class="wrapper-bg-media">
                     <figure>
-                      <img src="../../assets/img/samples/img-13.jpg" alt="">
+                      {{< placeholder width="100%" height="300" text="Image" >}}
                     </figure>
                   </div>
                 </div>
@@ -271,7 +139,7 @@ body_class: ""
                   </div>
                   <div class="wrapper-bg-media">
                     <figure>
-                      <img src="../../assets/img/samples/img-14.jpg" alt="">
+                      {{< placeholder width="100%" height="300" text="Image" >}}
                     </figure>
                   </div>
                 </div>
@@ -287,7 +155,7 @@ body_class: ""
                   </div>
                   <div class="wrapper-bg-media">
                     <figure>
-                      <img src="../../assets/img/samples/img-15.jpg" alt="">
+                      {{< placeholder width="100%" height="300" text="Image" >}}
                     </figure>
                   </div>
                 </div>
@@ -307,7 +175,7 @@ body_class: ""
                   </div>
                   <div class="wrapper-bg-media">
                     <figure>
-                      <img src="../../assets/img/samples/img-16.jpg" alt="">
+                      {{< placeholder width="100%" height="300" text="Image" >}}
                     </figure>
                   </div>
                 </div>
@@ -362,7 +230,7 @@ body_class: ""
 <div class="mb-section carousel-future-slides-visible">
   <div class="container">
     <div class="heading-action">
-      <h2>Angebot</h2>
+      <h2>Offer</h2>
       <div>
         <div class="carousel-navigation">
           <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-1">
@@ -397,16 +265,19 @@ body_class: ""
   }'>
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            {{< poi-card img_src="../../assets/img/samples/img-20.jpg" info="St.Gallen 29.06.23 - 02.07.23" title="BnB Haus Weibel" text="Erleben Sie einen wahren Kraftort direkt am Zürichsee! Seit 1917 geniesst hier Generation um Generation…" price_label="CHF" price="34.95" hide_btn_cart="true" >}}
+            {{< poi-card hide_btn_cart="true" >}}
           </div>
           <div class="swiper-slide">
-            {{< poi-card img_src="../../assets/img/samples/img-21.jpg" info="St.Gallen 29.06.23 - 02.07.23" title="Ferienwohnung Resort Walensee" text="Erleben Sie einen wahren Kraftort direkt am Zürichsee! Seit 1917 geniesst hier Generation um Generation…" price_label="CHF" price="123" hide_btn_cart="true" >}}
+            {{< poi-card hide_btn_cart="true" >}}
           </div>
           <div class="swiper-slide">
-            {{< poi-card img_src="../../assets/img/samples/img-22.jpg" info="St.Gallen 29.06.23 - 02.07.23" title="Boutique Hotel Bellevue & Genuss Werkstatt" text="Erleben Sie einen wahren Kraftort direkt am Zürichsee! Seit 1917 geniesst hier Generation um Generation…" price_label="CHF" price="70" hide_btn_cart="true" >}}
+            {{< poi-card hide_btn_cart="true" >}}
           </div>
           <div class="swiper-slide">
-            {{< poi-card img_src="../../assets/img/samples/img-23.jpg" info="St.Gallen 29.06.23 - 02.07.23" title="Boutique Hotel Bellevue & Genuss Werkstatt" text="Erleben Sie einen wahren Kraftort direkt am Zürichsee! Seit 1917 geniesst hier Generation um Generation…" price_label="CHF" price="70" hide_btn_cart="true" >}}
+            {{< poi-card hide_btn_cart="true" >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card hide_btn_cart="true" >}}
           </div>
           <div class="swiper-slide">
             {{< poi-card hide_btn_cart="true" >}}
@@ -476,7 +347,7 @@ body_class: ""
               <div class="logos-item">
                 <figure>
                   <a href="#">
-                    <img src="../../assets/img/samples/logo-1.png" alt="" width="175" height="125">
+                    {{< placeholder width="175" height="125" text="Logo" >}}
                   </a>
                 </figure>
               </div>
@@ -485,7 +356,7 @@ body_class: ""
               <div class="logos-item">
                 <figure>
                   <a href="#">
-                    <img src="../../assets/img/samples/logo-2.png" alt="" width="175" height="125">
+                    {{< placeholder width="175" height="125" text="Logo" >}}
                   </a>
                 </figure>
               </div>
@@ -494,7 +365,7 @@ body_class: ""
               <div class="logos-item">
                 <figure>
                   <a href="#">
-                    <img src="../../assets/img/samples/logo-3.png" alt="" width="175" height="125">
+                    {{< placeholder width="175" height="125" text="Logo" >}}
                   </a>
                 </figure>
               </div>
@@ -503,7 +374,7 @@ body_class: ""
               <div class="logos-item">
                 <figure>
                   <a href="#">
-                    <img src="../../assets/img/samples/logo-4.png" alt="" width="175" height="125">
+                    {{< placeholder width="175" height="125" text="Logo" >}}
                   </a>
                 </figure>
               </div>
@@ -512,16 +383,7 @@ body_class: ""
               <div class="logos-item">
                 <figure>
                   <a href="#">
-                    <img src="../../assets/img/samples/logo-5.png" alt="" width="175" height="125">
-                  </a>
-                </figure>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="logos-item">
-                <figure>
-                  <a href="#">
-                    <img src="../../assets/img/samples/logo-6.png" alt="" width="175" height="125">
+                    {{< placeholder width="175" height="125" text="Logo" >}}
                   </a>
                 </figure>
               </div>
@@ -587,161 +449,11 @@ body_class: ""
   </div>
 </div>
 
-<footer class="py-5 bg-light">
-  <div class="container">
-    <div class="row mb-3">
-      <div class="col-sm-6 col-lg-3 mb-3">
-        <h5>Kontakt</h5>
-
-        <p>
-          St. Gallen Bodensee Tourismus<br>
-          Bankgasse 9<br>
-          9001 St. Gallen
-        </p>
-
-        <p>
-          <a href="#" class="footer-link">+41 71 227 37 37</a>
-        </p>
-
-        <p>
-          <a href="#" class="footer-link">info@st.gallen-bodensee.ch</a>
-        </p>
-      </div>
-
-      <div class="col-6 col-lg-3 mb-3">
-        <h5>Unternehmen</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Mitarbeiter</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Karriere</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Partner</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Geschäftsberichte</a></li>
-        </ul>
-      </div>
-
-      <div class="col-6 col-lg-3 mb-3">
-        <h5>Quicklinks</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Über Uns</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Team</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Partner und Sponsoren</a></li>
-        </ul>
-      </div>
-
-      <div class="col-sm-6 col-lg-3 mb-3">
-        <form class="mb-3">
-          <h5>Newsletter</h5>
-          <div>
-            <div class="mb-3">
-              <label for="newsletter2" class="visually-hidden">E-Mail</label>
-              <input id="newsletter2" type="text" class="form-control" placeholder="E-Mail">
-            </div>
-            <div>
-              <button class="btn btn-primary w-100" type="button">Newsletter Anmelden</button>
-            </div>
-          </div>
-        </form>
-
-        <ul class="social-links">
-          <li>
-            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Instagram">
-              <span class="social-link-icon"><i class="ofi-instagram"></i></span>
-              <span class="visually-hidden">Instagram</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Facebook">
-              <span class="social-link-icon"><i class="ofi-facebook"></i></span>
-              <span class="visually-hidden">Facebook</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="TikTok">
-              <span class="social-link-icon"><i class="ofi-tiktok"></i></span>
-              <span class="visually-hidden">TikTok</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="YouTube">
-              <span class="social-link-icon"><i class="ofi-youtube"></i></span>
-              <span class="visually-hidden">YouTube</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="row">
-      <h5>Labels</h5>
-
-      <div>
-        <div class="logos logos-row justify-content-start" style="--bs-logos-item-bg: #fff; --bs-logos-item-padding-y: 10px; --bs-logos-item-padding-x: 10px; --bs-logos-item-border-radius: 5px; --bs-logos-item-max-width: 80px; --bs-logos-item-max-height: 80px">
-          <div>
-            <div class="logos-item">
-              <figure>
-                <a href="#">
-                  {{< placeholder markup="img" width="120" height="60">}}
-                </a>
-              </figure>
-            </div>
-          </div>
-          <div>
-            <div class="logos-item">
-              <figure>
-                <a href="#">
-                  {{< placeholder markup="img" width="60" height="60">}}
-                </a>
-              </figure>
-            </div>
-          </div>
-          <div>
-            <div class="logos-item">
-              <figure>
-                <a href="#">
-                  {{< placeholder markup="img" width="120" height="45">}}
-                </a>
-              </figure>
-            </div>
-          </div>
-          <div>
-            <div class="logos-item">
-              <figure>
-                <a href="#">
-                  {{< placeholder markup="img" width="90" height="70">}}
-                </a>
-              </figure>
-            </div>
-          </div>
-          <div>
-            <div class="logos-item">
-              <figure>
-                <a href="#">
-                  {{< placeholder markup="img" width="120" height="80">}}
-                </a>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="copyright copyright-horizontal border-top pt-4 mt-4">
-    <ul class="copyright-links">
-      <li><a href="#" class="footer-link">Datenschutz</a></li>
-      <li><a href="#" class="footer-link">Impressum</a></li>
-      <li><a href="#" class="footer-link">AGB</a></li>
-      <li><a href="#" class="footer-link">Cookies</a></li>
-    </ul>
-
-    <div class="copyright-text">&copy; 2023 by St.Gallen-Bodensee Tourismus, <a href="#" class="footer-link">powered by TSO AG</a></div>
-  </div>
-  </div>
-</footer>
-
 <div class="modal fade" id="share-modal" tabindex="-1" aria-labelledby="share-modal-label" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="share-modal-label">Teilen</h1>
+        <h1 class="modal-title fs-5" id="share-modal-label">Share</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -785,29 +497,29 @@ body_class: ""
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="favorites-modal-label">Merken</h1>
+        <h1 class="modal-title fs-5" id="favorites-modal-label">Favorite</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="mb-3">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="favorites-1">
-            <label class="form-check-label" for="favorites-1">Favoritenliste 1</label>
+            <label class="form-check-label" for="favorites-1">Favorites list 1</label>
             <span class="badge bg-secondary">9</span>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="favorites-2">
-            <label class="form-check-label" for="favorites-2">Favoritenliste 2</label>
+            <label class="form-check-label" for="favorites-2">Favorites list 2</label>
             <span class="badge bg-secondary">12</span>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="favorites-3">
-            <label class="form-check-label" for="favorites-3">Favoritenliste 3</label>
+            <label class="form-check-label" for="favorites-3">Favorites list 3</label>
             <span class="badge bg-secondary">3</span>
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Neue Liste erstellen" aria-label="Neue Liste erstellen">
+          <input type="text" class="form-control" placeholder="Create new list" aria-label="Create new list">
           <button type="button" class="btn btn-icon btn-primary"><i class="ofi-plus"></i></button>
         </div>
       </div>

@@ -420,8 +420,10 @@ body_class: ""
       </div>
     </div>
   </div>
+</div>
 
-  <div class="mb-section">
+<div class="mb-section carousel-future-slides-visible">
+  <div class="container">
     <div class="heading-action">
       <h2>Weitere Angebote</h2>
       <div>
@@ -438,24 +440,37 @@ body_class: ""
 
     <div class="carousel">
       <div class="swiper" data-of-carousel='{
-      "loop": true,
-      "slidesPerView": 1,
-      "spaceBetween": 24,
-      "navigationNext": "#carousel-btn-next-3",
-      "navigationPrev": "#carousel-btn-prev-3",
-       "breakpoints": {
-        "md": {
-          "slidesPerView": 2
-        },
-        "lg": {
-          "slidesPerView": 3
-        },
-        "xxl": {
-          "slidesPerView": 4
+        "loop": true,
+        "slidesPerView": 1,
+        "spaceBetween": 24,
+        "navigationNext": "#carousel-btn-next-3",
+        "navigationPrev": "#carousel-btn-prev-3",
+        "futureSlidesVisible": true,
+         "breakpoints": {
+          "md": {
+            "slidesPerView": 2
+          },
+          "lg": {
+            "slidesPerView": 3
+          },
+          "xxl": {
+            "slidesPerView": 4
+          }
         }
-      }
-  }'>
+    }'>
         <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
           <div class="swiper-slide">
             {{< poi-card >}}
           </div>

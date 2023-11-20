@@ -361,6 +361,71 @@ You can configure different slide display settings based on different viewport w
 </div>
 {{< /example >}}
 
+### Future slides visible
+
+It is a carousel design where upcoming slides are partially visible, providing a glimpse of what's ahead and creating a continuous, engaging visual flow.
+
+{{< example >}}
+
+<div class="carousel-future-slides-visible">
+  <div class="w-75">
+    <div class="heading-action">
+        <h3>Example heading</h3>
+        <div>
+            <div class="carousel-navigation">
+             <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-9">
+              <i class="ofi-caret-left-fill"></i>
+            </button>
+            <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-9">
+              <i class="ofi-caret-right-fill"></i>
+            </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel">
+      <div class="swiper" data-of-carousel='{
+          "autoplay": true,
+          "loop": true,
+          "speed": 600,
+          "slidesPerView": 2,
+          "spaceBetween": 24,
+          "pagination": "#carousel-pagination-9",
+          "navigationNext": "#carousel-btn-next-9",
+          "navigationPrev": "#carousel-btn-prev-9",
+          "futureSlidesVisible": true
+      }'>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            {{< placeholder width="225" height="225" class="img-fluid img-thumbnail w-100" color="#777" background="#999" text="Slide 1" >}}
+          </div>
+          <div class="swiper-slide">
+            {{< placeholder width="225" height="225" class="img-fluid img-thumbnail w-100" color="#666" background="#888" text="Slide 2" >}}
+          </div>
+          <div class="swiper-slide">
+            {{< placeholder width="225" height="225" class="img-fluid img-thumbnail w-100" color="#555" background="#777" text="Slide 3" >}}
+          </div>
+          <div class="swiper-slide">
+            {{< placeholder width="225" height="225" class="img-fluid img-thumbnail w-100" color="#444" background="#666" text="Slide 4" >}}
+          </div>
+          <div class="swiper-slide">
+            {{< placeholder width="225" height="225" class="img-fluid img-thumbnail w-100" color="#333" background="#555" text="Slide 5" >}}
+          </div>
+          <div class="swiper-slide">
+            {{< placeholder width="225" height="225" class="img-fluid img-thumbnail w-100" color="#222" background="#444" text="Slide 6" >}}
+          </div>
+          <div class="swiper-slide">
+            {{< placeholder width="225" height="225" class="img-fluid img-thumbnail w-100" color="#111" background="#333" text="Slide 7" >}}
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-pagination carousel-pagination--bottom-center" id="carousel-pagination-3"></div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
 ## Options
 
 You can pass extra options as JSON value of the data attribute. Here is the list of all available options (alphabetically):

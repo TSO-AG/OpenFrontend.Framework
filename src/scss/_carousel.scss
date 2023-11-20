@@ -166,6 +166,26 @@
   opacity: var(--#{$prefix}carousel-pagination-bullet-opacity);
 }
 
-.carousel-pagination-lock {
-  display: none;
+.carousel-future-slides-visible {
+  overflow: hidden;
+
+  .swiper-watch-progress {
+    --slide-opacity: 0;
+    overflow: visible;
+
+    .swiper-slide {
+      pointer-events: none;
+      opacity: var(--slide-opacity);
+      @include transition(opacity .3s);
+    }
+
+    .swiper-slide-visible {
+      --slide-opacity: 1;
+      pointer-events: auto;
+
+      ~ .swiper-slide:not(.swiper-slide-visible) {
+        opacity: .2;
+      }
+    }
+  }
 }

@@ -241,6 +241,13 @@
   --#{$prefix}header-link-hover-color: var(--#{$prefix}header-transparent-hover-color);
   --#{$prefix}header-link-disabled-color: var(--#{$prefix}header-transparent-disabled-color);
   --#{$prefix}header-link-active-color: var(--#{$prefix}header-transparent-active-color);
+
+  .header-sticky & {
+    --#{$prefix}header-link-color: unset;
+    --#{$prefix}header-link-hover-color: unset;
+    --#{$prefix}header-link-disabled-color: unset;
+    --#{$prefix}header-link-active-color: unset;
+  }
 }
 
 // Sticky Header

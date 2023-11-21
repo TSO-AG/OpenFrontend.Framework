@@ -1,169 +1,202 @@
-<p class="mb-0 fw-bold"><i class="ofi-star-fill"></i> Filter</p>
+<div class="d-lg-none">
+  <div class="mb-3">
+    <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#{{ .Get "id" }}-filters-mobile" aria-expanded="false" aria-controls="{{ .Get "id" }}-filters-mobile">
+      <i class="ofi-funnel-fill"></i> Filter
+    </button>
+  </div>
+  <div class="collapse" id="{{ .Get "id" }}-filters-mobile"></div>
+</div>
 
-<div class="accordion mb-3">
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ .Get "id" }}-filter-region" aria-expanded="true" aria-controls="{{ .Get "id" }}-filter-region">
-        Region
-      </button>
-    </h2>
-    <div id="{{ .Get "id" }}-filter-region" class="accordion-collapse collapse show">
-      <div class="accordion-body">
-        <div class="row">
-          <div class="col col-8">
-            <label for="{{ .Get "id" }}-filter-location" class="form-label">Ort</label>
+<div class="d-none d-lg-block">
+  <div id="{{ .Get "id" }}-filters-desktop">
+    <div id="{{ .Get "id" }}-filters">
+      <div class="accordion mb-3">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ .Get "id" }}-filter-region" aria-expanded="true" aria-controls="{{ .Get "id" }}-filter-region">
+              Region
+            </button>
+          </h2>
+          <div id="{{ .Get "id" }}-filter-region" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <div class="row gx-3 gy-3">
+                <div class="col">
+                  <label for="{{ .Get "id" }}-filter-location" class="form-label">Ort</label>
 
-            <div class="input-group">
-              <button class="btn btn-icon btn-outline-secondary" type="button"><i class="ofi-geo-alt-fill"></i></button>
-              <input type="text" id="{{ .Get "id" }}-filter-location" class="form-control" placeholder="St. Gallen">
+                  <div class="input-group">
+                    <button class="btn btn-icon btn-outline-secondary" type="button"><i class="ofi-geo-alt-fill"></i></button>
+                    <input type="text" id="{{ .Get "id" }}-filter-location" class="form-control" placeholder="St. Gallen">
+                  </div>
+                </div>
+                <div class="col-4 col-md-5">
+                  <label for="{{ .Get "id" }}-filter-distance" class="form-label">Umkreis</label>
+                  <select id="{{ .Get "id" }}-filter-distance" class="form-select">
+                    <option value="center">Zentrum</option>
+                    <option value="5">5km</option>
+                    <option value="10" selected>10km</option>
+                    <option value="15">15km</option>
+                    <option value="20">20km</option>
+                    <option value="25">25km</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col col-4">
-            <label for="{{ .Get "id" }}-filter-distance" class="form-label">Umkreis</label>
-            <select id="{{ .Get "id" }}-filter-distance" class="form-select">
-              <option value="center">Zentrum</option>
-              <option value="5">5km</option>
-              <option value="10" selected>10km</option>
-              <option value="15">15km</option>
-              <option value="20">20km</option>
-              <option value="25">25km</option>
-            </select>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ .Get "id" }}-filter-categories" aria-controls="{{ .Get "id" }}-filter-categories">
+              Kategorien
+            </button>
+          </h2>
+          <div id="{{ .Get "id" }}-filter-categories" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-category-1">
+                <label class="form-check-label" for="{{ .Get "id" }}-filter-category-1">
+                  Aussergewöhnlich
+                </label>
+                <span class="badge bg-secondary">53</span>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-category-2">
+                <label class="form-check-label" for="{{ .Get "id" }}-filter-category-2">
+                  Abenteuer
+                </label>
+                <span class="badge bg-secondary">19</span>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-category-3">
+                <label class="form-check-label" for="{{ .Get "id" }}-filter-category-3">
+                  Bewegung
+                </label>
+                <span class="badge bg-secondary">39</span>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-category-4">
+                <label class="form-check-label" for="{{ .Get "id" }}-filter-category-4">
+                  Entspannung
+                </label>
+                <span class="badge bg-secondary">32</span>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-category-5">
+                <label class="form-check-label" for="{{ .Get "id" }}-filter-category-5">
+                  Kulinarik
+                </label>
+                <span class="badge bg-secondary">54</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ .Get "id" }}-filter-seasons" aria-expanded="false" aria-controls="{{ .Get "id" }}-filter-seasons">
+              Saison
+            </button>
+          </h2>
+          <div id="{{ .Get "id" }}-filter-seasons" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-season-1">
+                <label class="form-check-label" for="{{ .Get "id" }}-filter-season-1">
+                  Herbst
+                </label>
+                <span class="badge bg-secondary">98</span>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-season-2">
+                <label class="form-check-label" for="{{ .Get "id" }}-filter-season-2">
+                  Frühling
+                </label>
+                <span class="badge bg-secondary">74</span>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-season-3">
+                <label class="form-check-label" for="{{ .Get "id" }}-filter-season-3">
+                  Sommer
+                </label>
+                <span class="badge bg-secondary">321</span>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-season-4">
+                <label class="form-check-label" for="{{ .Get "id" }}-filter-season-4">
+                  Winter
+                </label>
+                <span class="badge bg-secondary">24</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ .Get "id" }}-filter-time" aria-expanded="false" aria-controls="{{ .Get "id" }}-filter-time">
+              Zeitbedarf
+            </button>
+          </h2>
+          <div id="{{ .Get "id" }}-filter-time" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-time-1">
+                <label class="form-check-label" for="{{ .Get "id" }}-filter-time-1">
+                  &lt; 1h
+                </label>
+                <span class="badge bg-secondary">11</span>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-time-2">
+                <label class="form-check-label" for="{{ .Get "id" }}-filter-time-2">
+                  1-2h
+                </label>
+                <span class="badge bg-secondary">31</span>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-time-3">
+                <label class="form-check-label" for="{{ .Get "id" }}-filter-time-3">
+                  halber Tag
+                </label>
+                <span class="badge bg-secondary">62</span>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-time-4">
+                <label class="form-check-label" for="{{ .Get "id" }}-filter-time-4">
+                  ganzer Tag
+                </label>
+                <span class="badge bg-secondary">141</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ .Get "id" }}-filter-categories" aria-controls="{{ .Get "id" }}-filter-categories">
-        Kategorien
-      </button>
-    </h2>
-    <div id="{{ .Get "id" }}-filter-categories" class="accordion-collapse collapse show">
-      <div class="accordion-body">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-category-1">
-          <label class="form-check-label" for="{{ .Get "id" }}-filter-category-1">
-            Aussergewöhnlich
-          </label>
-          <span class="badge bg-secondary">53</span>
+
+      <div>
+        <div class="mb-2">
+          <button type="button" class="btn btn-outline-primary w-100">Filter löschen</button>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-category-2">
-          <label class="form-check-label" for="{{ .Get "id" }}-filter-category-2">
-            Abenteuer
-          </label>
-          <span class="badge bg-secondary">19</span>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-category-3">
-          <label class="form-check-label" for="{{ .Get "id" }}-filter-category-3">
-            Bewegung
-          </label>
-          <span class="badge bg-secondary">39</span>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-category-4">
-          <label class="form-check-label" for="{{ .Get "id" }}-filter-category-4">
-            Entspannung
-          </label>
-          <span class="badge bg-secondary">32</span>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-category-5">
-          <label class="form-check-label" for="{{ .Get "id" }}-filter-category-5">
-            Kulinarik
-          </label>
-          <span class="badge bg-secondary">54</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ .Get "id" }}-filter-seasons" aria-expanded="false" aria-controls="{{ .Get "id" }}-filter-seasons">
-        Saison
-      </button>
-    </h2>
-    <div id="{{ .Get "id" }}-filter-seasons" class="accordion-collapse collapse">
-      <div class="accordion-body">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-season-1">
-          <label class="form-check-label" for="{{ .Get "id" }}-filter-season-1">
-            Herbst
-          </label>
-          <span class="badge bg-secondary">98</span>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-season-2">
-          <label class="form-check-label" for="{{ .Get "id" }}-filter-season-2">
-            Frühling
-          </label>
-          <span class="badge bg-secondary">74</span>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-season-3">
-          <label class="form-check-label" for="{{ .Get "id" }}-filter-season-3">
-            Sommer
-          </label>
-          <span class="badge bg-secondary">321</span>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-season-4">
-          <label class="form-check-label" for="{{ .Get "id" }}-filter-season-4">
-            Winter
-          </label>
-          <span class="badge bg-secondary">24</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ .Get "id" }}-filter-time" aria-expanded="false" aria-controls="{{ .Get "id" }}-filter-time">
-        Zeitbedarf
-      </button>
-    </h2>
-    <div id="{{ .Get "id" }}-filter-time" class="accordion-collapse collapse">
-      <div class="accordion-body">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-time-1">
-          <label class="form-check-label" for="{{ .Get "id" }}-filter-time-1">
-            &lt; 1h
-          </label>
-          <span class="badge bg-secondary">11</span>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-time-2">
-          <label class="form-check-label" for="{{ .Get "id" }}-filter-time-2">
-            1-2h
-          </label>
-          <span class="badge bg-secondary">31</span>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-time-3">
-          <label class="form-check-label" for="{{ .Get "id" }}-filter-time-3">
-            halber Tag
-          </label>
-          <span class="badge bg-secondary">62</span>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="{{ .Get "id" }}-filter-time-4">
-          <label class="form-check-label" for="{{ .Get "id" }}-filter-time-4">
-            ganzer Tag
-          </label>
-          <span class="badge bg-secondary">141</span>
+        <div class="mb-3">
+          <button type="button" class="btn btn-primary w-100">34 Egerbnisse anzeigen</button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="row row-cols-auto">
-  <div>
-    <button type="button" class="btn btn-outline-primary">Filter löschen</button>
-  </div>
-  <div class="flex-grow-1">
-    <button type="button" class="btn btn-primary w-100">34 Egerbnisse anzeigen</button>
-  </div>
-</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filters = document.getElementById('{{ .Get "id" }}-filters');
+    const desktopContainer = document.getElementById('{{ .Get "id" }}-filters-desktop');
+    const mobileContainer = document.getElementById('{{ .Get "id" }}-filters-mobile');
+    const breakpoint = getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-lg');
+
+    function moveElements() {
+      if (window.matchMedia(`(max-width: ${breakpoint})`).matches) {
+        mobileContainer.appendChild(filters);
+      } else {
+        desktopContainer.appendChild(filters);
+      }
+    }
+
+    window.addEventListener('resize', moveElements);
+    moveElements();
+  });
+</script>

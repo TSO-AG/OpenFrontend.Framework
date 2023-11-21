@@ -3,9 +3,9 @@
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?jo4xmv') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?jo4xmv') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?jo4xmv##{$icomoon-font-family}') format('svg');
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?oizjtw') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?oizjtw') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?oizjtw##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,41 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ofi-funnel-fill {
+  &:before {
+    content: $ofi-funnel-fill; 
+  }
+}
+.ofi-translate {
+  &:before {
+    content: $ofi-translate; 
+  }
+}
+.ofi-person-circle {
+  &:before {
+    content: $ofi-person-circle; 
+  }
+}
+.ofi-x-lg {
+  &:before {
+    content: $ofi-x-lg; 
+  }
+}
+.ofi-copy {
+  &:before {
+    content: $ofi-copy; 
+  }
+}
+.ofi-envelope-fill {
+  &:before {
+    content: $ofi-envelope-fill; 
+  }
+}
+.ofi-share {
+  &:before {
+    content: $ofi-share; 
+  }
+}
 .ofi-plus {
   &:before {
     content: $ofi-plus; 

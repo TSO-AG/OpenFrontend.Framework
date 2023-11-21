@@ -12,6 +12,8 @@
   --#{$prefix}card-horizontal-media-width: #{$card-horizontal-media-width};
   --#{$prefix}card-mini-media-width: #{$card-mini-media-width};
   // scss-docs-end card-css-vars
+
+  height: 100%;
 }
 
 .card-media {

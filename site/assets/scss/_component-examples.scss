@@ -408,3 +408,19 @@
 .bd-content .bd-code-snippet {
   margin-bottom: 1rem;
 }
+
+// Header helpers
+.bd-example-header {
+  overflow: hidden;
+
+  &:hover {
+    overflow: visible;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    &:hover {
+      margin-right: -25% !important; // stylelint-disable-line declaration-no-important
+      margin-left: -25% !important; // stylelint-disable-line declaration-no-important
+    }
+  }
+}

@@ -7,31 +7,40 @@ body_class: ""
 <div class="py-5">
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-12">
+        <div class="row align-items-end justify-content-between">
+          <div class="col-auto d-none d-lg-block">
+            <p class="mb-3 fw-bold"><i class="ofi-funnel-fill"></i> Filter</p>
+          </div>
+          <div class="col-lg-auto">
+            {{< poi-list-sorting id="poi-list-grid-view" active-view="grid" >}}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-xxl-3 order-first order-lg-0">
         {{< poi-list-filter id="poi-list-grid-view" >}}
       </div>
 
-      <div class="col-md-8">
-        {{< poi-list-sorting id="poi-list-grid-view" active-view="grid" >}}
-
+      <div class="col-lg-8 col-xxl-9">
         <div>
-          <div class="row gy-4">
-            <div class="col-md-4">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 gy-4">
+            <div class="col">
               {{< poi-card >}}
             </div>
-            <div class="col-md-4">
+            <div class="col">
               {{< poi-card >}}
             </div>
-            <div class="col-md-4">
+            <div class="col">
               {{< poi-card >}}
             </div>
-            <div class="col-md-4">
+            <div class="col">
               {{< poi-card >}}
             </div>
-            <div class="col-md-4">
+            <div class="col">
               {{< poi-card >}}
             </div>
-            <div class="col-md-4">
+            <div class="col">
               {{< poi-card >}}
             </div>
           </div>
@@ -50,13 +59,22 @@ body_class: ""
 <div class="py-5">
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-12">
+        <div class="row align-items-end justify-content-between">
+          <div class="col-auto d-none d-lg-block">
+            <p class="mb-3 fw-bold"><i class="ofi-funnel-fill"></i> Filter</p>
+          </div>
+          <div class="col-lg-auto">
+            {{< poi-list-sorting id="poi-list-list-view" active-view="list" >}}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-xxl-3 order-first order-lg-0">
         {{< poi-list-filter id="poi-list-list-view" >}}
       </div>
 
-      <div class="col-md-8">
-        {{< poi-list-sorting id="poi-list-list-view" active-view="list" >}}
-
+      <div class="col-lg-8 col-xxl-9">
         <div>
           {{< poi-card layout="horizontal" >}}
           {{< poi-card layout="horizontal" >}}
@@ -79,13 +97,23 @@ body_class: ""
 <div class="py-5">
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-12">
+        <div class="row align-items-end justify-content-between">
+          <div class="col-auto d-none d-lg-block">
+            <p class="mb-3 fw-bold"><i class="ofi-funnel-fill"></i> Filter</p>
+          </div>
+          <div class="col-lg-auto">
+            {{< poi-list-sorting id="poi-list-map-view" active-view="map" >}}
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-4 col-xxl-3 order-first order-lg-0">
         {{< poi-list-filter id="poi-list-map-view" >}}
       </div>
 
-      <div class="col-md-8">
-        {{< poi-list-sorting id="poi-list-map-view" active-view="map" >}}
-
+      <div class="col-lg-8 col-xxl-9">
         <div>
           <div class="aspect aspect-16x9">
             <div id="mapOpenStreetMap" class="overflow-hidden"></div>

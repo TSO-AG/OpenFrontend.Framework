@@ -1,0 +1,40 @@
+.page-menu-wrapper {
+  // scss-docs-start page-menu-css-vars
+  --#{$prefix}page-menu-padding-x: #{if($page-menu-padding-x == null, 0, $page-menu-padding-x)};
+  --#{$prefix}page-menu-padding-y: #{$page-menu-padding-y};
+  --#{$prefix}page-menu-background-color: #{$page-menu-light-background};
+  --#{$prefix}page-menu-color: #{$page-menu-light-color};
+  --#{$prefix}page-menu-box-shadow: #{$page-menu-box-shadow};
+  // scss-docs-end page-menu-css-vars
+
+  color: var(--#{$prefix}page-menu-color);
+  background-color: var(--#{$prefix}page-menu-background-color);
+  box-shadow: var(--#{$prefix}page-menu-background-color);
+}
+
+.page-menu {
+  display: grid;
+  gap: 1.5rem;
+  padding: var(--#{$prefix}page-menu-padding-y) var(--#{$prefix}page-menu-padding-x);
+
+  @include media-breakpoint-up($page-menu-breakpoint) {
+    grid-template-columns: 1fr 23em;
+  }
+}
+
+.page-menu-wrapper-dark,
+.header[data-bs-theme="dark"] .page-menu-wrapper {
+  // scss-docs-start page-menu-dark-css-vars
+  --#{$prefix}page-menu-background-color: #{$page-menu-dark-background};
+  --#{$prefix}page-menu-color: #{$page-menu-dark-color};
+  // scss-docs-end page-menu-dark-css-vars
+}
+
+.page-menu-mobile-content {
+  display: grid;
+  gap: 1rem;
+
+  @include media-breakpoint-up($page-menu-breakpoint) {
+    display: none;
+  }
+}

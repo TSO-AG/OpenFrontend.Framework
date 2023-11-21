@@ -17,21 +17,31 @@ body_class: ""
   </div>
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-lg-8 col-xxl-9">
       <div class="mb-element">
-        {{< placeholder width="100%" height="500" text="Responsive image" >}}
+        {{< placeholder class="aspect aspect-16x9 object-fit-cover" width="100%" height="545" text="Responsive image" >}}
       </div>
 
       <div class="mb-section">
-        <h2>Ein Hotel mit Stil - im Herzen der Stadt St.Gallen, nur ein paar Schritte vom Bahnhof entfernt.</h2>
+        <div class="row">
+          <div class="col">
+            <h2>Ein Hotel mit Stil - im Herzen der Stadt St.Gallen, nur ein paar Schritte vom Bahnhof entfernt.</h2>
 
-        <p>
-          Das Hotel Walhalla gehört seit dem 19. Jahrhundert zum St.Galler Stadtbild. Erstmals beherbergte der Bau Hotelgäste im Jahr 1887. Um den Gästen weiterhin
-          ein zeitgemässes Ambiente zu bieten, wurde das Hotel Walhalla im Mai 2018 für eine umfangreiche Renovierung geschlossen. Das Traditionshaus verfügt, seit
-          der Eröffnung im September 2019, neu über 100 Zimmer mit komfortabler Ausstattung, der Brasserie Walhalla mit Schweizer Spezialitäten und der Walhalla
-          Bar, mit einer grossen Auswahl an lokalen und internationalen Getränken und Snacks. Mit der zentralen Lage am Bahnhof St.Gallen und dem erweiterten
-          Seminarbereich mit sechs Räumen und modernster Seminartechnik bietet das Hotel optimale Voraussetzungen für Veranstaltungen.
-        </p>
+            <p>
+              Das Hotel Walhalla gehört seit dem 19. Jahrhundert zum St.Galler Stadtbild. Erstmals beherbergte der Bau Hotelgäste im Jahr 1887. Um den Gästen weiterhin
+              ein zeitgemässes Ambiente zu bieten, wurde das Hotel Walhalla im Mai 2018 für eine umfangreiche Renovierung geschlossen. Das Traditionshaus verfügt, seit
+              der Eröffnung im September 2019, neu über 100 Zimmer mit komfortabler Ausstattung, der Brasserie Walhalla mit Schweizer Spezialitäten und der Walhalla
+              Bar, mit einer grossen Auswahl an lokalen und internationalen Getränken und Snacks. Mit der zentralen Lage am Bahnhof St.Gallen und dem erweiterten
+              Seminarbereich mit sechs Räumen und modernster Seminartechnik bietet das Hotel optimale Voraussetzungen für Veranstaltungen.
+            </p>
+          </div>
+          <div class="d-none d-md-block d-lg-none col-md-4">
+            <div class="sticky-top">
+              <h3>Angebot</h3>
+              <button class="btn btn-primary w-100">Jetzt Buchen</button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="mb-section">
@@ -49,18 +59,55 @@ body_class: ""
 
         <div class="tab-content">
           <div class="tab-pane show active" id="poi-detail-images-pane" role="tabpanel" aria-labelledby="poi-detail-images" tabindex="0">
-            {{< placeholder width="200" height="200" class="img-thumbnail" text="Gallery 1" >}}
-            {{< placeholder width="200" height="200" class="img-thumbnail" text="Gallery 2" >}}
-            {{< placeholder width="200" height="200" class="img-thumbnail" text="Gallery 3" >}}
+            <div class="masonry masonry-group-2">
+              <div class="masonry-group-item">
+                <div class="masonry masonry-vertical-1">
+                  <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
+                    {{< placeholder width="200" height="100" class="img-thumbnail" text="Gallery 1" >}}
+                  </div>
+                </div>
+              </div>
+              <div class="masonry-group-item">
+                <div class="masonry masonry-vertical-5">
+                  <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+                    {{< placeholder width="200" height="100" class="img-thumbnail" text="Gallery 1" >}}
+                  </div>
+                  <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
+                    {{< placeholder width="200" height="100" class="img-thumbnail" text="Gallery 1" >}}
+                  </div>
+                  <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
+                    {{< placeholder width="200" height="100" class="img-thumbnail" text="Gallery 1" >}}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="tab-pane" id="poi-detail-videos-pane" role="tabpanel" aria-labelledby="poi-detail-videos" tabindex="0">
-            <video controls class="w-100 aspect aspect-16x9">
-              <source src="../../assets/media/sample-video.mp4" type="video/mp4">
-              <source src="../../assets/media/sample-video.ogg" type="video/ogg">
-            </video>
+            <div class="masonry masonry-group-2">
+              <div class="masonry-group-item">
+                <div class="masonry masonry-vertical-1">
+                  <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto" data-of-video-play>
+                    {{< video class="object-fit-cover" >}}
+                  </div>
+                </div>
+              </div>
+              <div class="masonry-group-item">
+                <div class="masonry masonry-vertical-5">
+                  <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16" data-of-video-play>
+                    {{< video class="object-fit-cover" >}}
+                  </div>
+                  <div class="masonry-item aspect aspect-16x9 aspect-md-auto" data-of-video-play>
+                    {{< video class="object-fit-cover" >}}
+                  </div>
+                  <div class="masonry-item aspect aspect-16x9 aspect-md-auto" data-of-video-play>
+                    {{< video class="object-fit-cover" >}}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="tab-pane" id="poi-detail-live-pane" role="tabpanel" aria-labelledby="poi-detail-live" tabindex="0">
-            {{< placeholder width="100%" height="200" class="img-thumbnail" text="Live Kamera 360°" >}}
+            {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="Live Kamera 360°" >}}
           </div>
         </div>
       </div>
@@ -143,39 +190,108 @@ body_class: ""
       </div>
 
       <div class="mb-section">
-        <h3>Angebot</h3>
+        <h3>Weitere Informationen</h3>
 
-        <div class="mb-element">
-          <ul class="tag-list">
-            <li class="tag">Veloabstellraum</li>
-            <li class="tag">Parkplätze</li>
-            <li class="tag">Bar / Bistro</li>
-            <li class="tag">Haustiere erlaubt</li>
-            <li class="tag">Gratis W-LAN</li>
-            <li class="tag">Terrassen-/Gartensitzplätze</li>
-            <li class="tag">Restaurant/Café</li>
-            <li class="tag">Rollstuhlgerecht</li>
-          </ul>
-        </div>
-
-        <div class="accordion" id="poi-detail-accordions">
+        <div class="accordion">
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#poi-detail-awards" aria-expanded="true" aria-controls="poi-detail-awards">Auszeichnungen</button>
             </h2>
-            <div id="poi-detail-awards" class="accordion-collapse collapse show" data-bs-parent="#poi-detail-accordions">
+            <div id="poi-detail-awards" class="accordion-collapse collapse show">
               <div class="accordion-body">
-                <p>Commodo non duis amet consequat aliquip magna cupidatat labore. Tempor aute sit non aliqua ad ex in aliqua labore deserunt enim. Voluptate magna et laboris adipisicing eu commodo excepteur est consequat duis aliquip aliquip tempor dolor. Fugiat minim sit sint ea anim reprehenderit aute deserunt do et quis enim aliquip. Occaecat ipsum deserunt anim qui ex duis ex eu laborum est veniam voluptate dolore labore ad. Sit aliquip anim eu non Lorem commodo quis deserunt reprehenderit in ea officia. Exercitation nulla consequat culpa cupidatat labore dolor adipisicing sunt aute cupidatat sint id.</p>
+                <div class="logos logos-row mb-0" style="--bs-logos-item-bg: #f8f9fa; --bs-logos-item-padding-y: 10px; --bs-logos-item-padding-x: 10px; --bs-logos-item-border-radius: 5px; --bs-logos-item-border-width: 1px; --bs-logos-item-border-style: solid; --bs-logos-item-border-color: #dee2e6;  --bs-logos-item-max-width: 80px; --bs-logos-item-max-height: 80px">
+                  <div>
+                    <div class="logos-item">
+                      <figure>
+                        <a href="#">
+                          {{< placeholder markup="img" width="120" height="60">}}
+                        </a>
+                      </figure>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="logos-item">
+                      <figure>
+                        <a href="#">
+                          {{< placeholder markup="img" width="60" height="60">}}
+                        </a>
+                      </figure>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="logos-item">
+                      <figure>
+                        <a href="#">
+                          {{< placeholder markup="img" width="120" height="45">}}
+                        </a>
+                      </figure>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="logos-item">
+                      <figure>
+                        <a href="#">
+                          {{< placeholder markup="img" width="90" height="70">}}
+                        </a>
+                      </figure>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="logos-item">
+                      <figure>
+                        <a href="#">
+                          {{< placeholder markup="img" width="120" height="80">}}
+                        </a>
+                      </figure>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="logos-item">
+                      <figure>
+                        <a href="#">
+                          {{< placeholder markup="img" width="120" height="60">}}
+                        </a>
+                      </figure>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="logos-item">
+                      <figure>
+                        <a href="#">
+                          {{< placeholder markup="img" width="120" height="75">}}
+                        </a>
+                      </figure>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="logos-item">
+                      <figure>
+                        <a href="#">
+                          {{< placeholder markup="img" width="120" height="40">}}
+                        </a>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#poi-detail-more-info" aria-expanded="false" aria-controls="poi-detail-more-info">Weitere Informationen</button>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#poi-detail-furnishing" aria-expanded="false" aria-controls="poi-detail-furnishing">Ausstattung</button>
             </h2>
-            <div id="poi-detail-more-info" class="accordion-collapse collapse" data-bs-parent="#poi-detail-accordions">
+            <div id="poi-detail-furnishing" class="accordion-collapse collapse">
               <div class="accordion-body">
-                <p>Reprehenderit dolore pariatur velit adipisicing aliquip ullamco eu incididunt excepteur est do mollit. Sit pariatur labore fugiat. Aute consectetur id enim aliquip qui adipisicing aliqua cupidatat cupidatat veniam nostrud non quis veniam. Magna non non voluptate Lorem sit reprehenderit aliqua minim. Mollit proident excepteur nulla tempor. Lorem exercitation ipsum esse elit.</p>
+                <ul class="tag-list">
+                  <li class="tag">Veloabstellraum</li>
+                  <li class="tag">Parkplätze</li>
+                  <li class="tag">Bar / Bistro</li>
+                  <li class="tag">Haustiere erlaubt</li>
+                  <li class="tag">Gratis W-LAN</li>
+                  <li class="tag">Terrassen-/Gartensitzplätze</li>
+                  <li class="tag">Restaurant/Café</li>
+                  <li class="tag">Rollstuhlgerecht</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -297,15 +413,17 @@ body_class: ""
       </div>
     </div>
 
-    <div class="col-md-4 mb-section">
+    <div class="col-lg-4 col-xxl-3 mb-section d-md-none d-lg-block">
       <div class="sticky-top">
         <h3>Angebot</h3>
         <button class="btn btn-primary w-100">Jetzt Buchen</button>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="mb-section">
+<div class="mb-section carousel-future-slides-visible">
+  <div class="container">
     <div class="heading-action">
       <h2>Weitere Angebote</h2>
       <div>
@@ -322,24 +440,37 @@ body_class: ""
 
     <div class="carousel">
       <div class="swiper" data-of-carousel='{
-      "loop": true,
-      "slidesPerView": 1,
-      "spaceBetween": 24,
-      "navigationNext": "#carousel-btn-next-3",
-      "navigationPrev": "#carousel-btn-prev-3",
-       "breakpoints": {
-        "md": {
-          "slidesPerView": 2
-        },
-        "lg": {
-          "slidesPerView": 3
-        },
-        "xxl": {
-          "slidesPerView": 4
+        "loop": true,
+        "slidesPerView": 1,
+        "spaceBetween": 24,
+        "navigationNext": "#carousel-btn-next-3",
+        "navigationPrev": "#carousel-btn-prev-3",
+        "futureSlidesVisible": true,
+         "breakpoints": {
+          "md": {
+            "slidesPerView": 2
+          },
+          "lg": {
+            "slidesPerView": 3
+          },
+          "xxl": {
+            "slidesPerView": 4
+          }
         }
-      }
-  }'>
+    }'>
         <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
           <div class="swiper-slide">
             {{< poi-card >}}
           </div>

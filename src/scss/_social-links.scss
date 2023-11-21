@@ -1,18 +1,21 @@
 .social-links {
   // scss-docs-start social-links-css-vars
   --#{$prefix}social-links-gap: #{$social-links-gap};
-  --#{$prefix}social-link-bg: #{$social-link-bg};
-  --#{$prefix}social-link-color: #{$social-link-color};
-  --#{$prefix}social-link-border-style: #{$social-link-border-style};
-  --#{$prefix}social-link-border-width: #{$social-link-border-width};
-  --#{$prefix}social-link-border-color: #{$social-link-border-color};
-  --#{$prefix}social-link-border-radius: #{$social-link-border-radius};
-  --#{$prefix}social-link-font-size: #{$social-link-font-size};
-  --#{$prefix}social-link-width: #{$social-link-width};
-  --#{$prefix}social-link-height: #{$social-link-height};
-  --#{$prefix}social-link-hover-bg: #{$social-link-hover-bg};
-  --#{$prefix}social-link-hover-color: #{$social-link-hover-color};
-  --#{$prefix}social-link-hover-border-color: #{$social-link-hover-border-color};
+  --#{$prefix}social-link-icon-bg: #{$social-link-icon-bg};
+  --#{$prefix}social-link-icon-color: #{$social-link-icon-color};
+  --#{$prefix}social-link-icon-border-style: #{$social-link-icon-border-style};
+  --#{$prefix}social-link-icon-border-width: #{$social-link-icon-border-width};
+  --#{$prefix}social-link-icon-border-color: #{$social-link-icon-border-color};
+  --#{$prefix}social-link-icon-border-radius: #{$social-link-icon-border-radius};
+  --#{$prefix}social-link-icon-font-size: #{$social-link-icon-font-size};
+  --#{$prefix}social-link-icon-width: #{$social-link-icon-width};
+  --#{$prefix}social-link-icon-height: #{$social-link-icon-height};
+  --#{$prefix}social-link-icon-hover-bg: #{$social-link-icon-hover-bg};
+  --#{$prefix}social-link-icon-hover-color: #{$social-link-icon-hover-color};
+  --#{$prefix}social-link-icon-hover-border-color: #{$social-link-icon-hover-border-color};
+  --#{$prefix}social-link-label-color: #{$social-link-label-color};
+  --#{$prefix}social-link-label-hover-color: #{$social-link-label-hover-color};
+  --#{$prefix}social-link-label-font-size: #{$social-link-label-font-size};
   // scss-docs-end social-links-css-vars
 
   display: flex;
@@ -20,25 +23,52 @@
   gap: var(--#{$prefix}social-links-gap);
   margin-bottom: 0;
   @include list-unstyled();
-  @include transition($social-link-transition);
+  @include transition($social-link-icon-transition);
+}
+
+.social-links-lg {
+  --#{$prefix}social-links-gap: #{$social-links-gap-lg};
+  --#{$prefix}social-link-icon-font-size: #{$social-link-icon-font-size-lg};
+  --#{$prefix}social-link-icon-width: #{$social-link-icon-width-lg};
+  --#{$prefix}social-link-icon-height: #{$social-link-icon-height-lg};
 }
 
 .social-link {
   display: flex;
+  flex-direction: column;
+  gap: .5em;
+  align-items: center;
+  padding: 0;
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+}
+
+.social-link-icon {
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--#{$prefix}social-link-width);
-  height: var(--#{$prefix}social-link-height);
-  font-size: var(--#{$prefix}social-link-font-size);
-  color: var(--#{$prefix}social-link-color);
-  text-decoration: none;
-  background-color: var(--#{$prefix}social-link-bg);
-  border: var(--#{$prefix}social-link-border-width) var(--#{$prefix}social-link-border-style) var(--#{$prefix}social-link-border-color);
-  @include border-radius(var(--#{$prefix}social-link-border-radius));
+  width: var(--#{$prefix}social-link-icon-width);
+  height: var(--#{$prefix}social-link-icon-height);
+  font-size: var(--#{$prefix}social-link-icon-font-size);
+  color: var(--#{$prefix}social-link-icon-color);
+  background-color: var(--#{$prefix}social-link-icon-bg);
+  border: var(--#{$prefix}social-link-icon-border-width) var(--#{$prefix}social-link-icon-border-style) var(--#{$prefix}social-link-icon-border-color);
+  @include border-radius(var(--#{$prefix}social-link-icon-border-radius));
 
   &:hover {
-    color: var(--#{$prefix}social-link-hover-color);
-    background-color: var(--#{$prefix}social-link-hover-bg);
-    border: var(--#{$prefix}social-link-border-width) var(--#{$prefix}social-link-border-style) var(--#{$prefix}social-link-hover-border-color);
+    color: var(--#{$prefix}social-link-icon-hover-color);
+    background-color: var(--#{$prefix}social-link-icon-hover-bg);
+    border: var(--#{$prefix}social-link-icon-border-width) var(--#{$prefix}social-link-icon-border-style) var(--#{$prefix}social-link-icon-hover-border-color);
+  }
+}
+
+.social-link-label {
+  font-size: var(--#{$prefix}social-link-label-font-size);
+  color: var(--#{$prefix}social-link-label-color);
+  @include transition($social-link-label-transition);
+
+  &:hover {
+    color: var(--#{$prefix}social-link-label-hover-color);
   }
 }

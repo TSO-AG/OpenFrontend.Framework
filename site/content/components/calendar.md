@@ -10,7 +10,11 @@ toc: true
 
 The calendar component can be implemented with HTML markup and attribute configurations.
 
-The component uses the [FullCalendar](https://fullcalendar.io/) library.
+You can display any content in the popover. However, it is highly recommended to use the [popover content markup]({{< docsref "/components/popovers#popover-content" >}}).
+
+{{< callout info >}}
+The component uses the [FullCalendar](https://fullcalendar.io/) library behind the scenes.
+{{< /callout >}}
 
 ## Examples
 
@@ -26,14 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextMonth = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0);
 
   const dummyContent = `
-<div class="calendar-event">
-  <figure class="calendar-event-image">
+<div class="popover-content">
+  <figure class="popover-content-image">
     <img src="assets/media/sample-image.jpg" alt="">
   </figure>
-  <p class="calendar-event-date">December 16 @ 12:00 - 13:30</p>
-  <h6>Yoga at the Park</h6>
-  <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
-  <a href="#" target="_blank" class="stretched-link">Read more …</a>
+  <div class="popover-content-inside">
+    <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
+    <h6 class="popover-content-title">Yoga at the Park</h6>
+    <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
+    <a href="#" class="stretched-link">Read more …</a>
+  </div>
 </div>
 `;
 
@@ -134,20 +140,20 @@ document.addEventListener('DOMContentLoaded', () => {
   "events": [
     {
       "title": "All day event",
-      "content": "<div class=\"calendar-event\">…</div>",
+      "content": "<div class=\"popover-event\">…</div>",
       "start": "YYYY-MM-DD",
       "allDay": true
     },
     {
       "title": "Multiple days event",
-      "content": "<div class=\"calendar-event\">…</div>",
+      "content": "<div class=\"popover-content\">…</div>",
       "start": "YYYY-MM-DD",
       "end": "YYYY-MM-DD",
       "allDay": true
     },
     {
       "title": "Exact time event",
-      "content": "<div class=\"calendar-event\">…</div>",
+      "content": "<div class=\"popover-content\">…</div>",
       "start": "YYYY-MM-DD\Thh:mm:ss",
       "end": "YYYY-MM-DD\Thh:mm:ss",
       "allDay": false
@@ -160,6 +166,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <div class="bd-example">
   <div id="calendar-mini" class="calendar"></div>
+  <ul class="calendar-legend">
+    <li class="calendar-legend-item">
+      <span class="calendar-legend-symbol calendar-legend-symbol-event"></span>
+      <span class="calendar-legend-label">Event date</span>
+    </li>
+    <li class="calendar-legend-item">
+      <span class="calendar-legend-symbol"></span>
+      <span class="calendar-legend-label">Free date</span>
+    </li>
+  </ul>
 </div>
 
 <script>
@@ -169,14 +185,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const futureDate = new Date();
 
   const dummyContent = `
-<div class="calendar-event">
-  <figure class="calendar-event-image">
+<div class="popover-content">
+  <figure class="popover-content-image">
     <img src="assets/media/sample-image.jpg" alt="">
   </figure>
-  <p class="calendar-event-date">December 16 @ 12:00 - 13:30</p>
-  <h6>Yoga at the Park</h6>
-  <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
-  <a href="#" target="_blank" class="stretched-link">Read more …</a>
+  <div class="popover-content-inside">
+    <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
+    <h6 class="popover-content-title">Yoga at the Park</h6>
+    <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
+    <a href="#" class="stretched-link">Read more …</a>
+  </div>
 </div>
 `;
 
@@ -287,21 +305,6 @@ document.addEventListener('DOMContentLoaded', () => {
 }'></div>
 {{< /highlight >}}
 
-## Event markup
-
-You can use any markup in the event popover. The recommended event markup is presented below:
-
-```html
-<div class="calendar-event">
-  <figure class="calendar-event-image">
-    <img src="assets/media/sample-image.jpg" alt="">
-  </figure>
-  <p class="calendar-event-date">December 16 @ 12:00 - 13:30</p>
-  <h6>Yoga at the Park</h6>
-  <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
-  <a href="#" class="stretched-link">Read more …</a>
-</div>
-```
 
 ## Options
 
@@ -325,20 +328,20 @@ The `start` and `end` must be provided in the `YYYY-MM-DD` date format, or if th
 const events = [
   {
     title: 'All day event',
-    content: '<div class="calendar-event">…</div>',
+    content: '<div class="popover-content">…</div>',
     start: '2010-01-01',
     allDay: true
   },
   {
     title: 'Multiple days event',
-    content: '<div class="calendar-event">…</div>',
+    content: '<div class="popover-content">…</div>',
     start: '2013-01-05',
     end: '2010-01-07',
     allDay: true
   },
   {
     title: 'Event at specific time',
-    content: '<div class="calendar-event">…</div>',
+    content: '<div class="popover-content">…</div>',
     start: '2010-01-09T12:30:00',
     allDay: false
   }

@@ -13,6 +13,8 @@
 - category: Content
   description: "Content templates for websites provide a consistent and structured layout to present information, ensuring a uniform and professional appearance across various web pages."
   examples:
+    - name: Event detail
+      description: "Event detail template presents detailed information about a specific event."
     - name: POI Detail
       description: "A POI detail page template presents detailed information about a specific location or attraction in a structured and accessible format."
     - name: POI List

@@ -1,0 +1,194 @@
+---
+layout: examples
+title: Event detail
+body_class: ""
+---
+
+<div class="container">
+  <div class="d-flex">
+    <h1>OLMA</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 col-xxl-9">
+      <div class="mb-section">
+        <div class="row">
+          <div class="col">
+            <h2>Die grösste und beliebteste Publikumsmesse der Schweiz lädt zum 80. Mal zu einem farbenfrohen Volksfest ein.</h2>
+
+            <div class="mb-element">
+              {{< placeholder class="aspect aspect-16x9 object-fit-cover" width="100%" height="545" text="Responsive image" >}}
+            </div>
+
+            <h3>Beschreibung</h3>
+
+            <p>
+              Das Hotel Walhalla gehört seit dem 19. Jahrhundert zum St.Galler Stadtbild. Erstmals beherbergte der Bau Hotelgäste im Jahr 1887. Um den Gästen weiterhin
+              ein zeitgemässes Ambiente zu bieten, wurde das Hotel Walhalla im Mai 2018 für eine umfangreiche Renovierung geschlossen. Das Traditionshaus verfügt, seit
+              der Eröffnung im September 2019, neu über 100 Zimmer mit komfortabler Ausstattung, der Brasserie Walhalla mit Schweizer Spezialitäten und der Walhalla
+              Bar, mit einer grossen Auswahl an lokalen und internationalen Getränken und Snacks. Mit der zentralen Lage am Bahnhof St.Gallen und dem erweiterten
+              Seminarbereich mit sechs Räumen und modernster Seminartechnik bietet das Hotel optimale Voraussetzungen für Veranstaltungen.
+            </p>
+          </div>
+          <div class="d-none d-md-block d-lg-none col-md-4">
+            <div class="sticky-top">
+              <h3>Angebot</h3>
+              <button class="btn btn-primary w-100">Jetzt Buchen</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-section">
+        <div id="calendar-mini" class="calendar"></div>
+        <ul class="calendar-legend">
+          <li class="calendar-legend-item">
+            <span class="calendar-legend-symbol calendar-legend-symbol-event"></span>
+            <span class="calendar-legend-label">Event date</span>
+          </li>
+          <li class="calendar-legend-item">
+            <span class="calendar-legend-symbol"></span>
+            <span class="calendar-legend-label">Free date</span>
+          </li>
+        </ul>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const events = [];
+            const today = new Date();
+            const numberOfEvents = 10;
+            const dummyContent = `
+<div class="popover-content">
+  <div class="popover-content-inside">
+    <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
+    <h6 class="popover-content-title">Yoga at the Park</h6>
+    <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa.</p>
+  </div>
+</div>
+`;
+
+            for (let i = 1; i < numberOfEvents; i++) {
+              events.push({
+                title: 'Day 1',
+                content: dummyContent,
+                start: today.setDate(today.getDate() + 7),
+                allDay: true,
+              });
+            }
+
+            openFrontend.Calendar.then(component => component.getOrCreateInstance('#calendar-mini', {
+              layout: 'mini',
+              events,
+            }))
+          })
+        </script>
+      </div>
+
+      <div class="mb-section">
+        <div class="row">
+          <div class="col-lg-6 mb-element mb-lg-0">
+            <h3>Kontakt</h3>
+            <p>
+              Hotel Restaurant Walhalla<br>
+              Poststrasse 27<br>
+              9001 St. Gallen
+            </p>
+            <p><a class="link-external" href="#">Auf Karte anzeigen (Google)</a></p>
+            <p><a class="link-external" href="#">+41 71 228 28 00</a></p>
+            <p><a class="link-external" href="#">www.hotelwalhalla.ch</a></p>
+            <p><a class="link-external" href="#">info@hotelwalhalla.ch</a></p>
+          </div>
+          <div class="col-lg-6">
+            <h3>Standort</h3>
+            <div>
+              <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375" class="w-100 aspect aspect-16x9" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-xxl-3 mb-section d-md-none d-lg-block">
+      <div class="sticky-top">
+        <h3>Angebot</h3>
+        <button class="btn btn-primary w-100">Jetzt Buchen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mb-section carousel-future-slides-visible">
+  <div class="container">
+    <div class="heading-action">
+      <h2>Weitere Angebote</h2>
+      <div>
+        <div class="carousel-navigation">
+          <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-3">
+            <i class="ofi-caret-left-fill"></i>
+          </button>
+          <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-3">
+            <i class="ofi-caret-right-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel">
+      <div class="swiper" data-of-carousel='{
+        "loop": true,
+        "slidesPerView": 1,
+        "spaceBetween": 24,
+        "navigationNext": "#carousel-btn-next-3",
+        "navigationPrev": "#carousel-btn-prev-3",
+        "futureSlidesVisible": true,
+         "breakpoints": {
+          "md": {
+            "slidesPerView": 2
+          },
+          "lg": {
+            "slidesPerView": 3
+          },
+          "xxl": {
+            "slidesPerView": 4
+          }
+        }
+    }'>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

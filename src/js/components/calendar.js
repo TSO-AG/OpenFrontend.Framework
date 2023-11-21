@@ -30,7 +30,7 @@ const DefaultEventType = {
 const Default = {
   events: [],
   layout: 'full',
-  miniMonthMinWidth: 300,
+  miniMonthMinWidth: 265,
 }
 
 class Calendar extends BaseComponent {
@@ -108,6 +108,7 @@ class Calendar extends BaseComponent {
         center: '',
         end: 'today prev,next',
       },
+      height: 'auto',
       plugins: [bootstrapThemePlugin],
       themeSystem: 'bootstrap',
     }
@@ -204,7 +205,7 @@ class Calendar extends BaseComponent {
 
   _getValidRange(events) {
     const earliestDate = new Date(events.map(v => v.start).reduce((prev, curr) => prev < curr ? prev : curr));
-    let latestDate = events.filter(v => v.hasOwnProperty('end')).map(v => v.end).reduce((prev, curr) => prev > curr ? prev : curr);
+    let latestDate = events.filter(v => v.hasOwnProperty('end')).map(v => v.end).reduce((prev, curr) => prev > curr ? prev : curr, 0);
 
     if (!latestDate) {
       latestDate = events.map(v => v.start).reduce((prev, curr) => prev > curr ? prev : curr);

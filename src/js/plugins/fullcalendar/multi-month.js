@@ -2,6 +2,10 @@
  * This is a fork from the original plugin. Changes made:
  *
  * 1. Add support for "dayMaxEvents" and "dayMaxEventRows" options.
+ * 2. Limit the *maximum* number of view columns (i.e. each column has a full calendar) considering the options.duration.months view.
+ *    For example, if the options.duration.months is set to "2", then it will always display two calendars (one month each).
+ *    The problem is that the plugin would set the maximum width of the calendar AS if it would be THREE columns on larger screens,
+ *    which would result in a layout like this [calendar] - [calendar] - [empty space], instead of [calendar] - [calendar].
  */
 
 import {createPlugin} from '@fullcalendar/core/index.js';
@@ -123,9 +127,15 @@ class MultiMonthView extends DateComponent {
     const {options} = context;
     const {clientWidth, clientHeight} = state;
     const monthHPadding = state.monthHPadding || 0;
-    const colCount = Math.min(clientWidth != null ?
+    let colCount = Math.min(clientWidth != null ?
       Math.floor(clientWidth / (options.multiMonthMinWidth + monthHPadding)) :
       1, options.multiMonthMaxColumns) || 1;
+
+    // Limit the number of columns to the actual number of months we want to display
+    if (options.duration.months > 0) {
+      colCount = Math.min(colCount, options.duration.months);
+    }
+
     const monthWidthPct = (100 / colCount) + '%';
     const monthTableWidth = clientWidth == null ? null :
       (clientWidth / colCount) - monthHPadding;

@@ -1,0 +1,68 @@
+.popover-content {
+  // scss-docs-start popover-content-css-vars
+  @include rfs($popover-content-font-size, --#{$prefix}popover-content-font-size);
+  --#{$prefix}popover-content-font-family: #{$popover-content-font-family};
+  --#{$prefix}popover-content-font-weight: #{$popover-content-font-weight};
+  --#{$prefix}popover-content-line-height: #{$popover-content-line-height};
+  --#{$prefix}popover-content-color: #{$popover-content-color};
+  --#{$prefix}popover-content-title-font-size: #{$popover-content-title-font-size};
+  --#{$prefix}popover-content-title-color: #{$popover-content-title-color};
+  --#{$prefix}popover-content-title-margin-bottom: #{$popover-content-title-margin-bottom};
+  --#{$prefix}popover-content-info-color: #{$popover-content-info-color};
+  --#{$prefix}popover-content-info-margin-bottom: #{$popover-content-info-margin-bottom};
+  --#{$prefix}popover-content-link-color: #{$popover-content-link-color};
+  --#{$prefix}popover-content-image-max-width: #{$popover-content-image-max-width};
+  --#{$prefix}popover-content-image-margin-bottom: #{$popover-content-image-margin-bottom};
+  // scss-docs-end popover-content-css-vars
+
+  font-family: var(--#{$prefix}popover-content-font-family);
+  font-size: var(--#{$prefix}popover-content-font-size);
+  font-weight: var(--#{$prefix}popover-content-font-weight);
+  line-height: var(--#{$prefix}popover-content-line-height);
+  color: var(--#{$prefix}popover-content-color);
+
+  a {
+    --#{$prefix}link-color-rgb: initial;
+    color: var(--#{$prefix}popover-content-link-color);
+  }
+}
+
+.popover-content-image {
+  margin-bottom: var(--#{$prefix}popover-content-image-margin-bottom);
+
+  img {
+    @extend .img-fluid;
+  }
+}
+
+.popover-content-inside > *:last-child {
+  margin-bottom: 0;
+}
+
+.popover-content-info {
+  margin-bottom: var(--#{$prefix}popover-content-info-margin-bottom);
+  color: var(--#{$prefix}popover-content-info-color);
+}
+
+.popover-content-title {
+  margin-bottom: var(--#{$prefix}popover-content-title-margin-bottom);
+  font-size: var(--#{$prefix}popover-content-title-font-size);
+  color: var(--#{$prefix}card-title-color, $headings-color);
+}
+
+.popover-content-horizontal {
+  display: flex;
+  gap: 1em;
+
+  .popover-content-image {
+    margin: 0;
+    flex: 0 0 auto;
+    width: 50%;
+    max-width: var(--#{$prefix}popover-content-image-max-width);
+  }
+
+  .popover-content-inside {
+    @include make-col();
+    align-self: center;
+  }
+}

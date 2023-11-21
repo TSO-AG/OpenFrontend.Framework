@@ -139,6 +139,83 @@ For disabled popover triggers, you may also prefer `data-bs-trigger="hover focus
 </span>
 {{< /example >}}
 
+## Popover content
+
+You can use the dedicated markup to display the popover content:
+
+<div class="bd-example">
+  <div class="popover bs-popover-auto" role="tooltip" style="--bs-popover-zindex:0;position:relative" data-popper-placement="top">
+    <div class="popover-arrow" style="position:absolute;top:100%;left:calc(50% - 8px)"></div>
+    <div class="popover-body">
+      <div class="popover-content">
+        <figure class="popover-content-image">
+          <img src="assets/media/sample-image.jpg" alt="">
+        </figure>
+        <div class="popover-content-inside">
+          <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
+          <h6>Yoga at the Park</h6>
+          <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
+          <a href="#" class="stretched-link">Read more …</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+```html
+<div class="popover-content">
+  <figure class="popover-content-image">
+    <img src="assets/media/sample-image.jpg" alt="">
+  </figure>
+  <div class="popover-content-inside">
+    <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
+    <h6 class="popover-content-title">Yoga at the Park</h6>
+    <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
+    <a href="#" class="stretched-link">Read more …</a>
+  </div>
+</div>
+```
+
+### Horizontal layout
+
+For the content that requires a box wider than higher (like map pin tooltips), you can use the `.popover-content-horizontal` layout:
+
+<div class="bd-example">
+  <div class="popover bs-popover-auto" role="tooltip" style="--bs-popover-max-width:500px;--bs-popover-zindex:0;position:relative" data-popper-placement="top">
+    <div class="popover-arrow" style="position:absolute;top:100%;left:calc(50% - 8px)"></div>
+    <div class="popover-body">
+      <div class="popover-content popover-content-horizontal">
+        <figure class="popover-content-image">
+          <img src="assets/media/sample-image.jpg" alt="">
+        </figure>
+        <div class="popover-content-inside">
+          <div class="popover-content-info">Event | Lyss, CH</div>
+          <div class="popover-content-info">21.11.2023 - 27.11.2023</div>
+          <h6>Yoga at the Park</h6>
+          <a href="#" class="icon-link icon-link-hover stretched-link">
+            View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+```html
+<div class="popover-content popover-content-horizontal">
+  <figure class="popover-content-image">
+    <img src="assets/media/sample-image.jpg" alt="">
+  </figure>
+  <div class="popover-content-inside">
+    <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
+    <h6 class="popover-content-title">Yoga at the Park</h6>
+    <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
+    <a href="#" class="stretched-link">Read more …</a>
+  </div>
+</div>
+```
+
+
 ## CSS
 
 ### Variables
@@ -149,9 +226,17 @@ As part of Bootstrap’s evolving CSS variables approach, popovers now use local
 
 {{< scss-docs name="popover-css-vars" file="node_modules/bootstrap/scss/_popover.scss" >}}
 
+The SCSS variables for `.popover-content` can be found here:
+
+{{< scss-docs name="popover-content-css-vars" file="src/scss/_popover.scss" >}}
+
 ### Sass variables
 
 {{< scss-docs name="popover-variables" file="node_modules/bootstrap/scss/_variables.scss" >}}
+
+The SCSS variables for `.popover-content` can be found here:
+
+{{< scss-docs name="popover-content-variables" file="src/scss/_variables.scss" >}}
 
 ## Usage
 
@@ -246,7 +331,7 @@ const popover = await openFrontend.Popover.then(component => component.getOrCrea
 
 ```js
 // getOrCreateInstance example
-const popover = await openFrontend.Popover.then(component => component.getOrCreateInstance('#example') // Returns a Bootstrap popover instance
+const popover = await openFrontend.Popover.then(component => component.getOrCreateInstance('#example')) // Returns a Bootstrap popover instance
 
 // setContent example
 popover.setContent({

@@ -522,7 +522,6 @@ $popover-content-title-color:              null !default;
 $popover-content-title-margin-bottom:      .5em !default;
 $popover-content-info-color:               var(--#{$prefix}secondary-color) !default;
 $popover-content-info-margin-bottom:       .15em !default;
-$popover-content-link-color:               rgba(var(--#{$prefix}link-color-rgb), var(--#{$prefix}link-opacity, 1)) !default;
 $popover-content-image-margin-bottom:      1rem !default;
 $popover-content-image-max-width:          null !default;
 // scss-docs-end popover-content-variables

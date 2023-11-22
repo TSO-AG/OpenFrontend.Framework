@@ -10,7 +10,6 @@
   --#{$prefix}popover-content-title-margin-bottom: #{$popover-content-title-margin-bottom};
   --#{$prefix}popover-content-info-color: #{$popover-content-info-color};
   --#{$prefix}popover-content-info-margin-bottom: #{$popover-content-info-margin-bottom};
-  --#{$prefix}popover-content-link-color: #{$popover-content-link-color};
   --#{$prefix}popover-content-image-max-width: #{$popover-content-image-max-width};
   --#{$prefix}popover-content-image-margin-bottom: #{$popover-content-image-margin-bottom};
   // scss-docs-end popover-content-css-vars
@@ -20,11 +19,6 @@
   font-weight: var(--#{$prefix}popover-content-font-weight);
   line-height: var(--#{$prefix}popover-content-line-height);
   color: var(--#{$prefix}popover-content-color);
-
-  a {
-    --#{$prefix}link-color-rgb: initial;
-    color: var(--#{$prefix}popover-content-link-color);
-  }
 }
 
 .popover-content-image {

@@ -153,9 +153,12 @@ You can use the dedicated markup to display the popover content:
         </figure>
         <div class="popover-content-inside">
           <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
-          <h6>Yoga at the Park</h6>
+          <h6 class="popover-content-title">Yoga at the Park</h6>
           <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
-          <a href="#" class="stretched-link">Read more …</a>
+          <a href="#" class="icon-link icon-link-hover stretched-link">
+            <span class="icon-link-text">Read more</span>
+            <i class="ofi-arrow-right"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -171,7 +174,10 @@ You can use the dedicated markup to display the popover content:
     <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
     <h6 class="popover-content-title">Yoga at the Park</h6>
     <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
-    <a href="#" class="stretched-link">Read more …</a>
+    <a href="#" class="icon-link icon-link-hover stretched-link">
+      <span class="icon-link-text">Read more</span>
+      <i class="ofi-arrow-right"></i>
+    </a>
   </div>
 </div>
 ```
@@ -191,9 +197,11 @@ For the content that requires a box wider than higher (like map pin tooltips), y
         <div class="popover-content-inside">
           <div class="popover-content-info">Event | Lyss, CH</div>
           <div class="popover-content-info">21.11.2023 - 27.11.2023</div>
-          <h6>Yoga at the Park</h6>
+          <h6 class="popover-content-title">Yoga at the Park</h6>
+          <p>Join us Wednesday afternoons for yoga during your lunch […]</p>
           <a href="#" class="icon-link icon-link-hover stretched-link">
-            View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+            <span class="icon-link-text">View details</span>
+            <i class="ofi-arrow-right"></i>
           </a>
         </div>
       </div>
@@ -207,10 +215,14 @@ For the content that requires a box wider than higher (like map pin tooltips), y
     <img src="assets/media/sample-image.jpg" alt="">
   </figure>
   <div class="popover-content-inside">
-    <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
+    <div class="popover-content-info">Event | Lyss, CH</div>
+    <div class="popover-content-info">21.11.2023 - 27.11.2023</div>
     <h6 class="popover-content-title">Yoga at the Park</h6>
-    <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
-    <a href="#" class="stretched-link">Read more …</a>
+    <p>Join us Wednesday afternoons for yoga during your lunch […]</p>
+    <a href="#" class="icon-link icon-link-hover stretched-link">
+      <span class="icon-link-text">View details</span>
+      <i class="ofi-arrow-right"></i>
+    </a>
   </div>
 </div>
 ```

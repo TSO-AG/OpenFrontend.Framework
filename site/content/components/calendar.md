@@ -38,7 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
     <h6 class="popover-content-title">Yoga at the Park</h6>
     <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
-    <a href="#" class="stretched-link">Read more …</a>
+    <a href="#" class="icon-link icon-link-hover stretched-link">
+      <span class="icon-link-text">Read more</span>
+      <i class="ofi-arrow-right"></i>
+    </a>
   </div>
 </div>
 `;
@@ -193,7 +196,10 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
     <h6 class="popover-content-title">Yoga at the Park</h6>
     <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
-    <a href="#" class="stretched-link">Read more …</a>
+    <a href="#" class="icon-link icon-link-hover stretched-link">
+      <span class="icon-link-text">Read more</span>
+      <i class="ofi-arrow-right"></i>
+    </a>
   </div>
 </div>
 `;

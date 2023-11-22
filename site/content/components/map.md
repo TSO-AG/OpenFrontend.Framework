@@ -27,7 +27,8 @@ This section provides an example of how to embed Google Maps into your web page 
         <div class="popover-content-info">DD.MM.YY - DD.MM.YY</div>
         <h4 class="popover-content-title">Title</h4>
         <a href="#" class="icon-link icon-link-hover stretched-link">
-          View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+          <span class="icon-link-text">View details</span>
+          <i class="ofi-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -102,7 +103,8 @@ Example HTML Structure
           <div class="popover-content-info">DD.MM.YY - DD.MM.YY</div>
           <h4 class="popover-content-title">Title</h4>
           <a href="#" class="icon-link icon-link-hover stretched-link">
-            View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+            <span class="icon-link-text">View details</span>
+            <i class="ofi-arrow-right"></i>
           </a>
         </div>
       </div>
@@ -206,7 +208,8 @@ This section provides an example of how to integrate OpenStreetMap into your web
         <div class="popover-content-info">DD.MM.YY - DD.MM.YY</div>
         <h4 class="popover-content-title">Title</h4>
         <a href="#" class="icon-link icon-link-hover stretched-link">
-          View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+          <span class="icon-link-text">View details</span>
+          <i class="ofi-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -264,7 +267,8 @@ Example HTML Structure
         <div class="popover-content-info">DD.MM.YY - DD.MM.YY</div>
         <h4 class="popover-content-title">Title</h4>
         <a href="#" class="icon-link icon-link-hover stretched-link">
-          View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+          <span class="icon-link-text">View details</span>
+          <i class="ofi-arrow-right"></i>
         </a>
       </div>
     </div>

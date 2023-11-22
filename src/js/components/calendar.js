@@ -17,6 +17,7 @@ const DefaultType = {
   events: 'array',
   layout: 'string',
   miniMonthMinWidth: 'number',
+  title: 'string|undefined',
 }
 
 const DefaultEventType = {
@@ -31,6 +32,7 @@ const Default = {
   events: [],
   layout: 'full',
   miniMonthMinWidth: 265,
+  title: undefined,
 }
 
 class Calendar extends BaseComponent {
@@ -113,6 +115,10 @@ class Calendar extends BaseComponent {
       themeSystem: 'bootstrap',
     }
 
+    if (this._config.title) {
+      options.titleFormat = () => this._config.title;
+    }
+
     switch (this._config.layout) {
       case 'full':
         options.initialView = 'dayGridMonth'
@@ -129,6 +135,7 @@ class Calendar extends BaseComponent {
         options.initialView = 'miniView'
         options.plugins.push(multiMonthPlugin)
         options.multiMonthMinWidth = this._config.miniMonthMinWidth;
+        options.multiMonthTitleFormat = { month: 'long', year: 'numeric' };
         options.views = {
           miniView: {
             type: 'multiMonth',

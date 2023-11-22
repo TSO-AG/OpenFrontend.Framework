@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   openFrontend.Calendar.then(component => component.getOrCreateInstance('#calendar-mini', {
     layout: 'mini',
+    title: 'Event schedule',
     events: [
       {
         title: 'All day event',
@@ -301,6 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
 {{< highlight html >}}
 <div class="calendar" data-of-calendar='{
   "layout": "mini",
+  "title": "Custom title",
   "events": […]
 }'></div>
 {{< /highlight >}}
@@ -316,6 +318,7 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 | `events` | `array` | `[]` | The events to be displayed. See the data structure below. |
 | `layout` | `string` | `'full'` | The layout to be used. See the examples above. Available options: `full`, `mini`. |
 | `miniMonthMinWidth` | `number` | `300` | The minimum width for one month in pixels. Applies only if the `layout` is set to `mini`. |
+| `title` | `string|undefined` | `undefined` | A custom title that will be display on top of the calendar. |
 {{< /bs-table >}}
 
 ### Event data structure

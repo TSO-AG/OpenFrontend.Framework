@@ -25,7 +25,7 @@
 
 .icon-link-text {
   text-decoration: $link-decoration;
-  text-decoration-color: rgba(var(--#{$prefix}link-color-rgb), var(--#{$prefix}link-opacity, .5));
+  text-decoration-color: var(--#{$prefix}text-decoration-color);
   text-underline-offset: $icon-link-underline-offset;
 
   .icon-link:hover & {

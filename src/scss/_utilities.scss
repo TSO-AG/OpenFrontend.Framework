@@ -1,7 +1,7 @@
 $utilities:
 (
   "link-underline": (
-    property: text-decoration-color,
+    property: text-decoration-color --#{$prefix}text-decoration-color,
     class: link-underline,
     local-vars: (
       "link-underline-opacity": 1
@@ -10,10 +10,7 @@ $utilities:
         $utilities-links-underline,
         (
           null: rgba(var(--#{$prefix}link-color-rgb), var(--#{$prefix}link-underline-opacity, 1)),
-
-          // TODO: find out why this does not get compiled. We need to add the CSS variable here which .icon-link-text will use.
-          color: red,
         ),
     )
   ),
-) !default;
+);

@@ -29,6 +29,7 @@
   --fc-event-border-color: var(--#{$prefix}calendar-event-border-color);
   --fc-list-event-hover-bg-color: var(--#{$prefix}calendar-list-event-hover-bg-color);
   --fc-today-bg-color: var(--#{$prefix}calendar-today-bg-color);
+  --fc-page-bg-color: transparent;
 
   .fc-event {
     cursor: pointer;

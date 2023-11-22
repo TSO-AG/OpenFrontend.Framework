@@ -516,13 +516,13 @@ $popover-content-font-size:                14px !default;
 $popover-content-font-family:              var(--#{$prefix}body-font-family) !default;
 $popover-content-font-weight:              var(--#{$prefix}body-font-weight) !default;
 $popover-content-line-height:              var(--#{$prefix}body-line-height) !default;
-$popover-content-color:                    var(--#{$prefix}gray-900) !default;
+$popover-content-color:                    var(--#{$prefix}body-color) !default;
 $popover-content-title-font-size:          1.4em !default;
 $popover-content-title-color:              null !default;
 $popover-content-title-margin-bottom:      .5em !default;
-$popover-content-info-color:               var(--#{$prefix}gray-600) !default;
+$popover-content-info-color:               var(--#{$prefix}secondary-color) !default;
 $popover-content-info-margin-bottom:       .15em !default;
-$popover-content-link-color:               $primary !default;
+$popover-content-link-color:               rgba(var(--#{$prefix}link-color-rgb), var(--#{$prefix}link-opacity, 1)) !default;
 $popover-content-image-margin-bottom:      1rem !default;
 $popover-content-image-max-width:          null !default;
 // scss-docs-end popover-content-variables

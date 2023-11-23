@@ -13,20 +13,20 @@
 - category: Content
   description: "Content templates for websites provide a consistent and structured layout to present information, ensuring a uniform and professional appearance across various web pages."
   examples:
+    - name: Archive
+      description: "An archive page template presents a list of posts, articles, or other content in a structured and accessible format."
+    - name: Blog
+      description: "A blog page template presents a list of posts, articles, or other content in a structured and accessible format."
     - name: Event detail
       description: "Event detail template presents detailed information about a specific event."
     - name: Event List
       description: "A calendar page template presents a calendar view of events, making it easy for users to browse and select specific dates."
-    - name: Blog
-      description: "A blog page template presents a list of posts, articles, or other content in a structured and accessible format."
     - name: POI Detail
       description: "A POI detail page template presents detailed information about a specific location or attraction in a structured and accessible format."
     - name: POI List
       description: "A POI list page template showcases an organized list of points of interest, making it easy for users to browse and select specific locations or attractions."
     - name: Routing
       description: "A routing page template provides a structured format for displaying general content on a website in a consistent and coherent manner."
-    - name: Archive
-      description: "An archive page template presents a list of posts, articles, or other content in a structured and accessible format."
 
 - category: Pages
   description: "Pages are built with OpenFrontend components that can be used as a starting point for creating multiple web pages with a similar design and structure."

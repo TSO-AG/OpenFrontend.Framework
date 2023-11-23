@@ -15,6 +15,8 @@
   examples:
     - name: Event detail
       description: "Event detail template presents detailed information about a specific event."
+    - name: Event List
+      description: "A calendar page template presents a calendar view of events, making it easy for users to browse and select specific dates."
     - name: POI Detail
       description: "A POI detail page template presents detailed information about a specific location or attraction in a structured and accessible format."
     - name: POI List

@@ -42,12 +42,10 @@ $custom-spacers: (
   element: var(--#{$prefix}element-margin),
 ) !default;
 
-/* stylelint-disable function-disallowed-list */
 $negative-custom-spacers: (
   n-section: calc(var(--#{$prefix}section-margin) * -1),
   n-element: calc(var(--#{$prefix}element-margin) * -1),
 ) !default;
-/* stylelint-enable */
 
 $utilities: (
   "of-margin-top": (
@@ -79,7 +77,6 @@ $utilities: (
 
 // Components
 
-// stylelint-disable function-disallowed-list
 // scss-docs-start aspect-ratios
 $aspect-ratios: (
   "1x1": 100%,
@@ -90,7 +87,6 @@ $aspect-ratios: (
   "9x16": calc(16 / 9 * 100%)
 ) !default;
 // scss-docs-end aspect-ratios
-// stylelint-enable function-disallowed-list
 
 // Typography
 $font-size-base: 1rem !default;

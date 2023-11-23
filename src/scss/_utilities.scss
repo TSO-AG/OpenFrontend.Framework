@@ -1,16 +1,18 @@
+// stylelint-disable scss/dollar-variable-default
+
 $utilities:
-(
-  "link-underline": (
-    property: text-decoration-color --#{$prefix}text-decoration-color,
-    class: link-underline,
-    local-vars: (
-      "link-underline-opacity": 1
-    ),
-    values: map-merge(
+  (
+    "link-underline": (
+      property: text-decoration-color --#{$prefix}text-decoration-color,
+      class: link-underline,
+      local-vars: (
+        "link-underline-opacity": 1
+      ),
+      values: map-merge(
         $utilities-links-underline,
         (
           null: rgba(var(--#{$prefix}link-color-rgb), var(--#{$prefix}link-underline-opacity, 1)),
         ),
-    )
-  ),
-);
+      )
+    ),
+  );

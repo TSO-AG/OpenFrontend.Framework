@@ -34,12 +34,12 @@
 
     &--top-left,
     &--bottom-left {
-      max-width: calc(40% - var(--#{$prefix}card-spacer-x)); // stylelint-disable-line function-disallowed-list
+      max-width: calc(40% - var(--#{$prefix}card-spacer-x));
     }
 
     &--top-right,
     &--bottom-right {
-      max-width: calc(60% - var(--#{$prefix}card-spacer-x)); // stylelint-disable-line function-disallowed-list
+      max-width: calc(60% - var(--#{$prefix}card-spacer-x));
     }
 
     &--top-left {

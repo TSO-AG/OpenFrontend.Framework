@@ -24,10 +24,10 @@
   nav {
     --columns: 1;
     --menu-width: 100%;
-    --menu-width-offset: calc(100% / var(--columns)); // stylelint-disable-line function-disallowed-list
+    --menu-width-offset: calc(100% / var(--columns));
     position: relative;
     height: 100%;
-    margin-right: calc(100% - var(--menu-width-offset)); // stylelint-disable-line function-disallowed-list
+    margin-right: calc(100% - var(--menu-width-offset));
   }
 
   ul {

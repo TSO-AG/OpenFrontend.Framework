@@ -40,10 +40,12 @@
     cursor: pointer;
   }
 
+  /* stylelint-disable selector-class-pattern */
   .fc-dayGridMonth-button,
   .fc-listMonth-button {
     @extend .btn-outline-primary;
   }
+  /* stylelint-enable selector-class-pattern */
 
   .fc-next-button,
   .fc-prev-button,
@@ -67,8 +69,8 @@
   }
 
   .fc-scrollgrid {
+    border-right-width: 0;
     border-bottom-width: 0;
-    border-right-width: 0
   }
 
   .fc-day-other {
@@ -93,6 +95,7 @@
     background: transparent;
   }
 
+  /* stylelint-disable-next-line selector-class-pattern */
   .fc-miniView-view {
     .fc-daygrid-day-frame {
       height: 100%;
@@ -101,8 +104,8 @@
     .fc-daygrid-day-top {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 100%;
       pointer-events: none;
     }
@@ -110,8 +113,8 @@
 
   .fc-of-mini-event-day {
     .fc-daygrid-day-top {
-      background: var(--#{$prefix}calendar-mini-event-bg-color);
       color: var(--#{$prefix}calendar-mini-event-color);
+      background: var(--#{$prefix}calendar-mini-event-bg-color);
     }
 
     .fc-daygrid-day-events {
@@ -123,29 +126,29 @@
     .fc-daygrid-event-harness {
       position: absolute;
       inset: 0;
-      margin: 0;
       z-index: 1;
+      margin: 0;
     }
 
     .fc-daygrid-day-bottom {
       position: absolute;
       inset: 0;
-      margin: 0;
       z-index: 2;
+      margin: 0;
 
       &:empty {
         display: none;
       }
     }
 
-    a.fc-daygrid-block-event,
-    a.fc-daygrid-more-link {
+    .fc-daygrid-block-event,
+    .fc-daygrid-more-link {
       position: absolute;
       inset: 0;
       margin: 0;
-      border: none;
-      border-radius: 0;
+      border: 0;
       opacity: 0;
+      @include border-radius(0);
     }
 
     .fc-daygrid-day-bg {
@@ -155,22 +158,22 @@
 
   a:not([href]) {
     color: inherit;
-    text-decoration: inherit
+    text-decoration: inherit;
   }
 }
 
 .calendar-legend {
-  @include list-unstyled;
+  @include list-unstyled ();
   display: flex;
   flex-wrap: wrap;
-  margin-top: var(--#{$prefix}calendar-legend-gap);
   gap: var(--#{$prefix}calendar-legend-symbol-size);
+  margin-top: var(--#{$prefix}calendar-legend-gap);
   font-size: var(--#{$prefix}calendar-legend-font-size);
 
   .calendar-legend-item {
     display: flex;
-    align-items: center;
     gap: var(--#{$prefix}calendar-legend-symbol-gap);
+    align-items: center;
   }
 
   .calendar-legend-symbol {
@@ -178,8 +181,8 @@
     width: var(--#{$prefix}calendar-legend-symbol-size);
     height: var(--#{$prefix}calendar-legend-symbol-size);
     padding: var(--#{$prefix}calendar-legend-symbol-padding);
-    border: var(--#{$prefix}calendar-legend-symbol-border-width) solid var(--#{$prefix}calendar-legend-symbol-border-color);
     background-color: var(--#{$prefix}calendar-legend-free-color);
+    border: var(--#{$prefix}calendar-legend-symbol-border-width) solid var(--#{$prefix}calendar-legend-symbol-border-color);
 
     &-event {
       background-color: var(--#{$prefix}calendar-legend-event-color);

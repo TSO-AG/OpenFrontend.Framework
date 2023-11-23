@@ -46,33 +46,6 @@ $negative-custom-spacers: (
   n-section: calc(var(--#{$prefix}section-margin) * -1),
   n-element: calc(var(--#{$prefix}element-margin) * -1),
 ) !default;
-
-$utilities: (
-  "of-margin-top": (
-    responsive: true,
-    property: margin-top,
-    class: mt,
-    values: $custom-spacers
-  ),
-  "of-margin-bottom": (
-    responsive: true,
-    property: margin-bottom,
-    class: mb,
-    values: $custom-spacers
-  ),
-  "of-nagative-margin-top": (
-    responsive: true,
-    property: margin-top,
-    class: mt,
-    values: $negative-custom-spacers
-  ),
-  "of-nagative-margin-bottom": (
-    responsive: true,
-    property: margin-bottom,
-    class: mb,
-    values: $negative-custom-spacers
-  ),
-) !default;
 // scss-docs-end spacer-variables-maps
 
 // Components

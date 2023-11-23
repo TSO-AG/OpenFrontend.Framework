@@ -201,7 +201,7 @@
   top: 100%;
   right: 0;
   left: 0;
-  max-height: calc(95vh - var(--bs-header-height)); // stylelint-disable-line function-disallowed-list
+  max-height: calc(95vh - var(--bs-header-height));
 
   &.show {
     overflow-y: auto;
@@ -253,7 +253,7 @@
 // Sticky Header
 .header-placeholder {
   height: var(--#{$prefix}header-sticky-height);
-  margin-bottom: calc(var(--#{$prefix}header-sticky-height) * -1); // stylelint-disable-line function-disallowed-list
+  margin-bottom: calc(var(--#{$prefix}header-sticky-height) * -1);
 
   + .header {
     right: 0;

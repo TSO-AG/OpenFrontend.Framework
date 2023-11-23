@@ -117,4 +117,4 @@ Differentiate between date and time input fields with unique icons
 
 Customize the look and feel of your calendar:
 
-{{< scss-docs name="calendar-variables" file="src/scss/_variables.scss" >}}
+{{< scss-docs name="calendarpicker-variables" file="src/scss/_variables.scss" >}}

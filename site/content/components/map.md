@@ -18,18 +18,17 @@ This section provides an example of how to embed Google Maps into your web page 
   </div>
 
   <div id="map-marker-google" class="visually-hidden">
-    <div class="map-marker position-relative">
-      <div class="map-marker-image">
-        <figure>
-          {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
-        </figure>
-      </div>
-      <div class="map-marker-content">
-        <div class="map-marker-info">Product family | Place</div>
-        <div class="map-marker-info">DD.MM.YY - DD.MM.YY</div>
-        <h4 class="map-marker-title">Title</h4>
+    <div class="popover-content popover-content-horizontal position-relative">
+      <figure class="popover-content-image">
+        {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+      </figure>
+      <div class="popover-content-inside">
+        <div class="popover-content-info">Product family | Place</div>
+        <div class="popover-content-info">DD.MM.YY - DD.MM.YY</div>
+        <h4 class="popover-content-title">Title</h4>
         <a href="#" class="icon-link icon-link-hover stretched-link">
-          View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+          <span class="icon-link-text">View details</span>
+          <i class="ofi-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -95,18 +94,17 @@ Example HTML Structure
 
     <!--The div element for the map marker -->
     <div id="map-marker-google" class="visually-hidden">
-      <div class="map-marker position-relative">
-        <div class="map-marker-image">
-          <figure>
-            {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
-          </figure>
-        </div>
-        <div class="map-marker-content">
-          <div class="map-marker-info">Product family | Place</div>
-          <div class="map-marker-info">DD.MM.YY - DD.MM.YY</div>
-          <h4 class="map-marker-title">Title</h4>
+      <div class="popover-content popover-content-horizontal position-relative">
+        <figure class="popover-content-image">
+          {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+        </figure>
+        <div class="popover-content-inside">
+          <div class="popover-content-info">Product family | Place</div>
+          <div class="popover-content-info">DD.MM.YY - DD.MM.YY</div>
+          <h4 class="popover-content-title">Title</h4>
           <a href="#" class="icon-link icon-link-hover stretched-link">
-            View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+            <span class="icon-link-text">View details</span>
+            <i class="ofi-arrow-right"></i>
           </a>
         </div>
       </div>
@@ -170,6 +168,8 @@ Loading the Google Maps API and initializing the map
 
 In the given example, the map is displayed in a div with an id of `map`. The map is centered at the specified latitude and longitude, and a marker is set at this location. Please replace the `YOUR_API_KEY` placeholder with your actual Google Maps API key.
 
+You can display any content in the popover. However, it is highly recommended to use the [popover content markup]({{< docsref "/components/popovers#popover-content" >}}).
+
 For comprehensive details on the options and methods available with the Google Maps JavaScript API, see the official Google Maps API documentation: https://developers.google.com/maps/documentation/javascript/tutorial.
 
 ### Google Maps Iframe
@@ -199,18 +199,17 @@ This section provides an example of how to integrate OpenStreetMap into your web
   </div>
 
   <div id="map-marker-osm" class="visually-hidden">
-    <div class="map-marker position-relative">
-      <div class="map-marker-image">
-        <figure>
-          {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
-        </figure>
-      </div>
-      <div class="map-marker-content">
-        <div class="map-marker-info">Product family | Place</div>
-        <div class="map-marker-info">DD.MM.YY - DD.MM.YY</div>
-        <h4 class="map-marker-title">Title</h4>
+    <div class="popover-content popover-content-horizontal position-relative">
+      <figure class="popover-content-image">
+        {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+      </figure>
+      <div class="popover-content-inside">
+        <div class="popover-content-info">Product family | Place</div>
+        <div class="popover-content-info">DD.MM.YY - DD.MM.YY</div>
+        <h4 class="popover-content-title">Title</h4>
         <a href="#" class="icon-link icon-link-hover stretched-link">
-          View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+          <span class="icon-link-text">View details</span>
+          <i class="ofi-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -259,18 +258,17 @@ Example HTML Structure
 
   <!--The div element for the map marker -->
   <div id="map-marker-osm" class="visually-hidden">
-    <div class="map-marker position-relative">
-      <div class="map-marker-image">
-        <figure>
-          {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
-        </figure>
-      </div>
-      <div class="map-marker-content">
-        <div class="map-marker-info">Product family | Place</div>
-        <div class="map-marker-info">DD.MM.YY - DD.MM.YY</div>
-        <h4 class="map-marker-title">Title</h4>
+    <div class="popover-content popover-content-horizontal position-relative">
+      <figure class="popover-content-image">
+        {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+      </figure>
+      <div class="popover-content-inside">
+        <div class="popover-content-info">Product family | Place</div>
+        <div class="popover-content-info">DD.MM.YY - DD.MM.YY</div>
+        <h4 class="popover-content-title">Title</h4>
         <a href="#" class="icon-link icon-link-hover stretched-link">
-          View details <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+          <span class="icon-link-text">View details</span>
+          <i class="ofi-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -317,6 +315,8 @@ Initializing the Map
 {{< /highlight >}}
 
 The above code sets up a simple map with a marker and popup using the Leaflet.js library and OpenStreetMap data. The map is configured to display on a div with the id "map".
+
+You can display any content in the popover. However, it is highly recommended to use the [popover content markup]({{< docsref "/components/popovers#popover-content" >}}).
 
 For a comprehensive understanding of the options and methods available with the Leaflet.js library, see the official Leaflet.js documentation.
 
@@ -419,14 +419,3 @@ To ensure your maps look great on all devices, our Map component supports respon
   initOpenStreetMap('map4');
 </script>
 {{< /example >}}
-
-## CSS
-
-### Variables
-{{< scss-docs name="map-marker-css-vars" file="src/scss/_map.scss" >}}
-
-### Sass variables
-{{< scss-docs name="map-marker-variables" file="src/scss/_variables.scss" >}}
-
-
-

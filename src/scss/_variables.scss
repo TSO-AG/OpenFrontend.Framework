@@ -42,12 +42,10 @@ $custom-spacers: (
   element: var(--#{$prefix}element-margin),
 ) !default;
 
-/* stylelint-disable function-disallowed-list */
 $negative-custom-spacers: (
   n-section: calc(var(--#{$prefix}section-margin) * -1),
   n-element: calc(var(--#{$prefix}element-margin) * -1),
 ) !default;
-/* stylelint-enable */
 
 $utilities: (
   "of-margin-top": (
@@ -79,7 +77,6 @@ $utilities: (
 
 // Components
 
-// stylelint-disable function-disallowed-list
 // scss-docs-start aspect-ratios
 $aspect-ratios: (
   "1x1": 100%,
@@ -90,7 +87,6 @@ $aspect-ratios: (
   "9x16": calc(16 / 9 * 100%)
 ) !default;
 // scss-docs-end aspect-ratios
-// stylelint-enable function-disallowed-list
 
 // Typography
 $font-size-base: 1rem !default;
@@ -121,20 +117,20 @@ $form-datepicker-indicator:                   url("data:image/svg+xml,<svg xmlns
 $form-timepicker-indicator:                   url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='#{$form-timepicker-indicator-color}' d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z'/></svg>") !default;
 // scss-docs-end form-datepicker-variables
 
-// scss-docs-start calendar-variables
-$calendar-arrow-hover-color:                   #f64747 !default;
-$calendar-background:                          #fff !default;
-$calendar-border-color:                        #e6e6e6 !default;
-$calendar-month-foreground:                    #5a6171 !default;
-$calendar-month-background:                    transparent !default;
-$calendar-weekdays-background:                 transparent !default;
-$calendar-weekdays-foreground:                 #5a6171 !default;
-$calendar-day-foreground:                      #393939 !default;
-$calendar-day-hover-background:                #e6e6e6 !default;
-$calendar-today-color:                         #959ea9 !default;
-$calendar-selected-day-background:             #569ff7 !default;
-$calendar-selected-day-color:                  #fff !default;
-// scss-docs-end calendar-variables
+// scss-docs-start calendarpicker-variables
+$calendarpicker-arrow-hover-color:                   #f64747 !default;
+$calendarpicker-background:                          #fff !default;
+$calendarpicker-border-color:                        #e6e6e6 !default;
+$calendarpicker-month-foreground:                    #5a6171 !default;
+$calendarpicker-month-background:                    transparent !default;
+$calendarpicker-weekdays-background:                 transparent !default;
+$calendarpicker-weekdays-foreground:                 #5a6171 !default;
+$calendarpicker-day-foreground:                      #393939 !default;
+$calendarpicker-day-hover-background:                #e6e6e6 !default;
+$calendarpicker-today-color:                         #959ea9 !default;
+$calendarpicker-selected-day-background:             #569ff7 !default;
+$calendarpicker-selected-day-color:                  #fff !default;
+// scss-docs-end calendarpicker-variables
 
 // Buttons
 
@@ -510,21 +506,45 @@ $slider-navigation-offset-x:                      $slider-offset-x !default;
 // Heading
 $headings-action-margin-bottom: 1rem !default;
 
-// Map marker
-// scss-docs-start map-marker-variables
-$map-marker-font-size:                14px !default;
-$map-marker-font-family:              var(--#{$prefix}body-font-family) !default;
-$map-marker-font-weight:              var(--#{$prefix}body-font-weight) !default;
-$map-marker-line-height:              var(--#{$prefix}body-line-height) !default;
-$map-marker-color:                    var(--#{$prefix}gray-900) !default;
-$map-marker-title-font-size:          1.4em !default;
-$map-marker-title-color:              null !default;
-$map-marker-title-margin-bottom:      .5em !default;
-$map-marker-info-color:               var(--#{$prefix}gray-600) !default;
-$map-marker-info-margin-bottom:       .15em !default;
-$map-marker-link-color:               $primary !default;
-$map-marker-image-max-width:          null !default;
-// scss-docs-end map-marker-variables
+// Popover content
+// scss-docs-start popover-content-variables
+$popover-content-font-size:                14px !default;
+$popover-content-font-family:              var(--#{$prefix}body-font-family) !default;
+$popover-content-font-weight:              var(--#{$prefix}body-font-weight) !default;
+$popover-content-line-height:              var(--#{$prefix}body-line-height) !default;
+$popover-content-color:                    var(--#{$prefix}body-color) !default;
+$popover-content-title-font-size:          1.4em !default;
+$popover-content-title-color:              null !default;
+$popover-content-title-margin-bottom:      .5em !default;
+$popover-content-info-color:               var(--#{$prefix}secondary-color) !default;
+$popover-content-info-margin-bottom:       .15em !default;
+$popover-content-image-margin-bottom:      1rem !default;
+$popover-content-image-max-width:          null !default;
+// scss-docs-end popover-content-variables
+
+// Calendar
+// scss-docs-start calendar-variables
+$calendar-border-color:                   var(--#{$prefix}border-color-translucent) !default;
+$calendar-border-width:                   var(--#{$prefix}border-width) !default;
+$calendar-day-other-bg-color:             rgba(0, 0, 0, .05) !default;
+$calendar-day-other-color:                var(--#{$prefix}gray-500) !default;
+$calendar-event-bg-color:                 var(--#{$prefix}primary) !default;
+$calendar-event-border-color:             var(--#{$prefix}primary) !default;
+$calendar-list-event-hover-bg-color:      var(--#{$prefix}gray-100) !default;
+$calendar-table-cell-shaded:              var(--#{$prefix}gray-200) !default;
+$calendar-today-bg-color:                 var(--#{$prefix}warning-bg-subtle) !default;
+$calendar-mini-event-bg-color:            var(--#{$prefix}primary) !default;
+$calendar-mini-event-color:               $white !default;
+$calendar-legend-gap:                     1rem !default;
+$calendar-legend-font-size:               .9rem !default;
+$calendar-legend-symbol-gap:              .5em !default;
+$calendar-legend-symbol-size:             1.25em !default;
+$calendar-legend-symbol-padding:          .25rem !default;
+$calendar-legend-symbol-border-width:     var(--#{$prefix}border-width) !default;
+$calendar-legend-symbol-border-color:     var(--#{$prefix}border-color) !default;
+$calendar-legend-event-color:             var(--#{$prefix}calendar-mini-event-bg-color) !default;
+$calendar-legend-free-color:              transparent !default;
+// scss-docs-end calendar-variables
 
 // Header
 // scss-docs-start header-variables

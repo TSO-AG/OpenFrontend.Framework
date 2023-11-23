@@ -7,6 +7,9 @@ window.openFrontend = {
   get Button() {
     return new Promise(resolve => import(/* webpackChunkName: "of-button" */ 'bootstrap/js/src/button').then(v => resolve(v.default)))
   },
+  get Calendar() {
+    return new Promise(resolve => import(/* webpackChunkName: "of-calendar" */ './components/calendar').then(v => resolve(v.default)))
+  },
   get Carousel() {
     return new Promise(resolve => import(/* webpackChunkName: "of-carousel" */ './components/carousel').then(v => resolve(v.default)))
   },
@@ -30,6 +33,9 @@ window.openFrontend = {
   },
   get QuantityPicker() {
     return new Promise(resolve => import(/* webpackChunkName: "of-quantity-picker" */ './components/quantity-picker').then(v => resolve(v.default)))
+  },
+  get Popover() {
+    return new Promise(resolve => import(/* webpackChunkName: "of-popover" */ './components/popover').then(v => resolve(v.default)))
   },
   get Rating() {
     return new Promise(resolve => import(/* webpackChunkName: "of-ticker" */ './components/rating').then(v => resolve(v.default)))
@@ -55,6 +61,8 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-bs-toggle="collapse"]'), () => import(/* webpackChunkName: "of-collapse" */ './components/collapse'))
   loadForElements(element.querySelectorAll('[data-bs-toggle="modal"]'), () => import(/* webpackChunkName: "of-modal" */ './components/modal'))
   loadForElements(element.querySelectorAll('[data-bs-toggle="offcanvas"]'), () => import(/* webpackChunkName: "of-offcanvas" */ './components/offcanvas'))
+  loadForElements(element.querySelectorAll('[data-bs-toggle="popover"]'), () => import(/* webpackChunkName: "of-popover" */ './components/popover'))
+  loadForElements(element.querySelectorAll('[data-of-calendar]'), () => import(/* webpackChunkName: "of-calendar" */ './components/calendar'))
   loadForElements(element.querySelectorAll('[data-of-combo-box]'), () => import(/* webpackChunkName: "of-combo-box" */ './components/combo-box'))
   loadForElements(element.querySelectorAll('[data-of-highlight]'), () => import(/* webpackChunkName: "of-highlight" */ './components/highlight'))
   loadForElements(element.querySelectorAll('[data-of-carousel]'), () => import(/* webpackChunkName: "of-carousel" */ './components/carousel'))

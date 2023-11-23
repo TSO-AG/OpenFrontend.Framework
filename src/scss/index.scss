@@ -9,6 +9,9 @@
 @import "~bootstrap/scss/variables-dark";
 @import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/mixins";
+
+// Utilities
+@import "utilities";
 @import "~bootstrap/scss/utilities";
 
 // Layout & components
@@ -37,13 +40,13 @@
 @import "~bootstrap/scss/spinners";
 @import "~bootstrap/scss/offcanvas";
 @import "~bootstrap/scss/card";
+@import "~bootstrap/scss/popover";
 
 // Helpers
 @import "~bootstrap/scss/helpers/clearfix";
 @import "~bootstrap/scss/helpers/color-bg";
 @import "~bootstrap/scss/helpers/colored-links";
 @import "~bootstrap/scss/helpers/focus-ring";
-@import "~bootstrap/scss/helpers/icon-link";
 @import "~bootstrap/scss/helpers/position";
 @import "~bootstrap/scss/helpers/stacks";
 @import "~bootstrap/scss/helpers/visually-hidden";
@@ -68,12 +71,14 @@
 @import "root";
 @import "buttons";
 @import "copyright";
+@import "calendar";
 @import "links";
 @import "form/datepicker";
 @import "form/combo-box";
 @import "form/form-number";
 @import "images";
 @import "icons";
+@import "icon-link";
 @import "map";
 @import "table";
 @import "opening-times";
@@ -101,3 +106,4 @@
 @import "page-navigation";
 @import "header-search";
 @import "collapse";
+@import "popover";

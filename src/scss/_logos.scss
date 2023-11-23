@@ -27,8 +27,8 @@
   margin-bottom: var(--#{$prefix}logos-margin-bottom);
 
   > * {
-    padding-right: calc(var(--#{$prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
-    padding-left: calc(var(--#{$prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
+    padding-right: calc(var(--#{$prefix}gutter-x) * .5);
+    padding-left: calc(var(--#{$prefix}gutter-x) * .5);
     margin-top: var(--#{$prefix}gutter-y);
   }
 }

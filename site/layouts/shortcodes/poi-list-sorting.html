@@ -1,16 +1,16 @@
 <div class="mb-3">
   <div class="row gy-3 justify-content-between justify-content-lg-end">
     <div class="col-auto">
-      <label for="{{ .Get "id" }}-sorting" class="form-label">Sortierung</label>
+      <label for="{{ .Get "id" }}-sorting" class="form-label">Sorting</label>
       <select id="{{ .Get "id" }}-sorting" class="form-select w-auto">
-        <option value="result">Beste Ergebnisse</option>
-        <option value="alphabetical">Alphabetisch</option>
-        <option value="location">Ortname</option>
+        <option value="result">Best results</option>
+        <option value="alphabetical">Alphabetical</option>
+        <option value="location">Place name</option>
       </select>
     </div>
 
     <div class="col-auto">
-      <div class="form-label">Ansicht</div>
+      <div class="form-label">View</div>
 
       <div class="btn-group">
         <button class="btn btn-icon {{ if eq (.Get "active-view") "grid" }}btn-primary{{ else }}btn-outline-primary{{ end }}" type="button"><i class="ofi-grid-fill"></i></button>

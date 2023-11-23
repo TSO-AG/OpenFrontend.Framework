@@ -18,6 +18,7 @@ const DefaultType = {
   layout: 'string',
   miniMonthMinWidth: 'number',
   title: 'string|undefined',
+  viewToggler: 'boolean',
 }
 
 const DefaultEventType = {
@@ -33,6 +34,7 @@ const Default = {
   layout: 'full',
   miniMonthMinWidth: 265,
   title: undefined,
+  viewToggler: true,
 }
 
 class Calendar extends BaseComponent {
@@ -123,7 +125,7 @@ class Calendar extends BaseComponent {
       case 'full':
         options.initialView = 'dayGridMonth'
         options.plugins.push(dayGridPlugin, listPlugin)
-        options.headerToolbar.end = 'dayGridMonth,listMonth today prev,next'
+        options.headerToolbar.end = this._config.viewToggler ? 'dayGridMonth,listMonth today prev,next' : 'today prev,next'
         options.views = {
           dayGridMonth: {
             type: 'dayGridMonth',

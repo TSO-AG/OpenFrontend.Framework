@@ -300,3 +300,9 @@
   @include card-mini-media();
 }
 
+.card-clickable {
+  .card-body,
+  .card-action {
+    position: static;
+  }
+}

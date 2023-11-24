@@ -19,7 +19,7 @@ body_class: ""
       </div>
 
       <div class="col-lg-4 col-xxl-3 order-first order-lg-0">
-        {{< poi-list-filter id="poi-list-grid-view" >}}
+        {{< poi-list-filter id="poi-list-grid-view" date_filter="true" >}}
       </div>
 
       <div class="col-lg-8 col-xxl-9">
@@ -34,14 +34,14 @@ body_class: ""
               const dummyContent = `
 <div class="popover-content">
   <figure class="popover-content-image">
-     {{< placeholder width="100%" height="160" class="img-fluid" text="Responsive image" >}}
+    {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
   </figure>
   <div class="popover-content-inside">
-    <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
-    <h6 class="popover-content-title">Yoga at the Park</h6>
-    <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
+    <div class="popover-content-info">Product family | Place</div>
+    <div class="popover-content-info">DD.MM.YY - DD.MM.YY</div>
+    <h4 class="popover-content-title">Title</h4>
     <a href="#" class="icon-link icon-link-hover stretched-link">
-      <span class="icon-link-text">Read more</span>
+      <span class="icon-link-text">View details</span>
       <i class="ofi-arrow-right"></i>
     </a>
   </div>
@@ -157,13 +157,13 @@ body_class: ""
             <p class="mb-3 fw-bold"><i class="ofi-funnel-fill"></i> Filter</p>
           </div>
           <div class="col-lg-auto">
-            {{< event-list-sorting id="poi-list-list-view" active-view="grid" >}}
+            {{< event-list-sorting id="event-list-grid-view" active-view="grid" >}}
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 col-xxl-3 order-first order-lg-0">
-        {{< poi-list-filter id="poi-list-list-view" >}}
+        {{< poi-list-filter id="event-list-grid-view" date_filter="true" >}}
       </div>
 
       <div class="col-lg-8 col-xxl-9">
@@ -191,7 +191,7 @@ body_class: ""
         </div>
 
         <div>
-          {{< poi-list-pagination id="poi-list-list-view" >}}
+          {{< poi-list-pagination id="event-list-grid-view" >}}
         </div>
       </div>
     </div>
@@ -209,13 +209,13 @@ body_class: ""
             <p class="mb-3 fw-bold"><i class="ofi-funnel-fill"></i> Filter</p>
           </div>
           <div class="col-lg-auto">
-            {{< event-list-sorting id="poi-list-list-view" active-view="list" >}}
+            {{< event-list-sorting id="event-list-list-view" active-view="list" >}}
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 col-xxl-3 order-first order-lg-0">
-        {{< poi-list-filter id="poi-list-list-view" >}}
+        {{< poi-list-filter id="event-list-list-view" date_filter="true" >}}
       </div>
 
       <div class="col-lg-8 col-xxl-9">
@@ -229,7 +229,7 @@ body_class: ""
         </div>
 
         <div>
-          {{< poi-list-pagination id="poi-list-list-view" >}}
+          {{< poi-list-pagination id="event-list-list-view" >}}
         </div>
       </div>
     </div>

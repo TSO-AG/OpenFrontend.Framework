@@ -1,3 +1,5 @@
+{{- $date_filter := .Get "date_filter" -}}
+
 <div class="d-lg-none">
   <div class="mb-3">
     <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#{{ .Get "id" }}-filters-mobile" aria-expanded="false" aria-controls="{{ .Get "id" }}-filters-mobile">
@@ -11,6 +13,20 @@
   <div id="{{ .Get "id" }}-filters-desktop">
     <div id="{{ .Get "id" }}-filters">
       <div class="accordion mb-3">
+        {{- if $date_filter -}}
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ .Get "id" }}-filter-date" aria-expanded="true" aria-controls="{{ .Get "id" }}-filter-date">
+            Date
+            </button>
+          </h2>
+          <div id="{{ .Get "id" }}-filter-date" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <input type="text" class="form-control form-datepicker" data-of-datepicker='{"mode": "range"}' placeholder="Select date range...">
+            </div>
+          </div>
+        </div>
+        {{- end -}}
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ .Get "id" }}-filter-region" aria-expanded="true" aria-controls="{{ .Get "id" }}-filter-region">

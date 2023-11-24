@@ -7,6 +7,8 @@
   --#{$prefix}calendar-event-bg-color: #{$calendar-event-bg-color};
   --#{$prefix}calendar-event-border-color: #{$calendar-event-border-color};
   --#{$prefix}calendar-list-event-hover-bg-color: #{$calendar-list-event-hover-bg-color};
+  --#{$prefix}calendar-table-color: #{$calendar-table-color};
+  --#{$prefix}calendar-table-bg: #{$calendar-table-bg};
   --#{$prefix}calendar-table-cell-shaded: #{$calendar-table-cell-shaded};
   --#{$prefix}calendar-today-bg-color: #{$calendar-today-bg-color};
   --#{$prefix}calendar-mini-event-bg-color: #{$calendar-mini-event-bg-color};
@@ -66,6 +68,12 @@
   td,
   th {
     border: var(--#{$prefix}calendar-border-width) solid var(--#{$prefix}calendar-border-color);
+  }
+
+  td,
+  th {
+    color: var(--#{$prefix}calendar-table-color);
+    background-color: var(--#{$prefix}calendar-table-bg);
   }
 
   .fc-scrollgrid {

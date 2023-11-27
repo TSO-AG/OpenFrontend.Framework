@@ -6,7 +6,7 @@
 
   &::before {
     width: 1px;
-    margin-right: calc((#{$btn-icon-gap} + 1px) * -1); // stylelint-disable-line function-disallowed-list
+    margin-right: calc((#{$btn-icon-gap} + 1px) * -1);
     visibility: hidden;
     content: "\00a0";
   }

@@ -1,6 +1,7 @@
 // Variables
 @import "../icons/variables";
 @import "variables";
+@import "variables-dark";
 
 // Configuration
 @import "~bootstrap/scss/functions";
@@ -8,6 +9,9 @@
 @import "~bootstrap/scss/variables-dark";
 @import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/mixins";
+
+// Utilities
+@import "utilities";
 @import "~bootstrap/scss/utilities";
 
 // Layout & components
@@ -36,9 +40,23 @@
 @import "~bootstrap/scss/spinners";
 @import "~bootstrap/scss/offcanvas";
 @import "~bootstrap/scss/card";
+@import "~bootstrap/scss/popover";
 
 // Helpers
-@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/helpers/clearfix";
+@import "~bootstrap/scss/helpers/color-bg";
+@import "~bootstrap/scss/helpers/colored-links";
+@import "~bootstrap/scss/helpers/focus-ring";
+@import "~bootstrap/scss/helpers/position";
+@import "~bootstrap/scss/helpers/stacks";
+@import "~bootstrap/scss/helpers/visually-hidden";
+@import "~bootstrap/scss/helpers/stretched-link";
+@import "~bootstrap/scss/helpers/text-truncation";
+@import "~bootstrap/scss/helpers/vr";
+
+// Vendor (slider, carousel)
+@import "swiper/scss";
+@import "swiper/css/effect-fade";
 
 // Utilities
 @import "~bootstrap/scss/utilities/api";
@@ -50,12 +68,18 @@
 @import "mixins";
 
 // Layout & components
+@import "root";
 @import "buttons";
 @import "copyright";
+@import "calendar";
 @import "links";
 @import "form/datepicker";
+@import "form/combo-box";
+@import "form/form-number";
 @import "images";
 @import "icons";
+@import "icon-link";
+@import "map";
 @import "table";
 @import "opening-times";
 @import "pagination";
@@ -72,3 +96,14 @@
 @import "wrapper";
 @import "social-links";
 @import "icon-box";
+@import "masonry";
+@import "carousel";
+@import "slider";
+@import "headings";
+@import "aspect-ratio";
+@import "header";
+@import "page-menu";
+@import "page-navigation";
+@import "header-search";
+@import "collapse";
+@import "popover";

@@ -1,37 +1,34 @@
 ---
 layout: docs
 title: Labels
-description: TODO
+description: The labels component in web design provides a framework to display small images within a structured box layout. It's an efficient method for presenting visual content in a neat, organized, and easily navigable format.
 group: components
 toc: true
 ---
 
-## Examples
-
-
-### LabelsMini
+## Usage
 
 {{< example >}}
-<div class="labels-min">
-  <div class="labels-min-item">
-    <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+<div class="labels">
+  <div class="labels-item">
+    <figure>{{< placeholder markup="img" width="36" height="36" text="A" >}}</figure>
   </div>
-  <div class="labels-min-item">
-    <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+  <div class="labels-item">
+    <figure>{{< placeholder markup="img" width="36" height="36" text="B" >}}</figure>
   </div>
-  <div class="labels-min-item">
-    <figure>{{< placeholder markup="img" width="36" height="36" text="Image" >}}</figure>
+  <div class="labels-item">
+    <figure>{{< placeholder markup="img" width="36" height="36" text="C" >}}</figure>
   </div>
-  <span class="labels-min-label">+1</span>
+  <span class="labels-label">+1</span>
 </div>
 {{< /example >}}
 
-#### CSS
+## CSS
 
-##### Variables
+### Variables
 
-{{< scss-docs name="labels-min-css-vars" file="src/scss/_labels.scss" >}}
+{{< scss-docs name="labels-css-vars" file="src/scss/_labels.scss" >}}
 
-##### Sass variables
+### Sass variables
 
-{{< scss-docs name="labels-min-variables" file="src/scss/_variables.scss" >}}
+{{< scss-docs name="labels-variables" file="src/scss/_variables.scss" >}}

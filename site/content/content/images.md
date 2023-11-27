@@ -47,39 +47,35 @@ using [the `.mx-auto` margin utility class]({{< docsref "/utilities/spacing#hori
 
 ## Image ratios
 
-OpenFrontend.Framework's `img-ratio` utility classes offer an effortless method to manage the aspect ratios of your
-images, ensuring an adaptable, responsive design across all device types. When an image is enclosed within a div
-utilizing an `img-ratio` class, the image will fill its containing block completely, thanks to the `object-fit: cover;`
-style.
+With OpenFrontend.Framework, managing the aspect ratios of your images has become even more convenient. This approach provides you with better control and flexibility towards your design needs.
 
-You can pair any ratio class from the OpenFrontend.Framework [Ratios]({{< docsref "/helpers/ratio" >}}) helper with
-img-ratio to meet your design needs.
+To apply the desired aspect ratio to an image, use the classes in conjunction with `.aspect` and `.object-fit-cover`. The `.aspect` class sets the container's aspect ratio, while `.object-fit-cover` ensures the image scales to fit its container without distortion.
 
-Below, you'll find examples demonstrating how to use the `img-ratio` classes within your project:
+Please refer to the Aspect Ratios helper at this link for the available classes and their corresponding [aspect ratios]({{< docsref "/helpers/aspect-ratio" >}}).
 
 {{< example class="bd-example-image-ratios" >}}
-<div class="img-ratio ratio-9x16">
-{{< placeholder width="200" height="200" text="9x16">}}
+<div>
+{{< placeholder width="200" height="200" text="9x16" class="aspect aspect-9x16 object-fit-cover">}}
 </div>
 
-<div class="img-ratio ratio-3x4">
-{{< placeholder width="200" height="200" text="3x4">}}
+<div>
+{{< placeholder width="200" height="200" text="3x4" class="aspect aspect-3x4 object-fit-cover">}}
 </div>
 
-<div class="img-ratio ratio-1x1">
-{{< placeholder width="200" height="200" text="1x1">}}
+<div>
+{{< placeholder width="200" height="200" text="1x1" class="aspect aspect-1x1 object-fit-cover">}}
 </div>
 
-<div class="img-ratio ratio-4x3">
-{{< placeholder width="200" height="200" text="4x3">}}
+<div>
+{{< placeholder width="200" height="200" text="4x3" class="aspect aspect-4x3 object-fit-cover">}}
 </div>
 
-<div class="img-ratio ratio-16x9">
-{{< placeholder width="200" height="200" text="16x9">}}
+<div>
+{{< placeholder width="200" height="200" text="16x9" class="aspect aspect-16x9 object-fit-cover">}}
 </div>
 
-<div class="img-ratio ratio-21x9">
-{{< placeholder width="200" height="200" text="21x9">}}
+<div>
+{{< placeholder width="200" height="200" text="21x9" class="aspect aspect-21x9 object-fit-cover">}}
 </div>
 
 {{< /example >}}

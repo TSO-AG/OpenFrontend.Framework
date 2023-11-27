@@ -1,0 +1,22 @@
+<div class="mb-3">
+  <div class="row gy-3 justify-content-between justify-content-lg-end">
+    <div class="col-auto">
+      <label for="{{ .Get "id" }}-sorting" class="form-label">Sortierung</label>
+      <select id="{{ .Get "id" }}-sorting" class="form-select w-auto">
+        <option value="result">Beste Ergebnisse</option>
+        <option value="alphabetical">Alphabetisch</option>
+        <option value="location">Ortname</option>
+      </select>
+    </div>
+
+    <div class="col-auto">
+      <div class="form-label">Ansicht</div>
+
+      <div class="btn-group">
+        <button class="btn btn-icon {{ if eq (.Get "active-view") "grid" }}btn-primary{{ else }}btn-outline-primary{{ end }}" type="button"><i class="ofi-grid-fill"></i></button>
+        <button class="btn btn-icon {{ if eq (.Get "active-view") "list" }}btn-primary{{ else }}btn-outline-primary{{ end }}" type="button"><i class="ofi-list"></i></button>
+        <button class="btn btn-icon {{ if eq (.Get "active-view") "map" }}btn-primary{{ else }}btn-outline-primary{{ end }}" type="button"><i class="ofi-map-fill"></i></button>
+      </div>
+    </div>
+  </div>
+</div>

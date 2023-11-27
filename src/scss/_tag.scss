@@ -7,6 +7,8 @@
   flex-wrap: wrap;
   row-gap: var(--#{$prefix}tag-list-gap-y);
   column-gap: var(--#{$prefix}tag-list-gap-x);
+  padding-left: 0; // reset padding because ul and ol
+  margin-bottom: 0;
 }
 
 .tag {

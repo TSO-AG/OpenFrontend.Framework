@@ -1,27 +1,52 @@
 .wrapper {
   // scss-docs-start wrapper-css-vars
   --#{$prefix}wrapper-padding-y: #{$wrapper-padding-y};
+  --#{$prefix}wrapper-padding-y-lg: #{$wrapper-padding-y-lg};
+  --#{$prefix}wrapper-padding-y-xl: #{$wrapper-padding-y-xl};
   --#{$prefix}wrapper-padding-x: #{$wrapper-padding-x};
+  --#{$prefix}wrapper-padding-x-lg: #{$wrapper-padding-x-lg};
+  --#{$prefix}wrapper-padding-x-xl: #{$wrapper-padding-x-xl};
   --#{$prefix}wrapper-color: #{$wrapper-color};
   --#{$prefix}wrapper-bg-color: #{$wrapper-bg-color};
   --#{$prefix}wrapper-z-index: #{$wrapper-z-index};
-  --#{$prefix}wrapper-media-opacity: #{$wrapper-media-opacity};
-  // scss-docs-end wrapper-css-vars
+  --#{$prefix}wrapper-media-overlay: #{$wrapper-media-overlay};
+  --#{$prefix}wrapper-media-overlay-opacity: #{$wrapper-media-overlay-opacity};
+  --#{$prefix}wrapper-text-shadow: #{$wrapper-text-shadow};
+  --#{$prefix}wrapper-font-size: #{$wrapper-font-size};
+  --#{$prefix}wrapper-zoom-transform: #{$wrapper-zoom-transform};
+  --#{$prefix}wrapper-content-top-right-y: #{$wrapper-content-top-right-y};
+  --#{$prefix}wrapper-content-top-right-x: #{$wrapper-content-top-right-x};
 
+  // scss-docs-end wrapper-css-vars
   position: relative;
   z-index: var(--#{$prefix}wrapper-z-index);
-  padding: var(--#{$prefix}wrapper-padding-y) var(--#{$prefix}wrapper-padding-x);
-  color: var(--#{$prefix}wrapper-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: var(--#{$prefix}wrapper-bg-color);
 
   &-bg-light {
     --#{$prefix}wrapper-bg-color: #{$wrapper-bg-color-light};
-    --#{$prefix}wrapper-color: color-contrast($wrapper-bg-color-light);
+    --#{$prefix}wrapper-color: #{color-contrast($wrapper-bg-color-light)};
   }
 
   &-bg-dark {
     --#{$prefix}wrapper-bg-color: #{$wrapper-bg-color-dark};
     --#{$prefix}wrapper-color: #{color-contrast($wrapper-bg-color-dark)};
+  }
+}
+
+.wrapper-zoom {
+  overflow: hidden !important; // stylelint-disable-line declaration-no-important
+
+  .wrapper-bg-media {
+    @include transition($wrapper-media-zoom-transition);
+  }
+
+  &:hover {
+    .wrapper-bg-media {
+      transform: var(--#{$prefix}wrapper-zoom-transform);
+    }
   }
 }
 
@@ -32,7 +57,14 @@
   bottom: 0;
   left: 0;
   z-index: -1;
-  opacity: var(--#{$prefix}wrapper-media-opacity);
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: var(--#{$prefix}wrapper-media-overlay);
+    opacity: var(--#{$prefix}wrapper-media-overlay-opacity);
+  }
 
   figure,
   picture {
@@ -47,4 +79,49 @@
     height: 100%;
     object-fit: cover;
   }
+}
+
+.wrapper-content {
+  padding: var(--#{$prefix}wrapper-padding-y) var(--#{$prefix}wrapper-padding-x);
+  font-size: var(--#{$prefix}wrapper-font-size);
+  color: var(--#{$prefix}wrapper-color);
+  text-shadow: var(--#{$prefix}wrapper-text-shadow);
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    text-shadow: none;
+  }
+}
+
+.wrapper-content-padding-y-lg {
+  --#{$prefix}wrapper-padding-y: var(--#{$prefix}wrapper-padding-y-lg);
+}
+
+.wrapper-content-padding-y-xl {
+  --#{$prefix}wrapper-padding-y: var(--#{$prefix}wrapper-padding-y-xl);
+}
+
+.wrapper-content-padding-x-lg {
+  --#{$prefix}wrapper-padding-x: var(--#{$prefix}wrapper-padding-x-lg);
+}
+
+.wrapper-content-padding-x-xl {
+  --#{$prefix}wrapper-padding-x: var(--#{$prefix}wrapper-padding-x-xl);
+}
+
+.wrapper-content-top-right {
+  position: absolute;
+  top: var(--#{$prefix}wrapper-content-top-right-y);
+  right: var(--#{$prefix}wrapper-content-top-right-x);
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-content-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }

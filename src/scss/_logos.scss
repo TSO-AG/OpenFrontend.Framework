@@ -1,42 +1,50 @@
-.logo-list {
+.logos {
   // scss-docs-start logos-css-vars
-  --#{$prefix}logo-list-gap: #{$logo-list-gap};
-  --#{$prefix}logo-list-margin-bottom: #{$logo-list-margin-bottom};
-  --#{$prefix}logo-list-item-max-height: #{$logo-list-item-max-height};
-  --#{$prefix}logo-list-item-max-width: #{$logo-list-item-max-width};
-  --#{$prefix}logo-list-item-padding-y: #{$logo-list-item-padding-y};
-  --#{$prefix}logo-list-item-padding-x: #{$logo-list-item-padding-x};
-  --#{$prefix}logo-list-item-bg: #{$logo-list-item-bg};
-  --#{$prefix}logo-list-item-border-style: #{$logo-list-item-border-style};
-  --#{$prefix}logo-list-item-border-width: #{$logo-list-item-border-width};
-  --#{$prefix}logo-list-item-border-color: #{$logo-list-item-border-color};
-  --#{$prefix}logo-list-item-border-radius: #{$logo-list-item-border-radius};
+  --#{$prefix}logos-gap: #{$logos-gap};
+  --#{$prefix}logos-margin-bottom: #{$logos-margin-bottom};
+  --#{$prefix}logos-item-max-height: #{$logos-item-max-height};
+  --#{$prefix}logos-item-max-width: #{$logos-item-max-width};
+  --#{$prefix}logos-item-padding-y: #{$logos-item-padding-y};
+  --#{$prefix}logos-item-padding-x: #{$logos-item-padding-x};
+  --#{$prefix}logos-item-bg: #{$logos-item-bg};
+  --#{$prefix}logos-item-border-style: #{$logos-item-border-style};
+  --#{$prefix}logos-item-border-width: #{$logos-item-border-width};
+  --#{$prefix}logos-item-border-color: #{$logos-item-border-color};
+  --#{$prefix}logos-item-border-radius: #{$logos-item-border-radius};
   // scss-docs-end logos-css-vars
+}
 
-  @include make-row(var(--#{$prefix}logo-list-gap));
+.logo-carousel {
+  .swiper-slide {
+    height: auto;
+  }
+}
+
+.logos-row {
+  @include make-row(var(--#{$prefix}logos-gap));
   --#{$prefix}gutter-y: var(--#{$prefix}gutter-x);
   justify-content: center;
-  margin-bottom: var(--#{$prefix}logo-list-margin-bottom);
+  margin-bottom: var(--#{$prefix}logos-margin-bottom);
 
   > * {
-    padding-right: calc(var(--#{$prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
-    padding-left: calc(var(--#{$prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
+    padding-right: calc(var(--#{$prefix}gutter-x) * .5);
+    padding-left: calc(var(--#{$prefix}gutter-x) * .5);
     margin-top: var(--#{$prefix}gutter-y);
   }
 }
 
-.logo-list-item {
+.logos-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: var(--#{$prefix}logo-list-item-max-width);
+  max-width: var(--#{$prefix}logos-item-max-width);
   height: 100%;
-  max-height: var(--#{$prefix}logo-list-item-max-height);
-  padding: var(--#{$prefix}logo-list-item-padding-y) var(--#{$prefix}logo-list-item-padding-x);
+  max-height: var(--#{$prefix}logos-item-max-height);
+  padding: var(--#{$prefix}logos-item-padding-y) var(--#{$prefix}logos-item-padding-x);
   text-align: center;
-  background-color: var(--#{$prefix}logo-list-item-bg);
-  border: var(--#{$prefix}logo-list-item-border-width) var(--#{$prefix}logo-list-item-border-style) var(--#{$prefix}logo-list-item-border-color);
-  @include border-radius(var(--#{$prefix}logo-list-item-border-radius));
+  background-color: var(--#{$prefix}logos-item-bg);
+  border: var(--#{$prefix}logos-item-border-width) var(--#{$prefix}logos-item-border-style) var(--#{$prefix}logos-item-border-color);
+  @include border-radius(var(--#{$prefix}logos-item-border-radius));
 
   figure {
     display: flex;

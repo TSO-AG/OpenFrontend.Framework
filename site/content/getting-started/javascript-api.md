@@ -142,3 +142,58 @@ import 'openfrontend-framework/js/components/ticker'
 ```
 
 Please note that some components _may_ have the default function to be executed, whereas some may not!
+
+## Methods and properties
+
+Every OpenFrontend plugin exposes the following methods and static properties.
+
+{{< bs-table "table" >}}
+| Method | Description |
+| --- | --- |
+| `dispose` | Destroys an element's modal. (Removes stored data on the DOM element) |
+| `getInstance` | *Static* method which allows you to get the modal instance associated with a DOM element. |
+| `getOrCreateInstance` | *Static* method which allows you to get the modal instance associated with a DOM element, or create a new one in case it wasn't initialized. |
+{{< /bs-table >}}
+
+{{< bs-table "table" >}}
+| Static property | Description |
+| --- | --- |
+| `NAME` | Returns the plugin name. (Example: `openFrontend.Tooltip.NAME`) |
+| `VERSION` | The version of each of Bootstrap's plugins can be accessed via the `VERSION` property of the plugin's constructor (Example: `bootstrap.Tooltip.VERSION`) |
+{{< /bs-table >}}
+
+## Sanitizer
+
+Tooltips and Popovers use our built-in sanitizer to sanitize options which accept HTML.
+
+The default `allowList` value is the following:
+
+{{< js-docs name="allow-list" file="node_modules/bootstrap/js/src/util/sanitizer.js" >}}
+
+If you want to add new values to this default `allowList` you can do the following:
+
+```js
+const myDefaultAllowList = bootstrap.Tooltip.Default.allowList
+
+// To allow table elements
+myDefaultAllowList.table = []
+
+// To allow td elements and data-bs-option attributes on td elements
+myDefaultAllowList.td = ['data-bs-option']
+
+// You can push your custom regex to validate your attributes.
+// Be careful about your regular expressions being too lax
+const myCustomRegex = /^data-my-app-[\w-]+/
+myDefaultAllowList['*'].push(myCustomRegex)
+```
+
+If you want to bypass our sanitizer because you prefer to use a dedicated library, for example [DOMPurify](https://www.npmjs.com/package/dompurify), you should do the following:
+
+```js
+const yourTooltipEl = document.querySelector('#yourTooltip')
+const tooltip = new bootstrap.Tooltip(yourTooltipEl, {
+  sanitizeFn(content) {
+    return DOMPurify.sanitize(content)
+  }
+})
+```

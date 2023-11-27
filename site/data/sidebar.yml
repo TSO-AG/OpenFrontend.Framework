@@ -59,7 +59,9 @@
     - title: Date & time picker
     - title: Checks & radios
     - title: Range
+    - title: Quantity picker
     - title: Input group
+    - title: Combo box
     - title: Floating labels
     - title: Layout
     - title: Validation
@@ -74,25 +76,31 @@
     - title: Breadcrumb
     - title: Button group
     - title: Buttons
+    - title: Calendar
     - title: Card
+    - title: Carousel
     - title: Close button
     - title: Collapse
     - title: Copyright
     - title: Dropdowns
     - title: Elements filter
+    - title: Header
     - title: Icon box
     - title: Icons
     - title: Labels
     - title: List group
     - title: Logos
     - title: Map
+    - title: Masonry
     - title: Modal
     - title: Navs & tabs
     - title: Offcanvas
     - title: Opening times
     - title: Pagination
+    - title: Popovers
     - title: Ratings
     - title: Search
+    - title: Slider
     - title: Social links
     - title: Spinners
     - title: State
@@ -105,13 +113,13 @@
   icon: magic
   icon_color: orange
   pages:
+    - title: Aspect ratio
     - title: Clearfix
     - title: Color & background
     - title: Colored links
     - title: Focus ring
     - title: Icon link
     - title: Position
-    - title: Ratio
     - title: Stacks
     - title: Stretched link
     - title: Text truncation

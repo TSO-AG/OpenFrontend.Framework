@@ -1,0 +1,30 @@
+@mixin popover-content-reset {
+  .popover-content {
+    p {
+      margin-top: 0;
+      @include margin-bottom($paragraph-margin-bottom);
+    }
+
+    a {
+      color: $link-color;
+
+      &:hover {
+        color: $link-hover-color;
+      }
+    }
+  }
+}
+
+// Reset styles provided by Google Maps
+.gm-style .gm-style-iw {
+  @include popover-content-reset();
+}
+
+// Reset styles provided by OSM
+.leaflet-popup-content {
+  html & {
+    margin: 12px;
+  }
+
+  @include popover-content-reset();
+}

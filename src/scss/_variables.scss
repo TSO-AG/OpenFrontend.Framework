@@ -4,20 +4,52 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
-$blue: #0d6efd !default;
-$primary: $blue !default;
+
+// scss-docs-start gray-color-variables
 $white: #fff !default;
+$gray-500: #adb5bd !default;
+// scss-docs-end gray-color-variables
+
+// scss-docs-start color-variables
+$blue: #0d6efd !default;
+// scss-docs-end color-variables
+
+// scss-docs-start theme-color-variables
+$primary: $blue !default;
+// scss-docs-end theme-color-variables
 
 // Prefix for :root CSS variables
 
 $prefix: bs- !default;
 
+// Responsive values
+$responsive-values: (
+  section-margin: (
+    xs: 3rem,
+    md: 4rem,
+  ),
+  element-margin: (
+    xs: 1.5rem,
+    md: 2rem,
+  ),
+) !default;
+
 // Spacing
 $spacer: 1rem !default;
 
+$custom-spacers: (
+  section: var(--#{$prefix}section-margin),
+  element: var(--#{$prefix}element-margin),
+) !default;
+
+$negative-custom-spacers: (
+  n-section: calc(var(--#{$prefix}section-margin) * -1),
+  n-element: calc(var(--#{$prefix}element-margin) * -1),
+) !default;
+// scss-docs-end spacer-variables-maps
+
 // Components
 
-// stylelint-disable function-disallowed-list
 // scss-docs-start aspect-ratios
 $aspect-ratios: (
   "1x1": 100%,
@@ -28,7 +60,6 @@ $aspect-ratios: (
   "9x16": calc(16 / 9 * 100%)
 ) !default;
 // scss-docs-end aspect-ratios
-// stylelint-enable function-disallowed-list
 
 // Typography
 $font-size-base: 1rem !default;
@@ -59,20 +90,20 @@ $form-datepicker-indicator:                   url("data:image/svg+xml,<svg xmlns
 $form-timepicker-indicator:                   url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='#{$form-timepicker-indicator-color}' d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z'/></svg>") !default;
 // scss-docs-end form-datepicker-variables
 
-// scss-docs-start calendar-variables
-$calendar-arrow-hover-color:                   #f64747 !default;
-$calendar-background:                          #fff !default;
-$calendar-border-color:                        #e6e6e6 !default;
-$calendar-month-foreground:                    #5a6171 !default;
-$calendar-month-background:                    transparent !default;
-$calendar-weekdays-background:                 transparent !default;
-$calendar-weekdays-foreground:                 #5a6171 !default;
-$calendar-day-foreground:                      #393939 !default;
-$calendar-day-hover-background:                #e6e6e6 !default;
-$calendar-today-color:                         #959ea9 !default;
-$calendar-selected-day-background:             #569ff7 !default;
-$calendar-selected-day-color:                  #fff !default;
-// scss-docs-end calendar-variables
+// scss-docs-start calendarpicker-variables
+$calendarpicker-arrow-hover-color:                   #f64747 !default;
+$calendarpicker-background:                          #fff !default;
+$calendarpicker-border-color:                        #e6e6e6 !default;
+$calendarpicker-month-foreground:                    #5a6171 !default;
+$calendarpicker-month-background:                    transparent !default;
+$calendarpicker-weekdays-background:                 transparent !default;
+$calendarpicker-weekdays-foreground:                 #5a6171 !default;
+$calendarpicker-day-foreground:                      #393939 !default;
+$calendarpicker-day-hover-background:                #e6e6e6 !default;
+$calendarpicker-today-color:                         #959ea9 !default;
+$calendarpicker-selected-day-background:             #569ff7 !default;
+$calendarpicker-selected-day-color:                  #fff !default;
+// scss-docs-end calendarpicker-variables
 
 // Buttons
 
@@ -159,6 +190,7 @@ $video-player-icon-pause: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/
 
 // Card
 // scss-docs-start card-variables
+$card-cap-bg: transparent !default;
 $card-info-color: var(--#{$prefix}secondary-color) !default;
 $card-info-font-size: .8rem !default;
 $card-info-spacer-y: $spacer * .5 !default;
@@ -168,6 +200,8 @@ $card-title-link-color: null !default;
 $card-title-link-decoration: null !default;
 $card-title-link-hover-color: null !default;
 $card-title-link-hover-decoration: null !default;
+$card-horizontal-media-width: 225px !default;
+$card-mini-media-width: 125px !default;
 // scss-docs-end card-variables
 
 // Price
@@ -239,31 +273,31 @@ $tag-icon-space-x: .1em !default;
 // scss-docs-end tag-variables
 
 // Labels
-// scss-docs-start labels-min-variables
-$labels-min-gap: .25rem !default;
-$labels-min-padding: .25rem !default;
-$labels-min-bg: var(--#{$prefix}body-bg) !default;
-$labels-min-border-width: var(--#{$prefix}border-width) !default;
-$labels-min-border-color: var(--#{$prefix}border-color) !default;
-$labels-min-border-radius: var(--#{$prefix}border-radius) !default;
-$labels-min-box-shadow: var(--#{$prefix}box-shadow-sm) !default;
+// scss-docs-start labels-variables
+$labels-gap: .25rem !default;
+$labels-padding: .25rem !default;
+$labels-bg: var(--#{$prefix}body-bg) !default;
+$labels-border-width: var(--#{$prefix}border-width) !default;
+$labels-border-color: var(--#{$prefix}border-color) !default;
+$labels-border-radius: var(--#{$prefix}border-radius) !default;
+$labels-box-shadow: var(--#{$prefix}box-shadow-sm) !default;
 
-$labels-min-item-padding: null !default;
-$labels-min-item-bg: var(--#{$prefix}gray-100) !default;
-$labels-min-item-border-style: null !default;
-$labels-min-item-border-width: null !default;
-$labels-min-item-border-color: null !default;
-$labels-min-item-border-radius: var(--#{$prefix}border-radius) !default;
-$labels-min-item-box-shadow: null !default;
-$labels-min-item-width: 36px !default;
-$labels-min-item-height: 36px !default;
+$labels-item-padding: null !default;
+$labels-item-bg: var(--#{$prefix}gray-100) !default;
+$labels-item-border-style: null !default;
+$labels-item-border-width: null !default;
+$labels-item-border-color: null !default;
+$labels-item-border-radius: var(--#{$prefix}border-radius) !default;
+$labels-item-box-shadow: null !default;
+$labels-item-width: 36px !default;
+$labels-item-height: 36px !default;
 
-$labels-min-label-padding: .5rem !default;
-$labels-min-label-font-size: 1rem !default;
-$labels-min-label-font-weight: 700 !default;
-$labels-min-label-color: null !default;
-$labels-min-label-text-decoration: underline !default;
-// scss-docs-end labels-min-variables
+$labels-label-padding: .5rem !default;
+$labels-label-font-size: 1rem !default;
+$labels-label-font-weight: 700 !default;
+$labels-label-color: null !default;
+$labels-label-text-decoration: underline !default;
+// scss-docs-end labels-variables
 
 // Opening times
 // scss-docs-start opening-times-variables
@@ -304,47 +338,66 @@ $ticker-z-index:                           10 !default;
 
 // Logos
 // scss-docs-start logos-variables
-$logo-list-gap: 1rem !default;
-$logo-list-margin-bottom: 1rem !default;
-$logo-list-item-max-width: null !default;
-$logo-list-item-max-height: null !default;
-$logo-list-item-bg: null !default;
-$logo-list-item-padding-y: null !default;
-$logo-list-item-padding-x: null !default;
-$logo-list-item-border-style: null !default;
-$logo-list-item-border-width: null !default;
-$logo-list-item-border-color: null !default;
-$logo-list-item-border-radius: null !default;
+$logos-gap: 1rem !default;
+$logos-margin-bottom: 1rem !default;
+$logos-item-max-width: null !default;
+$logos-item-max-height: null !default;
+$logos-item-bg: null !default;
+$logos-item-padding-y: null !default;
+$logos-item-padding-x: null !default;
+$logos-item-border-style: null !default;
+$logos-item-border-width: null !default;
+$logos-item-border-color: null !default;
+$logos-item-border-radius: null !default;
 // scss-docs-end logos-variables
 
 // Wrapper
 // scss-docs-start wrapper-variables
-$wrapper-padding-y: null !default;
-$wrapper-padding-x: null !default;
-$wrapper-color: null !default;
+$wrapper-padding-y: 1.5rem !default;
+$wrapper-padding-y-lg: 2.5rem !default;
+$wrapper-padding-y-xl: 5.5rem !default;
+$wrapper-padding-x: 1.5rem !default;
+$wrapper-padding-x-lg: 2.5rem !default;
+$wrapper-padding-x-xl: 4.5rem !default;
+$wrapper-color: #fff !default;
 $wrapper-bg-color: null !default;
 $wrapper-bg-color-light: #f8f9fa !default;
 $wrapper-bg-color-dark: #212529 !default;
 $wrapper-z-index: 1 !default;
-$wrapper-media-opacity: null !default;
+$wrapper-media-overlay: #000 !default;
+$wrapper-media-overlay-opacity: .4 !default;
+$wrapper-media-zoom-transition: all .5s ease-in-out !default;
+$wrapper-text-shadow: 2px 3px 5px rgba(0, 0, 0, .5) !default;
+$wrapper-font-size: 1.2rem !default;
+$wrapper-zoom-transform: scale(1.1) !default;
+$wrapper-content-top-right-y: 10px !default;
+$wrapper-content-top-right-x: $wrapper-content-top-right-y !default;
 // scss-docs-end wrapper-variables
 
 // Social links
 // scss-docs-start social-links-variable
 $social-links-gap: .5rem !default;
-$social-link-bg: $primary !default;
-$social-link-color: #fff !default;
-$social-link-border-style: null !default;
-$social-link-border-width: null !default;
-$social-link-border-color: null !default;
-$social-link-border-radius: 50% !default;
-$social-link-font-size: 1rem !default;
-$social-link-width: 2em !default;
-$social-link-height: $social-link-width !default;
-$social-link-hover-bg: mix(#000, $social-link-bg, 15%) !default;
-$social-link-hover-color: #fff !default;
-$social-link-hover-border-color: null !default;
-$social-link-transition:  color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
+$social-links-gap-lg: 1.5rem !default;
+$social-link-icon-bg: $primary !default;
+$social-link-icon-color: #fff !default;
+$social-link-icon-border-style: null !default;
+$social-link-icon-border-width: null !default;
+$social-link-icon-border-color: null !default;
+$social-link-icon-border-radius: 50% !default;
+$social-link-icon-font-size: 1rem !default;
+$social-link-icon-font-size-lg: 1.5rem !default;
+$social-link-icon-width: 2em !default;
+$social-link-icon-width-lg: 2em !default;
+$social-link-icon-height: $social-link-icon-width !default;
+$social-link-icon-height-lg: $social-link-icon-width-lg !default;
+$social-link-icon-hover-bg: mix(#000, $social-link-icon-bg, 15%) !default;
+$social-link-icon-hover-color: #fff !default;
+$social-link-icon-hover-border-color: null !default;
+$social-link-icon-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
+$social-link-label-color: var(--#{$prefix}body-color) !default;
+$social-link-label-hover-color: var(--#{$prefix}body-color) !default;
+$social-link-label-font-size: var(--#{$prefix}body-font-size) !default;
+$social-link-label-transition: color .15s ease-in-out !default;
 // scss-docs-end social-links-variables
 
 // Icon box
@@ -354,3 +407,251 @@ $icon-box-margin-bottom:    1rem !default;
 $icon-box-icon-color:       $primary !default;
 $icon-box-icon-font-size:   null !default;
 // scss-docs-end icon-box-variables
+
+// Masonry
+// scss-docs-start masonry-variables
+$masonry-gap: 5px !default;
+$masonry-breakpoint: md !default;
+$masonry-group-breakpoint: xl !default;
+// scss-docs-end masonry-variables
+
+// Combo box
+// scss-docs-start combo-box-variables
+$combo-box-padding-x:                1rem !default;
+$combo-box-padding-y:                .5rem !default;
+$combo-box-color:                    var(--#{$prefix}body-color) !default;
+$combo-box-bg:                       var(--#{$prefix}body-bg) !default;
+$combo-box-border-color:             var(--#{$prefix}border-color-translucent) !default;
+$combo-box-border-radius:            var(--#{$prefix}border-radius) !default;
+$combo-box-border-width:             var(--#{$prefix}border-width) !default;
+$combo-box-row-gap:                  1.5rem !default;
+$combo-box-label-min-width:          7em !default;
+$combo-box-field-width:              9em !default;
+$combo-box-divider-bg:               $combo-box-border-color !default;
+$combo-box-divider-margin-y:         $spacer * .5 !default;
+$combo-box-divider-height:           1px !default;
+$combo-box-divider-style:            solid !default;
+// scss-docs-end combo-box-variables
+
+// Carousel
+// scss-docs-start carousel-variables
+$carousel-theme-color:                              $primary !default;
+$carousel-offset-x:                                 12px !default;
+$carousel-offset-y:                                 12px !default;
+$carousel-pagination-left:                          $carousel-offset-x !default;
+$carousel-pagination-right:                         $carousel-offset-x !default;
+$carousel-pagination-bottom:                        $carousel-offset-y !default;
+$carousel-pagination-top:                           $carousel-offset-y !default;
+$carousel-pagination-bullet-size:                   8px !default;
+$carousel-pagination-bullet-width:                  $carousel-pagination-bullet-size !default;
+$carousel-pagination-bullet-height:                 $carousel-pagination-bullet-size !default;
+$carousel-pagination-bullet-border-radius:          50% !default;
+$carousel-pagination-bullet-inactive-color:         #000 !default;
+$carousel-pagination-bullet-inactive-opacity:       .2 !default;
+$carousel-pagination-bullet-opacity:                1 !default;
+$carousel-pagination-bullet-horizontal-gap:         4px !default;
+$carousel-pagination-bullet-vertical-gap:           6px !default;
+$carousel-navigation-center-padding-x:              3.5rem !default;
+$carousel-navigation-center-inside-offset-x:        12px !default;
+// scss-docs-end carousel-variables
+
+// Slider
+// scss-docs-start slider-variables
+$slider-theme-color:                              $primary !default;
+$slider-offset-x:                                 12px !default;
+$slider-offset-y:                                 12px !default;
+$slider-pagination-left:                          $slider-offset-x !default;
+$slider-pagination-right:                         $slider-offset-x !default;
+$slider-pagination-bottom:                        $slider-offset-y !default;
+$slider-pagination-top:                           $slider-offset-y !default;
+$slider-pagination-bullet-size:                   8px !default;
+$slider-pagination-bullet-width:                  $slider-pagination-bullet-size !default;
+$slider-pagination-bullet-height:                 $slider-pagination-bullet-size !default;
+$slider-pagination-bullet-border-radius:          50% !default;
+$slider-pagination-bullet-inactive-color:         #000 !default;
+$slider-pagination-bullet-inactive-opacity:       .2 !default;
+$slider-pagination-bullet-opacity:                1 !default;
+$slider-pagination-bullet-horizontal-gap:         4px !default;
+$slider-pagination-bullet-vertical-gap:           6px !default;
+$slider-navigation-offset-x:                      $slider-offset-x !default;
+// scss-docs-end slider-variables
+
+// Heading
+$headings-action-margin-bottom: 1rem !default;
+
+// Popover content
+// scss-docs-start popover-content-variables
+$popover-content-font-size:                14px !default;
+$popover-content-font-family:              var(--#{$prefix}body-font-family) !default;
+$popover-content-font-weight:              var(--#{$prefix}body-font-weight) !default;
+$popover-content-line-height:              var(--#{$prefix}body-line-height) !default;
+$popover-content-color:                    var(--#{$prefix}body-color) !default;
+$popover-content-title-font-size:          1.4em !default;
+$popover-content-title-color:              null !default;
+$popover-content-title-margin-bottom:      .5em !default;
+$popover-content-info-color:               var(--#{$prefix}secondary-color) !default;
+$popover-content-info-margin-bottom:       .15em !default;
+$popover-content-image-margin-bottom:      1rem !default;
+$popover-content-image-max-width:          null !default;
+// scss-docs-end popover-content-variables
+
+// Calendar
+// scss-docs-start calendar-variables
+$calendar-border-color:                   var(--#{$prefix}border-color-translucent) !default;
+$calendar-border-width:                   var(--#{$prefix}border-width) !default;
+$calendar-day-other-bg-color:             rgba(0, 0, 0, .05) !default;
+$calendar-day-other-color:                var(--#{$prefix}gray-500) !default;
+$calendar-event-bg-color:                 var(--#{$prefix}primary) !default;
+$calendar-event-border-color:             var(--#{$prefix}primary) !default;
+$calendar-list-event-hover-bg-color:      var(--#{$prefix}gray-100) !default;
+$calendar-table-cell-shaded:              var(--#{$prefix}gray-200) !default;
+$calendar-today-bg-color:                 var(--#{$prefix}warning-bg-subtle) !default;
+$calendar-mini-event-bg-color:            var(--#{$prefix}primary) !default;
+$calendar-mini-event-color:               $white !default;
+$calendar-legend-gap:                     1rem !default;
+$calendar-legend-font-size:               .9rem !default;
+$calendar-legend-symbol-gap:              .5em !default;
+$calendar-legend-symbol-size:             1.25em !default;
+$calendar-legend-symbol-padding:          .25rem !default;
+$calendar-legend-symbol-border-width:     var(--#{$prefix}border-width) !default;
+$calendar-legend-symbol-border-color:     var(--#{$prefix}border-color) !default;
+$calendar-legend-event-color:             var(--#{$prefix}calendar-mini-event-bg-color) !default;
+$calendar-legend-free-color:              transparent !default;
+// scss-docs-end calendar-variables
+
+// Header
+// scss-docs-start header-variables
+$header-padding-y:                           $spacer * 1 !default;
+$header-padding-y:                           $spacer * 1 !default;
+$header-padding-x:                           null !default;
+$header-brand-font-size:                     1.25rem !default;
+$header-content-gap:                         1.5rem !default;
+$header-nav-link-padding-x:                  0 !default;
+$header-nav-link-padding-y:                  0 !default;
+$header-nav-link-font-size:                  null !default;
+$header-nav-link-font-weight:                null !default;
+$header-nav-link-color:                      var(--#{$prefix}header-color) !default;
+$header-nav-link-decoration:                 null !default;
+$header-nav-link-hover-color:                var(--#{$prefix}link-hover-color) !default;
+$header-nav-link-active-color:               var(--#{$prefix}header-active-color) !default;
+$header-nav-link-hover-decoration:           underline !default;
+$header-nav-link-disabled-color:             var(--#{$prefix}header-disabled-color) !default;
+$header-nav-link-transition:                 color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
+$header-nav-link-icon-font-size:             1.5em !default;
+$header-nav-link-icon-margin-bottom:         .25rem !default;
+$header-nav-link-icon-margin-right:          .75rem !default;
+$header-nav-link-badge-font-size:            .4em !default;
+$header-nav-link-badge-width:                2.25em !default;
+$header-light-background-color:              var(--#{$prefix}body-bg) !default;
+$header-light-color:                         rgba(var(--#{$prefix}emphasis-color-rgb), .65) !default;
+$header-light-hover-color:                   rgba(var(--#{$prefix}emphasis-color-rgb), .8) !default;
+$header-light-active-color:                  rgba(var(--#{$prefix}emphasis-color-rgb), 1) !default;
+$header-light-disabled-color:                rgba(var(--#{$prefix}emphasis-color-rgb), .3) !default;
+$header-light-brand-color:                   $header-light-active-color !default;
+$header-light-brand-hover-color:             $header-light-active-color !default;
+$header-sticky-padding-y:                    $header-padding-y !default;
+$header-sticky-padding-x:                    $header-padding-x !default;
+$header-sticky-brand-font-size:              $header-brand-font-size !default;
+$header-sticky-content-gap:                  $header-content-gap !default;
+$header-sticky-nav-link-padding-x:           $header-nav-link-padding-x !default;
+$header-sticky-nav-link-padding-y:           $header-nav-link-padding-y !default;
+$header-sticky-nav-link-font-size:           $header-nav-link-font-size !default;
+$header-sticky-nav-link-color:               $header-nav-link-color !default;
+$header-sticky-nav-link-decoration:          $header-nav-link-decoration !default;
+$header-sticky-nav-link-hover-color:         $header-nav-link-hover-color !default;
+$header-sticky-nav-link-active-color:        $header-nav-link-active-color !default;
+$header-sticky-nav-link-hover-decoration:    $header-nav-link-hover-decoration !default;
+$header-sticky-nav-link-disabled-color:      $header-nav-link-disabled-color !default;
+$header-sticky-nav-link-icon-font-size:      $header-nav-link-icon-font-size !default;
+$header-sticky-nav-link-icon-margin-bottom:  $header-nav-link-icon-margin-bottom !default;
+$header-sticky-nav-link-badge-font-size:     $header-nav-link-badge-font-size !default;
+$header-sticky-nav-link-badge-width:         $header-nav-link-badge-width !default;
+$header-sticky-light-background-color:       $header-light-background-color !default;
+$header-sticky-light-color:                  $header-light-color !default;
+$header-sticky-light-hover-color:            $header-light-hover-color !default;
+$header-sticky-light-active-color:           $header-light-active-color !default;
+$header-sticky-light-disabled-color:         $header-light-disabled-color !default;
+$header-sticky-light-brand-color:            $header-light-brand-color !default;
+$header-sticky-light-brand-hover-color:      $header-light-brand-hover-color !default;
+$header-transparent-color:                   $white !default;
+$header-transparent-hover-color:             rgba($white, .75) !default;
+$header-transparent-active-color:            $white !default;
+$header-transparent-disabled-color:          rgba($white, .25) !default;
+// scss-docs-end header-variables
+
+// scss-docs-start header-dark-variables
+$header-dark-background-color:        var(--#{$prefix}dark) !default;
+$header-dark-color:                   rgba($white, .55) !default;
+$header-dark-hover-color:             rgba($white, .75) !default;
+$header-dark-active-color:            $white !default;
+$header-dark-disabled-color:          rgba($white, .25) !default;
+$header-dark-brand-color:             $header-dark-active-color !default;
+$header-dark-brand-hover-color:       $header-dark-active-color !default;
+// scss-docs-end header-dark-variables
+
+// Page menu
+// scss-docs-start page-menu-variables
+$page-menu-breakpoint:                lg !default;
+$page-menu-padding-y:                 $spacer !default;
+$page-menu-padding-x:                 0 !default;
+$page-menu-light-background:          $header-light-background-color !default;
+$page-menu-light-color:               $header-light-color !default;
+$page-menu-box-shadow:                0 1rem 1rem rgba(0, 0, 0, .075) !default;
+// scss-docs-end page-menu-variables
+
+// scss-docs-start page-menu-dark-variables
+$page-menu-dark-background:           $header-dark-background-color !default;
+$page-menu-dark-color:                $header-dark-color !default;
+// scss-docs-end page-menu-dark-variables
+
+// scss-docs-start page-navigation-variables
+$page-nav-transition:                    left .3s ease-in-out, transform .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out !default;
+$page-nav-panel-bg:                      var(--#{$prefix}body-bg) !default;
+$page-nav-link-padding-y:                .5rem !default;
+$page-nav-link-padding-x:                1rem !default;
+$page-nav-link-font-size:                null !default;
+$page-nav-link-font-weight:              null !default;
+$page-nav-link-color:                    var(--#{$prefix}body-color) !default;
+$page-nav-link-hover-color:              var(--#{$prefix}link-hover-color) !default;
+$page-nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
+$page-nav-link-disabled-color:           var(--#{$prefix}secondary-color) !default;
+$page-nav-link-toggle-color:             $page-nav-link-color !default;
+$page-nav-link-toggle-hover-color:       $page-nav-link-hover-color !default;
+$page-nav-link-toggle-width:             2em !default;
+$page-nav-link-toggle-border-width:      null !default;
+$page-nav-link-toggle-border-color:      null !default;
+$page-nav-link-toggle-border-style:      null !default;
+$page-nav-link-toggle-icon-transition:   transform .3s ease-in-out !default;
+$page-nav-link-back-color:               var(--#{$prefix}link-color) !default;
+$page-nav-link-back-hover-color:         var(--#{$prefix}link-hover-color) !default;
+// scss-docs-end page-navigation-variables
+
+// scss-docs-start page-navigation-dark-variables
+$page-nav-dark-panel-dark-bg: var(--#{$prefix}dark) !default;
+$page-nav-dark-link-color: rgba($white, .55) !default;
+$page-nav-dark-link-hover-color: rgba($white, .75) !default;
+$page-nav-dark-link-disabled-color: rgba($white, .25) !default;
+$page-nav-dark-link-toggle-color: rgba($white, .55) !default;
+$page-nav-dark-link-toggle-hover-color: rgba($white, .75) !default;
+$page-nav-dark-link-back-color: rgba($white, .55) !default;
+$page-nav-dark-link-back-hover-color: rgba($white, .75) !default;
+// scss-docs-start page-navigation-dark-variables
+
+// Header search
+// scss-docs-start header-search-variables
+$header-search-padding-y:                 $spacer !default;
+$header-search-padding-x:                 0 !default;
+$header-search-light-background:          $header-light-background-color !default;
+$header-search-light-color:               $header-light-color !default;
+$header-search-box-shadow:                0 1rem 1rem rgba(0, 0, 0, .075) !default;
+// scss-docs-end header-search-variables
+
+// scss-docs-start page-menu-dark-variables
+$header-search-dark-background:           $header-dark-background-color !default;
+$header-search-dark-color:                $header-dark-color !default;
+// scss-docs-end page-menu-dark-variables
+
+// Copyright
+// scss-docs-start copyright-variables
+$copyright-horizontal-breakpoint:   md !default;
+// scss-docs-end copyright-variables

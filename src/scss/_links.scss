@@ -4,3 +4,17 @@
   text-underline-offset: $icon-link-underline-offset;
   backface-visibility: hidden;
 }
+
+.footer-link {
+  --#{$prefix}footer-link-color: #{$nav-link-color};
+  --#{$prefix}footer-link-hover-color: #{$nav-link-hover-color};
+
+  color: var(--#{$prefix}footer-link-color);
+  text-decoration: if($link-decoration == none, null, none);
+  @include transition($nav-link-transition);
+
+  &:hover {
+    color: var(--#{$prefix}footer-link-hover-color);
+    text-decoration: if($link-hover-decoration == underline, none, null);
+  }
+}

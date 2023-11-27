@@ -111,9 +111,10 @@ Here is the list of all available options (alphabetically):
 Differentiate between date and time input fields with unique icons
 
 {{< scss-docs name="form-datepicker-variables" file="src/scss/_variables.scss" >}}
+{{< scss-docs name="form-datepicker-dark-variables" file="src/scss/_variables-dark.scss" >}}
 
 ### Sass variables for calendar styling
 
 Customize the look and feel of your calendar:
 
-{{< scss-docs name="calendar-variables" file="src/scss/_variables.scss" >}}
+{{< scss-docs name="calendarpicker-variables" file="src/scss/_variables.scss" >}}

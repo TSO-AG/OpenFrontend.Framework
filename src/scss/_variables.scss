@@ -91,18 +91,21 @@ $form-timepicker-indicator:                   url("data:image/svg+xml,<svg xmlns
 // scss-docs-end form-datepicker-variables
 
 // scss-docs-start calendarpicker-variables
-$calendarpicker-arrow-hover-color:                   #f64747 !default;
-$calendarpicker-background:                          #fff !default;
-$calendarpicker-border-color:                        #e6e6e6 !default;
-$calendarpicker-month-foreground:                    #5a6171 !default;
+$calendarpicker-arrow-hover-color:                   $primary !default;
+$calendarpicker-background:                          var(--#{$prefix}body-bg) !default;
+$calendarpicker-border-color:                        var(--#{$prefix}border-color-translucent) !default;
+$calendarpicker-month-foreground:                    var(--#{$prefix}body-color) !default;
 $calendarpicker-month-background:                    transparent !default;
 $calendarpicker-weekdays-background:                 transparent !default;
-$calendarpicker-weekdays-foreground:                 #5a6171 !default;
-$calendarpicker-day-foreground:                      #393939 !default;
-$calendarpicker-day-hover-background:                #e6e6e6 !default;
-$calendarpicker-today-color:                         #959ea9 !default;
-$calendarpicker-selected-day-background:             #569ff7 !default;
-$calendarpicker-selected-day-color:                  #fff !default;
+$calendarpicker-weekdays-foreground:                 var(--#{$prefix}body-color) !default;
+$calendarpicker-day-foreground:                      var(--#{$prefix}body-color) !default;
+$calendarpicker-day-hover-background:                var(--#{$prefix}primary) !default;
+$calendarpicker-day-hover-color:                     $white !default;
+$calendarpicker-today-color:                         var(--#{$prefix}gray-500) !default;
+$calendarpicker-selected-day-background:             var(--#{$prefix}primary) !default;
+$calendarpicker-selected-day-color:                  $white !default;
+$calendarpicker-disabled-color:                      var(--#{$prefix}gray-500) !default;
+$calendarpicker-time-hover:                          rgba(0, 0, 0, .05) !default;
 // scss-docs-end calendarpicker-variables
 
 // Buttons

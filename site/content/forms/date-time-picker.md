@@ -105,16 +105,22 @@ Here is the list of all available options (alphabetically):
 {{< /bs-table >}}
 
 ## CSS
+### Input styles
 
-### Sass variables for input styling
+Differentiate between date and time input fields with unique icons.
 
-Differentiate between date and time input fields with unique icons
+#### Sass variables
 
 {{< scss-docs name="form-datepicker-variables" file="src/scss/_variables.scss" >}}
 {{< scss-docs name="form-datepicker-dark-variables" file="src/scss/_variables-dark.scss" >}}
 
-### Sass variables for calendar styling
+### Calendar styles
+Customize the look and feel of your calendar.
 
-Customize the look and feel of your calendar:
+#### Variables
+
+{{< scss-docs name="calendarpicker-css-vars" file="src/scss/form/_flatpickr.scss" >}}
+
+#### Sass variables
 
 {{< scss-docs name="calendarpicker-variables" file="src/scss/_variables.scss" >}}

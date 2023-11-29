@@ -1,5 +1,23 @@
 /* stylelint-disable */
 .flatpickr-calendar {
+  // scss-docs-start calendarpicker-css-vars
+  --calendarpicker-arrow-hover-color: #{$calendarpicker-arrow-hover-color};
+  --calendarpicker-background: #{$calendarpicker-background};
+  --calendarpicker-border-color: #{$calendarpicker-border-color};
+  --calendarpicker-month-foreground: #{$calendarpicker-month-foreground};
+  --calendarpicker-month-background: #{$calendarpicker-month-background};
+  --calendarpicker-weekdays-background: #{$calendarpicker-weekdays-background};
+  --calendarpicker-weekdays-foreground: #{$calendarpicker-weekdays-foreground};
+  --calendarpicker-day-foreground: #{$calendarpicker-day-foreground};
+  --calendarpicker-day-hover-background: #{$calendarpicker-day-hover-background};
+  --calendarpicker-day-hover-color: #{$calendarpicker-day-hover-color};
+  --calendarpicker-today-color: #{$calendarpicker-today-color};
+  --calendarpicker-selected-day-background: #{$calendarpicker-selected-day-background};
+  --calendarpicker-selected-day-color: #{$calendarpicker-selected-day-color};
+  --calendarpicker-disabled-color: #{$calendarpicker-disabled-color};
+  --calendarpicker-time-hover: #{$calendarpicker-time-hover};
+  // scss-docs-end calendarpicker-css-vars
+
   background: transparent;
   opacity: 0;
   display: none;
@@ -16,8 +34,8 @@
   width: 307.875px;
   box-sizing: border-box;
   touch-action: manipulation;
-  background: $calendarpicker-background;
-  box-shadow: 1px 0 0 $calendarpicker-border-color, -1px 0 0 $calendarpicker-border-color, 0 1px 0 $calendarpicker-border-color, 0 -1px 0 $calendarpicker-border-color, 0 3px 13px rgba(0, 0, 0, 0.08);
+  background: var(--calendarpicker-background);
+  box-shadow: 1px 0 0 var(--calendarpicker-border-color), -1px 0 0 var(--calendarpicker-border-color), 0 1px 0 var(--calendarpicker-border-color), 0 -1px 0 var(--calendarpicker-border-color), 0 3px 13px rgba(0, 0, 0, 0.08);
 
   &.open, &.inline {
     opacity: 1;
@@ -70,7 +88,7 @@
 
   &.hasTime .flatpickr-time {
     height: 40px;
-    border-top: 1px solid $calendarpicker-border-color;
+    border-top: 1px solid var(--calendarpicker-border-color);
   }
 
   &.noCalendar.hasTime .flatpickr-time {
@@ -113,11 +131,11 @@
   }
 
   &.arrowTop:before {
-    border-bottom-color: $calendarpicker-border-color;
+    border-bottom-color: var(--calendarpicker-border-color);
   }
 
   &.arrowTop:after {
-    border-bottom-color: $calendarpicker-background;
+    border-bottom-color: var(--calendarpicker-background);
   }
 
   &.arrowBottom:before, &.arrowBottom:after {
@@ -125,11 +143,11 @@
   }
 
   &.arrowBottom:before {
-    border-top-color: $calendarpicker-border-color;
+    border-top-color: var(--calendarpicker-border-color);
   }
 
   &.arrowBottom:after {
-    border-top-color: $calendarpicker-background;
+    border-top-color: var(--calendarpicker-background);
   }
 
   &:focus {
@@ -146,9 +164,9 @@
   display: flex;
 
   .flatpickr-month {
-    background: $calendarpicker-month-background;
-    color: $calendarpicker-month-foreground;
-    fill: $calendarpicker-month-foreground;
+    background: var(--calendarpicker-month-background);
+    color: var(--calendarpicker-month-foreground);
+    fill: var(--calendarpicker-month-foreground);
     height: 34px;
     line-height: 1;
     text-align: center;
@@ -167,8 +185,8 @@
     height: 34px;
     padding: 10px;
     z-index: 3;
-    color: $calendarpicker-month-foreground;
-    fill: $calendarpicker-month-foreground;
+    color: var(--calendarpicker-month-foreground);
+    fill: var(--calendarpicker-month-foreground);
 
     &.flatpickr-disabled {
       display: none;
@@ -191,10 +209,10 @@
     }
 
     &:hover {
-      color: $calendarpicker-today-color;
+      color: var(--calendarpicker-today-color);
 
       svg {
-        fill: $calendarpicker-arrow-hover-color;
+        fill: var(--calendarpicker-arrow-hover-color);
       }
     }
 
@@ -333,11 +351,11 @@
     display: inline-block;
 
     span.arrowUp:after {
-      border-bottom-color: $calendarpicker-month-foreground;
+      border-bottom-color: var(--calendarpicker-month-foreground);
     }
 
     span.arrowDown:after {
-      border-top-color: $calendarpicker-month-foreground;
+      border-top-color: var(--calendarpicker-month-foreground);
     }
   }
 
@@ -375,7 +393,7 @@
 
   .flatpickr-monthDropdown-months {
     appearance: menulist;
-    background: $calendarpicker-month-background;
+    background: var(--calendarpicker-month-background);
     border: none;
     border-radius: 0;
     box-sizing: border-box;
@@ -405,7 +423,7 @@
     }
 
     .flatpickr-monthDropdown-month {
-      background-color: $calendarpicker-month-background;
+      background-color: var(--calendarpicker-month-background);
       outline: none;
       padding: 0;
     }
@@ -413,7 +431,7 @@
 }
 
 .flatpickr-weekdays {
-  background: $calendarpicker-weekdays-background;
+  background: var(--calendarpicker-weekdays-background);
   text-align: center;
   overflow: hidden;
   width: 100%;
@@ -430,8 +448,8 @@
 span.flatpickr-weekday {
   cursor: default;
   font-size: 90%;
-  background: $calendarpicker-month-background;
-  color: $calendarpicker-weekdays-foreground;
+  background: var(--calendarpicker-month-background);
+  color: var(--calendarpicker-weekdays-foreground);
   line-height: 1;
   margin: 0;
   text-align: center;
@@ -475,7 +493,7 @@ span.flatpickr-weekday {
   opacity: 1;
 
   + .dayContainer {
-    box-shadow: -1px 0 0 $calendarpicker-border-color;
+    box-shadow: -1px 0 0 var(--calendarpicker-background);;
   }
 }
 
@@ -484,7 +502,7 @@ span.flatpickr-weekday {
   border: 1px solid transparent;
   border-radius: 150px;
   box-sizing: border-box;
-  color: $calendarpicker-day-foreground;
+  color: var(--calendarpicker-day-foreground);
   cursor: pointer;
   font-weight: 400;
   width: 14.2857143%;
@@ -501,32 +519,33 @@ span.flatpickr-weekday {
   &.inRange, &.prevMonthDay.inRange, &.nextMonthDay.inRange, &.today.inRange, &.prevMonthDay.today.inRange, &.nextMonthDay.today.inRange, &:hover, &.prevMonthDay:hover, &.nextMonthDay:hover, &:focus, &.prevMonthDay:focus, &.nextMonthDay:focus {
     cursor: pointer;
     outline: 0;
-    background: $calendarpicker-day-hover-background;
-    border-color: $calendarpicker-day-hover-background;
+    background: var(--calendarpicker-day-hover-background);
+    color: var(--calendarpicker-day-hover-color);
+    border-color: var(--calendarpicker-day-hover-background);
   }
 
   &.today {
-    border-color: $calendarpicker-today-color;
+    border-color: var(--calendarpicker-today-color);
 
     &:hover, &:focus {
-      border-color: $calendarpicker-today-color;
-      background: $calendarpicker-today-color;
+      border-color: var(--calendarpicker-today-color);
+      background: var(--calendarpicker-today-color);
       color: #fff;
     }
   }
 
   &.selected, &.startRange, &.endRange, &.selected.inRange, &.startRange.inRange, &.endRange.inRange, &.selected:focus, &.startRange:focus, &.endRange:focus, &.selected:hover, &.startRange:hover, &.endRange:hover, &.selected.prevMonthDay, &.startRange.prevMonthDay, &.endRange.prevMonthDay, &.selected.nextMonthDay, &.startRange.nextMonthDay, &.endRange.nextMonthDay {
-    background: $calendarpicker-selected-day-background;
+    background: var(--calendarpicker-selected-day-background);
     box-shadow: none;
-    color: $calendarpicker-selected-day-color;
-    border-color: $calendarpicker-selected-day-background;
+    color: var(--calendarpicker-selected-day-color);
+    border-color: var(--calendarpicker-selected-day-background);
   }
 
   &.selected.startRange, &.startRange.startRange, &.endRange.startRange {
     border-radius: 50px 0 0 50px;
 
     + .endRange:not(:nth-child(7n+1)) {
-      box-shadow: -10px 0 0 $calendarpicker-selected-day-background;
+      box-shadow: -10px 0 0 var(--calendarpicker-selected-day-background);
     }
 
     &.endRange {
@@ -540,11 +559,11 @@ span.flatpickr-weekday {
 
   &.inRange {
     border-radius: 0;
-    box-shadow: -5px 0 0 $calendarpicker-day-hover-background, 5px 0 0 $calendarpicker-day-hover-background;
+    box-shadow: -5px 0 0 var(--calendarpicker-day-hover-background), 5px 0 0 var(--calendarpicker-day-hover-background);
   }
 
   &.flatpickr-disabled, &.flatpickr-disabled:hover, &.prevMonthDay, &.nextMonthDay, &.notAllowed, &.notAllowed.prevMonthDay, &.notAllowed.nextMonthDay {
-    color: rgba(0, 0, 136, 0.3);
+    color: var(--calendarpicker-disabled-color);
     background: transparent;
     border-color: transparent;
     cursor: default;
@@ -557,7 +576,7 @@ span.flatpickr-weekday {
 
   &.week.selected {
     border-radius: 0;
-    box-shadow: -5px 0 0 $calendarpicker-selected-day-background, 5px 0 0 $calendarpicker-selected-day-background;
+    box-shadow: -5px 0 0 var(--calendarpicker-selected-day-background), 5px 0 0 var(--calendarpicker-selected-day-background);
   }
 
   &.hidden {
@@ -574,7 +593,7 @@ span.flatpickr-weekday {
 
   .flatpickr-weeks {
     padding: 0 12px;
-    box-shadow: 1px 0 0 $calendarpicker-border-color;
+    box-shadow: 1px 0 0 var(--calendarpicker-border-color);
   }
 
   .flatpickr-weekday {
@@ -631,11 +650,11 @@ span.flatpickr-weekday {
     float: left;
 
     span.arrowUp:after {
-      border-bottom-color: $calendarpicker-day-foreground;
+      border-bottom-color: var(--calendarpicker-day-foreground);
     }
 
     span.arrowDown:after {
-      border-top-color: $calendarpicker-day-foreground;
+      border-top-color: var(--calendarpicker-day-foreground);
     }
   }
 
@@ -657,7 +676,7 @@ span.flatpickr-weekday {
     padding: 0;
     height: inherit;
     line-height: inherit;
-    color: $calendarpicker-day-foreground;
+    color: var(--calendarpicker-day-foreground);
     font-size: 14px;
     position: relative;
     box-sizing: border-box;
@@ -683,7 +702,7 @@ span.flatpickr-weekday {
     height: inherit;
     float: left;
     line-height: inherit;
-    color: $calendarpicker-day-foreground;
+    color: var(--calendarpicker-day-foreground);
     font-weight: bold;
     width: 2%;
     user-select: none;
@@ -699,7 +718,7 @@ span.flatpickr-weekday {
   }
 
   input:hover, .flatpickr-am-pm:hover, input:focus, .flatpickr-am-pm:focus {
-    background: lighten($calendarpicker-day-hover-background, 3)
+    background: var(--calendarpicker-time-hover);
   }
 }
 
@@ -717,4 +736,3 @@ span.flatpickr-weekday {
     transform: translate3d(0, 0, 0);
   }
 }
-

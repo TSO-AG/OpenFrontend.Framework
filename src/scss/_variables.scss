@@ -504,6 +504,8 @@ $calendar-day-other-color:                var(--#{$prefix}gray-500) !default;
 $calendar-event-bg-color:                 var(--#{$prefix}primary) !default;
 $calendar-event-border-color:             var(--#{$prefix}primary) !default;
 $calendar-list-event-hover-bg-color:      var(--#{$prefix}gray-100) !default;
+$calendar-table-color:                    var(--#{$prefix}body-color) !default;
+$calendar-table-bg:                       var(--#{$prefix}body-bg) !default;
 $calendar-table-cell-shaded:              var(--#{$prefix}gray-200) !default;
 $calendar-today-bg-color:                 var(--#{$prefix}warning-bg-subtle) !default;
 $calendar-mini-event-bg-color:            var(--#{$prefix}primary) !default;

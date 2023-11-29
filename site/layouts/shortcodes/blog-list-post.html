@@ -1,0 +1,40 @@
+{{- $media_type := .Get "media_type" | default "img" -}}
+{{- $img_src := .Get "img_src" -}}
+{{- $img_width := .Get "img_width" | default "636" -}}
+{{- $img_height := .Get "img_height" | default "350" -}}
+{{- $text := .Get "text" | default "Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum." -}}
+
+<div class="row flex-md-row mb-element position-relative">
+  <div class="col-md-6{{ if eq (.Get "layout") "right" }} order-md-1{{ end }}">
+  {{- if eq $media_type "img" -}}
+    <figure class="media-fit-cover">
+      {{- if $img_src -}}
+      <img src="{{ $img_src }}" alt="" width="{{ $img_width }}" height="{{ $img_height }}">
+      {{- else -}}
+      <svg class="bd-placeholder-img img-fluid" width="{{ $img_width }}" height="{{ $img_height }}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Responsive image</text></svg>
+      {{- end -}}
+    </figure>
+  {{- else if eq $media_type "video" -}}
+    <figure class="media-fit-cover" data-of-video-play>
+      <video controls style="aspect-ratio: {{ $img_width }} / {{ $img_height }}">
+        <source src="../../assets/media/sample-video.mp4" type="video/mp4">
+        <source src="../../assets/media/sample-video.ogg" type="video/ogg">
+      </video>
+    </figure>
+  {{- else if eq $media_type "map" -}}
+  <figure class="media-fit-cover">
+    <iframe
+      src="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="aspect-ratio: {{ $img_width }} / {{ $img_height }}"></iframe>
+  </figure>
+  {{- end -}}
+  </div>
+  <div class="col py-4 p-md-5 d-flex flex-column align-self-center position-static">
+    <h3 class="mb-0">Lorem ipsum dolor sit amet</h3>
+    <p>{{ $text }}</p>
+    <a class="icon-link icon-link-hover" href="#">
+      <span class="icon-link-text">Read more</span>
+      <i class="ofi-arrow-right"></i>
+    </a>
+  </div>
+</div>

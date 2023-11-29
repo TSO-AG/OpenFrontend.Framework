@@ -325,6 +325,7 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 | `layout` | `string` | `'full'` | The layout to be used. See the examples above. Available options: `full`, `mini`. |
 | `miniMonthMinWidth` | `number` | `300` | The minimum width for one month in pixels. Applies only if the `layout` is set to `mini`. |
 | `title` | `string\|undefined` | `undefined` | A custom title that will be display on top of the calendar. |
+| `viewToggler` | `boolean` | `true` | Option to display or hide the calendar view selector. Applies only if the `layout` is set to `full`. |
 {{< /bs-table >}}
 
 ### Event data structure

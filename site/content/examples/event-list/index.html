@@ -1,0 +1,237 @@
+---
+layout: examples
+title: Event list
+body_class: ""
+---
+
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="row align-items-end justify-content-between">
+          <div class="col-auto d-none d-lg-block">
+            <p class="mb-3 fw-bold"><i class="ofi-funnel-fill"></i> Filter</p>
+          </div>
+          <div class="col-lg-auto">
+            {{< event-list-sorting id="poi-list-grid-view" active-view="calendar" >}}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-xxl-3 order-first order-lg-0">
+        {{< poi-list-filter id="poi-list-grid-view" date_filter="true" >}}
+      </div>
+
+      <div class="col-lg-8 col-xxl-9">
+        <div>
+          <div id="calendar-full" class="calendar"></div>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const now = new Date();
+              const nextMonth = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0);
+
+              const dummyContent = `
+<div class="popover-content">
+  <figure class="popover-content-image">
+    {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+  </figure>
+  <div class="popover-content-inside">
+    <div class="popover-content-info">Product family | Place</div>
+    <div class="popover-content-info">DD.MM.YY - DD.MM.YY</div>
+    <h4 class="popover-content-title">Title</h4>
+    <a href="#" class="icon-link icon-link-hover stretched-link">
+      <span class="icon-link-text">View details</span>
+      <i class="ofi-arrow-right"></i>
+    </a>
+  </div>
+</div>
+`;
+
+              function getDate(day, hour = 0, minutes = 0) {
+                return new Date(now.getFullYear(), now.getMonth(), day, hour, minutes);
+              }
+
+              openFrontend.Calendar.then(component => component.getOrCreateInstance('#calendar-full', {
+                viewToggler: false,
+                events: [
+                  {
+                    title: 'All day event',
+                    content: dummyContent,
+                    start: getDate(8),
+                    allDay: true,
+                  },
+                  {
+                    title: 'Multiple days event',
+                    content: dummyContent,
+                    start: getDate(6),
+                    end: getDate(10),
+                    allDay: true,
+                  },
+                  {
+                    title: 'Exact time event',
+                    content: dummyContent,
+                    start: getDate(10, 8, 30),
+                    end: getDate(10, 11, 0),
+                    allDay: false,
+                  },
+                  {
+                    title: 'Dummy event 1',
+                    content: dummyContent,
+                    start: getDate(14),
+                    allDay: true,
+                  },
+                  {
+                    title: 'Dummy event 2',
+                    content: dummyContent,
+                    start: getDate(22),
+                    allDay: true,
+                  },
+                  {
+                    title: 'Dummy event 3',
+                    content: dummyContent,
+                    start: getDate(22),
+                    end: getDate(25),
+                    allDay: true,
+                  },
+                  {
+                    title: 'Dummy event 4',
+                    content: dummyContent,
+                    start: getDate(27, 10, 0),
+                    end: getDate(27, 12, 0),
+                    allDay: false,
+                  },
+                  {
+                    title: 'Dummy event 5',
+                    content: dummyContent,
+                    start: getDate(27, 14, 0),
+                    end: getDate(27, 16, 0),
+                    allDay: false,
+                  },
+                  {
+                    title: 'Dummy event 6',
+                    content: dummyContent,
+                    start: getDate(27, 18, 0),
+                    end: getDate(27, 20, 0),
+                    allDay: false,
+                  },
+                  {
+                    title: 'Dummy event 7',
+                    content: dummyContent,
+                    start: getDate(27, 22, 0),
+                    end: getDate(27, 23, 30),
+                    allDay: false,
+                  },
+                  {
+                    title: 'Dummy event 8',
+                    content: dummyContent,
+                    start: getDate(22, 15, 0),
+                    end: getDate(22, 18, 0),
+                    allDay: false,
+                  },
+                  {
+                    title: 'Next month event',
+                    content: dummyContent,
+                    start: nextMonth.setMonth(nextMonth.getMonth() + 1),
+                    end: nextMonth.setDate(nextMonth.getDate() + 14),
+                    allDay: true,
+                  },
+                ],
+              }))
+            })
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="row align-items-end justify-content-between">
+          <div class="col-auto d-none d-lg-block">
+            <p class="mb-3 fw-bold"><i class="ofi-funnel-fill"></i> Filter</p>
+          </div>
+          <div class="col-lg-auto">
+            {{< event-list-sorting id="event-list-grid-view" active-view="grid" >}}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-xxl-3 order-first order-lg-0">
+        {{< poi-list-filter id="event-list-grid-view" date_filter="true" >}}
+      </div>
+
+      <div class="col-lg-8 col-xxl-9">
+        <div>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 gy-4">
+            <div class="col">
+              {{< card-listing-event >}}
+            </div>
+            <div class="col">
+              {{< card-listing-event >}}
+            </div>
+            <div class="col">
+              {{< card-listing-event >}}
+            </div>
+            <div class="col">
+              {{< card-listing-event >}}
+            </div>
+            <div class="col">
+              {{< card-listing-event >}}
+            </div>
+            <div class="col">
+              {{< card-listing-event >}}
+            </div>
+          </div>
+        </div>
+
+        <div>
+          {{< poi-list-pagination id="event-list-grid-view" >}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="row align-items-end justify-content-between">
+          <div class="col-auto d-none d-lg-block">
+            <p class="mb-3 fw-bold"><i class="ofi-funnel-fill"></i> Filter</p>
+          </div>
+          <div class="col-lg-auto">
+            {{< event-list-sorting id="event-list-list-view" active-view="list" >}}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-xxl-3 order-first order-lg-0">
+        {{< poi-list-filter id="event-list-list-view" date_filter="true" >}}
+      </div>
+
+      <div class="col-lg-8 col-xxl-9">
+        <div>
+          {{< card-listing-event layout="horizontal" >}}
+          {{< card-listing-event layout="horizontal" >}}
+          {{< card-listing-event layout="horizontal" >}}
+          {{< card-listing-event layout="horizontal" >}}
+          {{< card-listing-event layout="horizontal" >}}
+          {{< card-listing-event layout="horizontal" >}}
+        </div>
+
+        <div>
+          {{< poi-list-pagination id="event-list-list-view" >}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

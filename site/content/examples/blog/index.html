@@ -1,0 +1,92 @@
+---
+layout: examples
+title: Blog
+body_class: ""
+---
+
+<div class="py-5">
+  <div class="container">
+    <div class="mb-section">
+      {{< blog-list-post layout="right" >}}
+      {{< blog-list-post >}}
+      {{< blog-list-post layout="right" media_type="video" >}}
+      {{< blog-list-post media_type="map">}}
+    </div>
+  </div>
+</div>
+
+<div class="mb-section carousel-future-slides-visible">
+  <div class="container">
+    <div class="heading-action">
+      <h2>Offer</h2>
+      <div>
+        <div class="carousel-navigation">
+          <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-3">
+            <i class="ofi-caret-left-fill"></i>
+          </button>
+          <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-3">
+            <i class="ofi-caret-right-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel">
+      <div class="swiper" data-of-carousel='{
+        "loop": true,
+        "slidesPerView": 1,
+        "spaceBetween": 24,
+        "navigationNext": "#carousel-btn-next-3",
+        "navigationPrev": "#carousel-btn-prev-3",
+        "futureSlidesVisible": true,
+         "breakpoints": {
+          "md": {
+            "slidesPerView": 2
+          },
+          "lg": {
+            "slidesPerView": 3
+          },
+          "xxl": {
+            "slidesPerView": 4
+          }
+        }
+    }'>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+          <div class="swiper-slide">
+            {{< poi-card >}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,12 +1,15 @@
 {{- $class := .Get "class" -}}
-{{- $info := .Get "info" | default "Lorem ipsum" -}}
-{{- $title := .Get "title" | default "Card title" -}}
+{{- $info := .Get "info" | default "St. Gallen, 29.06.23 - 02.07.23" -}}
+{{- $title := .Get "title" | default "Event title" -}}
 {{- $text := .Get "text" | default "Some quick example text to build on the card title and make up the bulk of the card's content." -}}
 {{- $btn_text := .Get "btn_text" | default "Find out more" -}}
 {{- $btn_class := .Get "btn_class" | default "btn-primary" -}}
 {{- $img_src := .Get "img_src" -}}
 {{- $img_width := .Get "img_width" | default "100%" -}}
 {{- $img_height := .Get "img_height" | default "200" -}}
+{{- $price_label := .Get "price_label" | default "AB CHF" -}}
+{{- $price := .Get "price" | default "15.00" -}}
+
 <div class="card{{if $class }} {{ $class }}{{ end }}{{ if eq (.Get "layout") "horizontal" }} card-horizontal mb-3{{ end }}">
   <div class="card-media">
     <div class="card-media__visual">
@@ -16,15 +19,34 @@
       <svg class="bd-placeholder-img img-fluid" width="{{ $img_width }}" height="{{ $img_height }}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Responsive image</text></svg>
       {{- end -}}
     </div>
+    <div class="card-media__content card-media__content--bottom-left card-media__content--no-gap">
+      <div class="date-box">
+        <div class="date-box__day">12.</div>
+        <div class="date-box__month">OKT.</div>
+      </div>
+    </div>
   </div>
 
   <div class="card-body">
     <h5 class="card-info">{{ $info }}</h5>
     <h4 class="card-title"><a href="#" class="stretched-link">{{ $title }}</a></h4>
     <p class="card-text">{{ $text }}</p>
+    <div class="card-tags">
+      <ul class="tag-list">
+        <li class="tag">Tag 01</li>
+        <li class="tag text-bg-light">Tag 02</li>
+        <li class="tag text-bg-light">Another tag</li>
+        <li class="tag text-bg-light">…</li>
+      </ul>
+    </div>
   </div>
 
   <div class="card-action">
+    <div class="price">
+      <div class="price__label">{{ $price_label}}</div>
+      <div class="price__value">{{ $price }}</div>
+    </div>
+
     <div class="card-action__buttons">
       <button type="button" class="btn btn-icon {{ $btn_class }} stretched-link">
         More <i class="ofi-arrow-right"></i>

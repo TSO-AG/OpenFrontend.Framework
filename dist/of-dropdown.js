@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkopenfrontend_framework=self.webpackChunkopenfrontend_framework||[]).push([[11],{3108:function(n,e,t){t.r(e),t.d(e,{default:function(){return r.Lt},initMultiple:function(){return f}});var r=t(3138);function f(n){for(const e of n)r.Lt.getOrCreateInstance(e)}}}]);

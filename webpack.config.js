@@ -5,6 +5,17 @@ const Encore = require('@symfony/webpack-encore')
 
 const iconFilesHash = md5Dir.sync(dir('src/icons')).slice(0, 20)
 
+class CreateHtaccessPlugin {
+  apply(compiler) {
+    compiler.hooks.done.tap('CreateHtaccessPlugin', () => {
+      fs.copyFileSync(
+        dir('src/.htaccess'),
+        dir('_site-dist/.htaccess'),
+      );
+    });
+  }
+}
+
 if (!Encore.isRuntimeEnvironmentConfigured()) {
   Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev')
 }
@@ -150,6 +161,7 @@ function createDocsConfig(baseUrl) {
   }
 
   return createConfigDraft('_site-dist', `${publicPath}/dist`)
+    .addPlugin(new CreateHtaccessPlugin())
     .enableSourceMaps()
     .enableVersioning(Encore.isProduction())
     .getWebpackConfig()

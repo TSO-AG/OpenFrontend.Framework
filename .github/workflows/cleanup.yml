@@ -1,27 +1,25 @@
-name: Cleanup server on branch delete
+name: Cleanup on branch delete
 
 on: delete
 
 jobs:
     cleanup:
         if: github.event.ref_type == 'branch'
-        name: Cleanup server on branch delete
+        name: Cleanup on branch delete
         runs-on: ubuntu-latest
         steps:
             - name: Set environment variables based on branch
+              env:
+                GIT_BRANCH: ${{ github.event.ref }}
               run: |
-                GIT_BRANCH=$(echo ${github.event.ref} | sed -e "s#refs/heads/##g")
                 CLEANED_BRANCH_NAME=${GIT_BRANCH//\//-}
                 echo "TARGET_PATH=/var/www/vhosts/openfrontend.tourismusweb.site/dev.openfrontend.tourismusweb.site/$CLEANED_BRANCH_NAME" >> $GITHUB_ENV
 
-            - name: Echo the target path
-              run: echo $TARGET_PATH
-
-#            - name: Cleanup
-#              uses: cross-the-world/ssh-pipeline@master
-#              with:
-#                  host: ${{ secrets.DEPLOY_HOST }}
-#                  user: ${{ secrets.DEPLOY_USERNAME }}
-#                  port: ${{ secrets.DEPLOY_PORT }}
-#                  key: ${{ secrets.DEPLOY_KEY }}
-#                  script: rm -rf $TARGET_PATH
+            - name: Remove files from server
+              uses: appleboy/ssh-action@v0.1.10
+              with:
+                  host: ${{ secrets.DEPLOY_HOST }}
+                  username: ${{ secrets.DEPLOY_USERNAME }}
+                  port: ${{ secrets.DEPLOY_PORT }}
+                  key: ${{ secrets.DEPLOY_KEY }}
+                  script: rm -rf ${{ env.TARGET_PATH }}

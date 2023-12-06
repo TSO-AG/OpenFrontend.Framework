@@ -52,7 +52,7 @@ params:
 
   subtitle:             "@TODO"
   description:          "OpenFrontend is a multipurpose theme, crafted for all the touristic websites like  destinations, transport companies, hotels or associations."
-  authors:              "Terminal42"
+  authors:              "TSO AG"
 
   current_version:      "1.0"
   current_ruby_version: "1.0"

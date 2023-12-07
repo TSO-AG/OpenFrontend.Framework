@@ -19,6 +19,309 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
 
 ## Examples
 
+### Tabs
+
+<a href="#" data-lightbox-open="lightbox-1">Open lightbox 1</a>
+<a href="#" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-2-2">Open lightbox 1 element 1-2</a>
+
+<div data-of-lightbox="tabs" data-of-lightbox-tabs-setting='
+{
+  "id": "lightbox-1",
+  "open": false,
+  "tabs": [
+    {
+      "name": "Gallery 1",
+      "thumbnail": true,
+      "elements": [
+        {
+          "id": "gallery-1-1",
+          "href": "https://picsum.photos/id/1/1200/800",
+          "thumbnail": "https://picsum.photos/id/1/70",
+          "type": "image",
+          "title": "My Title",
+          "description": "Example"
+        },
+        {
+          "id": "gallery-1-2",
+          "href": "https://picsum.photos/id/2/1200/800",
+          "thumbnail": "https://picsum.photos/id/2/70",
+          "type": "image",
+          "alt": "image text alternatives",
+          "title": "My Title 2",
+          "description": "Example 2"
+        },
+        {
+          "id": "gallery-1-3",
+          "href": "https://picsum.photos/id/3/1200/800",
+          "thumbnail": "https://picsum.photos/id/3/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-4",
+          "href": "https://picsum.photos/id/4/1200/800",
+          "thumbnail": "https://picsum.photos/id/4/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-5",
+          "href": "https://picsum.photos/id/5/1200/800",
+          "thumbnail": "https://picsum.photos/id/5/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-6",
+          "href": "https://picsum.photos/id/6/1200/800",
+          "thumbnail": "https://picsum.photos/id/6/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-7",
+          "href": "https://picsum.photos/id/7/1200/800",
+          "thumbnail": "https://picsum.photos/id/7/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-8",
+          "href": "https://picsum.photos/id/8/1200/800",
+          "thumbnail": "https://picsum.photos/id/8/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-9",
+          "href": "https://picsum.photos/id/9/1200/800",
+          "thumbnail": "https://picsum.photos/id/9/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-10",
+          "href": "https://picsum.photos/id/10/1200/800",
+          "thumbnail": "https://picsum.photos/id/10/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-11",
+          "href": "https://picsum.photos/id/11/1200/800",
+          "thumbnail": "https://picsum.photos/id/11/70",
+          "type": "image",
+          "title": "My Title",
+          "description": "Example"
+        },
+        {
+          "id": "gallery-1-12",
+          "href": "https://picsum.photos/id/12/1200/800",
+          "thumbnail": "https://picsum.photos/id/12/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-13",
+          "href": "https://picsum.photos/id/13/1200/800",
+          "thumbnail": "https://picsum.photos/id/13/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-14",
+          "href": "https://picsum.photos/id/14/1200/800",
+          "thumbnail": "https://picsum.photos/id/14/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-15",
+          "href": "https://picsum.photos/id/15/1200/800",
+          "thumbnail": "https://picsum.photos/id/15/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-16",
+          "href": "https://picsum.photos/id/16/1200/800",
+          "thumbnail": "https://picsum.photos/id/16/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-17",
+          "href": "https://picsum.photos/id/17/1200/800",
+          "thumbnail": "https://picsum.photos/id/17/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-18",
+          "href": "https://picsum.photos/id/18/1200/800",
+          "thumbnail": "https://picsum.photos/id/18/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-19",
+          "href": "https://picsum.photos/id/19/1200/800",
+          "thumbnail": "https://picsum.photos/id/19/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-1-20",
+          "href": "https://picsum.photos/id/20/1200/800",
+          "thumbnail": "https://picsum.photos/id/20/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        }
+      ]
+    },
+    {
+      "name": "Gallery 2",
+      "thumbnail": true,
+      "elements": [
+        {
+          "id": "gallery-2-1",
+          "href": "https://picsum.photos/id/21/1200/800",
+          "thumbnail": "https://picsum.photos/id/21/70",
+          "type": "image",
+          "title": "My Title",
+          "description": "Example"
+        },
+        {
+          "id": "gallery-2-2",
+          "href": "https://picsum.photos/id/22/1200/800",
+          "thumbnail": "https://picsum.photos/id/22/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-2-3",
+          "href": "https://picsum.photos/id/23/1200/800",
+          "thumbnail": "https://picsum.photos/id/23/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-2-4",
+          "href": "https://picsum.photos/id/24/1200/800",
+          "thumbnail": "https://picsum.photos/id/24/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-2-5",
+          "href": "https://picsum.photos/id/25/1200/800",
+          "thumbnail": "https://picsum.photos/id/25/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-2-6",
+          "href": "https://picsum.photos/id/26/1200/800",
+          "thumbnail": "https://picsum.photos/id/26/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-2-7",
+          "href": "https://picsum.photos/id/27/1200/800",
+          "thumbnail": "https://picsum.photos/id/27/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-2-8",
+          "href": "https://picsum.photos/id/28/1200/800",
+          "thumbnail": "https://picsum.photos/id/28/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "gallery-2-9",
+          "href": "https://picsum.photos/id/29/1200/800",
+          "thumbnail": "https://picsum.photos/id/29/70",
+          "type": "image",
+          "alt": "image text alternatives"
+        }
+      ]
+    },
+    {
+      "name": "Mixed Content",
+      "thumbnail": false,
+      "elements": [
+        {
+          "id": "content-1",
+          "href": "https://picsum.photos/id/31/1200/800",
+          "type": "image",
+          "title": "My Title",
+          "description": "Example"
+        },
+        {
+          "id": "content-2",
+          "href": "https://picsum.photos/id/32/1200/800",
+          "type": "image",
+          "alt": "image text alternatives"
+        },
+        {
+          "id": "content-3",
+          "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
+          "type": "video",
+          "source": "youtube",
+          "width": 900
+        },
+        {
+          "id": "content-4",
+          "content": "<p>This will append some html inside the slide</p>"
+        }
+      ]
+    },
+    {
+      "name": "Youtube",
+      "thumbnail": true,
+      "elements": [
+        {
+          "id": "content-5",
+          "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
+          "type": "video",
+          "source": "youtube",
+          "width": 900
+        }
+      ]
+    },
+    {
+      "name": "Vimeo",
+      "thumbnail": true,
+      "elements": [
+        {
+          "id": "content-6",
+          "href": "https://vimeo.com/115041822",
+          "type": "video",
+          "source": "vimeo",
+          "width": 900
+        }
+      ]
+    },
+    {
+      "name": "Map",
+      "thumbnail": true,
+      "elements": [
+        {
+          "id": "content-7",
+          "href": "https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed",
+          "width": 900
+        }
+      ]
+    }
+  ]
+}
+'>
+  Link
+</div>
+
 ### Single image
 
 {{< example >}}

@@ -1,0 +1,34 @@
+.icon-link {
+  display: inline-flex;
+  gap: $icon-link-gap;
+  align-items: center;
+  text-decoration: none;
+  backface-visibility: hidden;
+
+  > i {
+    flex-shrink: 0;
+    width: $icon-link-icon-size;
+    height: $icon-link-icon-size;
+    fill: currentcolor;
+    @include transition($icon-link-icon-transition);
+  }
+}
+
+.icon-link-hover {
+  &:hover,
+  &:focus-visible {
+    > i {
+      transform: var(--#{$prefix}icon-link-transform, $icon-link-icon-transform);
+    }
+  }
+}
+
+.icon-link-text {
+  text-decoration: $link-decoration;
+  text-decoration-color: var(--#{$prefix}text-decoration-color);
+  text-underline-offset: $icon-link-underline-offset;
+
+  .icon-link:hover & {
+    text-decoration: if($link-hover-decoration == underline, none, null);
+  }
+}

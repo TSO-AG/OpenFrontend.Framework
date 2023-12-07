@@ -1,0 +1,40 @@
+$utilities:
+  (
+    "link-underline": (
+      property: text-decoration-color --#{$prefix}text-decoration-color,
+      class: link-underline,
+      local-vars: (
+        "link-underline-opacity": 1
+      ),
+      values: map-merge(
+        $utilities-links-underline,
+        (
+          null: rgba(var(--#{$prefix}link-color-rgb), var(--#{$prefix}link-underline-opacity, 1)),
+        ),
+      )
+    ),
+    "of-margin-top": (
+      responsive: true,
+      property: margin-top,
+      class: mt,
+      values: $custom-spacers
+    ),
+    "of-margin-bottom": (
+      responsive: true,
+      property: margin-bottom,
+      class: mb,
+      values: $custom-spacers
+    ),
+    "of-nagative-margin-top": (
+      responsive: true,
+      property: margin-top,
+      class: mt,
+      values: $negative-custom-spacers
+    ),
+    "of-nagative-margin-bottom": (
+      responsive: true,
+      property: margin-bottom,
+      class: mb,
+      values: $negative-custom-spacers
+    ),
+  ) !default;

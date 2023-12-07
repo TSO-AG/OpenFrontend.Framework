@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkopenfrontend_framework=self.webpackChunkopenfrontend_framework||[]).push([[732],{9743:function(e,n,o){o.r(n);var r=o(9909);[...document.querySelectorAll('[data-bs-toggle="tooltip"]')].map((e=>new r.u(e)))}}]);

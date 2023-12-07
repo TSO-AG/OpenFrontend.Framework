@@ -1,0 +1,457 @@
+---
+layout: examples
+title: Home
+body_class: ""
+---
+
+<header class="header" data-of-header='{
+  "sticky": true
+  }'>
+  <div class="container">
+    <div class="header-content d-none d-lg-flex">
+      <div>
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+            <span class="header-link-text">Account</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Login</a></li>
+            <li><a class="dropdown-item" href="#">Register</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+            <span class="header-link-text">Cart</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Overview</a></li>
+            <li><a class="dropdown-item" href="#">Checkout</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="header-link-icon">
+                <i class="ofi-heart-fill"></i>
+                <span class="header-link-icon-badge">
+                  <span class="badge bg-danger">12</span>
+                </span>
+              </span>
+            <span class="header-link-text">Favorites</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Next Trip</a></li>
+            <li><a class="dropdown-item" href="#">Xmas Dinner</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Edit Favorites</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="header-brand">
+      <a href="#">
+        <img class="bd-placeholder-img" alt="Placeholder : Logo" width="200" height="60"
+             src="data:image/svg+xml,%3Csvg%20style='font-size:%201.125rem;%20font-family:system-ui,-apple-system,%22Segoe%20UI%22,Roboto,%22Helvetica%20Neue%22,%22Noto%20Sans%22,%22Liberation%20Sans%22,Arial,sans-serif,%22Apple%20Color%20Emoji%22,%22Segoe%20UI%20Emoji%22,%22Segoe%20UI%20Symbol%22,%22Noto%20Color%20Emoji%22;%20-webkit-user-select:%20none;%20-moz-user-select:%20none;%20user-select:%20none;%20text-anchor:%20middle;'%20width='200'%20height='60'%20xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EPlaceholder%3C/title%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%23868e96'%3E%3C/rect%3E%3Ctext%20x='50%25'%20y='50%25'%20fill='%23dee2e6'%20dy='.3em'%3ELogo%3C/text%3E%3C/svg%3E">
+      </a>
+    </div>
+    <div class="header-content">
+      <div>
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-translate"></i></span>
+            <span class="header-link-text">Language</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">German</a></li>
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">French</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-none d-lg-block">
+        <button class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch"
+                aria-controls="headerSearch"
+                aria-expanded="false" aria-label="Toggle header search">
+          <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
+          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-text">Search</span>
+        </button>
+        <div class="collapse header-collapse header-search-wrapper" id="headerSearch">
+          <div class="container">
+            <div class="header-search">
+              <form class="search-form search-form-lg">
+                <div class="search-form-inputs">
+                  <input type="search" name="keywords" placeholder="Keywords" aria-label="Keywords">
+                  <button type="submit">
+                    <i class="ofi-search"></i>
+                    <span class="visually-hidden">Search</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="header-link" type="button" data-bs-toggle="collapse"
+                data-bs-target="#pageMenu" aria-controls="pageMenu"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="header-link-icon d-none-collapsed"><i class="ofi-list"></i></span>
+          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-text">Menu</span>
+        </button>
+
+        <div class="collapse header-collapse page-menu-wrapper" id="pageMenu">
+          <div class="container">
+            {{< page-menu >}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrapper" style="min-height: clamp(300px, 45vw, 700px); --bs-wrapper-padding-x: 0">
+  <div class="container">
+    <div class="wrapper-content">
+      <h2>Traumhafte Unterkünfte</h2>
+      <p>Luxus-Hotel oder B&B, in der Altstadt oder<br> am See: Hier findet jeder eine passende Unterkunft.</p>
+      <p>
+        <a href="#" class="btn btn-primary icon-link">Zur Hotelsuche<i class="ofi-arrow-right"></i></a>
+      </p>
+    </div>
+  </div>
+
+  <div class="wrapper-bg-media">
+    <figure>
+      <img src="../../assets/img/samples/img-9.jpg" alt="">
+    </figure>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Übernachten</li>
+    </ol>
+  </nav>
+</div>
+
+<main class="mt-5">
+  <div class="container">
+    <div class="mb-section">
+      <div class="row">
+        <div class="col-xl-10 col-xxl-9">
+          <h1>Beschreibung</h1>
+          <p>Das Hotel Walhalla gehört seit dem 19. Jahrhundert zum St.Galler Stadtbild. Erstmals beherbergte der Bau Hotelgäste im Jahr 1887. Um den Gästen weiterhin ein zeitgemässes Ambiente zu bieten, wurde das Hotel Walhalla im Mai 2018 für eine umfangreiche Renovierung geschlossen. Das Traditionshaus verfügt, seit der Eröffnung im September 2019, neu über 100 Zimmer mit komfortabler Ausstattung, der Brasserie Walhalla mit Schweizer Spezialitäten und der Walhalla Bar, mit einer grossen Auswahl an lokalen und internationalen Getränken und Snacks. Mit der zentralen Lage am Bahnhof St.Gallen und dem erweiterten Seminarbereich mit sechs Räumen und modernster Seminartechnik bietet das Hotel optimale Voraussetzungen für Veranstaltungen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-section">
+      <div class="mb-1">
+        <div class="masonry masonry-group-2">
+          <div class="masonry-group-item">
+            <div class="masonry masonry-vertical-1">
+              <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
+                <div class="wrapper wrapper-zoom">
+                  <div class="wrapper-content-top-right">
+                    <div class="state state--open">Offen</div>
+                  </div>
+                  <div class="wrapper-content wrapper-content-padding-y-lg">
+                    <h2>Hotel Walhalla</h2>
+                    <p class="mb-0">Öffnet 9:00 | Schliesst 19:00 Butter & Margerine</p>
+                    <a href="#" class="stretched-link"><span class="visually-hidden">Read more</span></a>
+                  </div>
+                  <div class="wrapper-bg-media">
+                    <figure>
+                      <img src="../../assets/img/samples/img-10.jpg" alt="">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="masonry-group-item">
+            <div class="masonry masonry-vertical-5">
+              <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+                <div class="wrapper wrapper-zoom">
+                  <div class="wrapper-content-top-right">
+                    <div class="state state--open">Offen</div>
+                  </div>
+                  <div class="wrapper-content wrapper-content-padding-y-lg">
+                    <h2>Fly Hotel</h2>
+                    <a href="#" class="stretched-link"><span class="visually-hidden">Read more</span></a>
+                  </div>
+                  <div class="wrapper-bg-media">
+                    <figure>
+                      <img src="../../assets/img/samples/img-11.jpg" alt="">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+              <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
+                <div class="wrapper wrapper-zoom">
+                  <div class="wrapper-content-top-right">
+                    <div class="state state--open"><span class="visually-hidden">Offen</span></div>
+                  </div>
+                  <div class="wrapper-content wrapper-content-padding-y-lg">
+                    <h2>Haus zur Tanne</h2>
+                    <a href="#" class="stretched-link"><span class="visually-hidden">Read more</span></a>
+                  </div>
+                  <div class="wrapper-bg-media">
+                    <figure>
+                      <img src="../../assets/img/samples/img-12.jpg" alt="">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+              <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
+                <div class="wrapper wrapper-zoom">
+                  <div class="wrapper-content-top-right">
+                    <div class="state state--open"><span class="visually-hidden">Offen</span></div>
+                  </div>
+                  <div class="wrapper-content wrapper-content-padding-y-lg">
+                    <h2>Walensee House & Apartments</h2>
+                    <a href="#" class="stretched-link"><span class="visually-hidden">Read more</span></a>
+                  </div>
+                  <div class="wrapper-bg-media">
+                    <figure>
+                      <img src="../../assets/img/samples/img-13.jpg" alt="">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="masonry masonry-group-2">
+          <div class="masonry-group-item">
+            <div class="masonry masonry-vertical-7">
+              <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+                <div class="wrapper wrapper-zoom">
+                  <div class="wrapper-content wrapper-content-padding-y-lg">
+                    <h2>Camping</h2>
+                    <p>Finden Sie den Passenden Campingplatz für Sie und Ihre Familie</p>
+                    <p>
+                      <a href="#" class="btn btn-primary icon-link">Campingplatz finden<i class="ofi-arrow-right"></i></a>
+                    </p>
+                  </div>
+                  <div class="wrapper-bg-media">
+                    <figure>
+                      <img src="../../assets/img/samples/img-14.jpg" alt="">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+              <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+                <div class="wrapper wrapper-zoom">
+                  <div class="wrapper-content wrapper-content-padding-y-lg">
+                    <h2>Bed and Breakfast</h2>
+                    <p>Finden Sie das passende Bed and Breakfast</p>
+                    <p>
+                      <a href="#" class="btn btn-primary icon-link">B&B finden<i class="ofi-arrow-right"></i></a>
+                    </p>
+                  </div>
+                  <div class="wrapper-bg-media">
+                    <figure>
+                      <img src="../../assets/img/samples/img-15.jpg" alt="">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="masonry-group-item">
+            <div class="masonry masonry-vertical-1">
+              <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
+                <div class="wrapper wrapper-zoom">
+                  <div class="wrapper-content wrapper-content-padding-y-lg">
+                    <h2>Hotel & Hostel</h2>
+                    <p>Finden Sie das passende Hotel oder Hostel</p>
+                    <p>
+                      <a href="#" class="btn btn-primary icon-link">Hotel finden<i class="ofi-arrow-right"></i></a>
+                    </p>
+                  </div>
+                  <div class="wrapper-bg-media">
+                    <figure>
+                      <img src="../../assets/img/samples/img-16.jpg" alt="">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-section">
+      <div class="heading-action">
+        <h2>Hotelangebote</h2>
+        <div>
+          <div class="carousel-navigation">
+            <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-1">
+              <i class="ofi-caret-left-fill"></i>
+            </button>
+            <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-1">
+              <i class="ofi-caret-right-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel">
+        <div class="swiper" data-of-carousel='{
+      "loop": true,
+      "slidesPerView": 1,
+      "spaceBetween": 24,
+      "navigationNext": "#carousel-btn-next-1",
+      "navigationPrev": "#carousel-btn-prev-1",
+       "breakpoints": {
+        "md": {
+          "slidesPerView": 2
+        },
+        "lg": {
+          "slidesPerView": 3
+        },
+        "xxl": {
+          "slidesPerView": 4
+        }
+      }
+  }'>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              {{< poi-card img_src="../../assets/img/samples/img-20.jpg" info="St.Gallen 29.06.23 - 02.07.23" title="BnB Haus Weibel" text="Erleben Sie einen wahren Kraftort direkt am Zürichsee! Seit 1917 geniesst hier Generation um Generation…" price_label="CHF" price="34.95" hide_btn_cart="true" >}}
+            </div>
+            <div class="swiper-slide">
+              {{< poi-card img_src="../../assets/img/samples/img-21.jpg" info="St.Gallen 29.06.23 - 02.07.23" title="Ferienwohnung Resort Walensee" text="Erleben Sie einen wahren Kraftort direkt am Zürichsee! Seit 1917 geniesst hier Generation um Generation…" price_label="CHF" price="123" hide_btn_cart="true" >}}
+            </div>
+            <div class="swiper-slide">
+              {{< poi-card img_src="../../assets/img/samples/img-22.jpg" info="St.Gallen 29.06.23 - 02.07.23" title="Boutique Hotel Bellevue & Genuss Werkstatt" text="Erleben Sie einen wahren Kraftort direkt am Zürichsee! Seit 1917 geniesst hier Generation um Generation…" price_label="CHF" price="70" hide_btn_cart="true" >}}
+            </div>
+            <div class="swiper-slide">
+              {{< poi-card img_src="../../assets/img/samples/img-23.jpg" info="St.Gallen 29.06.23 - 02.07.23" title="Boutique Hotel Bellevue & Genuss Werkstatt" text="Erleben Sie einen wahren Kraftort direkt am Zürichsee! Seit 1917 geniesst hier Generation um Generation…" price_label="CHF" price="70" hide_btn_cart="true" >}}
+            </div>
+            <div class="swiper-slide">
+              {{< poi-card hide_btn_cart="true" >}}
+            </div>
+            <div class="swiper-slide">
+              {{< poi-card hide_btn_cart="true" >}}
+            </div>
+            <div class="swiper-slide">
+              {{< poi-card hide_btn_cart="true" >}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-lg-3 mb-3">
+        <h5>Kontakt</h5>
+
+        <p>
+          St. Gallen Bodensee Tourismus<br>
+          Bankgasse 9<br>
+          9001 St. Gallen
+        </p>
+
+        <p>
+          <a href="#" class="footer-link">+41 71 227 37 37</a>
+        </p>
+
+        <p>
+          <a href="#" class="footer-link">info@st.gallen-bodensee.ch</a>
+        </p>
+      </div>
+
+      <div class="col-6 col-lg-3 mb-3">
+        <h5>Unternehmen</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Mitarbeiter</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Karriere</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Partner</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Geschäftsberichte</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-lg-3 mb-3">
+        <h5>Quicklinks</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Über Uns</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Team</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Partner und Sponsoren</a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-6 col-lg-3 mb-3">
+        <form class="mb-3">
+          <h5>Newsletter</h5>
+          <div>
+            <div class="mb-3">
+              <label for="newsletter2" class="visually-hidden">E-Mail</label>
+              <input id="newsletter2" type="text" class="form-control" placeholder="E-Mail">
+            </div>
+            <div>
+              <button class="btn btn-primary w-100" type="button">Newsletter Anmelden</button>
+            </div>
+          </div>
+        </form>
+
+        <ul class="social-links">
+          <li>
+            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Instagram">
+              <span class="social-link-icon"><i class="ofi-instagram"></i></span>
+              <span class="visually-hidden">Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Facebook">
+              <span class="social-link-icon"><i class="ofi-facebook"></i></span>
+              <span class="visually-hidden">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="TikTok">
+              <span class="social-link-icon"><i class="ofi-tiktok"></i></span>
+              <span class="visually-hidden">TikTok</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="YouTube">
+              <span class="social-link-icon"><i class="ofi-youtube"></i></span>
+              <span class="visually-hidden">YouTube</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright copyright-horizontal border-top pt-4 mt-4">
+    <ul class="copyright-links">
+      <li><a href="#" class="footer-link">Datenschutz</a></li>
+      <li><a href="#" class="footer-link">Impressum</a></li>
+      <li><a href="#" class="footer-link">AGB</a></li>
+      <li><a href="#" class="footer-link">Cookies</a></li>
+    </ul>
+
+    <div class="copyright-text">&copy; 2023 by St.Gallen-Bodensee Tourismus, <a href="#" class="footer-link">powered by TSO AG</a></div>
+  </div>
+  </div>
+</footer>

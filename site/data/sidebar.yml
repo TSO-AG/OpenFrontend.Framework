@@ -76,6 +76,7 @@
     - title: Breadcrumb
     - title: Button group
     - title: Buttons
+    - title: Calendar
     - title: Card
     - title: Carousel
     - title: Close button
@@ -83,6 +84,7 @@
     - title: Copyright
     - title: Dropdowns
     - title: Elements filter
+    - title: Header
     - title: Icon box
     - title: Icons
     - title: Labels
@@ -96,6 +98,7 @@
     - title: Offcanvas
     - title: Opening times
     - title: Pagination
+    - title: Popovers
     - title: Ratings
     - title: Search
     - title: Slider

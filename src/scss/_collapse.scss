@@ -1,0 +1,14 @@
+.d-block-collapsed {
+  display: none;
+
+  [aria-expanded="true"] > & {
+    display: block;
+  }
+}
+
+.d-none-collapsed {
+  [aria-expanded="true"] > & {
+    display: none;
+  }
+}
+

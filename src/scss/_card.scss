@@ -12,6 +12,8 @@
   --#{$prefix}card-horizontal-media-width: #{$card-horizontal-media-width};
   --#{$prefix}card-mini-media-width: #{$card-mini-media-width};
   // scss-docs-end card-css-vars
+
+  height: 100%;
 }
 
 .card-media {
@@ -32,12 +34,12 @@
 
     &--top-left,
     &--bottom-left {
-      max-width: calc(40% - var(--#{$prefix}card-spacer-x)); // stylelint-disable-line function-disallowed-list
+      max-width: calc(40% - var(--#{$prefix}card-spacer-x));
     }
 
     &--top-right,
     &--bottom-right {
-      max-width: calc(60% - var(--#{$prefix}card-spacer-x)); // stylelint-disable-line function-disallowed-list
+      max-width: calc(60% - var(--#{$prefix}card-spacer-x));
     }
 
     &--top-left {
@@ -298,3 +300,9 @@
   @include card-mini-media();
 }
 
+.card-clickable {
+  .card-body,
+  .card-action {
+    position: static;
+  }
+}

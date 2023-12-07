@@ -60,10 +60,10 @@ toc: true
 </div>
 {{< /example >}}
 
-With the `--bs-wrapper-media-opacity` variable, we can control the transparency level of the visual element in the background, such as an image or video. Setting this variable allows for the addition of an overlay effect, creating a visually appealing result where the content of the wrapper component is visible through the background.
+With the `--bs-wrapper-media-overlay` and `--bs-wrapper-media-overlay-opacity` variables, we have more control over the presentation of our content. The `--bs-wrapper-media-overlay` variable allows us to set the background of the overlay layer. Simultaneously, the `--bs-wrapper-media-overlay-opacity` variable adjusts the overlay layer's opacity level. Effectively, these settings introduce an overlay effect that results in a visually attractive design where the wrapper's content is visible through the overlay layer.
 
 {{< example >}}
-<div class="wrapper" style="--bs-wrapper-bg-color: #f47c00; --bs-wrapper-color: #fff; --bs-wrapper-media-opacity: 0.2; min-height: 400px">
+<div class="wrapper" style="--bs-wrapper-color: #fff; --bs-wrapper-media-overlay: #f47c00; --bs-wrapper-media-overlay-opacity: 0.8; min-height: 400px">
   <div class="wrapper-content text-center">Sample wrapper content</div>
 
   <div class="wrapper-bg-media">

@@ -93,13 +93,13 @@
   .fixed-top,
   .sticky-top {
     position: static;
-    margin: calc(var(--bd-example-padding) * -1) calc(var(--bd-example-padding) * -1) var(--bd-example-padding); // stylelint-disable-line function-disallowed-list
+    margin: calc(var(--bd-example-padding) * -1) calc(var(--bd-example-padding) * -1) var(--bd-example-padding);
   }
 
   .fixed-bottom,
   .sticky-bottom {
     position: static;
-    margin: var(--bd-example-padding) calc(var(--bd-example-padding) * -1) calc(var(--bd-example-padding) * -1); // stylelint-disable-line function-disallowed-list
+    margin: var(--bd-example-padding) calc(var(--bd-example-padding) * -1) calc(var(--bd-example-padding) * -1);
 
   }
 
@@ -407,4 +407,20 @@
 
 .bd-content .bd-code-snippet {
   margin-bottom: 1rem;
+}
+
+// Header helpers
+.bd-example-header {
+  overflow: hidden;
+
+  &:hover {
+    overflow: visible;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    &:hover {
+      margin-right: -25% !important; // stylelint-disable-line declaration-no-important
+      margin-left: -25% !important; // stylelint-disable-line declaration-no-important
+    }
+  }
 }

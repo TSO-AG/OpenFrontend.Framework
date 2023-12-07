@@ -1,0 +1,34 @@
+{{- $class := .Get "class" -}}
+{{- $info := .Get "info" | default "Lorem ipsum" -}}
+{{- $title := .Get "title" | default "Card title" -}}
+{{- $text := .Get "text" | default "Some quick example text to build on the card title and make up the bulk of the card's content." -}}
+{{- $btn_text := .Get "btn_text" | default "Find out more" -}}
+{{- $btn_class := .Get "btn_class" | default "btn-primary" -}}
+{{- $img_src := .Get "img_src" -}}
+{{- $img_width := .Get "img_width" | default "100%" -}}
+{{- $img_height := .Get "img_height" | default "200" -}}
+<div class="card{{if $class }} {{ $class }}{{ end }}{{ if eq (.Get "layout") "horizontal" }} card-horizontal mb-3{{ end }}">
+  <div class="card-media">
+    <div class="card-media__visual">
+      {{- if $img_src -}}
+      <img src="{{ $img_src }}" alt="" width="{{ $img_width }}" height="{{ $img_height }}">
+      {{- else -}}
+      <svg class="bd-placeholder-img img-fluid" width="{{ $img_width }}" height="{{ $img_height }}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Responsive image</text></svg>
+      {{- end -}}
+    </div>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-info">{{ $info }}</h5>
+    <h4 class="card-title"><a href="#" class="stretched-link">{{ $title }}</a></h4>
+    <p class="card-text">{{ $text }}</p>
+  </div>
+
+  <div class="card-action">
+    <div class="card-action__buttons">
+      <button type="button" class="btn btn-icon {{ $btn_class }} stretched-link">
+        More <i class="ofi-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>

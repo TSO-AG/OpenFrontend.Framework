@@ -1,0 +1,21 @@
+{{- $class := .Get "class" -}}
+{{- $info := .Get "info" | default "Lorem ipsum" -}}
+{{- $title := .Get "title" | default "Card title" -}}
+{{- $text := .Get "text" | default "Some quick example text to build on the card title and make up the bulk of the card's content." -}}
+<div class="card{{if $class }} {{ $class }}{{ end }}{{ if eq (.Get "layout") "horizontal" }} card-horizontal mb-3{{ end }}">
+  <div class="card-body">
+    <h5 class="card-info">{{ $info }}</h5>
+    <h4 class="card-title"><a href="#" class="stretched-link">{{ $title }}</a></h4>
+
+    <div class="row gy-3 align-items-center">
+      <div class="col-12 col-sm">
+        <p class="card-text">{{ $text }}</p>
+      </div>
+      <div class="col-auto">
+        <button type="button" class="btn btn-primary btn-icon stretched-link">
+          More <i class="ofi-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

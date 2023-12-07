@@ -52,7 +52,7 @@ params:
 
   subtitle:             "@TODO"
   description:          "OpenFrontend is a multipurpose theme, crafted for all the touristic websites like  destinations, transport companies, hotels or associations."
-  authors:              "Terminal42"
+  authors:              "TSO AG"
 
   current_version:      "1.0"
   current_ruby_version: "1.0"
@@ -65,6 +65,7 @@ params:
   themes:               "https://themes.getbootstrap.com/"
   icons:                "https://icons.getbootstrap.com/"
   swag:                 "https://cottonbureau.com/people/bootstrap"
+  google_map_api_key:   "AIzaSyB5gDRkUqJ8psAwkNBbhrhr54BEfAfCAVw"
 
   download:
     source:             "https://github.com/twbs/bootstrap/archive/v5.3.0.zip"

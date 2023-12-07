@@ -31,6 +31,7 @@ const DefaultType = {
   slidesPerView: '(string|number|undefined)',
   spaceBetween: '(string|number|undefined)',
   speed: 'number',
+  futureSlidesVisible: 'boolean',
 }
 
 const Default = {
@@ -43,6 +44,7 @@ const Default = {
   slidesPerView: 1,
   spaceBetween: 0,
   speed: 300,
+  futureSlidesVisible: false,
 }
 
 const BreakpointType = {
@@ -111,6 +113,11 @@ class Carousel extends BaseComponent {
 
     if (this._config.breakpoints) {
       options.breakpoints = this._prepareBreakpointConfiguration(this._config.breakpoints)
+    }
+
+    if (this._config.futureSlidesVisible) {
+      options.watchSlidesProgress = true
+      options.loopAdditionalSlides = 2
     }
 
     new Swiper(this._element, options)

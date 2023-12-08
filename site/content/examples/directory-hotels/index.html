@@ -1,0 +1,1436 @@
+---
+layout: examples
+title: Directory hotels
+body_class: ""
+---
+
+<header class="header"
+        style="z-index: 7; --bs-header-sticky-background-color: #eaeaea; --bs-header-sticky-color: #595959; --bs-header-sticky-padding-y: 10px;"
+        data-of-header='{"sticky": true}'>
+  <div class="container">
+    <div class="header-brand">
+      <a href="#">
+        <img class="bd-placeholder-img" alt="Logo" width="200" height="60" src="../../assets/img/logos/logo.svg">
+      </a>
+    </div>
+    <div class="header-content">
+      <div class="d-none d-lg-block">
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+            <span class="header-link-text">Mein Profil</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Login</a></li>
+            <li><a class="dropdown-item" href="#">Registrieren</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-none d-lg-block">
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+            <span class="header-link-text">Warenkorb</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Warenkorb ansehen</a></li>
+            <li><a class="dropdown-item" href="#">Kasse</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-none d-lg-block">
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="header-link-icon">
+                            <i class="ofi-heart-fill"></i>
+                            <span class="header-link-icon-badge">
+                                <span class="badge bg-danger">12</span>
+                            </span>
+                        </span>
+            <span class="header-link-text">Favoriten</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ausflugsideen Sommer</a></li>
+            <li><a class="dropdown-item" href="#">Weihnachtsessen</a></li>
+            <li><a class="dropdown-item" href="#">Vegane Restaurants</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Favoriten editieren</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="dropdown">
+          <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-link-icon"><i class="ofi-translate"></i></span>
+            <span class="header-link-text">Sprache</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Deutsch</a></li>
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Française</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-none d-lg-block">
+        <a href="#" class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch5"
+           aria-controls="headerSearch5" aria-expanded="false" aria-label="Toggle header search">
+          <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
+          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-text">Suche</span>
+        </a>
+        <div class="collapse header-collapse header-search-wrapper" id="headerSearch5">
+          <div class="container">
+            <div class="header-search">
+              <form class="search-form search-form-lg">
+                <div class="search-form-inputs">
+                  <input type="search" name="keywords" placeholder="Suchbegriff/e eingeben..." aria-label="Keywords">
+                  <button type="submit">
+                    <i class="ofi-search"></i>
+                    <span class="visually-hidden">Suche</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="header-link" type="button" data-bs-toggle="collapse" data-bs-target="#pageMenu5"
+                aria-controls="pageMenu4" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="header-link-icon d-none-collapsed"><i class="ofi-list"></i></span>
+          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-text">Menu</span>
+        </button>
+
+        <div class="collapse header-collapse page-menu-wrapper" id="pageMenu5">
+          <div class="container">
+            <div class="page-menu">
+              <div class="page-menu-mobile-content">
+                <div>
+                  <form class="search-form search-form-lg">
+                    <div class="search-form-inputs">
+                      <input type="search" name="keywords" placeholder="Suchbegriff/e eingeben..."
+                             aria-label="Keywords">
+                      <button type="submit">
+                        <i class="ofi-search"></i>
+                        <span class="visually-hidden">Suche</span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="accordion" id="pageMenuMobile">
+                  <div class="accordion-item">
+                    <div class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#pageMenuMobileAccount" aria-expanded="false"
+                              aria-controls="pageMenuMobileAccount">
+                                    <span class="header-link header-link-row">
+                                        <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+                                        <span class="header-link-text">Mein Profil</span>
+                                    </span>
+                      </button>
+                    </div>
+                    <div id="pageMenuMobileAccount" class="accordion-collapse collapse"
+                         data-bs-parent="#pageMenuMobile">
+                      <div class="accordion-body">
+                        <ul class="nav flex-column">
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Registrieren</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <div class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#pageMenuMobileCart" aria-expanded="false"
+                              aria-controls="pageMenuMobileCart">
+                                    <span class="header-link header-link-row">
+                                        <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+                                        <span class="header-link-text">Warenkorb</span>
+                                    </span>
+                      </button>
+                    </div>
+                    <div id="pageMenuMobileCart" class="accordion-collapse collapse" data-bs-parent="#pageMenuMobile">
+                      <div class="accordion-body">
+                        <ul class="nav flex-column">
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Warenkorb ansehen</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Kasse</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <div class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#pageMenuMobileFavorites" aria-expanded="false"
+                              aria-controls="pageMenuMobileFavorites">
+                                    <span class="header-link header-link-row">
+                                        <span class="header-link-icon">
+                                        <i class="ofi-heart-fill"></i>
+                                        <span class="header-link-icon-badge">
+                                            <span class="badge bg-danger">12</span>
+                                        </span>
+                                        </span>
+                                        <span class="header-link-text">Favoriten</span>
+                                    </span>
+                      </button>
+                    </div>
+                    <div id="pageMenuMobileFavorites" class="accordion-collapse collapse"
+                         data-bs-parent="#pageMenuMobile">
+                      <div class="accordion-body">
+                        <ul class="nav flex-column">
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Ausflugsideen Sommer</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Weihnachtsessen</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Vegane Restaurants</a>
+                          </li>
+                          <li>
+                            <hr>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Favoriten editieren</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="page-nav" data-of-page-navigation>
+                <nav role="navigation">
+                  <ul class="page-nav-level-1">
+                    <li>
+                      <a href="#" class="page-nav-link active" aria-current="page">Home</a>
+                    </li>
+                    <li class="page-nav-submenu" aria-haspopup="true">
+                      <a class="page-nav-link" href="#">Entdecken</a>
+                      <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                        <i class="ofi-arrow-right"><span
+                          class="visually-hidden">Aktuelles bis Broschüren & Prospekte</span></i>
+                      </button>
+                      <ul class="page-nav-level-2">
+                        <li class="page-nav-back">
+                          <button class="page-nav-back-link" data-of-page-menu-close>
+                            <i class="ofi-arrow-left"></i>zurück
+                          </button>
+                        </li>
+                        <li class="page-nav-submenu" aria-haspopup="true">
+                          <a class="page-nav-link" href="#">Aktuelles</a>
+                          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                            <i class="ofi-arrow-right"><span
+                              class="visually-hidden">Wochenprogramm bis Betriebszustände</span></i>
+                          </button>
+                          <ul class="page-nav-level-3">
+                            <li class="page-nav-back">
+                              <button class="page-nav-back-link" data-of-page-menu-close>
+                                <i class="ofi-arrow-left"></i>zurück
+                              </button>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Wochenprogramm</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Wetterprognose</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Betriebszustände</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="page-nav-submenu" aria-haspopup="true">
+                          <a class="page-nav-link" href="#">Highlights</a>
+                          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                            <i class="ofi-arrow-right"><span class="visually-hidden">Frühling bis Winter</span></i>
+                          </button>
+                          <ul class="page-nav-level-3">
+                            <li class="page-nav-back">
+                              <button class="page-nav-back-link" data-of-page-menu-close>
+                                <i class="ofi-arrow-left"></i>zurück
+                              </button>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Frühling</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Sommer</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Herbst</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Winter</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a class="page-nav-link" href="#">Veranstaltungen</a>
+                        </li>
+                        <li>
+                          <a class="page-nav-link" href="#">Broschüren & Prospekte</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="page-nav-submenu" aria-haspopup="true">
+                      <a href="#" class="page-nav-link">Angebote</a>
+                      <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                        <i class="ofi-arrow-right"><span class="visually-hidden">Übernachten bis Erleben</span></i>
+                      </button>
+                      <ul class="page-nav-level-2">
+                        <li class="page-nav-back">
+                          <button class="page-nav-back-link" data-of-page-menu-close>
+                            <i class="ofi-arrow-left"></i>zurück
+                          </button>
+                        </li>
+                        <li class="page-nav-submenu" aria-haspopup="true">
+                          <a class="page-nav-link" href="#">Übernachten</a>
+                          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                            <i class="ofi-arrow-right"><span class="visually-hidden">Hotels bis Camping</span></i>
+                          </button>
+                          <ul class="page-nav-level-3">
+                            <li class="page-nav-back">
+                              <button class="page-nav-back-link" data-of-page-menu-close>
+                                <i class="ofi-arrow-left"></i>zurück
+                              </button>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Hotels</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Ferienwohnungen</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Bed & Breakfast</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Camping</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Reservation</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="page-nav-submenu" aria-haspopup="true">
+                          <a class="page-nav-link" href="#">Essen & Trinken</a>
+                          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                            <i class="ofi-arrow-right"><span
+                              class="visually-hidden">Restaurants bis Take away</span></i>
+                          </button>
+                          <ul class="page-nav-level-3">
+                            <li class="page-nav-back">
+                              <button class="page-nav-back-link" data-of-page-menu-close>
+                                <i class="ofi-arrow-left"></i>zurück
+                              </button>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Restaurants</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Bars</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Take away</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Reservation</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="page-nav-submenu" aria-haspopup="true">
+                          <a class="page-nav-link" href="#">Erleben</a>
+                          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                            <i class="ofi-arrow-right"><span
+                              class="visually-hidden">Shopping bis Ausflugsziele</span></i>
+                          </button>
+                          <ul class="page-nav-level-3">
+                            <li class="page-nav-back">
+                              <button class="page-nav-back-link" data-of-page-menu-close>
+                                <i class="ofi-arrow-left"></i>zurück
+                              </button>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Shopping</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Routen & Touren</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Ausflugsziele</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Reservation</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="page-nav-submenu" aria-haspopup="true">
+                      <a href="#" class="page-nav-link">Service</a>
+                      <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                        <i class="ofi-arrow-right"><span class="visually-hidden">FAQ bis Merchandise</span></i>
+                      </button>
+                      <ul class="page-nav-level-2">
+                        <li class="page-nav-back">
+                          <button class="page-nav-back-link" data-of-page-menu-close>
+                            <i class="ofi-arrow-left"></i>zurück
+                          </button>
+                        </li>
+                        <li>
+                          <a class="page-nav-link" href="#">FAQ</a>
+                        </li>
+                        <li class="page-nav-submenu" aria-haspopup="true">
+                          <a class="page-nav-link" href="#">Touristinfo</a>
+                          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                            <i class="ofi-arrow-right"><span
+                              class="visually-hidden">Öffnungszeiten bis Gästefeedback</span></i>
+                          </button>
+                          <ul class="page-nav-level-3">
+                            <li class="page-nav-back">
+                              <button class="page-nav-back-link" data-of-page-menu-close>
+                                <i class="ofi-arrow-left"></i>zurück
+                              </button>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Öffnungszeiten</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Kontakt</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Gästefeedback</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a class="page-nav-link" href="#">Gästekarte</a>
+                        </li>
+                        <li class="page-nav-submenu" aria-haspopup="true">
+                          <a class="page-nav-link" href="#">Gruppen</a>
+                          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                            <i class="ofi-arrow-right"><span class="visually-hidden">Seminarräume bis Teamevents</span></i>
+                          </button>
+                          <ul class="page-nav-level-3">
+                            <li class="page-nav-back">
+                              <button class="page-nav-back-link" data-of-page-menu-close>
+                                <i class="ofi-arrow-left"></i>zurück
+                              </button>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Seminarräume</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Teamevents</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="page-nav-submenu" aria-haspopup="true">
+                          <a class="page-nav-link" href="#">Merchandise</a>
+                          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
+                            <i class="ofi-arrow-right"><span class="visually-hidden">Gutscheine bis Geschnekideen</span></i>
+                          </button>
+                          <ul class="page-nav-level-3">
+                            <li class="page-nav-back">
+                              <button class="page-nav-back-link" data-of-page-menu-close>
+                                <i class="ofi-arrow-left"></i>zurück
+                              </button>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Gutscheine</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Souvenirs</a>
+                            </li>
+                            <li>
+                              <a class="page-nav-link" href="#">Geschenkideen</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="page-menu-content">
+                <h3>Reservieren & Buchen</h3>
+
+                <div class="row row-cols-1 gy-4">
+                  <div class="col">
+                    <div class="card card-mini">
+                      <div class="card-media">
+                        <div class="card-media__visual">
+                          <img src="../../assets/img/photos/angebot-fuehrung.jpg">
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-info">20% Rabatt</h5>
+                        <h3 class="card-title h4"><a href="#" class="stretched-link">Auf alle Stadtführungen</a></h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card card-mini">
+                      <div class="card-media">
+                        <div class="card-media__visual">
+                          <img src="../../assets/img/photos/angebot-konzert.jpg">
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-info">VIP-Ticket Vorverkauf</h5>
+                        <h3 class="card-title h4"><a href="#" class="stretched-link">OpenAir St.Gallen</a></h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <hr>
+
+                <p>
+                  <a class="link-external" href="#">Hotel buchen</a>
+                </p>
+                <p>
+                  <a class="link-external" href="#">Tisch reservieren</a>
+                </p>
+                <p>
+                  <a class="link-external" href="#">Souvenir kaufen</a>
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container mt-3">
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb justify-content-end">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#">Angebote</a></li>
+      <li class="breadcrumb-item"><a href="#">Übernachten</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Hotels</li>
+    </ol>
+  </nav>
+</div>
+
+<main>
+  <div class="container">
+    <div class="mb-section">
+      <h1>Hotels</h1>
+      <p>Finden Sie Ihre perfekte Unterkunft aus einer breiten Auswahl von Hotels, Ferienwohnungen, Gruppenunterkünften,
+        Alphütten, Bauernhöfen, Herbergen & Hostels, Bed & Breakfasts und Campingplätzen.</p>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="row align-items-end justify-content-between">
+            <div class="col-auto d-none d-lg-block">
+              <p class="mb-3 fw-bold"><i class="ofi-funnel-fill"></i> Filter</p>
+            </div>
+            <div class="col-lg-auto">
+              <div class="mb-3">
+                <div class="row gy-3 justify-content-between justify-content-lg-end">
+                  <div class="col-auto">
+                    <label for="poi-list-list-view-sorting" class="form-label">Sortierung</label>
+                    <select id="poi-list-list-view-sorting" class="form-select w-auto">
+                      <option value="result">Beste Resultate</option>
+                      <option value="alphabetical">Alphabetisch</option>
+                      <option value="location">Ort</option>
+                    </select>
+                  </div>
+
+                  <div class="col-auto">
+                    <div class="form-label">Ansicht</div>
+
+                    <div class="btn-group">
+                      <button class="btn btn-icon btn-outline-primary" type="button"><i class="ofi-grid-fill"></i>
+                      </button>
+                      <button class="btn btn-icon btn-primary" type="button"><i class="ofi-list"></i></button>
+                      <button class="btn btn-icon btn-outline-primary" type="button"><i class="ofi-map-fill"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-xxl-3 order-first order-lg-0">
+          <div class="d-lg-none">
+            <div class="mb-3">
+              <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#poi-list-list-view-filters-mobile" aria-expanded="false"
+                      aria-controls="poi-list-list-view-filters-mobile">
+                <i class="ofi-funnel-fill"></i> Filter
+              </button>
+            </div>
+            <div class="collapse" id="poi-list-list-view-filters-mobile"></div>
+          </div>
+
+          <div class="d-none d-lg-block">
+            <div id="poi-list-list-view-filters-desktop">
+              <div id="poi-list-list-view-filters">
+                <div class="accordion mb-3">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#poi-list-list-view-filter-region" aria-expanded="true"
+                              aria-controls="poi-list-list-view-filter-region">
+                        Region
+                      </button>
+                    </h2>
+                    <div id="poi-list-list-view-filter-region" class="accordion-collapse collapse show">
+                      <div class="accordion-body">
+                        <div class="row gx-3 gy-3">
+                          <div class="col">
+                            <label for="poi-list-list-view-filter-location" class="form-label">Ort</label>
+                            <div class="input-group">
+                              <button class="btn btn-icon btn-outline-secondary" type="button"><i
+                                class="ofi-geo-alt-fill"></i></button>
+                              <input type="text" id="poi-list-list-view-filter-location" class="form-control"
+                                     placeholder="St.Gallen">
+                            </div>
+                          </div>
+                          <div class="col-4 col-md-5">
+                            <label for="poi-list-list-view-filter-distance" class="form-label">Umkreis</label>
+                            <select id="poi-list-list-view-filter-distance" class="form-select">
+                              <option value="center">Zentrum</option>
+                              <option value="1">1km</option>
+                              <option value="2">2km</option>
+                              <option value="5">5km</option>
+                              <option value="10">10km</option>
+                              <option value="20" selected>20km</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#poi-list-list-view-filter-categories"
+                              aria-controls="poi-list-list-view-filter-categories">
+                        Typ
+                      </button>
+                    </h2>
+                    <div id="poi-list-list-view-filter-categories" class="accordion-collapse collapse show">
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-category-1" checked>
+                          <label class="form-check-label" for="poi-list-list-view-filter-category-1">
+                            Hotel
+                          </label>
+                          <span class="badge bg-secondary">53</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-category-2">
+                          <label class="form-check-label" for="poi-list-list-view-filter-category-2">
+                            Hostel
+                          </label>
+                          <span class="badge bg-secondary">19</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-category-3">
+                          <label class="form-check-label" for="poi-list-list-view-filter-category-3">
+                            BnB
+                          </label>
+                          <span class="badge bg-secondary">39</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-category-4">
+                          <label class="form-check-label" for="poi-list-list-view-filter-category-4">
+                            Camping
+                          </label>
+                          <span class="badge bg-secondary">32</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-category-5">
+                          <label class="form-check-label" for="poi-list-list-view-filter-category-5">
+                            Gruppenunterkunft
+                          </label>
+                          <span class="badge bg-secondary">3</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-category-6">
+                          <label class="form-check-label" for="poi-list-list-view-filter-category-6">
+                            Ferienwohnung
+                          </label>
+                          <span class="badge bg-secondary">15</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-category-7">
+                          <label class="form-check-label" for="poi-list-list-view-filter-category-7">
+                            Ferienhaus
+                          </label>
+                          <span class="badge bg-secondary">9</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#poi-list-list-view-filter-seasons" aria-expanded="false"
+                              aria-controls="poi-list-list-view-filter-seasons">
+                        Klassifizierung
+                      </button>
+                    </h2>
+                    <div id="poi-list-list-view-filter-seasons" class="accordion-collapse collapse">
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-season-1">
+                          <label class="form-check-label" for="poi-list-list-view-filter-season-1">
+                            5 Sterne
+                          </label>
+                          <span class="badge bg-secondary">5</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-season-2">
+                          <label class="form-check-label" for="poi-list-list-view-filter-season-2">
+                            4 Sterne
+                          </label>
+                          <span class="badge bg-secondary">12</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-season-3">
+                          <label class="form-check-label" for="poi-list-list-view-filter-season-3">
+                            3 Sterne
+                          </label>
+                          <span class="badge bg-secondary">28</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-season-4">
+                          <label class="form-check-label" for="poi-list-list-view-filter-season-4">
+                            2 Sterne
+                          </label>
+                          <span class="badge bg-secondary">18</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-season-5">
+                          <label class="form-check-label" for="poi-list-list-view-filter-season-5">
+                            1 Stern
+                          </label>
+                          <span class="badge bg-secondary">3</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-season-6">
+                          <label class="form-check-label" for="poi-list-list-view-filter-season-6">
+                            keine Klassifizierung
+                          </label>
+                          <span class="badge bg-secondary">24</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#poi-list-list-view-filter-time" aria-expanded="false"
+                              aria-controls="poi-list-list-view-filter-time">
+                        Merkmale
+                      </button>
+                    </h2>
+                    <div id="poi-list-list-view-filter-time" class="accordion-collapse collapse">
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-time-1">
+                          <label class="form-check-label" for="poi-list-list-view-filter-time-1">
+                            Kostenloses WLAN
+                          </label>
+                          <span class="badge bg-secondary">11</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-time-2">
+                          <label class="form-check-label" for="poi-list-list-view-filter-time-2">
+                            Kostenlose Parkplätze
+                          </label>
+                          <span class="badge bg-secondary">31</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-time-3">
+                          <label class="form-check-label" for="poi-list-list-view-filter-time-3">
+                            Barrierefrei
+                          </label>
+                          <span class="badge bg-secondary">62</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-time-4">
+                          <label class="form-check-label" for="poi-list-list-view-filter-time-4">
+                            Nachhaltig
+                          </label>
+                          <span class="badge bg-secondary">45</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="mb-2">
+                    <button type="button" class="btn btn-outline-primary w-100">Filter löschen</button>
+                  </div>
+                  <div class="mb-3">
+                    <button type="button" class="btn btn-primary w-100">53 Ergebnisse anzeigen</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const filters = document.getElementById('poi-list-list-view-filters');
+              const desktopContainer = document.getElementById('poi-list-list-view-filters-desktop');
+              const mobileContainer = document.getElementById('poi-list-list-view-filters-mobile');
+              const breakpoint = getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-lg');
+
+              function moveElements() {
+                if (window.matchMedia(`(max-width: ${breakpoint})`).matches) {
+                  mobileContainer.appendChild(filters);
+                } else {
+                  desktopContainer.appendChild(filters);
+                }
+              }
+
+              window.addEventListener('resize', moveElements);
+              moveElements();
+            });
+          </script>
+
+        </div>
+
+        <div class="col-lg-8 col-xxl-9">
+
+          <div>
+            <div class="card card-horizontal mb-3">
+              <div class="card-media">
+                <div class="card-media__visual">
+                  <img src="../../assets/img/photos/hotel-zweistein-001.jpg">
+                </div>
+                <div class="card-media__content card-media__content--top-right">
+                  <div class="state state--open">
+                    offen
+                  </div>
+                </div>
+                <div class="card-media__content card-media__content--bottom-right">
+                  <div class="labels">
+                    <div class="labels-item">
+                      <figure><img class="bd-placeholder-img" data-bs-toggle="tooltip" data-bs-placement="top"
+                                   data-bs-custom-class="custom-tooltip" data-bs-title="Swisstainable LEADING"
+                                   alt="Swisstainable LEADING" width="36" height="36"
+                                   src="../../assets/img/labels/swisstainable_3.svg"></figure>
+                    </div>
+                    <div class="labels-item">
+                      <figure><img class="bd-placeholder-img" data-bs-toggle="tooltip" data-bs-placement="top"
+                                   data-bs-custom-class="custom-tooltip" data-bs-title="19 Gault Millau Punkte"
+                                   alt="19 Gault Millau Punkte" width="36" height="36"
+                                   src="../../assets/img/labels/gault_millau_19.svg"></figure>
+                    </div>
+                    <div class="labels-item">
+                      <figure><img class="bd-placeholder-img" data-bs-toggle="tooltip" data-bs-placement="top"
+                                   data-bs-custom-class="custom-tooltip" data-bs-title="OK GO" alt="OK GO" width="36"
+                                   height="36" src="../../assets/img/labels/ok_go.svg"></figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-info">St.Gallen</h5>
+                <div class="card-title-rating">
+                  <h4 class="card-title"><a href="#" class="stretched-link">Hotel Zweistein</a></h4>
+                  <div class="card-title-star">
+                    <div class="rating rating-sm">
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-half-png"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="card-text">Das Hotel Zweistein St.Gallen bietet komfortable Zimmer, guten Service, sehr gutes
+                  Essen und einen überragenden Fitness Bereich.</p>
+                <div class="card-tags">
+                  <div class="tag-list">
+                    <span class="tag">Kostenloses WLAN</span>
+                    <span class="tag text-bg-light">Barrierefrei</span>
+                    <span class="tag text-bg-light">Nachhaltig</span>
+                    <span class="tag text-bg-light">…</span>
+                  </div>
+                </div>
+                <div class="user-rating">
+                  <div class="user-rating__icon">
+                    <i class="ofi-people-fill"></i>
+                  </div>
+                  <div class="user-rating__label">Gäste-Rating:</div>
+                  <div class="user-rating__score">
+                    <span class="user-rating__score-value text-success">4.5</span>/<span
+                    class="user-rating__score-total">5</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <div class="card-action__content">
+                  <div class="price">
+                    <div class="price__label">AB CHF</div>
+                    <div class="price__value">305.00</div>
+                  </div>
+                </div>
+                <div class="card-action__buttons">
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-cart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-heart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary stretched-link">
+                    Mehr <i class="ofi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-horizontal mb-3">
+              <div class="card-media">
+                <div class="card-media__visual">
+                  <img src="../../assets/img/photos/hotel-bergblick-001.jpg">
+                </div>
+                <div class="card-media__content card-media__content--top-right">
+                  <div class="state state--closed">
+                    geschlossen
+                  </div>
+                </div>
+                <div class="card-media__content card-media__content--bottom-right">
+                  <div class="labels">
+                    <div class="labels-item">
+                      <figure><img class="bd-placeholder-img" data-bs-toggle="tooltip" data-bs-placement="top"
+                                   data-bs-custom-class="custom-tooltip" data-bs-title="Culinarium Mitglied"
+                                   alt="Culinarium Mitglied" width="36" height="36"
+                                   src="../../assets/img/labels/culinarium.svg">
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-info">St.Gallen</h5>
+                <div class="card-title-rating">
+                  <h4 class="card-title"><a href="#" class="stretched-link">Hotel Bergblick</a></h4>
+                  <div class="card-title-star">
+                    <div class="rating rating-sm">
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-off-png"></i>
+                      <i class="star-off-png"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="card-text">Das Hotel Bergblick in St. Gallen bietet einen malerischen Ausblick auf die
+                  schweizerischen Alpen. Komfortable Zimmer, freundlicher Service und kostenloser WLAN-Zugang erwarten
+                  Sie.</p>
+                <div class="card-tags">
+                  <div class="tag-list">
+                    <span class="tag">Kostenloses WLAN</span>
+                    <span class="tag text-bg-light">Barrierefrei</span>
+                  </div>
+                </div>
+                <div class="user-rating">
+                  <div class="user-rating__icon">
+                    <i class="ofi-people-fill"></i>
+                  </div>
+                  <div class="user-rating__label">Gäste-Rating:</div>
+                  <div class="user-rating__score">
+                    <span class="user-rating__score-value text-success">4.2</span>/<span
+                    class="user-rating__score-total">5</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <div class="card-action__content">
+                  <div class="price">
+                    <div class="price__label">AB CHF</div>
+                    <div class="price__value">150.00</div>
+                  </div>
+                </div>
+                <div class="card-action__buttons">
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-cart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-heart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary stretched-link">
+                    Mehr <i class="ofi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-horizontal mb-3">
+              <div class="card-media">
+                <div class="card-media__visual">
+                  <img src="../../assets/img/photos/traditionelles-gasthaus-001.jpg">
+                </div>
+                <div class="card-media__content card-media__content--top-right">
+                  <div class="state state--unknown">
+                    unbekannt
+                  </div>
+                </div>
+                <div class="card-media__content card-media__content--bottom-right">
+                  <div class="labels">
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-info">Appenzell</h5>
+                <div class="card-title-rating">
+                  <h4 class="card-title"><a href="#" class="stretched-link">Traditionelles Gasthaus</a></h4>
+                  <div class="card-title-star">
+                    <div class="rating rating-sm">
+
+                    </div>
+                  </div>
+                </div>
+                <p class="card-text">Erleben Sie die traditionelle Schweizer Gastfreundschaft im Herzen von Appenzell.
+                  Gemütliche Zimmer, lokale Küche und eine entspannte Atmosphäre warten auf Sie.</p>
+                <div class="card-tags">
+                  <div class="tag-list">
+                    <span class="tag">Kostenloses WLAN</span>
+                  </div>
+                </div>
+                <div class="user-rating">
+                  <div class="user-rating__icon">
+                    <i class="ofi-people-fill"></i>
+                  </div>
+                  <div class="user-rating__label">Gäste-Rating:</div>
+                  <div class="user-rating__score">
+                    <span class="user-rating__score-value text-success">4.1</span>/<span
+                    class="user-rating__score-total">5</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <div class="card-action__content">
+                  <div class="price">
+                    <div class="price__label"></div>
+                    <div class="price__value"></div>
+                  </div>
+                </div>
+                <div class="card-action__buttons">
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-cart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-heart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary stretched-link">
+                    Mehr <i class="ofi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-horizontal mb-3">
+              <div class="card-media">
+                <div class="card-media__visual">
+                  <img src="../../assets/img/photos/seehotel-rorschach-001.jpg">
+                </div>
+                <div class="card-media__content card-media__content--top-right">
+                  <div class="state state--open">
+                    offen
+                  </div>
+                </div>
+                <div class="card-media__content card-media__content--bottom-right">
+                  <div class="labels">
+                    <div class="labels-item">
+                      <figure><img class="bd-placeholder-img" data-bs-toggle="tooltip" data-bs-placement="top"
+                                   data-bs-custom-class="custom-tooltip" data-bs-title="Swisstainable COMMITTED"
+                                   alt="Swisstainable COMMITTED" width="36" height="36"
+                                   src="../../assets/img/labels/swisstainable_1.svg"></figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-info">Rorschach</h5>
+                <div class="card-title-rating">
+                  <h4 class="card-title"><a href="#" class="stretched-link">Seehotel Rorschach</a></h4>
+                  <div class="card-title-star">
+                    <div class="rating rating-sm">
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-off-png"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="card-text">Erleben Sie Entspannung am Bodensee im Seehotel Rorschach. Moderne Zimmer, Seeblick
+                  und eine Vielzahl von Freizeitmöglichkeiten warten auf Sie.</p>
+                <div class="card-tags">
+                  <div class="tag-list">
+                    <span class="tag">Kostenloses WLAN</span>
+                    <span class="tag text-bg-light">Kostenlose Parkplätze</span>
+                    <span class="tag text-bg-light">Barrierefrei</span>
+                    <span class="tag text-bg-light">…</span>
+                  </div>
+                </div>
+                <div class="user-rating">
+                  <div class="user-rating__icon">
+                    <i class="ofi-people-fill"></i>
+                  </div>
+                  <div class="user-rating__label">Gäste-Rating:</div>
+                  <div class="user-rating__score">
+                    <span class="user-rating__score-value text-success">4.8</span>/<span
+                    class="user-rating__score-total">5</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <div class="card-action__content">
+                  <div class="price">
+                    <div class="price__label">AB CHF</div>
+                    <div class="price__value">175.00</div>
+                  </div>
+                </div>
+                <div class="card-action__buttons">
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-cart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-heart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary stretched-link">
+                    Mehr <i class="ofi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-horizontal mb-3">
+              <div class="card-media">
+                <div class="card-media__visual">
+                  <img src="../../assets/img/photos/businesshotel-uzwil-001.jpg">
+                </div>
+                <div class="card-media__content card-media__content--top-right">
+                  <div class="state state--open">
+                    offen
+                  </div>
+                </div>
+                <div class="card-media__content card-media__content--bottom-right">
+                  <div class="labels">
+                    <div class="labels-item">
+                      <figure><img class="bd-placeholder-img" data-bs-toggle="tooltip" data-bs-placement="top"
+                                   data-bs-custom-class="custom-tooltip" data-bs-title="Swisstainable LEADING"
+                                   alt="Swisstainable COMMITED" width="36" height="36"
+                                   src="../../assets/img/labels/swisstainable_1.svg"></figure>
+                    </div>
+                    <div class="labels-item">
+                      <figure><img class="bd-placeholder-img" data-bs-toggle="tooltip" data-bs-placement="top"
+                                   data-bs-custom-class="custom-tooltip" data-bs-title="OK GO" alt="OK GO" width="36"
+                                   height="36" src="../../assets/img/labels/ok_go.svg"></figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-info">Uzwil</h5>
+                <div class="card-title-rating">
+                  <h4 class="card-title"><a href="#" class="stretched-link">Business Hotel Uzwil</a></h4>
+                  <div class="card-title-star">
+                    <div class="rating rating-sm">
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-off-png"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="card-text">Für Geschäftsreisende ideal: Das Business Hotel in Uzwil bietet moderne Zimmer,
+                  Konferenzeinrichtungen und eine zentrale Lage.</p>
+                <div class="card-tags">
+                  <div class="tag-list">
+                    <span class="tag">Kostenloses WLAN</span>
+                    <span class="tag text-bg-light">Kostenlose Parkplätze</span>
+                  </div>
+                </div>
+                <div class="user-rating">
+                  <div class="user-rating__icon">
+                    <i class="ofi-people-fill"></i>
+                  </div>
+                  <div class="user-rating__label">Gäste-Rating:</div>
+                  <div class="user-rating__score">
+                    <span class="user-rating__score-value text-success">3.9</span>/<span
+                    class="user-rating__score-total">5</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <div class="card-action__content">
+                  <div class="price">
+                    <div class="price__label">AB CHF</div>
+                    <div class="price__value">205.00</div>
+                  </div>
+                </div>
+                <div class="card-action__buttons">
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-cart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-heart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary stretched-link">
+                    Mehr <i class="ofi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <nav class="pagination-dropdown mt-3" aria-label="POI list pagination">
+              <button class="btn btn-square btn-primary">
+                <i class="ofi-caret-left-fill"></i>
+              </button>
+
+              <label for="poi-list-list-view-pagination" class="visually-hidden">Seite 1/3</label>
+              <select id="poi-list-list-view-pagination" class="form-select w-auto">
+                <option>Seite 1</option>
+                <option>Seite 2</option>
+                <option>Seite 3</option>
+              </select>
+
+              <button class="btn btn-square btn-primary">
+                <i class="ofi-caret-right-fill"></i>
+              </button>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+<footer class="py-5">
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-sm-6 col-lg-3 mb-3">
+        <h5>Kontakt</h5>
+        <p>
+          Demo Destination AG<br>
+          Fürstenlandstrasse 53<br>
+          CH-9000 St. Gallen
+        </p>
+        <p>
+          <a href="#" class="footer-link">+41 71 123 45 67</a>
+        </p>
+        <p>
+          <a href="#" class="footer-link">mail@demo-destination.tld</a>
+        </p>
+      </div>
+
+      <div class="col-6 col-lg-3 mb-3">
+        <h5>Unternehmen</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Mitarbeiter</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Karriere</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Partner</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Geschäftsberichte</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-lg-3 mb-3">
+        <h5>Portale</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Travel Trade</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Kongresse</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Medien</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Extranet</a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-6 col-lg-3 mb-3">
+        <form class="mb-3">
+          <h5>Updates</h5>
+          <p>Erhalte 12 mal pro Jahr das Beste aus unserer Region direkt ins Postfach.</p>
+          <div>
+            <div class="mb-3">
+              <label for="newsletter2" class="visually-hidden">E-Mail</label>
+              <input id="newsletter2" type="text" class="form-control" placeholder="E-Mail">
+            </div>
+            <div>
+              <button class="btn btn-primary w-100" type="button">Newsletter abonnieren</button>
+            </div>
+          </div>
+        </form>
+        <h5>Oder folge uns auf</h5>
+        <ul class="social-links">
+          <li>
+            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Instagram">
+              <span class="social-link-icon"><i class="ofi-instagram"></i></span>
+              <span class="visually-hidden">Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Facebook">
+              <span class="social-link-icon"><i class="ofi-facebook"></i></span>
+              <span class="visually-hidden">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="TikTok">
+              <span class="social-link-icon"><i class="ofi-tiktok"></i></span>
+              <span class="visually-hidden">TikTok</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="YouTube">
+              <span class="social-link-icon"><i class="ofi-youtube"></i></span>
+              <span class="visually-hidden">YouTube</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <h5>Partner</h5>
+      <div>
+        <div class="logos logos-row justify-content-start"
+             style="--bs-logos-item-bg: #f8f9fa; --bs-logos-item-padding-y: 10px; --bs-logos-item-padding-x: 10px; --bs-logos-item-border-radius: 5px; --bs-logos-item-border-width: 1px; --bs-logos-item-border-style: solid; --bs-logos-item-border-color: #dee2e6;  --bs-logos-item-max-width: 80px; --bs-logos-item-max-height: 80px">
+          <div>
+            <div class="logos-item">
+              <figure>
+                <a href="#">
+                  <img class="bd-placeholder-img" alt="Partner 1" width="100" height="50"
+                       src="../../assets/img/partner/logo001.svg">
+                </a>
+              </figure>
+            </div>
+          </div>
+          <div>
+            <div class="logos-item">
+              <figure>
+                <a href="#">
+                  <img class="bd-placeholder-img" alt="Partner 2" width="" height=""
+                       src="../../assets/img/partner/logo002.svg">
+                </a>
+              </figure>
+            </div>
+          </div>
+          <div>
+            <div class="logos-item">
+              <figure>
+                <a href="#">
+                  <img class="bd-placeholder-img" alt="Partner 3" width="" height=""
+                       src="../../assets/img/partner/logo003.svg">
+                </a>
+              </figure>
+            </div>
+          </div>
+          <div>
+            <div class="logos-item">
+              <figure>
+                <a href="#">
+                  <img class="bd-placeholder-img" alt="Partner 4" width="" height=""
+                       src="../../assets/img/partner/logo004.svg">
+                </a>
+              </figure>
+            </div>
+          </div>
+          <div>
+            <div class="logos-item">
+              <figure>
+                <a href="#">
+                  <img class="bd-placeholder-img" alt="Partner 5" width="" height=""
+                       src="../../assets/img/partner/logo005.svg">
+                </a>
+              </figure>
+            </div>
+          </div>
+          <div>
+            <div class="logos-item">
+              <figure>
+                <a href="#">
+                  <img class="bd-placeholder-img" alt="Partner 6" width="" height=""
+                       src="../../assets/img/partner/logo006.svg">
+                </a>
+              </figure>
+            </div>
+          </div>
+          <div>
+            <div class="logos-item">
+              <figure>
+                <a href="#">
+                  <img class="bd-placeholder-img" alt="Partner 7" width="" height=""
+                       src="../../assets/img/partner/logo007.svg">
+                </a>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright copyright-horizontal border-top pt-4 mt-4">
+      <ul class="copyright-links">
+        <li><a href="#" class="footer-link">Impressum</a></li>
+        <li><a href="#" class="footer-link">AGB</a></li>
+        <li><a href="#" class="footer-link">Datenschutz</a></li>
+        <li><a href="#" class="footer-link">Cookies</a></li>
+      </ul>
+      <div class="copyright-text">&copy; 2024 by Demo Destination AG, <a href="#" class="footer-link">powered by TSO
+        AG</a></div>
+    </div>
+  </div>
+</footer>

@@ -37,3 +37,5 @@
       description: "A home page template is a predefined layout for the primary page of a website, guiding user navigation and content presentation."
     - name: Home page 3
       description: "A home page template is a predefined layout for the primary page of a website, guiding user navigation and content presentation."
+    - name: Directory hotels
+      description: "An overview page layout for displaying the hotels in a directory."

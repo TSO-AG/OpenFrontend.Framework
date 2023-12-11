@@ -17,8 +17,6 @@
       description: "An archive page template presents a list of posts, articles, or other content in a structured and accessible format."
     - name: Blog
       description: "A blog page template presents a list of posts, articles, or other content in a structured and accessible format."
-    - name: Event detail
-      description: "Event detail template presents detailed information about a specific event."
     - name: Event List
       description: "A calendar page template presents a calendar view of events, making it easy for users to browse and select specific dates."
     - name: POI Detail
@@ -45,3 +43,5 @@
       description: "An overview page layout for displaying the hotel details."
     - name: Blog Tips
       description: "An overview page layout for displaying the blog tips."
+    - name: Event Detail
+      description: "Event detail page layout presents detailed information about a specific event."

@@ -1,0 +1,3 @@
+.sticky-top-header {
+  top: var(--#{$prefix}header-sticky-height, 0);
+}

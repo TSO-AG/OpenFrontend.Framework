@@ -43,3 +43,5 @@
       description: "An overview page layout for displaying the accommodations."
     - name: Hotel Detail
       description: "An overview page layout for displaying the hotel details."
+    - name: Blog Tips
+      description: "An overview page layout for displaying the blog tips."

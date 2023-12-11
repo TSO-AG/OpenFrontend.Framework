@@ -24,4 +24,6 @@ $table-sort-indicator-desc-dark:             url("data:image/svg+xml, <svg xmlns
 // Calendar
 // scss-docs-start calendar-dark-variables
 $calendar-today-bg-color-dark:               rgba(255, 255, 255, .05) !default;
+$calendar-table-cell-shaded-dark:            none !default;
+$calendar-list-event-hover-bg-color-dark:    rgba(255, 255, 255, .05) !default;
 // scss-docs-end calendar-dark-variables

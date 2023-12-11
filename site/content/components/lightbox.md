@@ -21,10 +21,11 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
 
 ### Tabs
 
+{{< example >}}
 <a href="#" data-lightbox-open="lightbox-1">Open lightbox 1</a>
 <a href="#" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-2-2">Open lightbox 1 element 1-2</a>
 
-<div data-of-lightbox="tabs" data-of-lightbox-tabs-setting='
+<div id="lightbox-1" data-of-lightbox="tabs" data-of-lightbox-tabs-setting='
 {
   "id": "lightbox-1",
   "open": false,
@@ -251,7 +252,7 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
     },
     {
       "name": "Mixed Content",
-      "thumbnail": false,
+      "thumbnail": true,
       "elements": [
         {
           "id": "content-1",
@@ -294,7 +295,7 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
     },
     {
       "name": "Vimeo",
-      "thumbnail": true,
+      "thumbnail": false,
       "elements": [
         {
           "id": "content-6",
@@ -319,9 +320,122 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
   ]
 }
 '>
-  Link
 </div>
 
+<nav class="mb-2">
+  <div class="nav nav-tabs nav-tabs-horizontal" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-gallery-1-tab" data-bs-toggle="tab" data-bs-target="#nav-gallery-1" type="button" role="tab" aria-controls="nav-gallery-1" aria-selected="true">Gallery 1</button>
+    <button class="nav-link" id="nav-gallery-2-tab" data-bs-toggle="tab" data-bs-target="#nav-gallery-2" type="button" role="tab" aria-controls="gallery-2" aria-selected="false">Gallery 2</button>
+    <button class="nav-link" id="nav-mixed-content-tab" data-bs-toggle="tab" data-bs-target="#nav-mixed-content" type="button" role="tab" aria-controls="nav-mixed-content" aria-selected="false">Mixed Content</button>
+    <button class="nav-link" id="nav-youtube-tab" data-bs-toggle="tab" data-bs-target="#nav-youtube" type="button" role="tab" aria-controls="nav-youtube" aria-selected="false">Youtube</button>
+    <button class="nav-link" id="nav-vimeo-tab" data-bs-toggle="tab" data-bs-target="#nav-vimeo" type="button" role="tab" aria-controls="nav-vimeo" aria-selected="false">Vimeo</button>
+    <button class="nav-link" id="nav-map-tab" data-bs-toggle="tab" data-bs-target="#nav-map" type="button" role="tab" aria-controls="nav-map" aria-selected="false">Map</button>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-gallery-1" role="tabpanel" aria-labelledby="nav-gallery-1-tab" tabindex="0">
+    <div class="masonry masonry-group-2">
+      <div class="masonry-group-item">
+        <div class="masonry masonry-vertical-1">
+          <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
+            <a href="https://picsum.photos/id/1/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-1-1">
+              <img src="https://picsum.photos/id/1/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="masonry-group-item">
+        <div class="masonry masonry-vertical-5">
+          <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+            <a href="https://picsum.photos/id/2/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-1-2">
+              <img src="https://picsum.photos/id/2/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            </a>
+          </div>
+          <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
+            <a href="https://picsum.photos/id/3/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-1-3">
+              <img src="https://picsum.photos/id/3/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            </a>
+          </div>
+          <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
+            <a href="https://picsum.photos/id/4/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-1-4">
+              <img src="https://picsum.photos/id/4/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="nav-gallery-2" role="tabpanel" aria-labelledby="nav-gallery-2-tab" tabindex="0">
+    <div class="masonry masonry-group-2">
+      <div class="masonry-group-item">
+        <div class="masonry masonry-vertical-1">
+          <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
+            <a href="https://picsum.photos/id/21/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-2-1">
+              <img src="https://picsum.photos/id/21/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="masonry-group-item">
+        <div class="masonry masonry-vertical-5">
+          <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+            <a href="https://picsum.photos/id/22/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-2-2">
+              <img src="https://picsum.photos/id/22/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            </a>
+          </div>
+          <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
+            <a href="https://picsum.photos/id/23/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-2-3">
+              <img src="https://picsum.photos/id/23/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            </a>
+          </div>
+          <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
+            <a href="https://picsum.photos/id/24/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-2-4">
+              <img src="https://picsum.photos/id/24/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="nav-mixed-content" role="tabpanel" aria-labelledby="nav-mixed-content-tab" tabindex="0">
+    <div class="masonry masonry-group-2">
+      <div class="masonry-group-item">
+        <div class="masonry masonry-vertical-1">
+          <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto" data-of-video-play>
+            {{< video class="object-fit-cover" >}}
+          </div>
+        </div>
+      </div>
+      <div class="masonry-group-item">
+        <div class="masonry masonry-vertical-5">
+          <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16" data-of-video-play>
+            {{< video class="object-fit-cover" >}}
+          </div>
+          <div class="masonry-item aspect aspect-16x9 aspect-md-auto" data-of-video-play>
+            {{< video class="object-fit-cover" >}}
+          </div>
+          <div class="masonry-item aspect aspect-16x9 aspect-md-auto" data-of-video-play>
+            {{< video class="object-fit-cover" >}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="nav-youtube" role="tabpanel" aria-labelledby="nav-youtube-tab" tabindex="0">
+    {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="youtube" >}}
+  </div>
+  <div class="tab-pane fade" id="nav-vimeo" role="tabpanel" aria-labelledby="nav-vimeo-tab" tabindex="0">
+    {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="MAP" >}}
+  </div>
+  <div class="tab-pane fade" id="nav-youtube" role="tabpanel" aria-labelledby="nav-youtube-tab" tabindex="0">
+    {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="MAP" >}}
+  </div>
+  <div class="tab-pane fade" id="nav-map" role="tabpanel" aria-labelledby="nav-map-tab" tabindex="0">
+    {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="MAP" >}}
+  </div>
+</div>
+{{< /example >}}
 ### Single image
 
 {{< example >}}
@@ -332,9 +446,9 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
   </div>
 
   <div class="col-md-6">
-    <figure class="img-ratio ratio-4x3">
+    <figure>
       <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox>
-        <img src="assets/media/sample-gallery-1.jpg" class="img-fluid img-thumbnail" alt="">
+        <img src="assets/media/sample-gallery-1.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
@@ -346,30 +460,30 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
 {{< example >}}
 <div class="row">
   <div class="col-3">
-    <figure class="img-ratio ratio-4x3">
+    <figure>
       <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox="image-gallery">
-        <img src="assets/media/sample-gallery-1.jpg" class="img-fluid img-thumbnail" alt="">
+        <img src="assets/media/sample-gallery-1.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
   <div class="col-3">
-    <figure class="img-ratio ratio-4x3">
+    <figure>
       <a href="assets/media/sample-gallery-2.jpg" data-of-lightbox="image-gallery">
-        <img src="assets/media/sample-gallery-2.jpg" class="img-fluid img-thumbnail" alt="">
+        <img src="assets/media/sample-gallery-2.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
   <div class="col-3">
-    <figure class="img-ratio ratio-4x3">
+    <figure>
       <a href="assets/media/sample-gallery-3.jpg" data-of-lightbox="image-gallery">
-        <img src="assets/media/sample-gallery-3.jpg" class="img-fluid img-thumbnail" alt="">
+        <img src="assets/media/sample-gallery-3.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
   <div class="col-3">
-    <figure class="img-ratio ratio-4x3">
+    <figure>
       <a href="assets/media/sample-gallery-4.jpg" data-of-lightbox="image-gallery">
-        <img src="assets/media/sample-gallery-4.jpg" class="img-fluid img-thumbnail" alt="">
+        <img src="assets/media/sample-gallery-4.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
@@ -381,30 +495,30 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
 {{< example >}}
 <div class="row">
   <div class="col-3">
-    <figure class="img-ratio ratio-4x3">
+    <figure>
       <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox="image-captions-gallery" data-title="Est anim dolor qui" data-description="Ad minim sit magna tempor irure dolore mollit qui dolore. Irure ea nisi laborum do voluptate adipisicing amet fugiat nostrud qui anim excepteur. Nulla sit consequat id ut amet esse. Et dolore est non est enim consequat.">
-        <img src="assets/media/sample-gallery-1.jpg" class="img-fluid img-thumbnail" alt="">
+        <img src="assets/media/sample-gallery-1.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
   <div class="col-3">
-    <figure class="img-ratio ratio-4x3">
+    <figure>
       <a href="assets/media/sample-gallery-2.jpg" data-of-lightbox="image-captions-gallery" data-title="Cillum eiusmod sint adipisicing deserunt incididunt" data-description="Ad elit mollit in sunt id incididunt irure. Ea ex id quis laborum aute sit ipsum et proident ex ex dolor mollit. Et est occaecat sit et ex fugiat laboris officia anim amet incididunt nisi labore sit nisi. Nostrud sint incididunt dolore ea aliqua sint qui et reprehenderit tempor voluptate minim amet aute dolore. Nostrud nostrud duis ipsum Lorem aliqua officia. Incididunt dolore anim laborum occaecat consectetur consequat incididunt eu ut laborum enim.">
-        <img src="assets/media/sample-gallery-2.jpg" class="img-fluid img-thumbnail" alt="">
+        <img src="assets/media/sample-gallery-2.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
   <div class="col-3">
-    <figure class="img-ratio ratio-4x3">
+    <figure>
       <a href="assets/media/sample-gallery-3.jpg" data-of-lightbox="image-captions-gallery" data-title="Culpa et Lorem qui" data-description="Fugiat elit cillum cillum in ipsum excepteur consectetur ad nostrud occaecat consectetur aliquip magna ea occaecat. Aliquip do fugiat cupidatat enim aute aliquip. Culpa labore ad sint magna ex veniam dolor nulla velit est ea aliquip. Consequat excepteur ut cillum ipsum ex minim excepteur. Ipsum officia labore eu nostrud Lorem esse ex cupidatat cillum qui ea mollit ex veniam cupidatat. Pariatur do ut reprehenderit deserunt minim culpa qui reprehenderit consectetur aute tempor. Duis sint mollit deserunt adipisicing nisi eiusmod qui incididunt aliqua occaecat commodo consectetur Lorem veniam.">
-        <img src="assets/media/sample-gallery-3.jpg" class="img-fluid img-thumbnail" alt="">
+        <img src="assets/media/sample-gallery-3.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
   <div class="col-3">
-    <figure class="img-ratio ratio-4x3">
+    <figure>
       <a href="assets/media/sample-gallery-4.jpg" data-of-lightbox="image-captions-gallery" data-title="Elit sint in reprehenderit" data-description="Ea enim consequat aute culpa nulla sint nulla reprehenderit pariatur eu. Ut do fugiat irure Lorem labore incididunt adipisicing minim et laborum sint. Elit consequat deserunt minim in minim laborum labore magna ex mollit ad cupidatat elit laborum. Eu dolore veniam magna quis consequat elit. Id id proident cillum deserunt.">
-        <img src="assets/media/sample-gallery-4.jpg" class="img-fluid img-thumbnail" alt="">
+        <img src="assets/media/sample-gallery-4.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
@@ -416,21 +530,21 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
 {{< example >}}
 <div class="row">
   <div class="col-4">
-    <figure class="img-ratio ratio-4x3">
+    <figure>
       <a href="https://vimeo.com/115041822" data-of-lightbox="videos-gallery">
         {{< placeholder width="100%" height="100%" class="img-fluid" text="Vimeo" >}}
       </a>
     </figure>
   </div>
   <div class="col-4">
-    <figure class="img-ratio ratio-4x3">
+    <figure>
       <a href="https://www.youtube-nocookie.com/embed/Ga6RYejo6Hk" data-of-lightbox="videos-gallery">
         {{< placeholder width="100%" height="100%" class="img-fluid" text="YouTube" >}}
       </a>
     </figure>
   </div>
   <div class="col-4">
-    <figure class="img-ratio ratio-4x3">
+    <figure>
       <a href="assets/media/sample-video.mp4" data-of-lightbox="videos-gallery">
         {{< placeholder width="100%" height="100%" class="img-fluid" text="Local video" >}}
       </a>
@@ -454,3 +568,13 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
   </div>
 </div>
 {{< /example >}}
+
+## CSS
+
+### Variables
+
+{{< scss-docs name="lightbox-css-vars" file="src/scss/_lightbox.scss" >}}
+
+### Sass variables
+
+{{< scss-docs name="lightbox-variables" file="src/scss/_variables.scss" >}}

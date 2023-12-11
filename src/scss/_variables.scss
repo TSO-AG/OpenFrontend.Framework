@@ -660,3 +660,18 @@ $header-search-dark-color:                $header-dark-color !default;
 // scss-docs-start copyright-variables
 $copyright-horizontal-breakpoint:   md !default;
 // scss-docs-end copyright-variables
+
+// Lightbox
+// scss-docs-start lightbox-variables
+$lightbox-background: var(--#{$prefix}body-bg) !default;
+$lightbox-header-margin: 1rem !default;
+$lightbox-header-padding-x: 1rem !default;
+$lightbox-header-padding-y: 1rem !default;
+$lightbox-header-border-width: 1px !default;
+$lightbox-header-border-color: var(--#{$prefix}border-color) !default;
+$lightbox-footer-margin: 1rem !default;
+$lightbox-footer-padding-x: $lightbox-header-padding-x !default;
+$lightbox-footer-padding-y: $lightbox-header-padding-y !default;
+$lightbox-footer-border-width: $lightbox-header-border-width !default;
+$lightbox-footer-border-color: $lightbox-header-border-color !default;
+// scss-docs-end lightbox-variables

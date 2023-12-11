@@ -1,33 +1,38 @@
+.glightbox-container {
+  // scss-docs-start lightbox-css-vars
+  --lightbox-offset: 20px;
+  --lightbox-backgorund: #{$lightbox-background};
+  --lightbox-header-padding-x: #{$lightbox-header-padding-x};
+  --lightbox-header-padding-y: #{$lightbox-header-padding-y};
+  --lightbox-header-border-width: #{$lightbox-header-border-width};
+  --lightbox-header-border-color: #{$lightbox-header-border-color};
+  --lightbox-footer-padding-y: #{$lightbox-footer-padding-x};
+  --lightbox-footer-padding-x: #{$lightbox-footer-padding-y};
+  --lightbox-footer-border-width: #{$lightbox-footer-border-width};
+  --lightbox-footer-border-color: #{$lightbox-footer-border-color};
+  // scss-docs-end lightbox-css-vars
+
+  .goverlay {
+    background-color: var(--lightbox-backgorund);
+  }
+}
+
 .lightbox-header {
-  padding-top: 1rem;
+  padding: var(--lightbox-header-padding-y) var(--lightbox-header-padding-x);
+  border-bottom: var(--lightbox-header-border-width) solid var(--lightbox-header-border-color);
+
+  &:empty {
+    display: none;
+  }
 }
 
 .lightbox-footer {
-  width: 100%;
-  padding: 1rem;
-  border-top: 1px solid $border-color;
+  padding: var(--lightbox-footer-padding-y) var(--lightbox-footer-padding-x);
+  border-top: var(--lightbox-footer-border-width) solid var(--lightbox-footer-border-color);
 
-  .swiper {
-    .carousel-button-prev,
-    .carousel-button-next {
-      transform: none // Todo: remove when merging with develop
-    }
-  }
-
-  .swiper-slide {
-    max-width: 70px;
-    aspect-ratio: 1;
-    background: $gray-100;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    &.swiper-slide-active {
-      border: 2px solid $primary;
-    }
+  &.lightbox-footer-hidden,
+  &:empty {
+    display: none;
   }
 }
 
@@ -37,20 +42,123 @@
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
-  background: rgba(#fff, .2);
 
   .gslider {
     @include make-col();
     margin-right: auto;
     margin-left: auto;
+  }
 
+  .gslide {
+    height: 100%;
+  }
+
+  .ginner-container {
     &:has(.gslide-image) { // @TODO - change has to real class
       width: fit-content;
     }
+  }
 
+  .gslide-inline {
+    max-height: calc(100vh - var(--lightbox-header-height, 0px) - var(--lightbox-footer-height, 0px) - var(--lightbox-offset));
+  }
+
+  .gslide-image img {
+    @include transition(max-height .2s);
+  }
+
+  .gslide:not(.zoomed) {
     .gslide-image img {
-      @include transition(max-height .2s);
-      max-height: calc(100vh - var(--lightbox-header-height, 0px) - var(--lightbox-footer-height, 0px) - var(--lightbox-description-height, 0px)) !important;
+      max-height: calc(100vh - var(--lightbox-header-height, 0px) - var(--lightbox-footer-height, 0px) - var(--lightbox-description-height, 0px) - var(--lightbox-offset)) !important;  // stylelint-disable-line declaration-no-important
     }
+  }
+
+  .gslide.zoomed {
+    margin-top: calc(var(--lightbox-header-height, 0px) * -1);
+    margin-bottom: calc(var(--lightbox-footer-height, 0px) * -1);
+  }
+}
+
+.gallery-thumbnails {
+  .swiper-slide {
+    max-width: 70px;
+    aspect-ratio: 1;
+    background: $gray-100;
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      border: 0 solid $primary;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &.swiper-slide-active {
+      &::before {
+        border-width: 2px;
+      }
+    }
+  }
+}
+
+/* Skin */
+html .glightbox-clean {
+  .gslide-description {
+    background: #fff;
+  }
+
+  .gdesc-inner {
+    padding: 1em;
+  }
+
+  .gslide-title {
+    margin-bottom: .25em;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .gslide-desc {
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+  }
+
+  .desc-bottom {
+    .gslide-description {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      color: $white;
+      background: rgba($black, .2);
+      backdrop-filter: blur(5px);
+      transform: translateX(-50%);
+    }
+
+    .gslide-title {
+      color: inherit;
+    }
+  }
+}
+
+.goverlay.gfadeOut + .gcontainer { // stylelint-disable-line selector-class-pattern
+  .lightbox-header,
+  .lightbox-footer {
+    animation: gfadeOut .5s ease;
+  }
+}
+
+.goverlay.gfadeIn + .gcontainer { // stylelint-disable-line selector-class-pattern
+  .lightbox-header,
+  .lightbox-footer {
+    animation: gfadeIn .5s ease;
   }
 }

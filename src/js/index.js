@@ -25,6 +25,9 @@ window.openFrontend = {
   get ElementsFilter() {
     return new Promise(resolve => import(/* webpackChunkName: "of-elements-filter" */ './components/elements-filter').then(v => resolve(v.default)))
   },
+  get Lightbox() {
+    return new Promise(resolve => import(/* webpackChunkName: "of-lightbox" */ './components/lightbox').then(v => resolve(v.default)))
+  },
   get Modal() {
     return new Promise(resolve => import(/* webpackChunkName: "of-modal" */ './components/modal').then(v => resolve(v.default)))
   },

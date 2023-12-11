@@ -7,14 +7,12 @@ import { Autoplay, Navigation, Manipulation } from 'swiper/modules'
 
 Swiper.use([Navigation, Autoplay, Manipulation])
 
-/**
- * Constants
- */
 const NAME = 'lightbox'
 const TAB_ACTIVE_CLASS = 'active'
 const LIGHTBOX_WRAPPER_CLASS = 'lightbox-wrapper'
 const LIGHTBOX_HEADER_ELEMENT_CLASS = 'lightbox-header'
 const LIGHTBOX_FOOTER_ELEMENT_CLASS = 'lightbox-footer'
+const LIGHTBOX_FOOTER_ELEMENT_HIDDEN_CLASS = 'lightbox-footer-hidden'
 const LIGHTBOX_HTML = `
   <div id="glightbox-body" class="glightbox-container" tabindex="-1" role="dialog" aria-hidden="false">
     <div class="gloader visible"></div>
@@ -31,19 +29,18 @@ const LIGHTBOX_HTML = `
     </div>
   </div>
 `
-
 const CAROUSEL_HTML = `
-<div class="gallery-thumbnails">
+<div class="gallery-thumbnails carousel carousel-navigation-center">
   <div class="swiper">
-    <div class="swiper-wrapper" id="swiper-wrapper"></div>
-     <div class="carousel-navigation carousel-navigation--center">
-     <button type="button" class="carousel-button-prev btn btn-square btn-primary">
+    <div class="swiper-wrapper"></div>
+  </div>
+  <div class="carousel-navigation">
+    <button type="button" class="carousel-button-prev btn btn-square btn-primary">
       <i class="ofi-caret-left-fill"></i>
     </button>
     <button type="button" class="carousel-button-next btn btn-square btn-primary">
       <i class="ofi-caret-right-fill"></i>
     </button>
-  </div>
   </div>
 </div>
 `
@@ -67,15 +64,10 @@ const DefaultType = {
 }
 
 const Default = {
-  tabs: undefined,
   open: false,
+  tabs: undefined,
 }
 
-/**
- * Represents a lightbox component.
- *
- * @extends BaseComponent
- */
 class Lightbox extends BaseComponent {
   constructor(element, config) {
     super(element, config)
@@ -90,18 +82,10 @@ class Lightbox extends BaseComponent {
       lightboxHTML: LIGHTBOX_HTML
     })
 
+    this._activeTabIndex = 0
+    this._activeElementIndex = 0
     this._tabLinks = []
     this._initLightbox()
-
-    // TODO: Open the lightbox after link click
-    const links = document.querySelectorAll(`[data-lightbox-open="${this._config.id}"]`)
-
-    for (const link of links) {
-      link.addEventListener('click', e => {
-        e.preventDefault()
-        this.openLightbox(link.dataset.lightboxElement)
-      })
-    }
   }
 
   // Getters
@@ -119,44 +103,72 @@ class Lightbox extends BaseComponent {
 
   // Public
   openLightbox(elementId) {
-    const { tabIndex, elementIndex } = this._findElementById(elementId)
+    ({ tabIndex: this._activeTabIndex, elementIndex: this._activeElementIndex } = this._findElementById(elementId))
 
-    this._setCurrentTab(tabIndex)
+    this._setActiveTab(this._activeTabIndex)
     this._setLightboxElements()
 
-    if (elementIndex) {
-      this._lightbox.openAt(elementIndex)
+    if (this._activeElementIndex) {
+      this._lightbox.openAt(this._activeElementIndex)
     } else {
       this._lightbox.open()
     }
+  }
 
+  closeLightbox() {
+    for (const link of this._tabLinks) {
+      link.remove()
+    }
+
+    this._tabLinks = []
+
+    if (this._lightboxHeader) {
+      this._lightboxHeader.remove()
+      this._lightboxHeader = null
+    }
+
+    if (this._lightboxFooter) {
+      this._lightboxFooter.remove()
+      this._lightboxFooter = null
+    }
+
+    this._carousel = null
+  }
+
+  // Private
+  _initLightbox() {
+    if (this._config.open) {
+      this.openLightbox(typeof this._config.open === 'string' ? this._config.open : null)
+    }
+
+    // Open the lightbox after link click
+    const links = document.querySelectorAll(`[data-lightbox-open="${this._config.id}"]`)
+
+    for (const link of links) {
+      link.addEventListener('click', e => {
+        e.preventDefault()
+        this.openLightbox(link.dataset.lightboxElement)
+      })
+    }
+
+    // Create the necessary properties and add events to new elements after opening the lightbox
+    this._lightbox.on('open', () => {
+      this._openLightbox()
+    })
+
+    // Clean everything up when lightbox is shut down
+    this._lightbox.on('close', () => {
+      this.closeLightbox()
+    })
+  }
+
+  _openLightbox() {
     this._prepareHeader()
     this._prepareFooter()
     this._prepareTabs()
     this._prepareCarousel()
-    this._carouselUpdate()
+    this._setCarouselElements()
     this._initTriggers()
-  }
-
-  closeLightbox() {
-    // TODO
-  }
-
-  // Private
-  _findElementById(elementId) {
-    if (elementId) {
-      for (let tabIndex = 0; tabIndex < this._config.tabs.length; tabIndex++) {
-        const tab = this._config.tabs[tabIndex]
-        for (let elementIndex = 0; elementIndex < tab.elements.length; elementIndex++) {
-          const element = tab.elements[elementIndex]
-          if (element.id === elementId) {
-            return { tabIndex, elementIndex }
-          }
-        }
-      }
-    }
-
-    return { tabIndex: 0, elementIndex: 0 }
   }
 
   _prepareHeader() {
@@ -175,8 +187,7 @@ class Lightbox extends BaseComponent {
     }
 
     const tabs = document.createElement('ul.nav.nav-tabs')
-    const activeTabIndex = this._currentTabIndex ? this._currentTabIndex : 0
-    tabs.classList.add('nav', 'nav-tabs')
+    tabs.classList.add('nav', 'nav-underline')
 
     for (const [index, tab] of this._config.tabs.entries()) {
       const item = document.createElement('li')
@@ -190,8 +201,8 @@ class Lightbox extends BaseComponent {
 
       this._tabLinks.push(link)
 
-      if (index === activeTabIndex) {
-        link.classList.add('active')
+      if (index === this._activeTabIndex) {
+        link.classList.add(TAB_ACTIVE_CLASS)
       }
 
       item.append(link)
@@ -201,64 +212,87 @@ class Lightbox extends BaseComponent {
     this._lightboxHeader.append(tabs)
   }
 
-  _initLightbox() {
-    if (this._config.open) {
-      this.openLightbox(typeof this._config.open === 'string' ? this._config.open : null)
-    }
-  }
-
-  _setCurrentTab(activeTabIndex = 0) {
-    this._currentTabIndex = activeTabIndex
-    this._currentTab = this._config.tabs[activeTabIndex]
-  }
-
-  _changeTab(id) {
-    this._setCurrentTab(id)
-    this._setLightboxElements()
-    this._carouselUpdate()
-  }
-
-  _setLightboxElements() {
-    this._lightbox.setElements(this._currentTab.elements)
-  }
-
   _prepareCarousel() {
     if (!this._lightboxFooter) {
       return
     }
 
-    this._lightboxFooter.append(this._initCarousel())
-    const carouselContainer = this._lightboxFooter.querySelector('.swiper')
+    // Prepare carousel element
+    const tempContainer = document.createElement('div')
+    tempContainer.innerHTML = CAROUSEL_HTML
+    const carouselWrapper = tempContainer.firstElementChild
+
+    this._lightboxFooter.append(carouselWrapper)
+    const carouselElement = carouselWrapper.querySelector('.swiper')
+
+    if (!carouselElement) {
+      return
+    }
 
     // Initialize Swiper
-    this._carousel = new Swiper(carouselContainer, CAROUSEL_SETTINGS)
+    this._carousel = new Swiper(carouselElement, CAROUSEL_SETTINGS)
 
+    // Change the lightbox slide when the carousel slide has changed and they are different
     this._carousel.on('slideChange', () => {
-      this._lightbox.goToSlide(this._carousel.realIndex)
+      if (this._blockCarouselChange) {
+        return
+      }
+
+      this._setActiveElement(this._carousel.realIndex)
     })
   }
 
-  _carouselUpdate() {
+  _changeTab(tabIndex, elementIndex = 0) {
+    this._activeElementIndex = elementIndex
+    this._setActiveTab(tabIndex)
+    this._setLightboxElements()
+    this._setCarouselElements()
+  }
+
+  _setActiveTab(activeTabIndex = 0) {
+    this._activeTabIndex = activeTabIndex
+    this._activeTab = this._config.tabs[activeTabIndex]
+    this._setActiveTabClass(activeTabIndex)
+  }
+
+  _setLightboxElements() {
+    // This is needed to avoid the error of getting the previous slide configuration when I set up new lightbox slides because it is falsely set
+    this._lightbox.prevActiveSlideIndex = null
+    this._lightbox.prevActiveSlide = null
+    this._lightbox.setElements(this._activeTab.elements)
+  }
+
+  _setCarouselElements() {
     if (!this._carousel) {
       return
     }
 
+    // Hide footer when active tab has no thumbnails
+    this._lightboxFooter.classList.toggle(LIGHTBOX_FOOTER_ELEMENT_HIDDEN_CLASS, !this._activeTab.thumbnail)
+
+    // Prepare and insert new slides into the carousel
+    this._blockCarouselChange = true
     this._carousel.disable()
     this._carousel.removeAllSlides()
     const slides = this._generateCarouselSlides()
     this._carousel.appendSlide(slides)
     this._carousel.enable()
-    this._carousel.slideTo(this._lightbox.index, 0)
+    this._blockCarouselChange = false
+
+    // Scroll to slide only when slide exist in carousel
+    if (this._carousel.slides.length > this._activeElementIndex) {
+      this._carousel.slideTo(this._activeElementIndex, 0)
+    }
   }
 
   _generateCarouselSlides() {
     const slides = []
 
-    if (!this._currentTab.thumbnail) {
+    if (!this._activeTab.thumbnail) {
       return slides
     }
 
-    for (const element of this._currentTab.elements) {
+    for (const element of this._activeTab.elements) {
       const slide = document.createElement('div')
       slide.classList.add('swiper-slide')
 
@@ -278,7 +312,6 @@ class Lightbox extends BaseComponent {
   }
 
   _initTriggers() {
-
     // Change tab when click on the link
     for (const link of this._tabLinks) {
       link.addEventListener('click', event => {
@@ -290,26 +323,30 @@ class Lightbox extends BaseComponent {
         }
 
         this._changeTab(link.dataset.tab)
-        this._setActiveTabClass(link.dataset.tab)
       })
     }
 
     // Sync lightbox slide with thumbnails
-    this._lightbox.on('slide_before_change', ({ prev, current }) => {
-      if (this._carousel && this._carousel.slides.length >= current.index) {
-        this._carousel.slideTo(current.index)
-      }
+    this._lightbox.on('slide_before_change', ({ current }) => {
+      this._setActiveElement(current.index)
     })
 
     // After changing the slide, set the maximum image height to fit in the window
-    this._lightbox.on('slide_changed', ({ prev, current }) => {
+    this._lightbox.on('slide_changed', ({ current }) => {
       this._setSlideHeight(current)
     })
+  }
 
-    // Clean everything up when lightnox is shut down
-    this._lightbox.on('close', () => {
-      this.closeLightbox();
-    });
+  _setActiveElement(index = this._activeElementIndex) {
+    this._activeElementIndex = index
+
+    if (this._carousel && this._carousel.slides.length >= index) {
+      this._carousel.slideTo(this._activeElementIndex)
+    }
+
+    if (this._lightbox.index !== this._activeElementIndex) {
+      this._lightbox.goToSlide(this._activeElementIndex)
+    }
   }
 
   _setActiveTabClass(activeTabIndex) {
@@ -329,21 +366,29 @@ class Lightbox extends BaseComponent {
       removeResizeObserver(this._descriptionObserver, this._currentDescription)
     }
 
-    this._currentDescription = currentSlide.slideNode.querySelector('.gslide-description')
+    this._currentDescription = currentSlide?.slideNode?.querySelector('.gslide-description')
 
-    if (this._currentDescription && this._currentDescription.textContent) {
+    if (this._currentDescription && this._currentDescription.textContent && window.getComputedStyle(this._currentDescription).position !== 'absolute') {
       this._descriptionObserver = createResizeObserver(this._currentDescription, 'description')
     } else {
       document.documentElement.style.setProperty('--lightbox-description-height', '0px')
     }
   }
 
-  _initCarousel() {
-    const tempContainer = document.createElement('div')
-    tempContainer.innerHTML = CAROUSEL_HTML
+  _findElementById(elementId) {
+    if (elementId) {
+      for (let tabIndex = 0; tabIndex < this._config.tabs.length; tabIndex++) {
+        const tab = this._config.tabs[tabIndex]
+        for (let elementIndex = 0; elementIndex < tab.elements.length; elementIndex++) {
+          const element = tab.elements[elementIndex]
+          if (element.id === elementId) {
+            return { tabIndex, elementIndex }
+          }
+        }
+      }
+    }
 
-    // Get references to the elements inside the template
-    return tempContainer.querySelector('.swiper')
+    return { tabIndex: 0, elementIndex: 0 }
   }
 }
 
@@ -362,7 +407,7 @@ export function initMultiple(els) {
   }
 
   for (const group of groups) {
-    GLightbox({
+    new GLightbox({
       selector: `[data-of-lightbox="${group}"]`,
     })
   }
@@ -375,6 +420,7 @@ function updateCSSVariable(element, variableName) {
 
 function createResizeObserver(element, variableName) {
   const resizeObserver = new ResizeObserver(entries => {
+    // eslint-disable-next-line no-unused-vars
     for (const entry of entries) {
       updateCSSVariable(element, variableName)
     }

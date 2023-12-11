@@ -29,15 +29,9 @@
 - category: Pages
   description: "Pages are built with OpenFrontend components that can be used as a starting point for creating multiple web pages with a similar design and structure."
   examples:
-    - name: Home page
-      description: "A home page template is a predefined layout for the primary page of a website, guiding user navigation and content presentation."
-    - name: Home page 2
-      description: "A home page template is a predefined layout for the primary page of a website, guiding user navigation and content presentation."
-    - name: Home page 3
-      description: "A home page template is a predefined layout for the primary page of a website, guiding user navigation and content presentation."
     - name: Home - Destination AG
       description: "A home page template is a predefined layout for the primary page of a website, guiding user navigation and content presentation."
-    - name: Directory hotels
+    - name: Directory Hotels
       description: "An overview page layout for displaying the hotels in a directory."
     - name: Routing - Accommodations
       description: "An overview page layout for displaying the accommodations."

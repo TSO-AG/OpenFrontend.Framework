@@ -1,3 +1,7 @@
+%heading {
+  @extend %text-hyphens;
+}
+
 .heading-action {
   --#{$prefix}headings-action-margin-bottom: #{$headings-action-margin-bottom};
   display: flex;

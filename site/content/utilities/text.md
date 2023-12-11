@@ -137,6 +137,22 @@ Decorate text in components with text decoration classes.
 <a href="#" class="text-decoration-none">This link has its text decoration removed</a>
 {{< /example >}}
 
+## Text hyphens
+
+The `.text-hyphens` class allows long words to be properly broken and wrapped within its container. It is helpful in maintaining the layout's integrity, especially in responsive designs where space can be limited.
+
+This class creates auto hyphens and wraps the text to the next line when the word exceeds the container's width. The class is also automatically applied to all headers, breaking words correctly and evenly with hyphens (-).
+
+Here's how to apply it:
+
+{{< example >}}
+<div style="width: 120px">
+  <p class='text-hyphens'>
+    Pneumonoultramicroscopicsilicovolcanoconiosis!
+  </p>
+</div>
+{{< /example >}}
+
 ## CSS
 
 ### Sass variables

@@ -16,6 +16,11 @@
   }
 }
 
+// Make sure that elements with certain aspect-ratio inside can adjust height
+.masonry-item > .aspect {
+  overflow: visible;
+}
+
 // Group
 .masonry-group-2 {
   @include media-breakpoint-up($masonry-group-breakpoint) {
@@ -102,6 +107,7 @@
 
 .masonry-vertical-8 {
   @include media-breakpoint-up($masonry-breakpoint) {
+    grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
   }
 }

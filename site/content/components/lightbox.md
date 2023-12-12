@@ -8,320 +8,420 @@ toc: true
 
 ## How it works
 
-The lightbox is powered by the [GLightbox](https://github.com/biati-digital/glightbox) plugin.
+The lightbox can open content of multiple types, including images, videos, iframes and inline HTML. Each item can be opened in single mode or as element of a bigger group.
 
-- Use the `data-of-lightbox` attribute on the link elements to initialize the lightbox.
-- The `data-of-lightbox` attribute accepts the string value, which should be used to group the lightbox items. For example: `data-of-lightbox="gallery-123"`.
+The lightbox groups may contain extra configuration options like tabs or thumbnails.
 
-{{< callout warning >}}
-You should always define the `data-of-lightbox` attribute value to avoid unexpected mixing of different galleries on one page.
-{{< /callout >}}
+The component uses the [GLightbox](https://github.com/biati-digital/glightbox) library.
 
-## Examples
+## Usage
 
-### Tabs
+### Open a single item
+
+To open a single item in the lightbox, add the `data-of-lightbox` attribute to `<a>` that points to the full-size image. The `data-of-lightbox` optionally accepts the item options (e.g. description) in a JSON format.
 
 {{< example >}}
-<a href="#" data-lightbox-open="lightbox-1">Open lightbox 1</a>
-<a href="#" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-2-2">Open lightbox 1 element 1-2</a>
+<figure class="w-50">
+  <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox>
+    <img src="assets/media/sample-gallery-1.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
+  </a>
+</figure>
+{{< /example >}}
 
-<div id="lightbox-1" data-of-lightbox="tabs" data-of-lightbox-tabs-setting='
-{
-  "id": "lightbox-1",
-  "open": false,
-  "tabs": [
-    {
-      "name": "Gallery 1",
-      "thumbnail": true,
-      "elements": [
-        {
-          "id": "gallery-1-1",
-          "href": "https://picsum.photos/id/1/1200/800",
-          "thumbnail": "https://picsum.photos/id/1/70",
-          "type": "image",
-          "title": "My Title",
-          "description": "Example"
-        },
-        {
-          "id": "gallery-1-2",
-          "href": "https://picsum.photos/id/2/1200/800",
-          "thumbnail": "https://picsum.photos/id/2/70",
-          "type": "image",
-          "alt": "image text alternatives",
-          "title": "My Title 2",
-          "description": "Example 2"
-        },
-        {
-          "id": "gallery-1-3",
-          "href": "https://picsum.photos/id/3/1200/800",
-          "thumbnail": "https://picsum.photos/id/3/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-4",
-          "href": "https://picsum.photos/id/4/1200/800",
-          "thumbnail": "https://picsum.photos/id/4/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-5",
-          "href": "https://picsum.photos/id/5/1200/800",
-          "thumbnail": "https://picsum.photos/id/5/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-6",
-          "href": "https://picsum.photos/id/6/1200/800",
-          "thumbnail": "https://picsum.photos/id/6/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-7",
-          "href": "https://picsum.photos/id/7/1200/800",
-          "thumbnail": "https://picsum.photos/id/7/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-8",
-          "href": "https://picsum.photos/id/8/1200/800",
-          "thumbnail": "https://picsum.photos/id/8/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-9",
-          "href": "https://picsum.photos/id/9/1200/800",
-          "thumbnail": "https://picsum.photos/id/9/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-10",
-          "href": "https://picsum.photos/id/10/1200/800",
-          "thumbnail": "https://picsum.photos/id/10/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-11",
-          "href": "https://picsum.photos/id/11/1200/800",
-          "thumbnail": "https://picsum.photos/id/11/70",
-          "type": "image",
-          "title": "My Title",
-          "description": "Example"
-        },
-        {
-          "id": "gallery-1-12",
-          "href": "https://picsum.photos/id/12/1200/800",
-          "thumbnail": "https://picsum.photos/id/12/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-13",
-          "href": "https://picsum.photos/id/13/1200/800",
-          "thumbnail": "https://picsum.photos/id/13/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-14",
-          "href": "https://picsum.photos/id/14/1200/800",
-          "thumbnail": "https://picsum.photos/id/14/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-15",
-          "href": "https://picsum.photos/id/15/1200/800",
-          "thumbnail": "https://picsum.photos/id/15/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-16",
-          "href": "https://picsum.photos/id/16/1200/800",
-          "thumbnail": "https://picsum.photos/id/16/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-17",
-          "href": "https://picsum.photos/id/17/1200/800",
-          "thumbnail": "https://picsum.photos/id/17/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-18",
-          "href": "https://picsum.photos/id/18/1200/800",
-          "thumbnail": "https://picsum.photos/id/18/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-19",
-          "href": "https://picsum.photos/id/19/1200/800",
-          "thumbnail": "https://picsum.photos/id/19/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-1-20",
-          "href": "https://picsum.photos/id/20/1200/800",
-          "thumbnail": "https://picsum.photos/id/20/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        }
-      ]
-    },
-    {
-      "name": "Gallery 2",
-      "thumbnail": true,
-      "elements": [
-        {
-          "id": "gallery-2-1",
-          "href": "https://picsum.photos/id/21/1200/800",
-          "thumbnail": "https://picsum.photos/id/21/70",
-          "type": "image",
-          "title": "My Title",
-          "description": "Example"
-        },
-        {
-          "id": "gallery-2-2",
-          "href": "https://picsum.photos/id/22/1200/800",
-          "thumbnail": "https://picsum.photos/id/22/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-2-3",
-          "href": "https://picsum.photos/id/23/1200/800",
-          "thumbnail": "https://picsum.photos/id/23/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-2-4",
-          "href": "https://picsum.photos/id/24/1200/800",
-          "thumbnail": "https://picsum.photos/id/24/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-2-5",
-          "href": "https://picsum.photos/id/25/1200/800",
-          "thumbnail": "https://picsum.photos/id/25/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-2-6",
-          "href": "https://picsum.photos/id/26/1200/800",
-          "thumbnail": "https://picsum.photos/id/26/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-2-7",
-          "href": "https://picsum.photos/id/27/1200/800",
-          "thumbnail": "https://picsum.photos/id/27/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-2-8",
-          "href": "https://picsum.photos/id/28/1200/800",
-          "thumbnail": "https://picsum.photos/id/28/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "gallery-2-9",
-          "href": "https://picsum.photos/id/29/1200/800",
-          "thumbnail": "https://picsum.photos/id/29/70",
-          "type": "image",
-          "alt": "image text alternatives"
-        }
-      ]
-    },
-    {
-      "name": "Mixed Content",
-      "thumbnail": true,
-      "elements": [
-        {
-          "id": "content-1",
-          "href": "https://picsum.photos/id/31/1200/800",
-          "type": "image",
-          "title": "My Title",
-          "description": "Example"
-        },
-        {
-          "id": "content-2",
-          "href": "https://picsum.photos/id/32/1200/800",
-          "type": "image",
-          "alt": "image text alternatives"
-        },
-        {
-          "id": "content-3",
-          "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
-          "type": "video",
-          "source": "youtube",
-          "width": 900
-        },
-        {
-          "id": "content-4",
-          "content": "<p>This will append some html inside the slide</p>"
-        }
-      ]
-    },
-    {
-      "name": "Youtube",
-      "thumbnail": true,
-      "elements": [
-        {
-          "id": "content-5",
-          "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
-          "type": "video",
-          "source": "youtube",
-          "width": 900
-        }
-      ]
-    },
-    {
-      "name": "Vimeo",
-      "thumbnail": false,
-      "elements": [
-        {
-          "id": "content-6",
-          "href": "https://vimeo.com/115041822",
-          "type": "video",
-          "source": "vimeo",
-          "width": 900
-        }
-      ]
-    },
-    {
-      "name": "Map",
-      "thumbnail": true,
-      "elements": [
-        {
-          "id": "content-7",
-          "href": "https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed",
-          "width": 900
-        }
-      ]
-    }
-  ]
-}
-'>
+### Open multiple items
+
+Multiple items can be grouped into the lightbox gallery using a common lightbox `group` identifier:
+
+{{< example >}}
+<div class="row">
+  <div class="col-3">
+    <figure>
+      <a data-of-lightbox='{ "group": "image-gallery", "identifier": "image-1" }' href="assets/media/sample-gallery-1.jpg">
+        <img src="assets/media/sample-gallery-1.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
+      </a>
+    </figure>
+  </div>
+  <div class="col-3">
+    <figure>
+      <a data-of-lightbox='{ "group": "image-gallery", "identifier": "image-2" }' href="assets/media/sample-gallery-2.jpg">
+        <img src="assets/media/sample-gallery-2.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
+      </a>
+    </figure>
+  </div>
+  <div class="col-3">
+    <figure>
+      <a data-of-lightbox='{ "group": "image-gallery", "identifier": "image-3" }' href="assets/media/sample-gallery-3.jpg">
+        <img src="assets/media/sample-gallery-3.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
+      </a>
+    </figure>
+  </div>
+  <div class="col-3">
+    <figure>
+      <a data-of-lightbox='{ "group": "image-gallery", "identifier": "image-4" }' href="assets/media/sample-gallery-4.jpg">
+        <img src="assets/media/sample-gallery-4.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
+      </a>
+    </figure>
+  </div>
+</div>
+{{< /example >}}
+
+### Lightbox triggers
+
+You can define some custom lightbox triggers, that are not actual lightbox items. Simply use the `data-of-lightbox-open` attribute on anything that is clickable, and provide the lightbox group identifier.
+
+{{< example >}}
+<button data-of-lightbox-open="image-gallery" class="btn btn-primary">Open image gallery</button>
+{{< /example >}}
+
+You can reference an exact item in the opened lightbox, by adding the lightbox item identifier in the following format: `<group_identifier>:<item_identifier>`.
+
+{{< example >}}
+<button data-of-lightbox-open="image-gallery:image-3" class="btn btn-primary">Open my favorite image</button>
+{{< /example >}}
+
+### Custom definition
+
+You can also define the lightbox items directly in the lightbox options. It may be useful if you don't want to show any image thumbs on the website, but still open the image lightbox on trigger element click. You can read more about lightbox options in the next section.
+
+The lightbox trigger must reference the `<script>` tag. In the `data-of-lightbox-open` attribute you can omit the `of-lightbox-` prefix, as shown on the example below.
+
+{{< example >}}
+<button data-of-lightbox-open="custom" class="btn btn-primary">Open a hidden gallery</button>
+
+<script id="of-lightbox-custom" type="application/json">
+  {
+    "items": [
+      {
+        "identifier": "custom-1",
+        "type": "image",
+        "href": "https://picsum.photos/id/1/1200/800",
+        "thumbnail": "https://picsum.photos/id/1/70",
+        "title": "My Title",
+        "description": "Example"
+      },
+      {
+        "identifier": "custom-2",
+        "type": "video",
+        "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
+        "source": "youtube"
+      },
+      {
+        "identifier": "custom-3",
+        "type": "inline",
+        "content": "<p>This will append some html inside the slide</p>"
+      }
+    ]
+  }
+</script>
+{{< /example >}}
+
+### Lightbox with tabs
+
+Having a complex gallery with different groups and mixed content types is not a problem with the tabs feature.
+
+{{< example >}}
+<!-- Lightbox options -->
+<script id="of-lightbox-tabs" type="application/json">
+  {
+    "tabs": [
+      {
+        "name": "Gallery 1",
+        "thumbnails": true,
+        "items": [
+          {
+            "identifier": "gallery-1-1",
+            "href": "https://picsum.photos/id/1/1200/800",
+            "thumbnail": "https://picsum.photos/id/1/70",
+            "type": "image",
+            "title": "My Title",
+            "description": "Example"
+          },
+          {
+            "identifier": "gallery-1-2",
+            "href": "https://picsum.photos/id/2/1200/800",
+            "thumbnail": "https://picsum.photos/id/2/70",
+            "type": "image",
+            "alt": "image text alternatives",
+            "title": "My Title 2",
+            "description": "Example 2"
+          },
+          {
+            "identifier": "gallery-1-3",
+            "href": "https://picsum.photos/id/3/1200/800",
+            "thumbnail": "https://picsum.photos/id/3/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-4",
+            "href": "https://picsum.photos/id/4/1200/800",
+            "thumbnail": "https://picsum.photos/id/4/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-5",
+            "href": "https://picsum.photos/id/5/1200/800",
+            "thumbnail": "https://picsum.photos/id/5/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-6",
+            "href": "https://picsum.photos/id/6/1200/800",
+            "thumbnail": "https://picsum.photos/id/6/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-7",
+            "href": "https://picsum.photos/id/7/1200/800",
+            "thumbnail": "https://picsum.photos/id/7/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-8",
+            "href": "https://picsum.photos/id/8/1200/800",
+            "thumbnail": "https://picsum.photos/id/8/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-9",
+            "href": "https://picsum.photos/id/9/1200/800",
+            "thumbnail": "https://picsum.photos/id/9/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-10",
+            "href": "https://picsum.photos/id/10/1200/800",
+            "thumbnail": "https://picsum.photos/id/10/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-11",
+            "href": "https://picsum.photos/id/11/1200/800",
+            "thumbnail": "https://picsum.photos/id/11/70",
+            "type": "image",
+            "title": "My Title",
+            "description": "Example"
+          },
+          {
+            "identifier": "gallery-1-12",
+            "href": "https://picsum.photos/id/12/1200/800",
+            "thumbnail": "https://picsum.photos/id/12/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-13",
+            "href": "https://picsum.photos/id/13/1200/800",
+            "thumbnail": "https://picsum.photos/id/13/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-14",
+            "href": "https://picsum.photos/id/14/1200/800",
+            "thumbnail": "https://picsum.photos/id/14/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-15",
+            "href": "https://picsum.photos/id/15/1200/800",
+            "thumbnail": "https://picsum.photos/id/15/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-16",
+            "href": "https://picsum.photos/id/16/1200/800",
+            "thumbnail": "https://picsum.photos/id/16/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-17",
+            "href": "https://picsum.photos/id/17/1200/800",
+            "thumbnail": "https://picsum.photos/id/17/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-18",
+            "href": "https://picsum.photos/id/18/1200/800",
+            "thumbnail": "https://picsum.photos/id/18/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-19",
+            "href": "https://picsum.photos/id/19/1200/800",
+            "thumbnail": "https://picsum.photos/id/19/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-1-20",
+            "href": "https://picsum.photos/id/20/1200/800",
+            "thumbnail": "https://picsum.photos/id/20/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          }
+        ]
+      },
+      {
+        "name": "Gallery 2",
+        "thumbnails": true,
+        "items": [
+          {
+            "identifier": "gallery-2-1",
+            "href": "https://picsum.photos/id/21/1200/800",
+            "thumbnail": "https://picsum.photos/id/21/70",
+            "type": "image",
+            "title": "My Title",
+            "description": "Example"
+          },
+          {
+            "identifier": "gallery-2-2",
+            "href": "https://picsum.photos/id/22/1200/800",
+            "thumbnail": "https://picsum.photos/id/22/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-2-3",
+            "href": "https://picsum.photos/id/23/1200/800",
+            "thumbnail": "https://picsum.photos/id/23/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-2-4",
+            "href": "https://picsum.photos/id/24/1200/800",
+            "thumbnail": "https://picsum.photos/id/24/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-2-5",
+            "href": "https://picsum.photos/id/25/1200/800",
+            "thumbnail": "https://picsum.photos/id/25/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-2-6",
+            "href": "https://picsum.photos/id/26/1200/800",
+            "thumbnail": "https://picsum.photos/id/26/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-2-7",
+            "href": "https://picsum.photos/id/27/1200/800",
+            "thumbnail": "https://picsum.photos/id/27/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-2-8",
+            "href": "https://picsum.photos/id/28/1200/800",
+            "thumbnail": "https://picsum.photos/id/28/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "gallery-2-9",
+            "href": "https://picsum.photos/id/29/1200/800",
+            "thumbnail": "https://picsum.photos/id/29/70",
+            "type": "image",
+            "alt": "image text alternatives"
+          }
+        ]
+      },
+      {
+        "name": "Mixed Content",
+        "thumbnails": true,
+        "items": [
+          {
+            "identifier": "content-1",
+            "href": "https://picsum.photos/id/31/1200/800",
+            "type": "image",
+            "title": "My Title",
+            "description": "Example"
+          },
+          {
+            "identifier": "content-2",
+            "href": "https://picsum.photos/id/32/1200/800",
+            "type": "image",
+            "alt": "image text alternatives"
+          },
+          {
+            "identifier": "content-3",
+            "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
+            "type": "video",
+            "source": "youtube",
+            "width": 900
+          },
+          {
+            "identifier": "content-4",
+            "content": "<p>This will append some html inside the slide</p>"
+          }
+        ]
+      },
+      {
+        "name": "Youtube",
+        "thumbnails": true,
+        "items": [
+          {
+            "identifier": "content-5",
+            "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
+            "type": "video",
+            "source": "youtube",
+            "width": 900
+          }
+        ]
+      },
+      {
+        "name": "Vimeo",
+        "thumbnails": false,
+        "items": [
+          {
+            "identifier": "content-6",
+            "href": "https://vimeo.com/115041822",
+            "type": "video",
+            "source": "vimeo",
+            "width": 900
+          }
+        ]
+      },
+      {
+        "name": "Map",
+        "thumbnails": true,
+        "items": [
+          {
+            "identifier": "content-7",
+            "href": "https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed",
+            "width": 900
+          }
+        ]
+      }
+    ]
+  }
+</script>
+
+<!-- Lightbox triggers -->
+<div class="mb-4">
+  <a href="#" class="btn btn-primary" data-lightbox-open="tabs">Open lightbox with tabs</a>
+  <a href="#" class="btn btn-primary" data-lightbox-open="tabs:gallery-2-2">Open element 2-2 in lightbox</a>
 </div>
 
+<!-- Regular tabs -->
 <nav class="mb-2">
   <div class="nav nav-tabs nav-tabs-horizontal" id="nav-tab" role="tablist">
     <button class="nav-link active" id="nav-gallery-1-tab" data-bs-toggle="tab" data-bs-target="#nav-gallery-1" type="button" role="tab" aria-controls="nav-gallery-1" aria-selected="true">Gallery 1</button>
@@ -334,6 +434,7 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
 </nav>
 
 <div class="tab-content" id="nav-tabContent">
+  <!-- Gallery 1 tab -->
   <div class="tab-pane fade show active" id="nav-gallery-1" role="tabpanel" aria-labelledby="nav-gallery-1-tab" tabindex="0">
     <div class="masonry masonry-group-2">
       <div class="masonry-group-item">
@@ -366,6 +467,8 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
       </div>
     </div>
   </div>
+
+  <!-- Gallery 2 tab -->
   <div class="tab-pane fade" id="nav-gallery-2" role="tabpanel" aria-labelledby="nav-gallery-2-tab" tabindex="0">
     <div class="masonry masonry-group-2">
       <div class="masonry-group-item">
@@ -398,6 +501,8 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
       </div>
     </div>
   </div>
+
+  <!-- Mixed content tab -->
   <div class="tab-pane fade" id="nav-mixed-content" role="tabpanel" aria-labelledby="nav-mixed-content-tab" tabindex="0">
     <div class="masonry masonry-group-2">
       <div class="masonry-group-item">
@@ -422,73 +527,143 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
       </div>
     </div>
   </div>
+
+  <!-- YouTube tab -->
   <div class="tab-pane fade" id="nav-youtube" role="tabpanel" aria-labelledby="nav-youtube-tab" tabindex="0">
     {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="youtube" >}}
   </div>
+
+  <!-- Vimeo tab -->
   <div class="tab-pane fade" id="nav-vimeo" role="tabpanel" aria-labelledby="nav-vimeo-tab" tabindex="0">
     {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="MAP" >}}
   </div>
+
+  <!-- YouTube tab -->
   <div class="tab-pane fade" id="nav-youtube" role="tabpanel" aria-labelledby="nav-youtube-tab" tabindex="0">
     {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="MAP" >}}
   </div>
+
+  <!-- Map tab -->
   <div class="tab-pane fade" id="nav-map" role="tabpanel" aria-labelledby="nav-map-tab" tabindex="0">
     {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="MAP" >}}
   </div>
 </div>
 {{< /example >}}
-### Single image
 
-{{< example >}}
-<div class="row">
-  <div class="col-md-6">
-    <h2>Sunt non laborum</h2>
-    <p>Incididunt quis consectetur culpa ullamco occaecat id nisi ad fugiat aliquip proident incididunt. Cillum irure excepteur elit voluptate do esse. Duis magna nostrud tempor excepteur. Voluptate incididunt ut anim fugiat. Laboris Lorem dolore amet adipisicing sit ea dolore elit amet eiusmod mollit irure commodo consequat.</p>
-  </div>
+## Options
 
-  <div class="col-md-6">
-    <figure>
-      <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox>
-        <img src="assets/media/sample-gallery-1.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
-      </a>
-    </figure>
-  </div>
-</div>
-{{< /example >}}
+The lightbox options are optional. If you decide to use them, due to their nature, they must be defined in one central place.
 
-### Image gallery
+You can define them as a JSON object in one of the `<script>` tags. The element must get a unique ID `of-lightbox-<identifier>`, which will be referenced in other places.
 
-{{< example >}}
-<div class="row">
-  <div class="col-3">
-    <figure>
-      <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox="image-gallery">
-        <img src="assets/media/sample-gallery-1.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
-      </a>
-    </figure>
-  </div>
-  <div class="col-3">
-    <figure>
-      <a href="assets/media/sample-gallery-2.jpg" data-of-lightbox="image-gallery">
-        <img src="assets/media/sample-gallery-2.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
-      </a>
-    </figure>
-  </div>
-  <div class="col-3">
-    <figure>
-      <a href="assets/media/sample-gallery-3.jpg" data-of-lightbox="image-gallery">
-        <img src="assets/media/sample-gallery-3.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
-      </a>
-    </figure>
-  </div>
-  <div class="col-3">
-    <figure>
-      <a href="assets/media/sample-gallery-4.jpg" data-of-lightbox="image-gallery">
-        <img src="assets/media/sample-gallery-4.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
-      </a>
-    </figure>
-  </div>
-</div>
-{{< /example >}}
+```html
+<script id="of-lightbox-gallery-1" type="application/json">
+  {
+    "thumbnails": true
+  }
+</script>
+```
+
+The lightbox can be then referenced in the lightbox item as options source (note that we omit the `of-lightbox-` prefix):
+
+```html
+<a href="…" data-of-lightbox='{ "group": "gallery-1" }'>
+  <img src="…" alt="">
+</a>
+```
+
+You can also open the lightbox by referring to it (again, the `of-lightbox-` prefix is not needed):
+
+```html
+<button data-of-lightbox-open="gallery-1" class="btn btn-primary">Open image gallery</button>
+```
+
+Here is the list of all available options (alphabetically):
+
+{{< bs-table "table" >}}
+| Option | Type | Default | Explanation |
+| --- | --- | --- | --- |
+| `items` | `array` | `[]` | The items to display in the lightbox. Every item must be an object with item options described below. |
+| `tabs` | `array` | `[]` | The tabs to display at the top of the lightbox. Every tab must be an object with tab options described below. |
+| `thumbnails` | `boolean` | `false` | Show the thumbnails of all lightbox items. |
+{{< /bs-table >}}
+
+{{< callout warning >}}
+**Attention!** If you are using `tabs` option, the `items` and `thumbnails` set on the top level will be ignored. You have to set them individually for every tab!
+{{< /callout >}}
+
+#### Tab options
+
+Here is the list of all available tab options (alphabetically):
+
+{{< bs-table "table" >}}
+| Option | Type | Explanation |
+| --- | --- | --- |
+| `name` | `string` | The tab name displayed in the tab navigation. |
+| `items` | `array` | The items to be displayed in this tab. Every item must be an object with item options described below. |
+| `thumbnails` | `boolean` | Show the thumbnails of lightbox items in this tab. |
+{{< /bs-table >}}
+
+#### Item options
+
+Every lightbox item can be enhanced with extra options, such as image title or a lightbox group identifier this item belongs to.
+
+{{< callout info >}}
+**Heads up!** You can also pass item options as JSON value of the `data-of-lightbox` attribute.
+{{< /callout >}}
+
+Here is the list of all available options (alphabetically):
+
+{{< bs-table "table" >}}
+| Option | Type | Default | Explanation |
+| --- | --- | --- | --- |
+| `group` | `string` | `undefined` | The identifier to group multiple items in the same lightbox. This option is valid for `data-of-lightbox` attribute. |
+| `identifier` | `string` | `undefined` | A unique item identifier of the item that allows to reference item, e.g. in URL hash. |
+| `thumbnail` | `string` | `undefined` | A path to the thumbnail image. This is needed if the lightbox/tab has `thumbnails: true` option. |
+| `type` | `string` | `undefined` | The type of item. If not provided, the component will try to autodetect it. Available options are: `iframe`, `image`, `inline`, `video`. |
+{{< /bs-table >}}
+
+Depending on the item `type`, the extra options can be passed on:
+
+##### Iframe options
+
+{{< bs-table "table" >}}
+| Option | Type | Default | Explanation |
+| --- | --- | --- | --- |
+| `href` | `string` | `undefined` | Required. The iframe source URL. |
+| `width` | `number` | `undefined` | The item maximum width. |
+{{< /bs-table >}}
+
+##### Image options
+
+{{< bs-table "table" >}}
+| Option | Type | Default | Explanation |
+| --- | --- | --- | --- |
+| `alt` | `string` | `undefined` | The alternative text of an image. |
+| `description` | `string` | `undefined` | The caption description displayed as caption. |
+| `href` | `string` | `undefined` | Required. The image source URL. |
+| `title` | `string` | `undefined` | The title description displayed as caption. |
+{{< /bs-table >}}
+
+##### Inline options
+
+{{< bs-table "table" >}}
+| Option | Type | Default | Explanation |
+| --- | --- | --- | --- |
+| `content` | `string` | `undefined` | Required. The item HTML content. |
+{{< /bs-table >}}
+
+##### Video options
+
+{{< bs-table "table" >}}
+| Option | Type | Default | Explanation |
+| --- | --- | --- | --- |
+| `href` | `string` | `undefined` | Required. The video source URL. |
+| `source` | `string` | `undefined` | The video source. Available options are: `local`, `youtube`, `vimeo`. |
+| `width` | `number` | `undefined` | The item maximum width. |
+{{< /bs-table >}}
+
+## Examples
 
 ### Image gallery with captions
 
@@ -496,28 +671,44 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
 <div class="row">
   <div class="col-3">
     <figure>
-      <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox="image-captions-gallery" data-title="Est anim dolor qui" data-description="Ad minim sit magna tempor irure dolore mollit qui dolore. Irure ea nisi laborum do voluptate adipisicing amet fugiat nostrud qui anim excepteur. Nulla sit consequat id ut amet esse. Et dolore est non est enim consequat.">
+      <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox='{
+"group": "image-captions-gallery",
+"title": "Est anim dolor qui",
+"description": "Ad minim sit magna tempor irure dolore mollit qui dolore. Irure ea nisi laborum do voluptate adipisicing amet fugiat nostrud qui anim excepteur. Nulla sit consequat id ut amet esse. Et dolore est non est enim consequat."
+}'>
         <img src="assets/media/sample-gallery-1.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
   <div class="col-3">
     <figure>
-      <a href="assets/media/sample-gallery-2.jpg" data-of-lightbox="image-captions-gallery" data-title="Cillum eiusmod sint adipisicing deserunt incididunt" data-description="Ad elit mollit in sunt id incididunt irure. Ea ex id quis laborum aute sit ipsum et proident ex ex dolor mollit. Et est occaecat sit et ex fugiat laboris officia anim amet incididunt nisi labore sit nisi. Nostrud sint incididunt dolore ea aliqua sint qui et reprehenderit tempor voluptate minim amet aute dolore. Nostrud nostrud duis ipsum Lorem aliqua officia. Incididunt dolore anim laborum occaecat consectetur consequat incididunt eu ut laborum enim.">
+      <a href="assets/media/sample-gallery-2.jpg" data-of-lightbox='{
+"group": "image-captions-gallery",
+"title": "Cillum eiusmod sint adipisicing deserunt incididunt",
+"description": "Ad elit mollit in sunt id incididunt irure. Ea ex id quis laborum aute sit ipsum et proident ex ex dolor mollit. Et est occaecat sit et ex fugiat laboris officia anim amet incididunt nisi labore sit nisi. Nostrud sint incididunt dolore ea aliqua sint qui et reprehenderit tempor voluptate minim amet aute dolore. Nostrud nostrud duis ipsum Lorem aliqua officia. Incididunt dolore anim laborum occaecat consectetur consequat incididunt eu ut laborum enim."
+}'>
         <img src="assets/media/sample-gallery-2.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
   <div class="col-3">
     <figure>
-      <a href="assets/media/sample-gallery-3.jpg" data-of-lightbox="image-captions-gallery" data-title="Culpa et Lorem qui" data-description="Fugiat elit cillum cillum in ipsum excepteur consectetur ad nostrud occaecat consectetur aliquip magna ea occaecat. Aliquip do fugiat cupidatat enim aute aliquip. Culpa labore ad sint magna ex veniam dolor nulla velit est ea aliquip. Consequat excepteur ut cillum ipsum ex minim excepteur. Ipsum officia labore eu nostrud Lorem esse ex cupidatat cillum qui ea mollit ex veniam cupidatat. Pariatur do ut reprehenderit deserunt minim culpa qui reprehenderit consectetur aute tempor. Duis sint mollit deserunt adipisicing nisi eiusmod qui incididunt aliqua occaecat commodo consectetur Lorem veniam.">
+      <a href="assets/media/sample-gallery-3.jpg" data-of-lightbox='{
+"group": "image-captions-gallery",
+"title": "Culpa et Lorem qui",
+"description": "Fugiat elit cillum cillum in ipsum excepteur consectetur ad nostrud occaecat consectetur aliquip magna ea occaecat. Aliquip do fugiat cupidatat enim aute aliquip. Culpa labore ad sint magna ex veniam dolor nulla velit est ea aliquip. Consequat excepteur ut cillum ipsum ex minim excepteur. Ipsum officia labore eu nostrud Lorem esse ex cupidatat cillum qui ea mollit ex veniam cupidatat. Pariatur do ut reprehenderit deserunt minim culpa qui reprehenderit consectetur aute tempor. Duis sint mollit deserunt adipisicing nisi eiusmod qui incididunt aliqua occaecat commodo consectetur Lorem veniam."
+}'>
         <img src="assets/media/sample-gallery-3.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
   <div class="col-3">
     <figure>
-      <a href="assets/media/sample-gallery-4.jpg" data-of-lightbox="image-captions-gallery" data-title="Elit sint in reprehenderit" data-description="Ea enim consequat aute culpa nulla sint nulla reprehenderit pariatur eu. Ut do fugiat irure Lorem labore incididunt adipisicing minim et laborum sint. Elit consequat deserunt minim in minim laborum labore magna ex mollit ad cupidatat elit laborum. Eu dolore veniam magna quis consequat elit. Id id proident cillum deserunt.">
+      <a href="assets/media/sample-gallery-4.jpg" data-of-lightbox='{
+"group": "image-captions-gallery",
+"title": "Elit sint in reprehenderit",
+"description": "Ea enim consequat aute culpa nulla sint nulla reprehenderit pariatur eu. Ut do fugiat irure Lorem labore incididunt adipisicing minim et laborum sint. Elit consequat deserunt minim in minim laborum labore magna ex mollit ad cupidatat elit laborum. Eu dolore veniam magna quis consequat elit. Id id proident cillum deserunt."
+}'>
         <img src="assets/media/sample-gallery-4.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
@@ -531,21 +722,21 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
 <div class="row">
   <div class="col-4">
     <figure>
-      <a href="https://vimeo.com/115041822" data-of-lightbox="videos-gallery">
+      <a href="https://vimeo.com/115041822" data-of-lightbox='{ "group": "videos-gallery" }'>
         {{< placeholder width="100%" height="100%" class="img-fluid" text="Vimeo" >}}
       </a>
     </figure>
   </div>
   <div class="col-4">
     <figure>
-      <a href="https://www.youtube-nocookie.com/embed/Ga6RYejo6Hk" data-of-lightbox="videos-gallery">
+      <a href="https://www.youtube-nocookie.com/embed/Ga6RYejo6Hk" data-of-lightbox='{ "group": "videos-gallery" }'>
         {{< placeholder width="100%" height="100%" class="img-fluid" text="YouTube" >}}
       </a>
     </figure>
   </div>
   <div class="col-4">
     <figure>
-      <a href="assets/media/sample-video.mp4" data-of-lightbox="videos-gallery">
+      <a href="assets/media/sample-video.mp4" data-of-lightbox='{ "group": "videos-gallery" }'>
         {{< placeholder width="100%" height="100%" class="img-fluid" text="Local video" >}}
       </a>
     </figure>
@@ -556,9 +747,9 @@ You should always define the `data-of-lightbox` attribute value to avoid unexpec
 ### Iframes and inline elements
 
 {{< example >}}
-<a href="https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed" class="btn btn-primary" data-of-lightbox="inline-gallery">Google Maps</a>
-<a href="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375" class="btn btn-primary" data-of-lightbox="inline-gallery">Open Street Map</a>
-<a href="#inline-example" class="btn btn-primary" data-of-lightbox="inline-gallery" data-height="auto">Inline element</a>
+<a href="https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed" class="btn btn-primary" data-of-lightbox='{ "group": "inline-gallery" }'>Google Maps</a>
+<a href="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375" class="btn btn-primary" data-of-lightbox='{ "group": "inline-gallery" }'>Open Street Map</a>
+<a href="#inline-example" class="btn btn-primary" data-of-lightbox='{ "group": "inline-gallery" }' data-height="auto">Inline element</a>
 
 <div class="d-none">
   <div id="inline-example" class="p-5 text-center">

@@ -1,4 +1,4 @@
-import BaseComponent from 'bootstrap/js/src/base-component'
+import Config from 'bootstrap/js/src/util/config'
 import GLightbox from 'glightbox/src/js/glightbox'
 import 'glightbox/dist/css/glightbox.min.css'
 
@@ -58,21 +58,26 @@ const CAROUSEL_SETTINGS = {
 }
 
 const DefaultType = {
-  id: 'string',
-  open: '(string|boolean)',
+  items: 'array',
   tabs: 'array',
+  thumbnails: 'boolean',
 }
 
 const Default = {
-  open: false,
-  tabs: undefined,
+  items: [],
+  tabs: [],
+  thumbnails: false,
 }
 
-class Lightbox extends BaseComponent {
-  constructor(element, config) {
-    super(element, config)
+class Lightbox extends Config {
+  constructor(config) {
+    super()
+
+    this._config = this._getConfig(config)
+    this._items = config.items
 
     this._lightbox = new GLightbox({
+      elements: this._items,
       touchNavigation: true,
       loop: true,
       autoplayVideos: true,
@@ -82,10 +87,10 @@ class Lightbox extends BaseComponent {
       lightboxHTML: LIGHTBOX_HTML
     })
 
-    this._activeTabIndex = 0
-    this._activeElementIndex = 0
-    this._tabLinks = []
-    this._initLightbox()
+    // Initialize thumbnails
+    if (this._config.thumbnails) {
+      this._createThumbnails()
+    }
   }
 
   // Getters
@@ -102,31 +107,28 @@ class Lightbox extends BaseComponent {
   }
 
   // Public
-  openLightbox(elementId) {
-    ({ tabIndex: this._activeTabIndex, elementIndex: this._activeElementIndex } = this._findElementById(elementId))
+  open(identifierOrIndex) {
+    let index;
 
-    this._setActiveTab(this._activeTabIndex)
-    this._setLightboxElements()
-
-    if (this._activeElementIndex) {
-      this._lightbox.openAt(this._activeElementIndex)
+    // Find the item with given identifier
+    if (typeof identifierOrIndex === 'string' && /^\d+$/.exec(identifierOrIndex) === null) {
+      index = this._items.findIndex(item => item.identifier === identifierOrIndex)
+      index = (index !== -1) ? index : 0
     } else {
-      this._lightbox.open()
+      index = identifierOrIndex || 0
     }
+
+    this._lightbox.openAt(index)
   }
 
-  closeLightbox() {
-    for (const link of this._tabLinks) {
-      link.remove()
-    }
+  // Private
+  _createThumbnails() {
+    this._prepareFooter()
+    this._generateThumbnails()
+    this._setCarouselElements()
+  }
 
-    this._tabLinks = []
-
-    if (this._lightboxHeader) {
-      this._lightboxHeader.remove()
-      this._lightboxHeader = null
-    }
-
+  _onCloseLightbox() {
     if (this._lightboxFooter) {
       this._lightboxFooter.remove()
       this._lightboxFooter = null
@@ -136,83 +138,17 @@ class Lightbox extends BaseComponent {
   }
 
   // Private
-  _initLightbox() {
-    if (this._config.open) {
-      this.openLightbox(typeof this._config.open === 'string' ? this._config.open : null)
-    }
-
-    // Open the lightbox after link click
-    const links = document.querySelectorAll(`[data-lightbox-open="${this._config.id}"]`)
-
-    for (const link of links) {
-      link.addEventListener('click', e => {
-        e.preventDefault()
-        this.openLightbox(link.dataset.lightboxElement)
-      })
-    }
-
-    // Create the necessary properties and add events to new elements after opening the lightbox
-    this._lightbox.on('open', () => {
-      this._openLightbox()
-    })
-
-    // Clean everything up when lightbox is shut down
-    this._lightbox.on('close', () => {
-      this.closeLightbox()
-    })
-  }
-
-  _openLightbox() {
-    this._prepareHeader()
-    this._prepareFooter()
-    this._prepareTabs()
-    this._prepareCarousel()
-    this._setCarouselElements()
-    this._initTriggers()
-  }
-
   _prepareHeader() {
     this._lightboxHeader = this._lightbox.modal.querySelector(`.${LIGHTBOX_HEADER_ELEMENT_CLASS}`)
-    createResizeObserver(this._lightboxHeader, 'header')
+    this._createResizeObserver(this._lightboxHeader, 'header')
   }
 
   _prepareFooter() {
     this._lightboxFooter = this._lightbox.modal.querySelector(`.${LIGHTBOX_FOOTER_ELEMENT_CLASS}`)
-    createResizeObserver(this._lightboxFooter, 'footer')
+    this._createResizeObserver(this._lightboxFooter, 'footer')
   }
 
-  _prepareTabs() {
-    if (!this._lightboxHeader) {
-      return
-    }
-
-    const tabs = document.createElement('ul.nav.nav-tabs')
-    tabs.classList.add('nav', 'nav-underline')
-
-    for (const [index, tab] of this._config.tabs.entries()) {
-      const item = document.createElement('li')
-      item.classList.add('nav-item')
-
-      const link = document.createElement('a')
-      link.classList.add('nav-link')
-      link.textContent = tab.name || index
-      link.href = '#'
-      link.dataset.tab = index
-
-      this._tabLinks.push(link)
-
-      if (index === this._activeTabIndex) {
-        link.classList.add(TAB_ACTIVE_CLASS)
-      }
-
-      item.append(link)
-      tabs.append(item)
-    }
-
-    this._lightboxHeader.append(tabs)
-  }
-
-  _prepareCarousel() {
+  _generateThumbnails() {
     if (!this._lightboxFooter) {
       return
     }
@@ -242,33 +178,10 @@ class Lightbox extends BaseComponent {
     })
   }
 
-  _changeTab(tabIndex, elementIndex = 0) {
-    this._activeElementIndex = elementIndex
-    this._setActiveTab(tabIndex)
-    this._setLightboxElements()
-    this._setCarouselElements()
-  }
-
-  _setActiveTab(activeTabIndex = 0) {
-    this._activeTabIndex = activeTabIndex
-    this._activeTab = this._config.tabs[activeTabIndex]
-    this._setActiveTabClass(activeTabIndex)
-  }
-
-  _setLightboxElements() {
-    // This is needed to avoid the error of getting the previous slide configuration when I set up new lightbox slides because it is falsely set
-    this._lightbox.prevActiveSlideIndex = null
-    this._lightbox.prevActiveSlide = null
-    this._lightbox.setElements(this._activeTab.elements)
-  }
-
   _setCarouselElements() {
     if (!this._carousel) {
       return
     }
-
-    // Hide footer when active tab has no thumbnails
-    this._lightboxFooter.classList.toggle(LIGHTBOX_FOOTER_ELEMENT_HIDDEN_CLASS, !this._activeTab.thumbnail)
 
     // Prepare and insert new slides into the carousel
     this._blockCarouselChange = true
@@ -288,17 +201,17 @@ class Lightbox extends BaseComponent {
   _generateCarouselSlides() {
     const slides = []
 
-    if (!this._activeTab.thumbnail) {
+    if (!this._activeTab.thumbnails) {
       return slides
     }
 
-    for (const element of this._activeTab.elements) {
+    for (const element of this._activeTab.items) {
       const slide = document.createElement('div')
       slide.classList.add('swiper-slide')
 
-      if (element.thumbnail || element.type === 'image') {
+      if (element.thumbnails || element.type === 'image') {
         const image = document.createElement('img')
-        image.src = element.thumbnail || element.href
+        image.src = element.thumbnails || element.href
         image.alt = element.alt || ''
         slide.append(image)
       } else {
@@ -311,8 +224,192 @@ class Lightbox extends BaseComponent {
     return slides
   }
 
-  _initTriggers() {
-    // Change tab when click on the link
+  _setActiveElement(index = this._activeElementIndex) {
+    this._activeElementIndex = index
+
+    if (this._carousel && this._carousel.slides.length >= index) {
+      this._carousel.slideTo(this._activeElementIndex)
+    }
+
+    if (this._lightbox.index !== this._activeElementIndex) {
+      this._lightbox.goToSlide(this._activeElementIndex)
+    }
+  }
+
+  _setSlideHeight(currentSlide) {
+    if (this._descriptionObserver && this._currentDescription) {
+      this._removeResizeObserver(this._descriptionObserver, this._currentDescription)
+    }
+
+    this._currentDescription = currentSlide?.slideNode?.querySelector('.gslide-description')
+
+    if (this._currentDescription && this._currentDescription.textContent && window.getComputedStyle(this._currentDescription).position !== 'absolute') {
+      this._descriptionObserver = this._createResizeObserver(this._currentDescription, 'description')
+    } else {
+      document.documentElement.style.setProperty('--lightbox-description-height', '0px')
+    }
+  }
+}
+
+class LightboxWithTabs extends Lightbox {
+  constructor(config) {
+    super(config);
+
+    if (this._config.tabs.length === 0) {
+      throw new Error('There are no tabs defined')
+    }
+
+    this._activeTabIndex = 0
+    this._activeElementIndex = 0
+    this._tabLinks = []
+
+    // Create the necessary properties and add events to new elements after opening the lightbox
+    this._lightbox.on('open', () => {
+      this._prepareHeader()
+      this._createTabs()
+      this._bindTabEvents()
+
+      // TODO: the thumbnails should be created/destroye per tab
+      super._createThumbnails()
+    })
+
+    // Clean everything up when lightbox is closed
+    this._lightbox.on('close', () => this._onCloseLightbox())
+  }
+
+  // Public
+  open(identifierOrIndex) {
+    let itemIndex = 0
+    let tabIndex = 0
+
+    // Find the tab and item indexes with given identifier
+    // TODO: improve both statements
+    if (typeof identifierOrIndex === 'string' && /^\d+$/.exec(identifierOrIndex) === null) {
+      for (let i = 0; i < this._config.tabs.length; i++) {
+        for (let j = 0; j < this._config.tabs[i].items.length; j++) {
+          if (this._config.tabs[i].items[j].identifier === identifierOrIndex) {
+            tabIndex = i
+            itemIndex = j
+            break
+          }
+        }
+      }
+    } else if (identifierOrIndex > 0) {
+      // Find the tab and item indexes by numeric index
+      let itemsCount = 0;
+
+      for (let i = 0; i < this._config.tabs.length; i++) {
+        for (let j = 0; j < this._config.tabs[i].items.length; j++) {
+          if (this._config.tabs[i].items[j].identifier === identifierOrIndex) {
+            if (itemsCount === identifierOrIndex) {
+              tabIndex = i
+              itemIndex = j
+              break
+            }
+
+            itemsCount++
+          }
+        }
+      }
+    }
+
+    this._setActiveTab(tabIndex)
+    this._setLightboxElements()
+
+    this._activeElementIndex = itemIndex
+    this._lightbox.openAt(this._activeElementIndex)
+  }
+
+  // Private
+  _createThumbnails() {
+    // noop
+  }
+
+  _onCloseLightbox() {
+    super._onCloseLightbox()
+
+    for (const link of this._tabLinks) {
+      link.remove()
+    }
+
+    this._tabLinks = []
+
+    if (this._lightboxHeader) {
+      this._lightboxHeader.remove()
+      this._lightboxHeader = null
+    }
+  }
+
+  _createTabs() {
+    if (!this._lightboxHeader) {
+      return
+    }
+
+    const tabs = document.createElement('ul')
+    tabs.className = 'nav nav-underline'
+
+    for (const [index, tab] of this._config.tabs.entries()) {
+      const item = document.createElement('li')
+      item.className = 'nav-item'
+
+      const link = document.createElement('a')
+      item.className = 'nav-link'
+      link.textContent = tab.name || index
+      link.href = '#'
+      link.dataset.tab = index
+
+      this._tabLinks.push(link)
+
+      if (index === this._activeTabIndex) {
+        link.classList.add(TAB_ACTIVE_CLASS)
+      }
+
+      item.append(link)
+      tabs.append(item)
+    }
+
+    this._lightboxHeader.append(tabs)
+  }
+
+  _changeTab(tabIndex) {
+    this._activeElementIndex = 0
+    this._setActiveTab(tabIndex)
+    this._setCarouselElements()
+    this._setLightboxElements()
+  }
+
+  _setActiveTab(activeTabIndex) {
+    this._activeTabIndex = activeTabIndex
+    this._activeTab = this._config.tabs[activeTabIndex]
+
+    // Set active tab class
+    for (const [index, el] of this._tabLinks.entries()) {
+      if (index === activeTabIndex) {
+        el.classList.add(TAB_ACTIVE_CLASS)
+      } else if (el.classList.contains(TAB_ACTIVE_CLASS)) {
+        el.classList.remove(TAB_ACTIVE_CLASS)
+      }
+    }
+  }
+
+  _setLightboxElements() {
+    // This is needed to avoid the error of getting the previous slide configuration when I set up new lightbox slides because it is falsely set
+    this._lightbox.prevActiveSlideIndex = null
+    this._lightbox.prevActiveSlide = null
+    this._lightbox.setElements(this._activeTab.items)
+  }
+
+  _setCarouselElements() {
+    super._setCarouselElements()
+
+    // Hide footer when active tab has no thumbnails
+    if (this._lightboxFooter) {
+      this._lightboxFooter.classList.toggle(LIGHTBOX_FOOTER_ELEMENT_HIDDEN_CLASS, !this._activeTab.thumbnails)
+    }
+  }
+
+  _bindTabEvents() {
+    // Change tab content on tab click
     for (const link of this._tabLinks) {
       link.addEventListener('click', event => {
         event.preventDefault()
@@ -337,104 +434,125 @@ class Lightbox extends BaseComponent {
     })
   }
 
-  _setActiveElement(index = this._activeElementIndex) {
-    this._activeElementIndex = index
-
-    if (this._carousel && this._carousel.slides.length >= index) {
-      this._carousel.slideTo(this._activeElementIndex)
-    }
-
-    if (this._lightbox.index !== this._activeElementIndex) {
-      this._lightbox.goToSlide(this._activeElementIndex)
-    }
+  _updateCSSVariable(element, variableName) {
+    document.documentElement.style.setProperty(`--lightbox-${variableName}-height`, `${element.getBoundingClientRect().height}px`)
   }
 
-  _setActiveTabClass(activeTabIndex) {
-    activeTabIndex = Number(activeTabIndex)
-
-    for (const [index, el] of this._tabLinks.entries()) {
-      if (index === activeTabIndex) {
-        el.classList.add(TAB_ACTIVE_CLASS)
-      } else if (el.classList.contains(TAB_ACTIVE_CLASS)) {
-        el.classList.remove(TAB_ACTIVE_CLASS)
+  _createResizeObserver(element, variableName) {
+    const resizeObserver = new ResizeObserver(entries => {
+      // eslint-disable-next-line no-unused-vars
+      for (const entry of entries) {
+        this._updateCSSVariable(element, variableName)
       }
-    }
+    })
+
+    resizeObserver.observe(element)
+
+    this._updateCSSVariable(element, variableName)
+
+    return resizeObserver
   }
 
-  _setSlideHeight(currentSlide) {
-    if (this._descriptionObserver && this._currentDescription) {
-      removeResizeObserver(this._descriptionObserver, this._currentDescription)
-    }
-
-    this._currentDescription = currentSlide?.slideNode?.querySelector('.gslide-description')
-
-    if (this._currentDescription && this._currentDescription.textContent && window.getComputedStyle(this._currentDescription).position !== 'absolute') {
-      this._descriptionObserver = createResizeObserver(this._currentDescription, 'description')
-    } else {
-      document.documentElement.style.setProperty('--lightbox-description-height', '0px')
-    }
-  }
-
-  _findElementById(elementId) {
-    if (elementId) {
-      for (let tabIndex = 0; tabIndex < this._config.tabs.length; tabIndex++) {
-        const tab = this._config.tabs[tabIndex]
-        for (let elementIndex = 0; elementIndex < tab.elements.length; elementIndex++) {
-          const element = tab.elements[elementIndex]
-          if (element.id === elementId) {
-            return { tabIndex, elementIndex }
-          }
-        }
-      }
-    }
-
-    return { tabIndex: 0, elementIndex: 0 }
+  _removeResizeObserver(resizeObserver, element) {
+    resizeObserver.unobserve(element)
   }
 }
 
-export function initMultiple(els) {
-  const groups = []
+class LightboxRegistry
+{
+  constructor() {
+    this.configs = new Map;
+    this.instances = new Map;
+  }
 
-  for (const el of els) {
-    if (el.dataset.ofLightbox === 'tabs') {
-      Lightbox.getOrCreateInstance(el, el.dataset.ofLightboxTabsSetting ? JSON.parse(el.dataset.ofLightboxTabsSetting) : {})
-      continue
-    }
+  initializeLightboxes() {
+    for (const [identifier, config] of this.configs.entries()) {
+      const items = []
 
-    if (!groups.includes(el.dataset.ofLightbox)) {
-      groups.push(el.dataset.ofLightbox)
+      // Get the HTML elements and add them to items
+      if (Object.prototype.hasOwnProperty.call(config, 'elements')) {
+        config.elements.forEach(({ element, options }, index) => {
+          const item = {...options}
+
+          if (element.hasAttribute('href')) {
+            item.href = element.href
+          }
+
+          items.push(item)
+
+          // Open the lightbox on click
+          element.addEventListener('click', e => {
+            e.preventDefault()
+            this.instances.get(identifier).open(index)
+          });
+        });
+      }
+
+      config.items = config.items ? [...items, ...config.items] : items;
+
+      if (Object.prototype.hasOwnProperty.call(config, 'tabs') && config.tabs.length > 0) {
+        this.instances.set(identifier, new LightboxWithTabs(config))
+      } else {
+        this.instances.set(identifier, new Lightbox(config))
+      }
     }
   }
 
-  for (const group of groups) {
-    new GLightbox({
-      selector: `[data-of-lightbox="${group}"]`,
+  registerFromConfigElement(el) {
+    const identifier = el.dataset.ofLightboxConfig;
+
+    if (this.configs.has(identifier)) {
+      throw new Error(`You cannot have more than one lightbox config with the same identifier: ${identifier}`)
+    }
+
+    this.configs.set(identifier, JSON.parse(el.textContent.trim()));
+  }
+
+  registerFromRegularElement(el) {
+    // TODO: validate options
+    const options = (el.dataset.ofLightbox !== '') ? JSON.parse(el.dataset.ofLightbox) : {}
+    const identifier = Object.prototype.hasOwnProperty.call(options, 'group') ? options.group : 'ungroupped'
+
+    // Create a config if it does not exist yet
+    if (!this.configs.has(identifier)) {
+      this.configs.set(identifier, { elements: [] });
+    }
+
+    this.configs.get(identifier).elements.push({
+      element: el,
+      options,
+    })
+  }
+
+  registerTriggerElement(el) {
+    el.addEventListener('click', e => {
+      e.preventDefault()
+
+      const [identifier, item] = el.dataset.ofLightboxOpen.split(':');
+
+      if (!this.instances.has(identifier)) {
+        throw new Error(`The lightbox with identifier "${identifier}" does not exist`)
+      }
+
+      this.instances.get(identifier).open(item)
     })
   }
 }
 
-function updateCSSVariable(element, variableName) {
-  const { height } = element.getBoundingClientRect()
-  document.documentElement.style.setProperty(`--lightbox-${variableName}-height`, `${height}px`)
+const registry = new LightboxRegistry();
+
+export function initMultiple(els) {
+  // First, register the configs
+  [...els].filter(el => el.hasAttribute('data-of-lightbox-config')).forEach((el) => registry.registerFromConfigElement(el));
+
+  // Then, register the HTML elements
+  [...els].filter(el => el.hasAttribute('data-of-lightbox')).forEach((el) => registry.registerFromRegularElement(el));
+
+  // Then, register the trigger elements
+  [...els].filter(el => el.hasAttribute('data-of-lightbox-open')).forEach((el) => registry.registerTriggerElement(el));
+
+  // Finally initialize the lightboxes
+  registry.initializeLightboxes();
 }
 
-function createResizeObserver(element, variableName) {
-  const resizeObserver = new ResizeObserver(entries => {
-    // eslint-disable-next-line no-unused-vars
-    for (const entry of entries) {
-      updateCSSVariable(element, variableName)
-    }
-  })
-
-  resizeObserver.observe(element)
-
-  updateCSSVariable(element, variableName)
-
-  return resizeObserver
-}
-
-function removeResizeObserver(resizeObserver, element) {
-  resizeObserver.unobserve(element)
-}
-
-export default Lightbox
+export default LightboxRegistry

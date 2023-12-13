@@ -36,28 +36,28 @@ Multiple items can be grouped into the lightbox gallery using a common lightbox 
 <div class="row">
   <div class="col-3">
     <figure>
-      <a data-of-lightbox='{ "group": "image-gallery", "identifier": "image-1" }' href="assets/media/sample-gallery-1.jpg">
+      <a data-of-lightbox='{ "group": "image-gallery" }' href="assets/media/sample-gallery-1.jpg">
         <img src="assets/media/sample-gallery-1.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
   <div class="col-3">
     <figure>
-      <a data-of-lightbox='{ "group": "image-gallery", "identifier": "image-2" }' href="assets/media/sample-gallery-2.jpg">
+      <a data-of-lightbox='{ "group": "image-gallery", "identifier": "my-favorite" }' href="assets/media/sample-gallery-2.jpg">
         <img src="assets/media/sample-gallery-2.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
   <div class="col-3">
     <figure>
-      <a data-of-lightbox='{ "group": "image-gallery", "identifier": "image-3" }' href="assets/media/sample-gallery-3.jpg">
+      <a data-of-lightbox='{ "group": "image-gallery" }' href="assets/media/sample-gallery-3.jpg">
         <img src="assets/media/sample-gallery-3.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
   </div>
   <div class="col-3">
     <figure>
-      <a data-of-lightbox='{ "group": "image-gallery", "identifier": "image-4" }' href="assets/media/sample-gallery-4.jpg">
+      <a data-of-lightbox='{ "group": "image-gallery" }' href="assets/media/sample-gallery-4.jpg">
         <img src="assets/media/sample-gallery-4.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
@@ -73,22 +73,28 @@ You can define some custom lightbox triggers, that are not actual lightbox items
 <button data-of-lightbox-open="image-gallery" class="btn btn-primary">Open image gallery</button>
 {{< /example >}}
 
-You can reference an exact item in the opened lightbox, by adding the lightbox item identifier in the following format: `<group_identifier>:<item_identifier>`.
+You can reference an exact item in the opened lightbox, by adding the lightbox item index in the following format: `<group_identifier>:<index>`. Note that the index starts from zero.
 
 {{< example >}}
-<button data-of-lightbox-open="image-gallery:image-3" class="btn btn-primary">Open my favorite image</button>
+<button data-of-lightbox-open="image-gallery:2" class="btn btn-primary">Open the third image</button>
+{{< /example >}}
+
+You can also reference an exact item with the lightbox item identifier in the following format: `<group_identifier>:<item_identifier>`. Note that the item must have its unique identifier set.
+
+{{< example >}}
+<button data-of-lightbox-open="image-gallery:my-favorite" class="btn btn-primary">Open my favorite image</button>
 {{< /example >}}
 
 ### Custom definition
 
 You can also define the lightbox items directly in the lightbox options. It may be useful if you don't want to show any image thumbs on the website, but still open the image lightbox on trigger element click. You can read more about lightbox options in the next section.
 
-The lightbox trigger must reference the `<script>` tag. In the `data-of-lightbox-open` attribute you can omit the `of-lightbox-` prefix, as shown on the example below.
+The lightbox trigger must reference the `<script>` tag. In the `data-of-lightbox-open` attribute you have to refer to the same `data-of-lightbox-config` attribute value.
 
 {{< example >}}
 <button data-of-lightbox-open="custom" class="btn btn-primary">Open a hidden gallery</button>
 
-<script id="of-lightbox-custom" type="application/json">
+<script data-of-lightbox-config="custom" type="application/json">
   {
     "items": [
       {
@@ -121,7 +127,7 @@ Having a complex gallery with different groups and mixed content types is not a 
 
 {{< example >}}
 <!-- Lightbox options -->
-<script id="of-lightbox-tabs" type="application/json">
+<script data-of-lightbox-config="tabs" type="application/json">
   {
     "tabs": [
       {
@@ -417,8 +423,8 @@ Having a complex gallery with different groups and mixed content types is not a 
 
 <!-- Lightbox triggers -->
 <div class="mb-4">
-  <a href="#" class="btn btn-primary" data-lightbox-open="tabs">Open lightbox with tabs</a>
-  <a href="#" class="btn btn-primary" data-lightbox-open="tabs:gallery-2-2">Open element 2-2 in lightbox</a>
+  <a href="#" class="btn btn-primary" data-of-lightbox-open="tabs">Open lightbox with tabs</a>
+  <a href="#" class="btn btn-primary" data-of-lightbox-open="tabs:gallery-2-2">Open second image from Gallery 2</a>
 </div>
 
 <!-- Regular tabs -->
@@ -440,7 +446,7 @@ Having a complex gallery with different groups and mixed content types is not a 
       <div class="masonry-group-item">
         <div class="masonry masonry-vertical-1">
           <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
-            <a href="https://picsum.photos/id/1/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-1-1">
+            <a href="https://picsum.photos/id/1/1200/800" data-of-lightbox-open="tabs:0">
               <img src="https://picsum.photos/id/1/1200/800" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
@@ -449,17 +455,17 @@ Having a complex gallery with different groups and mixed content types is not a 
       <div class="masonry-group-item">
         <div class="masonry masonry-vertical-5">
           <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
-            <a href="https://picsum.photos/id/2/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-1-2">
+            <a href="https://picsum.photos/id/2/1200/800" data-of-lightbox-open="tabs:1">
               <img src="https://picsum.photos/id/2/1200/800" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
           <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
-            <a href="https://picsum.photos/id/3/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-1-3">
+            <a href="https://picsum.photos/id/3/1200/800" data-of-lightbox-open="tabs:2">
               <img src="https://picsum.photos/id/3/1200/800" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
           <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
-            <a href="https://picsum.photos/id/4/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-1-4">
+            <a href="https://picsum.photos/id/4/1200/800" data-of-lightbox-open="tabs:3">
               <img src="https://picsum.photos/id/4/1200/800" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
@@ -474,7 +480,7 @@ Having a complex gallery with different groups and mixed content types is not a 
       <div class="masonry-group-item">
         <div class="masonry masonry-vertical-1">
           <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
-            <a href="https://picsum.photos/id/21/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-2-1">
+            <a href="https://picsum.photos/id/21/1200/800" data-of-lightbox-open="tabs:gallery-2-1">
               <img src="https://picsum.photos/id/21/1200/800" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
@@ -483,17 +489,17 @@ Having a complex gallery with different groups and mixed content types is not a 
       <div class="masonry-group-item">
         <div class="masonry masonry-vertical-5">
           <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
-            <a href="https://picsum.photos/id/22/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-2-2">
+            <a href="https://picsum.photos/id/22/1200/800" data-of-lightbox-open="tabs:gallery-2-2">
               <img src="https://picsum.photos/id/22/1200/800" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
           <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
-            <a href="https://picsum.photos/id/23/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-2-3">
+            <a href="https://picsum.photos/id/23/1200/800" data-of-lightbox-open="tabs:gallery-2-3">
               <img src="https://picsum.photos/id/23/1200/800" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
           <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
-            <a href="https://picsum.photos/id/24/1200/800" data-lightbox-open="lightbox-1" data-lightbox-element="gallery-2-4">
+            <a href="https://picsum.photos/id/24/1200/800" data-of-lightbox-open="tabs:gallery-2-4">
               <img src="https://picsum.photos/id/24/1200/800" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
@@ -554,17 +560,17 @@ Having a complex gallery with different groups and mixed content types is not a 
 
 The lightbox options are optional. If you decide to use them, due to their nature, they must be defined in one central place.
 
-You can define them as a JSON object in one of the `<script>` tags. The element must get a unique ID `of-lightbox-<identifier>`, which will be referenced in other places.
+You can define them as a JSON object in one of the `<script>` tags. The element must get the `data-of-lightobx-config` attribute, which will be referenced in other places.
 
 ```html
-<script id="of-lightbox-gallery-1" type="application/json">
+<script data-of-lightbox-config="gallery-1" type="application/json">
   {
     "thumbnails": true
   }
 </script>
 ```
 
-The lightbox can be then referenced in the lightbox item as options source (note that we omit the `of-lightbox-` prefix):
+The lightbox can be then referenced in the lightbox item as options source:
 
 ```html
 <a href="…" data-of-lightbox='{ "group": "gallery-1" }'>
@@ -572,7 +578,7 @@ The lightbox can be then referenced in the lightbox item as options source (note
 </a>
 ```
 
-You can also open the lightbox by referring to it (again, the `of-lightbox-` prefix is not needed):
+You can also open the lightbox by referring to it:
 
 ```html
 <button data-of-lightbox-open="gallery-1" class="btn btn-primary">Open image gallery</button>

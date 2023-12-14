@@ -664,14 +664,14 @@ $copyright-horizontal-breakpoint:   md !default;
 // Lightbox
 // scss-docs-start lightbox-variables
 $lightbox-background: var(--#{$prefix}body-bg) !default;
-$lightbox-header-margin: 1rem !default;
-$lightbox-header-padding-x: 1rem !default;
-$lightbox-header-padding-y: 1rem !default;
-$lightbox-header-border-width: 1px !default;
-$lightbox-header-border-color: var(--#{$prefix}border-color) !default;
-$lightbox-footer-margin: 1rem !default;
-$lightbox-footer-padding-x: $lightbox-header-padding-x !default;
-$lightbox-footer-padding-y: $lightbox-header-padding-y !default;
-$lightbox-footer-border-width: $lightbox-header-border-width !default;
-$lightbox-footer-border-color: $lightbox-header-border-color !default;
+$lightbox-tabs-margin: 1rem !default;
+$lightbox-tabs-padding-x: 1rem !default;
+$lightbox-tabs-padding-y: 1rem !default;
+$lightbox-tabs-border-width: 1px !default;
+$lightbox-tabs-border-color: var(--#{$prefix}border-color) !default;
+$lightbox-thumbnails-margin: 1rem !default;
+$lightbox-thumbnails-padding-x: $lightbox-tabs-padding-x !default;
+$lightbox-thumbnails-padding-y: $lightbox-tabs-padding-y !default;
+$lightbox-thumbnails-border-width: $lightbox-tabs-border-width !default;
+$lightbox-thumbnails-border-color: $lightbox-tabs-border-color !default;
 // scss-docs-end lightbox-variables

@@ -43,7 +43,7 @@ Multiple items can be grouped into the lightbox gallery using a common lightbox 
   </div>
   <div class="col-3">
     <figure>
-      <a data-of-lightbox='{ "group": "image-gallery", "identifier": "my-favorite" }' href="assets/media/sample-gallery-2.jpg">
+      <a data-of-lightbox='{ "group": "image-gallery", "identifier": "my-favorite", "title": "This is my favorite image" }' href="assets/media/sample-gallery-2.jpg">
         <img src="assets/media/sample-gallery-2.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>
     </figure>
@@ -101,7 +101,6 @@ The lightbox trigger must reference the `<script>` tag. In the `data-of-lightbox
         "identifier": "custom-1",
         "type": "image",
         "href": "https://picsum.photos/id/1/1200/800",
-        "thumbnail": "https://picsum.photos/id/1/70",
         "title": "My Title",
         "description": "Example"
       },
@@ -121,18 +120,95 @@ The lightbox trigger must reference the `<script>` tag. In the `data-of-lightbox
 </script>
 {{< /example >}}
 
-### Lightbox with tabs
+### Thumbnails
+
+To display thumbnails in lightbox, you have to set the `thumbnails: true` in the lightbox options. When this feature is enabled, the lightbox will use the original image as a thumbnail.
+
+{{< callout info >}}
+**Good to know!** For content types that are not images (e.g., `video` or `inline`), a placeholder will be displayed instead. Read more on how to set a custom thumbnail.
+{{< /callout >}}
+
+{{< example >}}
+<script data-of-lightbox-config="thumbnails" type="application/json">
+  {
+    "thumbnails": true
+  }
+</script>
+
+<div class="row">
+  <div class="col-3">
+    <figure>
+      <a data-of-lightbox='{ "group": "thumbnails" }' href="assets/media/sample-gallery-1.jpg">
+        <img src="assets/media/sample-gallery-1.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
+      </a>
+    </figure>
+  </div>
+  <div class="col-3">
+    <figure>
+      <a data-of-lightbox='{ "group": "thumbnails" }' href="assets/media/sample-gallery-2.jpg">
+        <img src="assets/media/sample-gallery-2.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
+      </a>
+    </figure>
+  </div>
+  <div class="col-3">
+    <figure>
+      <a data-of-lightbox='{ "group": "thumbnails" }' href="assets/media/sample-gallery-3.jpg">
+        <img src="assets/media/sample-gallery-3.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
+      </a>
+    </figure>
+  </div>
+  <div class="col-3">
+    <figure>
+      <a data-of-lightbox='{ "group": "thumbnails" }' href="assets/media/sample-gallery-4.jpg">
+        <img src="assets/media/sample-gallery-4.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
+      </a>
+    </figure>
+  </div>
+</div>
+{{< /example >}}
+
+You can also define a custom thumbnail on your own. Simply add the `thumbnail` option to the lightbox item that should receive it:
+
+```html
+<a data-of-lightbox='{ "thumbnail": "path/to/custom-thumbnail.jpg" }' href="…">
+  <img src="…" alt="">
+</a>
+```
+
+Naturally, you can also define it in the lightbox options:
+
+```html
+<script data-of-lightbox-config="thumbnails" type="application/json">
+    {
+        "thumbnails": true,
+        "items": [
+            {
+                "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
+                "type": "video",
+                "source": "youtube",
+                "thumbnail": "path/to/custom-thumbnail.jpg"
+            }
+        ]
+    }
+</script>
+```
+
+### Tabs navigation
 
 Having a complex gallery with different groups and mixed content types is not a problem with the tabs feature.
+
+{{< callout info >}}
+**Heads up!** The tabs feature does not require the thumbnails to be enabled, but they play very nicely together.
+{{< /callout >}}
 
 {{< example >}}
 <!-- Lightbox options -->
 <script data-of-lightbox-config="tabs" type="application/json">
   {
+    "thumbnails": true,
     "tabs": [
       {
         "name": "Gallery 1",
-        "thumbnails": true,
         "items": [
           {
             "identifier": "gallery-1-1",
@@ -282,7 +358,6 @@ Having a complex gallery with different groups and mixed content types is not a 
       },
       {
         "name": "Gallery 2",
-        "thumbnails": true,
         "items": [
           {
             "identifier": "gallery-2-1",
@@ -352,7 +427,6 @@ Having a complex gallery with different groups and mixed content types is not a 
       },
       {
         "name": "Mixed Content",
-        "thumbnails": true,
         "items": [
           {
             "identifier": "content-1",
@@ -382,10 +456,9 @@ Having a complex gallery with different groups and mixed content types is not a 
       },
       {
         "name": "Youtube",
-        "thumbnails": true,
         "items": [
           {
-            "identifier": "content-5",
+            "identifier": "youtube-1",
             "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
             "type": "video",
             "source": "youtube",
@@ -395,10 +468,9 @@ Having a complex gallery with different groups and mixed content types is not a 
       },
       {
         "name": "Vimeo",
-        "thumbnails": false,
         "items": [
           {
-            "identifier": "content-6",
+            "identifier": "vimeo-1",
             "href": "https://vimeo.com/115041822",
             "type": "video",
             "source": "vimeo",
@@ -408,10 +480,9 @@ Having a complex gallery with different groups and mixed content types is not a 
       },
       {
         "name": "Map",
-        "thumbnails": true,
         "items": [
           {
-            "identifier": "content-7",
+            "identifier": "map-1",
             "href": "https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed",
             "width": 900
           }
@@ -424,7 +495,8 @@ Having a complex gallery with different groups and mixed content types is not a 
 <!-- Lightbox triggers -->
 <div class="mb-4">
   <a href="#" class="btn btn-primary" data-of-lightbox-open="tabs">Open lightbox with tabs</a>
-  <a href="#" class="btn btn-primary" data-of-lightbox-open="tabs:gallery-2-2">Open second image from Gallery 2</a>
+  <a href="#" class="btn btn-primary" data-of-lightbox-open="tabs:gallery-2-3">Open third image from Gallery 2</a>
+  <a href="#" class="btn btn-primary" data-of-lightbox-open="tabs:map-1">Open the map</a>
 </div>
 
 <!-- Regular tabs -->
@@ -591,11 +663,11 @@ Here is the list of all available options (alphabetically):
 | --- | --- | --- | --- |
 | `items` | `array` | `[]` | The items to display in the lightbox. Every item must be an object with item options described below. |
 | `tabs` | `array` | `[]` | The tabs to display at the top of the lightbox. Every tab must be an object with tab options described below. |
-| `thumbnails` | `boolean` | `false` | Show the thumbnails of all lightbox items. |
+| `thumbnails` | `boolean` | `false` | Show the thumbnails of lightbox items. |
 {{< /bs-table >}}
 
 {{< callout warning >}}
-**Attention!** If you are using `tabs` option, the `items` and `thumbnails` set on the top level will be ignored. You have to set them individually for every tab!
+**Attention!** If you are using `tabs` option, the `items` set on the top level will be ignored. You have to set them individually for every tab!
 {{< /callout >}}
 
 #### Tab options
@@ -607,7 +679,6 @@ Here is the list of all available tab options (alphabetically):
 | --- | --- | --- |
 | `name` | `string` | The tab name displayed in the tab navigation. |
 | `items` | `array` | The items to be displayed in this tab. Every item must be an object with item options described below. |
-| `thumbnails` | `boolean` | Show the thumbnails of lightbox items in this tab. |
 {{< /bs-table >}}
 
 #### Item options

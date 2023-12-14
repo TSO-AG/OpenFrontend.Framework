@@ -2,14 +2,14 @@
   // scss-docs-start lightbox-css-vars
   --lightbox-offset: 20px;
   --lightbox-backgorund: #{$lightbox-background};
-  --lightbox-header-padding-x: #{$lightbox-header-padding-x};
-  --lightbox-header-padding-y: #{$lightbox-header-padding-y};
-  --lightbox-header-border-width: #{$lightbox-header-border-width};
-  --lightbox-header-border-color: #{$lightbox-header-border-color};
-  --lightbox-footer-padding-y: #{$lightbox-footer-padding-x};
-  --lightbox-footer-padding-x: #{$lightbox-footer-padding-y};
-  --lightbox-footer-border-width: #{$lightbox-footer-border-width};
-  --lightbox-footer-border-color: #{$lightbox-footer-border-color};
+  --lightbox-tabs-padding-x: #{$lightbox-tabs-padding-x};
+  --lightbox-tabs-padding-y: #{$lightbox-tabs-padding-y};
+  --lightbox-tabs-border-width: #{$lightbox-tabs-border-width};
+  --lightbox-tabs-border-color: #{$lightbox-tabs-border-color};
+  --lightbox-thumbnails-padding-y: #{$lightbox-thumbnails-padding-x};
+  --lightbox-thumbnails-padding-x: #{$lightbox-thumbnails-padding-y};
+  --lightbox-thumbnails-border-width: #{$lightbox-thumbnails-border-width};
+  --lightbox-thumbnails-border-color: #{$lightbox-thumbnails-border-color};
   // scss-docs-end lightbox-css-vars
 
   .goverlay {
@@ -17,23 +17,14 @@
   }
 }
 
-.lightbox-header {
-  padding: var(--lightbox-header-padding-y) var(--lightbox-header-padding-x);
-  border-bottom: var(--lightbox-header-border-width) solid var(--lightbox-header-border-color);
-
-  &:empty {
-    display: none;
-  }
+.lightbox-tabs {
+  padding: var(--lightbox-tabs-padding-y) var(--lightbox-tabs-padding-x);
+  border-bottom: var(--lightbox-tabs-border-width) solid var(--lightbox-tabs-border-color);
 }
 
-.lightbox-footer {
-  padding: var(--lightbox-footer-padding-y) var(--lightbox-footer-padding-x);
-  border-top: var(--lightbox-footer-border-width) solid var(--lightbox-footer-border-color);
-
-  &.lightbox-footer-hidden,
-  &:empty {
-    display: none;
-  }
+.lightbox-thumbnails {
+  padding: var(--lightbox-thumbnails-padding-y) var(--lightbox-thumbnails-padding-x);
+  border-top: var(--lightbox-thumbnails-border-width) solid var(--lightbox-thumbnails-border-color);
 }
 
 .lightbox-wrapper {
@@ -60,7 +51,7 @@
   }
 
   .gslide-inline {
-    max-height: calc(100vh - var(--lightbox-header-height, 0px) - var(--lightbox-footer-height, 0px) - var(--lightbox-offset));
+    max-height: calc(100vh - var(--lightbox-tabs-height, 0px) - var(--lightbox-thumbnails-height, 0px) - var(--lightbox-offset));
   }
 
   .gslide-image img {
@@ -69,13 +60,13 @@
 
   .gslide:not(.zoomed) {
     .gslide-image img {
-      max-height: calc(100vh - var(--lightbox-header-height, 0px) - var(--lightbox-footer-height, 0px) - var(--lightbox-description-height, 0px) - var(--lightbox-offset)) !important;  // stylelint-disable-line declaration-no-important
+      max-height: calc(100vh - var(--lightbox-tabs-height, 0px) - var(--lightbox-thumbnails-height, 0px) - var(--lightbox-description-height, 0px) - var(--lightbox-offset)) !important;  // stylelint-disable-line declaration-no-important
     }
   }
 
   .gslide.zoomed {
-    margin-top: calc(var(--lightbox-header-height, 0px) * -1);
-    margin-bottom: calc(var(--lightbox-footer-height, 0px) * -1);
+    margin-top: calc(var(--lightbox-tabs-height, 0px) * -1);
+    margin-bottom: calc(var(--lightbox-thumbnails-height, 0px) * -1);
   }
 }
 
@@ -166,15 +157,15 @@ html .glightbox-clean {
 }
 
 .goverlay.gfadeOut + .gcontainer { // stylelint-disable-line selector-class-pattern
-  .lightbox-header,
-  .lightbox-footer {
+  .lightbox-tabs,
+  .lightbox-thumbnails {
     animation: gfadeOut .5s ease;
   }
 }
 
 .goverlay.gfadeIn + .gcontainer { // stylelint-disable-line selector-class-pattern
-  .lightbox-header,
-  .lightbox-footer {
+  .lightbox-tabs,
+  .lightbox-thumbnails {
     animation: gfadeIn .5s ease;
   }
 }

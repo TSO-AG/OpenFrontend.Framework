@@ -10,6 +10,15 @@ Swiper.use([Navigation, Autoplay, Manipulation])
 const NAME = 'lightbox'
 const LIGHTBOX_WRAPPER_CLASS = 'lightbox-wrapper'
 const LIGHTBOX_THUMBNAILS_CLASS = 'lightbox-thumbnails'
+
+const LIGHTBOX_SETTINGS = {
+    autoplayVideos: true,
+    closeEffect: 'fade',
+    closeOnOutsideClick: false,
+    openEffect: 'fade',
+    touchNavigation: true,
+}
+
 const LIGHTBOX_HTML = `<div id="glightbox-body" class="glightbox-container" tabindex="-1" role="dialog" aria-hidden="false">
   <div class="gloader visible"></div>
   <div class="goverlay"></div>
@@ -24,7 +33,8 @@ const LIGHTBOX_HTML = `<div id="glightbox-body" class="glightbox-container" tabi
     <button class="gnext gbtn" aria-label="Next" data-taborder="1">{nextSVG}</button>
   </div>
 </div>`
-const CAROUSEL_HTML = `<div class="gallery-thumbnails carousel carousel-navigation-center">
+
+const THUMBNAILS_CAROUSEL_HTML = `<div class="gallery-thumbnails carousel carousel-navigation-center">
   <div class="swiper">
     <div class="swiper-wrapper"></div>
   </div>
@@ -115,12 +125,8 @@ export class Lightbox extends Config {
         html = html.replace(/{afterContent}/, this._getAfterContentHtml())
 
         return {
-            elements: this._config.items,
-            touchNavigation: true,
-            autoplayVideos: true,
-            closeOnOutsideClick: false,
-            openEffect: 'fade',
-            closeEffect: 'fade',
+            ...LIGHTBOX_SETTINGS,
+            elements: this._config.items.map(item => ({...item, zoomable: false})),
             lightboxHTML: html,
         }
     }
@@ -178,7 +184,7 @@ export class Lightbox extends Config {
 
     _generateThumbnails() {
         const temp = document.createElement('div')
-        temp.innerHTML = CAROUSEL_HTML
+        temp.innerHTML = THUMBNAILS_CAROUSEL_HTML
 
         this._thumbnailsElement.append(temp.firstElementChild)
         this._thumbnailsCarousel = new Swiper(this._thumbnailsElement.querySelector('.swiper'), THUMBNAILS_CAROUSEL_SETTINGS)

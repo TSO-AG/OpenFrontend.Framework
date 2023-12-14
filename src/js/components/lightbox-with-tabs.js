@@ -94,16 +94,16 @@ class LightboxWithTabs extends Lightbox {
     }
 
     _setActiveTab(activeTabIndex) {
-        this._tabsActiveTabIndex = activeTabIndex
+        this._tabsActiveTabIndex = parseInt(activeTabIndex)
 
         // Set active tab class
-        for (const [index, el] of this._tabsLinks.entries()) {
-            if (index === activeTabIndex) {
-                el.classList.add(LIGHTBOX_TABS_ACTIVE_CLASS)
-            } else if (el.classList.contains(LIGHTBOX_TABS_ACTIVE_CLASS)) {
-                el.classList.remove(LIGHTBOX_TABS_ACTIVE_CLASS)
+        this._tabsLinks.forEach((element, index) => {
+            if (index === this._tabsActiveTabIndex) {
+                element.classList.add(LIGHTBOX_TABS_ACTIVE_CLASS)
+            } else if (element.classList.contains(LIGHTBOX_TABS_ACTIVE_CLASS)) {
+                element.classList.remove(LIGHTBOX_TABS_ACTIVE_CLASS)
             }
-        }
+        })
 
         // Avoid the error of getting the previous slide configuration, when new lightbox slides are set up
         this._lightbox.prevActiveSlideIndex = null

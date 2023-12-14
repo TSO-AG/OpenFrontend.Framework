@@ -84,18 +84,34 @@
     max-width: 70px;
     aspect-ratio: 1;
     background: $gray-100;
+    cursor: pointer;
+    counter-increment: section;
 
     &::before {
       position: absolute;
       inset: 0;
       content: "";
       border: 0 solid $primary;
+      z-index: 2;
     }
 
     img {
+      position: relative;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      z-index: 1;
+    }
+
+    &::after {
+      position: absolute;
+      content: counter(section);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
     }
 
     &.swiper-slide-active {

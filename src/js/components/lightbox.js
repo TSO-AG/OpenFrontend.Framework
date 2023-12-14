@@ -214,8 +214,6 @@ class Lightbox extends Config {
         image.src = element.thumbnails || element.href
         image.alt = element.alt || ''
         slide.append(image)
-      } else {
-        slide.append(element.type)
       }
 
       slides.push(slide)

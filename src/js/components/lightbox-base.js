@@ -227,7 +227,7 @@ export class Lightbox extends Config {
         return this._config.items.map(generator)
     }
 
-    _setThumbnailsActiveSlide(index, speed = null) {
+    _setThumbnailsActiveSlide(index, speed = undefined) {
         if (this._thumbnailsCarousel && this._thumbnailsCarousel.slides.length >= index) {
             this._thumbnailsCarousel.slideTo(index, speed)
         }

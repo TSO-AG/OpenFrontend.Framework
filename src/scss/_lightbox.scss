@@ -6,6 +6,8 @@
   --lightbox-tabs-padding-y: #{$lightbox-tabs-padding-y};
   --lightbox-tabs-border-width: #{$lightbox-tabs-border-width};
   --lightbox-tabs-border-color: #{$lightbox-tabs-border-color};
+  --lightbox-thumbnails-width: #{$lightbox-thumbnails-width};
+  --lightbox-thumbnails-height: #{$lightbox-thumbnails-height};
   --lightbox-thumbnails-padding-y: #{$lightbox-thumbnails-padding-x};
   --lightbox-thumbnails-padding-x: #{$lightbox-thumbnails-padding-y};
   --lightbox-thumbnails-border-width: #{$lightbox-thumbnails-border-width};
@@ -72,8 +74,8 @@
 
 .gallery-thumbnails {
   .swiper-slide {
-    max-width: 70px;
-    aspect-ratio: 1;
+    width: var(--lightbox-thumbnails-width);
+    height: var(--lightbox-thumbnails-height);
     background: $gray-100;
     cursor: pointer;
     counter-increment: section;

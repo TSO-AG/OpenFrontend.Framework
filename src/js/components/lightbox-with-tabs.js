@@ -33,11 +33,11 @@ class LightboxWithTabs extends Lightbox {
         this._lightbox.openAt(itemIndex)
 
         if (this._config.thumbnails) {
-            this._thumbnailsCarousel.slideTo(itemIndex, 0)
+            this._setThumbnailsActiveSlide(itemIndex, 0)
         }
     }
 
-    // Private
+    // Overrides
     _getBeforeContentHtml() {
         return `<div class="${LIGHTBOX_TABS_CLASS}"></div>`
     }
@@ -61,6 +61,11 @@ class LightboxWithTabs extends Lightbox {
         this._tabsLinks = []
     }
 
+    _generateThumbnailsCarouselSlides(generator) {
+        return this._config.tabs[this._tabsActiveTabIndex].items.map(generator)
+    }
+
+    // Private
     _generateTabs() {
         const tabs = document.createElement('ul')
         tabs.className = 'nav nav-underline'
@@ -72,7 +77,7 @@ class LightboxWithTabs extends Lightbox {
             const link = document.createElement('a')
             link.className = 'nav-link'
             link.textContent = tab.name || index
-            link.href = `#${this._identifier}:${index}` // TODO: fix me
+            link.href = `#${this._identifier}:${index}` // TODO: fix when URL hash support is here
             link.dataset.tab = index
 
             this._tabsLinks.push(link)
@@ -122,7 +127,7 @@ class LightboxWithTabs extends Lightbox {
                 // Update the thumbnails, if any
                 if (this._config.thumbnails) {
                     this._updateThumbnails()
-                    this._thumbnailsCarousel.slideTo(0, 0)
+                    this._setThumbnailsActiveSlide(0, 0)
                 }
             })
         }

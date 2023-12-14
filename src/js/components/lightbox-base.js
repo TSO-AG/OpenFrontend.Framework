@@ -102,6 +102,10 @@ export class Lightbox extends Config {
         }
 
         this._lightbox.openAt(index)
+
+        if (this._config.thumbnails) {
+            this._setThumbnailsActiveSlide(index, 0)
+        }
     }
 
     // Private
@@ -194,23 +198,9 @@ export class Lightbox extends Config {
             return
         }
 
-        // Disable the carousel and remove all existing slides
-        this._thumbnailsCarouselLocked = true
-        this._thumbnailsCarousel.disable()
-        this._thumbnailsCarousel.removeAllSlides()
-
-        // Append new slides and re-enable the carousel
-        this._thumbnailsCarousel.appendSlide(this._generateThumbnailsCarouselSlides())
-        this._thumbnailsCarousel.enable()
-        this._thumbnailsCarouselLocked = false
-    }
-
-    _generateThumbnailsCarouselSlides() {
-        const slides = []
-
-        for (const element of this._config.tabs[this._tabsActiveTabIndex].items) {
+        const generator = element => {
             const slide = document.createElement('div')
-            slide.classList.add('swiper-slide')
+            slide.className = 'swiper-slide'
 
             if (element.thumbnail || element.type === 'image') {
                 const image = document.createElement('img')
@@ -219,23 +209,32 @@ export class Lightbox extends Config {
                 slide.append(image)
             }
 
-            slides.push(slide)
+            return slide
         }
 
-        return slides
+        // Disable the carousel and remove all existing slides
+        this._thumbnailsCarouselLocked = true
+        this._thumbnailsCarousel.disable()
+        this._thumbnailsCarousel.removeAllSlides()
+
+        // Append new slides and re-enable the carousel
+        this._thumbnailsCarousel.appendSlide(this._generateThumbnailsCarouselSlides(generator))
+        this._thumbnailsCarousel.enable()
+        this._thumbnailsCarouselLocked = false
     }
 
-    // TODO: abstract this from the tabs
-    _setThumbnailsActiveSlide(index) {
-        this._tabsActiveElementIndex = index
+    _generateThumbnailsCarouselSlides(generator) {
+        return this._config.items.map(generator)
+    }
 
+    _setThumbnailsActiveSlide(index, speed = null) {
         if (this._thumbnailsCarousel && this._thumbnailsCarousel.slides.length >= index) {
-            this._thumbnailsCarousel.slideTo(this._tabsActiveElementIndex)
+            this._thumbnailsCarousel.slideTo(index, speed)
         }
 
-        // Change the lightbox slide, if it's not the same
-        if (this._lightbox.index !== this._tabsActiveElementIndex) {
-            this._lightbox.goToSlide(this._tabsActiveElementIndex)
+        // Also change the lightbox slide, if it's not the same
+        if (this._lightbox.index !== index) {
+            this._lightbox.goToSlide(index)
         }
     }
 

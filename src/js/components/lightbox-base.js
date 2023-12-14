@@ -204,13 +204,27 @@ export class Lightbox extends Config {
             return
         }
 
+        const imageRegExp = new RegExp('\.(gif|jpg|jpeg|png|svg|webp)$')
+
         const generator = element => {
             const slide = document.createElement('div')
             slide.className = 'swiper-slide'
 
-            if (element.thumbnail || element.type === 'image') {
+            let thumbnail = element.thumbnail
+
+            // Try to detect the image, if type is unknown
+            if (!thumbnail && !element.type && element.href && imageRegExp.test(element.href)) {
+                element.type = 'image'
+            }
+
+            // Set the original image as thumbnail
+            if (!thumbnail && element.type === 'image') {
+                thumbnail = element.href
+            }
+
+            if (thumbnail) {
                 const image = document.createElement('img')
-                image.src = element.thumbnail || element.href
+                image.src = thumbnail
                 image.alt = element.alt || ''
                 slide.append(image)
             }

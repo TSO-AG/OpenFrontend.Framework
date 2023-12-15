@@ -208,146 +208,120 @@ Having a complex gallery with different groups and mixed content types is not a 
     "thumbnails": true,
     "tabs": [
       {
-        "name": "Gallery 1",
+        "name": "Mountains",
         "items": [
           {
-            "identifier": "gallery-1-1",
+            "identifier": "gallery-mountains-1",
             "href": "assets/media/sample-gallery-1.jpg",
             "type": "image",
             "title": "My Title",
             "description": "Example"
           },
           {
-            "identifier": "gallery-1-2",
+            "identifier": "gallery-mountains-2",
             "href": "assets/media/sample-gallery-2.jpg",
             "type": "image",
             "title": "My Title 2",
             "description": "Example 2"
           },
           {
-            "identifier": "gallery-1-3",
+            "identifier": "gallery-mountains-3",
             "href": "assets/media/sample-gallery-3.jpg",
             "type": "image"
           },
           {
-            "identifier": "gallery-1-4",
+            "identifier": "gallery-mountains-4",
             "href": "assets/media/sample-gallery-4.jpg",
             "type": "image"
           },
           {
-            "identifier": "gallery-1-5",
+            "identifier": "gallery-mountains-5",
             "href": "assets/media/sample-gallery-5.jpg",
             "type": "image"
           },
           {
-            "identifier": "gallery-1-6",
+            "identifier": "gallery-mountains-6",
             "href": "assets/media/sample-gallery-6.jpg",
             "type": "image"
           },
           {
-            "identifier": "gallery-1-7",
+            "identifier": "gallery-mountains-7",
             "href": "assets/media/sample-gallery-7.jpg",
             "type": "image"
           },
           {
-            "identifier": "gallery-1-8",
+            "identifier": "gallery-mountains-8",
             "href": "assets/media/sample-gallery-8.jpg",
             "type": "image"
           },
           {
-            "identifier": "gallery-1-9",
+            "identifier": "gallery-mountains-9",
             "href": "assets/media/sample-gallery-9.jpg",
             "type": "image"
           },
           {
-            "identifier": "gallery-1-10",
+            "identifier": "gallery-mountains-10",
             "href": "assets/media/sample-gallery-10.jpg",
             "type": "image"
           }
         ]
       },
       {
-        "name": "Gallery 2",
+        "name": "Space",
         "items": [
           {
-            "identifier": "gallery-2-1",
+            "identifier": "gallery-space-1",
             "href": "assets/media/sample-gallery-11.jpg",
             "type": "image",
             "title": "My Title",
             "description": "Example"
           },
           {
-            "identifier": "gallery-2-2",
+            "identifier": "gallery-space-2",
             "href": "assets/media/sample-gallery-12.jpg",
             "type": "image"
           },
           {
-            "identifier": "gallery-2-3",
+            "identifier": "gallery-space-3",
             "href": "assets/media/sample-gallery-13.jpg",
             "type": "image"
           },
           {
-            "identifier": "gallery-2-4",
+            "identifier": "gallery-space-4",
             "href": "assets/media/sample-gallery-14.jpg",
             "type": "image"
           }
         ]
       },
-      {
-        "name": "Mixed Content",
-        "items": [
-          {
-            "identifier": "mixed-1",
-            "href": "assets/media/sample-gallery-10.jpg",
-            "type": "image",
-            "title": "My Title",
-            "description": "Example"
-          },
-          {
-            "identifier": "mixed-2",
-            "href": "assets/media/sample-gallery-12.jpg",
-            "type": "image"
-          },
-          {
-            "identifier": "mixed-3",
-            "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
-            "type": "video",
-            "source": "youtube"
-          },
-          {
-            "identifier": "mixed-4",
-            "content": "<p>This will append some html inside the slide</p>"
-          }
-        ]
-      },
-      {
-        "name": "Youtube",
-        "items": [
-          {
-            "identifier": "youtube-1",
-            "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
-            "type": "video",
-            "source": "youtube"
-          }
-        ]
-      },
-      {
-        "name": "Vimeo",
-        "items": [
-          {
-            "identifier": "vimeo-1",
-            "href": "https://vimeo.com/115041822",
-            "type": "video",
-            "source": "vimeo"
-          }
-        ]
-      },
+    {
+      "name": "Videos",
+      "items": [
+        {
+          "identifier": "video",
+          "href": "../../assets/media/sample-video.mp4",
+          "type": "video",
+          "source": "local"
+        },
+        {
+          "identifier": "youtube",
+          "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
+          "type": "video",
+          "source": "youtube"
+        },
+        {
+          "identifier": "vimeo",
+          "href": "https://vimeo.com/115041822",
+          "type": "video",
+          "source": "vimeo"
+        }
+      ]
+    },
       {
         "name": "Map",
         "items": [
           {
             "identifier": "map-1",
-            "href": "https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed"
+            "href": "https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375"
           }
         ]
       }
@@ -357,113 +331,107 @@ Having a complex gallery with different groups and mixed content types is not a 
 
 <!-- Lightbox triggers -->
 <div class="mb-4">
-  <a href="#" class="btn btn-primary" data-of-lightbox-open="tabs">Open lightbox with tabs</a>
-  <a href="#" class="btn btn-primary" data-of-lightbox-open="tabs:gallery-2-3">Open third image from Gallery 2</a>
+  <a href="#" class="btn btn-primary" data-of-lightbox-open="tabs:gallery-space-3">Open third space image</a>
   <a href="#" class="btn btn-primary" data-of-lightbox-open="tabs:map-1">Open the map</a>
 </div>
 
 <!-- Regular tabs -->
 <nav class="mb-2">
   <div class="nav nav-tabs nav-tabs-horizontal" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-gallery-1-tab" data-bs-toggle="tab" data-bs-target="#nav-gallery-1" type="button" role="tab" aria-controls="nav-gallery-1" aria-selected="true">Gallery 1</button>
-    <button class="nav-link" id="nav-gallery-2-tab" data-bs-toggle="tab" data-bs-target="#nav-gallery-2" type="button" role="tab" aria-controls="gallery-2" aria-selected="false">Gallery 2</button>
-    <button class="nav-link" id="nav-mixed-content-tab" data-bs-toggle="tab" data-bs-target="#nav-mixed-content" type="button" role="tab" aria-controls="nav-mixed-content" aria-selected="false">Mixed Content</button>
-    <button class="nav-link" id="nav-youtube-tab" data-bs-toggle="tab" data-bs-target="#nav-youtube" type="button" role="tab" aria-controls="nav-youtube" aria-selected="false">Youtube</button>
-    <button class="nav-link" id="nav-vimeo-tab" data-bs-toggle="tab" data-bs-target="#nav-vimeo" type="button" role="tab" aria-controls="nav-vimeo" aria-selected="false">Vimeo</button>
+    <button class="nav-link active" id="nav-gallery-1-tab" data-bs-toggle="tab" data-bs-target="#nav-gallery-mountains" type="button" role="tab" aria-controls="nav-gallery-mountains" aria-selected="true">Mountains</button>
+    <button class="nav-link" id="nav-gallery-space-tab" data-bs-toggle="tab" data-bs-target="#nav-gallery-space" type="button" role="tab" aria-controls="gallery-space" aria-selected="false">Space</button>
+    <button class="nav-link" id="nav-videos-tab" data-bs-toggle="tab" data-bs-target="#nav-videos" type="button" role="tab" aria-controls="nav-videos" aria-selected="false">Videos</button>
     <button class="nav-link" id="nav-map-tab" data-bs-toggle="tab" data-bs-target="#nav-map" type="button" role="tab" aria-controls="nav-map" aria-selected="false">Map</button>
+    <button class="nav-link icon-link ms-auto" data-of-lightbox-open="tabs:0">Show all media <i class="ofi-arrow-right"></i></button>
   </div>
 </nav>
 
 <div class="tab-content" id="nav-tabContent">
-  <!-- Gallery 1 tab -->
-  <div class="tab-pane fade show active" id="nav-gallery-1" role="tabpanel" aria-labelledby="nav-gallery-1-tab" tabindex="0">
+  <!-- Mountains tab -->
+  <div class="tab-pane fade show active" id="nav-gallery-mountains" role="tabpanel" aria-labelledby="nav-gallery-mountains-tab" tabindex="0">
     <div class="masonry masonry-group-2">
       <div class="masonry-group-item">
         <div class="masonry masonry-vertical-1">
-          <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
-            <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox-open="tabs:0">
-              <img src="assets/media/sample-gallery-1.jpg" alt="" class="img-fit-cover img-thumbnail">
-            </a>
+          <div class="masonry-item">
+            <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
+              <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox-open="tabs:0">
+                <img src="assets/media/sample-gallery-1.jpg" alt="" class="img-fit-cover">
+              </a>
+            </div>
           </div>
         </div>
       </div>
       <div class="masonry-group-item">
         <div class="masonry masonry-vertical-5">
-          <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
-            <a href="assets/media/sample-gallery-2.jpg" data-of-lightbox-open="tabs:1">
-              <img src="assets/media/sample-gallery-2.jpg" alt="" class="img-fit-cover img-thumbnail">
-            </a>
+          <div class="masonry-item">
+            <div class="aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+              <a href="assets/media/sample-gallery-2.jpg" data-of-lightbox-open="tabs:1">
+                <img src="assets/media/sample-gallery-2.jpg" alt="" class="img-fit-cover">
+              </a>
+            </div>
           </div>
-          <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
-            <a href="assets/media/sample-gallery-3.jpg" data-of-lightbox-open="tabs:2">
-              <img src="assets/media/sample-gallery-3.jpg" alt="" class="img-fit-cover img-thumbnail">
-            </a>
+          <div class="masonry-item">
+            <div class="aspect aspect-16x9 aspect-md-auto">
+              <a href="assets/media/sample-gallery-3.jpg" data-of-lightbox-open="tabs:2">
+                <img src="assets/media/sample-gallery-3.jpg" alt="" class="img-fit-cover">
+              </a>
+            </div>
           </div>
-          <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
-            <a href="assets/media/sample-gallery-4.jpg" data-of-lightbox-open="tabs:3">
-              <img src="assets/media/sample-gallery-4.jpg" alt="" class="img-fit-cover img-thumbnail">
-            </a>
+          <div class="masonry-item">
+            <div class="aspect aspect-16x9 aspect-md-auto">
+              <a href="assets/media/sample-gallery-4.jpg" data-of-lightbox-open="tabs:3">
+                <img src="assets/media/sample-gallery-4.jpg" alt="" class="img-fit-cover">
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Gallery 2 tab -->
-  <div class="tab-pane fade" id="nav-gallery-2" role="tabpanel" aria-labelledby="nav-gallery-2-tab" tabindex="0">
-    <div class="masonry masonry-group-2">
-      <div class="masonry-group-item">
-        <div class="masonry masonry-vertical-1">
-          <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
-            <a href="assets/media/sample-gallery-11.jpg" data-of-lightbox-open="tabs:gallery-2-1">
-              <img src="assets/media/sample-gallery-11.jpg" alt="" class="img-fit-cover img-thumbnail">
-            </a>
-          </div>
+  <!-- Space tab -->
+  <div class="tab-pane fade" id="nav-gallery-space" role="tabpanel" aria-labelledby="nav-gallery-space-tab" tabindex="0">
+    <div class="masonry masonry-vertical-6">
+      <div class="masonry-item">
+        <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
+          <a href="assets/media/sample-gallery-11.jpg" data-of-lightbox-open="tabs:gallery-space-1">
+            <img src="assets/media/sample-gallery-11.jpg" alt="" class="img-fit-cover">
+          </a>
         </div>
       </div>
-      <div class="masonry-group-item">
-        <div class="masonry masonry-vertical-5">
-          <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
-            <a href="assets/media/sample-gallery-12.jpg" data-of-lightbox-open="tabs:gallery-2-2">
-              <img src="assets/media/sample-gallery-12.jpg" alt="" class="img-fit-cover img-thumbnail">
-            </a>
-          </div>
-          <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
-            <a href="assets/media/sample-gallery-13.jpg" data-of-lightbox-open="tabs:gallery-2-3">
-              <img src="assets/media/sample-gallery-13.jpg" alt="" class="img-fit-cover img-thumbnail">
-            </a>
-          </div>
-          <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
-            <a href="assets/media/sample-gallery-14.jpg" data-of-lightbox-open="tabs:gallery-2-4">
-              <img src="assets/media/sample-gallery-14.jpg" alt="" class="img-fit-cover img-thumbnail">
-            </a>
-          </div>
+      <div class="masonry-item">
+        <div class="aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+          <a href="assets/media/sample-gallery-12.jpg" data-of-lightbox-open="tabs:gallery-space-2">
+            <img src="assets/media/sample-gallery-12.jpg" alt="" class="img-fit-cover">
+          </a>
+        </div>
+      </div>
+      <div class="masonry-item">
+        <div class="aspect aspect-16x9 aspect-md-auto">
+          <a href="assets/media/sample-gallery-13.jpg" data-of-lightbox-open="tabs:gallery-space-3">
+            <img src="assets/media/sample-gallery-13.jpg" alt="" class="img-fit-cover">
+          </a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Mixed content tab -->
-  <div class="tab-pane fade" id="nav-mixed-content" role="tabpanel" aria-labelledby="nav-mixed-content-tab" tabindex="0">
-    <div class="masonry masonry-group-2">
-      <div class="masonry-group-item">
-        <div class="masonry masonry-vertical-1">
-          <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto" data-of-video-play>
-            {{< video class="object-fit-cover" >}}
-          </div>
+  <!-- Videos tab -->
+  <div class="tab-pane fade" id="nav-videos" role="tabpanel" aria-labelledby="nav-videos-tab" tabindex="0">
+    <div class="masonry masonry-vertical-5">
+      <div class="masonry-item">
+        <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto" data-of-video-play>
+          {{< video class="object-fit-cover" >}}
         </div>
       </div>
-      <div class="masonry-group-item">
-        <div class="masonry masonry-vertical-5">
-          <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16" data-of-video-play>
-            {{< video class="object-fit-cover" >}}
-          </div>
-          <div class="masonry-item aspect aspect-16x9 aspect-md-auto" data-of-video-play>
-            {{< video class="object-fit-cover" >}}
-          </div>
-          <div class="masonry-item aspect aspect-16x9 aspect-md-auto" data-of-video-play>
-            {{< video class="object-fit-cover" >}}
-          </div>
+      <div class="masonry-item">
+        <div class="aspect aspect-16x9">
+          <iframe src="https://www.youtube.com/embed/Ga6RYejo6Hk?rel=0" title="YouTube video" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="masonry-item">
+        <div class="aspect aspect-16x9">
+          <iframe src="https://player.vimeo.com/video/115041822" title="Vimeo video" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -471,22 +439,17 @@ Having a complex gallery with different groups and mixed content types is not a 
 
   <!-- YouTube tab -->
   <div class="tab-pane fade" id="nav-youtube" role="tabpanel" aria-labelledby="nav-youtube-tab" tabindex="0">
-    {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="youtube" >}}
+    {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="YouTube" >}}
   </div>
 
   <!-- Vimeo tab -->
   <div class="tab-pane fade" id="nav-vimeo" role="tabpanel" aria-labelledby="nav-vimeo-tab" tabindex="0">
-    {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="MAP" >}}
-  </div>
-
-  <!-- YouTube tab -->
-  <div class="tab-pane fade" id="nav-youtube" role="tabpanel" aria-labelledby="nav-youtube-tab" tabindex="0">
-    {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="MAP" >}}
+    {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="Vimeo" >}}
   </div>
 
   <!-- Map tab -->
   <div class="tab-pane fade" id="nav-map" role="tabpanel" aria-labelledby="nav-map-tab" tabindex="0">
-    {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="MAP" >}}
+    {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="Map" >}}
   </div>
 </div>
 {{< /example >}}

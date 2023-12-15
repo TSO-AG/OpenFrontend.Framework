@@ -100,7 +100,7 @@ The lightbox trigger must reference the `<script>` tag. In the `data-of-lightbox
       {
         "identifier": "custom-1",
         "type": "image",
-        "href": "https://picsum.photos/id/1/1200/800",
+        "href": "assets/media/sample-gallery-1.jpg",
         "title": "My Title",
         "description": "Example"
       },
@@ -212,147 +212,57 @@ Having a complex gallery with different groups and mixed content types is not a 
         "items": [
           {
             "identifier": "gallery-1-1",
-            "href": "https://picsum.photos/id/1/1200/800",
-            "thumbnail": "https://picsum.photos/id/1/70",
+            "href": "assets/media/sample-gallery-1.jpg",
             "type": "image",
             "title": "My Title",
             "description": "Example"
           },
           {
             "identifier": "gallery-1-2",
-            "href": "https://picsum.photos/id/2/1200/800",
-            "thumbnail": "https://picsum.photos/id/2/70",
+            "href": "assets/media/sample-gallery-2.jpg",
             "type": "image",
-            "alt": "image text alternatives",
             "title": "My Title 2",
             "description": "Example 2"
           },
           {
             "identifier": "gallery-1-3",
-            "href": "https://picsum.photos/id/3/1200/800",
-            "thumbnail": "https://picsum.photos/id/3/70",
-            "type": "image",
-            "alt": "image text alternatives"
+            "href": "assets/media/sample-gallery-3.jpg",
+            "type": "image"
           },
           {
             "identifier": "gallery-1-4",
-            "href": "https://picsum.photos/id/4/1200/800",
-            "thumbnail": "https://picsum.photos/id/4/70",
-            "type": "image",
-            "alt": "image text alternatives"
+            "href": "assets/media/sample-gallery-4.jpg",
+            "type": "image"
           },
           {
             "identifier": "gallery-1-5",
-            "href": "https://picsum.photos/id/5/1200/800",
-            "thumbnail": "https://picsum.photos/id/5/70",
-            "type": "image",
-            "alt": "image text alternatives"
+            "href": "assets/media/sample-gallery-5.jpg",
+            "type": "image"
           },
           {
             "identifier": "gallery-1-6",
-            "href": "https://picsum.photos/id/6/1200/800",
-            "thumbnail": "https://picsum.photos/id/6/70",
-            "type": "image",
-            "alt": "image text alternatives"
+            "href": "assets/media/sample-gallery-6.jpg",
+            "type": "image"
           },
           {
             "identifier": "gallery-1-7",
-            "href": "https://picsum.photos/id/7/1200/800",
-            "thumbnail": "https://picsum.photos/id/7/70",
-            "type": "image",
-            "alt": "image text alternatives"
+            "href": "assets/media/sample-gallery-7.jpg",
+            "type": "image"
           },
           {
             "identifier": "gallery-1-8",
-            "href": "https://picsum.photos/id/8/1200/800",
-            "thumbnail": "https://picsum.photos/id/8/70",
-            "type": "image",
-            "alt": "image text alternatives"
+            "href": "assets/media/sample-gallery-8.jpg",
+            "type": "image"
           },
           {
             "identifier": "gallery-1-9",
-            "href": "https://picsum.photos/id/9/1200/800",
-            "thumbnail": "https://picsum.photos/id/9/70",
-            "type": "image",
-            "alt": "image text alternatives"
+            "href": "assets/media/sample-gallery-9.jpg",
+            "type": "image"
           },
           {
             "identifier": "gallery-1-10",
-            "href": "https://picsum.photos/id/10/1200/800",
-            "thumbnail": "https://picsum.photos/id/10/70",
-            "type": "image",
-            "alt": "image text alternatives"
-          },
-          {
-            "identifier": "gallery-1-11",
-            "href": "https://picsum.photos/id/11/1200/800",
-            "thumbnail": "https://picsum.photos/id/11/70",
-            "type": "image",
-            "title": "My Title",
-            "description": "Example"
-          },
-          {
-            "identifier": "gallery-1-12",
-            "href": "https://picsum.photos/id/12/1200/800",
-            "thumbnail": "https://picsum.photos/id/12/70",
-            "type": "image",
-            "alt": "image text alternatives"
-          },
-          {
-            "identifier": "gallery-1-13",
-            "href": "https://picsum.photos/id/13/1200/800",
-            "thumbnail": "https://picsum.photos/id/13/70",
-            "type": "image",
-            "alt": "image text alternatives"
-          },
-          {
-            "identifier": "gallery-1-14",
-            "href": "https://picsum.photos/id/14/1200/800",
-            "thumbnail": "https://picsum.photos/id/14/70",
-            "type": "image",
-            "alt": "image text alternatives"
-          },
-          {
-            "identifier": "gallery-1-15",
-            "href": "https://picsum.photos/id/15/1200/800",
-            "thumbnail": "https://picsum.photos/id/15/70",
-            "type": "image",
-            "alt": "image text alternatives"
-          },
-          {
-            "identifier": "gallery-1-16",
-            "href": "https://picsum.photos/id/16/1200/800",
-            "thumbnail": "https://picsum.photos/id/16/70",
-            "type": "image",
-            "alt": "image text alternatives"
-          },
-          {
-            "identifier": "gallery-1-17",
-            "href": "https://picsum.photos/id/17/1200/800",
-            "thumbnail": "https://picsum.photos/id/17/70",
-            "type": "image",
-            "alt": "image text alternatives"
-          },
-          {
-            "identifier": "gallery-1-18",
-            "href": "https://picsum.photos/id/18/1200/800",
-            "thumbnail": "https://picsum.photos/id/18/70",
-            "type": "image",
-            "alt": "image text alternatives"
-          },
-          {
-            "identifier": "gallery-1-19",
-            "href": "https://picsum.photos/id/19/1200/800",
-            "thumbnail": "https://picsum.photos/id/19/70",
-            "type": "image",
-            "alt": "image text alternatives"
-          },
-          {
-            "identifier": "gallery-1-20",
-            "href": "https://picsum.photos/id/20/1200/800",
-            "thumbnail": "https://picsum.photos/id/20/70",
-            "type": "image",
-            "alt": "image text alternatives"
+            "href": "assets/media/sample-gallery-10.jpg",
+            "type": "image"
           }
         ]
       },
@@ -361,67 +271,25 @@ Having a complex gallery with different groups and mixed content types is not a 
         "items": [
           {
             "identifier": "gallery-2-1",
-            "href": "https://picsum.photos/id/21/1200/800",
-            "thumbnail": "https://picsum.photos/id/21/70",
+            "href": "assets/media/sample-gallery-11.jpg",
             "type": "image",
             "title": "My Title",
             "description": "Example"
           },
           {
             "identifier": "gallery-2-2",
-            "href": "https://picsum.photos/id/22/1200/800",
-            "thumbnail": "https://picsum.photos/id/22/70",
-            "type": "image",
-            "alt": "image text alternatives"
+            "href": "assets/media/sample-gallery-12.jpg",
+            "type": "image"
           },
           {
             "identifier": "gallery-2-3",
-            "href": "https://picsum.photos/id/23/1200/800",
-            "thumbnail": "https://picsum.photos/id/23/70",
-            "type": "image",
-            "alt": "image text alternatives"
+            "href": "assets/media/sample-gallery-13.jpg",
+            "type": "image"
           },
           {
             "identifier": "gallery-2-4",
-            "href": "https://picsum.photos/id/24/1200/800",
-            "thumbnail": "https://picsum.photos/id/24/70",
-            "type": "image",
-            "alt": "image text alternatives"
-          },
-          {
-            "identifier": "gallery-2-5",
-            "href": "https://picsum.photos/id/25/1200/800",
-            "thumbnail": "https://picsum.photos/id/25/70",
-            "type": "image",
-            "alt": "image text alternatives"
-          },
-          {
-            "identifier": "gallery-2-6",
-            "href": "https://picsum.photos/id/26/1200/800",
-            "thumbnail": "https://picsum.photos/id/26/70",
-            "type": "image",
-            "alt": "image text alternatives"
-          },
-          {
-            "identifier": "gallery-2-7",
-            "href": "https://picsum.photos/id/27/1200/800",
-            "thumbnail": "https://picsum.photos/id/27/70",
-            "type": "image",
-            "alt": "image text alternatives"
-          },
-          {
-            "identifier": "gallery-2-8",
-            "href": "https://picsum.photos/id/28/1200/800",
-            "thumbnail": "https://picsum.photos/id/28/70",
-            "type": "image",
-            "alt": "image text alternatives"
-          },
-          {
-            "identifier": "gallery-2-9",
-            "href": "https://picsum.photos/id/29/1200/800",
-            "thumbnail": "https://picsum.photos/id/29/70",
-            "type": "image",
-            "alt": "image text alternatives"
+            "href": "assets/media/sample-gallery-14.jpg",
+            "type": "image"
           }
         ]
       },
@@ -429,26 +297,25 @@ Having a complex gallery with different groups and mixed content types is not a 
         "name": "Mixed Content",
         "items": [
           {
-            "identifier": "content-1",
-            "href": "https://picsum.photos/id/31/1200/800",
+            "identifier": "mixed-1",
+            "href": "assets/media/sample-gallery-10.jpg",
             "type": "image",
             "title": "My Title",
             "description": "Example"
           },
           {
-            "identifier": "content-2",
-            "href": "https://picsum.photos/id/32/1200/800",
-            "type": "image",
-            "alt": "image text alternatives"
+            "identifier": "mixed-2",
+            "href": "assets/media/sample-gallery-12.jpg",
+            "type": "image"
           },
           {
-            "identifier": "content-3",
+            "identifier": "mixed-3",
             "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
             "type": "video",
             "source": "youtube"
           },
           {
-            "identifier": "content-4",
+            "identifier": "mixed-4",
             "content": "<p>This will append some html inside the slide</p>"
           }
         ]
@@ -514,8 +381,8 @@ Having a complex gallery with different groups and mixed content types is not a 
       <div class="masonry-group-item">
         <div class="masonry masonry-vertical-1">
           <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
-            <a href="https://picsum.photos/id/1/1200/800" data-of-lightbox-open="tabs:0">
-              <img src="https://picsum.photos/id/1/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox-open="tabs:0">
+              <img src="assets/media/sample-gallery-1.jpg" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
         </div>
@@ -523,18 +390,18 @@ Having a complex gallery with different groups and mixed content types is not a 
       <div class="masonry-group-item">
         <div class="masonry masonry-vertical-5">
           <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
-            <a href="https://picsum.photos/id/2/1200/800" data-of-lightbox-open="tabs:1">
-              <img src="https://picsum.photos/id/2/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            <a href="assets/media/sample-gallery-2.jpg" data-of-lightbox-open="tabs:1">
+              <img src="assets/media/sample-gallery-2.jpg" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
           <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
-            <a href="https://picsum.photos/id/3/1200/800" data-of-lightbox-open="tabs:2">
-              <img src="https://picsum.photos/id/3/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            <a href="assets/media/sample-gallery-3.jpg" data-of-lightbox-open="tabs:2">
+              <img src="assets/media/sample-gallery-3.jpg" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
           <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
-            <a href="https://picsum.photos/id/4/1200/800" data-of-lightbox-open="tabs:3">
-              <img src="https://picsum.photos/id/4/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            <a href="assets/media/sample-gallery-4.jpg" data-of-lightbox-open="tabs:3">
+              <img src="assets/media/sample-gallery-4.jpg" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
         </div>
@@ -548,8 +415,8 @@ Having a complex gallery with different groups and mixed content types is not a 
       <div class="masonry-group-item">
         <div class="masonry masonry-vertical-1">
           <div class="masonry-item aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
-            <a href="https://picsum.photos/id/21/1200/800" data-of-lightbox-open="tabs:gallery-2-1">
-              <img src="https://picsum.photos/id/21/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            <a href="assets/media/sample-gallery-11.jpg" data-of-lightbox-open="tabs:gallery-2-1">
+              <img src="assets/media/sample-gallery-11.jpg" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
         </div>
@@ -557,18 +424,18 @@ Having a complex gallery with different groups and mixed content types is not a 
       <div class="masonry-group-item">
         <div class="masonry masonry-vertical-5">
           <div class="masonry-item aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
-            <a href="https://picsum.photos/id/22/1200/800" data-of-lightbox-open="tabs:gallery-2-2">
-              <img src="https://picsum.photos/id/22/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            <a href="assets/media/sample-gallery-12.jpg" data-of-lightbox-open="tabs:gallery-2-2">
+              <img src="assets/media/sample-gallery-12.jpg" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
           <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
-            <a href="https://picsum.photos/id/23/1200/800" data-of-lightbox-open="tabs:gallery-2-3">
-              <img src="https://picsum.photos/id/23/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            <a href="assets/media/sample-gallery-13.jpg" data-of-lightbox-open="tabs:gallery-2-3">
+              <img src="assets/media/sample-gallery-13.jpg" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
           <div class="masonry-item aspect aspect-16x9 aspect-md-auto">
-            <a href="https://picsum.photos/id/24/1200/800" data-of-lightbox-open="tabs:gallery-2-4">
-              <img src="https://picsum.photos/id/24/1200/800" alt="" class="img-fit-cover img-thumbnail">
+            <a href="assets/media/sample-gallery-14.jpg" data-of-lightbox-open="tabs:gallery-2-4">
+              <img src="assets/media/sample-gallery-14.jpg" alt="" class="img-fit-cover img-thumbnail">
             </a>
           </div>
         </div>

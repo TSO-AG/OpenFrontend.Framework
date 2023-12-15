@@ -1,0 +1,188 @@
+.glightbox-container {
+  // scss-docs-start lightbox-css-vars
+  --lightbox-offset: 20px;
+  --lightbox-backgorund: #{$lightbox-background};
+  --lightbox-tabs-padding-x: #{$lightbox-tabs-padding-x};
+  --lightbox-tabs-padding-y: #{$lightbox-tabs-padding-y};
+  --lightbox-tabs-border-width: #{$lightbox-tabs-border-width};
+  --lightbox-tabs-border-color: #{$lightbox-tabs-border-color};
+  --lightbox-thumbnails-width: #{$lightbox-thumbnails-width};
+  --lightbox-thumbnails-height: #{$lightbox-thumbnails-height};
+  --lightbox-thumbnails-padding-y: #{$lightbox-thumbnails-padding-x};
+  --lightbox-thumbnails-padding-x: #{$lightbox-thumbnails-padding-y};
+  --lightbox-thumbnails-border-width: #{$lightbox-thumbnails-border-width};
+  --lightbox-thumbnails-border-color: #{$lightbox-thumbnails-border-color};
+  // scss-docs-end lightbox-css-vars
+
+  .goverlay {
+    background-color: var(--lightbox-backgorund);
+  }
+}
+
+.lightbox-tabs {
+  padding: var(--lightbox-tabs-padding-y) var(--lightbox-tabs-padding-x);
+  border-bottom: var(--lightbox-tabs-border-width) solid var(--lightbox-tabs-border-color);
+}
+
+.lightbox-thumbnails {
+  padding: var(--lightbox-thumbnails-padding-y) var(--lightbox-thumbnails-padding-x);
+  border-top: var(--lightbox-thumbnails-border-width) solid var(--lightbox-thumbnails-border-color);
+}
+
+.lightbox-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+
+  .gslider {
+    @include make-col();
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .gslide {
+    height: 100%;
+  }
+
+  .ginner-container {
+    max-width: none !important; // stylelint-disable-line declaration-no-important
+    height: auto !important; // stylelint-disable-line declaration-no-important
+
+    &:has(.gslide-image) { // @TODO - change has to real class
+      width: fit-content;
+    }
+  }
+
+  .gslide-inline {
+    max-height: calc(100vh - var(--lightbox-tabs-wrapper-height, 0px) - var(--lightbox-thumbnails-wrapper-height, 0px) - var(--lightbox-offset));
+  }
+
+  $content-height: calc(100vh - var(--lightbox-tabs-wrapper-height, 0px) - var(--lightbox-thumbnails-wrapper-height, 0px) - var(--lightbox-description-height, 0px) - var(--lightbox-offset)) !important; // stylelint-disable-line declaration-no-important
+
+  .gslide-image img {
+    @include transition(max-height .2s);
+    max-height: $content-height;
+  }
+
+  // TODO: base this on CSS variables?
+  $arrow-size: 40px;
+  $arrow-offset: 30px;
+  $arrows-total-offset: 2 * ($arrow-offset + $arrow-size + $arrow-offset);
+
+  .gslide-external {
+    width: calc(100% - $arrows-total-offset);
+    min-width: 0;
+    height: $content-height;
+    max-height: $content-height;
+  }
+
+  .gslide-inline,
+  .gslide-video {
+    width: auto !important; // stylelint-disable-line declaration-no-important
+    max-width: none !important; // stylelint-disable-line declaration-no-important
+    height: $content-height;
+    aspect-ratio: 16/9;
+  }
+}
+
+.gallery-thumbnails {
+  .swiper-slide {
+    width: var(--lightbox-thumbnails-width);
+    height: var(--lightbox-thumbnails-height);
+    cursor: pointer;
+    counter-increment: section;
+    background: $gray-100;
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      content: "";
+      border: 0 solid $primary;
+    }
+
+    img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      font-size: 2rem;
+      content: counter(section);
+    }
+
+    &.swiper-slide-active {
+      &::before {
+        border-width: 2px;
+      }
+    }
+  }
+}
+
+/* Skin */
+html .glightbox-clean {
+  .gslide-description {
+    background: #fff;
+  }
+
+  .gdesc-inner {
+    padding: 1em;
+  }
+
+  .gslide-title {
+    margin-bottom: .25em;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .gslide-desc {
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+  }
+
+  .desc-bottom {
+    .gslide-description {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      color: $white;
+      background: rgba($black, .2);
+      backdrop-filter: blur(5px);
+      transform: translateX(-50%);
+    }
+
+    .gslide-title {
+      color: inherit;
+    }
+  }
+}
+
+.goverlay.gfadeOut + .gcontainer { // stylelint-disable-line selector-class-pattern
+  .lightbox-tabs,
+  .lightbox-thumbnails {
+    animation: gfadeOut .5s ease;
+  }
+}
+
+.goverlay.gfadeIn + .gcontainer { // stylelint-disable-line selector-class-pattern
+  .lightbox-tabs,
+  .lightbox-thumbnails {
+    animation: gfadeIn .5s ease;
+  }
+}

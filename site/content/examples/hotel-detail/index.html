@@ -48,7 +48,9 @@ language: de
     <div class="row">
       <div class="col-lg-8 col-xxl-9">
         <div class="mb-element">
-          <img class="bd-placeholder-img aspect aspect-16x9 object-fit-cover" width="100%" height="545" aria-label="Hotel Zweistein Aussenansicht" src="../../assets/img/photos/hotel-zweistein-001.jpg">
+          <a href="../../assets/img/photos/hotel-zweistein-001.jpg" data-of-lightbox-open="media:0">
+            <img class="aspect aspect-16x9 object-fit-cover img-thumbnail" width="100%" height="545" aria-label="Hotel Zweistein Aussenansicht" src="../../assets/img/photos/hotel-zweistein-001.jpg">
+          </a>
         </div>
 
         <div class="mb-section">
@@ -76,6 +78,7 @@ language: de
 
         <div class="mb-section d-print-none">
           <h3>Medien</h3>
+
           <ul class="nav nav-underline mb-3" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="poi-detail-images" data-bs-toggle="tab" data-bs-target="#poi-detail-images-pane" type="button" role="tab" aria-controls="poi-detail-images-pane" aria-selected="true">Gallery</button>
@@ -86,6 +89,9 @@ language: de
             <li class="nav-item" role="presentation">
               <button class="nav-link" id="poi-detail-live" data-bs-toggle="tab" data-bs-target="#poi-detail-live-pane" type="button" role="tab" aria-controls="poi-detail-live-pane" aria-selected="false">Live Camera 360°</button>
             </li>
+            <li class="nav-item ms-auto" role="presentation">
+              <button class="nav-link icon-link" data-of-lightbox-open="media:0">Alle Medien anzeigen <i class="ofi-arrow-right"></i></button>
+            </li>
           </ul>
 
           <div class="tab-content">
@@ -95,7 +101,9 @@ language: de
                   <div class="masonry masonry-vertical-1">
                     <div class="masonry-item">
                       <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
-                        {{< placeholder width="200" height="100" class="img-thumbnail" text="Gallery 1" >}}
+                        <a href="../../assets/img/photos/hotel-zweistein-001.jpg" data-of-lightbox-open="media:0">
+                          <img src="../../assets/img/photos/hotel-zweistein-001.jpg" alt="" class="img-fit-cover">
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -104,17 +112,23 @@ language: de
                   <div class="masonry masonry-vertical-5">
                     <div class="masonry-item">
                       <div class="aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
-                        {{< placeholder width="200" height="100" class="img-thumbnail" text="Gallery 1" >}}
+                        <a href="../../assets/img/photos/hotel-zweistein-002.jpg" data-of-lightbox-open="media:1">
+                          <img src="../../assets/img/photos/hotel-zweistein-002.jpg" alt="" class="img-fit-cover">
+                        </a>
                       </div>
                     </div>
                     <div class="masonry-item">
                       <div class="aspect aspect-16x9 aspect-md-auto">
-                        {{< placeholder width="200" height="100" class="img-thumbnail" text="Gallery 1" >}}
+                        <a href="../../assets/img/photos/hotel-zweistein-003.jpg" data-of-lightbox-open="media:2">
+                          <img src="../../assets/img/photos/hotel-zweistein-003.jpg" alt="" class="img-fit-cover">
+                        </a>
                       </div>
                     </div>
                     <div class="masonry-item">
                       <div class="aspect aspect-16x9 aspect-md-auto">
-                        {{< placeholder width="200" height="100" class="img-thumbnail" text="Gallery 1" >}}
+                        <a href="../../assets/img/photos/hotel-zweistein-004.jpg" data-of-lightbox-open="media:3">
+                          <img src="../../assets/img/photos/hotel-zweistein-004.jpg" alt="" class="img-fit-cover">
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -122,41 +136,138 @@ language: de
               </div>
             </div>
             <div class="tab-pane" id="poi-detail-videos-pane" role="tabpanel" aria-labelledby="poi-detail-videos" tabindex="0">
-              <div class="masonry masonry-group-2">
-                <div class="masonry-group-item">
-                  <div class="masonry masonry-vertical-1">
-                    <div class="masonry-item" data-of-video-play>
-                      <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
-                        {{< video class="object-fit-cover" >}}
-                      </div>
-                    </div>
+              <div class="masonry masonry-vertical-5">
+                <div class="masonry-item">
+                  <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto" data-of-video-play>
+                    {{< video class="object-fit-cover" >}}
                   </div>
                 </div>
-                <div class="masonry-group-item">
-                  <div class="masonry masonry-vertical-5">
-                    <div class="masonry-item" data-of-video-play>
-                      <div class="aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
-                        {{< video class="object-fit-cover" >}}
-                      </div>
-                    </div>
-                    <div class="masonry-item" data-of-video-play>
-                      <div class="aspect aspect-16x9 aspect-md-auto">
-                        {{< video class="object-fit-cover" >}}
-                      </div>
-                    </div>
-                    <div class="masonry-item" data-of-video-play>
-                      <div class="aspect aspect-16x9 aspect-md-auto">
-                        {{< video class="object-fit-cover" >}}
-                      </div>
-                    </div>
+                <div class="masonry-item">
+                  <div class="aspect aspect-16x9">
+                    <iframe src="https://www.youtube.com/embed/Ga6RYejo6Hk?rel=0" title="YouTube video" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="masonry-item">
+                  <div class="aspect aspect-16x9">
+                    <iframe src="https://player.vimeo.com/video/115041822" title="Vimeo video" allowfullscreen></iframe>
                   </div>
                 </div>
               </div>
             </div>
             <div class="tab-pane" id="poi-detail-live-pane" role="tabpanel" aria-labelledby="poi-detail-live" tabindex="0">
-              {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="Live Kamera 360°" >}}
+              {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="Live Camera 360°" >}}
             </div>
           </div>
+
+          <script data-of-lightbox-config="media" type="application/json">
+            {
+              "thumbnails": true,
+              "tabs": [
+                {
+                  "name": "Gallery",
+                  "items": [
+                    {
+                      "identifier": "gallery-1",
+                      "href": "../../assets/img/photos/hotel-zweistein-001.jpg",
+                      "type": "image"
+                    },
+                    {
+                      "identifier": "gallery-2",
+                      "href": "../../assets/img/photos/hotel-zweistein-002.jpg",
+                      "type": "image"
+                    },
+                    {
+                      "identifier": "gallery-3",
+                      "href": "../../assets/img/photos/hotel-zweistein-003.jpg",
+                      "type": "image"
+                    },
+                    {
+                      "identifier": "gallery-4",
+                      "href": "../../assets/img/photos/hotel-zweistein-004.jpg",
+                      "type": "image"
+                    },
+                    {
+                      "identifier": "gallery-5",
+                      "href": "../../assets/img/photos/hotel-zweistein-005.jpg",
+                      "type": "image"
+                    },
+                    {
+                      "identifier": "gallery-6",
+                      "href": "../../assets/img/photos/hotel-zweistein-006.jpg",
+                      "type": "image"
+                    },
+                    {
+                      "identifier": "gallery-7",
+                      "href": "../../assets/img/photos/hotel-zweistein-007.jpg",
+                      "type": "image"
+                    },
+                    {
+                      "identifier": "gallery-8",
+                      "href": "../../assets/img/photos/hotel-zweistein-008.jpg",
+                      "type": "image"
+                    },
+                    {
+                      "identifier": "gallery-9",
+                      "href": "../../assets/img/photos/hotel-zweistein-009.jpg",
+                      "type": "image"
+                    },
+                    {
+                      "identifier": "gallery-10",
+                      "href": "../../assets/img/photos/hotel-zweistein-010.jpg",
+                      "type": "image"
+                    },
+                    {
+                      "identifier": "gallery-11",
+                      "href": "../../assets/img/photos/hotel-zweistein-011.jpg",
+                      "type": "image"
+                    },
+                    {
+                      "identifier": "gallery-12",
+                      "href": "../../assets/img/photos/hotel-zweistein-012.jpg",
+                      "type": "image"
+                    },
+                    {
+                      "identifier": "gallery-13",
+                      "href": "../../assets/img/photos/hotel-zweistein-013.jpg",
+                      "type": "image"
+                    }
+                  ]
+                },
+                {
+                  "name": "Videos",
+                  "items": [
+                    {
+                      "identifier": "video",
+                      "href": "../../assets/media/sample-video.mp4",
+                      "type": "video",
+                      "source": "local"
+                    },
+                    {
+                      "identifier": "youtube",
+                      "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
+                      "type": "video",
+                      "source": "youtube"
+                    },
+                    {
+                      "identifier": "vimeo",
+                      "href": "https://vimeo.com/115041822",
+                      "type": "video",
+                      "source": "vimeo"
+                    }
+                  ]
+                },
+                {
+                  "name": "Live Camera 360°",
+                  "items": [
+                    {
+                      "identifier": "live-camera-360",
+                      "href": "https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375"
+                    }
+                  ]
+                }
+              ]
+            }
+          </script>
         </div>
 
         <div class="mb-section">
@@ -191,6 +302,7 @@ language: de
                 <td>20</td>
                 <td>30</td>
                 <td>20</td>
+                <td>-</td>
                 <td>-</td>
               </tr>
               <tr>
@@ -466,7 +578,7 @@ language: de
 
                 <div class="wrapper-bg-media">
                   <figure>
-                    <img src="map-placeholder.svg" alt="">
+                    <img src="../../assets/img/placeholders/map-placeholder.svg" alt="">
                   </figure>
                 </div>
               </div>

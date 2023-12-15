@@ -125,7 +125,7 @@ The lightbox trigger must reference the `<script>` tag. In the `data-of-lightbox
 To display thumbnails in lightbox, you have to set the `thumbnails: true` in the lightbox options. When this feature is enabled, the lightbox will use the original image as a thumbnail.
 
 {{< callout info >}}
-**Good to know!** For content types that are not images (e.g., `video` or `inline`), a placeholder will be displayed instead. Read more on how to set a custom thumbnail.
+**Good to know!** For content types that are not images (e.g., `video` or `inline`), a placeholder will be displayed instead. Continue reading on how to set a custom thumbnail.
 {{< /callout >}}
 
 {{< example >}}
@@ -628,6 +628,32 @@ Having a complex gallery with different groups and mixed content types is not a 
 </div>
 {{< /example >}}
 
+## Responsive images
+
+The lightbox component supports responsive images with `sizes` and `srcset` item options:
+
+{{< callout warning >}}
+**Attention!** You must set both `sizes` and `srcset` options to make this work!
+{{< /callout >}}
+
+```html
+<a data-of-lightbox='{ "sizes": "(max-width: 600px) 480px, 800px", "srcset": "mobile.jpg 480w, desktop.jpg 800w" }' href="…">
+    <img src="…" alt="">
+</a>
+```
+
+The responsive thumbnails are supported with `thumbnailSizes` and `thumbnailSrcset` item options:
+
+{{< callout info >}}
+**Good news!** Contrary to the main image attributes, the thumbnails accept `srcset` option without `sizes`.
+{{< /callout >}}
+
+```html
+<a data-of-lightbox='{ "thumbnail": "path/to/custom-thumbnail.jpg", "thumbnailSrcset": "thumb@1x.jpg 1x, thumb@2x.jpg 2x" }' href="…">
+    <img src="…" alt="">
+</a>
+```
+
 ## Options
 
 The lightbox options are optional. If you decide to use them, due to their nature, they must be defined in one central place.
@@ -697,6 +723,8 @@ Here is the list of all available options (alphabetically):
 | `group` | `string` | `undefined` | The identifier to group multiple items in the same lightbox. This option is valid for `data-of-lightbox` attribute. |
 | `identifier` | `string` | `undefined` | A unique item identifier of the item that allows to reference item, e.g. in URL hash. |
 | `thumbnail` | `string` | `undefined` | A path to the thumbnail image. This is needed if the lightbox/tab has `thumbnails: true` option. |
+| `thumbnailSizes` | `string` | `undefined` | The `sizes` attribute for responsive thumbnails. |
+| `thumbnailSrcset` | `string` | `undefined` | The `srcset` attribute for responsive thumbnails. |
 | `type` | `string` | `undefined` | The type of item. If not provided, the component will try to autodetect it. Available options are: `iframe`, `image`, `inline`, `video`. |
 {{< /bs-table >}}
 
@@ -719,6 +747,8 @@ Depending on the item `type`, the extra options can be passed on:
 | `alt` | `string` | `undefined` | The alternative text of an image. |
 | `description` | `string` | `undefined` | The caption description displayed as caption. |
 | `href` | `string` | `undefined` | Required. The image source URL. |
+| `sizes` | `string` | `undefined` | The `sizes` attribute for responsive images. |
+| `srcset` | `string` | `undefined` | The `srcset` attribute for responsive images. |
 | `title` | `string` | `undefined` | The title description displayed as caption. |
 {{< /bs-table >}}
 

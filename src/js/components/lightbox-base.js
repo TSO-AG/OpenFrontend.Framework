@@ -226,6 +226,15 @@ export class Lightbox extends Config {
                 const image = document.createElement('img')
                 image.src = thumbnail
                 image.alt = element.alt || ''
+
+                if (element.thumbnailSrcset) {
+                    image.srcset = thumbnailSrcset
+
+                    if (element.thumbnailSizes) {
+                        image.sizes = thumbnailSizes
+                    }
+                }
+
                 slide.append(image)
             }
 

@@ -62,7 +62,7 @@
   // scss-docs-end header-css-vars
 
   position: relative;
-  z-index: 9;
+  z-index: $header-zindex;
   display: flex;
   gap: var(--#{$prefix}header-content-gap);
   align-items: center;

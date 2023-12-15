@@ -1,0 +1,764 @@
+---
+layout: examples-page
+title: Directory hotels
+language: de
+---
+
+
+
+<div class="container mt-3 d-print-none">
+  <div class="row gx-2 gy-2 justify-content-between">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Angebote</a></li>
+          <li class="breadcrumb-item"><a href="#">Übernachten</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Hotels</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col-auto">
+      <div>
+        <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#share-modal" aria-labelledby="share-modal-label">
+          <i class="ofi-share"></i>
+          <span class="d-none d-lg-inline">Teilen</span>
+        </button>
+        <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
+          <i class="ofi-heart-fill"></i>
+          <span class="d-none d-lg-inline">Merken</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="container">
+    <div class="mb-section">
+      <h1>Hotels</h1>
+      <p>Finden Sie Ihre perfekte Unterkunft aus einer breiten Auswahl von Hotels, Ferienwohnungen, Gruppenunterkünften,
+        Alphütten, Bauernhöfen, Herbergen & Hostels, Bed & Breakfasts und Campingplätzen.</p>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="row align-items-end justify-content-between">
+            <div class="col-auto d-none d-lg-block">
+              <p class="mb-3 fw-bold"><i class="ofi-funnel-fill"></i> Filter</p>
+            </div>
+            <div class="col-lg-auto">
+              <div class="mb-3">
+                <div class="row gy-3 justify-content-between justify-content-lg-end">
+                  <div class="col-auto">
+                    <label for="poi-list-list-view-sorting" class="form-label">Sortierung</label>
+                    <select id="poi-list-list-view-sorting" class="form-select w-auto">
+                      <option value="result">Beste Resultate</option>
+                      <option value="alphabetical">Alphabetisch</option>
+                      <option value="location">Ort</option>
+                    </select>
+                  </div>
+
+                  <div class="col-auto">
+                    <div class="form-label">Ansicht</div>
+
+                    <div class="btn-group">
+                      <button class="btn btn-icon btn-outline-primary" type="button"><i class="ofi-grid-fill"></i>
+                      </button>
+                      <button class="btn btn-icon btn-primary" type="button"><i class="ofi-list"></i></button>
+                      <button class="btn btn-icon btn-outline-primary" type="button"><i class="ofi-map-fill"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-xxl-3 order-first order-lg-0">
+          <div class="d-lg-none">
+            <div class="mb-3">
+              <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#poi-list-list-view-filters-mobile" aria-expanded="false"
+                      aria-controls="poi-list-list-view-filters-mobile">
+                <i class="ofi-funnel-fill"></i> Filter
+              </button>
+            </div>
+            <div class="collapse" id="poi-list-list-view-filters-mobile"></div>
+          </div>
+
+          <div class="d-none d-lg-block">
+            <div id="poi-list-list-view-filters-desktop">
+              <div id="poi-list-list-view-filters">
+                <div class="accordion mb-3">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#poi-list-list-view-filter-region" aria-expanded="true"
+                              aria-controls="poi-list-list-view-filter-region">
+                        Region
+                      </button>
+                    </h2>
+                    <div id="poi-list-list-view-filter-region" class="accordion-collapse collapse show">
+                      <div class="accordion-body">
+                        <div class="row gx-3 gy-3">
+                          <div class="col">
+                            <label for="poi-list-list-view-filter-location" class="form-label">Ort</label>
+                            <div class="input-group">
+                              <button class="btn btn-icon btn-outline-secondary" type="button"><i
+                                class="ofi-geo-alt-fill"></i></button>
+                              <input type="text" id="poi-list-list-view-filter-location" class="form-control"
+                                     placeholder="St.Gallen">
+                            </div>
+                          </div>
+                          <div class="col-4 col-md-5">
+                            <label for="poi-list-list-view-filter-distance" class="form-label">Umkreis</label>
+                            <select id="poi-list-list-view-filter-distance" class="form-select">
+                              <option value="center">Zentrum</option>
+                              <option value="1">1km</option>
+                              <option value="2">2km</option>
+                              <option value="5">5km</option>
+                              <option value="10">10km</option>
+                              <option value="20" selected>20km</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#poi-list-list-view-filter-categories"
+                              aria-controls="poi-list-list-view-filter-categories">
+                        Typ
+                      </button>
+                    </h2>
+                    <div id="poi-list-list-view-filter-categories" class="accordion-collapse collapse show">
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-category-1" checked>
+                          <label class="form-check-label" for="poi-list-list-view-filter-category-1">
+                            Hotel
+                          </label>
+                          <span class="badge bg-secondary">53</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-category-2">
+                          <label class="form-check-label" for="poi-list-list-view-filter-category-2">
+                            Hostel
+                          </label>
+                          <span class="badge bg-secondary">19</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-category-3">
+                          <label class="form-check-label" for="poi-list-list-view-filter-category-3">
+                            BnB
+                          </label>
+                          <span class="badge bg-secondary">39</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-category-4">
+                          <label class="form-check-label" for="poi-list-list-view-filter-category-4">
+                            Camping
+                          </label>
+                          <span class="badge bg-secondary">32</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-category-5">
+                          <label class="form-check-label" for="poi-list-list-view-filter-category-5">
+                            Gruppenunterkunft
+                          </label>
+                          <span class="badge bg-secondary">3</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-category-6">
+                          <label class="form-check-label" for="poi-list-list-view-filter-category-6">
+                            Ferienwohnung
+                          </label>
+                          <span class="badge bg-secondary">15</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-category-7">
+                          <label class="form-check-label" for="poi-list-list-view-filter-category-7">
+                            Ferienhaus
+                          </label>
+                          <span class="badge bg-secondary">9</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#poi-list-list-view-filter-seasons" aria-expanded="false"
+                              aria-controls="poi-list-list-view-filter-seasons">
+                        Klassifizierung
+                      </button>
+                    </h2>
+                    <div id="poi-list-list-view-filter-seasons" class="accordion-collapse collapse">
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-season-1">
+                          <label class="form-check-label" for="poi-list-list-view-filter-season-1">
+                            5 Sterne
+                          </label>
+                          <span class="badge bg-secondary">5</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-season-2">
+                          <label class="form-check-label" for="poi-list-list-view-filter-season-2">
+                            4 Sterne
+                          </label>
+                          <span class="badge bg-secondary">12</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-season-3">
+                          <label class="form-check-label" for="poi-list-list-view-filter-season-3">
+                            3 Sterne
+                          </label>
+                          <span class="badge bg-secondary">28</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-season-4">
+                          <label class="form-check-label" for="poi-list-list-view-filter-season-4">
+                            2 Sterne
+                          </label>
+                          <span class="badge bg-secondary">18</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-season-5">
+                          <label class="form-check-label" for="poi-list-list-view-filter-season-5">
+                            1 Stern
+                          </label>
+                          <span class="badge bg-secondary">3</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-season-6">
+                          <label class="form-check-label" for="poi-list-list-view-filter-season-6">
+                            keine Klassifizierung
+                          </label>
+                          <span class="badge bg-secondary">24</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#poi-list-list-view-filter-time" aria-expanded="false"
+                              aria-controls="poi-list-list-view-filter-time">
+                        Merkmale
+                      </button>
+                    </h2>
+                    <div id="poi-list-list-view-filter-time" class="accordion-collapse collapse">
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-time-1">
+                          <label class="form-check-label" for="poi-list-list-view-filter-time-1">
+                            Kostenloses WLAN
+                          </label>
+                          <span class="badge bg-secondary">11</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-time-2">
+                          <label class="form-check-label" for="poi-list-list-view-filter-time-2">
+                            Kostenlose Parkplätze
+                          </label>
+                          <span class="badge bg-secondary">31</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-time-3">
+                          <label class="form-check-label" for="poi-list-list-view-filter-time-3">
+                            Barrierefrei
+                          </label>
+                          <span class="badge bg-secondary">62</span>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value=""
+                                 id="poi-list-list-view-filter-time-4">
+                          <label class="form-check-label" for="poi-list-list-view-filter-time-4">
+                            Nachhaltig
+                          </label>
+                          <span class="badge bg-secondary">45</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="mb-2">
+                    <button type="button" class="btn btn-outline-primary w-100">Filter löschen</button>
+                  </div>
+                  <div class="mb-3">
+                    <button type="button" class="btn btn-primary w-100">53 Ergebnisse anzeigen</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const filters = document.getElementById('poi-list-list-view-filters');
+              const desktopContainer = document.getElementById('poi-list-list-view-filters-desktop');
+              const mobileContainer = document.getElementById('poi-list-list-view-filters-mobile');
+              const breakpoint = getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-lg');
+
+              function moveElements() {
+                if (window.matchMedia(`(max-width: ${breakpoint})`).matches) {
+                  mobileContainer.appendChild(filters);
+                } else {
+                  desktopContainer.appendChild(filters);
+                }
+              }
+
+              window.addEventListener('resize', moveElements);
+              moveElements();
+            });
+          </script>
+
+        </div>
+
+        <div class="col-lg-8 col-xxl-9">
+
+          <div>
+            <div class="card card-horizontal mb-3">
+              <div class="card-media">
+                <div class="card-media__visual">
+                  <img src="../../assets/img/photos/hotel-zweistein-001.jpg">
+                </div>
+                <div class="card-media__content card-media__content--top-right">
+                  <div class="state state--open">
+                    offen
+                  </div>
+                </div>
+                <div class="card-media__content card-media__content--bottom-right">
+                  <div class="labels">
+                    <div class="labels-item">
+                      <figure><img data-bs-toggle="tooltip" data-bs-placement="top"
+                                   data-bs-custom-class="custom-tooltip" data-bs-title="Swisstainable LEADING"
+                                   alt="Swisstainable LEADING" width="36" height="36"
+                                   src="../../assets/img/labels/swisstainable_3.svg"></figure>
+                    </div>
+                    <div class="labels-item">
+                      <figure><img data-bs-toggle="tooltip" data-bs-placement="top"
+                                   data-bs-custom-class="custom-tooltip" data-bs-title="19 Gault Millau Punkte"
+                                   alt="19 Gault Millau Punkte" width="36" height="36"
+                                   src="../../assets/img/labels/gault_millau_19.svg"></figure>
+                    </div>
+                    <div class="labels-item">
+                      <figure><img data-bs-toggle="tooltip" data-bs-placement="top"
+                                   data-bs-custom-class="custom-tooltip" data-bs-title="OK GO" alt="OK GO" width="36"
+                                   height="36" src="../../assets/img/labels/ok_go.svg"></figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-info">St.Gallen</h5>
+                <div class="card-title-rating">
+                  <h4 class="card-title"><a href="#" class="stretched-link">Hotel Zweistein</a></h4>
+                  <div class="card-title-star">
+                    <div class="rating rating-sm">
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-half-png"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="card-text">Das Hotel Zweistein St.Gallen bietet komfortable Zimmer, guten Service, sehr gutes
+                  Essen und einen überragenden Fitness Bereich.</p>
+                <div class="card-tags">
+                  <div class="tag-list">
+                    <span class="tag">Kostenloses WLAN</span>
+                    <span class="tag text-bg-light">Barrierefrei</span>
+                    <span class="tag text-bg-light">Nachhaltig</span>
+                    <span class="tag text-bg-light">…</span>
+                  </div>
+                </div>
+                <div class="user-rating">
+                  <div class="user-rating__icon">
+                    <i class="ofi-people-fill"></i>
+                  </div>
+                  <div class="user-rating__label">Gäste-Rating:</div>
+                  <div class="user-rating__score">
+                    <span class="user-rating__score-value text-success">4.5</span>/<span
+                    class="user-rating__score-total">5</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <div class="card-action__content">
+                  <div class="price">
+                    <div class="price__label">AB CHF</div>
+                    <div class="price__value">305.00</div>
+                  </div>
+                </div>
+                <div class="card-action__buttons">
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-cart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-heart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary stretched-link">
+                    Mehr <i class="ofi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-horizontal mb-3">
+              <div class="card-media">
+                <div class="card-media__visual">
+                  <img src="../../assets/img/photos/hotel-bergblick-001.jpg">
+                </div>
+                <div class="card-media__content card-media__content--top-right">
+                  <div class="state state--closed">
+                    geschlossen
+                  </div>
+                </div>
+                <div class="card-media__content card-media__content--bottom-right">
+                  <div class="labels">
+                    <div class="labels-item">
+                      <figure><img data-bs-toggle="tooltip" data-bs-placement="top"
+                                   data-bs-custom-class="custom-tooltip" data-bs-title="Culinarium Mitglied"
+                                   alt="Culinarium Mitglied" width="36" height="36"
+                                   src="../../assets/img/labels/culinarium.svg">
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-info">St.Gallen</h5>
+                <div class="card-title-rating">
+                  <h4 class="card-title"><a href="#" class="stretched-link">Hotel Bergblick</a></h4>
+                  <div class="card-title-star">
+                    <div class="rating rating-sm">
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-off-png"></i>
+                      <i class="star-off-png"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="card-text">Das Hotel Bergblick in St. Gallen bietet einen malerischen Ausblick auf die
+                  schweizerischen Alpen. Komfortable Zimmer, freundlicher Service und kostenloser WLAN-Zugang erwarten
+                  Sie.</p>
+                <div class="card-tags">
+                  <div class="tag-list">
+                    <span class="tag">Kostenloses WLAN</span>
+                    <span class="tag text-bg-light">Barrierefrei</span>
+                  </div>
+                </div>
+                <div class="user-rating">
+                  <div class="user-rating__icon">
+                    <i class="ofi-people-fill"></i>
+                  </div>
+                  <div class="user-rating__label">Gäste-Rating:</div>
+                  <div class="user-rating__score">
+                    <span class="user-rating__score-value text-success">4.2</span>/<span
+                    class="user-rating__score-total">5</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <div class="card-action__content">
+                  <div class="price">
+                    <div class="price__label">AB CHF</div>
+                    <div class="price__value">150.00</div>
+                  </div>
+                </div>
+                <div class="card-action__buttons">
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-cart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-heart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary stretched-link">
+                    Mehr <i class="ofi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-horizontal mb-3">
+              <div class="card-media">
+                <div class="card-media__visual">
+                  <img src="../../assets/img/photos/traditionelles-gasthaus-001.jpg">
+                </div>
+                <div class="card-media__content card-media__content--top-right">
+                  <div class="state state--unknown">
+                    unbekannt
+                  </div>
+                </div>
+                <div class="card-media__content card-media__content--bottom-right">
+                  <div class="labels">
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-info">Appenzell</h5>
+                <div class="card-title-rating">
+                  <h4 class="card-title"><a href="#" class="stretched-link">Traditionelles Gasthaus</a></h4>
+                  <div class="card-title-star">
+                    <div class="rating rating-sm">
+
+                    </div>
+                  </div>
+                </div>
+                <p class="card-text">Erleben Sie die traditionelle Schweizer Gastfreundschaft im Herzen von Appenzell.
+                  Gemütliche Zimmer, lokale Küche und eine entspannte Atmosphäre warten auf Sie.</p>
+                <div class="card-tags">
+                  <div class="tag-list">
+                    <span class="tag">Kostenloses WLAN</span>
+                  </div>
+                </div>
+                <div class="user-rating">
+                  <div class="user-rating__icon">
+                    <i class="ofi-people-fill"></i>
+                  </div>
+                  <div class="user-rating__label">Gäste-Rating:</div>
+                  <div class="user-rating__score">
+                    <span class="user-rating__score-value text-success">4.1</span>/<span
+                    class="user-rating__score-total">5</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <div class="card-action__content">
+                  <div class="price">
+                    <div class="price__label"></div>
+                    <div class="price__value"></div>
+                  </div>
+                </div>
+                <div class="card-action__buttons">
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-cart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-heart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary stretched-link">
+                    Mehr <i class="ofi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-horizontal mb-3">
+              <div class="card-media">
+                <div class="card-media__visual">
+                  <img src="../../assets/img/photos/seehotel-rorschach-001.jpg">
+                </div>
+                <div class="card-media__content card-media__content--top-right">
+                  <div class="state state--open">
+                    offen
+                  </div>
+                </div>
+                <div class="card-media__content card-media__content--bottom-right">
+                  <div class="labels">
+                    <div class="labels-item">
+                      <figure><img data-bs-toggle="tooltip" data-bs-placement="top"
+                                   data-bs-custom-class="custom-tooltip" data-bs-title="Swisstainable COMMITTED"
+                                   alt="Swisstainable COMMITTED" width="36" height="36"
+                                   src="../../assets/img/labels/swisstainable_1.svg"></figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-info">Rorschach</h5>
+                <div class="card-title-rating">
+                  <h4 class="card-title"><a href="#" class="stretched-link">Seehotel Rorschach</a></h4>
+                  <div class="card-title-star">
+                    <div class="rating rating-sm">
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-off-png"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="card-text">Erleben Sie Entspannung am Bodensee im Seehotel Rorschach. Moderne Zimmer, Seeblick
+                  und eine Vielzahl von Freizeitmöglichkeiten warten auf Sie.</p>
+                <div class="card-tags">
+                  <div class="tag-list">
+                    <span class="tag">Kostenloses WLAN</span>
+                    <span class="tag text-bg-light">Kostenlose Parkplätze</span>
+                    <span class="tag text-bg-light">Barrierefrei</span>
+                    <span class="tag text-bg-light">…</span>
+                  </div>
+                </div>
+                <div class="user-rating">
+                  <div class="user-rating__icon">
+                    <i class="ofi-people-fill"></i>
+                  </div>
+                  <div class="user-rating__label">Gäste-Rating:</div>
+                  <div class="user-rating__score">
+                    <span class="user-rating__score-value text-success">4.8</span>/<span
+                    class="user-rating__score-total">5</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <div class="card-action__content">
+                  <div class="price">
+                    <div class="price__label">AB CHF</div>
+                    <div class="price__value">175.00</div>
+                  </div>
+                </div>
+                <div class="card-action__buttons">
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-cart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-heart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary stretched-link">
+                    Mehr <i class="ofi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-horizontal mb-3">
+              <div class="card-media">
+                <div class="card-media__visual">
+                  <img src="../../assets/img/photos/businesshotel-uzwil-001.jpg">
+                </div>
+                <div class="card-media__content card-media__content--top-right">
+                  <div class="state state--open">
+                    offen
+                  </div>
+                </div>
+                <div class="card-media__content card-media__content--bottom-right">
+                  <div class="labels">
+                    <div class="labels-item">
+                      <figure><img data-bs-toggle="tooltip" data-bs-placement="top"
+                                   data-bs-custom-class="custom-tooltip" data-bs-title="Swisstainable LEADING"
+                                   alt="Swisstainable COMMITED" width="36" height="36"
+                                   src="../../assets/img/labels/swisstainable_1.svg"></figure>
+                    </div>
+                    <div class="labels-item">
+                      <figure><img data-bs-toggle="tooltip" data-bs-placement="top"
+                                   data-bs-custom-class="custom-tooltip" data-bs-title="OK GO" alt="OK GO" width="36"
+                                   height="36" src="../../assets/img/labels/ok_go.svg"></figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-info">Uzwil</h5>
+                <div class="card-title-rating">
+                  <h4 class="card-title"><a href="#" class="stretched-link">Business Hotel Uzwil</a></h4>
+                  <div class="card-title-star">
+                    <div class="rating rating-sm">
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-on-png"></i>
+                      <i class="star-off-png"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="card-text">Für Geschäftsreisende ideal: Das Business Hotel in Uzwil bietet moderne Zimmer,
+                  Konferenzeinrichtungen und eine zentrale Lage.</p>
+                <div class="card-tags">
+                  <div class="tag-list">
+                    <span class="tag">Kostenloses WLAN</span>
+                    <span class="tag text-bg-light">Kostenlose Parkplätze</span>
+                  </div>
+                </div>
+                <div class="user-rating">
+                  <div class="user-rating__icon">
+                    <i class="ofi-people-fill"></i>
+                  </div>
+                  <div class="user-rating__label">Gäste-Rating:</div>
+                  <div class="user-rating__score">
+                    <span class="user-rating__score-value text-success">3.9</span>/<span
+                    class="user-rating__score-total">5</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <div class="card-action__content">
+                  <div class="price">
+                    <div class="price__label">AB CHF</div>
+                    <div class="price__value">205.00</div>
+                  </div>
+                </div>
+                <div class="card-action__buttons">
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-cart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary">
+                    <i class="ofi-heart-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-icon btn-primary stretched-link">
+                    Mehr <i class="ofi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <nav class="pagination-dropdown mt-3" aria-label="POI list pagination">
+              <button class="btn btn-square btn-primary">
+                <i class="ofi-caret-left-fill"></i>
+              </button>
+
+              <label for="poi-list-list-view-pagination" class="visually-hidden">Seite 1/3</label>
+              <select id="poi-list-list-view-pagination" class="form-select w-auto">
+                <option>Seite 1</option>
+                <option>Seite 2</option>
+                <option>Seite 3</option>
+              </select>
+
+              <button class="btn btn-square btn-primary">
+                <i class="ofi-caret-right-fill"></i>
+              </button>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

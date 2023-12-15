@@ -42,6 +42,14 @@ Responsive variations also exist for `.sticky-top` utility.
 <div class="sticky-xxl-top">Stick to the top on viewports sized XXL (extra-extra-large) or wider</div>
 ```
 
+## Sticky top header
+
+Similar to the `.sticky-top` class, we also have `.sticky-top-header` class for positioning an element at the top of the viewport, from edge to edge, after you scroll past it. The main difference is that `.sticky-top-header` takes into account the height of the sticky header (if it exists on the page), thus adjusting the element's top value accordingly.
+
+```html
+<div class="sticky-top sticky-top-header">...</div>
+```
+
 ## Sticky bottom
 
 Position an element at the bottom of the viewport, from edge to edge, but only after you scroll past it.

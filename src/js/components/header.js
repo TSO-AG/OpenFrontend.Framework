@@ -90,7 +90,7 @@ class Header extends BaseComponent {
   _setHeaderHeightProperty(entries) {
     for (const entry of entries) {
       const headerHeight = `${entry.target.offsetHeight}px`
-      this._element.style.setProperty(CSS_HEADER_HEIGHT_PROPERTY_NAME, headerHeight)
+      document.body.style.setProperty(CSS_HEADER_HEIGHT_PROPERTY_NAME, headerHeight)
     }
   }
 
@@ -124,8 +124,7 @@ class Header extends BaseComponent {
     this._element.classList.add(STICKY_HEADER_INIT_CLASS)
     this._element.classList.remove(STICKY_HEADER_CLASS)
     const stickyHeaderHeight = this._element.getBoundingClientRect().height
-    this._headerPlaceholder.style.setProperty(STICKY_HEADER_HEIGHT_PROPERTY_NAME, `${stickyHeaderHeight}px`)
-    this._element.style.setProperty(STICKY_HEADER_HEIGHT_PROPERTY_NAME, `${stickyHeaderHeight}px`)
+    document.body.style.setProperty(STICKY_HEADER_HEIGHT_PROPERTY_NAME, `${stickyHeaderHeight}px`)
 
     setTimeout(() => {
       this._element.classList.remove(STICKY_HEADER_INIT_CLASS)

@@ -67,6 +67,11 @@
 // Mixins
 @import "mixins";
 
+// Helpers
+@import "helpers/text-hyphens";
+@import "helpers/position";
+@import "helpers/size";
+
 // Layout & components
 @import "root";
 @import "buttons";

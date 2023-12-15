@@ -526,6 +526,7 @@ $calendar-legend-free-color:              transparent !default;
 
 // Header
 // scss-docs-start header-variables
+$header-zindex:                              1030 !default;
 $header-padding-y:                           $spacer * 1 !default;
 $header-padding-y:                           $spacer * 1 !default;
 $header-padding-x:                           null !default;

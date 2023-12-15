@@ -53,6 +53,15 @@ You can also use utilities to set the width and height relative to the viewport.
 <div class="vh-100">Height 100vh</div>
 ```
 
+## 100VH diminished by header height
+
+The `.min-vh-100-header` utility class adjusts the minimum height of an element, making it dynamically fit the viewport height diminished by the header height. This utility is handy when you want an element's height to fully occupy the available vertical space, while still accommodating an existing header.
+
+```html
+<div class="min-vh-100-header">Min-height 100vh diminished by header height</div>
+```
+
+
 ## CSS
 
 ### Sass utilities API

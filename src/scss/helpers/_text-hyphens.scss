@@ -1,0 +1,9 @@
+%text-hyphens {
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.text-hyphens {
+  @extend %text-hyphens;
+}

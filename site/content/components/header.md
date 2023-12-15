@@ -450,6 +450,14 @@ toc: true
 </header>
 {{< /example >}}
 
+## Helper classes
+
+In the context of the header component, we have added some helper classes that you may use in your elements. Below are the available classes:
+
+- `.sticky-top-header`: This class will make your element stick to the top of the viewport once you scroll past it. If a sticky header is present on the page, this class will take into account its height. For more detailed information, please refer to the section dedicated to this helper class in our documentation. [Read more.]({{< docsref "/helpers/position#sticky-top-header" >}})
+
+- `.min-vh-100-header`: This class will adjust the minimum height of your element to fit the viewport height, diminished by the height of the header. It is a useful class to ensure that your elements properly take up vertical space. More detailed information can be found in the dedicated section in our documentation. [Read more.]({{< docsref "/utilities/sizing#100vh-diminished-by-header-height" >}})
+
 ## CSS
 
 ### Variables

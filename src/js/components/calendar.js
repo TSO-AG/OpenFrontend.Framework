@@ -1,6 +1,5 @@
 import BaseComponent from 'bootstrap/js/src/base-component'
-import {Calendar as FullCalendar, createPlugin} from '@fullcalendar/core'
-import {Theme} from '@fullcalendar/core/internal.js';
+import {Calendar as FullCalendar} from '@fullcalendar/core'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import listPlugin from '@fullcalendar/list';
 import multiMonthPlugin from '../plugins/fullcalendar/multi-month';
@@ -12,6 +11,9 @@ import bootstrapThemePlugin from '../plugins/fullcalendar/bootstrap-theme';
 const NAME = 'calendar'
 const EVENT_CALENDAR_INITIALIZED = 'initialized.of.calendar'
 const MINI_VIEW_VISIBLE_MONTHS = 2
+const LOCALES = {
+  de: () => import('@fullcalendar/core/locales/de').then(m => m.default),
+}
 
 const DefaultType = {
   events: 'array',
@@ -58,8 +60,8 @@ class Calendar extends BaseComponent {
   }
 
   // Private
-  _initCalendar() {
-    this._calendar = new FullCalendar(this._element, this._getOptions())
+  async _initCalendar() {
+    this._calendar = new FullCalendar(this._element, await this._getOptions())
     this._calendar.render()
 
     this._element.dispatchEvent(new CustomEvent(EVENT_CALENDAR_INITIALIZED))
@@ -95,7 +97,7 @@ class Calendar extends BaseComponent {
     }
   }
 
-  _getOptions() {
+  async _getOptions() {
     const events = this._getEvents();
 
     const options = {
@@ -115,6 +117,10 @@ class Calendar extends BaseComponent {
       height: 'auto',
       plugins: [bootstrapThemePlugin],
       themeSystem: 'bootstrap',
+    }
+
+    if (document.documentElement.lang !== 'en') {
+      options.locale = await LOCALES[document.documentElement.lang]();
     }
 
     if (this._config.title) {

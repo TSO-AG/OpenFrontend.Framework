@@ -1,0 +1,920 @@
+---
+layout: examples-page
+title: Hotel Detail
+language: de
+---
+
+<div class="container mt-3 d-print-none">
+  <div class="row gx-2 gy-2 justify-content-between">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Angebote</a></li>
+          <li class="breadcrumb-item"><a href="#">Übernachten</a></li>
+          <li class="breadcrumb-item"><a href="#">Hotels</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Hotel Zweistein</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col-auto">
+      <div>
+        <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#share-modal" aria-labelledby="share-modal-label">
+          <i class="ofi-share"></i>
+          <span class="d-none d-lg-inline">Teilen</span>
+        </button>
+        <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
+          <i class="ofi-heart-fill"></i>
+          <span class="d-none d-lg-inline">Merken</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="container py-3">
+    <div class="d-flex">
+      <h1>Hotel Zweistein</h1>
+      <div class="rating rating-sm">
+        <i class="star-on-png"></i>
+        <i class="star-on-png"></i>
+        <i class="star-on-png"></i>
+        <i class="star-on-png"></i>
+        <i class="star-half-png"></i>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 col-xxl-9">
+        <div class="mb-element">
+          <img class="bd-placeholder-img aspect aspect-16x9 object-fit-cover" width="100%" height="545" aria-label="Hotel Zweistein Aussenansicht" src="../../assets/img/photos/hotel-zweistein-001.jpg">
+        </div>
+
+        <div class="mb-section">
+          <div class="row">
+            <div class="col">
+              <h2>Das Zweistein St.Gallen, das von den Gästen als erstes Haus am Platz bewertete Hotel, bietet 113 elegante Zimmer und Suiten, ausgestattet mit edelsten Materialien wie Marmor, Kirschbaum und St. Galler Textilien.</h2>
+              <p>
+                Inmitten der Altstadt und dennoch ruhig gelegen. Kulinarische Erlebnisse in zwei unterschiedlichen Restaurants: Das Zweistein Gourmet Restaurant für besonderen Genuss ausgezeichnet mit 18 GaultMillau Punkten und 2 Michelin Sternen, das Bistro St. Gallen mit leichter regionaler Küche. Zweistein Bar mit einer Davidoff Cigar Lounge mit monatlichen Events. Fitnesspark Zweistein mit Spa-Bereich. Kongresszentrum und Parkhaus.
+                <br><br>
+                <strong>Typisches Schweizer Hotel</strong><br>
+                Die grosse textile Vergangenheit hinterliess architektonische Spuren: Das Zweistein ist ein klassizistisches, fünfstöckiges Gebäude aus dem Jahr 1830. Es ist mit edlen Stoffen renommierter St. Galler Stoffproduzenten eingerichtet. Spitzenrestaurants mit Wein und Bier aus der Region. UNESCO-Weltkulturerbe Kloster und Stiftbezirk in Fussdistanz; unweit von Bodensee und Appenzell.
+                <br><br>
+                <strong>Seminare</strong><br>
+                Das Zweistein Congress hat seit seiner Eröffnung 2009 schweizweit neue Massstäbe gesetzt. Die 15 eleganten Meetingräume auf fünf Etagen, der Boardroom und der einzigartige Zweistein-Saal überzeugen durch ausgesuchte Materialien und mit einer hellen, inspirierenden Atmosphäre. Ausgestattet mit der neusten Präsentations- und Kommunikationstechnologie kann das Zweistein Congress fast jeden Wunsch des Gastes erfüllen. Zudem ist der grosszügige Zweistein-Saal die ideale Lokalität für gelungene Bankette, Hochzeiten, Konzerte oder Events. Die hauseigene Parkgarage ist mit dem Zweistein Congress direkt verbunden.
+              </p>
+            </div>
+            <div class="d-none d-md-block d-lg-none col-md-4">
+              <div class="sticky-top sticky-top-header">
+                <h3>Online buchen</h3>
+                <button class="btn btn-primary w-100">Verfügbarkeit prüfen</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-section d-print-none">
+          <h3>Medien</h3>
+          <ul class="nav nav-underline mb-3" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="poi-detail-images" data-bs-toggle="tab" data-bs-target="#poi-detail-images-pane" type="button" role="tab" aria-controls="poi-detail-images-pane" aria-selected="true">Gallery</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="poi-detail-videos" data-bs-toggle="tab" data-bs-target="#poi-detail-videos-pane" type="button" role="tab" aria-controls="poi-detail-videos-pane" aria-selected="false">Videos</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="poi-detail-live" data-bs-toggle="tab" data-bs-target="#poi-detail-live-pane" type="button" role="tab" aria-controls="poi-detail-live-pane" aria-selected="false">Live Camera 360°</button>
+            </li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane show active" id="poi-detail-images-pane" role="tabpanel" aria-labelledby="poi-detail-images" tabindex="0">
+              <div class="masonry masonry-group-2">
+                <div class="masonry-group-item">
+                  <div class="masonry masonry-vertical-1">
+                    <div class="masonry-item">
+                      <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
+                        {{< placeholder width="200" height="100" class="img-thumbnail" text="Gallery 1" >}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="masonry-group-item">
+                  <div class="masonry masonry-vertical-5">
+                    <div class="masonry-item">
+                      <div class="aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+                        {{< placeholder width="200" height="100" class="img-thumbnail" text="Gallery 1" >}}
+                      </div>
+                    </div>
+                    <div class="masonry-item">
+                      <div class="aspect aspect-16x9 aspect-md-auto">
+                        {{< placeholder width="200" height="100" class="img-thumbnail" text="Gallery 1" >}}
+                      </div>
+                    </div>
+                    <div class="masonry-item">
+                      <div class="aspect aspect-16x9 aspect-md-auto">
+                        {{< placeholder width="200" height="100" class="img-thumbnail" text="Gallery 1" >}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="poi-detail-videos-pane" role="tabpanel" aria-labelledby="poi-detail-videos" tabindex="0">
+              <div class="masonry masonry-group-2">
+                <div class="masonry-group-item">
+                  <div class="masonry masonry-vertical-1">
+                    <div class="masonry-item" data-of-video-play>
+                      <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
+                        {{< video class="object-fit-cover" >}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="masonry-group-item">
+                  <div class="masonry masonry-vertical-5">
+                    <div class="masonry-item" data-of-video-play>
+                      <div class="aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+                        {{< video class="object-fit-cover" >}}
+                      </div>
+                    </div>
+                    <div class="masonry-item" data-of-video-play>
+                      <div class="aspect aspect-16x9 aspect-md-auto">
+                        {{< video class="object-fit-cover" >}}
+                      </div>
+                    </div>
+                    <div class="masonry-item" data-of-video-play>
+                      <div class="aspect aspect-16x9 aspect-md-auto">
+                        {{< video class="object-fit-cover" >}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="poi-detail-live-pane" role="tabpanel" aria-labelledby="poi-detail-live" tabindex="0">
+              {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="Live Kamera 360°" >}}
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-section">
+          <h3>Seminarräume</h3>
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Raum</th>
+                <th>Konzert</th>
+                <th>Apéro</th>
+                <th>Seminar</th>
+                <th>Bankett</th>
+                <th>U-Form</th>
+                <th>Block</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Turmzimmer</td>
+                <td>-</td>
+                <td>35</td>
+                <td>-</td>
+                <td>-</td>
+                <td>16</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <td>4 Tagungsräume</td>
+                <td>12</td>
+                <td>20</td>
+                <td>30</td>
+                <td>20</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Wienerberg / Rosenberg</td>
+                <td>78</td>
+                <td>100</td>
+                <td>168</td>
+                <td>40</td>
+                <td>78</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Buchegg / Friedegg / Spisegg</td>
+                <td>24</td>
+                <td>30</td>
+                <td>56</td>
+                <td>20</td>
+                <td>30</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Boardroom</td>
+                <td>18</td>
+                <td>20</td>
+                <td>48</td>
+                <td>16</td>
+                <td>18</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Le Corbusier</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>8</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Santiago Calatrava</td>
+                <td>24</td>
+                <td>40</td>
+                <td>70</td>
+                <td>28</td>
+                <td>24</td>
+                <td>-</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="mb-section d-print-none">
+          <h3>Merkmale</h3>
+
+          <div class="accordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#poi-detail-Auszeichnungen" aria-expanded="false" aria-controls="poi-detail-Auszeichnungen">Auszeichnungen</button>
+              </h2>
+              <div id="poi-detail-Auszeichnungen" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <div class="logos logos-row mb-0" style="--bs-logos-item-bg: #f8f9fa; --bs-logos-item-padding-y: 10px; --bs-logos-item-padding-x: 10px; --bs-logos-item-border-radius: 5px; --bs-logos-item-border-width: 1px; --bs-logos-item-border-style: solid; --bs-logos-item-border-color: #dee2e6;  --bs-logos-item-max-width: 80px; --bs-logos-item-max-height: 80px">
+                    <div>
+                      <div class="logos-item">
+                        <figure>
+                          <a href="#">
+                            <img data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Swisstainable LEADING" alt="Swisstainable LEADING" width="120" height="120" src="../../assets/img/labels/swisstainable_3.svg">
+                          </a>
+                        </figure>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="logos-item">
+                        <figure>
+                          <a href="#">
+                            <img data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="19 Gault Millau Punkte" alt="19 Gault Millau Punkte" width="120" height="120" src="../../assets/img/labels/gault_millau_19.svg">
+                          </a>
+                        </figure>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="logos-item">
+                        <figure>
+                          <a href="#">
+                            <img data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="OK GO" alt="OK GO" width="120" height="120" src="../../assets/img/labels/ok_go.svg">
+                          </a>
+                        </figure>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="logos-item">
+                        <figure>
+                          <a href="#">
+                            <img data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Culinarium" alt="Culinarium" width="120" height="120" src="../../assets/img/labels/culinarium.svg">
+                          </a>
+                        </figure>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="logos-item">
+                        <figure>
+                          <a href="#">
+                            <img data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Gilde" alt="Gilde" width="120" height="120" src="../../assets/img/labels/gilde.svg">
+                          </a>
+                        </figure>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#poi-detail-Ausstattung" aria-expanded="false" aria-controls="poi-detail-Ausstattung">Ausstattung</button>
+              </h2>
+              <div id="poi-detail-Ausstattung" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <ul class="tag-list">
+                    <li class="tag">Kostenloses WLAN</li>
+                    <li class="tag">Barrierefrei</li>
+                    <li class="tag">Nachhaltig</li>
+                    <li class="tag">Bar / Bistro</li>
+                    <li class="tag">Lift</li>
+                    <li class="tag">Gymnastik/Fitness</li>
+                    <li class="tag">Tiefgarage</li>
+                    <li class="tag">Nichtraucher</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#poi-detail-Zahlungsmittel" aria-expanded="false" aria-controls="poi-detail-Zahlungsmittel">Zahlungsmittel</button>
+              </h2>
+              <div id="poi-detail-Zahlungsmittel" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <ul class="tag-list">
+                    <li class="tag">VISA</li>
+                    <li class="tag">American Express</li>
+                    <li class="tag">Maestro</li>
+                    <li class="tag">Mastercard</li>
+                    <li class="tag">Postcard</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-section d-print-none">
+          <h3>Bewertungen</h3>
+
+          <div class="user-rating mb-element">
+            <div class="user-rating__icon">
+              <i class="ofi-people-fill"></i>
+            </div>
+            <div class="user-rating__label">Gäste-Rating:</div>
+            <div class="user-rating__score">
+              <span class="user-rating__score-value text-success">4.5</span>/<span class="user-rating__score-total">5</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="aspect aspect-16x9">
+              <svg class="bd-placeholder-img aspect aspect-16x9 object-fit-cover" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="iFrame" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#868e96"/>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em">iFrame</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-section">
+          <h3>Öffnungszeiten</h3>
+          <div class="row">
+            <div class="col-lg-6">
+              <table class="opening-times">
+                <thead>
+                <tr class="d-print-none">
+                  <th>Jetzt</th>
+                  <th>
+                    <span class="state state--open">Offen</span>
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Montag</td>
+                  <td>
+                    <span>08:00 - 12:00</span>
+                    <span>13:30 - 17:00</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Dienstag</td>
+                  <td>
+                    <span>08:00 - 12:00</span>
+                    <span>13:30 - 17:00</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mittwoch</td>
+                  <td>
+                    <span>08:00 - 12:00</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Donnerstag</td>
+                  <td>
+                    <span>08:00 - 20:00</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Freitag</td>
+                  <td>
+                    <span>geschlossen</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Samstag</td>
+                  <td>
+                    <span>12:00 - 17:00</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Sonntag</td>
+                  <td>
+                    <span>geschlossen</span>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-lg-6">
+              <p>
+                <strong>Nationalfeiertag</strong><br>
+                Am 1. August wird der Gastronomiebereich aufgrund eines Feiertages nicht geöffnet sein.
+              </p>
+              <p>
+                <strong>Betriebsferien</strong><br>
+                Vom 01. November bis 30. November ist der Betrieb geschlossen.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-section">
+          <div class="row">
+            <div class="col-lg-6 mb-element mb-lg-0">
+              <h3>Kontakt</h3>
+              <p>
+                Hotel Zweistein<br>
+                Musterstrasse<br>
+                CH-9002 St.Gallen
+              </p>
+              <p><a class="link-external" href="#">+41 71 333 66 99</a></p>
+              <p><a class="link-external" href="#">www.hotelweistein.tld</a></p>
+              <p><a class="link-external" href="#">info@hotelweistein.tld</a></p>
+            </div>
+            <div class="col-lg-6 d-print-none">
+              <h3>Anreise</h3>
+
+              <div class="wrapper" style="min-height: 250px">
+                <div class="wrapper-content text-center">
+                  <a href="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375"
+                     class="btn btn-primary"
+                     data-of-lightbox
+                     data-width="calc(100vw - 20px)"
+                     data-height="calc(100vh - 20px)"
+                  >Standort anzeigen</a>
+                </div>
+
+                <div class="wrapper-bg-media">
+                  <figure>
+                    <img src="map-placeholder.svg" alt="">
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-section d-print-none">
+          <div class="alert alert-light d-flex align-items-center" role="alert">
+            <i class="ofi-info-circle-fill me-2" aria-label="Info:"></i>
+            <div>
+              Verantwortlich für diesen Inhalt: Demo Destination AG<br>
+              <a href="#" class="alert-link">Fehler melden</a> (ID: f4e7fb73-1e13-47ab-a0a0-040b2e711624)<br>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4 col-xxl-3 mb-section d-md-none d-lg-block d-print-none">
+        <div class="sticky-top sticky-top-header">
+          <h3>Online buchen</h3>
+          <button class="btn btn-primary w-100">Verfügbarkeit prüfen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-section carousel-future-slides-visible d-print-none">
+    <div class="container">
+      <div class="heading-action">
+        <h2>In der Nähe</h2>
+        <div>
+          <div class="carousel-navigation">
+            <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-3">
+              <i class="ofi-caret-left-fill"></i>
+            </button>
+            <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-3">
+              <i class="ofi-caret-right-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel">
+        <div class="swiper" data-of-carousel='{
+              "loop": true,
+              "slidesPerView": 1,
+              "spaceBetween": 24,
+              "navigationNext": "#carousel-btn-next-3",
+              "navigationPrev": "#carousel-btn-prev-3",
+              "futureSlidesVisible": true,
+               "breakpoints": {
+                "md": {
+                  "slidesPerView": 2
+                },
+                "lg": {
+                  "slidesPerView": 3
+                },
+                "xxl": {
+                  "slidesPerView": 4
+                }
+              }
+              }'>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card">
+                <div class="card-media">
+                  <div class="card-media__visual">
+                    <img class="img-fluid" width="100%" height="200" src="../../assets/img/photos/hotel-bergblick-001.jpg" alt="Aussenansicht">
+                  </div>
+                  <div class="card-media__content card-media__content--top-right">
+                    <div class="state state--closed">
+                      geschlossen
+                    </div>
+                  </div>
+                  <div class="card-media__content card-media__content--bottom-right">
+                    <div class="labels">
+                      <div class="labels-item">
+                        <figure><img class="bd-placeholder-img" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Culinarium Mitglied" alt="Culinarium Mitglied" width="36" height="36" src="../../assets/img/labels/culinarium.svg"></figure>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-info">St.Gallen</h5>
+                  <div class="card-title-rating">
+                    <h4 class="card-title"><a href="#" class="stretched-link">Hotel Bergblick</a></h4>
+                    <div class="card-title-star">
+                      <div class="rating rating-sm">
+                        <i class="star-on-png"></i>
+                        <i class="star-on-png"></i>
+                        <i class="star-on-png"></i>
+                        <i class="star-off-png"></i>
+                        <i class="star-off-png"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">Das Hotel Bergblick in St. Gallen bietet einen malerischen Ausblick auf die schweizerischen Alpen. Komfortable Zimmer, freundlicher Service und kostenloser WLAN-Zugang erwarten Sie.</p>
+                  <div class="card-tags">
+                    <div class="tag-list">
+                      <span class="tag">Kostenloses WLAN</span>
+                      <span class="tag text-bg-light">Barrierefrei</span>
+                    </div>
+                  </div>
+                  <div class="user-rating">
+                    <div class="user-rating__icon">
+                      <i class="ofi-people-fill"></i>
+                    </div>
+                    <div class="user-rating__label">User-Rating:</div>
+                    <div class="user-rating__score">
+                      <span class="user-rating__score-value text-success">4.5</span>/<span class="user-rating__score-total">5</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-action">
+                  <div class="card-action__content">
+                    <div class="price">
+                      <div class="price__label">AB CHF</div>
+                      <div class="price__value">150.00</div>
+                    </div>
+                  </div>
+                  <div class="card-action__buttons">
+                    <button type="button" class="btn btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
+                      <i class="ofi-heart-fill"></i>
+                    </button>
+                    <button type="button" class="btn btn-icon btn-primary stretched-link">
+                      Mehr <i class="ofi-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <div class="card-media">
+                  <div class="card-media__visual">
+                    <img class="img-fluid" width="100%" height="200" src="../../assets/img/photos/seehotel-rorschach-001.jpg" alt="Aussenansicht">
+                  </div>
+                  <div class="card-media__content card-media__content--top-left">
+                        <span class="icon-circle icon-circle-primary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Demo Destination Premium-Partner">
+                                <i class="ofi-star-fill"></i>
+                        </span>
+                  </div>
+                  <div class="card-media__content card-media__content--top-right">
+                    <div class="state state--open">
+                      offen
+                    </div>
+                  </div>
+                  <div class="card-media__content card-media__content--bottom-right">
+                    <div class="labels">
+                      <div class="labels-item">
+                        <figure><img data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Swisstainable COMMITTED" alt="Swisstainable COMMITTED" width="36" height="36" src="../../assets/img/labels/swisstainable_1.svg"></figure>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-info">Rorschach</h5>
+                  <div class="card-title-rating">
+                    <h4 class="card-title"><a href="#" class="stretched-link">Seehotel Rorschach</a></h4>
+                    <div class="card-title-star">
+                      <div class="rating rating-sm">
+                        <i class="star-on-png"></i>
+                        <i class="star-on-png"></i>
+                        <i class="star-on-png"></i>
+                        <i class="star-on-png"></i>
+                        <i class="star-off-png"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">Erleben Sie Entspannung am Bodensee im Seehotel Rorschach. Moderne Zimmer, Seeblick und eine Vielzahl von Freizeitmöglichkeiten warten auf Sie.</p>
+                  <div class="card-tags">
+                    <div class="tag-list">
+                      <span class="tag">Kostenloses WLAN</span>
+                      <span class="tag text-bg-light">Kostenlose Parkplätze</span>
+                      <span class="tag text-bg-light">Barrierefrei</span>
+                      <span class="tag text-bg-light">…</span>
+                    </div>
+                  </div>
+                  <div class="user-rating">
+                    <div class="user-rating__icon">
+                      <i class="ofi-people-fill"></i>
+                    </div>
+                    <div class="user-rating__label">Gäste-Rating:</div>
+                    <div class="user-rating__score">
+                      <span class="user-rating__score-value text-success">4.8</span>/<span class="user-rating__score-total">5</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-action">
+                  <div class="card-action__content">
+                    <div class="price">
+                      <div class="price__label">AB CHF</div>
+                      <div class="price__value">175.00</div>
+                    </div>
+                  </div>
+                  <div class="card-action__buttons">
+                    <button type="button" class="btn btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
+                      <i class="ofi-heart-fill"></i>
+                    </button>
+                    <button type="button" class="btn btn-icon btn-primary stretched-link">
+                      Mehr <i class="ofi-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <div class="card-media">
+                  <div class="card-media__visual">
+                    <img class="img-fluid" width="100%" height="200" src="../../assets/img/photos/businesshotel-uzwil-001.jpg" alt="Aussenansicht">
+                  </div>
+                  <div class="card-media__content card-media__content--top-right">
+                    <div class="state state--open">
+                      offen
+                    </div>
+                  </div>
+                  <div class="card-media__content card-media__content--bottom-right">
+                    <div class="labels">
+                      <div class="labels-item">
+                        <figure><img data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Swisstainable LEADING" alt="Swisstainable COMMITED" width="36" height="36" src="../../assets/img/labels/swisstainable_1.svg"></figure>
+                      </div>
+                      <div class="labels-item">
+                        <figure><img data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="OK GO" alt="OK GO" width="36" height="36" src="../../assets/img/labels/ok_go.svg"></figure>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-info">Rorschach</h5>
+                  <div class="card-title-rating">
+                    <h4 class="card-title"><a href="#" class="stretched-link">Business Hotel Uzwil</a></h4>
+                    <div class="card-title-star">
+                      <div class="rating rating-sm">
+                        <i class="star-on-png"></i>
+                        <i class="star-on-png"></i>
+                        <i class="star-on-png"></i>
+                        <i class="star-on-png"></i>
+                        <i class="star-off-png"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">Für Geschäftsreisende ideal: Das Business Hotel in Uzwil bietet moderne Zimmer, Konferenzeinrichtungen und eine zentrale Lage.</p>
+                  <div class="card-tags">
+                    <div class="tag-list">
+                      <span class="tag">Kostenloses WLAN</span>
+                      <span class="tag text-bg-light">Kostenlose Parkplätze</span>
+                    </div>
+                  </div>
+                  <div class="user-rating">
+                    <div class="user-rating__icon">
+                      <i class="ofi-people-fill"></i>
+                    </div>
+                    <div class="user-rating__label">Gäste-Rating:</div>
+                    <div class="user-rating__score">
+                      <span class="user-rating__score-value text-success">3.9</span>/<span class="user-rating__score-total">5</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-action">
+                  <div class="card-action__content">
+                    <div class="price">
+                      <div class="price__label">AB CHF</div>
+                      <div class="price__value">205.00</div>
+                    </div>
+                  </div>
+                  <div class="card-action__buttons">
+                    <button type="button" class="btn btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
+                      <i class="ofi-heart-fill"></i>
+                    </button>
+                    <button type="button" class="btn btn-icon btn-primary stretched-link">
+                      Mehr <i class="ofi-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <div class="card-media">
+                  <div class="card-media__visual">
+                    <img class="img-fluid" width="100%" height="200" src="../../assets/img/photos/angebot-zoo.jpg" alt="Aussenansicht">
+                  </div>
+                  <div class="card-media__content card-media__content--top-right">
+                    <div class="state state--open">
+                      offen
+                    </div>
+                  </div>
+                  <div class="card-media__content card-media__content--bottom-right">
+                    <div class="labels">
+                      <div class="labels-item">
+                        <figure><img data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="OK GO" alt="OK GO" width="36" height="36" src="../../assets/img/labels/ok_go.svg"></figure>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-info">Gossau</h5>
+                  <div class="card-title-rating">
+                    <h4 class="card-title"><a href="#" class="stretched-link">Neuchlen Zoo</a></h4>
+                  </div>
+                  <p class="card-text">Der Zoo begeistert grosse und kleine Entdecker. Abenteuer erleben, Natur begreifen.</p>
+                  <div class="card-tags">
+                    <div class="tag-list">
+                      <span class="tag text-bg-light">Kostenlose Parkplätze</span>
+                    </div>
+                  </div>
+                  <div class="user-rating">
+                    <div class="user-rating__icon">
+                      <i class="ofi-people-fill"></i>
+                    </div>
+                    <div class="user-rating__label">Gäste-Rating:</div>
+                    <div class="user-rating__score">
+                      <span class="user-rating__score-value text-success">4.9</span>/<span class="user-rating__score-total">5</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-action">
+                  <div class="card-action__content">
+                    <div class="price">
+                      <div class="price__label">AB CHF</div>
+                      <div class="price__value">15.00</div>
+                    </div>
+                  </div>
+                  <div class="card-action__buttons">
+                    <button type="button" class="btn btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
+                      <i class="ofi-heart-fill"></i>
+                    </button>
+                    <button type="button" class="btn btn-icon btn-primary stretched-link">
+                      Mehr <i class="ofi-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <div class="card-media">
+                  <div class="card-media__visual">
+                    <img class="img-fluid" width="100%" height="200" src="../../assets/img/photos/restaurant.jpg" alt="Aussenansicht">
+                  </div>
+                  <div class="card-media__content card-media__content--top-right">
+                    <div class="state state--unknown">
+                      unbekannt
+                    </div>
+                  </div>
+                  <div class="card-media__content card-media__content--bottom-right">
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-info">St.Gallen</h5>
+                  <div class="card-title-rating">
+                    <h4 class="card-title"><a href="#" class="stretched-link">Restaurant Wochenblatt</a></h4>
+                  </div>
+                  <p class="card-text">Das Tagesrestaurant auf dem Dach des Wochenblatt-Gebäudes bietet Ihnen täglich eine grosse Auswahl an frisch zubereiteten Speisen.</p>
+                  <div class="card-tags">
+                    <div class="tag-list">
+                      <span class="tag text-bg-light">Kostenlose Parkplätze</span>
+                    </div>
+                  </div>
+                  <div class="user-rating">
+                    <div class="user-rating__icon">
+                      <i class="ofi-people-fill"></i>
+                    </div>
+                    <div class="user-rating__label">Gäste-Rating:</div>
+                    <div class="user-rating__score">
+                      <span class="user-rating__score-value text-success">3.5</span>/<span class="user-rating__score-total">5</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-action">
+                  <div class="card-action__content">
+                  </div>
+                  <div class="card-action__buttons">
+                    <button type="button" class="btn btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
+                      <i class="ofi-heart-fill"></i>
+                    </button>
+                    <button type="button" class="btn btn-icon btn-primary stretched-link">
+                      Mehr <i class="ofi-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card" style="max-width: 22rem;">
+                <div class="card-media">
+                  <div class="card-media__visual">
+                    <div class="aspect aspect-16x9">
+                      <video class="object-fit-cover" autoplay muted playsinline>
+                        <source src="assets/media/sample-video.mp4" type="video/mp4">
+                        <source src="assets/media/sample-video.ogg" type="video/ogg">
+                      </video>
+                    </div>
+                  </div>
+                  <div class="card-media__content card-media__content--bottom-left card-media__content--no-gap">
+                    <div class="date-box">
+                      <div class="date-box__day">12.</div>
+                      <div class="date-box__month">OKT.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-info">St. Gallen, 12.10.24 - 22.10.24</h5>
+                  <h3 class="card-title"><a href="#" class="stretched-link">OLGA Schweizer Messe für Beispiele und Muster</a></h3>
+                  <p class="card-text">Die grösste und beliebteste Publikumsmesse der Schweiz lädt zum 99. Mal zu einem farbenfrohen Volksfest ein. </p>
+                </div>
+
+                <div class="card-action">
+                  <div class="card-action__content">
+                    <div class="price">
+                      <div class="price__label">AB CHF</div>
+                      <div class="price__value">19.50</div>
+                    </div>
+                  </div>
+                  <div class="card-action__buttons">
+                    <button type="button" class="btn btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
+                      <i class="ofi-heart-fill"></i>
+                    </button>
+                    <button type="button" class="btn btn-icon btn-primary stretched-link">
+                      Mehr <i class="ofi-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

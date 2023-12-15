@@ -202,6 +202,8 @@
   @include color-mode(dark) {
     .calendar {
       --#{$prefix}calendar-today-bg-color: #{$calendar-today-bg-color-dark};
+      --#{$prefix}calendar-table-cell-shaded: #{$calendar-table-cell-shaded-dark};
+      --fc-list-event-hover-bg-color: #{$calendar-list-event-hover-bg-color-dark};
     }
   }
 }

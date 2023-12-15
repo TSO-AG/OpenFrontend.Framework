@@ -1,0 +1,253 @@
+---
+layout: examples-page
+title: Routing - Accommodations
+language: de
+---
+
+<div class="container mt-3 d-print-none">
+  <div class="row gx-2 gy-2 justify-content-between">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Angebote</a></li>
+          <li class="breadcrumb-item"><a href="#">Übernachten</a></li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col-auto">
+      <div>
+        <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#share-modal" aria-labelledby="share-modal-label">
+          <i class="ofi-share"></i>
+          <span class="d-none d-lg-inline">Teilen</span>
+        </button>
+        <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
+          <i class="ofi-heart-fill"></i>
+          <span class="d-none d-lg-inline">Merken</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="container">
+    <div class="mb-section">
+      <div class="row py-3">
+        <div class="col-xl-10 col-xxl-9">
+          <h1>Übernachten</h1>
+          <p class="fw-bold">
+            Entdecken Sie traumhafte Übernachtungsmöglichkeiten für jeden Geschmack!
+          </p>
+          <p class="mb-0">
+            Unsere Auswahl umfasst erstklassige Hotels, gemütliche Ferienwohnungen, idyllische Campingplätze und charmante Bed and Breakfasts. Finden Sie die perfekte Unterkunft für unvergessliche Reiseerlebnisse. Willkommen bei Ihrem Schlüssel zu komfortablem Reisen!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-section">
+      <div class="mb-1">
+        <div class="masonry masonry-group-2">
+          <div class="masonry-group-item">
+            <div class="masonry masonry-vertical-1">
+              <div class="masonry-item">
+                <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
+                  <div class="wrapper wrapper-zoom">
+                    <div class="wrapper-content wrapper-content-padding-y-lg">
+                      <h2>Hotels</h2>
+                      <p>54 Angebote in St.Gallen und Umgebung</p>
+                      <p>
+                        <a href="#" class="btn btn-primary icon-link">Mehr<i class="ofi-arrow-right"></i></a>
+                      </p>
+                    </div>
+                    <div class="wrapper-bg-media">
+                      <figure>
+                        <img width="100%" height="300" src="../../assets/img/photos/hotel-zweistein-001.jpg">
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="masonry-group-item">
+            <div class="masonry masonry-vertical-5">
+              <div class="masonry-item">
+                <div class="aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+                  <div class="wrapper wrapper-zoom">
+                    <div class="wrapper-content wrapper-content-padding-y-lg">
+                      <h2>Ferienwohnungen</h2>
+                      <p>28 Angebote</p>
+                      <p>
+                        <a href="#" class="btn btn-primary icon-link">Mehr<i class="ofi-arrow-right"></i></a>
+                      </p>
+                    </div>
+                    <div class="wrapper-bg-media">
+                      <figure>
+                        <img width="100%" height="300" src="../../assets/img/photos/ferienwohnung.jpg">
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="masonry-item">
+                <div class="aspect aspect-16x9 aspect-md-auto">
+                  <div class="wrapper wrapper-zoom">
+                    <div class="wrapper-content wrapper-content-padding-y-lg">
+                      <h2>Bed & Breakfast</h2>
+                      <p>34 Angebote</p>
+                      <p>
+                        <a href="#" class="btn btn-primary icon-link">Mehr<i class="ofi-arrow-right"></i></a>
+                      </p>
+                    </div>
+                    <div class="wrapper-bg-media">
+                      <figure>
+                        <img width="100%" height="300" src="../../assets/img/photos/bnb_4x3.jpg">
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="masonry-item">
+                <div class="aspect aspect-16x9 aspect-md-auto">
+                  <div class="wrapper wrapper-zoom">
+                    <div class="wrapper-content wrapper-content-padding-y-lg">
+                      <h2>Camping</h2>
+                      <p>12 Angebote</p>
+                      <p>
+                        <a href="#" class="btn btn-primary icon-link">Mehr<i class="ofi-arrow-right"></i></a>
+                      </p>
+                    </div>
+                    <div class="wrapper-bg-media">
+                      <figure>
+                        <img width="100%" height="300" src="../../assets/img/photos/camping.jpg">
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="masonry">
+        <div class="masonry-group-item">
+          <div class="masonry masonry-horizontal-1">
+            <div class="masonry-item">
+              <div class="wrapper py-5 text-bg-primary">
+                <div class="wrapper-content text-center">
+
+                  <h2>Verfügbarkeit prüfen</h2>
+                  <p>Egal welche Art von Unterkunft - freie Kapazitäten anzeigen.</p>
+
+                  <div class="container">
+                    <div class="py-5">
+                      <form class="row col-auto g-3">
+                        <div class="col-12 col-md">
+                          <label for="booking-location" class="form-label">Reiseziel</label>
+                          <input type="text" class="form-control" id="booking-location" list="booking-location-list" placeholder="Ort eingeben">
+                          <datalist id="booking-location-list">
+                            <option value="St.Gallen">
+                            <option value="Thurgau">
+                            <option value="Schaffhausen">
+                            <option value="Glarnerland">
+                            <option value="Heidiland">
+                            <option value="Toggenburg">
+                          </datalist>
+                        </div>
+
+                        <div class="col-12 col-md">
+                          <label for="booking-dates" class="form-label">Check-In & Check-Out</label>
+                          <input type="text" id="booking-dates" class="form-control form-datepicker" data-of-datepicker='{"mode": "range"}' placeholder="Datum auswählen">
+                        </div>
+
+                        <div class="col">
+                          <div id="booking-combo-box" class="dropdown">
+                            <label for="booking-guests" class="form-label">Anzahl Gäste</label>
+                            <input type="text" id="booking-guests" class="form-select" data-bs-auto-close="outside" data-bs-toggle="dropdown" readonly>
+
+                            <div class="dropdown-menu">
+                              <div class="combo-box">
+                                <div class="combo-box-row">
+                                  <div class="combo-box-label">
+                                    <label for="booking-adults" class="form-label">Erwachsene</label>
+                                    <div class="form-text">14 Jahre oder älter</div>
+                                  </div>
+                                  <div class="combo-box-field">
+                                    <div class="input-group" data-of-quantity-picker>
+                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+                                      <input type="number" id="booking-adults" name="adults" class="form-control text-center" value="2" min="1" max="10" readonly>
+                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="combo-box-divider"></div>
+                                <div class="combo-box-row">
+                                  <div class="combo-box-label">
+                                    <label for="booking-children" class="form-label">Kinder</label>
+                                    <div class="form-text">13 Jahre oder jünger</div>
+                                  </div>
+                                  <div class="combo-box-field">
+                                    <div class="input-group" data-of-quantity-picker>
+                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+                                      <input type="number" id="booking-children" name="children" class="form-control text-center" value="0" min="0" max="10" readonly>
+                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="combo-box-divider"></div>
+                                <div class="combo-box-row">
+                                  <div class="combo-box-label">
+                                    <label for="booking-rooms" class="form-label">Zimmer</label>
+                                    <div class="form-text">Max 8 Zimmer</div>
+                                  </div>
+                                  <div class="combo-box-field">
+                                    <div class="input-group" data-of-quantity-picker>
+                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+                                      <input type="number" id="booking-rooms" name="rooms" class="form-control text-center" value="1" min="1" max="8" readonly>
+                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-auto d-flex align-items-end">
+                          <button class="btn btn-primary btn-icon"><span class="visually-hidden">Suchen</span><i class="ofi-search"></i></button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    window.openFrontend.ComboBox.then(component => new component(document.getElementById('booking-combo-box'), {
+      target: document.getElementById('booking-guests'),
+      format(data) {
+        const guests = Number.parseInt(data.adults.value) + Number.parseInt(data.children.value)
+        const rooms = Number.parseInt(data.rooms.value)
+        const chunks = [
+          `${guests} ${guests > 1 ? 'Gäste' : 'Gast'}`,
+          `${rooms} Zimmer`,
+        ]
+
+        return chunks.join(', ')
+      }
+    }))
+  })
+</script>

@@ -4,15 +4,33 @@ title: Directory hotels
 language: de
 ---
 
-<div class="container mt-3">
-  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-    <ol class="breadcrumb justify-content-end">
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
-      <li class="breadcrumb-item"><a href="#">Angebote</a></li>
-      <li class="breadcrumb-item"><a href="#">Übernachten</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Hotels</li>
-    </ol>
-  </nav>
+
+
+<div class="container mt-3 d-print-none">
+  <div class="row gx-2 gy-2 justify-content-between">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Angebote</a></li>
+          <li class="breadcrumb-item"><a href="#">Übernachten</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Hotels</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col-auto">
+      <div>
+        <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#share-modal" aria-labelledby="share-modal-label">
+          <i class="ofi-share"></i>
+          <span class="d-none d-lg-inline">Teilen</span>
+        </button>
+        <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
+          <i class="ofi-heart-fill"></i>
+          <span class="d-none d-lg-inline">Merken</span>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <main>

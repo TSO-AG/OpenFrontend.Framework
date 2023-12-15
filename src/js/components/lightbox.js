@@ -1,11 +1,10 @@
-import LightboxWithTabs from './lightbox-with-tabs';
-import Lightbox from './lightbox-base';
+import Lightbox from './lightbox-base'
+import LightboxWithTabs from './lightbox-with-tabs'
 
-class LightboxRegistry
-{
+class LightboxRegistry {
   constructor() {
-    this.configs = new Map;
-    this.instances = new Map;
+    this.configs = new Map()
+    this.instances = new Map()
   }
 
   initializeLightboxes() {
@@ -14,8 +13,8 @@ class LightboxRegistry
 
       // Get the HTML elements and add them to items
       if (Object.prototype.hasOwnProperty.call(config, 'elements')) {
-        config.elements.forEach(({ element, options }, index) => {
-          const item = {...options}
+        for (const [index, { element, options }] of config.elements.entries()) {
+          const item = { ...options }
 
           if (element.hasAttribute('href')) {
             item.href = element.href
@@ -27,11 +26,11 @@ class LightboxRegistry
           element.addEventListener('click', e => {
             e.preventDefault()
             this.instances.get(identifier).open(index)
-          });
-        });
+          })
+        }
       }
 
-      config.items = config.items ? [...items, ...config.items] : items;
+      config.items = config.items ? [...items, ...config.items] : items
 
       if (Object.prototype.hasOwnProperty.call(config, 'tabs') && config.tabs.length > 0) {
         this.instances.set(identifier, new LightboxWithTabs(identifier, config))
@@ -42,7 +41,7 @@ class LightboxRegistry
   }
 
   registerFromConfigElement(el) {
-    const identifier = el.dataset.ofLightboxConfig;
+    const identifier = el.dataset.ofLightboxConfig
 
     if (this.configs.has(identifier)) {
       throw new Error(`You cannot have more than one lightbox config with the same identifier: ${identifier}`)
@@ -51,17 +50,17 @@ class LightboxRegistry
     const config = JSON.parse(el.textContent.trim())
     config.elements = config.elements || []
 
-    this.configs.set(identifier, config);
+    this.configs.set(identifier, config)
   }
 
   registerFromRegularElement(el) {
     // TODO: validate options
-    const options = (el.dataset.ofLightbox !== '') ? JSON.parse(el.dataset.ofLightbox) : {}
+    const options = (el.dataset.ofLightbox === '') ? {} : JSON.parse(el.dataset.ofLightbox)
     const identifier = Object.prototype.hasOwnProperty.call(options, 'group') ? options.group : 'ungroupped'
 
     // Create a config if it does not exist yet
     if (!this.configs.has(identifier)) {
-      this.configs.set(identifier, { elements: [] });
+      this.configs.set(identifier, { elements: [] })
     }
 
     this.configs.get(identifier).elements.push({
@@ -74,7 +73,7 @@ class LightboxRegistry
     el.addEventListener('click', e => {
       e.preventDefault()
 
-      const [identifier, item] = el.dataset.ofLightboxOpen.split(':');
+      const [identifier, item] = el.dataset.ofLightboxOpen.split(':')
 
       if (!this.instances.has(identifier)) {
         throw new Error(`The lightbox with identifier "${identifier}" does not exist`)
@@ -85,20 +84,26 @@ class LightboxRegistry
   }
 }
 
-const registry = new LightboxRegistry();
+const registry = new LightboxRegistry()
 
 export function initMultiple(els) {
   // First, register the configs
-  [...els].filter(el => el.hasAttribute('data-of-lightbox-config')).forEach((el) => registry.registerFromConfigElement(el));
+  for (const el of [...els].filter(el => el.hasAttribute('data-of-lightbox-config'))) {
+    registry.registerFromConfigElement(el)
+  }
 
   // Then, register the HTML elements
-  [...els].filter(el => el.hasAttribute('data-of-lightbox')).forEach((el) => registry.registerFromRegularElement(el));
+  for (const el of [...els].filter(el => el.hasAttribute('data-of-lightbox'))) {
+    registry.registerFromRegularElement(el)
+  }
 
   // Then, register the trigger elements
-  [...els].filter(el => el.hasAttribute('data-of-lightbox-open')).forEach((el) => registry.registerTriggerElement(el));
+  for (const el of [...els].filter(el => el.hasAttribute('data-of-lightbox-open'))) {
+    registry.registerTriggerElement(el)
+  }
 
   // Finally initialize the lightboxes
-  registry.initializeLightboxes();
+  registry.initializeLightboxes()
 }
 
 export default LightboxRegistry

@@ -47,28 +47,43 @@
   }
 
   .ginner-container {
+    max-width: none !important; // stylelint-disable-line declaration-no-important
+    height: auto !important; // stylelint-disable-line declaration-no-important
+
     &:has(.gslide-image) { // @TODO - change has to real class
       width: fit-content;
     }
   }
 
   .gslide-inline {
-    max-height: calc(100vh - var(--lightbox-tabs-height, 0px) - var(--lightbox-thumbnails-height, 0px) - var(--lightbox-offset));
+    max-height: calc(100vh - var(--lightbox-tabs-wrapper-height, 0px) - var(--lightbox-thumbnails-wrapper-height, 0px) - var(--lightbox-offset));
   }
+
+  $contentHeight: calc(100vh - var(--lightbox-tabs-wrapper-height, 0px) - var(--lightbox-thumbnails-wrapper-height, 0px) - var(--lightbox-description-height, 0px) - var(--lightbox-offset)) !important; // stylelint-disable-line declaration-no-important
 
   .gslide-image img {
     @include transition(max-height .2s);
+    max-height: $contentHeight;
   }
 
-  .gslide:not(.zoomed) {
-    .gslide-image img {
-      max-height: calc(100vh - var(--lightbox-tabs-height, 0px) - var(--lightbox-thumbnails-height, 0px) - var(--lightbox-description-height, 0px) - var(--lightbox-offset)) !important;  // stylelint-disable-line declaration-no-important
-    }
+  // TODO: base this on CSS variables?
+  $arrowSize: 40px;
+  $arrowOffset: 30px;
+  $arrowsOffset: 2 * ($arrowOffset + $arrowSize + $arrowOffset);
+
+  .gslide-external {
+    max-height: $contentHeight;
+    height: $contentHeight;
+    min-width: 0;
+    width: calc(100% - $arrowsOffset)
   }
 
-  .gslide.zoomed {
-    margin-top: calc(var(--lightbox-tabs-height, 0px) * -1);
-    margin-bottom: calc(var(--lightbox-thumbnails-height, 0px) * -1);
+  .gslide-inline,
+  .gslide-video {
+    width: auto !important; // stylelint-disable-line declaration-no-important
+    max-width: none !important; // stylelint-disable-line declaration-no-important
+    height: $contentHeight;
+    aspect-ratio: 16/9;
   }
 }
 

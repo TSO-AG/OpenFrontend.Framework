@@ -150,7 +150,7 @@ export class Lightbox extends Config {
     _onOpen() {
         if (this._config.thumbnails) {
             this._thumbnailsElement = this._getLightboxElement(`.${LIGHTBOX_THUMBNAILS_CLASS}`)
-            this._createResizeObserver(this._thumbnailsElement, 'thumbnails-height')
+            this._createResizeObserver(this._thumbnailsElement, 'thumbnails-wrapper-height')
 
             this._generateThumbnails()
             this._updateThumbnails()
@@ -268,7 +268,13 @@ export class Lightbox extends Config {
     }
 
     _createResizeObserver(element, variableName) {
-        const updateCssVariable = (element, variableName) => document.documentElement.style.setProperty(`--lightbox-${variableName}`, `${element.getBoundingClientRect().height}px`)
+        const updateCssVariable = (element, variableName) => {
+            console.log(element);
+            console.log(`${element.getBoundingClientRect().height}px`);
+
+            document.documentElement.style.setProperty(`--lightbox-${variableName}`, `${element.getBoundingClientRect().height}px`)
+
+        }
         const resizeObserver = new ResizeObserver(entries => entries.forEach(() => updateCssVariable(element, variableName)))
 
         resizeObserver.observe(element)

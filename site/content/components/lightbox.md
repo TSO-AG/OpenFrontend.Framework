@@ -445,8 +445,7 @@ Having a complex gallery with different groups and mixed content types is not a 
             "identifier": "content-3",
             "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
             "type": "video",
-            "source": "youtube",
-            "width": 900
+            "source": "youtube"
           },
           {
             "identifier": "content-4",
@@ -461,8 +460,7 @@ Having a complex gallery with different groups and mixed content types is not a 
             "identifier": "youtube-1",
             "href": "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
             "type": "video",
-            "source": "youtube",
-            "width": 900
+            "source": "youtube"
           }
         ]
       },
@@ -473,8 +471,7 @@ Having a complex gallery with different groups and mixed content types is not a 
             "identifier": "vimeo-1",
             "href": "https://vimeo.com/115041822",
             "type": "video",
-            "source": "vimeo",
-            "width": 900
+            "source": "vimeo"
           }
         ]
       },
@@ -483,8 +480,7 @@ Having a complex gallery with different groups and mixed content types is not a 
         "items": [
           {
             "identifier": "map-1",
-            "href": "https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed",
-            "width": 900
+            "href": "https://maps.google.com/maps?hl=en&amp;q=TSO%20AG%2C%20F%C3%BCrstenlandstrasse%2053%2C%209000%20St.Gallen&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed"
           }
         ]
       }
@@ -637,7 +633,10 @@ The lightbox component supports responsive images with `sizes` and `srcset` item
 {{< /callout >}}
 
 ```html
-<a data-of-lightbox='{ "sizes": "(max-width: 600px) 480px, 800px", "srcset": "mobile.jpg 480w, desktop.jpg 800w" }' href="…">
+<a data-of-lightbox='{
+    "sizes": "(max-width: 600px) 480px, 800px",
+    "srcset": "mobile.jpg 480w, desktop.jpg 800w"
+}' href="…">
     <img src="…" alt="">
 </a>
 ```
@@ -649,7 +648,10 @@ The responsive thumbnails are supported with `thumbnailSizes` and `thumbnailSrcs
 {{< /callout >}}
 
 ```html
-<a data-of-lightbox='{ "thumbnail": "path/to/custom-thumbnail.jpg", "thumbnailSrcset": "thumb@1x.jpg 1x, thumb@2x.jpg 2x" }' href="…">
+<a data-of-lightbox='{
+    "thumbnail": "path/to/custom-thumbnail.jpg",
+    "thumbnailSrcset": "thumb@1x.jpg 1x, thumb@2x.jpg 2x"
+}' href="…">
     <img src="…" alt="">
 </a>
 ```
@@ -736,7 +738,6 @@ Depending on the item `type`, the extra options can be passed on:
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
 | `href` | `string` | `undefined` | Required. The iframe source URL. |
-| `width` | `number` | `undefined` | The item maximum width. |
 {{< /bs-table >}}
 
 ##### Image options
@@ -767,7 +768,6 @@ Depending on the item `type`, the extra options can be passed on:
 | --- | --- | --- | --- |
 | `href` | `string` | `undefined` | Required. The video source URL. |
 | `source` | `string` | `undefined` | The video source. Available options are: `local`, `youtube`, `vimeo`. |
-| `width` | `number` | `undefined` | The item maximum width. |
 {{< /bs-table >}}
 
 ## Examples

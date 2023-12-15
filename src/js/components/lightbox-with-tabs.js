@@ -46,7 +46,7 @@ class LightboxWithTabs extends Lightbox {
         super._onOpen()
 
         this._tabsElement = this._getLightboxElement(`.${LIGHTBOX_TABS_CLASS}`)
-        this._createResizeObserver(this._tabsElement, 'tabs-height')
+        this._createResizeObserver(this._tabsElement, 'tabs-wrapper-height')
 
         this._generateTabs()
         this._bindTabEvents()

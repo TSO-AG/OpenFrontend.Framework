@@ -11,6 +11,10 @@
   }
 }
 
+img.aspect { // stylelint-disable-line selector-no-qualifying-type
+  width: 100%;
+}
+
 // Make aspect ratio responsive
 @each $breakpoint in map-keys($grid-breakpoints) {
   $infix: breakpoint-infix($breakpoint, $grid-breakpoints);

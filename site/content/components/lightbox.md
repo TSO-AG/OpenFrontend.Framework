@@ -486,6 +486,23 @@ The responsive thumbnails are supported with `thumbnailSizes` and `thumbnailSrcs
 </a>
 ```
 
+## URL hash tracking
+
+When the lightbox open or its slide is being changed, the current URL will be updated with an extra hash. This allows a visitor to copy or paste the URL that opens the lightbox right away. This feature is controlled by the `urlHashTracking` option and is enabled by default.
+
+The URL hash for lightbox starts exclusively with the `#lightbox-` prefix. The URL hash will be updated whenever one of the following events occurs:
+
+1. The lightbox is opened.
+2. The lightbox is closed.
+3. The lightbox slide is changed.
+4. The lightbox tab is changed.
+
+The URL hash will format exactly as the lightbox triggers (see above), for example:
+
+```shell
+https://domain.tld/page.html#lightbox-<group_identifier>:<item_identifier>
+```
+
 ## Options
 
 The lightbox options are optional. If you decide to use them, due to their nature, they must be defined in one central place.
@@ -522,6 +539,7 @@ Here is the list of all available options (alphabetically):
 | `items` | `array` | `[]` | The items to display in the lightbox. Every item must be an object with item options described below. |
 | `tabs` | `array` | `[]` | The tabs to display at the top of the lightbox. Every tab must be an object with tab options described below. |
 | `thumbnails` | `boolean` | `false` | Show the thumbnails of lightbox items. |
+| `urlHashTracking` | `boolean` | `true` | Enable the URL hash tracking. When the lightbox opens or its slide changes, the URL hash will be updated. |
 {{< /bs-table >}}
 
 {{< callout warning >}}

@@ -4,30 +4,13 @@ const LIGHTBOX_TABS_ACTIVE_CLASS = 'active'
 const LIGHTBOX_TABS_CLASS = 'lightbox-tabs'
 
 class LightboxWithTabs extends Lightbox {
-  constructor(identifier, config) {
-    super(identifier, config)
-
-    if (this._config.tabs.length === 0) {
-      throw new Error('There are no tabs defined')
-    }
-
-    this._tabsActiveTabIndex = 0
-    this._tabsLinks = []
-  }
-
   // Public
   open(identifierOrIndex) {
-    let callback
-
-    // Find the tab and item indexes with given identifier
-    if (typeof identifierOrIndex === 'string' && /^\d+$/.exec(identifierOrIndex) === null) {
-      callback = identifier => identifier === identifierOrIndex
-    } else if (identifierOrIndex > 0) {
-      // Find the tab and item indexes by numeric index
-      callback = (identifier, itemsCount) => itemsCount === Number.parseInt(identifierOrIndex, 10)
+    if (identifierOrIndex === null) {
+      return
     }
 
-    const { tabIndex, itemIndex } = this._getTabAndItemIndexes(callback)
+    const { tabIndex, itemIndex } = this._getTabAndItemIndexes(identifierOrIndex)
 
     this._setActiveTab(tabIndex, itemIndex)
     this._lightbox.openAt(itemIndex)
@@ -40,6 +23,20 @@ class LightboxWithTabs extends Lightbox {
   // Overrides
   _getBeforeContentHtml() {
     return `<div class="${LIGHTBOX_TABS_CLASS}"></div>`
+  }
+
+  _init() {
+    if (this._config.tabs.length === 0) {
+      throw new Error('There are no tabs defined')
+    }
+
+    this._tabsActiveTabIndex = 0
+    this._tabsLinks = []
+
+    // Create a mapper for easier usage later on
+    this._tabsItemsMapper = this._config.tabs.flatMap((tab, tabIndex) => tab.items.map((item, itemIndex) => ({ ...item, tabIndex, itemIndex })))
+
+    super._init()
   }
 
   _onOpen() {
@@ -65,7 +62,29 @@ class LightboxWithTabs extends Lightbox {
     return this._config.tabs[this._tabsActiveTabIndex].items.map(generator)
   }
 
+  _updateUrlHashOnOpen() {
+    window.history.pushState({}, null, this._generateUrlForItem(this._getTabItemIndex(this._lightbox.index)))
+  }
+
+  _updateUrlHashOnSlideChange(index) {
+    window.history.replaceState({}, null, this._generateUrlForItem(this._getTabItemIndex(index)))
+  }
+
+  _generateUrlHash(identifierOrIndex = 0) {
+    if (typeof identifierOrIndex === 'number') {
+      identifierOrIndex = this._tabsItemsMapper[identifierOrIndex].identifier || identifierOrIndex
+    }
+
+    return `${this.getUrlHashPrefix()}${this._identifier}:${identifierOrIndex}`
+  }
+
   // Private
+  _getTabItemIndex(index) {
+    const  itemIndex = this._tabsItemsMapper.findIndex(item => item.itemIndex === index && item.tabIndex === this._tabsActiveTabIndex)
+
+    return (itemIndex !== -1) ? itemIndex : 0
+  }
+
   _generateTabs() {
     const tabs = document.createElement('ul')
     tabs.className = 'nav nav-underline'
@@ -77,7 +96,7 @@ class LightboxWithTabs extends Lightbox {
       const link = document.createElement('a')
       link.className = 'nav-link'
       link.textContent = tab.name || index
-      link.href = `#${this._identifier}:${index}` // TODO: fix when URL hash support is here
+      link.href = this._config.urlHashTracking ? `#${this._generateUrlHash(this._tabsItemsMapper.findIndex(item => item.tabIndex === index))}` : '#'
       link.dataset.tab = index
 
       this._tabsLinks.push(link)
@@ -129,22 +148,30 @@ class LightboxWithTabs extends Lightbox {
           this._updateThumbnails()
           this._setThumbnailsActiveSlide(0, 0)
         }
+
+        // Update the URL hash
+        if (this._config.urlHashTracking) {
+          window.history.replaceState({}, null, this._generateUrlForItem(this._tabsItemsMapper.findIndex(item => item.tabIndex === this._tabsActiveTabIndex)))
+        }
       })
     }
   }
 
-  _getTabAndItemIndexes(callback) {
-    if (typeof callback === 'function') {
-      let itemsCount = 0
+  _getTabAndItemIndexes(identifierOrIndex) {
+    let index
 
-      for (let i = 0; i < this._config.tabs.length; i++) {
-        for (let j = 0; j < this._config.tabs[i].items.length; j++) {
-          if (callback(this._config.tabs[i].items[j].identifier, itemsCount)) {
-            return { tabIndex: i, itemIndex: j }
-          }
+    // Find the item with given identifier
+    if (typeof identifierOrIndex === 'string' && /^\d+$/.exec(identifierOrIndex) === null) {
+      index = this._tabsItemsMapper.findIndex(item => item.identifier === identifierOrIndex)
+      index = (index === -1) ? 0 : index
+    } else {
+      index = identifierOrIndex || 0
+    }
 
-          itemsCount++
-        }
+    if (this._tabsItemsMapper[index]) {
+      return {
+        tabIndex: this._tabsItemsMapper[index].tabIndex,
+        itemIndex: this._tabsItemsMapper[index].itemIndex,
       }
     }
 

@@ -9,6 +9,7 @@ Swiper.use([Navigation, Autoplay, Manipulation])
 const NAME = 'lightbox'
 const LIGHTBOX_WRAPPER_CLASS = 'lightbox-wrapper'
 const LIGHTBOX_THUMBNAILS_CLASS = 'lightbox-thumbnails'
+const LIGHTBOX_URL_HASH_PREFIX = 'lightbox-'
 
 const LIGHTBOX_SETTINGS = {
   autoplayVideos: true,
@@ -63,12 +64,14 @@ const DefaultType = {
   items: 'array',
   tabs: 'array',
   thumbnails: 'boolean',
+  urlHashTracking: 'boolean',
 }
 
 const Default = {
   items: [],
   tabs: [],
   thumbnails: false,
+  urlHashTracking: true,
 }
 
 class Lightbox extends Config {
@@ -83,6 +86,8 @@ class Lightbox extends Config {
     this._lightbox.on('open', this._onOpen.bind(this))
     this._lightbox.on('slide_before_change', this._onSlideBeforeChange.bind(this))
     this._lightbox.on('slide_changed', this._onSlideChanged.bind(this))
+
+    this._init()
   }
 
   // Getters
@@ -100,6 +105,10 @@ class Lightbox extends Config {
 
   // Public
   open(identifierOrIndex) {
+    if (identifierOrIndex === null) {
+      return
+    }
+
     let index
 
     // Find the item with given identifier
@@ -117,6 +126,10 @@ class Lightbox extends Config {
     }
   }
 
+  getUrlHashPrefix() {
+    return LIGHTBOX_URL_HASH_PREFIX
+  }
+
   // Private
   _getLightboxOptions() {
     let html = LIGHTBOX_HTML
@@ -130,6 +143,13 @@ class Lightbox extends Config {
     }
   }
 
+  _init() {
+    if (this._config.urlHashTracking) {
+      this.open(this._getItemFromUrlHash())
+      window.addEventListener('hashchange', () => this.open(this._getItemFromUrlHash()))
+    }
+  }
+
   _getBeforeContentHtml() {
     return ''
   }
@@ -138,11 +158,20 @@ class Lightbox extends Config {
     return this._config.thumbnails ? `<div class="${LIGHTBOX_THUMBNAILS_CLASS}"></div>` : ''
   }
 
+  _getLightboxElement(selector) {
+    return this._lightbox.modal.querySelector(selector)
+  }
+
+  // Private - events
   _onClose() {
     if (this._config.thumbnails) {
       this._thumbnailsElement.remove()
       this._thumbnailsElement = null
       this._thumbnailsCarousel = null
+    }
+
+    if (this._config.urlHashTracking) {
+      window.history.pushState({}, null, this._generateUrlForItem())
     }
   }
 
@@ -154,11 +183,19 @@ class Lightbox extends Config {
       this._generateThumbnails()
       this._updateThumbnails()
     }
+
+    if (this._config.urlHashTracking) {
+      this._updateUrlHashOnOpen()
+    }
   }
 
   _onSlideBeforeChange({ current }) {
     if (this._config.thumbnails) {
       this._setThumbnailsActiveSlide(current.index)
+    }
+
+    if (this._config.urlHashTracking) {
+      this._updateUrlHashOnSlideChange(current.index)
     }
   }
 
@@ -177,10 +214,48 @@ class Lightbox extends Config {
     }
   }
 
-  _getLightboxElement(selector) {
-    return this._lightbox.modal.querySelector(selector)
+  // Private - URL hash tracking
+  _updateUrlHashOnOpen() {
+    window.history.pushState({}, null, this._generateUrlForItem(this._lightbox.index))
   }
 
+  _updateUrlHashOnSlideChange(index) {
+    window.history.replaceState({}, null, this._generateUrlForItem(index))
+  }
+
+  _generateUrlHash(identifierOrIndex) {
+    if (typeof identifierOrIndex === 'number') {
+      identifierOrIndex = this._config.items[identifierOrIndex].identifier || identifierOrIndex
+    }
+
+    return `${LIGHTBOX_URL_HASH_PREFIX}${this._identifier}:${identifierOrIndex}`
+  }
+
+  _generateUrlForItem(identifierOrIndex = null) {
+    let url = window.location.pathname
+
+    if (identifierOrIndex || identifierOrIndex === 0) {
+      url = `${url}#${this._generateUrlHash(identifierOrIndex)}`
+    }
+
+    return url
+  }
+
+  _getItemFromUrlHash() {
+    if (!window.location.hash.startsWith(`#${LIGHTBOX_URL_HASH_PREFIX}`)) {
+      return null
+    }
+
+    let [identifier, item] = window.location.hash.substring(LIGHTBOX_URL_HASH_PREFIX.length + 1).split(':')
+
+    if (identifier !== this._identifier) {
+      return null
+    }
+
+    return item
+  }
+
+  // Private - thumbnails
   _generateThumbnails() {
     const temp = document.createElement('div')
     temp.innerHTML = THUMBNAILS_CAROUSEL_HTML

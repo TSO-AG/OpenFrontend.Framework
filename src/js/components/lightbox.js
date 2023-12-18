@@ -1,6 +1,8 @@
 import Lightbox from './lightbox-base'
 import LightboxWithTabs from './lightbox-with-tabs'
 
+const UNGROUPED_ITEMS_IDENTIFIER = 'all'
+
 class LightboxRegistry {
   constructor() {
     this.configs = new Map()
@@ -56,7 +58,7 @@ class LightboxRegistry {
   registerFromRegularElement(el) {
     // TODO: validate options
     const options = (el.dataset.ofLightbox === '') ? {} : JSON.parse(el.dataset.ofLightbox)
-    const identifier = Object.prototype.hasOwnProperty.call(options, 'group') ? options.group : 'ungroupped'
+    const identifier = Object.prototype.hasOwnProperty.call(options, 'group') ? options.group : UNGROUPED_ITEMS_IDENTIFIER
 
     // Create a config if it does not exist yet
     if (!this.configs.has(identifier)) {

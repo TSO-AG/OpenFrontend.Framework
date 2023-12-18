@@ -68,16 +68,19 @@
     max-height: $content-height;
   }
 
-  // TODO: base this on CSS variables?
-  $arrow-size: 40px;
-  $arrow-offset: 30px;
-  $arrows-total-offset: 2 * ($arrow-offset + $arrow-size + $arrow-offset);
-
   .gslide-external {
-    width: calc(100% - $arrows-total-offset);
     min-width: 0;
     height: $content-height;
     max-height: $content-height;
+
+    // The same breakpoint as in glightbox.css
+    @media (min-width: 769px) {
+      // TODO: base this on CSS variables?
+      $arrow-size: 40px;
+      $arrow-offset: 30px;
+      $arrows-total-offset: 2 * ($arrow-offset + $arrow-size + $arrow-offset);
+      width: calc(100% - $arrows-total-offset);
+    }
   }
 
   .gslide-inline,

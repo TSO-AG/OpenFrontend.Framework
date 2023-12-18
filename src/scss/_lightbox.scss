@@ -136,6 +136,10 @@
     height: $content-height;
     aspect-ratio: 16/9;
   }
+
+  .gslide-video {
+    overflow: hidden;
+  }
 }
 
 .gallery-thumbnails {

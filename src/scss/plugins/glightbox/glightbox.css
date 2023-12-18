@@ -478,10 +478,6 @@ iframe.wait-autoplay {
   line-height: 1.4em;
 }
 
-.glightbox-clean .gslide-video {
-  background: #000;
-}
-
 .glightbox-clean .gprev,
 .glightbox-clean .gnext,
 .glightbox-clean .gclose {

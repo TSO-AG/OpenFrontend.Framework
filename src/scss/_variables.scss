@@ -666,6 +666,17 @@ $copyright-horizontal-breakpoint:   md !default;
 
 // Lightbox
 // scss-docs-start lightbox-variables
+$lightbox-btn-arrow-width: 40px !default;
+$lightbox-btn-arrow-height: 50px !default;
+$lightbox-btn-arrow-offset: 1rem !default;
+$lightbox-btn-arrow-background: rgba(0, 0, 0, .32) !default;
+$lightbox-btn-arrow-hover-background: rgba(0, 0, 0, .7) !default;
+$lightbox-btn-close-width: 35px !default;
+$lightbox-btn-close-height: 35px !default;
+$lightbox-btn-close-offset-right: 1rem !default;
+$lightbox-btn-close-offset-top: 15px !default;
+$lightbox-btn-close-background: $lightbox-btn-arrow-background !default;
+$lightbox-btn-close-hover-background: $lightbox-btn-arrow-hover-background !default;
 $lightbox-background: var(--#{$prefix}body-bg) !default;
 $lightbox-tabs-margin: 1rem !default;
 $lightbox-tabs-padding-x: 1rem !default;

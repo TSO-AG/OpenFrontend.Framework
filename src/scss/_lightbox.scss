@@ -14,10 +14,54 @@
   --lightbox-thumbnails-padding-x: #{$lightbox-thumbnails-padding-y};
   --lightbox-thumbnails-border-width: #{$lightbox-thumbnails-border-width};
   --lightbox-thumbnails-border-color: #{$lightbox-thumbnails-border-color};
+  --lightbox-btn-arrow-width: #{$lightbox-btn-arrow-width};
+  --lightbox-btn-arrow-height: #{$lightbox-btn-arrow-height};
+  --lightbox-btn-arrow-offset: #{$lightbox-btn-arrow-offset};
+  --lightbox-btn-arrow-background: #{$lightbox-btn-arrow-background};
+  --lightbox-btn-arrow-hover-background: #{$lightbox-btn-arrow-hover-background};
+  --lightbox-btn-close-width: #{$lightbox-btn-close-width};
+  --lightbox-btn-close-height: #{$lightbox-btn-close-height};
+  --lightbox-btn-close-offset-right: #{$lightbox-btn-close-offset-right};
+  --lightbox-btn-close-offset-top: #{$lightbox-btn-close-offset-top};
+  --lightbox-btn-close-background: #{$lightbox-btn-close-background};
+  --lightbox-btn-close-hover-background: #{$lightbox-btn-close-hover-background};
   // scss-docs-end lightbox-css-vars
 
   .goverlay {
     background-color: var(--lightbox-backgorund);
+  }
+}
+
+.glightbox-clean .gcontainer {
+  .gprev,
+  .gnext {
+    width: var(--lightbox-btn-arrow-width);
+    height: var(--lightbox-btn-arrow-height);
+    background-color: var(--lightbox-btn-arrow-background);
+
+    &:hover {
+      background-color: var(--lightbox-btn-arrow-hover-background);
+    }
+  }
+
+  .gprev {
+    left: var(--lightbox-btn-arrow-offset);
+  }
+
+  .gnext {
+    right: var(--lightbox-btn-arrow-offset);
+  }
+
+  .gclose {
+    top: var(--lightbox-btn-close-offset-top);
+    right: var(--lightbox-btn-close-offset-right);
+    width: var(--lightbox-btn-close-width);
+    height: var(--lightbox-btn-close-height);
+    background-color: var(--lightbox-btn-close-background);
+
+    &:hover {
+      background-color: var(--lightbox-btn-close-hover-background);
+    }
   }
 }
 
@@ -77,11 +121,7 @@
 
     // The same breakpoint as in glightbox.css
     @media (min-width: 769px) {
-      // TODO: base this on CSS variables?
-      $arrow-size: 40px;
-      $arrow-offset: 30px;
-      $arrows-total-offset: 2 * ($arrow-offset + $arrow-size + $arrow-offset);
-      width: calc(100% - $arrows-total-offset);
+      width: calc(100% - 2 * (var(--lightbox-btn-arrow-offset) + var(--lightbox-btn-arrow-width) + var(--lightbox-btn-arrow-offset)));
     }
   }
 

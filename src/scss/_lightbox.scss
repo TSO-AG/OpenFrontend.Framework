@@ -171,6 +171,10 @@ html .glightbox-clean {
       color: inherit;
     }
   }
+
+  .gslide-media {
+    box-shadow: none;
+  }
 }
 
 .goverlay.gfadeOut + .gcontainer { // stylelint-disable-line selector-class-pattern

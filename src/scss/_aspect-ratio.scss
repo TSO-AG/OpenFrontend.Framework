@@ -9,6 +9,10 @@
     overflow: auto;
     vertical-align: top;
   }
+
+  > a:only-child {
+    display: block;
+  }
 }
 
 img.aspect { // stylelint-disable-line selector-no-qualifying-type

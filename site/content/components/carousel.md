@@ -744,6 +744,7 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 {{< bs-table "table" >}}
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
+| `autoHeight` | `boolean` | `false` | If enabled, the slider will adapt its height to the height of the current slide. |
 | `autoplay` | `object\|boolean` | `undefined` | Object with autoplay parameters or boolean `true` to enable with default settings. |
 | `breakpoints` | `object` | `undefined` | Allows to set different parameter for different responsive breakpoints (screen sizes). Not all parameters can be changed in breakpoints, changing these properties will have an effect: `slidesPerView`,  `spaceBetween`. |
 | `loop` | `boolean` | `false` | Set to `true` to enable continuous loop mode. Because of nature of how the loop mode works (it will rearrange slides), total number of slides must be `>= slidesPerView * 2`. |

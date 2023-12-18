@@ -77,6 +77,7 @@ class Carousel extends BaseComponent {
   // Private
   _initCarousel() {
     const options = {
+      autoHeight: this._config.autoHeight,
       loop: this._config.loop,
       slidesPerView: this._config.slidesPerView,
       spaceBetween: this._config.spaceBetween,

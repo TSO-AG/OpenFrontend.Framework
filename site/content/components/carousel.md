@@ -426,6 +426,317 @@ It is a carousel design where upcoming slides are partially visible, providing a
 </div>
 {{< /example >}}
 
+### Gallery
+
+To create a photo gallery with thumbnails, you can create two separate carousels. The main carousel, which displays one photo at a time, should have the `thumbs` option defined, pointing to the identifier of the carousel with the thumbnails.
+
+{{< example >}}
+<!-- Lightbox options -->
+<script data-of-lightbox-config="gallery-1" type="application/json">
+  {
+    "thumbnails": true
+  }
+</script>
+
+<!-- Main carousel -->
+<div class="carousel mb-2">
+  <div class="swiper" data-of-carousel='{
+      "thumbs": "#carousel-thumbnails-1"
+  }'>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <figure class="position-relative mb-0">
+          <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox='{ "group": "gallery-1" }'>
+            <img src="assets/media/sample-gallery-1.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+          </a>
+          <figcaption>
+            <button type="button" class="opacity-50 position-absolute bottom-0 end-0 translate-middle-x btn btn-circle btn-dark mb-2"
+                    style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="© Hans Muster">
+              <i class="ofi-question-circle-fill"></i>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="swiper-slide">
+        <figure class="position-relative mb-0">
+          <a href="assets/media/sample-gallery-2.jpg" data-of-lightbox='{ "group": "gallery-1" }'>
+            <img src="assets/media/sample-gallery-2.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+          </a>
+          <figcaption>
+            <button type="button" class="opacity-50 position-absolute bottom-0 end-0 translate-middle-x btn btn-circle btn-dark mb-2"
+                    style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="© Hans Muster">
+              <i class="ofi-question-circle-fill"></i>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="swiper-slide">
+        <figure class="position-relative mb-0">
+          <a href="assets/media/sample-gallery-3.jpg" data-of-lightbox='{ "group": "gallery-1" }'>
+            <img src="assets/media/sample-gallery-3.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+          </a>
+          <figcaption>
+            <button type="button" class="opacity-50 position-absolute bottom-0 end-0 translate-middle-x btn btn-circle btn-dark mb-2"
+                    style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="© Hans Muster">
+              <i class="ofi-question-circle-fill"></i>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="swiper-slide">
+        <figure class="position-relative mb-0">
+          <a href="assets/media/sample-gallery-4.jpg" data-of-lightbox='{ "group": "gallery-1" }'>
+            <img src="assets/media/sample-gallery-4.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+          </a>
+          <figcaption>
+            <button type="button" class="opacity-50 position-absolute bottom-0 end-0 translate-middle-x btn btn-circle btn-dark mb-2"
+                    style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="© Hans Muster">
+              <i class="ofi-question-circle-fill"></i>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="swiper-slide">
+        <figure class="position-relative mb-0">
+          <a href="assets/media/sample-gallery-5.jpg" data-of-lightbox='{ "group": "gallery-1" }'>
+            <img src="assets/media/sample-gallery-5.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+          </a>
+          <figcaption>
+            <button type="button" class="opacity-50 position-absolute bottom-0 end-0 translate-middle-x btn btn-circle btn-dark mb-2"
+                    style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="© Hans Muster">
+              <i class="ofi-question-circle-fill"></i>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="swiper-slide">
+        <figure class="position-relative mb-0">
+          <a href="assets/media/sample-gallery-6.jpg" data-of-lightbox='{ "group": "gallery-1" }'>
+            <img src="assets/media/sample-gallery-6.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+          </a>
+          <figcaption>
+            <button type="button" class="opacity-50 position-absolute bottom-0 end-0 translate-middle-x btn btn-circle btn-dark mb-2"
+                    style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="© Hans Muster">
+              <i class="ofi-question-circle-fill"></i>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="swiper-slide">
+        <figure class="position-relative mb-0">
+          <a href="assets/media/sample-gallery-7.jpg" data-of-lightbox='{ "group": "gallery-1" }'>
+            <img src="assets/media/sample-gallery-7.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+          </a>
+          <figcaption>
+            <button type="button" class="opacity-50 position-absolute bottom-0 end-0 translate-middle-x btn btn-circle btn-dark mb-2"
+                    style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="© Hans Muster">
+              <i class="ofi-question-circle-fill"></i>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="swiper-slide">
+        <figure class="position-relative mb-0">
+          <a href="assets/media/sample-gallery-8.jpg" data-of-lightbox='{ "group": "gallery-1" }'>
+            <img src="assets/media/sample-gallery-8.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+          </a>
+          <figcaption>
+            <button type="button" class="opacity-50 position-absolute bottom-0 end-0 translate-middle-x btn btn-circle btn-dark mb-2"
+                    style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="© Hans Muster">
+              <i class="ofi-question-circle-fill"></i>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="swiper-slide">
+        <figure class="position-relative mb-0">
+          <a href="assets/media/sample-gallery-9.jpg" data-of-lightbox='{ "group": "gallery-1" }'>
+            <img src="assets/media/sample-gallery-9.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+          </a>
+          <figcaption>
+            <button type="button" class="opacity-50 position-absolute bottom-0 end-0 translate-middle-x btn btn-circle btn-dark mb-2"
+                    style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="© Hans Muster">
+              <i class="ofi-question-circle-fill"></i>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="swiper-slide">
+        <figure class="position-relative mb-0">
+          <a href="assets/media/sample-gallery-10.jpg" data-of-lightbox='{ "group": "gallery-1" }'>
+            <img src="assets/media/sample-gallery-10.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+          </a>
+          <figcaption>
+            <button type="button" class="opacity-50 position-absolute bottom-0 end-0 translate-middle-x btn btn-circle btn-dark mb-2"
+                    style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="© Hans Muster">
+              <i class="ofi-question-circle-fill"></i>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="swiper-slide">
+        <figure class="position-relative mb-0">
+          <a href="assets/media/sample-gallery-11.jpg" data-of-lightbox='{ "group": "gallery-1" }'>
+            <img src="assets/media/sample-gallery-11.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+          </a>
+          <figcaption>
+            <button type="button" class="opacity-50 position-absolute bottom-0 end-0 translate-middle-x btn btn-circle btn-dark mb-2"
+                    style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="© Hans Muster">
+              <i class="ofi-question-circle-fill"></i>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="swiper-slide">
+        <figure class="position-relative mb-0">
+          <a href="assets/media/sample-gallery-12.jpg" data-of-lightbox='{ "group": "gallery-1" }'>
+            <img src="assets/media/sample-gallery-12.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+          </a>
+          <figcaption>
+            <button type="button" class="opacity-50 position-absolute bottom-0 end-0 translate-middle-x btn btn-circle btn-dark mb-2"
+                    style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="© Hans Muster">
+              <i class="ofi-question-circle-fill"></i>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="swiper-slide">
+        <figure class="position-relative mb-0">
+          <a href="assets/media/sample-gallery-13.jpg" data-of-lightbox='{ "group": "gallery-1" }'>
+            <img src="assets/media/sample-gallery-13.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+          </a>
+          <figcaption>
+            <button type="button" class="opacity-50 position-absolute bottom-0 end-0 translate-middle-x btn btn-circle btn-dark mb-2"
+                    style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="© Hans Muster">
+              <i class="ofi-question-circle-fill"></i>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="swiper-slide">
+        <figure class="position-relative mb-0">
+          <a href="assets/media/sample-gallery-14.jpg" data-of-lightbox='{ "group": "gallery-1" }'>
+            <img src="assets/media/sample-gallery-14.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+          </a>
+          <figcaption>
+            <button type="button" class="opacity-50 position-absolute bottom-0 end-0 translate-middle-x btn btn-circle btn-dark mb-2"
+                    style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="© Hans Muster">
+              <i class="ofi-question-circle-fill"></i>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Thumbnails carousel -->
+<div class="carousel carousel-navigation-center">
+  <div id="carousel-thumbnails-1" class="swiper" data-of-carousel='{
+      "slidesPerView": 2,
+      "spaceBetween": 10,
+      "navigationNext": "#carousel-btn-next-10",
+      "navigationPrev": "#carousel-btn-prev-10",
+      "breakpoints": {
+        "sm": {
+          "slidesPerView": 3
+        },
+        "md": {
+          "slidesPerView": 4
+        },
+        "xl": {
+          "slidesPerView": 5
+        },
+        "1400": {
+          "slidesPerView": 6
+        }
+      }
+  }'>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="assets/media/sample-gallery-1.jpg" alt="" class="aspect aspect-16x9 object-fit-cover img-fluid">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/media/sample-gallery-2.jpg" alt="" class="aspect aspect-16x9 object-fit-cover img-fluid">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/media/sample-gallery-3.jpg" alt="" class="aspect aspect-16x9 object-fit-cover img-fluid">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/media/sample-gallery-4.jpg" alt="" class="aspect aspect-16x9 object-fit-cover img-fluid">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/media/sample-gallery-5.jpg" alt="" class="aspect aspect-16x9 object-fit-cover img-fluid">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/media/sample-gallery-6.jpg" alt="" class="aspect aspect-16x9 object-fit-cover img-fluid">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/media/sample-gallery-7.jpg" alt="" class="aspect aspect-16x9 object-fit-cover img-fluid">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/media/sample-gallery-8.jpg" alt="" class="aspect aspect-16x9 object-fit-cover img-fluid">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/media/sample-gallery-9.jpg" alt="" class="aspect aspect-16x9 object-fit-cover img-fluid">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/media/sample-gallery-10.jpg" alt="" class="aspect aspect-16x9 object-fit-cover img-fluid">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/media/sample-gallery-11.jpg" alt="" class="aspect aspect-16x9 object-fit-cover img-fluid">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/media/sample-gallery-12.jpg" alt="" class="aspect aspect-16x9 object-fit-cover img-fluid">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/media/sample-gallery-13.jpg" alt="" class="aspect aspect-16x9 object-fit-cover img-fluid">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/media/sample-gallery-14.jpg" alt="" class="aspect aspect-16x9 object-fit-cover img-fluid">
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-navigation">
+    <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-10">
+      <i class="ofi-caret-left-fill"></i>
+    </button>
+    <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-10">
+      <i class="ofi-caret-right-fill"></i>
+    </button>
+  </div>
+</div>
+{{< /example >}}
+
 ## Options
 
 You can pass extra options as JSON value of the data attribute. Here is the list of all available options (alphabetically):
@@ -442,6 +753,7 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 | `slidesPerView` | `number\|string` | `1` | Number of slides per view (slides visible at the same time on slider's container). Pass the `'auto'` value to automatically determine the number. |
 | `spaceBetween` | `string\|number` | `0` | Distance between slides in pixels. |
 | `speed` | `number` | `300` | Duration of transition between slides (in milliseconds). |
+| `thumbs` | `string` | `undefined` | The selector of the carousel element used as thumbs. |
 {{< /bs-table >}}
 
 #### Autoplay parameters

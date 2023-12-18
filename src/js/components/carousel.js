@@ -1,8 +1,8 @@
 import BaseComponent from 'bootstrap/js/src/base-component'
 import Swiper from 'swiper'
-import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+import { Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules'
 
-Swiper.use([Navigation, Autoplay, Pagination])
+Swiper.use([Autoplay, Navigation, Pagination, Thumbs])
 
 let cssRoot
 
@@ -32,6 +32,7 @@ const DefaultType = {
   spaceBetween: '(string|number|undefined)',
   speed: 'number',
   futureSlidesVisible: 'boolean',
+  thumbs: '(string|undefined)',
 }
 
 const Default = {
@@ -45,6 +46,7 @@ const Default = {
   spaceBetween: 0,
   speed: 300,
   futureSlidesVisible: false,
+  thumbs: undefined,
 }
 
 const BreakpointType = {
@@ -118,6 +120,12 @@ class Carousel extends BaseComponent {
     if (this._config.futureSlidesVisible) {
       options.watchSlidesProgress = true
       options.loopAdditionalSlides = 2
+    }
+
+    if (this._config.thumbs) {
+      options.thumbs = {
+        swiper: this._config.thumbs
+      }
     }
 
     new Swiper(this._element, options)

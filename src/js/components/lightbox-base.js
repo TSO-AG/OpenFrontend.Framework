@@ -1,6 +1,5 @@
 import Config from 'bootstrap/js/src/util/config'
 import GLightbox from 'glightbox/src/js/glightbox'
-import 'glightbox/dist/css/glightbox.min.css'
 
 import Swiper from 'swiper'
 import { Autoplay, Navigation, Manipulation } from 'swiper/modules'

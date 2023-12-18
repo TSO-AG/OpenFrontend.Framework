@@ -98,8 +98,12 @@
     max-width: none !important; // stylelint-disable-line declaration-no-important
     height: auto !important; // stylelint-disable-line declaration-no-important
 
-    &:has(.gslide-image) { // @TODO - change has to real class
+    &.desc-bottom {
       width: fit-content;
+
+      .gslide-description {
+        max-width: 100% !important; // stylelint-disable-line declaration-no-important
+      }
     }
   }
 

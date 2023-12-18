@@ -108,10 +108,10 @@
   }
 
   .gslide-inline {
-    max-height: calc(100vh - var(--lightbox-tabs-wrapper-height, 0px) - var(--lightbox-thumbnails-wrapper-height, 0px) - var(--lightbox-offset));
+    max-height: calc(100dvh - var(--lightbox-tabs-wrapper-height, 0px) - var(--lightbox-thumbnails-wrapper-height, 0px) - var(--lightbox-offset));
   }
 
-  $content-height: calc(100vh - var(--lightbox-tabs-wrapper-height, 0px) - var(--lightbox-thumbnails-wrapper-height, 0px) - var(--lightbox-description-height, 0px) - var(--lightbox-offset)) !important; // stylelint-disable-line declaration-no-important
+  $content-height: calc(100dvh - var(--lightbox-tabs-wrapper-height, 0px) - var(--lightbox-thumbnails-wrapper-height, 0px) - var(--lightbox-description-height, 0px) - var(--lightbox-offset)) !important; // stylelint-disable-line declaration-no-important
 
   .gslide-image img {
     @include transition(max-height .2s);

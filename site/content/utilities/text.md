@@ -153,6 +153,20 @@ Here's how to apply it:
 </div>
 {{< /example >}}
 
+## Text shadow
+
+The `.text-shadow-none` class is a utility that you can use if you want to remove text shadow from a specific text element.
+
+{{< example >}}
+<div class="wrapper wrapper-bg-light py-5">
+  <div class="wrapper-content text-center">
+    <p>Sample wrapper content</p>
+    <p class="text-shadow-none">This text has no shadow effect</p>
+  </div>
+</div>
+
+{{< /example >}}
+
 ## CSS
 
 ### Sass variables
@@ -174,3 +188,4 @@ Font-size utilities are generated from this map, in combination with our utiliti
 Font and text utilities are declared in our utilities API in `scss/_utilities.scss`. [Learn how to use the utilities API.]({{< docsref "/utilities/api#using-the-api" >}})
 
 {{< scss-docs name="utils-text" file="node_modules/bootstrap/scss/_utilities.scss" >}}
+{{< scss-docs name="utils-text" file="src/scss/_utilities.scss" >}}

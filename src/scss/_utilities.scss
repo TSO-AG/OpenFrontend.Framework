@@ -37,4 +37,11 @@ $utilities:
       class: mb,
       values: $negative-custom-spacers
     ),
+    // Text
+    // scss-docs-start utils-text
+    "text-shadow": (
+      property: text-shadow,
+      values: none
+    ),
+    // scss-docs-end utils-text
   ) !default;

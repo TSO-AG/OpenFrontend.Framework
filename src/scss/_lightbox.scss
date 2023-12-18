@@ -20,11 +20,13 @@
 }
 
 .lightbox-tabs {
+  width: 100%;
   padding: var(--lightbox-tabs-padding-y) var(--lightbox-tabs-padding-x);
   border-bottom: var(--lightbox-tabs-border-width) solid var(--lightbox-tabs-border-color);
 }
 
 .lightbox-thumbnails {
+  width: 100%;
   padding: var(--lightbox-thumbnails-padding-y) var(--lightbox-thumbnails-padding-x);
   border-top: var(--lightbox-thumbnails-border-width) solid var(--lightbox-thumbnails-border-color);
 }

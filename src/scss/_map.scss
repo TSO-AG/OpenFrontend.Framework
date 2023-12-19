@@ -1,5 +1,14 @@
 @mixin popover-content-reset {
   .popover-content {
+    // Use the default colors, as the map popup is always white, no matter the theme
+    [data-bs-theme=dark] & {
+      color: $body-color;
+
+      .popover-content-info {
+        color: $body-secondary-color;
+      }
+    }
+
     p {
       margin-top: 0;
       @include margin-bottom($paragraph-margin-bottom);

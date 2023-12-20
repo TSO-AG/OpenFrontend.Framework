@@ -107,11 +107,27 @@
     }
   }
 
-  .gslide-inline {
-    max-height: calc(100dvh - var(--lightbox-tabs-wrapper-height, 0px) - var(--lightbox-thumbnails-wrapper-height, 0px) - var(--lightbox-offset));
-  }
-
   $content-height: calc(100dvh - var(--lightbox-tabs-wrapper-height, 0px) - var(--lightbox-thumbnails-wrapper-height, 0px) - var(--lightbox-description-height, 0px) - var(--lightbox-offset)) !important; // stylelint-disable-line declaration-no-important
+
+  .gslide-inline {
+    max-width: none !important; // stylelint-disable-line declaration-no-important
+    max-height: calc(100dvh - var(--lightbox-tabs-wrapper-height, 0px) - var(--lightbox-thumbnails-wrapper-height, 0px) - var(--lightbox-offset));
+    width: auto !important; // stylelint-disable-line declaration-no-important
+    height: $content-height;
+    aspect-ratio: 16/9;
+
+    // The same breakpoint as in glightbox.css
+    @media (min-width: 769px) {
+      width: calc(100% - 2 * (var(--lightbox-btn-arrow-offset) + var(--lightbox-btn-arrow-width) + var(--lightbox-btn-arrow-offset))) !important; // stylelint-disable-line declaration-no-important
+    }
+
+    .ginlined-content {
+      max-width: none !important; // stylelint-disable-line declaration-no-important
+      width: 100%;
+      height: 100% !important; // stylelint-disable-line declaration-no-important
+      padding: 0;
+    }
+  }
 
   .gslide-image img {
     @include transition(max-height .2s);
@@ -129,7 +145,6 @@
     }
   }
 
-  .gslide-inline,
   .gslide-video {
     width: auto !important; // stylelint-disable-line declaration-no-important
     max-width: none !important; // stylelint-disable-line declaration-no-important

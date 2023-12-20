@@ -283,21 +283,21 @@ language: de
                   <div class="masonry masonry-vertical-5">
                     <div class="masonry-item">
                       <div class="aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16 overflow-hidden">
-                        <a href="../../assets/img/photos/hotel-zweistein-002.jpg" data-of-lightbox-open="media:1">
+                        <a href="../../assets/img/photos/hotel-zweistein-002.jpg" data-of-lightbox-open="media:gallery-1">
                           <img src="../../assets/img/photos/hotel-zweistein-002.jpg" alt="" class="img-fit-cover">
                         </a>
                       </div>
                     </div>
                     <div class="masonry-item">
                       <div class="aspect aspect-16x9 aspect-md-auto overflow-hidden">
-                        <a href="../../assets/img/photos/hotel-zweistein-003.jpg" data-of-lightbox-open="media:2">
+                        <a href="../../assets/img/photos/hotel-zweistein-003.jpg" data-of-lightbox-open="media:gallery-2">
                           <img src="../../assets/img/photos/hotel-zweistein-003.jpg" alt="" class="img-fit-cover">
                         </a>
                       </div>
                     </div>
                     <div class="masonry-item">
                       <div class="aspect aspect-16x9 aspect-md-auto overflow-hidden">
-                        <a href="../../assets/img/photos/hotel-zweistein-004.jpg" data-of-lightbox-open="media:3">
+                        <a href="../../assets/img/photos/hotel-zweistein-004.jpg" data-of-lightbox-open="media:gallery-3">
                           <img src="../../assets/img/photos/hotel-zweistein-004.jpg" alt="" class="img-fit-cover">
                         </a>
                       </div>
@@ -326,7 +326,14 @@ language: de
               </div>
             </div>
             <div class="tab-pane" id="poi-detail-live-pane" role="tabpanel" aria-labelledby="poi-detail-live" tabindex="0">
-              {{< placeholder markup="img" width="100%" height="400" class="img-thumbnail img-fluid" text="Live Camera 360°" >}}
+              <a href="#" data-of-lightbox-open="media:live-camera-360">
+                {{< placeholder markup="img" width="100%" height="400" class="img-fluid" text="Live Camera 360°" >}}
+                <div class="d-none">
+                  <div id="live-camera-360-image">
+                    {{< placeholder markup="img" width="100%" height="100%" class="img-fluid h-100" text="Live Camera 360°" >}}
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
 
@@ -432,7 +439,8 @@ language: de
                   "items": [
                     {
                       "identifier": "live-camera-360",
-                      "href": "https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375"
+                      "type": "inline",
+                      "href": "#live-camera-360-image"
                     }
                   ]
                 }

@@ -606,7 +606,8 @@ Depending on the item `type`, the extra options can be passed on:
 {{< bs-table "table" >}}
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
-| `content` | `string` | `undefined` | Required. The item HTML content. |
+| `content` | `string` | `undefined` | The item HTML content. Required if `href` is not defined. |
+| `href` | `string` | `undefined` | The CSS selector referencing the element ID (e.g. `#my-content`). Required if `content` is not defined. |
 {{< /bs-table >}}
 
 ##### Video options

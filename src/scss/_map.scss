@@ -1,14 +1,5 @@
 @mixin popover-content-reset {
   .popover-content {
-    // Use the default colors, as the map popup is always white, no matter the theme
-    [data-bs-theme=dark] & {
-      color: $body-color;
-
-      .popover-content-info {
-        color: $body-secondary-color;
-      }
-    }
-
     p {
       margin-top: 0;
       @include margin-bottom($paragraph-margin-bottom);
@@ -17,8 +8,16 @@
     a {
       color: $link-color;
 
+      [data-bs-theme=dark] & {
+        color: $link-color-dark;
+      }
+
       &:hover {
         color: $link-hover-color;
+
+        [data-bs-theme=dark] & {
+          color: $link-hover-color-dark;
+        }
       }
     }
   }
@@ -27,6 +26,14 @@
 // Reset styles provided by Google Maps
 .gm-style .gm-style-iw {
   @include popover-content-reset();
+}
+
+// Dark theme for OSM
+[data-bs-theme=dark] {
+  .leaflet-popup-content-wrapper,
+  .leaflet-popup-tip {
+    background: $popover-bg;
+  }
 }
 
 // Reset styles provided by OSM

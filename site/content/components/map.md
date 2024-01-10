@@ -172,6 +172,18 @@ You can display any content in the popover. However, it is highly recommended to
 
 For comprehensive details on the options and methods available with the Google Maps JavaScript API, see the official Google Maps API documentation: https://developers.google.com/maps/documentation/javascript/tutorial.
 
+### Google Maps styling
+
+If you need to change the default style of your Google Maps, we recommend using the [SnazzyMaps](https://snazzymaps.com/) service.
+
+```js
+new Map(document.getElementById('map'), {
+  center: new google.maps.LatLng(40.6700, -73.9400),
+  zoom: 14,
+  styles: [], // your SnazzyMaps styles go here
+});
+```
+
 ### Google Maps Iframe
 
 The use of Google Maps within your OpenFrontend.Framework project is incredibly easy. Below is a simple code snippet that demonstrates how to embed a Google Map.
@@ -320,6 +332,10 @@ You can display any content in the popover. However, it is highly recommended to
 
 For a comprehensive understanding of the options and methods available with the Leaflet.js library, see the official Leaflet.js documentation.
 
+### OpenStreetMap styling
+
+If you need to change the default style of your OpenStreetMap, we recommend using an external service like [MapTiler](https://www.maptiler.com/maps/openstreetmap/).
+
 ### OpenStreetMap Iframe
 
 Incorporating OpenStreetMap into your project is similar to using Google Maps. Here's an adapted set of instructions to guide you:
@@ -335,7 +351,7 @@ Incorporating OpenStreetMap into your project is similar to using Google Maps. H
 <iframe class="w-100 aspect aspect-16x9" src="https://www.openstreetmap.org/export/embed.html?bbox=9.311041831970217%2C47.39439835079049%2C9.384942054748537%2C47.432383951962365&amp;layer=mapnik&amp;marker=47.413394576333644%2C9.347991943359375" loading="lazy"></iframe>
 {{< /example >}}
 
-## Responsive Maps
+## Responsive maps
 
 To ensure your maps look great on all devices, our Map component supports responsive maps. Here is how you can leverage [Ratios]({{< docsref "/helpers/aspect-ratio" >}}) helpers to create responsive maps:
 

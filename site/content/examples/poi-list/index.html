@@ -115,10 +115,10 @@ title: POI List
       <div class="col-lg-8 col-xxl-9">
         <div>
           <div class="aspect aspect-16x9">
-            <div id="mapOpenStreetMap" class="overflow-hidden"></div>
+            <div id="map" class="overflow-hidden"></div>
           </div>
 
-          <div id="map-marker-osm-1" class="visually-hidden">
+          <div id="map-marker-1" class="visually-hidden">
             <div class="popover-content popover-content-horizontal position-relative">
               <figure class="popover-content-image">
                 {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
@@ -135,7 +135,7 @@ title: POI List
             </div>
           </div>
 
-          <div id="map-marker-osm-2" class="visually-hidden">
+          <div id="map-marker-2" class="visually-hidden">
             <div class="popover-content popover-content-horizontal position-relative">
               <figure class="popover-content-image">
                 {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
@@ -151,37 +151,92 @@ title: POI List
               </div>
             </div>
           </div>
-
-          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-                integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-                crossorigin=""/>
-
-          <!-- Make sure you put this AFTER Leaflet's CSS -->
-          <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-                  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-                  crossorigin=""></script>
 
           <script>
-            {
-              let map = L.map('mapOpenStreetMap', {
-                zoomControl: false
-              }).setView([47.41340, 9.34799], 13);
+            (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+              key: "{{< param "google_maps_api_key" >}}",
+              v: "weekly",
+            });
+          </script>
 
-              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              }).addTo(map);
+          <script>
+            (() => {
+              let map
 
-              L.control.zoom({
-                position: 'bottomright'
-              }).addTo(map);
+              // see https://snazzymaps.com/style/37/lunar-landscape
+              const themeDark = [{"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.5}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]}]
+              const themeLight = []
 
-              L.marker([47.41140, 9.37299]).addTo(map)
-                .bindPopup(document.getElementById('map-marker-osm-1').children[0], { minWidth: 360, maxWidth: 360 });
+              async function initMap() {
+                const { Map, InfoWindow } = await google.maps.importLibrary('maps');
+                const { Marker } = await google.maps.importLibrary("marker");
 
-              L.marker([47.41640, 9.32899]).addTo(map)
-                .bindPopup(document.getElementById('map-marker-osm-2').children[0], { minWidth: 360, maxWidth: 360 });
-            }
+                const position = {
+                  lat: 47.41340,
+                  lng: 9.34799,
+                };
+
+                map = new Map(document.getElementById('map'), {
+                  center: position,
+                  zoom: 14,
+                  styles: (document.documentElement.dataset.bsTheme === 'dark') ? themeDark : themeLight,
+                });
+
+                const infowindow1 = new InfoWindow({
+                  content: document.getElementById('map-marker-1').children[0],
+                  ariaLabel: "TSO AG",
+                });
+
+                const infowindow2 = new InfoWindow({
+                  content: document.getElementById('map-marker-2').children[0],
+                  ariaLabel: "TSO AG",
+                });
+
+                const marker1 = new Marker({
+                  position: {
+                    lat: 47.41140,
+                    lng: 9.37299,
+                  },
+                  map: map,
+                  title: 'TSO AG',
+                });
+
+                const marker2 = new Marker({
+                  position: {
+                    lat: 47.41640,
+                    lng: 9.32899,
+                  },
+                  map: map,
+                  title: 'TSO AG',
+                });
+
+                marker1.addListener("click", () => {
+                  infowindow1.open({
+                    anchor: marker1,
+                    map,
+                  });
+                });
+
+                marker2.addListener("click", () => {
+                  infowindow2.open({
+                    anchor: marker2,
+                    map,
+                  });
+                });
+              }
+
+              document.addEventListener('bs-theme-switch', e => {
+                let theme = e.detail.theme
+
+                if (theme === 'auto') {
+                  theme = document.documentElement.dataset.bsTheme
+                }
+
+                map.setOptions({ styles: (theme === 'dark') ? themeDark : themeLight})
+              })
+
+              initMap()
+            })()
           </script>
         </div>
       </div>

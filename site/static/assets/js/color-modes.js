@@ -25,6 +25,12 @@
     } else {
       document.documentElement.setAttribute('data-bs-theme', theme)
     }
+
+    document.dispatchEvent(new CustomEvent('bs-theme-switch', {
+      detail: {
+        theme,
+      }
+    }))
   }
 
   setTheme(getPreferredTheme())

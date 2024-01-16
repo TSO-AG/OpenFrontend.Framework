@@ -101,6 +101,11 @@
       min-height: calc(60vw - var(--bs-header-height, 0px));
     }
 
+    // Header
+    .header-placeholder + .header-sticky {
+      position: static;
+    }
+
     // Wrapper
     .wrapper {
       @extend %print-color;

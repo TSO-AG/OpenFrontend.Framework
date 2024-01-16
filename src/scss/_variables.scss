@@ -18,6 +18,12 @@ $blue: #0d6efd !default;
 $primary: $blue !default;
 // scss-docs-end theme-color-variables
 
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-print-styles: true !default;
+
 // Prefix for :root CSS variables
 
 $prefix: bs- !default;

@@ -96,12 +96,6 @@
       border-color: $table-border-color;
     }
 
-    // Custom style
-    .header,
-    footer {
-      display: none;
-    }
-
     // Helpers
     .min-vh-100-header {
       min-height: calc(60vw - var(--bs-header-height, 0px));

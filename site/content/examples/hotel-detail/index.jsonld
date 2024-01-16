@@ -241,7 +241,6 @@
         "@type": "Action",
         "name": "Verfügbarkeit prüfen",
         "additionalType": "https://schema.org/CheckAction",
-        "inLanguage": "de",
         "target": {
             "@type": "EntryPoint",
             "urlTemplate": "https://www.hotelzweistein.tld/booking?checkin={checkin}&checkout={checkout}&adults={adults}&children={children}",

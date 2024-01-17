@@ -1,4 +1,8 @@
 @mixin make-grid-columns-print($columns: $grid-columns) {
+  .col-print {
+    flex: 1 0 0%;
+  }
+
   .row-cols-print-auto > * {
     @include make-col-auto();
   }

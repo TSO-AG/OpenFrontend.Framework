@@ -697,3 +697,8 @@ $lightbox-thumbnails-padding-y: $lightbox-tabs-padding-y !default;
 $lightbox-thumbnails-border-width: $lightbox-tabs-border-width !default;
 $lightbox-thumbnails-border-color: $lightbox-tabs-border-color !default;
 // scss-docs-end lightbox-variables
+
+// Printing
+$print-page-size:               a4 !default;
+$print-body-min-width:          992px !default;
+$print-carousel-space-between:  10px !default;

@@ -1,0 +1,53 @@
+@mixin make-grid-columns-print($columns: $grid-columns) {
+  .row-cols-print-auto > * {
+    @include make-col-auto();
+  }
+
+  @if $grid-row-columns > 0 {
+    @for $i from 1 through $grid-row-columns {
+      .row-cols-print-#{$i} {
+        @include row-cols($i);
+      }
+    }
+  }
+
+  .col-print-auto {
+    @include make-col-auto();
+  }
+
+  @if $columns > 0 {
+    @for $i from 1 through $columns {
+      .col-print-#{$i} {
+        @include make-col($i, $columns);
+      }
+    }
+  }
+}
+
+@mixin make-carousel-grid-columns-print($columns: $grid-columns) {
+  *[class*="carousel-print-col"] {
+    .swiper-wrapper {
+      width: auto;
+      height: auto !important; // stylelint-disable-line declaration-no-important
+      margin: calc(var(--#{$prefix}carousel-print-gap) * -.5);
+      transform: none !important;  // stylelint-disable-line declaration-no-important
+
+      .swiper-slide {
+        width: auto;
+        padding: calc(var(--#{$prefix}carousel-print-gap) * .5);
+        margin: 0 !important;  // stylelint-disable-line declaration-no-important
+      }
+    }
+  }
+
+  @if $grid-row-columns > 0 {
+    @for $i from 1 through $grid-row-columns {
+      .carousel-print-col-#{$i} .swiper-wrapper {
+        > * {
+          flex: 0 0 auto;
+          width: divide(100%, $i) !important;  // stylelint-disable-line declaration-no-important
+        }
+      }
+    }
+  }
+}

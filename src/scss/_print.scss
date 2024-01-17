@@ -1,9 +1,20 @@
 // stylelint-disable declaration-no-important, selector-no-qualifying-type
 @if $enable-print-styles {
   @media print {
-    %print-color {
+    @include make-grid-columns-print();
+    @include make-carousel-grid-columns-print();
+
+    %force-print-color {
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
+    }
+
+    @page {
+      size: $print-page-size;
+    }
+
+    body {
+      min-width: $print-body-min-width !important;
     }
 
     .container {
@@ -102,13 +113,17 @@
     }
 
     // Header
+    .header-sticky {
+      --#{$prefix}header-sticky-background-color: transparent !important;
+    }
+
     .header-placeholder + .header-sticky {
       position: static;
     }
 
     // Wrapper
     .wrapper {
-      @extend %print-color;
+      @extend %force-print-color;
     }
 
     // State
@@ -119,10 +134,25 @@
     // Carousel
     :root {
       --#{$prefix}carousel-navigation-center-padding-x: 0;
+      --#{$prefix}carousel-print-gap: #{$print-carousel-space-between};
     }
 
     .swiper-slide {
       max-width: 100%;
+    }
+
+    .swiper-thumbs {
+      .swiper-slide {
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    .carousel-print-all {
+      .swiper-wrapper {
+        flex-wrap: wrap;
+      }
     }
 
     .carousel-pagination,
@@ -140,7 +170,22 @@
 
     .fc-media-screen,
     .calendar-legend .calendar-legend-symbol-event {
-      @extend %print-color;
+      @extend %force-print-color;
+    }
+
+    // Button
+    .btn {
+      @extend %force-print-color;
+    }
+
+    // Rating
+    .rating {
+      @extend %force-print-color;
+    }
+
+    // Card
+    .card {
+      page-break-inside: avoid;
     }
   }
 }

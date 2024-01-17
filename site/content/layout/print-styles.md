@@ -41,6 +41,11 @@ We have also added some useful print-specific classes for our carousel component
 - `.carousel-print-col-{1-12}`: with this class, you can dictate the number of visible slides in the carousel during print. You can set the distance between the slides through the SCSS variable `$print-carousel-space-between: 10px !default`.
 - `.carousel-print-all`: this class ensures the slides that do not fit in the row are displayed in subsequent roles (they are hidden by default).
 
+You can see a live demonstration of how to use these settings in a real-world example [here]({{< docsref "/examples/hotel-detail" >}}).
+This showcases the practical application of `carousel-print-col-{1-12}` class along with other print-style classes.
+
+### Example
+
 ```html
 <div class="carousel carousel-navigation-center carousel-print-col-3 carousel-print-all">
   <div class="swiper" data-of-carousel='{

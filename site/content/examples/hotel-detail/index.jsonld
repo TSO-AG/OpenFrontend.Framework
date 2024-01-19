@@ -146,6 +146,19 @@
             "dayOfWeek": "https://schema.org/Saturday",
             "opens": "12:00:00",
             "closes": "17:00:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "https://schema.org/Sunday",
+            "opens": "12:00:00",
+            "closes": "17:00:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "validFrom": "2024-11-01",
+            "validThrough": "2024-11-30",
+            "name": "Betriebsferien",
+            "description": "Vom 01. November bis 30. November ist der Betrieb geschlossen."
         }
     ],
     "amenityFeature": [

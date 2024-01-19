@@ -1,0 +1,57 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "OLGA Schweizer Messe für Beispiele und Muster",
+    "disambiguatingDescription": "Die 5. St. Galler Jahreszeit, das Highlight im Herbst und der Treffpunkt für alle Generationen: Die beliebteste und grösste Schweizer Publikumsmesse.",
+    "description": "Eine Erlebnisvielfalt, die ihresgleichen sucht: Die grösste und beliebteste Publikumsmesse der Schweiz lädt ihre Besucherinnen und Besucher mit einem attraktiven Programm aus Charakteristischem und Neuem nach St.Gallen ein. An der 99. Schweizer Messe für Beispiele und Muster verschmelzen Unterhaltung, Genuss, Spektakel, Wissensvermittlung, Tradition und Moderne zum Volksfest mit Kultcharakter.",
+    "image": 
+    [
+        {
+          "@type": "ImageObject",
+          "url": "https://openfrontend.tourismusweb.site/assets/img/photos/event.jpg",
+          "name": "OLGA Schweizer Messe für Beispiele und Muster"
+        }
+    ],
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "eventStatus": "EventScheduled",
+    "eventSchedule": {
+        "@type": "Schedule",
+        "startDate": "2024-01-26",
+        "endDate": "2024-03-22",
+        "repeatFrequency": "P1W",
+        "byDay": "https://schema.org/Friday",
+        "startTime": "09:00:00",
+        "endTime": "18:00:00",
+        "scheduleTimezone": "Europe/Zurich"
+    },
+    "location": {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Beispielgasse 8",
+            "addressLocality": "St. Gallen",
+            "postalCode": "9001",
+            "addressCountry": "CH"
+        },
+        "name": "Gelände OLGA Messen St.Gallen",
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "47.43239",
+            "longitude": "9.38394"
+        }
+    },
+    "organizer": {
+        "@type": "Organization",
+        "name": "Genossenschaft OLGA Messen St.Gallen",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Beispielgasse 42",
+            "addressLocality": "St. Gallen",
+            "postalCode": "9001",
+            "addressCountry": "CH"
+        },
+        "url": "https://www.olga.tld",
+        "telephone": "+41 71 900 80 70",
+        "email": "messe@olga.tld"
+    }
+}

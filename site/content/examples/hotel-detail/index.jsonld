@@ -1,0 +1,264 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Hotel Zweistein",
+    "disambiguatingDescription": "Das Zweistein St.Gallen, das von den Gästen als erstes Haus am Platz bewertete Hotel, bietet 113 elegante Zimmer und Suiten, ausgestattet mit edelsten Materialien wie Marmor, Kirschbaum und St. Galler Textilien.",
+    "description": "Inmitten der Altstadt und dennoch ruhig gelegen. Kulinarische Erlebnisse in zwei unterschiedlichen Restaurants: Das Zweistein Gourmet Restaurant f\u00FCr besonderen Genuss ausgezeichnet mit 18 GaultMillau Punkten und 2 Michelin Sternen, das Bistro St. Gallen mit leichter regionaler K\u00FCche. Zweistein Bar mit einer Davidoff Cigar Lounge mit monatlichen Events. Fitnesspark Zweistein mit Spa-Bereich. Kongresszentrum und Parkhaus.\r\n                <br><br>\r\n                <strong>Typisches Schweizer Hotel<\/strong><br>\r\n                Die grosse textile Vergangenheit hinterliess architektonische Spuren: Das Zweistein ist ein klassizistisches, f\u00FCnfst\u00F6ckiges Geb\u00E4ude aus dem Jahr 1830. Es ist mit edlen Stoffen renommierter St. Galler Stoffproduzenten eingerichtet. Spitzenrestaurants mit Wein und Bier aus der Region. UNESCO-Weltkulturerbe Kloster und Stiftbezirk in Fussdistanz; unweit von Bodensee und Appenzell.\r\n                <br><br>\r\n                <strong>Seminare<\/strong><br>\r\n                Das Zweistein Congress hat seit seiner Er\u00F6ffnung 2009 schweizweit neue Massst\u00E4be gesetzt. Die 15 eleganten Meetingr\u00E4ume auf f\u00FCnf Etagen, der Boardroom und der einzigartige Zweistein-Saal \u00FCberzeugen durch ausgesuchte Materialien und mit einer hellen, inspirierenden Atmosph\u00E4re. Ausgestattet mit der neusten Pr\u00E4sentations- und Kommunikationstechnologie kann das Zweistein Congress fast jeden Wunsch des Gastes erf\u00FCllen. Zudem ist der grossz\u00FCgige Zweistein-Saal die ideale Lokalit\u00E4t f\u00FCr gelungene Bankette, Hochzeiten, Konzerte oder Events. Die hauseigene Parkgarage ist mit dem Zweistein Congress direkt verbunden.",
+    "image": 
+    [
+        {
+          "@type": "ImageObject",
+          "url": "https://openfrontend.tourismusweb.site/assets/img/photos/hotel-zweistein-001.jpg",
+          "name": "Hotel Zweistein von aussen"
+        },
+        {
+            "@type": "ImageObject",
+            "url": "https://openfrontend.tourismusweb.site/assets/img/photos/hotel-zweistein-002.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "url": "https://openfrontend.tourismusweb.site/assets/img/photos/hotel-zweistein-003.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "url": "https://openfrontend.tourismusweb.site/assets/img/photos/hotel-zweistein-004.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "url": "https://openfrontend.tourismusweb.site/assets/img/photos/hotel-zweistein-005.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "url": "https://openfrontend.tourismusweb.site/assets/img/photos/hotel-zweistein-006.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "url": "https://openfrontend.tourismusweb.site/assets/img/photos/hotel-zweistein-007.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "url": "https://openfrontend.tourismusweb.site/assets/img/photos/hotel-zweistein-008.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "url": "https://openfrontend.tourismusweb.site/assets/img/photos/hotel-zweistein-009.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "url": "https://openfrontend.tourismusweb.site/assets/img/photos/hotel-zweistein-010.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "url": "https://openfrontend.tourismusweb.site/assets/img/photos/hotel-zweistein-011.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "url": "https://openfrontend.tourismusweb.site/assets/img/photos/hotel-zweistein-012.jpg"
+        },
+        {
+            "@type": "ImageObject",
+            "url": "https://openfrontend.tourismusweb.site/assets/img/photos/hotel-zweistein-013.jpg"
+        }
+    ],
+    
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "47.4134074",
+        "longitude": "9.3479842"
+    },
+    "subjectOf": [
+        {
+            "@type": "VideoObject",
+            "name": "Example: Coco Trailer (2017) | 'Find Your Voice' | Movieclips Trailers",
+            "contentUrl": "https://youtu.be/Ga6RYejo6Hk",
+            "embedUrl": "https://youtu.be/Ga6RYejo6Hk"
+        },
+        {
+            "@type": "VideoObject",
+            "name": "Live Camera 360°",
+            "contentUrl": "https://youtu.be/Ga6RYejo6Hk",
+            "embedUrl": "https://youtu.be/Ga6RYejo6Hk"
+        }
+    ],
+    "address": {
+        "@type": "PostalAddress",
+        "name": "Hotel Zweistein",
+        "addressCountry": "CH",
+        "addressLocality": "St. Gallen",
+        "addressRegion": "SG",
+        "postalCode": "9002",
+        "streetAddress": "Musterstrasse"
+    },
+    "url": "https://www.hotelzweistein.tld",
+    "telephone": "+41 71 333 66 99",
+    "email": "info@hotelzweistein.tld",
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "bestRating": "5",
+        "ratingValue": "4.5",
+        "reviewCount": "250"
+    },
+    "priceRange": "CHF 200 - 500",
+    "checkinTime": "15:00",
+    "checkoutTime": "11:00",
+    "paymentAccepted": "Visa, Master Card, American Express, Diners Club, JCB, Maestro, Postcard, Reka, TWINT",
+    "openingHours": "<strong>Nationalfeiertag<\/strong><br>\r\nAm 1. August wird der Gastronomiebereich aufgrund eines Feiertages nicht ge\u00F6ffnet sein.\r\n<strong>Betriebsferien<\/strong><br>\r\n Vom 01. November bis 30. November ist der Betrieb geschlossen.",
+    "openingHoursSpecification": 
+    [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "https://schema.org/Monday",
+            "opens": "08:00:00",
+            "closes": "12:00:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "https://schema.org/Monday",
+            "opens": "13:30:00",
+            "closes": "17:00:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "https://schema.org/Tuesday",
+            "opens": "08:00:00",
+            "closes": "12:00:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "https://schema.org/Tuesday",
+            "opens": "13:30:00",
+            "closes": "17:00:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "https://schema.org/Wednesday",
+            "opens": "08:00:00",
+            "closes": "12:00:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "https://schema.org/Thursday"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "https://schema.org/Saturday",
+            "opens": "12:00:00",
+            "closes": "17:00:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "https://schema.org/Sunday"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "validFrom": "2024-11-01",
+            "validThrough": "2024-11-30",
+            "name": "Betriebsferien",
+            "description": "Vom 01. November bis 30. November ist der Betrieb geschlossen."
+        }
+    ],
+    "amenityFeature": [
+        {
+            "@type": "LocationFeatureSpecification",
+            "name": "Kostenloses WLAN",
+            "value": "true"
+        },
+        {
+            "@type": "LocationFeatureSpecification",
+            "name": "Barrierefrei",
+            "value": "true"
+        },
+        {
+            "@type": "LocationFeatureSpecification",
+            "name": "Nachhaltig",
+            "value": "true"
+        },
+        {
+            "@type": "LocationFeatureSpecification",
+            "name": "Bar / Bistro",
+            "value": "true"
+        },
+        {
+            "@type": "LocationFeatureSpecification",
+            "name": "Lift",
+            "value": "true"
+        },
+        {
+            "@type": "LocationFeatureSpecification",
+            "name": "Gymnastik/Fitness",
+            "value": "true"
+        },
+        {
+            "@type": "LocationFeatureSpecification",
+            "name": "Tiefgarage",
+            "value": "true"
+        },
+        {
+            "@type": "LocationFeatureSpecification",
+            "name": "Nichtraucher",
+            "value": "true"
+        }
+    ],
+    "award":[
+        {
+            "@type": "Award",
+            "name": "Swisstainable leading",
+            "logo": "https://openfrontend.tourismusweb.site/assets/img/labels/swisstainable_3.svg",
+            "description": "Swisstainable - Level 3",
+            "url": "https://www.swisstainable.ch",
+            "validFrom": "2021-01-01",
+            "validThrough": "2021-12-31"
+        },
+        {
+            "@type": "Award",
+            "name": "Gault Millau",
+            "logo": "https://openfrontend.tourismusweb.site/assets/img/labels/gault_millau_19.svg",
+            "description": "19 Punkte",
+            "url": "https://www.gaultmillau.ch",
+            "validFrom": "2021-01-01",
+            "validThrough": "2021-12-31"
+        },
+        {
+            "@type": "Award",
+            "name": "OK GO",
+            "logo": "https://openfrontend.tourismusweb.site/assets/img/labels/ok_go.svg",
+            "description": "OK GO",
+            "url": "https://www.okgo.ch",
+            "validFrom": "2021-01-01",
+            "validThrough": "2021-12-31"
+        },
+        {
+            "@type": "Award",
+            "name": "Culinarium",
+            "logo": "https://openfrontend.tourismusweb.site/assets/img/labels/culinarium.svg",
+            "description": "Culinarium",
+            "url": "https://www.culinarium.ch",
+            "validFrom": "2021-01-01",
+            "validThrough": "2021-12-31"
+        },
+        {
+            "@type": "Award",
+            "name": "Gilde",
+            "logo": "https://openfrontend.tourismusweb.site/assets/img/labels/gilde.svg",
+            "description": "Gilde",
+            "url": "https://www.gilde.ch",
+            "validFrom": "2021-01-01",
+            "validThrough": "2021-12-31"
+        }
+    ],
+    "potentialAction": {
+        "@type": "Action",
+        "name": "Verfügbarkeit prüfen",
+        "additionalType": "https://schema.org/CheckAction",
+        "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.hotelzweistein.tld/booking?checkin={checkin}&checkout={checkout}&adults={adults}&children={children}",
+            "identifier": "https://www.hotelzweistein.tld/booking",
+            "actionPlatform": [
+                "http://schema.org/DesktopWebPlatform",
+                "http://schema.org/IOSPlatform",
+                "http://schema.org/AndroidPlatform"
+            ]
+        }
+    }
+}

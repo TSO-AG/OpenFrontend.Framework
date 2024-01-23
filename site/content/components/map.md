@@ -63,6 +63,7 @@ This section provides an example of how to embed Google Maps into your web page 
       const infowindow = new InfoWindow({
         content: document.getElementById('map-marker-google').children[0],
         ariaLabel: "TSO AG",
+        maxWidth: 420,
       });
 
       const marker = new Marker({
@@ -242,7 +243,7 @@ This section provides an example of how to integrate OpenStreetMap into your web
       }).addTo(map);
 
      L.marker(position).addTo(map)
-          .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 360, maxWidth: 360 });
+          .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 220, maxWidth: 390 });
   }
   </script>
 </div>
@@ -309,7 +310,7 @@ Initializing the Map
   }).addTo(map);
 
   L.marker(position).addTo(map)
-    .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 360, maxWidth: 360 });
+    .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 220, maxWidth: 390 });
 }
 </script>
 {{< /highlight >}}
@@ -419,3 +420,9 @@ To ensure your maps look great on all devices, our Map component supports respon
   initOpenStreetMap('map4');
 </script>
 {{< /example >}}
+
+## CSS
+
+### Sass variables
+
+{{< scss-docs name="map-variables" file="src/scss/_variables.scss" >}}

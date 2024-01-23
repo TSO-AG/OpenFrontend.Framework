@@ -698,6 +698,11 @@ $lightbox-thumbnails-border-width: $lightbox-tabs-border-width !default;
 $lightbox-thumbnails-border-color: $lightbox-tabs-border-color !default;
 // scss-docs-end lightbox-variables
 
+// Map
+// scss-docs-start map-variables
+$map-popover-content-horizontal-image-max-width: clamp(125px, 30vw, 50%) !default;
+// scss-docs-end map-variables
+
 // Printing
 // scss-docs-start print-variables
 $print-page-size:               a4 !default;

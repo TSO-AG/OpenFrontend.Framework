@@ -18,9 +18,6 @@
     indexName: 'openfrontend',
     appId: 'GEG4FKAQFB',
     container: searchElement,
-    searchParameters: {
-      facetFilters: [`version:${siteDocsVersion}`]
-    },
     transformItems(items) {
       return items.map(item => {
         const liveUrl = 'https://openfrontend.tourismusweb.site/'

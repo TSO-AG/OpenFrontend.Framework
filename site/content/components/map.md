@@ -170,7 +170,7 @@ In the given example, the map is displayed in a div with an id of `map`. The map
 
 You can display any content in the popover. However, it is highly recommended to use the [popover content markup]({{< docsref "/components/popovers#popover-content" >}}).
 
-For comprehensive details on the options and methods available with the Google Maps JavaScript API, see the official Google Maps API documentation: https://developers.google.com/maps/documentation/javascript/tutorial.
+For comprehensive details on the options and methods available with the Google Maps JavaScript API, see the official Google Maps API documentation: [https://developers.google.com/<wbr>maps/<wbr>documentation/<wbr>javascript/<wbr>tutorial](https://developers.google.com/maps/documentation/javascript/tutorial).
 
 ### Google Maps Iframe
 

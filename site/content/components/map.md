@@ -307,6 +307,7 @@ Initializing the Map
 {{< highlight html >}}
 <script>
 {
+  const markers = [];
   const position = [47.41340, 9.34799];
 
   let map = L.map('map', {
@@ -322,8 +323,20 @@ Initializing the Map
     position: 'bottomright'
   }).addTo(map);
 
-  L.marker(position).addTo(map)
+  const marker = L.marker(position).addTo(map)
     .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 220, maxWidth: 390 });
+
+  markers.push(marker)
+
+   // Responsiveness
+   map.on('resize', function () {
+     markers.forEach(marker => {
+       const popup = marker.getPopup();
+       if (popup.isOpen()) {
+         popup.update();
+       }
+     });
+   });
 }
 </script>
 {{< /highlight >}}

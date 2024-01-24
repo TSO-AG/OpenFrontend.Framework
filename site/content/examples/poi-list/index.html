@@ -163,6 +163,8 @@ title: POI List
 
           <script>
             {
+              const markers = [];
+
               let map = L.map('mapOpenStreetMap', {
                 zoomControl: false
               }).setView([47.41340, 9.34799], 13);
@@ -176,11 +178,23 @@ title: POI List
                 position: 'bottomright'
               }).addTo(map);
 
-              L.marker([47.41140, 9.37299]).addTo(map)
+              const marker1 = L.marker([47.41140, 9.37299]).addTo(map)
                 .bindPopup(document.getElementById('map-marker-osm-1').children[0], { minWidth: 220, maxWidth: 390 });
+              markers.push(marker1);
 
-              L.marker([47.41640, 9.32899]).addTo(map)
+              const marker2 = L.marker([47.41640, 9.32899]).addTo(map)
                 .bindPopup(document.getElementById('map-marker-osm-2').children[0], { minWidth: 220, maxWidth: 390 });
+              markers.push(marker2);
+
+              // Responsiveness
+              map.on('resize', function () {
+                markers.forEach(marker => {
+                  const popup = marker.getPopup();
+                  if (popup.isOpen()) {
+                    popup.update();
+                  }
+                });
+              });
             }
           </script>
         </div>

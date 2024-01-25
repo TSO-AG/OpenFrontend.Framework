@@ -184,7 +184,7 @@ Here's a look at the JavaScript that powers it. Feel free to inspect our own doc
 
 {{< example lang="js" show_preview="false" >}}
 {{< js.inline >}}
-{{- readFile (path.Join "site/static/docs/assets/js/color-modes.js") -}}
+{{- readFile (path.Join "site/static/assets/js/color-modes.js") -}}
 {{< /js.inline >}}
 {{< /example >}}
 

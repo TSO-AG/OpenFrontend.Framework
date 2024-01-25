@@ -81,6 +81,18 @@ To show an element only on a given interval of screen sizes you can combine one 
 <div class="d-none d-lg-block">hide on screens smaller than lg</div>
 {{< /example >}}
 
+## Display in color mode
+
+In OpenFrontend.Framework, we provide a straightforward way to manage how elements are displayed in different color modes. This functionality is particularly useful for creating a user interface that adapts to light or dark mode settings.
+
+- `.d-mode-light-none` - use this class to hide an element when the light mode is active.
+- `.d-mode-dark-none` - use this class to hide an element when the dark mode is active.
+
+{{< example >}}
+<div class="d-mode-light-none">This element is visible only in dark mode</div>
+<div class="d-mode-dark-none">This element is visible only in light mode</div>
+{{< /example >}}
+
 ## Display in print
 
 Change the `display` value of elements when printing with our print display utility classes. Includes support for the same `display` values as our responsive `.d-*` utilities.

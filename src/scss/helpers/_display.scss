@@ -1,0 +1,17 @@
+@include color-mode(dark) {
+  .d-mode-dark-none {
+    display: none !important; // stylelint-disable-line declaration-no-important
+  }
+}
+
+@include color-mode(auto) {
+  .d-mode-light-none {
+    display: none !important; // stylelint-disable-line declaration-no-important
+  }
+}
+
+@include color-mode(light) {
+  .d-mode-light-none {
+    display: none !important; // stylelint-disable-line declaration-no-important
+  }
+}

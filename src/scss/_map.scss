@@ -2,10 +2,10 @@
   .popover-content {
     // Use the default colors, as the map popup is always white, no matter the theme
     [data-bs-theme="dark"] & {
-      color: $body-color;
+      color: $body-color-dark;
 
       .popover-content-info {
-        color: $body-secondary-color;
+        color: $body-secondary-color-dark;
       }
     }
 

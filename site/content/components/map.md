@@ -20,7 +20,7 @@ This section provides an example of how to embed Google Maps into your web page 
   <div id="map-marker-google" class="visually-hidden">
     <div class="popover-content popover-content-horizontal position-relative">
       <figure class="popover-content-image">
-        {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+        {{< placeholder width="100%" height="130" class="img-fluid" text="Responsive image" >}}
       </figure>
       <div class="popover-content-inside">
         <div class="popover-content-info">Product family | Place</div>
@@ -97,7 +97,7 @@ Example HTML Structure
     <div id="map-marker-google" class="visually-hidden">
       <div class="popover-content popover-content-horizontal position-relative">
         <figure class="popover-content-image">
-          {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+          {{< placeholder width="100%" height="130" class="img-fluid" text="Responsive image" >}}
         </figure>
         <div class="popover-content-inside">
           <div class="popover-content-info">Product family | Place</div>
@@ -214,7 +214,7 @@ This section provides an example of how to integrate OpenStreetMap into your web
   <div id="map-marker-osm" class="visually-hidden">
     <div class="popover-content popover-content-horizontal position-relative">
       <figure class="popover-content-image">
-        {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+        {{< placeholder width="100%" height="130" class="img-fluid" text="Responsive image" >}}
       </figure>
       <div class="popover-content-inside">
         <div class="popover-content-info">Product family | Place</div>
@@ -286,7 +286,7 @@ Example HTML Structure
   <div id="map-marker-osm" class="visually-hidden">
     <div class="popover-content popover-content-horizontal position-relative">
       <figure class="popover-content-image">
-        {{< placeholder width="100%" height="150" class="img-fluid" text="Responsive image" >}}
+        {{< placeholder width="100%" height="130" class="img-fluid" text="Responsive image" >}}
       </figure>
       <div class="popover-content-inside">
         <div class="popover-content-info">Product family | Place</div>

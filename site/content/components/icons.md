@@ -19,6 +19,10 @@ In this code, `ofi-` is a constant prefix. The part that comes after it, in this
 
 The list of all available icons is below:
 
+{{< callout info >}}
+In OpenFrontend.Framework, we chose to use a limited set of icons based on [Bootstrap Icons](https://icons.getbootstrap.com). Our selected icon set is optimized and includes only the essential icons necessary for the efficient functioning of the OpenFrontend Framework.
+{{< /callout >}}
+
 {{< icon-list >}}
 
 ## Circle icon

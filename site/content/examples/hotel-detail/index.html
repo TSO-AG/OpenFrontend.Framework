@@ -46,9 +46,9 @@ language: de
     </div>
 
     <div class="row">
-      <div class="col-lg-8 col-xxl-9">
+      <div class="col-lg-8 col-xxl-9 col-print-12">
         <div class="mb-element">
-          <div class="carousel mb-2">
+          <div class="carousel carousel-print-col-1 mb-2">
             <div class="swiper" data-of-carousel='{
                   "autoHeight": true,
                   "thumbs": "#carousel-thumbnails-1"
@@ -149,7 +149,7 @@ language: de
             </div>
           </div>
 
-          <div class="carousel carousel-navigation-center">
+          <div class="carousel carousel-navigation-center carousel-print-col-8 carousel-print-all">
             <div id="carousel-thumbnails-1" class="swiper" data-of-carousel='{
                 "slidesPerView": 3,
                 "spaceBetween": 10,
@@ -224,6 +224,10 @@ language: de
           </div>
         </div>
 
+        <div class="d-md-none d-print-none sticky-top sticky-top-header mb-element">
+          <button class="btn btn-primary w-100">Verfügbarkeit prüfen</button>
+        </div>
+
         <div class="mb-section">
           <div class="row">
             <div class="col">
@@ -238,7 +242,7 @@ language: de
                 Das Zweistein Congress hat seit seiner Eröffnung 2009 schweizweit neue Massstäbe gesetzt. Die 15 eleganten Meetingräume auf fünf Etagen, der Boardroom und der einzigartige Zweistein-Saal überzeugen durch ausgesuchte Materialien und mit einer hellen, inspirierenden Atmosphäre. Ausgestattet mit der neusten Präsentations- und Kommunikationstechnologie kann das Zweistein Congress fast jeden Wunsch des Gastes erfüllen. Zudem ist der grosszügige Zweistein-Saal die ideale Lokalität für gelungene Bankette, Hochzeiten, Konzerte oder Events. Die hauseigene Parkgarage ist mit dem Zweistein Congress direkt verbunden.
               </p>
             </div>
-            <div class="d-none d-md-block d-lg-none col-md-4">
+            <div class="d-none d-md-block d-lg-none d-print-none col-md-4">
               <div class="sticky-top sticky-top-header">
                 <h3>Online buchen</h3>
                 <button class="btn btn-primary w-100">Verfügbarkeit prüfen</button>
@@ -250,7 +254,7 @@ language: de
         <div class="mb-section d-print-none">
           <h3>Medien</h3>
 
-          <ul class="nav nav-underline mb-3" role="tablist">
+          <ul class="nav nav-underline nav-nowrap mb-3" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="poi-detail-images" data-bs-toggle="tab" data-bs-target="#poi-detail-images-pane" type="button" role="tab" aria-controls="poi-detail-images-pane" aria-selected="true">Gallery</button>
             </li>
@@ -777,7 +781,7 @@ language: de
 
       </div>
 
-      <div class="col-lg-4 col-xxl-3 mb-section d-md-none d-lg-block d-print-none">
+      <div class="col-lg-4 col-xxl-3 mb-section d-none d-lg-block d-print-none">
         <div class="sticky-top sticky-top-header">
           <h3>Online buchen</h3>
           <button class="btn btn-primary w-100">Verfügbarkeit prüfen</button>
@@ -806,19 +810,22 @@ language: de
         <div class="swiper" data-of-carousel='{
               "loop": true,
               "slidesPerView": 1,
-              "spaceBetween": 24,
+              "spaceBetween": 6,
               "navigationNext": "#carousel-btn-next-3",
               "navigationPrev": "#carousel-btn-prev-3",
               "futureSlidesVisible": true,
-               "breakpoints": {
+              "breakpoints": {
                 "md": {
-                  "slidesPerView": 2
+                  "slidesPerView": 2,
+                  "spaceBetween": 12
                 },
                 "lg": {
-                  "slidesPerView": 3
+                  "slidesPerView": 3,
+                  "spaceBetween": 24
                 },
                 "xxl": {
-                  "slidesPerView": 4
+                  "slidesPerView": 4,
+                  "spaceBetween": 24
                 }
               }
               }'>
@@ -1160,7 +1167,7 @@ language: de
             </div>
 
             <div class="swiper-slide">
-              <div class="card" style="max-width: 22rem;">
+              <div class="card">
                 <div class="card-media">
                   <div class="card-media__visual">
                     <div class="aspect aspect-16x9">

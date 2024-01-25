@@ -18,6 +18,12 @@ $blue: #0d6efd !default;
 $primary: $blue !default;
 // scss-docs-end theme-color-variables
 
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-print-styles: true !default;
+
 // Prefix for :root CSS variables
 
 $prefix: bs- !default;
@@ -691,3 +697,15 @@ $lightbox-thumbnails-padding-y: $lightbox-tabs-padding-y !default;
 $lightbox-thumbnails-border-width: $lightbox-tabs-border-width !default;
 $lightbox-thumbnails-border-color: $lightbox-tabs-border-color !default;
 // scss-docs-end lightbox-variables
+
+// Map
+// scss-docs-start map-variables
+$map-popover-content-horizontal-image-max-width: clamp(125px, 30vw, 50%) !default;
+// scss-docs-end map-variables
+
+// Printing
+// scss-docs-start print-variables
+$print-page-size:               a4 !default;
+$print-body-min-width:          992px !default;
+$print-carousel-space-between:  10px !default;
+// scss-docs-end print-variables

@@ -250,6 +250,34 @@ Similar to the `.nav-fill` example using a `<nav>`-based navigation.
 </nav>
 
 {{< /example >}}
+
+### Horizontal nowrap
+
+If you use the `.nav-nowrap` class on your nav component, all navigation links will stay in a single line with horizontal scrolling enabled for overflow content.
+
+{{< example >}}
+<ul class="nav nav-pills nav-nowrap">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Much longer nav link 1</a>
+  </li>
+  <li class="nav-item">
+     <a class="nav-link" href="#">Much longer nav link 2</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Much longer nav link 3</a>
+  </li>
+  <li class="nav-item">
+     <a class="nav-link" href="#">Much longer nav link 4</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Much longer nav link 5</a>
+  </li>
+</ul>
+{{< /example >}}
+
 ## Working with flex utilities
 
 If you need responsive nav variations, consider using a series of [flexbox utilities]({{< docsref "/utilities/flex" >}}). While more verbose, these utilities offer greater customization across responsive breakpoints. In the example below, our nav will be stacked on the lowest breakpoint, then adapt to a horizontal layout that fills the available width starting from the small breakpoint.

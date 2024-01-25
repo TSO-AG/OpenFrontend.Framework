@@ -1,5 +1,14 @@
 @mixin popover-content-reset {
   .popover-content {
+    // Use the default colors, as the map popup is always white, no matter the theme
+    [data-bs-theme="dark"] & {
+      color: $body-color;
+
+      .popover-content-info {
+        color: $body-secondary-color;
+      }
+    }
+
     p {
       margin-top: 0;
       @include margin-bottom($paragraph-margin-bottom);
@@ -50,6 +59,10 @@
 // Reset styles provided by Google Maps
 .gm-style .gm-style-iw {
   @include popover-content-reset();
+
+  &:has(.popover-content-horizontal) {
+    min-width: min(80vw, 250px) !important; // stylelint-disable-line declaration-no-important
+  }
 }
 
 // Dark theme for OSM
@@ -63,8 +76,20 @@
 // Reset styles provided by OSM
 .leaflet-popup-content {
   html & {
+    max-width: 70vw;
     margin: 12px;
   }
 
   @include popover-content-reset();
+}
+
+// Adjust content width
+.gm-style-iw,
+.leaflet-popup-content {
+  .popover-content-horizontal {
+    --bs-popover-content-image-max-width: #{$map-popover-content-horizontal-image-max-width};
+    width: max-content;
+    min-width: 100%;
+    max-width: 100%;
+  }
 }

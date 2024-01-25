@@ -63,6 +63,7 @@ This section provides an example of how to embed Google Maps into your web page 
       const infowindow = new InfoWindow({
         content: document.getElementById('map-marker-google').children[0],
         ariaLabel: "TSO AG",
+        maxWidth: 420,
       });
 
       const marker = new Marker({
@@ -170,7 +171,7 @@ In the given example, the map is displayed in a div with an id of `map`. The map
 
 You can display any content in the popover. However, it is highly recommended to use the [popover content markup]({{< docsref "/components/popovers#popover-content" >}}).
 
-For comprehensive details on the options and methods available with the Google Maps JavaScript API, see the official Google Maps API documentation: https://developers.google.com/maps/documentation/javascript/tutorial.
+For comprehensive details on the options and methods available with the Google Maps JavaScript API, see the official Google Maps API documentation: [https://developers.google.com/<wbr>maps/<wbr>documentation/<wbr>javascript/<wbr>tutorial](https://developers.google.com/maps/documentation/javascript/tutorial).
 
 ### Google Maps styling
 
@@ -238,6 +239,7 @@ This section provides an example of how to integrate OpenStreetMap into your web
 
   <script>
   {
+    const markers = [];
     const position = [47.41340, 9.34799];
 
     let map = L.map('mapOpenStreetMap', {
@@ -253,8 +255,20 @@ This section provides an example of how to integrate OpenStreetMap into your web
            position: 'bottomright'
       }).addTo(map);
 
-     L.marker(position).addTo(map)
-          .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 360, maxWidth: 360 });
+     const marker = L.marker(position).addTo(map)
+          .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 220, maxWidth: 390 });
+
+     markers.push(marker)
+
+     // Responsiveness
+     map.on('resize', function () {
+       markers.forEach(marker => {
+         const popup = marker.getPopup();
+         if (popup.isOpen()) {
+           popup.update();
+         }
+       });
+     });
   }
   </script>
 </div>
@@ -305,6 +319,7 @@ Initializing the Map
 {{< highlight html >}}
 <script>
 {
+  const markers = [];
   const position = [47.41340, 9.34799];
 
   let map = L.map('map', {
@@ -320,8 +335,20 @@ Initializing the Map
     position: 'bottomright'
   }).addTo(map);
 
-  L.marker(position).addTo(map)
-    .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 360, maxWidth: 360 });
+  const marker = L.marker(position).addTo(map)
+    .bindPopup(document.getElementById('map-marker-osm').children[0], { minWidth: 220, maxWidth: 390 });
+
+  markers.push(marker)
+
+   // Responsiveness
+   map.on('resize', function () {
+     markers.forEach(marker => {
+       const popup = marker.getPopup();
+       if (popup.isOpen()) {
+         popup.update();
+       }
+     });
+   });
 }
 </script>
 {{< /highlight >}}
@@ -435,3 +462,9 @@ To ensure your maps look great on all devices, our Map component supports respon
   initOpenStreetMap('map4');
 </script>
 {{< /example >}}
+
+## CSS
+
+### Sass variables
+
+{{< scss-docs name="map-variables" file="src/scss/_variables.scss" >}}

@@ -389,11 +389,19 @@ It is a carousel design where upcoming slides are partially visible, providing a
           "loop": true,
           "speed": 600,
           "slidesPerView": 2,
-          "spaceBetween": 24,
+          "spaceBetween": 6,
           "pagination": "#carousel-pagination-9",
           "navigationNext": "#carousel-btn-next-9",
           "navigationPrev": "#carousel-btn-prev-9",
-          "futureSlidesVisible": true
+          "futureSlidesVisible": true,
+          "breakpoints": {
+            "md": {
+              "spaceBetween": 12
+            },
+            "lg": {
+              "spaceBetween": 24
+            }
+          }
       }'>
         <div class="swiper-wrapper">
           <div class="swiper-slide">

@@ -8,7 +8,7 @@ aliases:
 toc: true
 ---
 
-## Test Taxonomie TSO 
+## Based on Bootstrap
 
 OpenFrontend is a custom distribution based on the well-known CSS and JS framework [Bootstrap](https://getbootstrap.com/).
 

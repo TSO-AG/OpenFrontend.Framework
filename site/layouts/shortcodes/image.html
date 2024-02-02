@@ -1,0 +1,8 @@
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" }}
+{{ $width := .Get "width" }}
+{{ $height := .Get "height" }}
+{{ $class := .Get "class" }}
+{{ $loading := .Get "loading" }}
+
+{{ partial "image.html" (dict "img" $src "src" $src "alt" $alt "width" $width "height" $height "class" $class "loading" $loading) }}

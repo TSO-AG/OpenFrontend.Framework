@@ -9,30 +9,33 @@
 {{ if $baseImage -}}
   {{ $width := default "" .width }}
   {{ $height := default "" .height }}
-{{ $isWidthPercent := or (eq $width "") (in (string $width) "%") }}
-{{ $isHeightPercent := or (eq $height "") (in (string $height) "%") }}
+{{ $isWidthPercent := (in (string $width) "%") }}
+{{ $isHeightPercent := (in (string $height) "%") }}
 
 {{ $imageJPG := "" }}
 {{ $imageWebP := "" }}
 
 {{ if or $isWidthPercent $isHeightPercent }}
-{{ $imageJPG = $baseImage.Process "jpg" }}
-{{ $imageWebP = $baseImage.Process "webp" }}
+  {{ $imageJPG = $baseImage.Process "jpg" }}
+  {{ $imageWebP = $baseImage.Process "webp" }}
 {{ else if and (ne $width "") (ne $height "") }}
-{{ $dimensions := printf "%sx%s Center" (printf "%v" $width) (printf "%v" $height) }}
-{{ $imageJPG = $baseImage.Fill (printf "crop %s jpg" $dimensions) }}
-{{ $imageWebP = $baseImage.Fill (printf "crop %s webp" $dimensions) }}
+  {{ $dimensions := printf "%sx%s Center" (printf "%v" $width) (printf "%v" $height) }}
+  {{ $imageJPG = $baseImage.Fill (printf "crop %s jpg" $dimensions) }}
+  {{ $imageWebP = $baseImage.Fill (printf "crop %s webp" $dimensions) }}
+{{ else if or (ne $width "") (ne $height "") }}
+  {{ $resizeParam := "" }}
+  {{ if ne $width "" }}
+    {{ $resizeParam = printf "%vx" $width }}
+  {{ else if ne $height "" }}
+    {{ $resizeParam = printf "x%v" $height }}
+  {{ end }}
+  {{ if ne $resizeParam "" }}
+    {{ $imageJPG = $baseImage.Resize (printf "%s jpg" $resizeParam) }}
+    {{ $imageWebP = $baseImage.Resize (printf "%s webp" $resizeParam) }}
+  {{ end }}
 {{ else }}
-{{ $resizeParam := "" }}
-{{ if ne $width "" }}
-{{ $resizeParam = printf "%vx" $width }}
-{{ else if ne $height "" }}
-{{ $resizeParam = printf "x%v" $height }}
-{{ end }}
-{{ if ne $resizeParam "" }}
-{{ $imageJPG = $baseImage.Fill (printf "%s jpg" $resizeParam) }}
-{{ $imageWebP = $baseImage.Fill (printf "%s webp" $resizeParam) }}
-{{ end }}
+  {{ $imageJPG = $baseImage.Process "jpg" }}
+  {{ $imageWebP = $baseImage.Process "webp" }}
 {{ end }}
 
   <picture>

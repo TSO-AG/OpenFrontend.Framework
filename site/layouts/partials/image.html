@@ -1,7 +1,7 @@
 {{ $src := .src }}
 {{ $alt := default "" .alt }}
 {{ $class := default "" .class }}
-{{ $loading := default "lazy" .loading }}
+{{ $loading := .loading }}
 
 {{ $baseImage := resources.Get $src }}
 
@@ -9,20 +9,31 @@
 {{ if $baseImage -}}
   {{ $width := default "" .width }}
   {{ $height := default "" .height }}
-  {{ $isWidthPercent := or (eq $width "") (in (string $width) "%") }}
-  {{ $isHeightPercent := or (eq $height "") (in (string $height) "%") }}
+{{ $isWidthPercent := or (eq $width "") (in (string $width) "%") }}
+{{ $isHeightPercent := or (eq $height "") (in (string $height) "%") }}
 
-  {{ $imageJPG := "" }}
-  {{ $imageWebP := "" }}
+{{ $imageJPG := "" }}
+{{ $imageWebP := "" }}
 
-  {{ if or $isWidthPercent $isHeightPercent }}
-    {{ $imageJPG = $baseImage.Process "jpg" }}
-    {{ $imageWebP = $baseImage.Process "webp" }}
-  {{ else }}
-    {{ $dimensions := printf "%sx%s" (printf "%v" $width) (printf "%v" $height) }}
-    {{ $imageJPG = $baseImage.Fill (printf "crop %s jpg" $dimensions) }}
-    {{ $imageWebP = $baseImage.Fill (printf "crop %s webp" $dimensions) }}
-  {{ end }}
+{{ if or $isWidthPercent $isHeightPercent }}
+{{ $imageJPG = $baseImage.Process "jpg" }}
+{{ $imageWebP = $baseImage.Process "webp" }}
+{{ else if and (ne $width "") (ne $height "") }}
+{{ $dimensions := printf "%sx%s Center" (printf "%v" $width) (printf "%v" $height) }}
+{{ $imageJPG = $baseImage.Fill (printf "crop %s jpg" $dimensions) }}
+{{ $imageWebP = $baseImage.Fill (printf "crop %s webp" $dimensions) }}
+{{ else }}
+{{ $resizeParam := "" }}
+{{ if ne $width "" }}
+{{ $resizeParam = printf "%vx" $width }}
+{{ else if ne $height "" }}
+{{ $resizeParam = printf "x%v" $height }}
+{{ end }}
+{{ if ne $resizeParam "" }}
+{{ $imageJPG = $baseImage.Fill (printf "%s jpg" $resizeParam) }}
+{{ $imageWebP = $baseImage.Fill (printf "%s webp" $resizeParam) }}
+{{ end }}
+{{ end }}
 
   <picture>
     {{ if $imageWebP }}
@@ -35,7 +46,8 @@
          {{ if $height }}height="{{ $height }}"{{ end }}
          alt="{{ $alt }}"
          {{ if $class }}class="{{ $class }}"{{ end }}
-         loading="{{ $loading }}">
+         {{ if $loading }}loading="{{ $loading }}"{{ end }}
+      >
     {{ end }}
   </picture>
 {{ else }}

@@ -1,8 +1,6 @@
 import Lightbox from './lightbox-base'
 import LightboxWithTabs from './lightbox-with-tabs'
 
-const UNGROUPED_ITEMS_IDENTIFIER = 'all'
-
 class LightboxRegistry {
   constructor() {
     this.configs = new Map()
@@ -42,40 +40,52 @@ class LightboxRegistry {
     }
   }
 
-  registerFromConfigElement(el) {
-    const identifier = el.dataset.ofLightboxConfig
+  registerFromConfigElement(element) {
+    const identifier = element.dataset.ofLightboxConfig
 
     if (this.configs.has(identifier)) {
       throw new Error(`You cannot have more than one lightbox config with the same identifier: ${identifier}`)
     }
 
-    const config = JSON.parse(el.textContent.trim())
+    const config = JSON.parse(element.textContent.trim())
     config.elements = config.elements || []
 
     this.configs.set(identifier, config)
   }
 
-  registerFromRegularElement(el) {
-    // TODO: validate options
-    const options = (el.dataset.ofLightbox === '') ? {} : JSON.parse(el.dataset.ofLightbox)
-    const identifier = Object.prototype.hasOwnProperty.call(options, 'group') ? options.group : UNGROUPED_ITEMS_IDENTIFIER
+  registerFromRegularElement(element) {
+    const options = (element.dataset.ofLightbox === '') ? {} : JSON.parse(element.dataset.ofLightbox)
+    const identifier = Object.prototype.hasOwnProperty.call(options, 'group') ? options.group : null
 
-    // Create a config if it does not exist yet
-    if (!this.configs.has(identifier)) {
-      this.configs.set(identifier, { elements: [] })
+    // Group the lightboxes by identifier, and initialize them later on
+    if (identifier) {
+      if (!this.configs.has(identifier)) {
+        this.configs.set(identifier, { elements: [] })
+      }
+
+      this.configs.get(identifier).elements.push({ element, options })
+      return;
     }
 
-    this.configs.get(identifier).elements.push({
-      element: el,
-      options,
+    const ungroupedIdentifier = `ungrouped-${this.instances.size}`
+
+    // If the item has no identifier, create the instance right away
+    this.instances.set(ungroupedIdentifier, new Lightbox(ungroupedIdentifier, {
+      items: [{...options, href: element.href}],
+    }))
+
+    // Open the lightbox on click
+    element.addEventListener('click', e => {
+      e.preventDefault()
+      this.instances.get(ungroupedIdentifier).open()
     })
   }
 
-  registerTriggerElement(el) {
-    el.addEventListener('click', e => {
+  registerTriggerElement(element) {
+    element.addEventListener('click', e => {
       e.preventDefault()
 
-      const [identifier, item] = el.dataset.ofLightboxOpen.split(':')
+      const [identifier, item] = element.dataset.ofLightboxOpen.split(':')
 
       if (!this.instances.has(identifier)) {
         throw new Error(`The lightbox with identifier "${identifier}" does not exist`)

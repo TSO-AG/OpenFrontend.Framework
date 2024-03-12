@@ -9,7 +9,8 @@
     "docs-build": "if [ -z ${BASE_URL+x} ]; then echo \"$BASE_URL is not defined\"; else encore production --progress --config-name docs --env=BASE_URL=$BASE_URL && hugo --cleanDestinationDir --printUnusedTemplates --baseURL $BASE_URL; fi",
     "docs-serve": "encore dev --config-name docs && concurrently 'encore dev --watch --config-name docs' 'hugo server --port 9001 --disableFastRender --printUnusedTemplates'",
     "css-lint": "stylelint \"**/*.{css,scss}\"",
-    "js-lint": "eslint --report-unused-disable-directives --ext .html,.js,.md ."
+    "js-lint": "eslint --report-unused-disable-directives --ext .html,.js,.md .",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@fullcalendar/core": "^6.1.9",
@@ -43,6 +44,7 @@
     "patch-package": "^8.0.0",
     "postcss-cli": "^10.1.0",
     "postcss-loader": "^7.3.3",
+    "postinstall-postinstall": "^2.1.0",
     "sass": "^1.57.1",
     "sass-loader": "^13.0.0",
     "stylelint": "^15.10.2",

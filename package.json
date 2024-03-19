@@ -51,5 +51,6 @@
   },
   "hugo-bin": {
     "buildTags": "extended"
-  }
+  },
+  "packageManager": "yarn@4.1.1"
 }

@@ -104,10 +104,10 @@ class Ticker extends BaseComponent {
       }
 
       if (item.icon) {
-        const i = document.createElement('i')
-        i.className = `${CLASS_NAME_ICON} ${item.icon}`
-
-        div.append(i)
+        const icon = document.createElement('span')
+        icon.className = CLASS_NAME_ICON
+        icon.innerHTML = item.icon
+        div.append(icon)
       }
 
       if (item.url) {

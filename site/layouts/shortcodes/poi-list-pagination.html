@@ -1,6 +1,6 @@
 <nav class="pagination-dropdown mt-3" aria-label="POI list pagination">
   <button class="btn btn-square btn-primary">
-    <i class="ofi-caret-left-fill"></i>
+    {{ partial "icon" (dict "name" "caret-left-fill") }}
   </button>
 
   <label for="{{ .Get "id" }}-pagination" class="visually-hidden">Pagination</label>
@@ -11,6 +11,6 @@
   </select>
 
   <button class="btn btn-square btn-primary">
-    <i class="ofi-caret-right-fill"></i>
+    {{ partial "icon" (dict "name" "caret-right-fill") }}
   </button>
 </nav>

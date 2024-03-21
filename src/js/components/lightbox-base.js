@@ -51,10 +51,14 @@ const THUMBNAILS_CAROUSEL_HTML = `<div class="gallery-thumbnails carousel carous
   </div>
   <div class="carousel-navigation">
     <button type="button" class="carousel-button-prev btn btn-square btn-primary">
-      <i class="ofi-caret-left-fill"></i>
+      <svg class="of-icon">
+        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+      </svg>
     </button>
     <button type="button" class="carousel-button-next btn btn-square btn-primary">
-      <i class="ofi-caret-right-fill"></i>
+      <svg class="of-icon">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+      </svg>
     </button>
   </div>
 </div>`

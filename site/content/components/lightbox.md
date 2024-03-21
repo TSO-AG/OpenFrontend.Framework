@@ -342,7 +342,7 @@ Having a complex gallery with different groups and mixed content types is not a 
     <button class="nav-link" id="nav-gallery-space-tab" data-bs-toggle="tab" data-bs-target="#nav-gallery-space" type="button" role="tab" aria-controls="gallery-space" aria-selected="false">Space</button>
     <button class="nav-link" id="nav-videos-tab" data-bs-toggle="tab" data-bs-target="#nav-videos" type="button" role="tab" aria-controls="nav-videos" aria-selected="false">Videos</button>
     <button class="nav-link" id="nav-map-tab" data-bs-toggle="tab" data-bs-target="#nav-map" type="button" role="tab" aria-controls="nav-map" aria-selected="false">Map</button>
-    <button class="nav-link icon-link ms-auto" data-of-lightbox-open="tabs:0">Show all media <i class="ofi-arrow-right"></i></button>
+    <button class="nav-link icon-link ms-auto" data-of-lightbox-open="tabs:0">Show all media {{< icon name="arrow-right" >}}</button>
   </div>
 </nav>
 

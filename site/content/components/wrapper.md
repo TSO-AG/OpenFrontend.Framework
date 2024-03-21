@@ -102,7 +102,7 @@ With the `--bs-wrapper-media-overlay` and `--bs-wrapper-media-overlay-opacity` v
     <h2>Your next destination</h2>
     <p>Escape ordinary, experience majestic views!</p>
     <p>
-      <a href="#" class="btn btn-light btn-sm icon-link">Find out more <i class="ofi-arrow-right"></i></a>
+      <a href="#" class="btn btn-light btn-sm icon-link">Find out more {{< icon name="arrow-right" >}}</a>
     </p>
   </div>
 
@@ -124,7 +124,7 @@ Works great with `.wrapper-zoom` class.
     <h2>Your next destination</h2>
     <p>Escape ordinary, experience majestic views!</p>
     <p>
-      <a href="#" class="btn btn-light btn-sm icon-link stretched-link">Find out more <i class="ofi-arrow-right"></i></a>
+      <a href="#" class="btn btn-light btn-sm icon-link stretched-link">Find out more {{< icon name="arrow-right" >}}</a>
     </p>
   </div>
 

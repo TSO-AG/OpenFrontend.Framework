@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
     <a href="#" class="icon-link icon-link-hover stretched-link">
       <span class="icon-link-text">Read more</span>
-      <i class="ofi-arrow-right"></i>
+      {{< icon name="arrow-right" >}}
     </a>
   </div>
 </div>
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
     <a href="#" class="icon-link icon-link-hover stretched-link">
       <span class="icon-link-text">Read more</span>
-      <i class="ofi-arrow-right"></i>
+      {{< icon name="arrow-right" >}}
     </a>
   </div>
 </div>

@@ -18,7 +18,7 @@ This example demonstrates a quick and easy way to add the Search component to yo
   <div class="search-form-inputs">
     <input type="search" id="search-form-keywords" name="keywords" placeholder="Search…">
     <button type="submit">
-      <i class="ofi-search"></i>
+      {{< icon name="search" >}}
       <span class="visually-hidden">Search</span>
     </button>
   </div>

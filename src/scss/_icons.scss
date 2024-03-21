@@ -1,3 +1,10 @@
+.of-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -.125em;
+  fill: currentcolor;
+}
+
 .icon-circle {
   // scss-docs-start icon-circle-css-vars
   --#{$prefix}icon-circle-color: #{$icon-circle-color};

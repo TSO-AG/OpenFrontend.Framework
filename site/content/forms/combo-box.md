@@ -19,9 +19,9 @@ toc: true
     </div>
     <div class="combo-box-field">
       <div class="input-group" data-of-quantity-picker>
-        <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+        <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus>{{< icon name="dash" >}}</button>
         <input type="number" id="inline-guests" class="form-control text-center" value="5" min="1" max="10" readonly>
-        <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+        <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus>{{< icon name="plus" >}}</button>
       </div>
     </div>
   </div>
@@ -33,9 +33,9 @@ toc: true
     </div>
     <div class="combo-box-field">
       <div class="input-group" data-of-quantity-picker>
-        <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+        <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus>{{< icon name="dash" >}}</button>
         <input type="number" id="inline-rooms" class="form-control text-center" value="1" min="1" max="8" readonly>
-        <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+        <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus>{{< icon name="plus" >}}</button>
       </div>
     </div>
   </div>
@@ -93,9 +93,9 @@ You can display the combo box component as a fancy dropdown widget. You can use 
         </div>
         <div class="combo-box-field">
           <div class="input-group" data-of-quantity-picker>
-            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus>{{< icon name="dash" >}}</button>
             <input type="number" id="dropdown-adults" name="adults" class="form-control text-center" value="2" min="1" max="10" readonly>
-            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus>{{< icon name="plus" >}}</button>
           </div>
         </div>
       </div>
@@ -107,9 +107,9 @@ You can display the combo box component as a fancy dropdown widget. You can use 
         </div>
         <div class="combo-box-field" >
           <div class="input-group" data-of-quantity-picker>
-            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus>{{< icon name="dash" >}}</button>
             <input type="number" id="dropdown-children" class="form-control text-center" value="0" min="0" max="10" readonly>
-            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus>{{< icon name="plus" >}}</button>
           </div>
         </div>
       </div>
@@ -121,9 +121,9 @@ You can display the combo box component as a fancy dropdown widget. You can use 
         </div>
         <div class="combo-box-field">
           <div class="input-group" data-of-quantity-picker>
-            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus>{{< icon name="dash" >}}</button>
             <input type="number" id="dropdown-rooms" name="rooms" class="form-control text-center" value="1" min="1" max="8" readonly>
-            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus>{{< icon name="plus" >}}</button>
           </div>
         </div>
       </div>
@@ -183,9 +183,9 @@ The default formatter has a hardcoded way of generating a summary. You can also 
         </div>
         <div class="combo-box-field">
           <div class="input-group" data-of-quantity-picker>
-            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus>{{< icon name="dash" >}}</button>
             <input type="number" id="custom-adults" name="adults" class="form-control text-center" value="2" min="1" max="10" readonly>
-            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus>{{< icon name="plus" >}}</button>
           </div>
         </div>
       </div>
@@ -197,9 +197,9 @@ The default formatter has a hardcoded way of generating a summary. You can also 
         </div>
         <div class="combo-box-field">
           <div class="input-group" data-of-quantity-picker>
-            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus>{{< icon name="dash" >}}</button>
             <input type="number" id="custom-children" name="children" class="form-control text-center" value="0" min="0" max="10" readonly>
-            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus>{{< icon name="plus" >}}</button>
           </div>
         </div>
       </div>
@@ -211,9 +211,9 @@ The default formatter has a hardcoded way of generating a summary. You can also 
         </div>
         <div class="combo-box-field">
           <div class="input-group" data-of-quantity-picker>
-            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus>{{< icon name="dash" >}}</button>
             <input type="number" id="custom-rooms" name="rooms" class="form-control text-center" value="1" min="1" max="8" readonly>
-            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+            <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus>{{< icon name="plus" >}}</button>
           </div>
         </div>
       </div>

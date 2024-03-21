@@ -24,10 +24,10 @@ Tags scale to match the size of the immediate parent element by using relative f
 ### Icon list
 {{< example >}}
 <ul class="tag-list">
-  <li class="tag"><span class="tag-icon"><i class="ofi-check-lg"></i></span>Tag 01</li>
-  <li class="tag"><span class="tag-icon"><i class="ofi-check-lg"></i></span>Tag 02</li>
-  <li class="tag"><span class="tag-icon"><i class="ofi-check-lg"></i></span>Tag 03</li>
-  <li class="tag"><span class="tag-icon"><i class="ofi-check-lg"></i></span>Another tag</li>
+  <li class="tag"><span class="tag-icon">{{< icon name="check-lg" >}}</span>Tag 01</li>
+  <li class="tag"><span class="tag-icon">{{< icon name="check-lg" >}}</span>Tag 02</li>
+  <li class="tag"><span class="tag-icon">{{< icon name="check-lg" >}}</span>Tag 03</li>
+  <li class="tag"><span class="tag-icon">{{< icon name="check-lg" >}}</span>Another tag</li>
 </ul>
 {{< /example >}}
 

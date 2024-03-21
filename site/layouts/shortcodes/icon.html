@@ -1,0 +1,8 @@
+{{- $src := .Get "src" | default "/assets/icons/bootstrap-icons.svg" -}}
+{{- $name := .Get "name" | default "" -}}
+{{- $width := .Get "width" | default "32" -}}
+{{- $height := .Get "height" | default "32" -}}
+{{- $class := .Get "class" -}}
+{{- $ariaLabel := .Get "ariaLabel" -}}
+
+{{ partial "icon.html" (dict "src" $src "name" $name "width" $width "height" $height "class" $class "ariaLabel" $ariaLabel) }}

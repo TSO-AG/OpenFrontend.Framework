@@ -13,9 +13,9 @@
       <div class="form-label">View</div>
 
       <div class="btn-group">
-        <button class="btn btn-icon {{ if eq (.Get "active-view") "calendar" }}btn-primary{{ else }}btn-outline-primary{{ end }}" type="button"><i class="ofi-calendar-fill"></i></button>
-        <button class="btn btn-icon {{ if eq (.Get "active-view") "grid" }}btn-primary{{ else }}btn-outline-primary{{ end }}" type="button"><i class="ofi-grid-fill"></i></button>
-        <button class="btn btn-icon {{ if eq (.Get "active-view") "list" }}btn-primary{{ else }}btn-outline-primary{{ end }}" type="button"><i class="ofi-list"></i></button>
+        <button class="btn btn-icon {{ if eq (.Get "active-view") "calendar" }}btn-primary{{ else }}btn-outline-primary{{ end }}" type="button">{{ partial "icon" (dict "name" "calendar-fill") }}</button>
+        <button class="btn btn-icon {{ if eq (.Get "active-view") "grid" }}btn-primary{{ else }}btn-outline-primary{{ end }}" type="button">{{ partial "icon" (dict "name" "grid-fill") }}</button>
+        <button class="btn btn-icon {{ if eq (.Get "active-view") "list" }}btn-primary{{ else }}btn-outline-primary{{ end }}" type="button">{{ partial "icon" (dict "name" "list") }}</button>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@
         <div class="search-form-inputs">
           <input type="search" name="keywords" placeholder="Keywords" aria-label="Keywords">
           <button type="submit">
-            <i class="ofi-search"></i>
+            {{ partial "icon" (dict "name" "search") }}
             <span class="visually-hidden">Search</span>
           </button>
         </div>
@@ -17,7 +17,7 @@
         <div class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageMenuMobileAccount" aria-expanded="false" aria-controls="pageMenuMobileAccount">
             <span class="header-link header-link-row">
-              <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+              <span class="header-link-icon">{{ partial "icon" (dict "name" "person-circle") }}</span>
               <span class="header-link-text">Account</span>
             </span>
           </button>
@@ -39,7 +39,7 @@
         <div class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageMenuMobileCart" aria-expanded="false" aria-controls="pageMenuMobileCart">
             <span class="header-link header-link-row">
-              <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+              <span class="header-link-icon">{{ partial "icon" (dict "name" "cart-fill") }}</span>
               <span class="header-link-text">Cart</span>
             </span>
           </button>
@@ -62,7 +62,7 @@
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageMenuMobileFavorites" aria-expanded="false" aria-controls="pageMenuMobileFavorites">
             <span class="header-link header-link-row">
               <span class="header-link-icon">
-                <i class="ofi-heart-fill"></i>
+                {{ partial "icon" (dict "name" "heart-fill") }}
                 <span class="header-link-icon-badge">
                   <span class="badge bg-danger">12</span>
                 </span>
@@ -99,13 +99,13 @@
         </li>
         <li class="page-nav-submenu" aria-haspopup="true">
           <a class="page-nav-link" href="#">Inspirieren</a>
-          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
-            <i class="ofi-arrow-right"><span class="visually-hidden">Expand submenu Inspirieren</span></i>
+          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false" aria-label="Expand submenu Inspirieren">
+            {{ partial "icon" (dict "name" "arrow-right") }}
           </button>
           <ul class="page-nav-level-2">
             <li class="page-nav-back">
               <button class="page-nav-back-link" data-of-page-menu-close>
-                <i class="ofi-arrow-left"></i>Back
+                {{ partial "icon" (dict "name" "arrow-left") }}Back
               </button>
             </li>
             <li>
@@ -113,13 +113,13 @@
             </li>
             <li class="page-nav-submenu" aria-haspopup="true">
               <a class="page-nav-link" href="#">Lorem ipsum 2 - 2</a>
-              <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
-                <i class="ofi-arrow-right"><span class="visually-hidden">Expand submenu Lorem ipsum 2 - 2</span></i>
+              <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false" aria-label="Expand submenu Lorem ipsum 2 - 2">
+                {{ partial "icon" (dict "name" "arrow-right") }}
               </button>
               <ul class="page-nav-level-3">
                 <li class="page-nav-back">
                   <button class="page-nav-back-link" data-of-page-menu-close>
-                    <i class="ofi-arrow-left"></i>Back
+                    {{ partial "icon" (dict "name" "arrow-left") }}Back
                   </button>
                 </li>
                 <li>
@@ -127,13 +127,13 @@
                 </li>
                 <li class="page-nav-submenu" aria-haspopup="true">
                   <a class="page-nav-link" href="#">Lorem ipsum 2 - 2 - 2</a>
-                  <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
-                    <i class="ofi-arrow-right"><span class="visually-hidden">Expand submenu Lorem ipsum 2 - 2 - 2</span></i>
+                  <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false" aria-label="Expand submenu Lorem ipsum 2 - 2 - 2">
+                    {{ partial "icon" (dict "name" "arrow-right") }}
                   </button>
                   <ul class="page-nav-level-4">
                     <li class="page-nav-back">
                       <button class="page-nav-back-link" data-of-page-menu-close>
-                        <i class="ofi-arrow-left"></i>Back
+                        {{ partial "icon" (dict "name" "arrow-left") }}Back
                       </button>
                     </li>
                     <li>
@@ -166,13 +166,13 @@
             </li>
             <li class="page-nav-submenu" aria-haspopup="true">
               <a class="page-nav-link" href="#">Lorem ipsum 2 - 5</a>
-              <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
-                <i class="ofi-arrow-right"><span class="visually-hidden">Expand submenu Lorem ipsum 2 - 5</span></i>
+              <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false" aria-label="Expand submenu Lorem ipsum 2 - 5">
+                {{ partial "icon" (dict "name" "arrow-right") }}
               </button>
               <ul class="page-nav-level-3">
                 <li class="page-nav-back">
                   <button class="page-nav-back-link" data-of-page-menu-close>
-                    <i class="ofi-arrow-left"></i>Back
+                    {{ partial "icon" (dict "name" "arrow-left") }}Back
                   </button>
                 </li>
                 <li>
@@ -180,24 +180,24 @@
                 </li>
                 <li class="page-nav-submenu" aria-haspopup="true">
                   <a class="page-nav-link" href="#">Lorem ipsum 2 - 5 - 2</a>
-                  <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
-                    <i class="ofi-arrow-right"><span class="visually-hidden">Expand submenu Lorem ipsum 2 - 5 - 2</span></i>
+                  <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false" aria-label="Expand submenu Lorem ipsum 2 - 5 - 2">
+                    {{ partial "icon" (dict "name" "arrow-right") }}
                   </button>
                   <ul class="page-nav-level-4">
                     <li class="page-nav-back">
                       <button class="page-nav-back-link" data-of-page-menu-close>
-                        <i class="ofi-arrow-left"></i>Back
+                        {{ partial "icon" (dict "name" "arrow-left") }}Back
                       </button>
                     </li>
                     <li class="page-nav-submenu" aria-haspopup="true">
                       <a class="page-nav-link" href="#">Lorem ipsum 2 - 5 - 2 - 1</a>
-                      <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
-                        <i class="ofi-arrow-right"><span class="visually-hidden">Expand submenu Lorem ipsum 2 - 5 - 2 - 1</span></i>
+                      <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false" aria-label="Expand submenu Lorem ipsum 2 - 5 - 2 - 1">
+                        {{ partial "icon" (dict "name" "arrow-right") }}
                       </button>
                       <ul class="page-nav-level-5">
                         <li class="page-nav-back">
                           <button class="page-nav-back-link" data-of-page-menu-close>
-                            <i class="ofi-arrow-left"></i>Back
+                            {{ partial "icon" (dict "name" "arrow-left") }}Back
                           </button>
                         </li>
                         <li>
@@ -234,13 +234,13 @@
         </li>
         <li class="page-nav-submenu" aria-haspopup="true">
           <a href="#" class="page-nav-link">Buchen</a>
-          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false">
-            <i class="ofi-arrow-right"><span class="visually-hidden">Expand submenu Buchen</span></i>
+          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false" aria-label="Expand submenu Buchen">
+            {{ partial "icon" (dict "name" "arrow-right") }}
           </button>
           <ul class="page-nav-level-2">
             <li class="page-nav-back">
               <button class="page-nav-back-link" data-of-page-menu-close>
-                <i class="ofi-arrow-left"></i>Back
+                {{ partial "icon" (dict "name" "arrow-left") }}Back
               </button>
             </li>
             <li>

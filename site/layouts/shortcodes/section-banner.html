@@ -11,7 +11,7 @@
       <h2>{{ $title }}</h2>
       <p>{{ $text }}</p>
       <p>
-        <a href="#" class="btn {{ $btn_class }} icon-link">{{ $btn_text }}<i class="ofi-arrow-right"></i></a>
+        <a href="#" class="btn {{ $btn_class }} icon-link">{{ $btn_text }}{{ partial "icon" (dict "name" "arrow-right") }}</a>
       </p>
     </div>
   </div>

@@ -14,9 +14,9 @@ The quantity picker allows you to change the value using -/+ buttons but also by
 <div>
   <label for="lucky" class="form-label">What's your lucky number?</label>
   <div class="input-group" data-of-quantity-picker>
-    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus>{{< icon name="dash" >}}</button>
     <input type="number" id="lucky" class="form-control text-center" value="0">
-    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus>{{< icon name="plus" >}}</button>
   </div>
 </div>
 {{< /example >}}
@@ -27,9 +27,9 @@ You can also limit the input values using the `min`, `max`, and `readonly` HTML 
 <div>
   <label for="number" class="form-label">Pick a number from 1 to 10!</label>
   <div class="input-group" data-of-quantity-picker>
-    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus>{{< icon name="dash" >}}</button>
     <input type="number" id="number" class="form-control text-center" value="5" min="1" max="10" readonly>
-    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus>{{< icon name="plus" >}}</button>
   </div>
 </div>
 {{< /example >}}
@@ -40,9 +40,9 @@ Use the `step` HTML attribute to define the interval between legal numbers:
 <div>
   <label for="water" class="form-label">How many milliliters of water did you drink today?</label>
   <div class="input-group" data-of-quantity-picker>
-    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus>{{< icon name="dash" >}}</button>
     <input type="number" id="water" class="form-control text-center" value="500" min="0" step="100" readonly>
-    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+    <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus>{{< icon name="plus" >}}</button>
   </div>
 </div>
 {{< /example >}}

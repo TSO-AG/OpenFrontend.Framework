@@ -18,11 +18,11 @@ language: de
     <div class="col-auto">
       <div>
         <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#share-modal" aria-labelledby="share-modal-label">
-          <i class="ofi-share"></i>
+          {{< icon name="share" >}}
           <span class="d-none d-lg-inline">Teilen</span>
         </button>
         <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
-          <i class="ofi-heart-fill"></i>
+          {{< icon name="heart-fill" >}}
           <span class="d-none d-lg-inline">Merken</span>
         </button>
       </div>
@@ -58,7 +58,7 @@ language: de
                       <h2>Hotels</h2>
                       <p>54 Angebote in St.Gallen und Umgebung</p>
                       <p>
-                        <a href="#" class="btn btn-primary icon-link">Mehr<i class="ofi-arrow-right"></i></a>
+                        <a href="#" class="btn btn-primary icon-link">Mehr{{< icon name="arrow-right" >}}</a>
                       </p>
                     </div>
                     <div class="wrapper-bg-media">
@@ -80,7 +80,7 @@ language: de
                       <h2>Ferienwohnungen</h2>
                       <p>28 Angebote</p>
                       <p>
-                        <a href="#" class="btn btn-primary icon-link">Mehr<i class="ofi-arrow-right"></i></a>
+                        <a href="#" class="btn btn-primary icon-link">Mehr{{< icon name="arrow-right" >}}</a>
                       </p>
                     </div>
                     <div class="wrapper-bg-media">
@@ -98,7 +98,7 @@ language: de
                       <h2>Bed & Breakfast</h2>
                       <p>34 Angebote</p>
                       <p>
-                        <a href="#" class="btn btn-primary icon-link">Mehr<i class="ofi-arrow-right"></i></a>
+                        <a href="#" class="btn btn-primary icon-link">Mehr{{< icon name="arrow-right" >}}</a>
                       </p>
                     </div>
                     <div class="wrapper-bg-media">
@@ -116,7 +116,7 @@ language: de
                       <h2>Camping</h2>
                       <p>12 Angebote</p>
                       <p>
-                        <a href="#" class="btn btn-primary icon-link">Mehr<i class="ofi-arrow-right"></i></a>
+                        <a href="#" class="btn btn-primary icon-link">Mehr{{< icon name="arrow-right" >}}</a>
                       </p>
                     </div>
                     <div class="wrapper-bg-media">
@@ -176,9 +176,9 @@ language: de
                                   </div>
                                   <div class="combo-box-field">
                                     <div class="input-group" data-of-quantity-picker>
-                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus>{{< icon name="dash" >}}</button>
                                       <input type="number" id="booking-adults" name="adults" class="form-control text-center" value="2" min="1" max="10" readonly>
-                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus>{{< icon name="plus" >}}</button>
                                     </div>
                                   </div>
                                 </div>
@@ -190,9 +190,9 @@ language: de
                                   </div>
                                   <div class="combo-box-field">
                                     <div class="input-group" data-of-quantity-picker>
-                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus>{{< icon name="dash" >}}</button>
                                       <input type="number" id="booking-children" name="children" class="form-control text-center" value="0" min="0" max="10" readonly>
-                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus>{{< icon name="plus" >}}</button>
                                     </div>
                                   </div>
                                 </div>
@@ -204,9 +204,9 @@ language: de
                                   </div>
                                   <div class="combo-box-field">
                                     <div class="input-group" data-of-quantity-picker>
-                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus><i class="ofi-dash"></i></button>
+                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-minus>{{< icon name="dash" >}}</button>
                                       <input type="number" id="booking-rooms" name="rooms" class="form-control text-center" value="1" min="1" max="8" readonly>
-                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus><i class="ofi-plus"></i></button>
+                                      <button type="button" class="btn btn-icon btn-primary" data-of-quantity-picker-plus>{{< icon name="plus" >}}</button>
                                     </div>
                                   </div>
                                 </div>
@@ -216,7 +216,7 @@ language: de
                         </div>
 
                         <div class="col-auto d-flex align-items-end">
-                          <button class="btn btn-primary btn-icon"><span class="visually-hidden">Suchen</span><i class="ofi-search"></i></button>
+                          <button class="btn btn-primary btn-icon"><span class="visually-hidden">Suchen</span>{{< icon name="search" >}}</button>
                         </div>
                       </form>
                     </div>

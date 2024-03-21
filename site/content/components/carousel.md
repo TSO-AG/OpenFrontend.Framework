@@ -39,10 +39,10 @@ The component uses the [Swiper](https://swiperjs.com/) library.
 
   <div class="carousel-navigation">
      <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-1">
-      <i class="ofi-caret-left-fill"></i>
+      {{< icon name="caret-left-fill" >}}
     </button>
     <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-1">
-      <i class="ofi-caret-right-fill"></i>
+      {{< icon name="caret-right-fill" >}}
     </button>
   </div>
 </div>
@@ -89,10 +89,10 @@ You can specify the number of slides to show in the viewport with the `slidesPer
 
   <div class="carousel-navigation">
      <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-2">
-      <i class="ofi-caret-left-fill"></i>
+      {{< icon name="caret-left-fill" >}}
     </button>
     <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-2">
-      <i class="ofi-caret-right-fill"></i>
+      {{< icon name="caret-right-fill" >}}
     </button>
   </div>
 </div>
@@ -107,10 +107,10 @@ Autoplay starts automatically cycling through slides. Loop continues play after 
     <div>
         <div class="carousel-navigation">
          <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-3">
-          <i class="ofi-caret-left-fill"></i>
+          {{< icon name="caret-left-fill" >}}
         </button>
         <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-3">
-          <i class="ofi-caret-right-fill"></i>
+          {{< icon name="caret-right-fill" >}}
         </button>
         </div>
     </div>
@@ -182,10 +182,10 @@ Autoplay starts automatically cycling through slides. Loop continues play after 
 
   <div class="carousel-navigation">
      <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-4">
-      <i class="ofi-caret-left-fill"></i>
+      {{< icon name="caret-left-fill" >}}
     </button>
     <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-4">
-      <i class="ofi-caret-right-fill"></i>
+      {{< icon name="caret-right-fill" >}}
     </button>
   </div>
 </div>
@@ -215,10 +215,10 @@ Autoplay starts automatically cycling through slides. Loop continues play after 
 
   <div class="carousel-navigation">
      <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-5">
-      <i class="ofi-caret-left-fill"></i>
+      {{< icon name="caret-left-fill" >}}
     </button>
     <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-5">
-      <i class="ofi-caret-right-fill"></i>
+      {{< icon name="caret-right-fill" >}}
     </button>
   </div>
 </div>
@@ -248,10 +248,10 @@ Autoplay starts automatically cycling through slides. Loop continues play after 
 
   <div class="carousel-navigation">
      <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-6">
-      <i class="ofi-caret-left-fill"></i>
+      {{< icon name="caret-left-fill" >}}
     </button>
     <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-6">
-      <i class="ofi-caret-right-fill"></i>
+      {{< icon name="caret-right-fill" >}}
     </button>
   </div>
 </div>
@@ -302,10 +302,10 @@ You can configure different slide display settings based on different viewport w
     <div>
         <div class="carousel-navigation">
          <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-8">
-          <i class="ofi-caret-left-fill"></i>
+          {{< icon name="caret-left-fill" >}}
         </button>
         <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-8">
-          <i class="ofi-caret-right-fill"></i>
+          {{< icon name="caret-right-fill" >}}
         </button>
         </div>
     </div>
@@ -374,10 +374,10 @@ It is a carousel design where upcoming slides are partially visible, providing a
         <div>
             <div class="carousel-navigation">
              <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-9">
-              <i class="ofi-caret-left-fill"></i>
+              {{< icon name="caret-left-fill" >}}
             </button>
             <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-9">
-              <i class="ofi-caret-right-fill"></i>
+              {{< icon name="caret-right-fill" >}}
             </button>
             </div>
         </div>
@@ -462,7 +462,7 @@ To create a photo gallery with thumbnails, you can create two separate carousels
                     style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
                     data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="© Hans Muster">
-              <i class="ofi-question-circle-fill"></i>
+              {{< icon name="question-circle-fill" >}}
             </button>
           </figcaption>
         </figure>
@@ -477,7 +477,7 @@ To create a photo gallery with thumbnails, you can create two separate carousels
                     style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
                     data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="© Hans Muster">
-              <i class="ofi-question-circle-fill"></i>
+              {{< icon name="question-circle-fill" >}}
             </button>
           </figcaption>
         </figure>
@@ -492,7 +492,7 @@ To create a photo gallery with thumbnails, you can create two separate carousels
                     style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
                     data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="© Hans Muster">
-              <i class="ofi-question-circle-fill"></i>
+              {{< icon name="question-circle-fill" >}}
             </button>
           </figcaption>
         </figure>
@@ -507,7 +507,7 @@ To create a photo gallery with thumbnails, you can create two separate carousels
                     style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
                     data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="© Hans Muster">
-              <i class="ofi-question-circle-fill"></i>
+              {{< icon name="question-circle-fill" >}}
             </button>
           </figcaption>
         </figure>
@@ -522,7 +522,7 @@ To create a photo gallery with thumbnails, you can create two separate carousels
                     style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
                     data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="© Hans Muster">
-              <i class="ofi-question-circle-fill"></i>
+              {{< icon name="question-circle-fill" >}}
             </button>
           </figcaption>
         </figure>
@@ -537,7 +537,7 @@ To create a photo gallery with thumbnails, you can create two separate carousels
                     style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
                     data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="© Hans Muster">
-              <i class="ofi-question-circle-fill"></i>
+              {{< icon name="question-circle-fill" >}}
             </button>
           </figcaption>
         </figure>
@@ -552,7 +552,7 @@ To create a photo gallery with thumbnails, you can create two separate carousels
                     style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
                     data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="© Hans Muster">
-              <i class="ofi-question-circle-fill"></i>
+              {{< icon name="question-circle-fill" >}}
             </button>
           </figcaption>
         </figure>
@@ -567,7 +567,7 @@ To create a photo gallery with thumbnails, you can create two separate carousels
                     style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
                     data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="© Hans Muster">
-              <i class="ofi-question-circle-fill"></i>
+              {{< icon name="question-circle-fill" >}}
             </button>
           </figcaption>
         </figure>
@@ -582,7 +582,7 @@ To create a photo gallery with thumbnails, you can create two separate carousels
                     style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
                     data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="© Hans Muster">
-              <i class="ofi-question-circle-fill"></i>
+              {{< icon name="question-circle-fill" >}}
             </button>
           </figcaption>
         </figure>
@@ -597,7 +597,7 @@ To create a photo gallery with thumbnails, you can create two separate carousels
                     style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
                     data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="© Hans Muster">
-              <i class="ofi-question-circle-fill"></i>
+              {{< icon name="question-circle-fill" >}}
             </button>
           </figcaption>
         </figure>
@@ -612,7 +612,7 @@ To create a photo gallery with thumbnails, you can create two separate carousels
                     style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
                     data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="© Hans Muster">
-              <i class="ofi-question-circle-fill"></i>
+              {{< icon name="question-circle-fill" >}}
             </button>
           </figcaption>
         </figure>
@@ -627,7 +627,7 @@ To create a photo gallery with thumbnails, you can create two separate carousels
                     style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
                     data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="© Hans Muster">
-              <i class="ofi-question-circle-fill"></i>
+              {{< icon name="question-circle-fill" >}}
             </button>
           </figcaption>
         </figure>
@@ -642,7 +642,7 @@ To create a photo gallery with thumbnails, you can create two separate carousels
                     style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
                     data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="© Hans Muster">
-              <i class="ofi-question-circle-fill"></i>
+              {{< icon name="question-circle-fill" >}}
             </button>
           </figcaption>
         </figure>
@@ -657,7 +657,7 @@ To create a photo gallery with thumbnails, you can create two separate carousels
                     style="--bs-btn-padding-x: 2px; --bs-btn-padding-y: 2px;"
                     data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="© Hans Muster">
-              <i class="ofi-question-circle-fill"></i>
+              {{< icon name="question-circle-fill" >}}
             </button>
           </figcaption>
         </figure>
@@ -736,10 +736,10 @@ To create a photo gallery with thumbnails, you can create two separate carousels
 
   <div class="carousel-navigation">
     <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-10">
-      <i class="ofi-caret-left-fill"></i>
+      {{< icon name="caret-left-fill" >}}
     </button>
     <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-10">
-      <i class="ofi-caret-right-fill"></i>
+      {{< icon name="caret-right-fill" >}}
     </button>
   </div>
 </div>

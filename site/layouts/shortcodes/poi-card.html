@@ -45,11 +45,11 @@
       <h4 class="card-title"><a href="#" class="stretched-link">{{ $title}} </a></h4>
       <div class="card-title-star">
         <div class="rating rating-sm">
-          <i class="star-on-png"></i>
-          <i class="star-on-png"></i>
-          <i class="star-on-png"></i>
-          <i class="star-half-png"></i>
-          <i class="star-off-png"></i>
+          <i class="star-on"></i>
+          <i class="star-on"></i>
+          <i class="star-on"></i>
+          <i class="star-half"></i>
+          <i class="star-off"></i>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
     </div>
     <div class="user-rating">
       <div class="user-rating__icon">
-        <i class="ofi-people-fill"></i>
+        {{ partial "icon" (dict "name" "people-fill") }}
       </div>
       <div class="user-rating__label">User-Rating:</div>
       <div class="user-rating__score">
@@ -83,14 +83,14 @@
     <div class="card-action__buttons">
       {{- if eq $hide_btn_cart "false" -}}
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-cart-fill"></i>
+        {{ partial "icon" (dict "name" "cart-fill") }}
       </button>
       {{- end -}}
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-heart-fill"></i>
+        {{ partial "icon" (dict "name" "heart-fill") }}
       </button>
       <button type="button" class="btn btn-icon btn-primary stretched-link">
-        More <i class="ofi-arrow-right"></i>
+        More {{ partial "icon" (dict "name" "arrow-right") }}
       </button>
     </div>
   </div>

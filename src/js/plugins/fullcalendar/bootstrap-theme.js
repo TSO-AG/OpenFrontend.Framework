@@ -17,19 +17,19 @@ BootstrapTheme.prototype.classes = {
 BootstrapTheme.prototype.baseIconClass = '';
 
 BootstrapTheme.prototype.iconClasses = {
-  prev: 'ofi-caret-left-fill',
-  next: 'ofi-caret-right-fill',
-  prevYear: 'ofi-caret-left-fill',
-  nextYear: 'ofi-caret-right-fill',
-  dayGridMonth: 'ofi-grid-fill',
-  listMonth: 'ofi-list',
+  prev: 'fc-icon-prev',
+  next: 'fc-icon-next',
+  prevYear: 'fc-icon-prev-year',
+  nextYear: 'fc-icon-next-year',
+  dayGridMonth: 'fc-icon-grid',
+  listMonth: 'fc-icon-list',
 }
 
 BootstrapTheme.prototype.rtlIconClasses = {
-  prev: 'ofi-caret-left-fill',
-  next: 'ofi-caret-right-fill',
-  prevYear: 'ofi-caret-left-fill',
-  nextYear: 'ofi-caret-right-fill',
+  prev: 'fc-icon-prev',
+  next: 'fc-icon-next',
+  prevYear: 'fc-icon-prev-year',
+  nextYear: 'fc-icon-next-year',
 };
 
 export default createPlugin({

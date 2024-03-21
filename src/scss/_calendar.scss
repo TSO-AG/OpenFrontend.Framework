@@ -207,3 +207,32 @@
     }
   }
 }
+
+// Add background icons to buttons
+[class*="fc-icon-"] {
+  @include add-icon(var(--#{$prefix}fc-icon), $icon-gap: 0);
+}
+
+.fc-icon-prev {
+  --#{$prefix}fc-icon: #{escape-svg($calendar-icon-prev)};
+}
+
+.fc-icon-next {
+  --#{$prefix}fc-icon: #{escape-svg($calendar-icon-next)};
+}
+
+.fc-icon-prev-year {
+  --#{$prefix}fc-icon: #{escape-svg($calendar-icon-prev-year)};
+}
+
+.fc-icon-next-year {
+  --#{$prefix}fc-icon: #{escape-svg($calendar-icon-next-year)};
+}
+
+.fc-icon-grid {
+  --#{$prefix}fc-icon: #{escape-svg($calendar-icon-grid)};
+}
+
+.fc-icon-list {
+  --#{$prefix}fc-icon: #{escape-svg($calendar-icon-list)};
+}

@@ -1,40 +1,33 @@
-.cancel-on-png,
-.cancel-off-png {
+.cancel-on,
+.cancel-off {
   &::before {
     content: "x";
   }
 }
 
-.star-on-png,
-.star-off-png,
-.star-half-png {
-  &:not([class*="ofi-"]) {
-    @include add-icon($ofi-star-fill, $icon-gap: 0);
-  }
+.star-on,
+.star-off,
+.star-half {
+  @include add-icon(var(--#{$prefix}rating-icon), $icon-gap: 0, $icon-color: var(--#{$prefix}rating-icon-color));
 }
 
-.star-on-png {
-  color: var(--#{$prefix}ratings-on-color);
+.star-on {
+  --#{$prefix}rating-icon-color: var(--#{$prefix}ratings-on-color);
 }
 
-.star-off-png {
-  color: var(--#{$prefix}ratings-off-color);
+.star-off {
+  --#{$prefix}rating-icon-color: var(--#{$prefix}ratings-off-color);
 }
 
-.star-half-png {
-
-  &::before {
-    background: $rating-off-color;
-    background: linear-gradient(to right, var(--#{$prefix}ratings-on-color) 50%, var(--#{$prefix}ratings-off-color) 50%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+.star-half {
+  --#{$prefix}rating-icon-color: linear-gradient(to right, var(--#{$prefix}ratings-on-color) 50%, var(--#{$prefix}ratings-off-color) 50%);
 }
 
 .rating,
 [data-of-rating] {
   --#{$prefix}rating-icon-gap: #{$rating-icon-gap};
   --#{$prefix}rating-font-size: #{$rating-font-size};
+  --#{$prefix}rating-icon: #{$rating-icon};
   display: inline-flex;
   gap: var(--#{$prefix}rating-icon-gap);
   font-size: var(--#{$prefix}rating-font-size);

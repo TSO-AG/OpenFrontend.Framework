@@ -28,7 +28,7 @@ This section provides an example of how to embed Google Maps into your web page 
         <h4 class="popover-content-title">Title</h4>
         <a href="#" class="icon-link icon-link-hover stretched-link">
           <span class="icon-link-text">View details</span>
-          <i class="ofi-arrow-right"></i>
+          {{< icon name="arrow-right" >}}
         </a>
       </div>
     </div>
@@ -105,7 +105,7 @@ Example HTML Structure
           <h4 class="popover-content-title">Title</h4>
           <a href="#" class="icon-link icon-link-hover stretched-link">
             <span class="icon-link-text">View details</span>
-            <i class="ofi-arrow-right"></i>
+            {{< icon name="arrow-right" >}}
           </a>
         </div>
       </div>
@@ -222,7 +222,7 @@ This section provides an example of how to integrate OpenStreetMap into your web
         <h4 class="popover-content-title">Title</h4>
         <a href="#" class="icon-link icon-link-hover stretched-link">
           <span class="icon-link-text">View details</span>
-          <i class="ofi-arrow-right"></i>
+          {{< icon name="arrow-right" >}}
         </a>
       </div>
     </div>
@@ -294,7 +294,7 @@ Example HTML Structure
         <h4 class="popover-content-title">Title</h4>
         <a href="#" class="icon-link icon-link-hover stretched-link">
           <span class="icon-link-text">View details</span>
-          <i class="ofi-arrow-right"></i>
+          {{< icon name="arrow-right" >}}
         </a>
       </div>
     </div>

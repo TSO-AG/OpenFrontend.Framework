@@ -190,10 +190,10 @@ Note that the `--bs-logos-gap` CSS variable will no longer work here. Instead, d
 <div class="heading-action justify-content-end">
   <div class="carousel-navigation">
     <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-1">
-      <i class="ofi-caret-left-fill"></i>
+      {{< icon name="caret-left-fill" >}}
     </button>
     <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-1">
-      <i class="ofi-caret-right-fill"></i>
+      {{< icon name="caret-right-fill" >}}
     </button>
   </div>
 </div>

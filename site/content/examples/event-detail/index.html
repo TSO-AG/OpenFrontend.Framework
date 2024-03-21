@@ -19,11 +19,11 @@ language: de
     <div class="col-auto">
       <div>
         <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#share-modal" aria-labelledby="share-modal-label">
-          <i class="ofi-share"></i>
+          {{< icon name="share" >}}
           <span class="d-none d-lg-inline">Teilen</span>
         </button>
         <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
-          <i class="ofi-heart-fill"></i>
+          {{< icon name="heart-fill" >}}
           <span class="d-none d-lg-inline">Merken</span>
         </button>
       </div>
@@ -143,7 +143,9 @@ language: de
 
         <div class="mb-section d-print-none">
           <div class="alert alert-light d-flex align-items-center" role="alert">
-            <i class="ofi-info-circle-fill me-2" aria-label="Info:"></i>
+            <span class="me-2">
+              {{< icon name="info-circle-fill" ariaLabel="Info">}}
+            </span>
             <div>
               Verantwortlich für diesen Inhalt: Guidle AG<br>
               <a href="#" class="alert-link">Fehler melden</a> (ID: f4e7fb73-1e13-47ab-a0a0-040b2e711624)<br>

@@ -21,11 +21,11 @@ language: de
     <div class="col-auto">
       <div>
         <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#share-modal" aria-labelledby="share-modal-label">
-          <i class="ofi-share"></i>
+          {{< icon name="share" >}}
           <span class="d-none d-lg-inline">Teilen</span>
         </button>
         <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
-          <i class="ofi-heart-fill"></i>
+          {{< icon name="heart-fill" >}}
           <span class="d-none d-lg-inline">Merken</span>
         </button>
       </div>
@@ -47,7 +47,7 @@ language: de
         <div class="col-12 d-print-none">
           <div class="row align-items-end justify-content-between">
             <div class="col-auto d-none d-lg-block">
-              <p class="mb-3 fw-bold"><i class="ofi-funnel-fill"></i> Filter</p>
+              <p class="mb-3 fw-bold">{{< icon name="funnel-fill" >}} Filter</p>
             </div>
             <div class="col-lg-auto">
               <div class="mb-3">
@@ -65,10 +65,10 @@ language: de
                     <div class="form-label">Ansicht</div>
 
                     <div class="btn-group">
-                      <button class="btn btn-icon btn-outline-primary" type="button"><i class="ofi-grid-fill"></i>
+                      <button class="btn btn-icon btn-outline-primary" type="button">{{< icon name="grid-fill" >}}
                       </button>
-                      <button class="btn btn-icon btn-primary" type="button"><i class="ofi-list"></i></button>
-                      <button class="btn btn-icon btn-outline-primary" type="button"><i class="ofi-map-fill"></i>
+                      <button class="btn btn-icon btn-primary" type="button">{{< icon name="list" >}}</button>
+                      <button class="btn btn-icon btn-outline-primary" type="button">{{< icon name="map-fill" >}}
                       </button>
                     </div>
                   </div>
@@ -84,7 +84,7 @@ language: de
               <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse"
                       data-bs-target="#poi-list-list-view-filters-mobile" aria-expanded="false"
                       aria-controls="poi-list-list-view-filters-mobile">
-                <i class="ofi-funnel-fill"></i> Filter
+                {{< icon name="funnel-fill" >}} Filter
               </button>
             </div>
             <div class="collapse" id="poi-list-list-view-filters-mobile"></div>
@@ -108,8 +108,7 @@ language: de
                           <div class="col">
                             <label for="poi-list-list-view-filter-location" class="form-label">Ort</label>
                             <div class="input-group">
-                              <button class="btn btn-icon btn-outline-secondary" type="button"><i
-                                class="ofi-geo-alt-fill"></i></button>
+                              <button class="btn btn-icon btn-outline-secondary" type="button">{{< icon name="geo-alt-fill" >}}</button>
                               <input type="text" id="poi-list-list-view-filter-location" class="form-control"
                                      placeholder="St.Gallen">
                             </div>
@@ -381,11 +380,11 @@ language: de
                   <h4 class="card-title"><a href="#" class="stretched-link">Hotel Zweistein</a></h4>
                   <div class="card-title-star">
                     <div class="rating rating-sm">
-                      <i class="star-on-png"></i>
-                      <i class="star-on-png"></i>
-                      <i class="star-on-png"></i>
-                      <i class="star-on-png"></i>
-                      <i class="star-half-png"></i>
+                      <i class="star-on"></i>
+                      <i class="star-on"></i>
+                      <i class="star-on"></i>
+                      <i class="star-on"></i>
+                      <i class="star-half"></i>
                     </div>
                   </div>
                 </div>
@@ -401,7 +400,7 @@ language: de
                 </div>
                 <div class="user-rating">
                   <div class="user-rating__icon">
-                    <i class="ofi-people-fill"></i>
+                    {{< icon name="people-fill" >}}
                   </div>
                   <div class="user-rating__label">Gäste-Rating:</div>
                   <div class="user-rating__score">
@@ -419,13 +418,13 @@ language: de
                 </div>
                 <div class="card-action__buttons d-print-none">
                   <button type="button" class="btn btn-icon btn-primary">
-                    <i class="ofi-cart-fill"></i>
+                    {{< icon name="cart-fill" >}}
                   </button>
                   <button type="button" class="btn btn-icon btn-primary">
-                    <i class="ofi-heart-fill"></i>
+                    {{< icon name="heart-fill" >}}
                   </button>
                   <button type="button" class="btn btn-icon btn-primary stretched-link">
-                    Mehr <i class="ofi-arrow-right"></i>
+                    Mehr {{< icon name="arrow-right" >}}
                   </button>
                 </div>
               </div>
@@ -461,11 +460,11 @@ language: de
                   <h4 class="card-title"><a href="#" class="stretched-link">Hotel Bergblick</a></h4>
                   <div class="card-title-star">
                     <div class="rating rating-sm">
-                      <i class="star-on-png"></i>
-                      <i class="star-on-png"></i>
-                      <i class="star-on-png"></i>
-                      <i class="star-off-png"></i>
-                      <i class="star-off-png"></i>
+                      <i class="star-on"></i>
+                      <i class="star-on"></i>
+                      <i class="star-on"></i>
+                      <i class="star-off"></i>
+                      <i class="star-off"></i>
                     </div>
                   </div>
                 </div>
@@ -480,7 +479,7 @@ language: de
                 </div>
                 <div class="user-rating">
                   <div class="user-rating__icon">
-                    <i class="ofi-people-fill"></i>
+                    {{< icon name="people-fill" >}}
                   </div>
                   <div class="user-rating__label">Gäste-Rating:</div>
                   <div class="user-rating__score">
@@ -498,13 +497,13 @@ language: de
                 </div>
                 <div class="card-action__buttons d-print-none">
                   <button type="button" class="btn btn-icon btn-primary">
-                    <i class="ofi-cart-fill"></i>
+                    {{< icon name="cart-fill" >}}
                   </button>
                   <button type="button" class="btn btn-icon btn-primary">
-                    <i class="ofi-heart-fill"></i>
+                    {{< icon name="heart-fill" >}}
                   </button>
                   <button type="button" class="btn btn-icon btn-primary stretched-link">
-                    Mehr <i class="ofi-arrow-right"></i>
+                    Mehr {{< icon name="arrow-right" >}}
                   </button>
                 </div>
               </div>
@@ -544,7 +543,7 @@ language: de
                 </div>
                 <div class="user-rating">
                   <div class="user-rating__icon">
-                    <i class="ofi-people-fill"></i>
+                    {{< icon name="people-fill" >}}
                   </div>
                   <div class="user-rating__label">Gäste-Rating:</div>
                   <div class="user-rating__score">
@@ -562,13 +561,13 @@ language: de
                 </div>
                 <div class="card-action__buttons d-print-none">
                   <button type="button" class="btn btn-icon btn-primary">
-                    <i class="ofi-cart-fill"></i>
+                    {{< icon name="cart-fill" >}}
                   </button>
                   <button type="button" class="btn btn-icon btn-primary">
-                    <i class="ofi-heart-fill"></i>
+                    {{< icon name="heart-fill" >}}
                   </button>
                   <button type="button" class="btn btn-icon btn-primary stretched-link">
-                    Mehr <i class="ofi-arrow-right"></i>
+                    Mehr {{< icon name="arrow-right" >}}
                   </button>
                 </div>
               </div>
@@ -603,11 +602,11 @@ language: de
                   <h4 class="card-title"><a href="#" class="stretched-link">Seehotel Rorschach</a></h4>
                   <div class="card-title-star">
                     <div class="rating rating-sm">
-                      <i class="star-on-png"></i>
-                      <i class="star-on-png"></i>
-                      <i class="star-on-png"></i>
-                      <i class="star-on-png"></i>
-                      <i class="star-off-png"></i>
+                      <i class="star-on"></i>
+                      <i class="star-on"></i>
+                      <i class="star-on"></i>
+                      <i class="star-on"></i>
+                      <i class="star-off"></i>
                     </div>
                   </div>
                 </div>
@@ -623,7 +622,7 @@ language: de
                 </div>
                 <div class="user-rating">
                   <div class="user-rating__icon">
-                    <i class="ofi-people-fill"></i>
+                    {{< icon name="people-fill" >}}
                   </div>
                   <div class="user-rating__label">Gäste-Rating:</div>
                   <div class="user-rating__score">
@@ -641,13 +640,13 @@ language: de
                 </div>
                 <div class="card-action__buttons d-print-none">
                   <button type="button" class="btn btn-icon btn-primary">
-                    <i class="ofi-cart-fill"></i>
+                    {{< icon name="cart-fill" >}}
                   </button>
                   <button type="button" class="btn btn-icon btn-primary">
-                    <i class="ofi-heart-fill"></i>
+                    {{< icon name="heart-fill" >}}
                   </button>
                   <button type="button" class="btn btn-icon btn-primary stretched-link">
-                    Mehr <i class="ofi-arrow-right"></i>
+                    Mehr {{< icon name="arrow-right" >}}
                   </button>
                 </div>
               </div>
@@ -687,11 +686,11 @@ language: de
                   <h4 class="card-title"><a href="#" class="stretched-link">Business Hotel Uzwil</a></h4>
                   <div class="card-title-star">
                     <div class="rating rating-sm">
-                      <i class="star-on-png"></i>
-                      <i class="star-on-png"></i>
-                      <i class="star-on-png"></i>
-                      <i class="star-on-png"></i>
-                      <i class="star-off-png"></i>
+                      <i class="star-on"></i>
+                      <i class="star-on"></i>
+                      <i class="star-on"></i>
+                      <i class="star-on"></i>
+                      <i class="star-off"></i>
                     </div>
                   </div>
                 </div>
@@ -705,7 +704,7 @@ language: de
                 </div>
                 <div class="user-rating">
                   <div class="user-rating__icon">
-                    <i class="ofi-people-fill"></i>
+                    {{< icon name="people-fill" >}}
                   </div>
                   <div class="user-rating__label">Gäste-Rating:</div>
                   <div class="user-rating__score">
@@ -723,13 +722,13 @@ language: de
                 </div>
                 <div class="card-action__buttons d-print-none">
                   <button type="button" class="btn btn-icon btn-primary">
-                    <i class="ofi-cart-fill"></i>
+                    {{< icon name="cart-fill" >}}
                   </button>
                   <button type="button" class="btn btn-icon btn-primary">
-                    <i class="ofi-heart-fill"></i>
+                    {{< icon name="heart-fill" >}}
                   </button>
                   <button type="button" class="btn btn-icon btn-primary stretched-link">
-                    Mehr <i class="ofi-arrow-right"></i>
+                    Mehr {{< icon name="arrow-right" >}}
                   </button>
                 </div>
               </div>
@@ -739,7 +738,7 @@ language: de
           <div class="d-print-none">
             <nav class="pagination-dropdown mt-3" aria-label="POI list pagination">
               <button class="btn btn-square btn-primary">
-                <i class="ofi-caret-left-fill"></i>
+                {{< icon name="caret-left-fill" >}}
               </button>
 
               <label for="poi-list-list-view-pagination" class="visually-hidden">Seite 1/3</label>
@@ -750,7 +749,7 @@ language: de
               </select>
 
               <button class="btn btn-square btn-primary">
-                <i class="ofi-caret-right-fill"></i>
+                {{< icon name="caret-right-fill" >}}
               </button>
             </nav>
           </div>

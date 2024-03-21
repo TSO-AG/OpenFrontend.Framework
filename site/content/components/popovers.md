@@ -157,7 +157,7 @@ You can use the dedicated markup to display the popover content:
           <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
           <a href="#" class="icon-link icon-link-hover stretched-link">
             <span class="icon-link-text">Read more</span>
-            <i class="ofi-arrow-right"></i>
+            {{< icon name="arrow-right" >}}
           </a>
         </div>
       </div>
@@ -165,7 +165,7 @@ You can use the dedicated markup to display the popover content:
   </div>
 </div>
 
-```html
+{{< example show_preview="false" >}}
 <div class="popover-content">
   <figure class="popover-content-image">
     <img src="assets/media/sample-image.jpg" alt="">
@@ -176,11 +176,12 @@ You can use the dedicated markup to display the popover content:
     <p>Join us Wednesday afternoons for yoga during your lunch break. Leave the building stress of work at the door and find the center of your breath as we practice vinyasa […]</p>
     <a href="#" class="icon-link icon-link-hover stretched-link">
       <span class="icon-link-text">Read more</span>
-      <i class="ofi-arrow-right"></i>
+      {{< icon name="arrow-right" >}}
     </a>
   </div>
 </div>
-```
+{{< /example >}}
+
 
 ### Horizontal layout
 
@@ -201,7 +202,7 @@ For the content that requires a box wider than higher (like map pin tooltips), y
           <p>Join us Wednesday afternoons for yoga during your lunch […]</p>
           <a href="#" class="icon-link icon-link-hover stretched-link">
             <span class="icon-link-text">View details</span>
-            <i class="ofi-arrow-right"></i>
+            {{< icon name="arrow-right" >}}
           </a>
         </div>
       </div>
@@ -209,7 +210,7 @@ For the content that requires a box wider than higher (like map pin tooltips), y
   </div>
 </div>
 
-```html
+{{< example show_preview="false" >}}
 <div class="popover-content popover-content-horizontal">
   <figure class="popover-content-image">
     <img src="assets/media/sample-image.jpg" alt="">
@@ -221,12 +222,11 @@ For the content that requires a box wider than higher (like map pin tooltips), y
     <p>Join us Wednesday afternoons for yoga during your lunch […]</p>
     <a href="#" class="icon-link icon-link-hover stretched-link">
       <span class="icon-link-text">View details</span>
-      <i class="ofi-arrow-right"></i>
+      {{< icon name="arrow-right" >}}
     </a>
   </div>
 </div>
-```
-
+{{< /example >}}
 
 ## CSS
 

@@ -15,7 +15,7 @@ It's particularly useful for showcasing contact information, such as phone numbe
 {{< example >}}
 <div class="icon-box">
   <div class="icon-box-icon">
-    <i class="ofi-star-fill"></i>
+    {{< icon name="star-fill" >}}
   </div>
   <div class="icon-box-content">
     Lorem ipsum dolor sit amet
@@ -29,7 +29,7 @@ It's particularly useful for showcasing contact information, such as phone numbe
 
 <div class="icon-box">
   <div class="icon-box-icon">
-    <i class="ofi-geo-alt-fill"></i>
+    {{< icon name="geo-alt-fill" >}}
   </div>
   <div class="icon-box-content">
     TSO AG<br>
@@ -47,7 +47,7 @@ It's particularly useful for showcasing contact information, such as phone numbe
 
 <div class="icon-box">
   <div class="icon-box-icon">
-    <i class="ofi-telephone-fill"></i>
+    {{< icon name="telephone-fill" >}}
   </div>
   <div class="icon-box-content">
     <div>+41 71 274 99 19</div>
@@ -57,7 +57,7 @@ It's particularly useful for showcasing contact information, such as phone numbe
 
 <div class="icon-box">
   <div class="icon-box-icon">
-    <i class="ofi-at-fill"></i>
+    {{< icon name="at-fill" >}}
   </div>
   <div class="icon-box-content">
     <div><a href="mailto:info@tso.ch">info@tso.ch</a></div>
@@ -73,7 +73,7 @@ It's particularly useful for showcasing contact information, such as phone numbe
 
 <div class="icon-box">
   <div class="icon-box-icon">
-    <i class="ofi-geo-alt-fill"></i>
+    {{< icon name="geo-alt-fill" >}}
   </div>
   <div class="icon-box-content">
     TSO AG<br>
@@ -85,7 +85,7 @@ It's particularly useful for showcasing contact information, such as phone numbe
 
 <div class="icon-box">
   <div class="icon-box-icon">
-    <i class="ofi-telephone-fill"></i>
+    {{< icon name="telephone-fill" >}}
   </div>
   <div class="icon-box-content">
     <div>+41 71 274 99 19</div>
@@ -95,7 +95,7 @@ It's particularly useful for showcasing contact information, such as phone numbe
 
 <div class="icon-box">
   <div class="icon-box-icon">
-    <i class="ofi-at-fill"></i>
+    {{< icon name="at-fill" >}}
   </div>
   <div class="icon-box-content">
     <div><a href="mailto:info@tso.ch">info@tso.ch</a></div>
@@ -114,7 +114,7 @@ To vertically center the content and the icon with respect to each other, simply
 
 <div class="icon-box icon-box-center">
   <div class="icon-box-icon">
-    <i class="ofi-telephone-fill"></i>
+    {{< icon name="telephone-fill" >}}
   </div>
   <div class="icon-box-content">
     <div>+41 71 274 99 19</div>
@@ -124,7 +124,8 @@ To vertically center the content and the icon with respect to each other, simply
 
 <div class="icon-box icon-box-center">
   <div class="icon-box-icon">
-    <i class="ofi-at-fill"></i>
+    [//]: # (TODO - add icon at-fill)
+    {{< icon name="at-fill" >}}
   </div>
   <div class="icon-box-content">
     <div><a href="mailto:info@tso.ch">info@tso.ch</a></div>

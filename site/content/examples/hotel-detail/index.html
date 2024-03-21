@@ -20,11 +20,11 @@ language: de
     <div class="col-auto">
       <div>
         <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#share-modal" aria-labelledby="share-modal-label">
-          <i class="ofi-share"></i>
+          {{< icon name="share" >}}
           <span class="d-none d-lg-inline">Teilen</span>
         </button>
         <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
-          <i class="ofi-heart-fill"></i>
+          {{< icon name="heart-fill" >}}
           <span class="d-none d-lg-inline">Merken</span>
         </button>
       </div>
@@ -37,11 +37,11 @@ language: de
     <div class="d-flex">
       <h1>Hotel Zweistein</h1>
       <div class="rating rating-sm">
-        <i class="star-on-png"></i>
-        <i class="star-on-png"></i>
-        <i class="star-on-png"></i>
-        <i class="star-on-png"></i>
-        <i class="star-half-png"></i>
+        <i class="star-on"></i>
+        <i class="star-on"></i>
+        <i class="star-on"></i>
+        <i class="star-on"></i>
+        <i class="star-half"></i>
       </div>
     </div>
 
@@ -215,10 +215,10 @@ language: de
 
             <div class="carousel-navigation">
               <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-10">
-                <i class="ofi-caret-left-fill"></i>
+                {{< icon name="caret-left-fill" >}}
               </button>
               <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-10">
-                <i class="ofi-caret-right-fill"></i>
+                {{< icon name="caret-right-fill" >}}
               </button>
             </div>
           </div>
@@ -265,7 +265,7 @@ language: de
               <button class="nav-link" id="poi-detail-live" data-bs-toggle="tab" data-bs-target="#poi-detail-live-pane" type="button" role="tab" aria-controls="poi-detail-live-pane" aria-selected="false">Live Camera 360°</button>
             </li>
             <li class="nav-item ms-auto" role="presentation">
-              <button class="nav-link icon-link" data-of-lightbox-open="media:0">Alle Medien anzeigen <i class="ofi-arrow-right"></i></button>
+              <button class="nav-link icon-link" data-of-lightbox-open="media:0">Alle Medien anzeigen {{< icon name="arrow-right" >}}</button>
             </li>
           </ul>
 
@@ -641,7 +641,7 @@ language: de
 
           <div class="user-rating mb-element">
             <div class="user-rating__icon">
-              <i class="ofi-people-fill"></i>
+              {{< icon name="people-fill" >}}
             </div>
             <div class="user-rating__label">Gäste-Rating:</div>
             <div class="user-rating__score">
@@ -771,7 +771,9 @@ language: de
 
         <div class="mb-section d-print-none">
           <div class="alert alert-light d-flex align-items-center" role="alert">
-            <i class="ofi-info-circle-fill me-2" aria-label="Info:"></i>
+            <span class="me-2">
+              {{< icon name="info-circle-fill" class="me-2" ariaLabel="Info:">}}
+            </span>
             <div>
               Verantwortlich für diesen Inhalt: Demo Destination AG<br>
               <a href="#" class="alert-link">Fehler melden</a> (ID: f4e7fb73-1e13-47ab-a0a0-040b2e711624)<br>
@@ -797,10 +799,10 @@ language: de
         <div>
           <div class="carousel-navigation">
             <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-3">
-              <i class="ofi-caret-left-fill"></i>
+              {{< icon name="caret-left-fill" >}}
             </button>
             <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-3">
-              <i class="ofi-caret-right-fill"></i>
+              {{< icon name="caret-right-fill" >}}
             </button>
           </div>
         </div>
@@ -856,11 +858,11 @@ language: de
                     <h4 class="card-title"><a href="#" class="stretched-link">Hotel Bergblick</a></h4>
                     <div class="card-title-star">
                       <div class="rating rating-sm">
-                        <i class="star-on-png"></i>
-                        <i class="star-on-png"></i>
-                        <i class="star-on-png"></i>
-                        <i class="star-off-png"></i>
-                        <i class="star-off-png"></i>
+                        <i class="star-on"></i>
+                        <i class="star-on"></i>
+                        <i class="star-on"></i>
+                        <i class="star-off"></i>
+                        <i class="star-off"></i>
                       </div>
                     </div>
                   </div>
@@ -873,7 +875,7 @@ language: de
                   </div>
                   <div class="user-rating">
                     <div class="user-rating__icon">
-                      <i class="ofi-people-fill"></i>
+                      {{< icon name="people-fill" >}}
                     </div>
                     <div class="user-rating__label">User-Rating:</div>
                     <div class="user-rating__score">
@@ -891,10 +893,10 @@ language: de
                   </div>
                   <div class="card-action__buttons">
                     <button type="button" class="btn btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
-                      <i class="ofi-heart-fill"></i>
+                      {{< icon name="heart-fill" >}}
                     </button>
                     <button type="button" class="btn btn-icon btn-primary stretched-link">
-                      Mehr <i class="ofi-arrow-right"></i>
+                      Mehr {{< icon name="arrow-right" >}}
                     </button>
                   </div>
                 </div>
@@ -909,7 +911,7 @@ language: de
                   </div>
                   <div class="card-media__content card-media__content--top-left">
                         <span class="icon-circle icon-circle-primary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Demo Destination Premium-Partner">
-                                <i class="ofi-star-fill"></i>
+                                {{< icon name="star-fill" >}}
                         </span>
                   </div>
                   <div class="card-media__content card-media__content--top-right">
@@ -932,11 +934,11 @@ language: de
                     <h4 class="card-title"><a href="#" class="stretched-link">Seehotel Rorschach</a></h4>
                     <div class="card-title-star">
                       <div class="rating rating-sm">
-                        <i class="star-on-png"></i>
-                        <i class="star-on-png"></i>
-                        <i class="star-on-png"></i>
-                        <i class="star-on-png"></i>
-                        <i class="star-off-png"></i>
+                        <i class="star-on"></i>
+                        <i class="star-on"></i>
+                        <i class="star-on"></i>
+                        <i class="star-on"></i>
+                        <i class="star-off"></i>
                       </div>
                     </div>
                   </div>
@@ -951,7 +953,7 @@ language: de
                   </div>
                   <div class="user-rating">
                     <div class="user-rating__icon">
-                      <i class="ofi-people-fill"></i>
+                      {{< icon name="people-fill" >}}
                     </div>
                     <div class="user-rating__label">Gäste-Rating:</div>
                     <div class="user-rating__score">
@@ -969,10 +971,10 @@ language: de
                   </div>
                   <div class="card-action__buttons">
                     <button type="button" class="btn btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
-                      <i class="ofi-heart-fill"></i>
+                      {{< icon name="heart-fill" >}}
                     </button>
                     <button type="button" class="btn btn-icon btn-primary stretched-link">
-                      Mehr <i class="ofi-arrow-right"></i>
+                      Mehr {{< icon name="arrow-right" >}}
                     </button>
                   </div>
                 </div>
@@ -1008,11 +1010,11 @@ language: de
                     <h4 class="card-title"><a href="#" class="stretched-link">Business Hotel Uzwil</a></h4>
                     <div class="card-title-star">
                       <div class="rating rating-sm">
-                        <i class="star-on-png"></i>
-                        <i class="star-on-png"></i>
-                        <i class="star-on-png"></i>
-                        <i class="star-on-png"></i>
-                        <i class="star-off-png"></i>
+                        <i class="star-on"></i>
+                        <i class="star-on"></i>
+                        <i class="star-on"></i>
+                        <i class="star-on"></i>
+                        <i class="star-off"></i>
                       </div>
                     </div>
                   </div>
@@ -1025,7 +1027,7 @@ language: de
                   </div>
                   <div class="user-rating">
                     <div class="user-rating__icon">
-                      <i class="ofi-people-fill"></i>
+                      {{< icon name="people-fill" >}}
                     </div>
                     <div class="user-rating__label">Gäste-Rating:</div>
                     <div class="user-rating__score">
@@ -1043,10 +1045,10 @@ language: de
                   </div>
                   <div class="card-action__buttons">
                     <button type="button" class="btn btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
-                      <i class="ofi-heart-fill"></i>
+                      {{< icon name="heart-fill" >}}
                     </button>
                     <button type="button" class="btn btn-icon btn-primary stretched-link">
-                      Mehr <i class="ofi-arrow-right"></i>
+                      Mehr {{< icon name="arrow-right" >}}
                     </button>
                   </div>
                 </div>
@@ -1086,7 +1088,7 @@ language: de
                   </div>
                   <div class="user-rating">
                     <div class="user-rating__icon">
-                      <i class="ofi-people-fill"></i>
+                      {{< icon name="people-fill" >}}
                     </div>
                     <div class="user-rating__label">Gäste-Rating:</div>
                     <div class="user-rating__score">
@@ -1104,10 +1106,10 @@ language: de
                   </div>
                   <div class="card-action__buttons">
                     <button type="button" class="btn btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
-                      <i class="ofi-heart-fill"></i>
+                      {{< icon name="heart-fill" >}}
                     </button>
                     <button type="button" class="btn btn-icon btn-primary stretched-link">
-                      Mehr <i class="ofi-arrow-right"></i>
+                      Mehr {{< icon name="arrow-right" >}}
                     </button>
                   </div>
                 </div>
@@ -1142,7 +1144,7 @@ language: de
                   </div>
                   <div class="user-rating">
                     <div class="user-rating__icon">
-                      <i class="ofi-people-fill"></i>
+                      {{< icon name="people-fill" >}}
                     </div>
                     <div class="user-rating__label">Gäste-Rating:</div>
                     <div class="user-rating__score">
@@ -1156,10 +1158,10 @@ language: de
                   </div>
                   <div class="card-action__buttons">
                     <button type="button" class="btn btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
-                      <i class="ofi-heart-fill"></i>
+                      {{< icon name="heart-fill" >}}
                     </button>
                     <button type="button" class="btn btn-icon btn-primary stretched-link">
-                      Mehr <i class="ofi-arrow-right"></i>
+                      Mehr {{< icon name="arrow-right" >}}
                     </button>
                   </div>
                 </div>
@@ -1200,10 +1202,10 @@ language: de
                   </div>
                   <div class="card-action__buttons">
                     <button type="button" class="btn btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
-                      <i class="ofi-heart-fill"></i>
+                      {{< icon name="heart-fill" >}}
                     </button>
                     <button type="button" class="btn btn-icon btn-primary stretched-link">
-                      Mehr <i class="ofi-arrow-right"></i>
+                      Mehr {{< icon name="arrow-right" >}}
                     </button>
                   </div>
                 </div>

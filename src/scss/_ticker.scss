@@ -59,6 +59,10 @@
 
 .ticker-icon {
   margin-right: var(--#{$prefix}ticker-icon-spacing);
+
+  svg {
+    @extend .of-icon;
+  }
 }
 
 .ticker-link {

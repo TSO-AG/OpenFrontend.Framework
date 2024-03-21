@@ -8,31 +8,20 @@ toc: true
 
 ## Simple icon
 
-To insert your own icon, you can use the following code:
+To insert your own icon, you can either reference an icon from a sprite file or directly include the SVG path in your HTML. Below are two examples demonstrating these approaches.
+Using the `of-icon` class, these icons will adapt to the color and size of their parent element, making them versatile and easy to incorporate into various parts of your UI.
 
+Direct SVG path inclusion:
 {{< example >}}
-<i class="ofi-question-circle-fill"></i>
-{{< /example >}}
-In this code, `ofi-` is a constant prefix. The part that comes after it, in this case `question-circle-fill`, represents the name of the icon. You can replace `question-circle-fill` with the name of any other icon you wish to use.
-
-## All icons
-
-The list of all available icons is below:
-
-{{< callout info >}}
-In OpenFrontend.Framework, we chose to use a limited set of icons based on [Bootstrap Icons](https://icons.getbootstrap.com). Our selected icon set is optimized and includes only the essential icons necessary for the efficient functioning of the OpenFrontend Framework.
-{{< /callout >}}
-
-{{< icon-list >}}
-
-## Circle icon
-
-You can use the `.icon-circle` class along with a color variant modifier, such as `.icon-circle-primary`, to display a round icon with a colored background.
-{{< example >}}
-<span class="icon-circle icon-circle-primary"><i class="ofi-question-circle-fill"></i></span>
+<svg xmlns="http://www.w3.org/2000/svg" class="of-icon">
+<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+</svg>
 {{< /example >}}
 
-The `.icon-circle` class is intended to be used in conjunction with our icon circle variants, or to serve as a basis for your own custom styles.
+Referencing an SVG sprite:
+{{< example >}}
+{{< icon name="question-circle-fill" >}}
+{{< /example >}}
 
 ### Variants
 
@@ -41,7 +30,7 @@ OpenFrontend.Framework includes several icon circle variants, each serving its o
 {{< example >}}
 {{< icon.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
-<span class="icon-circle icon-circle-{{ .name }}"><i class="ofi-question-circle-fill"></i></span>
+<span class="icon-circle icon-circle-{{ .name }}">{{ partial "icon" (dict "name" "question-circle-fill") }}</span>
 {{- end -}}
 {{< /icon.inline >}}
 {{< /example >}}
@@ -51,13 +40,13 @@ OpenFrontend.Framework includes several icon circle variants, each serving its o
 Do you prefer larger or smaller circle icons? You can add `.icon-circle-lg` for a larger size or `.icon-circle-sm` for a smaller size.
 
 {{< example >}}
-<span class="icon-circle icon-circle-primary icon-circle-lg"><i class="ofi-question-circle-fill"></i></span>
-<span class="icon-circle icon-circle-secondary icon-circle-lg"><i class="ofi-question-circle-fill"></i></span>
+<span class="icon-circle icon-circle-primary icon-circle-lg">{{< icon name="question-circle-fill" >}}</span>
+<span class="icon-circle icon-circle-secondary icon-circle-lg">{{< icon name="question-circle-fill" >}}</span>
 {{< /example >}}
 
 {{< example >}}
-<span class="icon-circle icon-circle-primary icon-circle-sm"><i class="ofi-question-circle-fill"></i></span>
-<span class="icon-circle icon-circle-secondary icon-circle-sm"><i class="ofi-question-circle-fill"></i></span>
+<span class="icon-circle icon-circle-primary icon-circle-sm">{{< icon name="question-circle-fill" >}}</span>
+<span class="icon-circle icon-circle-secondary icon-circle-sm">{{< icon name="question-circle-fill" >}}</span>
 {{< /example >}}
 
 You can even roll your own custom sizing with CSS variables:
@@ -66,12 +55,12 @@ You can even roll your own custom sizing with CSS variables:
 
 <span class="icon-circle icon-circle-primary"
 style="--bs-icon-circle-padding: 0.25rem; --bs-icon-circle-font-size: 1.5rem;">
-<i class="ofi-question-circle-fill"></i>
+{{< icon name="question-circle-fill" >}}
 </span>
 
 <span class="icon-circle icon-circle-primary"
 style="--bs-icon-circle-padding: 1rem; --bs-icon-circle-font-size: 1.5rem;">
-<i class="ofi-question-circle-fill"></i>
+{{< icon name="question-circle-fill" >}}
 </span>
 {{< /example >}}
 
@@ -88,7 +77,7 @@ Each `.icon-circle-*` modifier class updates the appropriate CSS variables to mi
 Here's an example of building a custom `.icon-circle-*` modifier class.
 
 <div class="bd-example">
-  <button type="button" class="icon-circle icon-circle-bd-primary"><i class="ofi-question-circle-fill"></i></button>
+  <button type="button" class="icon-circle icon-circle-bd-primary">{{< icon name="question-circle-fill" >}}</button>
 </div>
 
 {{< scss-docs name="icon-circle-css-vars-example" file="site/assets/scss/_icons.scss" >}}

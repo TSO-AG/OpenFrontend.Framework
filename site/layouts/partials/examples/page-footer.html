@@ -54,25 +54,25 @@
         <ul class="social-links">
           <li>
             <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Instagram">
-              <span class="social-link-icon"><i class="ofi-instagram"></i></span>
+              <span class="social-link-icon">{{ partial "icon" (dict "name" "instagram") }}</span>
               <span class="visually-hidden">Instagram</span>
             </a>
           </li>
           <li>
             <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Facebook">
-              <span class="social-link-icon"><i class="ofi-facebook"></i></span>
+              <span class="social-link-icon">{{ partial "icon" (dict "name" "facebook") }}</span>
               <span class="visually-hidden">Facebook</span>
             </a>
           </li>
           <li>
             <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="TikTok">
-              <span class="social-link-icon"><i class="ofi-tiktok"></i></span>
+              <span class="social-link-icon">{{ partial "icon" (dict "name" "tiktok") }}</span>
               <span class="visually-hidden">TikTok</span>
             </a>
           </li>
           <li>
             <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="YouTube">
-              <span class="social-link-icon"><i class="ofi-youtube"></i></span>
+              <span class="social-link-icon">{{ partial "icon" (dict "name" "youtube") }}</span>
               <span class="visually-hidden">YouTube</span>
             </a>
           </li>
@@ -174,31 +174,31 @@
         <ul class="social-links social-links-lg mb-3">
           <li>
             <a href="#" class="social-link">
-              <span class="social-link-icon"><i class="ofi-qr-code"></i></span>
+              <span class="social-link-icon">{{ partial "icon" (dict "name" "qr-code") }}</span>
               <span class="social-link-label">QR-Code</span>
             </a>
           </li>
           <li>
             <a href="#" class="social-link">
-              <span class="social-link-icon"><i class="ofi-instagram"></i></span>
+              <span class="social-link-icon">{{ partial "icon" (dict "name" "instagram") }}</span>
               <span class="social-link-label">Instagram</span>
             </a>
           </li>
           <li>
             <a href="#" class="social-link">
-              <span class="social-link-icon"><i class="ofi-facebook"></i></span>
+              <span class="social-link-icon">{{ partial "icon" (dict "name" "facebook") }}</span>
               <span class="social-link-label">Facebook</span>
             </a>
           </li>
           <li>
             <a href="#" class="social-link">
-              <span class="social-link-icon"><i class="ofi-tiktok"></i></span>
+              <span class="social-link-icon">{{ partial "icon" (dict "name" "tiktok") }}</span>
               <span class="social-link-label">TikTok</span>
             </a>
           </li>
           <li>
             <a href="#" class="social-link">
-              <span class="social-link-icon"><i class="ofi-youtube"></i></span>
+              <span class="social-link-icon">{{ partial "icon" (dict "name" "youtube") }}</span>
               <span class="social-link-label">YouTube</span>
             </a>
           </li>
@@ -206,7 +206,7 @@
 
         <div class="input-group">
           <input type="text" class="form-control" value="https://demo-destination.tld/de/" aria-label="URL kopieren" readonly>
-          <button type="button" class="btn btn-icon btn-primary"><i class="ofi-copy"></i></button>
+          <button type="button" class="btn btn-icon btn-primary">{{ partial "icon" (dict "name" "copy") }}</button>
         </div>
       </div>
     </div>
@@ -240,7 +240,7 @@
         </div>
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Neue Favoritenliste anlegen" aria-label="Neue Favoritenliste anlegen">
-          <button type="button" class="btn btn-icon btn-primary"><i class="ofi-plus"></i></button>
+          <button type="button" class="btn btn-icon btn-primary">{{ partial "icon" (dict "name" "plus") }}</button>
         </div>
       </div>
     </div>

@@ -102,49 +102,49 @@ If you need to, you can add an icon to the buttons. Simply add the `btn-icon` cl
 {{< example >}}
 <p>
   <button type="button" class="btn btn-icon btn-primary">
-    <i class="ofi-cart-fill"></i> Add to cart
+    {{< icon name="cart-fill" >}} Add to cart
   </button>
   <button type="button" class="btn btn-icon btn-primary">
-    More <i class="ofi-arrow-right"></i>
+    More {{< icon name="arrow-right" >}}
   </button>
   <button type="button" class="btn btn-icon btn-primary">
-    <i class="ofi-heart-fill"></i>
+    {{< icon name="heart-fill" >}}
   </button>
 </p>
 
 <p>
   <button type="button" class="btn btn-icon btn-outline-primary">
-    <i class="ofi-cart-fill"></i> Add to cart
+    {{< icon name="cart-fill" >}} Add to cart
   </button>
   <button type="button" class="btn btn-icon btn-outline-primary">
-    More <i class="ofi-arrow-right"></i>
+    More {{< icon name="arrow-right" >}}
   </button>
   <button type="button" class="btn btn-icon btn-outline-primary">
-    <i class="ofi-heart-fill"></i>
+    {{< icon name="heart-fill" >}}
   </button>
 </p>
 
 <p>
   <button type="button" class="btn btn-icon btn-primary btn-lg">
-    <i class="ofi-cart-fill"></i> Add to cart
+    {{< icon name="cart-fill" >}} Add to cart
   </button>
   <button type="button" class="btn btn-icon btn-primary btn-lg">
-    More <i class="ofi-arrow-right"></i>
+    More {{< icon name="arrow-right" >}}
   </button>
   <button type="button" class="btn btn-icon btn-primary btn-lg">
-    <i class="ofi-heart-fill"></i>
+    {{< icon name="heart-fill" >}}
   </button>
 </p>
 
 <p>
   <button type="button" class="btn btn-icon btn-primary btn-sm">
-    <i class="ofi-cart-fill"></i> Add to cart
+    {{< icon name="cart-fill" >}} Add to cart
   </button>
   <button type="button" class="btn btn-icon btn-primary btn-sm">
-    More <i class="ofi-arrow-right"></i>
+    More {{< icon name="arrow-right" >}}
   </button>
   <button type="button" class="btn btn-icon btn-primary btn-sm">
-    <i class="ofi-heart-fill"></i>
+    {{< icon name="heart-fill" >}}
   </button>
 </p>
 
@@ -164,61 +164,61 @@ You can place a simple square button with equal width and height by adding the `
 {{< example >}}
 <p>
   <button type="button" class="btn btn-square btn-primary">
-    <i class="ofi-cart-fill"></i>
+    {{< icon name="cart-fill" >}}
   </button>
   <button type="button" class="btn btn-square btn-primary">
-    <i class="ofi-heart-fill"></i>
+    {{< icon name="heart-fill" >}}
   </button>
   <button type="button" class="btn btn-square btn-primary">
-    <i class="ofi-caret-left-fill"></i>
+    {{< icon name="caret-left-fill" >}}
   </button>
   <button type="button" class="btn btn-square btn-primary">
-    <i class="ofi-caret-right-fill"></i>
+    {{< icon name="caret-right-fill" >}}
   </button>
 </p>
 
 <p>
   <button type="button" class="btn btn-square btn-outline-primary">
-    <i class="ofi-cart-fill"></i>
+    {{< icon name="cart-fill" >}}
   </button>
   <button type="button" class="btn btn-square btn-outline-primary">
-    <i class="ofi-heart-fill"></i>
+    {{< icon name="heart-fill" >}}
   </button>
   <button type="button" class="btn btn-square btn-outline-primary">
-    <i class="ofi-caret-left-fill"></i>
+    {{< icon name="caret-left-fill" >}}
   </button>
   <button type="button" class="btn btn-square btn-outline-primary">
-    <i class="ofi-caret-right-fill"></i>
+    {{< icon name="caret-right-fill" >}}
   </button>
 </p>
 
 <p>
   <button type="button" class="btn btn-square btn-primary btn-lg">
-    <i class="ofi-cart-fill"></i>
+    {{< icon name="cart-fill" >}}
   </button>
   <button type="button" class="btn btn-square btn-primary btn-lg">
-    <i class="ofi-heart-fill"></i>
+    {{< icon name="heart-fill" >}}
   </button>
   <button type="button" class="btn btn-square btn-primary btn-lg">
-    <i class="ofi-caret-left-fill"></i>
+    {{< icon name="caret-left-fill" >}}
   </button>
   <button type="button" class="btn btn-square btn-primary btn-lg">
-    <i class="ofi-caret-right-fill"></i>
+    {{< icon name="caret-right-fill" >}}
   </button>
 </p>
 
 <p>
   <button type="button" class="btn btn-square btn-primary btn-sm">
-    <i class="ofi-cart-fill"></i>
+    {{< icon name="cart-fill" >}}
   </button>
   <button type="button" class="btn btn-square btn-primary btn-sm">
-    <i class="ofi-heart-fill"></i>
+    {{< icon name="heart-fill" >}}
   </button>
   <button type="button" class="btn btn-square btn-primary btn-sm">
-    <i class="ofi-caret-left-fill"></i>
+    {{< icon name="caret-left-fill" >}}
   </button>
   <button type="button" class="btn btn-square btn-primary btn-sm">
-    <i class="ofi-caret-right-fill"></i>
+    {{< icon name="caret-right-fill" >}}
   </button>
 </p>
 
@@ -231,61 +231,61 @@ You can place a simple circle button with equal width and height by adding the `
 {{< example >}}
 <p>
   <button type="button" class="btn btn-circle btn-primary">
-    <i class="ofi-cart-fill"></i>
+    {{< icon name="cart-fill" >}}
   </button>
   <button type="button" class="btn btn-circle btn-primary">
-    <i class="ofi-heart-fill"></i>
+    {{< icon name="heart-fill" >}}
   </button>
   <button type="button" class="btn btn-circle btn-primary">
-    <i class="ofi-caret-left-fill"></i>
+    {{< icon name="caret-left-fill" >}}
   </button>
   <button type="button" class="btn btn-circle btn-primary">
-    <i class="ofi-caret-right-fill"></i>
+    {{< icon name="caret-right-fill" >}}
   </button>
 </p>
 
 <p>
   <button type="button" class="btn btn-circle btn-outline-primary">
-    <i class="ofi-cart-fill"></i>
+    {{< icon name="cart-fill" >}}
   </button>
   <button type="button" class="btn btn-circle btn-outline-primary">
-    <i class="ofi-heart-fill"></i>
+    {{< icon name="heart-fill" >}}
   </button>
   <button type="button" class="btn btn-circle btn-outline-primary">
-    <i class="ofi-caret-left-fill"></i>
+    {{< icon name="caret-left-fill" >}}
   </button>
   <button type="button" class="btn btn-circle btn-outline-primary">
-    <i class="ofi-caret-right-fill"></i>
+    {{< icon name="caret-right-fill" >}}
   </button>
 </p>
 
 <p>
   <button type="button" class="btn btn-circle btn-primary btn-lg">
-    <i class="ofi-cart-fill"></i>
+    {{< icon name="cart-fill" >}}
   </button>
   <button type="button" class="btn btn-circle btn-primary btn-lg">
-    <i class="ofi-heart-fill"></i>
+    {{< icon name="heart-fill" >}}
   </button>
   <button type="button" class="btn btn-circle btn-primary btn-lg">
-    <i class="ofi-caret-left-fill"></i>
+    {{< icon name="caret-left-fill" >}}
   </button>
   <button type="button" class="btn btn-circle btn-primary btn-lg">
-    <i class="ofi-caret-right-fill"></i>
+    {{< icon name="caret-right-fill" >}}
   </button>
 </p>
 
 <p>
   <button type="button" class="btn btn-circle btn-primary btn-sm">
-    <i class="ofi-cart-fill"></i>
+    {{< icon name="cart-fill" >}}
   </button>
   <button type="button" class="btn btn-circle btn-primary btn-sm">
-    <i class="ofi-heart-fill"></i>
+    {{< icon name="heart-fill" >}}
   </button>
   <button type="button" class="btn btn-circle btn-primary btn-sm">
-    <i class="ofi-caret-left-fill"></i>
+    {{< icon name="caret-left-fill" >}}
   </button>
   <button type="button" class="btn btn-circle btn-primary btn-sm">
-    <i class="ofi-caret-right-fill"></i>
+    {{< icon name="caret-right-fill" >}}
   </button>
 </p>
 

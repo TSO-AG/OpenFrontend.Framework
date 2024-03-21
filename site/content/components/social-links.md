@@ -14,25 +14,25 @@ toc: true
 <ul class="social-links social-links-lg">
   <li>
     <a href="#" class="social-link">
-      <span class="social-link-icon"><i class="ofi-instagram"></i></span>
+      <span class="social-link-icon">{{< icon name="instagram" >}}</span>
       <span class="social-link-label">Instagram</span>
     </a>
   </li>
   <li>
     <a href="#" class="social-link">
-      <span class="social-link-icon"><i class="ofi-facebook"></i></span>
+      <span class="social-link-icon">{{< icon name="facebook" >}}</span>
       <span class="social-link-label">Facebook</span>
     </a>
   </li>
   <li>
     <a href="#" class="social-link">
-      <span class="social-link-icon"><i class="ofi-tiktok"></i></span>
+      <span class="social-link-icon">{{< icon name="tiktok" >}}</span>
       <span class="social-link-label">TikTok</span>
     </a>
   </li>
   <li>
     <a href="#" class="social-link">
-      <span class="social-link-icon"><i class="ofi-youtube"></i></span>
+      <span class="social-link-icon">{{< icon name="youtube" >}}</span>
       <span class="social-link-label">YouTube</span>
     </a>
   </li>
@@ -45,25 +45,25 @@ toc: true
 <ul class="social-links">
   <li>
     <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Instagram">
-      <span class="social-link-icon"><i class="ofi-instagram"></i></span>
+      <span class="social-link-icon">{{< icon name="instagram" >}}</span>
       <span class="visually-hidden">Instagram</span>
     </a>
   </li>
   <li>
     <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Facebook">
-      <span class="social-link-icon"><i class="ofi-facebook"></i></span>
+      <span class="social-link-icon">{{< icon name="facebook" >}}</span>
       <span class="visually-hidden">Facebook</span>
     </a>
   </li>
   <li>
     <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="TikTok">
-      <span class="social-link-icon"><i class="ofi-tiktok"></i></span>
+      <span class="social-link-icon">{{< icon name="tiktok" >}}</span>
       <span class="visually-hidden">TikTok</span>
     </a>
   </li>
   <li>
     <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="YouTube">
-      <span class="social-link-icon"><i class="ofi-youtube"></i></span>
+      <span class="social-link-icon">{{< icon name="youtube" >}}</span>
       <span class="visually-hidden">YouTube</span>
     </a>
   </li>

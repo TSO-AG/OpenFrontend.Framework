@@ -24,7 +24,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
     </div>
     <div class="card-media__content card-media__content--top-left">
-      <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>
+      <span class="icon-circle icon-circle-primary">{{< icon name="star-fill" >}}</span>
     </div>
     <div class="card-media__content card-media__content--top-right">
       <div class="state state--open">
@@ -59,11 +59,11 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
       <div class="card-title-star">
         <div class="rating rating-sm">
-          <i class="star-on-png"></i>
-          <i class="star-on-png"></i>
-          <i class="star-on-png"></i>
-          <i class="star-half-png"></i>
-          <i class="star-off-png"></i>
+          <i class="star-on"></i>
+          <i class="star-on"></i>
+          <i class="star-on"></i>
+          <i class="star-half"></i>
+          <i class="star-off"></i>
         </div>
       </div>
     </div>
@@ -78,7 +78,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="user-rating">
       <div class="user-rating__icon">
-        <i class="ofi-people-fill"></i>
+        {{< icon name="people-fill" >}}
       </div>
       <div class="user-rating__label">User-Rating:</div>
       <div class="user-rating__score">
@@ -96,13 +96,13 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="card-action__buttons">
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-cart-fill"></i>
+        {{< icon name="cart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-heart-fill"></i>
+        {{< icon name="heart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary stretched-link">
-        More <i class="ofi-arrow-right"></i>
+        More {{< icon name="arrow-right" >}}
       </button>
     </div>
   </div>
@@ -118,7 +118,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       {{< placeholder markup="img" width="100%" height="200" class="img-fluid" text="Responsive image" >}}
     </div>
     <div class="card-media__content card-media__content--top-left">
-      <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>
+      <span class="icon-circle icon-circle-primary">{{< icon name="star-fill" >}}</span>
     </div>
     <div class="card-media__content card-media__content--top-right">
       <div class="state state--open">
@@ -153,11 +153,11 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
       <div class="card-title-star">
         <div class="rating rating-sm">
-          <i class="star-on-png"></i>
-          <i class="star-on-png"></i>
-          <i class="star-on-png"></i>
-          <i class="star-half-png"></i>
-          <i class="star-off-png"></i>
+          <i class="star-on"></i>
+          <i class="star-on"></i>
+          <i class="star-on"></i>
+          <i class="star-half"></i>
+          <i class="star-off"></i>
         </div>
       </div>
     </div>
@@ -172,7 +172,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="user-rating">
       <div class="user-rating__icon">
-        <i class="ofi-people-fill"></i>
+        {{< icon name="people-fill" >}}
       </div>
       <div class="user-rating__label">User-Rating:</div>
       <div class="user-rating__score">
@@ -190,13 +190,13 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="card-action__buttons">
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-cart-fill"></i>
+        {{< icon name="cart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-heart-fill"></i>
+        {{< icon name="heart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary stretched-link">
-        More <i class="ofi-arrow-right"></i>
+        More {{< icon name="arrow-right" >}}
       </button>
     </div>
   </div>
@@ -220,7 +220,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       </div>
     </div>
     <div class="card-media__content card-media__content--top-left">
-      <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>
+      <span class="icon-circle icon-circle-primary">{{< icon name="star-fill" >}}</span>
     </div>
     <div class="card-media__content card-media__content--top-right">
       <div class="state state--unknown">
@@ -262,13 +262,13 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="card-action__buttons">
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-cart-fill"></i>
+        {{< icon name="cart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-heart-fill"></i>
+        {{< icon name="heart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary stretched-link">
-        More <i class="ofi-arrow-right"></i>
+        More {{< icon name="arrow-right" >}}
       </button>
     </div>
   </div>
@@ -286,7 +286,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
     </div>
     <div class="card-media__content card-media__content--top-left">
-      <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>
+      <span class="icon-circle icon-circle-primary">{{< icon name="star-fill" >}}</span>
     </div>
     <div class="card-media__content card-media__content--top-right">
       <div class="state state--closed">
@@ -315,11 +315,11 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
       <div class="card-title-star">
         <div class="rating rating-sm">
-          <i class="star-on-png"></i>
-          <i class="star-on-png"></i>
-          <i class="star-on-png"></i>
-          <i class="star-half-png"></i>
-          <i class="star-off-png"></i>
+          <i class="star-on"></i>
+          <i class="star-on"></i>
+          <i class="star-on"></i>
+          <i class="star-half"></i>
+          <i class="star-off"></i>
         </div>
       </div>
     </div>
@@ -334,7 +334,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="user-rating">
       <div class="user-rating__icon">
-        <i class="ofi-people-fill"></i>
+        {{< icon name="people-fill" >}}
       </div>
       <div class="user-rating__label">User-Rating:</div>
       <div class="user-rating__score">
@@ -346,10 +346,10 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
   <div class="card-action">
     <div class="card-action__buttons">
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-heart-fill"></i>
+        {{< icon name="heart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary stretched-link">
-        More <i class="ofi-arrow-right"></i>
+        More {{< icon name="arrow-right" >}}
       </button>
     </div>
   </div>
@@ -367,7 +367,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
     </div>
     <div class="card-media__content card-media__content--top-left">
-      <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>
+      <span class="icon-circle icon-circle-primary">{{< icon name="star-fill" >}}</span>
     </div>
     <div class="card-media__content card-media__content--top-right">
       <div class="state state--closed">
@@ -397,7 +397,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="user-rating">
       <div class="user-rating__icon">
-        <i class="ofi-people-fill"></i>
+        {{< icon name="people-fill" >}}
       </div>
       <div class="user-rating__label">User-Rating:</div>
       <div class="user-rating__score">
@@ -409,13 +409,13 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
   <div class="card-action">
     <div class="card-action__buttons">
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-cart-fill"></i>
+        {{< icon name="cart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-heart-fill"></i>
+        {{< icon name="heart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary stretched-link">
-        More <i class="ofi-arrow-right"></i>
+        More {{< icon name="arrow-right" >}}
       </button>
     </div>
   </div>
@@ -438,7 +438,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       </div>
     </div>
     <div class="card-media__content card-media__content--top-left">
-      <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>
+      <span class="icon-circle icon-circle-primary">{{< icon name="star-fill" >}}</span>
     </div>
     <div class="card-media__content card-media__content--bottom-left card-media__content--no-gap">
       <div class="date-box">
@@ -471,13 +471,13 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="card-action__buttons">
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-cart-fill"></i>
+        {{< icon name="cart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-heart-fill"></i>
+        {{< icon name="heart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary stretched-link">
-        More <i class="ofi-arrow-right"></i>
+        More {{< icon name="arrow-right" >}}
       </button>
     </div>
   </div>
@@ -494,7 +494,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
     </div>
     <div class="card-media__content card-media__content--top-left">
-      <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>
+      <span class="icon-circle icon-circle-primary">{{< icon name="star-fill" >}}</span>
     </div>
   </div>
 
@@ -513,13 +513,13 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
     </div>
     <div class="card-action__buttons">
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-cart-fill"></i>
+        {{< icon name="cart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-heart-fill"></i>
+        {{< icon name="heart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary stretched-link">
-        More <i class="ofi-arrow-right"></i>
+        More {{< icon name="arrow-right" >}}
       </button>
     </div>
   </div>
@@ -536,7 +536,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
       {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
     </div>
     <div class="card-media__content card-media__content--top-left">
-      <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>
+      <span class="icon-circle icon-circle-primary">{{< icon name="star-fill" >}}</span>
     </div>
     <div class="card-media__content card-media__content--top-right">
       <div class="state state--open">
@@ -554,10 +554,10 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
   <div class="card-action">
     <div class="card-action__buttons">
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-heart-fill"></i>
+        {{< icon name="heart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary stretched-link">
-        More <i class="ofi-arrow-right"></i>
+        More {{< icon name="arrow-right" >}}
       </button>
     </div>
   </div>
@@ -580,7 +580,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
     <div class="icon-box mt-1">
       <div class="icon-box-icon">
-        <i class="ofi-telephone-fill"></i>
+        {{< icon name="telephone-fill" >}}
       </div>
       <div class="icon-box-content">
         <div><a href="#">+41 71 274 99 19</a></div>
@@ -590,7 +590,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 
     <div class="icon-box mb-0">
       <div class="icon-box-icon">
-        <i class="ofi-at-fill"></i>
+        {{< icon name="at-fill" >}}
       </div>
       <div class="icon-box-content">
         <a href="#">john.doe@example.com</a>
@@ -619,10 +619,10 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
   <div class="card-action">
     <div class="card-action__buttons">
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-heart-fill"></i>
+        {{< icon name="heart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary stretched-link">
-        More <i class="ofi-arrow-right"></i>
+        More {{< icon name="arrow-right" >}}
       </button>
     </div>
   </div>
@@ -674,7 +674,7 @@ Use class `.card-clickable` to make the whole card clickable. This class is part
   <div class="card-action">
     <div class="card-action__buttons">
       <button type="button" class="btn btn-icon btn-primary stretched-link">
-        More <i class="ofi-arrow-right"></i>
+        More {{< icon name="arrow-right" >}}
       </button>
     </div>
   </div>
@@ -1105,7 +1105,7 @@ Using a combination of grid and utility classes, cards can be made horizontal in
       {{< placeholder markup="img" width="100%" height="200" class="img-fluid" text="Responsive image" >}}
     </div>
     <div class="card-media__content card-media__content--top-left">
-      <span class="icon-circle icon-circle-primary"><i class="ofi-star-fill"></i></span>
+      <span class="icon-circle icon-circle-primary">{{< icon name="star-fill" >}}</span>
     </div>
     <div class="card-media__content card-media__content--top-right">
       <div class="state state--open">
@@ -1140,11 +1140,11 @@ Using a combination of grid and utility classes, cards can be made horizontal in
       <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
       <div class="card-title-star">
         <div class="rating rating-sm">
-          <i class="star-on-png"></i>
-          <i class="star-on-png"></i>
-          <i class="star-on-png"></i>
-          <i class="star-half-png"></i>
-          <i class="star-off-png"></i>
+          <i class="star-on"></i>
+          <i class="star-on"></i>
+          <i class="star-on"></i>
+          <i class="star-half"></i>
+          <i class="star-off"></i>
         </div>
       </div>
     </div>
@@ -1159,7 +1159,7 @@ Using a combination of grid and utility classes, cards can be made horizontal in
     </div>
     <div class="user-rating">
       <div class="user-rating__icon">
-        <i class="ofi-people-fill"></i>
+        {{< icon name="people-fill" >}}
       </div>
       <div class="user-rating__label">User-Rating:</div>
       <div class="user-rating__score">
@@ -1177,13 +1177,13 @@ Using a combination of grid and utility classes, cards can be made horizontal in
     </div>
     <div class="card-action__buttons">
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-cart-fill"></i>
+        {{< icon name="cart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary">
-        <i class="ofi-heart-fill"></i>
+        {{< icon name="heart-fill" >}}
       </button>
       <button type="button" class="btn btn-icon btn-primary stretched-link">
-        More <i class="ofi-arrow-right"></i>
+        More {{< icon name="arrow-right" >}}
       </button>
     </div>
   </div>

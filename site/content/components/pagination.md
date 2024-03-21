@@ -165,7 +165,7 @@ Alternatively, you can display the pagination as a dropdown:
 {{< example >}}
 <nav class="pagination-dropdown" aria-label="Page navigation example">
   <button class="btn btn-square btn-primary">
-    <i class="ofi-caret-left-fill"></i>
+    {{< icon name="caret-left-fill" >}}
   </button>
 
   <label for="pagination" class="visually-hidden">Pagination</label>
@@ -176,7 +176,7 @@ Alternatively, you can display the pagination as a dropdown:
   </select>
 
   <button class="btn btn-square btn-primary">
-    <i class="ofi-caret-right-fill"></i>
+    {{< icon name="caret-right-fill" >}}
   </button>
 </nav>
 {{< /example >}}

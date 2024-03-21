@@ -16,11 +16,11 @@ title: Routing
     <div class="col-auto">
       <div>
         <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#share-modal" aria-labelledby="share-modal-label">
-          <i class="ofi-share"></i>
+          {{< icon name="share" >}}
           <span class="d-none d-lg-inline">Share</span>
         </button>
         <button class="btn btn-icon btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#favorites-modal" aria-labelledby="favorites-modal-label">
-          <i class="ofi-star-fill"></i>
+          {{< icon name="star-fill" >}}
           <span class="d-none d-lg-inline">Favorite</span>
         </button>
       </div>
@@ -142,7 +142,7 @@ title: Routing
                       <h2>Camping</h2>
                       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                       <p>
-                        <a href="#" class="btn btn-primary icon-link">More<i class="ofi-arrow-right"></i></a>
+                        <a href="#" class="btn btn-primary icon-link">More{{< icon name="arrow-right" >}}</a>
                       </p>
                     </div>
                     <div class="wrapper-bg-media">
@@ -160,7 +160,7 @@ title: Routing
                       <h2>Bed and Breakfast</h2>
                       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                       <p>
-                        <a href="#" class="btn btn-primary icon-link">More<i class="ofi-arrow-right"></i></a>
+                        <a href="#" class="btn btn-primary icon-link">More{{< icon name="arrow-right" >}}</a>
                       </p>
                     </div>
                     <div class="wrapper-bg-media">
@@ -182,7 +182,7 @@ title: Routing
                       <h2>Hotel & Hostel</h2>
                       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                       <p>
-                        <a href="#" class="btn btn-primary icon-link">More<i class="ofi-arrow-right"></i></a>
+                        <a href="#" class="btn btn-primary icon-link">More{{< icon name="arrow-right" >}}</a>
                       </p>
                     </div>
                     <div class="wrapper-bg-media">
@@ -208,7 +208,7 @@ title: Routing
                 <h2>Bed & Breakfast</h2>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                 <p>
-                  <a href="#" class="btn btn-light icon-link stretched-link">More <i class="ofi-arrow-right"></i></a>
+                  <a href="#" class="btn btn-light icon-link stretched-link">More {{< icon name="arrow-right" >}}</a>
                 </p>
               </div>
             </div>
@@ -221,7 +221,7 @@ title: Routing
                 <h2>Camping</h2>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                 <p>
-                  <a href="#" class="btn btn-light icon-link stretched-link">More <i class="ofi-arrow-right"></i></a>
+                  <a href="#" class="btn btn-light icon-link stretched-link">More {{< icon name="arrow-right" >}}</a>
                 </p>
               </div>
             </div>
@@ -234,7 +234,7 @@ title: Routing
                 <h2>Hotel & Hostel</h2>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                 <p>
-                  <a href="#" class="btn btn-light icon-link stretched-link">More <i class="ofi-arrow-right"></i></a>
+                  <a href="#" class="btn btn-light icon-link stretched-link">More {{< icon name="arrow-right" >}}</a>
                 </p>
               </div>
             </div>
@@ -253,10 +253,10 @@ title: Routing
       <div>
         <div class="carousel-navigation">
           <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-1">
-            <i class="ofi-caret-left-fill"></i>
+            {{< icon name="caret-left-fill" >}}
           </button>
           <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-1">
-            <i class="ofi-caret-right-fill"></i>
+            {{< icon name="caret-right-fill" >}}
           </button>
         </div>
       </div>
@@ -329,10 +329,10 @@ title: Routing
       <div>
         <div class="carousel-navigation">
           <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-2">
-            <i class="ofi-caret-left-fill"></i>
+            {{< icon name="caret-left-fill" >}}
           </button>
           <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-2">
-            <i class="ofi-caret-right-fill"></i>
+            {{< icon name="caret-right-fill" >}}
           </button>
         </div>
       </div>
@@ -480,25 +480,25 @@ title: Routing
         <ul class="social-links social-links-lg mb-3">
           <li>
             <a href="#" class="social-link">
-              <span class="social-link-icon"><i class="ofi-instagram"></i></span>
+              <span class="social-link-icon">{{< icon name="instagram" >}}</span>
               <span class="social-link-label">Instagram</span>
             </a>
           </li>
           <li>
             <a href="#" class="social-link">
-              <span class="social-link-icon"><i class="ofi-facebook"></i></span>
+              <span class="social-link-icon">{{< icon name="facebook" >}}</span>
               <span class="social-link-label">Facebook</span>
             </a>
           </li>
           <li>
             <a href="#" class="social-link">
-              <span class="social-link-icon"><i class="ofi-tiktok"></i></span>
+              <span class="social-link-icon">{{< icon name="tiktok" >}}</span>
               <span class="social-link-label">TikTok</span>
             </a>
           </li>
           <li>
             <a href="#" class="social-link">
-              <span class="social-link-icon"><i class="ofi-youtube"></i></span>
+              <span class="social-link-icon">{{< icon name="youtube" >}}</span>
               <span class="social-link-label">YouTube</span>
             </a>
           </li>
@@ -506,7 +506,7 @@ title: Routing
 
         <div class="input-group">
           <input type="text" class="form-control" value="https://example.tld/dummy/subpage.html" aria-label="Copy the URL" readonly>
-          <button type="button" class="btn btn-icon btn-primary"><i class="ofi-copy"></i></button>
+          <button type="button" class="btn btn-icon btn-primary">{{< icon name="copy" >}}</button>
         </div>
       </div>
     </div>
@@ -540,7 +540,7 @@ title: Routing
         </div>
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Create new list" aria-label="Create new list">
-          <button type="button" class="btn btn-icon btn-primary"><i class="ofi-plus"></i></button>
+          <button type="button" class="btn btn-icon btn-primary">{{< icon name="plus" >}}</button>
         </div>
       </div>
     </div>

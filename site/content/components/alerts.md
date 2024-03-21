@@ -72,7 +72,9 @@ Similarly, you can use [flexbox utilities]({{< docsref "/utilities/flex" >}}) an
 
 {{< example >}}
 <div class="alert alert-primary d-flex align-items-center" role="alert">
-  <i class="ofi-exclamation-triangle-fill me-2" aria-label="Warning:"></i>
+  <span class="me-2">
+    {{< icon name="exclamation-triangle-fill" class="me-2" ariaLabel="Warning:">}}
+  </span>
   <div>
     An example alert with an icon
   </div>
@@ -81,25 +83,33 @@ Similarly, you can use [flexbox utilities]({{< docsref "/utilities/flex" >}}) an
 
 {{< example >}}
 <div class="alert alert-primary d-flex align-items-center" role="alert">
-  <i class="ofi-info-circle-fill me-2" aria-label="Info:"></i>
+  <span class="me-2">
+    {{< icon name="info-circle-fill" class="me-2" ariaLabel="Info:">}}
+  </span>
   <div>
     An example alert with an icon
   </div>
 </div>
 <div class="alert alert-success d-flex align-items-center" role="alert">
-  <i class="ofi-check-circle-fill me-2" aria-label="Success:"></i>
+  <span class="me-2">
+    {{< icon name="check-circle-fill" class="me-2" ariaLabel="Success:">}}
+  </span>
   <div>
     An example success alert with an icon
   </div>
 </div>
 <div class="alert alert-warning d-flex align-items-center" role="alert">
-  <i class="ofi-exclamation-triangle-fill me-2" aria-label="Warning:"></i>
+  <span class="me-2">
+    {{< icon name="exclamation-triangle-fill" class="me-2" ariaLabel="Warning:">}}
+  </span>
   <div>
     An example warning alert with an icon
   </div>
 </div>
 <div class="alert alert-danger d-flex align-items-center" role="alert">
-  <i class="ofi-exclamation-triangle-fill me-2" aria-label="Danger:"></i>
+  <span class="me-2">
+    {{< icon name="exclamation-triangle-fill" class="me-2" ariaLabel="Danger:">}}
+  </span>
   <div>
     An example danger alert with an icon
   </div>

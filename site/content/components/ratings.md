@@ -55,15 +55,14 @@ With this configuration, you'll have a 10-star rating system with the current sc
 
 ### Custom icon
 
-Easily customize your rating icon by setting the icon value to the desired icon class name. You can find the complete list of available icons [here]({{< docsref "/components/icons" >}}).
-
+Customizing the rating icon in your application is both straightforward and flexible. To set your icon, use the CSS variable `--bs-rating-icon` within the style attribute of your rating element. This approach allows for direct embedding of SVG icons. Here’s how you can embed an SVG directly:
 
 {{< example >}}
 <div class="mb-2">
-  <div data-of-rating='{"half": true, "number": 10, "score": 7.5, "icon" : "ofi-heart"}'></div>
+  <div style="--bs-rating-icon: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 16 16\'%3E%3Cpath d=\'m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15\'/%3E%3C/svg%3E');" data-of-rating='{"half": true, "number": 10, "score": 7.5}'></div>
 </div>
 <div>
-  <div data-of-rating='{"half": true, "number": 10, "score": 7.5, "icon" : "ofi-heart-fill"}'></div>
+  <div style="--bs-rating-icon: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 16 16\'%3E%3Cpath d=\'M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314\'/%3E%3C/svg%3E');" data-of-rating='{"half": true, "number": 10, "score": 7.5}'></div>
 </div>
 {{< /example >}}
 
@@ -91,61 +90,61 @@ You can also embed static HTML code for a simple rating display, some examples b
 {{< example >}}
 <div class="mb-1">
   <div class="rating rating-lg" role="img" aria-label="Rating: 3.5 out of 5 stars">
-    <i class="star-on-png" aria-hidden="true"></i>
-    <i class="star-on-png" aria-hidden="true"></i>
-    <i class="star-on-png" aria-hidden="true"></i>
-    <i class="star-half-png" aria-hidden="true"></i>
-    <i class="star-off-png" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-half" aria-hidden="true"></i>
+    <i class="star-off" aria-hidden="true"></i>
   </div>
 </div>
 
 <div class="mb-1">
   <div class="rating" role="img" aria-label="Rating: 3.5 out of 5 stars">
-    <i class="star-on-png" aria-hidden="true"></i>
-    <i class="star-on-png" aria-hidden="true"></i>
-    <i class="star-on-png" aria-hidden="true"></i>
-    <i class="star-half-png" aria-hidden="true"></i>
-    <i class="star-off-png" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-half" aria-hidden="true"></i>
+    <i class="star-off" aria-hidden="true"></i>
   </div>
 </div>
 
 <div class="mb-4">
   <div class="rating rating-sm" role="img" aria-label="Rating: 3.5 out of 5 stars">
-    <i class="star-on-png" aria-hidden="true"></i>
-    <i class="star-on-png" aria-hidden="true"></i>
-    <i class="star-on-png" aria-hidden="true"></i>
-    <i class="star-half-png" aria-hidden="true"></i>
-    <i class="star-off-png" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-half" aria-hidden="true"></i>
+    <i class="star-off" aria-hidden="true"></i>
   </div>
 </div>
 
 <div class="mb-1">
   <div class="rating rating-lg" role="img" aria-label="Rating: 3.5 out of 5 stars">
-    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
-    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
-    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
-    <i class="star-half-png ofi-heart-fill" aria-hidden="true"></i>
-    <i class="star-off-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-half" aria-hidden="true"></i>
+    <i class="star-off" aria-hidden="true"></i>
   </div>
 </div>
 
 <div class="mb-1">
   <div class="rating" role="img" aria-label="Rating: 3.5 out of 5 stars">
-    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
-    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
-    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
-    <i class="star-half-png ofi-heart-fill" aria-hidden="true"></i>
-    <i class="star-off-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-half" aria-hidden="true"></i>
+    <i class="star-off" aria-hidden="true"></i>
   </div>
 </div>
 
 <div>
   <div class="rating rating-sm" role="img" aria-label="Rating: 3.5 out of 5 stars">
-    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
-    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
-    <i class="star-on-png ofi-heart-fill" aria-hidden="true"></i>
-    <i class="star-half-png ofi-heart-fill" aria-hidden="true"></i>
-    <i class="star-off-png ofi-heart-fill" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-on" aria-hidden="true"></i>
+    <i class="star-half" aria-hidden="true"></i>
+    <i class="star-off" aria-hidden="true"></i>
   </div>
 </div>
 
@@ -163,7 +162,6 @@ Here is the list of all available options (alphabetically):
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
 | `half` | `boolean` | `false` | Enables half star selection. |
-| `icon` | `string` | `undefined` | Icon CSS class. |
 | `number` | `number` | `5` | The number of stars that will be presented. |
 | `readOnly` | `boolean` | `false` | Turns the rating read-only. |
 | `score` | `number` | `undefined` | Initial rating. |

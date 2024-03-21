@@ -23,7 +23,7 @@ toc: true
       <div class="d-none d-lg-block">
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+            <span class="header-link-icon">{{< icon name="person-circle" >}}</span>
             <span class="header-link-text">Account</span>
           </button>
           <ul class="dropdown-menu">
@@ -35,7 +35,7 @@ toc: true
       <div class="d-none d-lg-block">
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+            <span class="header-link-icon">{{< icon name="cart-fill" >}}</span>
             <span class="header-link-text">Cart</span>
           </button>
           <ul class="dropdown-menu">
@@ -48,7 +48,7 @@ toc: true
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="header-link-icon">
-              <i class="ofi-heart-fill"></i>
+              {{< icon name="heart-fill" >}}
               <span class="header-link-icon-badge">
                 <span class="badge bg-danger">12</span>
               </span>
@@ -66,7 +66,7 @@ toc: true
       <div>
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-translate"></i></span>
+            <span class="header-link-icon">{{< icon name="translate" >}}</span>
             <span class="header-link-text">Language</span>
           </button>
           <ul class="dropdown-menu">
@@ -80,8 +80,8 @@ toc: true
         <button class="header-link" class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch"
            aria-controls="headerSearch"
            aria-expanded="false" aria-label="Toggle header search">
-          <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
-          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-icon d-none-collapsed">{{< icon name="search" >}}</span>
+          <span class="header-link-icon d-block-collapsed">{{< icon name="x-lg" >}}</span>
           <span class="header-link-text">Search</span>
         </button>
         <div class="collapse header-collapse header-search-wrapper" id="headerSearch">
@@ -91,7 +91,7 @@ toc: true
                 <div class="search-form-inputs">
                   <input type="search" name="keywords" placeholder="Keywords" aria-label="Keywords">
                   <button type="submit">
-                    <i class="ofi-search"></i>
+                    {{< icon name="search" >}}
                     <span class="visually-hidden">Search</span>
                   </button>
                 </div>
@@ -104,8 +104,8 @@ toc: true
         <button class="header-link" type="button" data-bs-toggle="collapse"
                 data-bs-target="#pageMenu" aria-controls="pageMenu"
                 aria-expanded="false" aria-label="Toggle navigation">
-          <span class="header-link-icon d-none-collapsed"><i class="ofi-list"></i></span>
-          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-icon d-none-collapsed">{{< icon name="list" >}}</span>
+          <span class="header-link-icon d-block-collapsed">{{< icon name="x-lg" >}}</span>
           <span class="header-link-text">Menu</span>
         </button>
         <div class="collapse header-collapse page-menu-wrapper" id="pageMenu">
@@ -127,7 +127,7 @@ toc: true
       <div>
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+            <span class="header-link-icon">{{< icon name="person-circle" >}}</span>
             <span class="header-link-text">Account</span>
           </button>
           <ul class="dropdown-menu">
@@ -139,7 +139,7 @@ toc: true
       <div>
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+            <span class="header-link-icon">{{< icon name="cart-fill" >}}</span>
             <span class="header-link-text">Cart</span>
           </button>
           <ul class="dropdown-menu">
@@ -152,7 +152,7 @@ toc: true
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="header-link-icon">
-              <i class="ofi-heart-fill"></i>
+              {{< icon name="heart-fill" >}}
               <span class="header-link-icon-badge">
                 <span class="badge bg-danger">2</span>
               </span>
@@ -177,7 +177,7 @@ toc: true
       <div>
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-translate"></i></span>
+            <span class="header-link-icon">{{< icon name="translate" >}}</span>
             <span class="header-link-text">Spreche</span>
           </button>
           <ul class="dropdown-menu">
@@ -191,8 +191,8 @@ toc: true
         <button class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch2"
            aria-controls="headerSearch2"
            aria-expanded="false" aria-label="Toggle header search">
-          <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
-          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-icon d-none-collapsed">{{< icon name="search" >}}</span>
+          <span class="header-link-icon d-block-collapsed">{{< icon name="x-lg" >}}</span>
           <span class="header-link-text">Search</span>
         </button>
         <div class="collapse header-collapse header-search-wrapper" id="headerSearch2">
@@ -202,7 +202,7 @@ toc: true
                 <div class="search-form-inputs">
                   <input type="search" name="keywords" placeholder="Keywords" aria-label="Keywords">
                   <button type="submit">
-                    <i class="ofi-search"></i>
+                    {{< icon name="search" >}}
                     <span class="visually-hidden">Search</span>
                   </button>
                 </div>
@@ -215,8 +215,8 @@ toc: true
         <button class="header-link" type="button" data-bs-toggle="collapse"
                 data-bs-target="#pageMenu2" aria-controls="pageMenu2"
                 aria-expanded="false" aria-label="Toggle navigation">
-          <span class="header-link-icon d-none-collapsed"><i class="ofi-list"></i></span>
-          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-icon d-none-collapsed">{{< icon name="list" >}}</span>
+          <span class="header-link-icon d-block-collapsed">{{< icon name="x-lg" >}}</span>
           <span class="header-link-text">Menu</span>
         </button>
         <div class="collapse header-collapse page-menu-wrapper" id="pageMenu2">
@@ -243,7 +243,7 @@ toc: true
       <div class="d-none d-lg-block">
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+            <span class="header-link-icon">{{< icon name="person-circle" >}}</span>
             <span class="header-link-text">Account</span>
           </button>
           <ul class="dropdown-menu">
@@ -255,7 +255,7 @@ toc: true
       <div class="d-none d-lg-block">
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+            <span class="header-link-icon">{{< icon name="cart-fill" >}}</span>
             <span class="header-link-text">Cart</span>
           </button>
           <ul class="dropdown-menu">
@@ -268,7 +268,7 @@ toc: true
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="header-link-icon">
-              <i class="ofi-heart-fill"></i>
+              {{< icon name="heart-fill" >}}
               <span class="header-link-icon-badge">
                 <span class="badge bg-danger">12</span>
               </span>
@@ -286,7 +286,7 @@ toc: true
       <div>
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-translate"></i></span>
+            <span class="header-link-icon">{{< icon name="translate" >}}</span>
             <span class="header-link-text">Spreche</span>
           </button>
           <ul class="dropdown-menu">
@@ -300,8 +300,8 @@ toc: true
         <button class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch3"
            aria-controls="headerSearch3"
            aria-expanded="false" aria-label="Toggle header search">
-          <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
-          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-icon d-none-collapsed">{{< icon name="search" >}}</span>
+          <span class="header-link-icon d-block-collapsed">{{< icon name="x-lg" >}}</span>
           <span class="header-link-text">Suche</span>
         </button>
         <div class="collapse header-collapse header-search-wrapper" id="headerSearch3">
@@ -311,7 +311,7 @@ toc: true
                 <div class="search-form-inputs">
                   <input type="search" name="keywords" placeholder="Keywords" aria-label="Keywords">
                   <button type="submit">
-                    <i class="ofi-search"></i>
+                    {{< icon name="search" >}}
                     <span class="visually-hidden">Search</span>
                   </button>
                 </div>
@@ -324,8 +324,8 @@ toc: true
         <button class="header-link" type="button" data-bs-toggle="collapse"
                 data-bs-target="#pageMenu3" aria-controls="pageMenu3"
                 aria-expanded="false" aria-label="Toggle navigation">
-          <span class="header-link-icon d-none-collapsed"><i class="ofi-list"></i></span>
-          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-icon d-none-collapsed">{{< icon name="list" >}}</span>
+          <span class="header-link-icon d-block-collapsed">{{< icon name="x-lg" >}}</span>
           <span class="header-link-text">Menu</span>
         </button>
         <div class="collapse header-collapse page-menu-wrapper" id="pageMenu3">
@@ -354,7 +354,7 @@ toc: true
       <div class="d-none d-lg-block">
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-person-circle"></i></span>
+            <span class="header-link-icon">{{< icon name="person-circle" >}}</span>
             <span class="header-link-text">Account</span>
           </button>
           <ul class="dropdown-menu">
@@ -366,7 +366,7 @@ toc: true
       <div class="d-none d-lg-block">
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-cart-fill"></i></span>
+            <span class="header-link-icon">{{< icon name="cart-fill" >}}</span>
             <span class="header-link-text">Cart</span>
           </button>
           <ul class="dropdown-menu">
@@ -379,7 +379,7 @@ toc: true
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="header-link-icon">
-              <i class="ofi-heart-fill"></i>
+              {{< icon name="heart-fill" >}}
               <span class="header-link-icon-badge">
                 <span class="badge bg-danger">12</span>
               </span>
@@ -397,7 +397,7 @@ toc: true
       <div>
         <div class="dropdown">
           <button class="header-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="header-link-icon"><i class="ofi-translate"></i></span>
+            <span class="header-link-icon">{{< icon name="translate" >}}</span>
             <span class="header-link-text">Language</span>
           </button>
           <ul class="dropdown-menu">
@@ -411,8 +411,8 @@ toc: true
         <button class="header-link" class="header-link" data-bs-toggle="collapse" data-bs-target="#headerSearch"
            aria-controls="headerSearch"
            aria-expanded="false" aria-label="Toggle header search">
-          <span class="header-link-icon d-none-collapsed"><i class="ofi-search"></i></span>
-          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-icon d-none-collapsed">{{< icon name="search" >}}</span>
+          <span class="header-link-icon d-block-collapsed">{{< icon name="x-lg" >}}</span>
           <span class="header-link-text">Search</span>
         </button>
         <div class="collapse header-collapse header-search-wrapper" id="headerSearch">
@@ -422,7 +422,7 @@ toc: true
                 <div class="search-form-inputs">
                   <input type="search" name="keywords" placeholder="Keywords" aria-label="Keywords">
                   <button type="submit">
-                    <i class="ofi-search"></i>
+                    {{< icon name="search" >}}
                     <span class="visually-hidden">Search</span>
                   </button>
                 </div>
@@ -435,8 +435,8 @@ toc: true
         <button class="header-link" type="button" data-bs-toggle="collapse"
                 data-bs-target="#pageMenu" aria-controls="pageMenu"
                 aria-expanded="false" aria-label="Toggle navigation">
-          <span class="header-link-icon d-none-collapsed"><i class="ofi-list"></i></span>
-          <span class="header-link-icon d-block-collapsed"><i class="ofi-x-lg"></i></span>
+          <span class="header-link-icon d-none-collapsed">{{< icon name="list" >}}</span>
+          <span class="header-link-icon d-block-collapsed">{{< icon name="x-lg" >}}</span>
           <span class="header-link-text">Menu</span>
         </button>
         <div class="collapse header-collapse page-menu-wrapper" id="pageMenu">

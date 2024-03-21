@@ -20,7 +20,7 @@ Take a regular `<a>` element, add `.icon-link`, and insert an icon on either the
 
 {{< example >}}
 <a class="icon-link" href="#">
-  <i class="ofi-person-circle"></i>
+  {{< icon name="person-circle" >}}
   <span class="icon-link-text">Icon link</span>
 </a>
 {{< /example >}}
@@ -28,7 +28,7 @@ Take a regular `<a>` element, add `.icon-link`, and insert an icon on either the
 {{< example >}}
 <a class="icon-link" href="#">
   <span class="icon-link-text">Icon link</span>
-  <i class="ofi-arrow-right"></i>
+  {{< icon name="arrow-right" >}}
 </a>
 {{< /example >}}
 
@@ -39,7 +39,7 @@ Add `.icon-link-hover` to move the icon to the right on hover.
 {{< example >}}
 <a class="icon-link icon-link-hover" href="#">
   <span class="icon-link-text">Icon link</span>
-  <i class="ofi-arrow-right"></i>
+  {{< icon name="arrow-right" >}}
 </a>
 {{< /example >}}
 
@@ -56,7 +56,7 @@ Customize the hover `transform` by overriding the `--bs-icon-link-transform` CSS
 {{< example >}}
 <a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" href="#">
   <span class="icon-link-text">Icon link</span>
-  <i class="ofi-arrow-right"></i>
+  {{< icon name="arrow-right" >}}
 </a>
 {{< /example >}}
 
@@ -65,7 +65,7 @@ Customize the color by overriding the `--bs-link-*` CSS variable:
 {{< example >}}
 <a class="icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 25, 135, 84;" href="#">
   <span class="icon-link-text">Icon link</span>
-  <i class="ofi-arrow-right"></i>
+  {{< icon name="arrow-right" >}}
 </a>
 {{< /example >}}
 
@@ -82,6 +82,6 @@ Modify icon links with any of [our link utilities]({{< docsref "/utilities/link/
 {{< example >}}
 <a class="icon-link icon-link-hover link-success link-underline-success link-underline-opacity-25" href="#">
   <span class="icon-link-text">Icon link</span>
-  <i class="ofi-arrow-right"></i>
+  {{< icon name="arrow-right" >}}
 </a>
 {{< /example >}}

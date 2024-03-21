@@ -42,10 +42,10 @@ The component uses the [Swiper](https://swiperjs.com/) library.
 
   <div class="slider-navigation">
      <button type="button" class="slider-button-prev btn btn-square btn-primary" id="slider-btn-prev-1">
-      <i class="ofi-caret-left-fill"></i>
+      {{< icon name="caret-left-fill" >}}
     </button>
     <button type="button" class="slider-button-next btn btn-square btn-primary" id="slider-btn-next-1">
-      <i class="ofi-caret-right-fill"></i>
+      {{< icon name="caret-right-fill" >}}
     </button>
   </div>
 </div>
@@ -81,10 +81,10 @@ Autoplay starts automatically cycling through slides. Loop continues play after 
 
   <div class="slider-navigation">
      <button type="button" class="slider-button-prev btn btn-square btn-primary" id="slider-btn-prev-2">
-      <i class="ofi-caret-left-fill"></i>
+      {{< icon name="caret-left-fill" >}}
     </button>
     <button type="button" class="slider-button-next btn btn-square btn-primary" id="slider-btn-next-2">
-      <i class="ofi-caret-right-fill"></i>
+      {{< icon name="caret-right-fill" >}}
     </button>
   </div>
 </div>
@@ -142,7 +142,7 @@ Each class adjusts the position of the pagination according to its description (
             <h2>Your next destination</h2>
             <p>Escape ordinary, experience majestic views!</p>
             <p>
-              <a href="#" class="btn btn-light btn-sm icon-link">Find out more <i class="ofi-arrow-right"></i></a>
+              <a href="#" class="btn btn-light btn-sm icon-link">Find out more {{< icon name="arrow-right" >}}</a>
             </p>
           </div>
           <div class="wrapper-bg-media">
@@ -178,10 +178,10 @@ Each class adjusts the position of the pagination according to its description (
 
   <div class="slider-navigation">
      <button type="button" class="slider-button-prev btn btn-square btn-primary" id="slider-btn-prev-4">
-      <i class="ofi-caret-left-fill"></i>
+      {{< icon name="caret-left-fill" >}}
     </button>
     <button type="button" class="slider-button-next btn btn-square btn-primary" id="slider-btn-next-4">
-      <i class="ofi-caret-right-fill"></i>
+      {{< icon name="caret-right-fill" >}}
     </button>
   </div>
 </div>

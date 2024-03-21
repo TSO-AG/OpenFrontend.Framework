@@ -11,8 +11,6 @@ const LIGHTBOX_WRAPPER_CLASS = 'lightbox-wrapper'
 const LIGHTBOX_THUMBNAILS_CLASS = 'lightbox-thumbnails'
 const LIGHTBOX_URL_HASH_PREFIX = 'lightbox-'
 
-const PLYR_CONFIG = {}
-
 const LIGHTBOX_SETTINGS = {
   autoplayVideos: true,
   closeEffect: 'fade',
@@ -21,13 +19,14 @@ const LIGHTBOX_SETTINGS = {
   touchNavigation: true,
   plyr: {
     css: () => import('plyr/dist/plyr.css'),
-    js: () => import('plyr/src/js/plyr').then(async (v) => {
-      // Import the icons first
-      PLYR_CONFIG.iconUrl = await import('plyr/dist/plyr.svg').default
-
-      return v.default
+    js: () => import('plyr/src/js/plyr').then(async (module) => {
+      return {
+        Plyr: module.default,
+        config: {
+          iconUrl: (await import('plyr/dist/plyr.svg')).default
+        },
+      }
     }),
-    config: PLYR_CONFIG,
   },
 }
 

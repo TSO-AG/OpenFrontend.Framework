@@ -3516,7 +3516,7 @@ get-symbol-description@^1.0.0:
 
 "glightbox@https://github.com/qzminski/glightbox#bugfix/csp":
   version "3.2.0"
-  resolved "https://github.com/qzminski/glightbox#184883f83bf126292cecad7aec381345497541d9"
+  resolved "https://github.com/qzminski/glightbox#b38717aafdcbf961cb9ceae710cff09fba53c83c"
 
 glob-parent@^5.1.2, glob-parent@~5.1.2:
   version "5.1.2"

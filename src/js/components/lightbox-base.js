@@ -17,6 +17,10 @@ const LIGHTBOX_SETTINGS = {
   closeOnOutsideClick: false,
   openEffect: 'fade',
   touchNavigation: true,
+  plyr: {
+    css: () => import('plyr/dist/plyr.css'),
+    js: () => import('plyr/src/js/plyr').then(v => v.default),
+  },
 }
 
 const LIGHTBOX_HTML = `<div id="glightbox-body" class="glightbox-container" tabindex="-1" role="dialog" aria-hidden="false">

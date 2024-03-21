@@ -332,7 +332,7 @@ $search-result-url-font-size: .85rem !default;
 
 // Ticker
 // scss-docs-start ticker-variables
-$ticker-bg-color:                          var(--bs-danger) !default;
+$ticker-bg-color:                          var(--#{$prefix}danger) !default;
 $ticker-color:                             #fff !default;
 $ticker-color-hover:                       inherit !default;
 $ticker-font-size:                         1rem !default;
@@ -378,6 +378,7 @@ $wrapper-media-overlay-opacity: .4 !default;
 $wrapper-media-zoom-transition: all .5s ease-in-out !default;
 $wrapper-text-shadow: 2px 3px 5px rgba(0, 0, 0, .5) !default;
 $wrapper-font-size: 1.2rem !default;
+$wrapper-line-height: var(--#{$prefix}body-line-height) !default;
 $wrapper-zoom-transform: scale(1.1) !default;
 $wrapper-content-top-right-y: 10px !default;
 $wrapper-content-top-right-x: $wrapper-content-top-right-y !default;

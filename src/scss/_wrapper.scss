@@ -13,6 +13,7 @@
   --#{$prefix}wrapper-media-overlay-opacity: #{$wrapper-media-overlay-opacity};
   --#{$prefix}wrapper-text-shadow: #{$wrapper-text-shadow};
   --#{$prefix}wrapper-font-size: #{$wrapper-font-size};
+  --#{$prefix}wrapper-line-height: #{$wrapper-line-height};
   --#{$prefix}wrapper-zoom-transform: #{$wrapper-zoom-transform};
   --#{$prefix}wrapper-content-top-right-y: #{$wrapper-content-top-right-y};
   --#{$prefix}wrapper-content-top-right-x: #{$wrapper-content-top-right-x};
@@ -84,6 +85,7 @@
 .wrapper-content {
   padding: var(--#{$prefix}wrapper-padding-y) var(--#{$prefix}wrapper-padding-x);
   font-size: var(--#{$prefix}wrapper-font-size);
+  line-height: var(--#{$prefix}wrapper-line-height);
   color: var(--#{$prefix}wrapper-color);
   text-shadow: var(--#{$prefix}wrapper-text-shadow);
 

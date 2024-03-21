@@ -39,20 +39,10 @@ $responsive-values: (
     md: 2rem,
   ),
 ) !default;
+// scss-docs-end spacer-variables-maps
 
 // Spacing
 $spacer: 1rem !default;
-
-$custom-spacers: (
-  section: var(--#{$prefix}section-margin),
-  element: var(--#{$prefix}element-margin),
-) !default;
-
-$negative-custom-spacers: (
-  n-section: calc(var(--#{$prefix}section-margin) * -1),
-  n-element: calc(var(--#{$prefix}element-margin) * -1),
-) !default;
-// scss-docs-end spacer-variables-maps
 
 // Components
 

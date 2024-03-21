@@ -1,0 +1,31 @@
+.mb-section {
+  margin-bottom: var(--#{$prefix}section-margin);
+}
+
+.mt-section {
+  margin-top: var(--#{$prefix}section-margin);
+}
+
+.mb-n-section {
+  margin-bottom: calc(var(--#{$prefix}section-margin) * -1);
+}
+
+.mt-n-section {
+  margin-top: calc(var(--#{$prefix}section-margin) * -1);
+}
+
+.mb-element {
+  margin-bottom: var(--#{$prefix}element-margin);
+}
+
+.mt-element {
+  margin-top: var(--#{$prefix}element-margin);
+}
+
+.mb-n-element {
+  margin-bottom: calc(var(--#{$prefix}element-margin) * -1);
+}
+
+.mt-n-element {
+  margin-top: calc(var(--#{$prefix}element-margin) * -1);
+}

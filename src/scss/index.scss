@@ -11,7 +11,6 @@
 @import "~bootstrap/scss/mixins";
 
 // Utilities
-@import "mixins/utilities";
 @import "utilities";
 @import "~bootstrap/scss/utilities";
 
@@ -73,6 +72,7 @@
 @import "helpers/position";
 @import "helpers/size";
 @import "helpers/display";
+@import "helpers/spacing";
 
 // Layout & components
 @import "root";

@@ -3,8 +3,6 @@ const path = require('node:path')
 const md5Dir = require('md5-dir')
 const Encore = require('@symfony/webpack-encore')
 
-const iconFilesHash = md5Dir.sync(dir('src/icons')).slice(0, 20)
-
 class CreateHtaccessPlugin {
   apply(compiler) {
     compiler.hooks.done.tap('CreateHtaccessPlugin', () => {
@@ -85,24 +83,6 @@ function createConfigDraft(outputPath, publicPath) {
         }
       ]
     })
-    .addLoader({
-      test: /\.(woff|woff2|ttf|eot|otf|svg)$/i,
-      include: [
-        dir('src/icons')
-      ],
-      oneOf: [
-        {
-          resourceQuery: /copy-files-loader/,
-          type: 'javascript/auto'
-        },
-        {
-          type: 'asset/resource',
-          generator: {
-            filename: getFilename('icons', iconFilesHash)
-          }
-        }
-      ]
-    })
 
     // Load optimized and minified images
     .configureImageRule({ enabled: false })
@@ -124,8 +104,7 @@ function createConfigDraft(outputPath, publicPath) {
     .addLoader({
       test: /\.(gif|ico|svg|webp|avif)$/i,
       exclude: [
-        dir('src/fonts'),
-        dir('src/icons')
+        dir('src/fonts')
       ],
       oneOf: [
         {

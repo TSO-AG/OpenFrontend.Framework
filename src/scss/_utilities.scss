@@ -17,25 +17,29 @@ $utilities:
       responsive: true,
       property: margin-top,
       class: mt,
-      values: $custom-spacers
+      values: $custom-spacers,
+      disable-important: true
     ),
     "of-margin-bottom": (
       responsive: true,
       property: margin-bottom,
       class: mb,
-      values: $custom-spacers
+      values: $custom-spacers,
+      disable-important: true
     ),
     "of-nagative-margin-top": (
       responsive: true,
       property: margin-top,
       class: mt,
-      values: $negative-custom-spacers
+      values: $negative-custom-spacers,
+      disable-important: true
     ),
     "of-nagative-margin-bottom": (
       responsive: true,
       property: margin-bottom,
       class: mb,
-      values: $negative-custom-spacers
+      values: $negative-custom-spacers,
+      disable-important: true
     ),
     // Text
     // scss-docs-start utils-text

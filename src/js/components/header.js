@@ -5,13 +5,13 @@ import BaseComponent from 'bootstrap/js/src/base-component'
  */
 const NAME = 'header'
 const CSS_HEADER_HEIGHT_PROPERTY_NAME = '--bs-header-height'
+const CSS_STICKY_HEADER_HEIGHT_PROPERTY_NAME = '--bs-header-sticky-height'
 const COLLAPSE_ELEMENT_SELECTOR = '.header-collapse'
 const STICKY_HEADER_CLASS = 'header-sticky'
 const STICKY_HEADER_PLACEHOLDER_CLASS = 'header-placeholder'
 const STICKY_HEADER_INIT_CLASS = 'header-sticky-init'
 const STICKY_HEADER_STUCK_INIT_CLASS = 'header-stuck'
 const STICKY_HEADER_STUCK_CLASS = 'header-stuck-is-stuck'
-const STICKY_HEADER_HEIGHT_PROPERTY_NAME = '--bs-header-sticky-height'
 
 const DefaultType = {
   sticky: '(boolean|object|undefined)',
@@ -25,7 +25,7 @@ class Header extends BaseComponent {
   constructor(element, config) {
     super(element, config)
     this._headerCollapseElements = element.querySelectorAll(COLLAPSE_ELEMENT_SELECTOR)
-    this._setHeaderHeight()
+    this._setStickyHeaderHeight()
     this._initTriggers()
 
     // Bind methods
@@ -82,15 +82,15 @@ class Header extends BaseComponent {
     }
   }
 
-  _setHeaderHeight() {
-    const resizeObserver = new ResizeObserver(this._setHeaderHeightProperty.bind(this))
+  _setStickyHeaderHeight() {
+    const resizeObserver = new ResizeObserver(this._setStickyHeaderHeightProperty.bind(this))
     resizeObserver.observe(this._element)
   }
 
-  _setHeaderHeightProperty(entries) {
+  _setStickyHeaderHeightProperty(entries) {
     for (const entry of entries) {
       const headerHeight = `${entry.target.offsetHeight}px`
-      document.body.style.setProperty(CSS_HEADER_HEIGHT_PROPERTY_NAME, headerHeight)
+      document.body.style.setProperty(CSS_STICKY_HEADER_HEIGHT_PROPERTY_NAME, headerHeight)
     }
   }
 
@@ -124,7 +124,7 @@ class Header extends BaseComponent {
     this._element.classList.add(STICKY_HEADER_INIT_CLASS)
     this._element.classList.remove(STICKY_HEADER_CLASS)
     const stickyHeaderHeight = this._element.getBoundingClientRect().height
-    document.body.style.setProperty(STICKY_HEADER_HEIGHT_PROPERTY_NAME, `${stickyHeaderHeight}px`)
+    document.body.style.setProperty(CSS_HEADER_HEIGHT_PROPERTY_NAME, `${stickyHeaderHeight}px`)
 
     setTimeout(() => {
       this._element.classList.remove(STICKY_HEADER_INIT_CLASS)

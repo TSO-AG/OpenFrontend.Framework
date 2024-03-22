@@ -67,7 +67,8 @@
   gap: var(--#{$prefix}header-content-gap);
   align-items: center;
   justify-content: space-between; // space out brand from logo
-  padding: var(--#{$prefix}header-padding-y) var(--#{$prefix}header-padding-x);
+  padding-right: var(--#{$prefix}header-padding-x);
+  padding-left: var(--#{$prefix}header-padding-x);
   color: var(--#{$prefix}header-color);
   background-color: var(--#{$prefix}header-background-color);
   @include gradient-bg();
@@ -81,6 +82,18 @@
     gap: var(--#{$prefix}header-content-gap);
     align-items: center;
     justify-content: space-between;
+  }
+
+  > * {
+    @include transition(padding .3s);
+
+    &:first-child {
+      padding-top: var(--#{$prefix}header-padding-y);
+    }
+
+    &:last-child {
+      padding-bottom: var(--#{$prefix}header-padding-y);
+    }
   }
 
   > .container,
@@ -255,6 +268,10 @@
   height: var(--#{$prefix}header-sticky-height);
   margin-bottom: calc(var(--#{$prefix}header-sticky-height) * -1);
 
+  &:has(+.header-sticky) {
+    margin-bottom: 0;
+  }
+
   + .header {
     right: 0;
     left: 0;
@@ -279,6 +296,10 @@
 
 .header-sticky-init {
   @include transition(none !important);
+
+  > * {
+    @include transition(none !important);
+  }
 }
 
 .header-sticky {

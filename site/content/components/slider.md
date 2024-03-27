@@ -138,7 +138,7 @@ Each class adjusts the position of the pagination according to its description (
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <div class="wrapper">
-          <div class="wrapper-content wrapper-content-padding-y-xl wrapper-content-padding-x-xl text-center">
+          <div class="wrapper-content wrapper-content-padding-y-xl wrapper-content-padding-x-xl text-center" style="--bs-wrapper-color: #fff">
             <h2>Your next destination</h2>
             <p>Escape ordinary, experience majestic views!</p>
             <p>
@@ -154,7 +154,7 @@ Each class adjusts the position of the pagination according to its description (
       </div>
       <div class="swiper-slide">
         <div class="wrapper">
-          <div class="wrapper-content wrapper-content-padding-x-xl text-center">
+          <div class="wrapper-content wrapper-content-padding-x-xl text-center" style="--bs-wrapper-color: #fff">
             <h2>Earth from space</h2>
             <p>Touch the stars, gaze at Earth's grace!</p>
           </div>

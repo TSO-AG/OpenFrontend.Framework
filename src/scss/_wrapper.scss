@@ -99,12 +99,20 @@
   }
 }
 
+.wrapper-content-padding-y-none {
+  --#{$prefix}wrapper-padding-y: 0px;
+}
+
 .wrapper-content-padding-y-lg {
   --#{$prefix}wrapper-padding-y: var(--#{$prefix}wrapper-padding-y-lg);
 }
 
 .wrapper-content-padding-y-xl {
   --#{$prefix}wrapper-padding-y: var(--#{$prefix}wrapper-padding-y-xl);
+}
+
+.wrapper-content-padding-x-none {
+  --#{$prefix}wrapper-padding-x: 0px;
 }
 
 .wrapper-content-padding-x-lg {

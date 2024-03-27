@@ -33,7 +33,7 @@ toc: true
 
 #### Image
 {{< example >}}
-<div class="wrapper" style="min-height: 400px">
+<div class="wrapper" style="--bs-wrapper-color: #fff; min-height: 400px">
   <div class="wrapper-content text-center">Sample wrapper content</div>
 
   <div class="wrapper-bg-media">
@@ -81,7 +81,7 @@ With the `--bs-wrapper-media-overlay` and `--bs-wrapper-media-overlay-opacity` v
 
 #### Headline and text
 {{< example >}}
-<div class="wrapper" style="min-height: 400px">
+<div class="wrapper" style="--bs-wrapper-color: #fff; min-height: 400px">
   <div class="wrapper-content">
     <h2>Your next destination</h2>
     <p>Escape ordinary, experience majestic views!</p>
@@ -97,7 +97,7 @@ With the `--bs-wrapper-media-overlay` and `--bs-wrapper-media-overlay-opacity` v
 
 #### Regular link
 {{< example >}}
-<div class="wrapper" style="min-height: 400px">
+<div class="wrapper" style="--bs-wrapper-color: #fff; min-height: 400px">
   <div class="wrapper-content">
     <h2>Your next destination</h2>
     <p>Escape ordinary, experience majestic views!</p>
@@ -119,7 +119,7 @@ With the `--bs-wrapper-media-overlay` and `--bs-wrapper-media-overlay-opacity` v
 Works great with `.wrapper-zoom` class.
 
 {{< example >}}
-<div class="wrapper wrapper-zoom" style="min-height: 400px">
+<div class="wrapper wrapper-zoom" style="--bs-wrapper-color: #fff; min-height: 400px">
   <div class="wrapper-content">
     <h2>Your next destination</h2>
     <p>Escape ordinary, experience majestic views!</p>
@@ -141,7 +141,7 @@ Works great with `.wrapper-zoom` class.
 The hidden link will make the whole wrapper clickable, but will not display any text. Works great with `.wrapper-zoom` class.
 
 {{< example >}}
-<div class="wrapper wrapper-zoom" style="min-height: 400px">
+<div class="wrapper wrapper-zoom" style="--bs-wrapper-color: #fff; min-height: 400px">
   <div class="wrapper-content">
     <h2>Earth from space</h2>
     <p class="mb-0">Touch the stars, gaze at Earth's grace!</p>
@@ -161,7 +161,7 @@ The hidden link will make the whole wrapper clickable, but will not display any 
 
 #### Date & Status
 {{< example >}}
-<div class="wrapper wrapper-zoom">
+<div class="wrapper wrapper-zoom" style="--bs-wrapper-color: #fff;">
   <div class="wrapper-content-top-right">
     <div class="state state--open">open</div>
   </div>
@@ -184,6 +184,13 @@ The hidden link will make the whole wrapper clickable, but will not display any 
       <img src="assets/media/sample-image.jpg" alt="">
     </figure>
   </div>
+</div>
+{{< /example >}}
+
+#### Content Style
+{{< example >}}
+<div class="wrapper wrapper-bg-light py-5 fs-4">
+  <div class="wrapper-content wrapper-content-text-shadow text-center">Sample wrapper content</div>
 </div>
 {{< /example >}}
 

@@ -84,10 +84,8 @@
 
 .wrapper-content {
   padding: var(--#{$prefix}wrapper-padding-y) var(--#{$prefix}wrapper-padding-x);
-  font-size: var(--#{$prefix}wrapper-font-size);
   line-height: var(--#{$prefix}wrapper-line-height);
   color: var(--#{$prefix}wrapper-color);
-  text-shadow: var(--#{$prefix}wrapper-text-shadow);
 
   > *:last-child {
     margin-bottom: 0;
@@ -97,6 +95,10 @@
   a {
     text-shadow: none;
   }
+}
+
+.wrapper-content-text-shadow {
+  text-shadow: var(--#{$prefix}wrapper-text-shadow);
 }
 
 .wrapper-content-padding-y-none {

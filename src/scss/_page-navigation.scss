@@ -109,7 +109,7 @@
 }
 
 .page-nav-link-toggle {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
   width: var(--#{$prefix}page-nav-link-toggle-width);
@@ -118,11 +118,13 @@
   background: transparent;
   border: var(--#{$prefix}page-nav-link-toggle-border-width) var(--#{$prefix}page-nav-link-toggle-border-style) var(--#{$prefix}page-nav-link-toggle-border-color);
 
-  i {
+  i,
+  svg  {
     @include transition($page-nav-link-toggle-icon-transition);
   }
 
-  .active-level > & > i {
+  .active-level > & > i,
+  .active-level > & > svg {
     transform: rotate(-180deg);
   }
 

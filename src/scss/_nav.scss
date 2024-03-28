@@ -1,3 +1,8 @@
+.nav-condensed {
+  --#{$prefix}nav-link-padding-y: 0px;
+  --#{$prefix}nav-link-padding-x: 0px;
+}
+
 .nav-nowrap {
   flex-wrap: nowrap;
   overflow-x: auto;

@@ -125,6 +125,27 @@ As always, vertical navigation is possible without `<ul>`s, too.
 </nav>
 {{< /example >}}
 
+### Condensed
+
+You can reduce the paddings of the links by adding the `.nav-condensed` class.
+
+{{< example >}}
+<ul class="nav nav-condensed flex-column">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled">Disabled</a>
+  </li>
+</ul>
+{{< /example >}}
+
 ### Tabs
 
 Takes the basic nav from above and adds the `.nav-tabs` class to generate a tabbed interface. Use them to create tabbable regions with our [tab JavaScript plugin](#javascript-behavior).

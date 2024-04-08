@@ -83,7 +83,6 @@
 }
 
 .wrapper-content {
-  padding: var(--#{$prefix}wrapper-padding-y) var(--#{$prefix}wrapper-padding-x);
   line-height: var(--#{$prefix}wrapper-line-height);
   color: var(--#{$prefix}wrapper-color);
 
@@ -101,8 +100,9 @@
   text-shadow: var(--#{$prefix}wrapper-text-shadow);
 }
 
-.wrapper-content-padding-y-none {
-  --#{$prefix}wrapper-padding-y: 0px;
+[class*="wrapper-content-padding-y"] {
+  padding-bottom: var(--#{$prefix}wrapper-padding-y);
+  padding-top: var(--#{$prefix}wrapper-padding-y);
 }
 
 .wrapper-content-padding-y-lg {
@@ -113,8 +113,9 @@
   --#{$prefix}wrapper-padding-y: var(--#{$prefix}wrapper-padding-y-xl);
 }
 
-.wrapper-content-padding-x-none {
-  --#{$prefix}wrapper-padding-x: 0px;
+[class*="wrapper-content-padding-x"] {
+  padding-left: var(--#{$prefix}wrapper-padding-x);
+  padding-right: var(--#{$prefix}wrapper-padding-x);
 }
 
 .wrapper-content-padding-x-lg {

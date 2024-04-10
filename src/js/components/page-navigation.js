@@ -9,6 +9,7 @@ const CLASS_NAME_SUBMENU_ACTIVE = 'active-level'
 const CLASS_NAME_PANEL_ACTIVE = 'active-panel'
 const CLASS_NAME_PANEL_PARENT = 'active-panel-parent'
 const PANEL_HEIGHT_PROPERTY_NAME = '--page-nav-panel-height'
+const ACTIVE_ITEM_SELECTOR = 'span.active'
 
 const DefaultType = {
   togglePanelButtonsSelector: 'string',
@@ -26,6 +27,12 @@ class PageNavigation extends BaseComponent {
     this._togglePanelButtons = element.querySelectorAll(this._config.togglePanelButtonsSelector)
     this._closePanelButtons = element.querySelectorAll(this._config.closePanelButtonsSelector)
     this._initTriggers()
+    this._openActivePagePanels()
+
+    // Set the panel-height property when the navigation size changes due to resolution change or collapse component action
+    new ResizeObserver(() => {
+      this._setHighestPanelHeight()
+    }).observe(this._element)
   }
 
   // Getters
@@ -74,6 +81,30 @@ class PageNavigation extends BaseComponent {
           this._setHighestPanelHeight()
         }
       })
+    }
+  }
+
+  _openActivePagePanels() {
+    // Find first active item
+    const activeItem = this._element.querySelector(ACTIVE_ITEM_SELECTOR)
+
+    if (activeItem) {
+      let currentElement = activeItem
+
+      // Open all panels that are parents of activeItem
+      while (currentElement && currentElement !== this._element) {
+        if (currentElement.tagName === 'LI') {
+          const submenu = currentElement
+          const panel = submenu.querySelector('ul')
+          submenu.classList.add(CLASS_NAME_SUBMENU_ACTIVE)
+
+          if (panel) {
+            this._openPanel(panel)
+          }
+        }
+
+        currentElement = currentElement.parentNode
+      }
     }
   }
 

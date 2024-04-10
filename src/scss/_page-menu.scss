@@ -18,7 +18,9 @@
   padding: var(--#{$prefix}page-menu-padding-y) var(--#{$prefix}page-menu-padding-x);
 
   @include media-breakpoint-up($page-menu-breakpoint) {
-    grid-template-columns: 1fr 23em;
+    &:has(.page-menu-content) {
+      grid-template-columns: 1fr 23em;
+    }
   }
 }
 

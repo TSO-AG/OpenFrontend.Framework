@@ -13,3 +13,11 @@
 .dropdown-toggle:not(:focus) {
   outline: 0;
 }
+
+@media (min-width: 992px) {
+  .page-menu-type-grid .page-nav-level-2 > li > a,
+  .page-menu-type-grid .page-nav-level-2 > li > strong {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+}

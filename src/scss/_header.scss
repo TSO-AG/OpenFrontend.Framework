@@ -221,6 +221,14 @@
   }
 }
 
+.header-collapse-full-height {
+  max-height: calc(100vh - var(--bs-header-height));
+
+  > *:only-child {
+    height: calc(100vh - var(--bs-header-height));
+  }
+}
+
 // Header themes
 //
 // Styles for switching between headers with light or dark background.

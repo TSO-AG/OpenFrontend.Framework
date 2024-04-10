@@ -636,6 +636,11 @@ $page-nav-link-toggle-border-style:      null !default;
 $page-nav-link-toggle-icon-transition:   transform .3s ease-in-out !default;
 $page-nav-link-back-color:               var(--#{$prefix}link-color) !default;
 $page-nav-link-back-hover-color:         var(--#{$prefix}link-hover-color) !default;
+$page-nav-type-grid-column:              4 !default;
+$page-nav-type-grid-level-2-gap-x:       1em !default;
+$page-nav-type-grid-level-2-gap-y:       1em !default;
+$page-nav-type-grid-level-2-padding-x:   0 !default;
+$page-nav-type-grid-level-2-padding-y:   0 !default;
 // scss-docs-end page-navigation-variables
 
 // scss-docs-start page-navigation-dark-variables

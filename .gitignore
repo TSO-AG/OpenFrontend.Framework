@@ -18,6 +18,7 @@ Thumbs.db
 # Ignore docs files
 /_site/
 /_site-dist/
+/_site-src/
 
 # Hugo files
 /resources/

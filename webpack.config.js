@@ -126,7 +126,7 @@ function createDistConfig() {
     .getWebpackConfig()
 }
 
-function createDocsConfig(baseUrl) {
+function createDocsConfig(baseUrl, mode) {
   let publicPath = ''
 
   // Get the public path from base URL. Only the top level folders are support (e.g. https://domain.tld/folder).
@@ -139,15 +139,24 @@ function createDocsConfig(baseUrl) {
     }
   }
 
-  return createConfigDraft('_site-dist', `${publicPath}/dist`)
-    .addPlugin(new CreateHtaccessPlugin())
-    .enableSourceMaps()
-    .enableVersioning(Encore.isProduction())
-    .configureCssMinimizerPlugin((options) => {
-      options.minimizerOptions = options.minimizerOptions || {};
-      options.minimizerOptions.minimize = false;
-    })
-    .getWebpackConfig()
+  let config = createConfigDraft(`_site-${mode}`, `${publicPath}/${mode}`);
+
+  if (mode === 'dist') {
+    config = config
+      .addPlugin(new CreateHtaccessPlugin())
+      .enableSourceMaps()
+      .enableVersioning()
+    ;
+  } else if (mode === 'src') {
+    config = config
+      .configureCssMinimizerPlugin((options) => {
+        // Do not minimize CSS assets
+        options.exclude = /\.css(\?.*)?$/i;
+      })
+    ;
+  }
+
+  return config.getWebpackConfig();
 }
 
 function createNamedConfig(name, config) {
@@ -159,6 +168,7 @@ function createNamedConfig(name, config) {
 module.exports = env => {
   return [
     createNamedConfig('dist', createDistConfig()),
-    createNamedConfig('docs', createDocsConfig(env.BASE_URL || ''))
+    createNamedConfig('docs-dist', createDocsConfig(env.BASE_URL || '', 'dist')),
+    createNamedConfig('docs-src', createDocsConfig(env.BASE_URL || '', 'src')),
   ]
 }

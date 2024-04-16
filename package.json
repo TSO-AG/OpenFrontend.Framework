@@ -6,8 +6,8 @@
   "style": "dist/open-frontend.css",
   "scripts": {
     "dist-build": "encore production --progress --config-name dist",
-    "docs-build": "if [ -z ${BASE_URL+x} ]; then echo \"$BASE_URL is not defined\"; else encore production --progress --config-name docs --env=BASE_URL=$BASE_URL && hugo --cleanDestinationDir --printUnusedTemplates --baseURL $BASE_URL; fi",
-    "docs-serve": "encore dev --config-name docs && concurrently 'encore dev --watch --config-name docs' 'hugo server --port 9001 --disableFastRender --printUnusedTemplates'",
+    "docs-build": "if [ -z ${BASE_URL+x} ]; then echo \"$BASE_URL is not defined\"; else encore production --progress --config-name docs-dist --env=BASE_URL=$BASE_URL && encore production --progress --config-name docs-src --env=BASE_URL=$BASE_URL && hugo --cleanDestinationDir --printUnusedTemplates --baseURL $BASE_URL; fi",
+    "docs-serve": "encore dev --config-name docs-dist && encore dev --config-name docs-src && concurrently 'encore dev --watch --config-name docs-dist' 'hugo server --port 9001 --disableFastRender --printUnusedTemplates'",
     "css-lint": "stylelint \"**/*.{css,scss}\"",
     "js-lint": "eslint --report-unused-disable-directives --ext .html,.js,.md ."
   },

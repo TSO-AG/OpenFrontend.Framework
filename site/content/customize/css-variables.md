@@ -20,8 +20,8 @@ These CSS variables are available everywhere, regardless of color mode.
 
 ```css
 {{< root.inline >}}
-{{- $css := readFile "_site-dist/open-frontend.css" -}}
-{{- $match := findRE `\[data-bs-theme=light\]\s*\{([^}]*)\}` $css 1 -}}
+{{- $css := readFile "_site-src/open-frontend.css" -}}
+{{- $match := findRE `:root,\n\[data-bs-theme=light\]\s*\{([^}]*)\}` $css 1 -}}
 
 {{- if (eq (len $match) 0) -}}
 {{- errorf "Got no matches for :root in %q!" $.Page.Path -}}
@@ -37,7 +37,7 @@ These variables are scoped to our built-in dark mode.
 
 ```css
 {{< root.inline >}}
-{{- $css := readFile "dist/open-frontend.css" -}}
+{{- $css := readFile "_site-src/open-frontend.css" -}}
 {{- $match := findRE `\[data-bs-theme=dark\]\s*\{([^}]*)}` $css 1 -}}
 {{- if (eq (len $match) 0) -}}
 {{- errorf "Got no matches for [data-bs-theme=dark] in %q!" $.Page.Path -}}

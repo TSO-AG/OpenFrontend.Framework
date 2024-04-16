@@ -20,8 +20,7 @@ These CSS variables are available everywhere, regardless of color mode.
 
 ```css
 {{< root.inline >}}
-{{- $css := readFile "dist/open-frontend.css" -}}
-
+{{- $css := readFile "_site-dist/open-frontend.css" -}}
 {{- $match := findRE `\[data-bs-theme=light\]\s*\{([^}]*)\}` $css 1 -}}
 
 {{- if (eq (len $match) 0) -}}

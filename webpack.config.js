@@ -143,6 +143,10 @@ function createDocsConfig(baseUrl) {
     .addPlugin(new CreateHtaccessPlugin())
     .enableSourceMaps()
     .enableVersioning(Encore.isProduction())
+    .configureCssMinimizerPlugin((options) => {
+      options.minimizerOptions = options.minimizerOptions || {};
+      options.minimizerOptions.minimize = false;
+    })
     .getWebpackConfig()
 }
 

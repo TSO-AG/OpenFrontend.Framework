@@ -336,3 +336,12 @@
   --#{$prefix}header-link-badge-font-size: var(--#{$prefix}header-sticky-link-badge-font-size);
   --#{$prefix}header-link-badge-width: var(--#{$prefix}header-sticky-link-badge-width);
 }
+
+// Show/hide element inside sticky header
+.header-sticky .header-sticky-hide {
+  display: none !important;
+}
+
+.header:not(.header-sticky) .header-sticky-show {
+  display: none !important;
+}

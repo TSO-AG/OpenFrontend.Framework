@@ -121,7 +121,7 @@ toc: true
 
 ### Layout 2
 {{< example class="bd-example-header">}}
-<header class="header" data-of-header>
+<header class="header header-center" data-of-header>
   <div class="container">
     <div class="header-content d-none d-lg-flex">
       <div>

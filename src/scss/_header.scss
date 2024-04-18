@@ -115,6 +115,16 @@
   align-items: center;
 }
 
+.header-center {
+  .header-content {
+    flex-grow: 1;
+
+    &:last-child {
+      justify-content: flex-end;
+    }
+  }
+}
+
 // Header-link
 .header-link {
   display: flex;

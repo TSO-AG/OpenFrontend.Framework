@@ -145,7 +145,7 @@ function createDocsConfig(baseUrl, mode) {
     config = config
       .addPlugin(new CreateHtaccessPlugin())
       .enableSourceMaps()
-      .enableVersioning()
+      .enableVersioning(Encore.isProduction())
     ;
   } else if (mode === 'src') {
     config = config

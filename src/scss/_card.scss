@@ -18,6 +18,7 @@
 
 .card-media {
   position: relative;
+  container-type: inline-size;
 
   &:first-child {
     @include border-radius(var(--#{$prefix}card-inner-border-radius) var(--#{$prefix}card-inner-border-radius) 0 0);

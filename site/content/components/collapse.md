@@ -92,6 +92,29 @@ Conversely, multiple `<button>` or `<a>` elements can show and hide the same ele
 </div>
 {{< /example >}}
 
+
+## Toggle collapse and change class
+
+This example shows how to use the `collapse` component in conjunction with the `data-of-collapse-toggle-class` attribute, which allows for dynamic class toggling on a specified element in response to the collapse state.
+
+{{< example >}}
+
+<p id="element-selector">Class will be toggled</p>
+
+<p>
+  <button class="btn btn-primary" data-of-collapse-toggle-class='{"className": "text-uppercase", "targetSelector": "#element-selector"}' type="button" data-bs-toggle="collapse" data-bs-target="#collapseClassExample" aria-expanded="false" aria-controls="collapseClassExample">
+    Toggle collapse and change class of element selector
+  </button>
+</p>
+<div>
+  <div class="collapse" id="collapseClassExample">
+    <div class="card card-body">
+      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
 ## Accessibility
 
 Be sure to add `aria-expanded` to the control element. This attribute explicitly conveys the current state of the collapsible element tied to the control to screen readers and similar assistive technologies. If the collapsible element is closed by default, the attribute on the control element should have a value of `aria-expanded="false"`. If you've set the collapsible element to be open by default using the `show` class, set `aria-expanded="true"` on the control instead. The plugin will automatically toggle this attribute on the control based on whether or not the collapsible element has been opened or closed (via JavaScript, or because the user triggered another control element also tied to the same collapsible element). If the control element's HTML element is not a button (e.g., an `<a>` or `<div>`), the attribute `role="button"` should be added to the element.
@@ -148,6 +171,7 @@ const collapseList = await Promise.all([...collapseElementList].map(element => o
 | --- | --- | --- | --- |
 `parent` | selector, DOM element | `null` | If parent is provided, then all collapsible elements under the specified parent will be closed when this collapsible item is shown. (similar to traditional accordion behavior - this is dependent on the `card` class). The attribute has to be set on the target collapsible area. |
 `toggle` | boolean | `true` | Toggles the collapsible element on invocation. |
+`data-of-collapse-toggle-class` | JSON string | `null` | Specifies a JSON object defining the class to toggle (`className`) and the target element (`targetSelector`) where the class should be applied when the collapse state changes. This allows dynamic CSS class toggling in response to collapse events. |
 {{< /bs-table >}}
 
 ### Methods

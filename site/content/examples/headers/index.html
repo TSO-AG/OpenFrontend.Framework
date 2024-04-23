@@ -117,7 +117,7 @@ extra_css:
 
   <h1 class="visually-hidden">Headers examples</h1>
 
-  <header class="header" style="z-index: 1029" data-of-header>
+  <header class="header header-page-menu-opened-init" id="header" style="z-index: 1029" data-of-header>
     <div class="container">
       <div class="header-brand">
         <a href="#">
@@ -206,8 +206,9 @@ extra_css:
             </div>
           </div>
         </div>
-        <div>
+        <div class="show-when-mobile-menu-opened">
           <button class="header-link" type="button" data-bs-toggle="collapse"
+                  data-of-collapse-toggle-class='{"className": "header-page-menu-opened", "targetSelector": "#header"}'
                   data-bs-target="#pageMenu" aria-controls="pageMenu"
                   aria-expanded="false" aria-label="Toggle navigation">
             <span class="header-link-icon d-none-collapsed">{{< icon name="list" >}}</span>
@@ -217,7 +218,7 @@ extra_css:
 
           <div class="collapse header-collapse page-menu-wrapper" id="pageMenu">
             <div class="container">
-              {{< page-menu >}}
+              {{< page-menu-type-mobile >}}
             </div>
           </div>
         </div>

@@ -349,9 +349,28 @@
 
 // Show/hide element inside sticky header
 .header-sticky .header-sticky-hide {
-  display: none !important;
+  display: none !important;  // stylelint-disable-line declaration-no-important
 }
 
 .header:not(.header-sticky) .header-sticky-show {
-  display: none !important;
+  display: none !important;  // stylelint-disable-line declaration-no-important
+}
+
+.header-page-menu-opened-init {
+  @include media-breakpoint-down($page-menu-breakpoint) {
+    .page-menu {
+      padding-top: 0;
+    }
+  }
+}
+
+.header-page-menu-opened {
+  @include media-breakpoint-down($page-menu-breakpoint) {
+    .header-brand,
+    .header-content > *:not(.show-when-mobile-menu-opened),
+    .hide-when-mobile-menu-opened {
+      pointer-events: none !important;  // stylelint-disable-line declaration-no-important
+      opacity: 0 !important;  // stylelint-disable-line declaration-no-important
+    }
+  }
 }

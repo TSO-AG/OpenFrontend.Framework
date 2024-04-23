@@ -35,8 +35,6 @@ class PageNavigation extends BaseComponent {
       this._openActivePagePanels()
     }
 
-    this._openActivePagePanels()
-
     // Set the panel-height property when the navigation size changes due to resolution change or collapse component action
     new ResizeObserver(() => {
       this._setHighestPanelHeight()

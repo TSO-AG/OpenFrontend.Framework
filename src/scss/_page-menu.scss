@@ -5,6 +5,7 @@
   --#{$prefix}page-menu-background-color: #{$page-menu-light-background};
   --#{$prefix}page-menu-color: #{$page-menu-light-color};
   --#{$prefix}page-menu-box-shadow: #{$page-menu-box-shadow};
+  --page-menu-breakpoint: #{breakpoint-min($page-menu-breakpoint)};
   // scss-docs-end page-menu-css-vars
 
   color: var(--#{$prefix}page-menu-color);

@@ -10,6 +10,7 @@ const CLASS_NAME_PANEL_ACTIVE = 'active-panel'
 const CLASS_NAME_PANEL_PARENT = 'active-panel-parent'
 const PANEL_HEIGHT_PROPERTY_NAME = '--page-nav-panel-height'
 const ACTIVE_ITEM_SELECTOR = 'span.active'
+const CSS_MENU_BREAKPOINT_PROPERTY_NAME = '--page-menu-breakpoint'
 
 const DefaultType = {
   togglePanelButtonsSelector: 'string',
@@ -27,6 +28,13 @@ class PageNavigation extends BaseComponent {
     this._togglePanelButtons = element.querySelectorAll(this._config.togglePanelButtonsSelector)
     this._closePanelButtons = element.querySelectorAll(this._config.closePanelButtonsSelector)
     this._initTriggers()
+
+    // Display active level after navigation initialization only on desktop
+    const breakpointMenu = getComputedStyle(element).getPropertyValue(CSS_MENU_BREAKPOINT_PROPERTY_NAME).trim()
+    if (window.matchMedia(`(min-width: ${breakpointMenu})`).matches) {
+      this._openActivePagePanels()
+    }
+
     this._openActivePagePanels()
 
     // Set the panel-height property when the navigation size changes due to resolution change or collapse component action

@@ -4,6 +4,9 @@ window.openFrontend = {
   get Alert() {
     return new Promise(resolve => import(/* webpackChunkName: "of-alert" */ 'bootstrap/js/src/alert').then(v => resolve(v.default)))
   },
+  get Animation() {
+    return new Promise(resolve => import(/* webpackChunkName: "of-animation" */ './components/animation').then(v => resolve(v.default)))
+  },
   get Button() {
     return new Promise(resolve => import(/* webpackChunkName: "of-button" */ 'bootstrap/js/src/button').then(v => resolve(v.default)))
   },
@@ -80,6 +83,7 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-of-ticker]'), () => import(/* webpackChunkName: "of-ticker" */ './components/ticker'))
   loadForElements(element.querySelectorAll('[data-of-page-navigation]'), () => import(/* webpackChunkName: "of-page-navigation" */ './components/page-navigation'))
   loadForElements(element.querySelectorAll('[data-of-header]'), () => import(/* webpackChunkName: "of-page-navigation" */ './components/header'))
+  loadForElements(element.querySelectorAll('[data-of-animation]'), () => import(/* webpackChunkName: "of-animation" */ './components/animation'))
 }
 
 document.addEventListener('DOMContentLoaded', () => window.initOpenFrontend(document))

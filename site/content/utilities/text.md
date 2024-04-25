@@ -158,7 +158,7 @@ Here's how to apply it:
 The `.text-shadow-none` class is a utility that you can use if you want to remove text shadow from a specific text element.
 
 {{< example >}}
-<div class="wrapper wrapper-bg-light py-5">
+<div class="wrapper wrapper-bg-light wrapper-text-dark py-5">
   <div class="wrapper-content text-center">
     <p>Sample wrapper content</p>
     <p class="text-shadow-none">This text has no shadow effect</p>

@@ -121,19 +121,19 @@ The negative margin classes can assist in overriding default margins or generati
 
 {{< example class="bd-example-cssgrid" >}}
 
-<div class="mb-element wrapper wrapper-bg-dark py-5">
+<div class="mb-element wrapper wrapper-bg-dark wrapper-text-light py-5">
   <div class="wrapper-content text-center">Sample wrapper content</div>
 </div>
 
-<div class="mb-section wrapper wrapper-bg-light py-5">
+<div class="mb-section wrapper wrapper-bg-light wrapper-text-dark py-5">
   <div class="wrapper-content text-center">Sample wrapper content</div>
 </div>
 
-<div class="mb-section wrapper wrapper-bg-dark py-5">
+<div class="mb-section wrapper wrapper-bg-dark wrapper-text-light py-5">
   <div class="wrapper-content text-center">Sample wrapper content</div>
 </div>
 
-<div class="mt-n-section wrapper wrapper-bg-light py-5">
+<div class="mt-n-section wrapper wrapper-bg-light wrapper-text-dark py-5">
   <div class="wrapper-content text-center">Sample wrapper content</div>
 </div>
 

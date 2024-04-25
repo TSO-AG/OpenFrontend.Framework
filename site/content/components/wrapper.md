@@ -12,14 +12,14 @@ toc: true
 
 #### Light color
 {{< example >}}
-<div class="wrapper wrapper-bg-light py-5">
+<div class="wrapper wrapper-bg-light wrapper-text-dark py-5">
   <div class="wrapper-content text-center">Sample wrapper content</div>
 </div>
 {{< /example >}}
 
 #### Dark color
 {{< example >}}
-<div class="wrapper wrapper-bg-dark py-5">
+<div class="wrapper wrapper-bg-dark wrapper-text-light py-5">
   <div class="wrapper-content text-center">Sample wrapper content</div>
 </div>
 {{< /example >}}
@@ -189,7 +189,7 @@ The hidden link will make the whole wrapper clickable, but will not display any 
 
 #### Content Style
 {{< example >}}
-<div class="wrapper wrapper-bg-light py-5">
+<div class="wrapper wrapper-bg-light wrapper-text-dark py-5">
   <div class="wrapper-content wrapper-content-text-shadow text-center fs-4">Sample wrapper content</div>
 </div>
 {{< /example >}}
@@ -200,7 +200,7 @@ Use the `.wrapper-content-padding-x` for horizontal and `.wrapper-content-paddin
 You can also increase the padding by adding the `-lg` or `-xl` suffixes to each of the class.
 
 {{< example >}}
-<div class="wrapper wrapper-bg-dark">
+<div class="wrapper wrapper-bg-dark wrapper-text-light">
   <div class="wrapper-content wrapper-content-padding-x wrapper-content-padding-y-xl text-center">Sample wrapper content</div>
 </div>
 {{< /example >}}

@@ -28,12 +28,18 @@
 
   &-bg-light {
     --#{$prefix}wrapper-bg-color: #{$wrapper-bg-color-light};
-    --#{$prefix}wrapper-color: #{color-contrast($wrapper-bg-color-light)};
   }
 
   &-bg-dark {
     --#{$prefix}wrapper-bg-color: #{$wrapper-bg-color-dark};
+  }
+
+  &-text-light {
     --#{$prefix}wrapper-color: #{color-contrast($wrapper-bg-color-dark)};
+  }
+
+  &-text-dark {
+    --#{$prefix}wrapper-color: #{color-contrast($wrapper-bg-color-light)};
   }
 }
 

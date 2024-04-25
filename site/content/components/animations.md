@@ -98,11 +98,11 @@ toc: true
 
 <h4 class="mb-4">Lightspeed</h4>
 <div class="row row-cols-3 justify-content-center">
-  <div data-of-animation='{"cssClass": "lightSpeedInRight"}'>
-    {{< animation-content text="lightSpeedInRight" >}}
-  </div>
   <div data-of-animation='{"cssClass": "lightSpeedInLeft"}'>
     {{< animation-content text="lightSpeedInLeft">}}
+  </div>
+  <div data-of-animation='{"cssClass": "lightSpeedInRight"}'>
+    {{< animation-content text="lightSpeedInRight" >}}
   </div>
 </div>
 

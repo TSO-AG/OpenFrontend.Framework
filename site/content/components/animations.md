@@ -238,7 +238,7 @@ alphabetically):
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
 | `cssClass` | `string` | `'fadeIn'` | @Todo. |
-| `duration` | `number` | `'1500` | @Todo. |
+| `duration` | `number` | `1500` | @Todo. |
 | `delay` | `number` | `0` | @Todo. |
 | `offset` | `number` | `0` | @Todo. |
 | `repeat` | `boolean` | `false` | @Todo. |

@@ -11,6 +11,8 @@ const CLASS_NAME_PANEL_PARENT = 'active-panel-parent'
 const PANEL_HEIGHT_PROPERTY_NAME = '--page-nav-panel-height'
 const ACTIVE_ITEM_SELECTOR = 'span.active'
 const CSS_MENU_BREAKPOINT_PROPERTY_NAME = '--page-menu-breakpoint'
+const HTML_CONTENT_TRIGGER_ATTRIBUTE = 'data-html-content-trigger'
+const HTML_CONTENT_TRIGGER_SELECTOR = `[${HTML_CONTENT_TRIGGER_ATTRIBUTE}]`
 
 const DefaultType = {
   togglePanelButtonsSelector: 'string',
@@ -28,6 +30,7 @@ class PageNavigation extends BaseComponent {
     this._togglePanelButtons = element.querySelectorAll(this._config.togglePanelButtonsSelector)
     this._closePanelButtons = element.querySelectorAll(this._config.closePanelButtonsSelector)
     this._initTriggers()
+    this._initHTMLPanels()
 
     // Display active level after navigation initialization only on desktop
     const breakpointMenu = getComputedStyle(element).getPropertyValue(CSS_MENU_BREAKPOINT_PROPERTY_NAME).trim()
@@ -90,6 +93,19 @@ class PageNavigation extends BaseComponent {
     }
   }
 
+  _initHTMLPanels() {
+    this._htmlPanels = []
+    this._htmlPanelsLinks = this._element.querySelectorAll(HTML_CONTENT_TRIGGER_SELECTOR)
+    for (const link of this._htmlPanelsLinks) {
+      const htmlPanel = document.getElementById(link.getAttribute(HTML_CONTENT_TRIGGER_ATTRIBUTE))
+
+      if (htmlPanel) {
+        this._htmlPanels.push(htmlPanel)
+        htmlPanel.style.display = 'none'
+      }
+    }
+  }
+
   _openActivePagePanels() {
     // Find first active item
     const activeItem = this._element.querySelector(ACTIVE_ITEM_SELECTOR)
@@ -117,12 +133,14 @@ class PageNavigation extends BaseComponent {
   _openPanel(panel) {
     this._activateMenuPanel(panel)
     this._activateMenuPanelParent(panel)
+    this._updateHtmlPanelDisplay()
   }
 
   _closePanel(panel) {
     this._deactivateMenuPanel(panel)
     this._deactivateMenuPanelParent(panel)
     this._closeAllPanelChild(panel)
+    this._updateHtmlPanelDisplay()
   }
 
   _activateMenuPanel(panel) {
@@ -140,6 +158,35 @@ class PageNavigation extends BaseComponent {
 
     if (parentPanel) {
       parentPanel.classList.add(CLASS_NAME_PANEL_PARENT)
+    }
+  }
+
+  _updateHtmlPanelDisplay() {
+    if (this._htmlPanels.length === 0) {
+      return
+    }
+
+    this._hideAllHtmlPanels()
+
+    let lastActivePanel = this._element.querySelectorAll(`.${CLASS_NAME_SUBMENU_ACTIVE}`).item(this._element.querySelectorAll(`.${CLASS_NAME_SUBMENU_ACTIVE}`).length - 1);
+
+    if (lastActivePanel && !lastActivePanel.matches(HTML_CONTENT_TRIGGER_SELECTOR)) {
+      lastActivePanel = lastActivePanel.closest(HTML_CONTENT_TRIGGER_SELECTOR)
+    }
+
+    if (lastActivePanel) {
+      const panelId = lastActivePanel.getAttribute(HTML_CONTENT_TRIGGER_ATTRIBUTE)
+      const panelToShow = this._htmlPanels.find(element => element.id === panelId)
+
+      if (panelToShow) {
+        panelToShow.style.display = 'revert'
+      }
+    }
+  }
+
+  _hideAllHtmlPanels() {
+    for (const element of this._htmlPanels) {
+      element.style.display = 'none'
     }
   }
 

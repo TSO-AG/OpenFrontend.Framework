@@ -21,6 +21,12 @@
   --#{$prefix}page-nav-type-grid-level-2-gap-y: #{$page-nav-type-grid-level-2-gap-y};
   --#{$prefix}page-nav-type-grid-level-2-padding-x: #{$page-nav-type-grid-level-2-padding-x};
   --#{$prefix}page-nav-type-grid-level-2-padding-y: #{$page-nav-type-grid-level-2-padding-y};
+  --#{$prefix}page-nav-type-desktop-column: #{$page-nav-type-desktop-column};
+  --#{$prefix}page-nav-type-desktop-level-1-gap-x: #{$page-nav-type-desktop-level-1-gap-x};
+  --#{$prefix}page-nav-type-desktop-level-1-gap-y: #{$page-nav-type-desktop-level-1-gap-y};
+  --#{$prefix}page-nav-type-desktop-level-1-padding-x: #{$page-nav-type-desktop-level-1-padding-x};
+  --#{$prefix}page-nav-type-desktop-level-1-padding-y: #{$page-nav-type-desktop-level-1-padding-y};
+
   // scss-docs-end page-nav-css-vars
   container-type: inline-size;
   min-height: var(--page-nav-panel-height, 0);
@@ -252,6 +258,54 @@
           padding-left: 1em;
           font-size: .9em;
         }
+      }
+    }
+  }
+}
+
+.page-menu-type-desktop {
+  container-type: inline-size;
+
+  nav {
+    --columns: var(--#{$prefix}page-nav-type-desktop-column);
+    --column-width: calc(100cqw / var(--columns));
+    --submenu-padding: 1rem;
+    margin-right: 0;
+  }
+
+  .page-nav-level-1 {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-auto-rows: max-content;
+    row-gap: var(--#{$prefix}page-nav-type-desktop-level-1-gap-y);
+    column-gap: var(--#{$prefix}page-nav-type-desktop-level-1-gap-x);
+
+    > li {
+      padding: var(--#{$prefix}page-nav-type-desktop-level-1-padding-y) var(--#{$prefix}page-nav-type-desktop-level-1-padding-x);
+    }
+
+    .page-nav-link-toggle,
+    .page-nav-back {
+      display: none;
+    }
+
+    .page-nav-submenu {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    // 2 level and all next
+    ul {
+      position: static;
+      visibility: visible;
+      background: transparent;
+      opacity: 1;
+      transform: none;
+
+      // 3 level and all next
+      ul {
+        padding-left: 1em;
+        font-size: .9em;
       }
     }
   }

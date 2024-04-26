@@ -21,3 +21,10 @@
     font-size: 1.1em;
   }
 }
+
+.page-menu-type-desktop .page-nav-level-1 > li > a,
+.page-menu-type-desktop .page-nav-level-1 > li > strong {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+

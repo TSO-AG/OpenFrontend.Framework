@@ -10,7 +10,7 @@ const EVENT_ANIMATION_ENTER = 'in.of.animation'
 const EVENT_ANIMATION_EXIT = 'out.of.animation'
 
 const DefaultType = {
-  cssClass: 'string',
+  name: 'string',
   duration: 'number',
   delay: 'number',
   offset: 'number',
@@ -18,7 +18,7 @@ const DefaultType = {
 }
 
 const Default = {
-  cssClass: 'fadeIn',
+  name: 'fadeIn',
   duration: 1500,
   delay: 0,
   offset: 0,
@@ -73,7 +73,7 @@ class Animation extends BaseComponent {
   _startAnimation(target) {
     target.style.visibility = ''
     target.classList.add(`${ANIMATION_CLASS_NAME_PREFIX}${ANIMATION_CLASS_READY}`)
-    target.classList.add(`${ANIMATION_CLASS_NAME_PREFIX}${this._config.cssClass}`)
+    target.classList.add(`${ANIMATION_CLASS_NAME_PREFIX}${this._config.name}`)
 
     target.style.animationDuration = `${this._config.duration}ms`
     target.style.animationDelay = `${this._config.delay}ms`
@@ -83,13 +83,13 @@ class Animation extends BaseComponent {
     target.addEventListener('animationend', () => {
       target.dispatchEvent(new CustomEvent(EVENT_ANIMATION_EXIT, {detail: {element: target}}))
       if (!this._config.repeat) {
-        target.classList.remove(this._config.cssClass)
+        target.classList.remove(this._config.name)
       }
     }, {once: true})
   }
 
   _reverseAnimation(target) {
-    target.classList.remove(this._config.cssClass)
+    target.classList.remove(this._config.name)
     target.dispatchEvent(new CustomEvent(EVENT_ANIMATION_EXIT, {detail: {element: target}}))
   }
 }

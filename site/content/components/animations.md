@@ -19,16 +19,16 @@ toc: true
 {{< /example >}}
 
 {{< example >}}
-<div data-of-animation='{"cssClass": "fadeInDown", "duration": 2000, "delay": 300 }'>
+<div data-of-animation='{"name": "fadeInDown", "duration": 2000, "delay": 300 }'>
   {{< animation-content >}}
 </div>
-<div data-of-animation='{"cssClass": "fadeInLeft", "duration": 2000, "delay": 300}'>
+<div data-of-animation='{"name": "fadeInLeft", "duration": 2000, "delay": 300}'>
   {{< animation-content >}}
 </div>
-<div data-of-animation='{"cssClass": "fadeInRight", "duration": 2000, "delay": 300}'>
+<div data-of-animation='{"name": "fadeInRight", "duration": 2000, "delay": 300}'>
   {{< animation-content >}}
 </div>
-<div data-of-animation='{"cssClass": "fadeInUp", "duration": 2000, "delay": 300}'>
+<div data-of-animation='{"name": "fadeInUp", "duration": 2000, "delay": 300}'>
   {{< animation-content >}}
 </div>
 {{< /example >}}
@@ -38,43 +38,43 @@ toc: true
 {{< example >}}
 <h3>Fading entrances</h3>
 <div class="row row-cols-3 justify-content-center">
-  <div data-of-animation='{"cssClass": "fadeInLeftBig"}'>
+  <div data-of-animation='{"name": "fadeInLeftBig"}'>
     {{< animation-content text="fadeInLeftBig" >}}
   </div>
-  <div data-of-animation='{"cssClass": "fadeInDownBig"}'>
+  <div data-of-animation='{"name": "fadeInDownBig"}'>
     {{< animation-content text="fadeInDown">}}
   </div>
-  <div data-of-animation='{"cssClass": "fadeInRightBig"}'>
+  <div data-of-animation='{"name": "fadeInRightBig"}'>
     {{< animation-content text="fadeInRightBig">}}
   </div>
-  <div data-of-animation='{"cssClass": "fadeInTopLeft"}'>
+  <div data-of-animation='{"name": "fadeInTopLeft"}'>
     {{< animation-content text="fadeInTopLeft">}}
   </div>
-  <div data-of-animation='{"cssClass": "fadeInDown"}'>
+  <div data-of-animation='{"name": "fadeInDown"}'>
     {{< animation-content text="fadeInDown">}}
   </div>
-  <div data-of-animation='{"cssClass": "fadeInTopRight"}'>
+  <div data-of-animation='{"name": "fadeInTopRight"}'>
     {{< animation-content text="fadeInTopRight">}}
   </div>
-  <div data-of-animation='{"cssClass": "fadeInLeft"}'>
+  <div data-of-animation='{"name": "fadeInLeft"}'>
     {{< animation-content text="fadeInLeft">}}
   </div>
-  <div data-of-animation='{"cssClass": "fadeIn"}'>
+  <div data-of-animation='{"name": "fadeIn"}'>
     {{< animation-content text="fadeIn">}}
   </div>
-  <div data-of-animation='{"cssClass": "fadeInRight"}'>
+  <div data-of-animation='{"name": "fadeInRight"}'>
     {{< animation-content text="fadeInRight">}}
   </div>
-  <div data-of-animation='{"cssClass": "fadeInBottomLeft"}'>
+  <div data-of-animation='{"name": "fadeInBottomLeft"}'>
     {{< animation-content text="fadeInBottomLeft">}}
   </div>
-  <div data-of-animation='{"cssClass": "fadeInUp"}'>
+  <div data-of-animation='{"name": "fadeInUp"}'>
     {{< animation-content text="fadeInUp">}}
   </div>
-  <div data-of-animation='{"cssClass": "fadeInBottomRight"}'>
+  <div data-of-animation='{"name": "fadeInBottomRight"}'>
     {{< animation-content text="fadeInBottomRight">}}
   </div>
-  <div data-of-animation='{"cssClass": "fadeInUpBig"}'>
+  <div data-of-animation='{"name": "fadeInUpBig"}'>
     {{< animation-content text="fadeInUp">}}
   </div>
 </div>
@@ -83,13 +83,13 @@ toc: true
 
 <h4 class="mb-4">Flippers</h4>
 <div class="row row-cols-3 justify-content-center">
-  <div data-of-animation='{"cssClass": "flip"}'>
+  <div data-of-animation='{"name": "flip"}'>
     {{< animation-content text="flip" >}}
   </div>
-  <div data-of-animation='{"cssClass": "flipInX"}'>
+  <div data-of-animation='{"name": "flipInX"}'>
     {{< animation-content text="flipInX">}}
   </div>
-  <div data-of-animation='{"cssClass": "flipInY"}'>
+  <div data-of-animation='{"name": "flipInY"}'>
     {{< animation-content text="flipInY">}}
   </div>
 </div>
@@ -98,10 +98,10 @@ toc: true
 
 <h4 class="mb-4">Lightspeed</h4>
 <div class="row row-cols-3 justify-content-center">
-  <div data-of-animation='{"cssClass": "lightSpeedInLeft"}'>
+  <div data-of-animation='{"name": "lightSpeedInLeft"}'>
     {{< animation-content text="lightSpeedInLeft">}}
   </div>
-  <div data-of-animation='{"cssClass": "lightSpeedInRight"}'>
+  <div data-of-animation='{"name": "lightSpeedInRight"}'>
     {{< animation-content text="lightSpeedInRight" >}}
   </div>
 </div>
@@ -110,19 +110,19 @@ toc: true
 
 <h4 class="mb-4">Rotating entrances </h4>
 <div class="row row-cols-3 justify-content-center">
-  <div data-of-animation='{"cssClass": "rotateIn"}'>
+  <div data-of-animation='{"name": "rotateIn"}'>
     {{< animation-content text="rotateIn" >}}
   </div>
-  <div data-of-animation='{"cssClass": "rotateInDownLeft"}'>
+  <div data-of-animation='{"name": "rotateInDownLeft"}'>
     {{< animation-content text="rotateInDownLeft">}}
   </div>
-  <div data-of-animation='{"cssClass": "rotateInDownRight"}'>
+  <div data-of-animation='{"name": "rotateInDownRight"}'>
     {{< animation-content text="rotateInDownRight">}}
   </div>
-  <div data-of-animation='{"cssClass": "rotateInUpLeft"}'>
+  <div data-of-animation='{"name": "rotateInUpLeft"}'>
     {{< animation-content text="rotateInUpLeft">}}
   </div>
-  <div data-of-animation='{"cssClass": "rotateInUpRight"}'>
+  <div data-of-animation='{"name": "rotateInUpRight"}'>
     {{< animation-content text="rotateInUpRight">}}
   </div>
 </div>
@@ -131,19 +131,19 @@ toc: true
 
 <h4 class="mb-4">Zooming entrances</h4>
 <div class="row row-cols-3 justify-content-center">
-  <div data-of-animation='{"cssClass": "zoomIn"}'>
+  <div data-of-animation='{"name": "zoomIn"}'>
     {{< animation-content text="zoomIn" >}}
   </div>
-  <div data-of-animation='{"cssClass": "zoomInDown"}'>
+  <div data-of-animation='{"name": "zoomInDown"}'>
     {{< animation-content text="zoomInDown">}}
   </div>
-  <div data-of-animation='{"cssClass": "zoomInLeft"}'>
+  <div data-of-animation='{"name": "zoomInLeft"}'>
     {{< animation-content text="zoomInLeft">}}
   </div>
-  <div data-of-animation='{"cssClass": "zoomInRight"}'>
+  <div data-of-animation='{"name": "zoomInRight"}'>
     {{< animation-content text="zoomInRight">}}
   </div>
-  <div data-of-animation='{"cssClass": "zoomInUp"}'>
+  <div data-of-animation='{"name": "zoomInUp"}'>
     {{< animation-content text="zoomInUp">}}
   </div>
 </div>
@@ -155,22 +155,22 @@ toc: true
 ## Duration
 
 {{< example >}}
-<div data-of-animation='{"cssClass": "fadeInLeft", "duration": 500}'>
+<div data-of-animation='{"name": "fadeInLeft", "duration": 500}'>
   {{< animation-content >}}
 </div>
-<div data-of-animation='{"cssClass": "fadeInLeft", "duration": 1000}'>
+<div data-of-animation='{"name": "fadeInLeft", "duration": 1000}'>
   {{< animation-content >}}
 </div>
-<div data-of-animation='{"cssClass": "fadeInLeft", "duration": 1500}'>
+<div data-of-animation='{"name": "fadeInLeft", "duration": 1500}'>
   {{< animation-content >}}
 </div>
-<div data-of-animation='{"cssClass": "fadeInLeft", "duration": 2000}'>
+<div data-of-animation='{"name": "fadeInLeft", "duration": 2000}'>
   {{< animation-content >}}
 </div>
-<div data-of-animation='{"cssClass": "fadeInLeft", "duration": 2500}'>
+<div data-of-animation='{"name": "fadeInLeft", "duration": 2500}'>
   {{< animation-content >}}
 </div>
-<div data-of-animation='{"cssClass": "fadeInLeft", "duration": 3000}'>
+<div data-of-animation='{"name": "fadeInLeft", "duration": 3000}'>
   {{< animation-content >}}
 </div>
 {{< /example >}}
@@ -178,22 +178,22 @@ toc: true
 ## Delay
 
 {{< example >}}
-<div data-of-animation='{"cssClass": "fadeInLeft", "delay": 500}'>
+<div data-of-animation='{"name": "fadeInLeft", "delay": 500}'>
   {{< animation-content >}}
 </div>
-<div data-of-animation='{"cssClass": "fadeInLeft", "delay": 1000}'>
+<div data-of-animation='{"name": "fadeInLeft", "delay": 1000}'>
   {{< animation-content >}}
 </div>
-<div data-of-animation='{"cssClass": "fadeInLeft", "delay": 1500}'>
+<div data-of-animation='{"name": "fadeInLeft", "delay": 1500}'>
   {{< animation-content >}}
 </div>
-<div data-of-animation='{"cssClass": "fadeInLeft", "delay": 2000}'>
+<div data-of-animation='{"name": "fadeInLeft", "delay": 2000}'>
   {{< animation-content >}}
 </div>
-<div data-of-animation='{"cssClass": "fadeInLeft", "delay": 2500}'>
+<div data-of-animation='{"name": "fadeInLeft", "delay": 2500}'>
   {{< animation-content >}}
 </div>
-<div data-of-animation='{"cssClass": "fadeInLeft", "delay": 3000}'>
+<div data-of-animation='{"name": "fadeInLeft", "delay": 3000}'>
   {{< animation-content >}}
 </div>
 {{< /example >}}
@@ -201,11 +201,11 @@ toc: true
 ## Offset
 
 {{< example >}}
-<div data-of-animation='{"cssClass": "fadeInLeft", "offset" : 300}'>
+<div data-of-animation='{"name": "fadeInLeft", "offset" : 300}'>
   {{< animation-content >}}
 </div>
 
-<div data-of-animation='{"cssClass": "fadeInLeft", "offset" : 250}'>
+<div data-of-animation='{"name": "fadeInLeft", "offset" : 250}'>
   {{< animation-content >}}
 </div>
 {{< /example >}}
@@ -213,7 +213,7 @@ toc: true
 ## Repeat
 
 {{< example >}}
-<div data-of-animation='{"cssClass": "fadeInLeft", "repeat": true}'>
+<div data-of-animation='{"name": "fadeInLeft", "repeat": true}'>
   {{< animation-content >}}
 </div>
 {{< /example >}}
@@ -237,7 +237,7 @@ alphabetically):
 {{< bs-table "table" >}}
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
-| `cssClass` | `string` | `'fadeIn'` | @Todo. |
+| `name` | `string` | `'fadeIn'` | @Todo. |
 | `duration` | `number` | `1500` | @Todo. |
 | `delay` | `number` | `0` | @Todo. |
 | `offset` | `number` | `0` | @Todo. |

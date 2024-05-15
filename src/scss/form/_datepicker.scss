@@ -8,6 +8,15 @@
   background-repeat: no-repeat;
   background-position: $form-datepicker-bg-position;
   background-size: $form-datepicker-bg-size;
+
+  @include form-validation-state-selector('invalid') {
+    @if $enable-validation-icons {
+      --#{$prefix}form-datepicker-bg-icon: #{escape-svg($form-feedback-icon-invalid)};
+      background-image: var(--#{$prefix}form-datepicker-bg-img), var(--#{$prefix}form-datepicker-bg-icon, none);
+      background-position: $form-datepicker-bg-position, right $input-height-inner-quarter center;
+      background-size: $form-datepicker-bg-size, $input-height-inner-half $input-height-inner-half;
+    }
+  }
 }
 
 .form-timepicker {

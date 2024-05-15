@@ -27,10 +27,10 @@ jobs:
                   echo "TARGET_PATH=/var/www/vhosts/openfrontend.tourismusweb.site/dev.openfrontend.tourismusweb.site/$CLEANED_BRANCH_NAME" >> $GITHUB_ENV
                 fi
 
-            - name: Set Node.js 16.x
+            - name: Set Node.js 20.x
               uses: actions/setup-node@v3
               with:
-                  node-version: 16.x
+                node-version: 20.x
 
             - name: Checkout
               uses: actions/checkout@v2

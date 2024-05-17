@@ -13,6 +13,8 @@ const EVENT_CALENDAR_INITIALIZED = 'initialized.of.calendar'
 const MINI_VIEW_VISIBLE_MONTHS = 2
 const LOCALES = {
   de: () => import('@fullcalendar/core/locales/de').then(m => m.default),
+  fr: () => import('@fullcalendar/core/locales/fr').then(m => m.default),
+  it: () => import('@fullcalendar/core/locales/it').then(m => m.default),
 }
 
 const DefaultType = {
@@ -119,7 +121,7 @@ class Calendar extends BaseComponent {
       themeSystem: 'bootstrap',
     }
 
-    if (document.documentElement.lang !== 'en') {
+    if (document.documentElement.lang !== 'en' && LOCALES.hasOwnProperty(document.documentElement.lang)) {
       options.locale = await LOCALES[document.documentElement.lang]();
     }
 

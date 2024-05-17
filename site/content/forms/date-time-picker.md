@@ -93,14 +93,14 @@ Here is the list of all available options (alphabetically):
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
 | `dateFormat` | `String` | <span class="text-nowrap">`"d.m.Y"`</span> | A string of characters which are used to define how the date will be displayed in the input box. |
-| `defaultDate` | `String` | `null` | Sets the initial selected date(s). |
+| `defaultDate` | `String` | `undefined` | Sets the initial selected date(s). |
 | `defaultHour` | `Number` | `12` | Initial value of the hour element. |
 | `defaultMinute` | `Number` | `0` | Initial value of the minute element. |
 | `enableTime` | `Boolean` | `false` | Enables time picker |
 | `inline` | `Boolean` | `false` | Displays the calendar inline |
-| `maxDate` | `String/Date` | `null` | The maximum date that a user can pick to (inclusive). |
-| `minDate` | `String/Date` | `null` | The minimum date that a user can start picking from (inclusive). |
-| `mode` | `String` | `"mode"` | "single", "multiple", or "range" |
+| `maxDate` | `String/Date` | `undefined` | The maximum date that a user can pick to (inclusive). |
+| `minDate` | `String/Date` | `undefined` | The minimum date that a user can start picking from (inclusive). |
+| `mode` | `String` | `"single"` | "single", "multiple", or "range" |
 | `noCalendar` | `Boolean` | `false` | Hides the day selection in calendar.<br>Use it along with enableTime to create a time picker. |
 {{< /bs-table >}}
 

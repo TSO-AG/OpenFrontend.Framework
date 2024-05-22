@@ -84,6 +84,7 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-of-page-navigation]'), () => import(/* webpackChunkName: "of-page-navigation" */ './components/page-navigation'))
   loadForElements(element.querySelectorAll('[data-of-header]'), () => import(/* webpackChunkName: "of-page-navigation" */ './components/header'))
   loadForElements(element.querySelectorAll('[data-of-animation]'), () => import(/* webpackChunkName: "of-animation" */ './components/animation'))
+  loadForElements(element.querySelectorAll('[data-of-field-range]'), () => import(/* webpackChunkName: "of-field-range" */ './components/field-range'))
 }
 
 document.addEventListener('DOMContentLoaded', () => window.initOpenFrontend(document))

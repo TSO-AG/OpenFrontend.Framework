@@ -300,7 +300,7 @@ These changes, and more, are demonstrated below.
     </p>
     <p>
       <label for="range">Example range</label>
-      <input type="range" id="range" min="0" max="10">
+      <input type="range" id="range" min="0" max="10" data-of-field-range>
     </p>
     <p>
       <label for="file">Example file input</label>

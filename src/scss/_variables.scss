@@ -103,6 +103,10 @@ $calendarpicker-disabled-color:                      var(--#{$prefix}gray-500) !
 $calendarpicker-time-hover:                          rgba(0, 0, 0, .05) !default;
 // scss-docs-end calendarpicker-variables
 
+// scss-docs-start form-range-variables
+$form-range-thumb-disabled-bg: var(--#{$prefix}gray-600);
+// scss-docs-end form-range-variables
+
 // Buttons
 
 // scss-docs-start btn-icon-variables

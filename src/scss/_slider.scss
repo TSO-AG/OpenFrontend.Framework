@@ -108,6 +108,29 @@
   }
 }
 
+// Static pagination position
+.slider-pagination {
+  &--left,
+  &--center,
+  &--right {
+    position: static;
+    margin-top: var(--#{$prefix}slider-pagination-top);
+    margin-bottom: var(--#{$prefix}slider-pagination-bottom);
+  }
+
+  &--left {
+    justify-content: flex-start;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+}
+
 /* Bullets */
 .slider-pagination-bullet {
   width: var(--#{$prefix}slider-pagination-bullet-width);

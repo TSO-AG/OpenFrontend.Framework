@@ -126,6 +126,35 @@ The position of the pagination can be modified by adding one of the following mo
 
 Each class adjusts the position of the pagination according to its description (top or bottom, combined with left, center, or right).
 
+### Pagination position static
+If you do not want to place a pagination above the slide you can use one of the defined classes
+
+- `.slider-pagination--left`
+- `.slider-pagination--center`
+- `.slider-pagination--right`
+
+{{< example >}}
+<div class="slider">
+  <div class="swiper" data-of-slider='{
+      "pagination": "#slider-pagination-3-static"
+  }'>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="Slide 1" >}}
+      </div>
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Slide 2" >}}
+      </div>
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Slide 3" >}}
+      </div>
+    </div>
+  </div>
+
+  <div id="slider-pagination-3-static" class="slider-pagination slider-pagination--center"></div>
+</div>
+{{< /example >}}
+
 ### Content example
 {{< example >}}
 <div class="slider">

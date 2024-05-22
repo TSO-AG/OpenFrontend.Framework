@@ -171,6 +171,31 @@ Learn more about [support for datalist elements](https://caniuse.com/datalist).
 </datalist>
 {{< /example >}}
 
+## Sync some field with another field
+This feature allows you to sync the value of one field with another field. The field with the `data-of-field-sync` attribute is linked to the target field specified in the `target` option. Additionally, you can provide a `mapper`, so if the target field has a label, the value will be set according to the `mapper` configuration.
+
+{{< example >}}
+<div class="mb-3">
+<input class="form-control"
+  type="text"
+  data-of-field-sync='{"target": "#exampleSyncField", "mapper": [{"value": "001", "label": "Green"}, {"value": "002", "label": "Blue"}, {"value": "003", "label": "Pink"}, {"value": "004", "label": "Orange"}]}'
+  placeholder="Readonly input here..."
+  aria-label="readonly input example"
+  readonly>
+</div>
+
+<div class="mb-3">
+<label for="exampleSyncField" class="form-label">Example text field</label>
+<input class="form-control" list="exampleSyncFieldDatalist" id="exampleSyncField" placeholder="Type to search...">
+<datalist id="exampleSyncFieldDatalist">
+  <option value="Green">Green</option>
+  <option value="Blue">Blue</option>
+  <option value="Pink">Pink</option>
+  <option value="Orange">Orange</option>
+</datalist>
+</div>
+{{< /example >}}
+
 ## CSS
 
 ### Sass variables

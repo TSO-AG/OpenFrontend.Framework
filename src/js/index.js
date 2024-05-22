@@ -1,4 +1,5 @@
 import { loadForElements } from './helpers/module-loader'
+import FieldSync from "./components/field-sync";
 
 window.openFrontend = {
   get Alert() {
@@ -58,6 +59,9 @@ window.openFrontend = {
   get Tooltip() {
     return new Promise(resolve => import(/* webpackChunkName: "of-tooltip" */ './components/tooltip').then(v => resolve(v.default)))
   },
+  get FieldSync() {
+    return new Promise(resolve => import(/* webpackChunkName: "of-field-sync" */ './components/field-sync').then(v => resolve(v.default)))
+  },
 }
 
 window.initOpenFrontend = function (element) {
@@ -85,6 +89,7 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-of-header]'), () => import(/* webpackChunkName: "of-page-navigation" */ './components/header'))
   loadForElements(element.querySelectorAll('[data-of-animation]'), () => import(/* webpackChunkName: "of-animation" */ './components/animation'))
   loadForElements(element.querySelectorAll('[data-of-field-range]'), () => import(/* webpackChunkName: "of-field-range" */ './components/field-range'))
+  loadForElements(element.querySelectorAll('[data-of-field-sync]'), () => import(/* webpackChunkName: "of-field-sync" */ './components/field-sync'))
 }
 
 document.addEventListener('DOMContentLoaded', () => window.initOpenFrontend(document))

@@ -1,5 +1,4 @@
 import { loadForElements } from './helpers/module-loader'
-import FieldSync from "./components/field-sync";
 
 window.openFrontend = {
   get Alert() {
@@ -28,6 +27,12 @@ window.openFrontend = {
   },
   get ElementsFilter() {
     return new Promise(resolve => import(/* webpackChunkName: "of-elements-filter" */ './components/elements-filter').then(v => resolve(v.default)))
+  },
+  get FieldRange() {
+    return new Promise(resolve => import(/* webpackChunkName: "of-field-range" */ './components/field-range').then(v => resolve(v.default)))
+  },
+  get FieldSync() {
+    return new Promise(resolve => import(/* webpackChunkName: "of-field-sync" */ './components/field-sync').then(v => resolve(v.default)))
   },
   get Lightbox() {
     return new Promise(resolve => import(/* webpackChunkName: "of-lightbox" */ './components/lightbox').then(v => resolve(v.default)))
@@ -58,9 +63,6 @@ window.openFrontend = {
   },
   get Tooltip() {
     return new Promise(resolve => import(/* webpackChunkName: "of-tooltip" */ './components/tooltip').then(v => resolve(v.default)))
-  },
-  get FieldSync() {
-    return new Promise(resolve => import(/* webpackChunkName: "of-field-sync" */ './components/field-sync').then(v => resolve(v.default)))
   },
 }
 

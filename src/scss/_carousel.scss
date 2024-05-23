@@ -96,15 +96,29 @@
     opacity: 0;
   }
 
-  &--static {
+  .carousel-pagination-disabled > &,
+  &.carousel-pagination-disabled {
+    display: none;
+  }
+
+  &--left,
+  &--center,
+  &--right {
     position: static;
     margin-top: var(--#{$prefix}carousel-pagination-top);
     margin-bottom: var(--#{$prefix}carousel-pagination-bottom);
   }
 
-  .carousel-pagination-disabled > &,
-  &.carousel-pagination-disabled {
-    display: none;
+  &--left {
+    justify-content: flex-start;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--right {
+    justify-content: flex-end;
   }
 
   &--top-left {

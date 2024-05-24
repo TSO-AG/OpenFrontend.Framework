@@ -324,6 +324,18 @@
   @extend %card-horizontal-media;
   @include card-horizontal-mini-media();
   @include card-mini-media();
+  container-type: inline-size;
+  container-name: card;
+}
+
+.card-mini-state {
+  margin-bottom: .25rem;
+
+  @container card (min-width: 320px) {
+    float: right;
+    margin-left: .5rem;
+    line-height: 1;
+  }
 }
 
 .card-clickable {

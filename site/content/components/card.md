@@ -651,6 +651,25 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
   </div>
 </div>
 
+<div class="mt-2 mb-2">Different status position</div>
+
+<div class="card card-mini">
+  <div class="card-media">
+    <div class="card-media__visual">
+      {{< placeholder markup="img" width="100%" height="100" text="Responsive image" >}}
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="card-mini-state">
+      <div class="state state-simple state--open">
+        open
+      </div>
+    </div>
+    <h5 class="card-info">Lorem ipsum</h5>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
+  </div>
+</div>
 {{< /example >}}
 
 ## Card clickable

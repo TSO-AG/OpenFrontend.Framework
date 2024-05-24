@@ -1,5 +1,6 @@
 .form-range {
   --range-thumb-bg: #{$form-range-thumb-bg};
+
   &::-webkit-slider-runnable-track {
     @include gradient-x(var(--range-thumb-bg) var(--range-value), $form-range-track-bg var(--range-value))
   }
@@ -11,5 +12,12 @@
   &:disabled {
     --range-thumb-bg: #{$form-range-thumb-disabled-bg};
   }
-}
 
+  &::-webkit-slider-thumb {
+    background-color: var(--range-thumb-bg);
+  }
+
+  &::-moz-range-thumb {
+    background-color: var(--range-thumb-bg);
+  }
+}

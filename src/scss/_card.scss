@@ -275,7 +275,6 @@
         margin-left: auto;
       }
 
-      &--top-left,
       &--bottom-left,
       &--bottom-right {
         display: none;
@@ -299,12 +298,13 @@
   @extend %card-horizontal-grid;
   @extend %card-horizontal-media;
   container-type: inline-size;
+  container-name: card;
 
-  @container (max-width: 820px) {
+  @container card (max-width: 820px) {
     @include card-horizontal-mini-media();
   }
 
-  @container (max-width: 620px) {
+  @container card (max-width: 620px) {
     @include card-mini-media();
   }
 }

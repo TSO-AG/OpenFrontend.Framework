@@ -204,6 +204,16 @@
         min-height: 100%;
       }
 
+      figure:has(picture) {
+        display: flex;
+        flex-direction: column;
+
+        picture {
+          display: flex;
+          flex-grow: 1;
+        }
+      }
+
       img,
       video {
         object-fit: cover;

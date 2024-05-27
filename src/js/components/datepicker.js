@@ -23,6 +23,7 @@ const DefaultType = {
   minDate: 'string|Date|undefined',
   mode: 'string',
   noCalendar: 'boolean',
+  rangeSeparator: 'string',
 }
 
 const Default = {
@@ -36,6 +37,7 @@ const Default = {
   minDate: undefined,
   mode: 'single',
   noCalendar: false,
+  rangeSeparator: ' - ',
 }
 
 class Datepicker extends BaseComponent {
@@ -76,7 +78,7 @@ class Datepicker extends BaseComponent {
     }
 
     options.locale = options.locale || {};
-    options.locale.rangeSeparator = ' - ';
+    options.locale.rangeSeparator = this._config.rangeSeparator;
 
     return options;
   }

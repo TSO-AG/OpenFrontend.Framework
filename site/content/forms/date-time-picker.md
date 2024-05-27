@@ -102,6 +102,7 @@ Here is the list of all available options (alphabetically):
 | `minDate` | `String/Date` | `undefined` | The minimum date that a user can start picking from (inclusive). |
 | `mode` | `String` | `"single"` | "single", "multiple", or "range" |
 | `noCalendar` | `Boolean` | `false` | Hides the day selection in calendar.<br>Use it along with enableTime to create a time picker. |
+| `rangeSeparator` | `String` | `' - '` | The input separator between "from" and "to" dates. |
 {{< /bs-table >}}
 
 ## CSS

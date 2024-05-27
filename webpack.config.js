@@ -119,6 +119,14 @@ function createConfigDraft(outputPath, publicPath) {
         }
       ]
     })
+    .addLoader({
+      mimetype: 'image/svg+xml',
+      scheme: 'data',
+      type: 'asset/resource',
+      generator: {
+        filename: 'icons/[hash].svg'
+      },
+    })
 }
 
 function createDistConfig() {

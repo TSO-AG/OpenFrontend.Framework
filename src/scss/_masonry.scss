@@ -6,8 +6,7 @@
   gap: var(--#{$prefix}masonry-gap);
 }
 
-.masonry-item,
-.masonry-group-item {
+.masonry-item {
   display: flex;
   flex-direction: column;
 
@@ -21,155 +20,12 @@
   overflow: visible;
 }
 
-// Group
-.masonry-group-2 {
-  @include media-breakpoint-up($masonry-group-breakpoint) {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Layout 1
-.masonry-vertical-1 {
-  @include media-breakpoint-up($masonry-breakpoint) {
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-  }
-}
-
-.masonry-vertical-2 {
-  @include media-breakpoint-up($masonry-breakpoint) {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-
-    > .masonry-item {
-      grid-area: span 1 / span 2;
-    }
-  }
-}
-
-.masonry-vertical-3 {
-  @include media-breakpoint-up($masonry-breakpoint) {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-
-    > .masonry-item {
-      &:nth-child(3n + 3) {
-        grid-area: span 1 / span 2;
-      }
-    }
-  }
-}
-
-.masonry-vertical-4 {
-  @include media-breakpoint-up($masonry-breakpoint) {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-
-    > .masonry-item {
-      &:nth-child(3n + 1) {
-        grid-area: span 1 / span 2;
-      }
-    }
-  }
-}
-
-.masonry-vertical-5 {
-  @include media-breakpoint-up($masonry-breakpoint) {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-
-    > .masonry-item {
-      &:nth-child(3n + 1) {
-        grid-area: span 2 / span 1;
-      }
-    }
-  }
-}
-
-.masonry-vertical-6 {
-  @include media-breakpoint-up($masonry-breakpoint) {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-
-    > .masonry-item {
-      &:nth-child(3n + 2) {
-        grid-area: span 2 / span 1;
-      }
-    }
-  }
-}
-
-.masonry-vertical-7 {
-  @include media-breakpoint-up($masonry-breakpoint) {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.masonry-vertical-8 {
-  @include media-breakpoint-up($masonry-breakpoint) {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.masonry-horizontal-1 {
-  @include media-breakpoint-up($masonry-breakpoint) {
-    grid-template-columns: 1fr 1fr 1fr;
-
-    > .masonry-item {
-      grid-column-start: 1;
-      grid-column-end: 4;
-    }
-  }
-}
-
-.masonry-horizontal-2 {
-  @include media-breakpoint-up($masonry-breakpoint) {
-    grid-template-columns: 1fr 1fr 1fr;
-
-    > .masonry-item {
-      grid-area: span 1 / span 1;
-
-      &:nth-child(even) {
-        grid-area: span 1 / span 2;
-      }
-    }
-  }
-}
-
-.masonry-horizontal-3 {
-  @include media-breakpoint-up($masonry-breakpoint) {
-    grid-template-columns: 1fr 1fr 1fr;
-
-    > .masonry-item {
-      grid-area: span 1 / span 1;
-
-      &:nth-child(odd) {
-        grid-area: span 1 / span 2;
-      }
-    }
-  }
-}
-
-.masonry-horizontal-4 {
-  @include media-breakpoint-up($masonry-breakpoint) {
-    grid-template-columns: 1fr 1fr 1fr;
-
-    > .masonry-item {
-      grid-area: span 1 / span 1;
-    }
-  }
-}
-
 // Pattern 1
 .masonry-pattern-4-1 {
   @include media-breakpoint-up($masonry-breakpoint) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
 
     > .masonry-item {
-      grid-area: span 1 / span 1;
-
       &:nth-child(4n + 1) {
         grid-area: span 2 / span 2;
       }
@@ -179,17 +35,19 @@
       }
     }
   }
+
+  @include media-breakpoint-up($masonry-group-breakpoint) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+  }
 }
 
 // Pattern 2
 .masonry-pattern-10-1 {
   @include media-breakpoint-up($masonry-breakpoint) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
 
     > .masonry-item {
-      grid-area: span 1 / span 1;
-
       &:nth-child(10n + 1) {
         grid-area: span 2 / span 2;
       }
@@ -198,6 +56,10 @@
         grid-area: span 2 / span 2;
       }
     }
+  }
+
+  @include media-breakpoint-up($masonry-group-breakpoint) {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

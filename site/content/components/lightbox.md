@@ -313,6 +313,12 @@ Having a complex gallery with different groups and mixed content types is not a 
           "href": "https://vimeo.com/115041822",
           "type": "video",
           "source": "vimeo"
+        },
+        {
+          "identifier": "youtube",
+          "href": "https://www.youtube.com/watch?v=zpOULjyy-n8",
+          "type": "video",
+          "source": "youtube"
         }
       ]
     },
@@ -349,49 +355,41 @@ Having a complex gallery with different groups and mixed content types is not a 
 <div class="tab-content" id="nav-tabContent">
   <!-- Mountains tab -->
   <div class="tab-pane fade show active" id="nav-gallery-mountains" role="tabpanel" aria-labelledby="nav-gallery-mountains-tab" tabindex="0">
-    <div class="masonry masonry-group-2">
-      <div class="masonry-group-item">
-        <div class="masonry masonry-vertical-1">
-          <div class="masonry-item">
-            <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
-              <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox-open="tabs:0">
-                <img src="assets/media/sample-gallery-1.jpg" alt="" class="img-fit-cover">
-              </a>
-            </div>
-          </div>
+    <div class="masonry masonry-pattern-4-1">
+      <div class="masonry-item">
+        <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
+          <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox-open="tabs:0">
+            <img src="assets/media/sample-gallery-1.jpg" alt="" class="img-fit-cover">
+          </a>
         </div>
       </div>
-      <div class="masonry-group-item">
-        <div class="masonry masonry-vertical-5">
-          <div class="masonry-item">
-            <div class="aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
-              <a href="assets/media/sample-gallery-2.jpg" data-of-lightbox-open="tabs:1">
-                <img src="assets/media/sample-gallery-2.jpg" alt="" class="img-fit-cover">
-              </a>
-            </div>
-          </div>
-          <div class="masonry-item">
-            <div class="aspect aspect-16x9 aspect-md-auto">
-              <a href="assets/media/sample-gallery-3.jpg" data-of-lightbox-open="tabs:2">
-                <img src="assets/media/sample-gallery-3.jpg" alt="" class="img-fit-cover">
-              </a>
-            </div>
-          </div>
-          <div class="masonry-item">
+      <div class="masonry-item">
+        <div class="aspect aspect-16x9 aspect-md-3x4 aspect-xl-9x16">
+          <a href="assets/media/sample-gallery-2.jpg" data-of-lightbox-open="tabs:1">
+            <img src="assets/media/sample-gallery-2.jpg" alt="" class="img-fit-cover">
+          </a>
+        </div>
+      </div>
+      <div class="masonry-item">
+        <div class="aspect aspect-16x9 aspect-md-auto">
+          <a href="assets/media/sample-gallery-3.jpg" data-of-lightbox-open="tabs:2">
+            <img src="assets/media/sample-gallery-3.jpg" alt="" class="img-fit-cover">
+          </a>
+        </div>
+      </div>
+      <div class="masonry-item">
             <div class="aspect aspect-16x9 aspect-md-auto">
               <a href="assets/media/sample-gallery-4.jpg" data-of-lightbox-open="tabs:3">
                 <img src="assets/media/sample-gallery-4.jpg" alt="" class="img-fit-cover">
               </a>
             </div>
           </div>
-        </div>
-      </div>
     </div>
   </div>
 
   <!-- Space tab -->
   <div class="tab-pane fade" id="nav-gallery-space" role="tabpanel" aria-labelledby="nav-gallery-space-tab" tabindex="0">
-    <div class="masonry masonry-vertical-6">
+    <div class="masonry masonry-pattern-4-1">
       <div class="masonry-item">
         <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
           <a href="assets/media/sample-gallery-11.jpg" data-of-lightbox-open="tabs:gallery-space-1">
@@ -413,12 +411,19 @@ Having a complex gallery with different groups and mixed content types is not a 
           </a>
         </div>
       </div>
+      <div class="masonry-item">
+        <div class="aspect aspect-16x9 aspect-md-auto">
+          <a href="assets/media/sample-gallery-14.jpg" data-of-lightbox-open="tabs:gallery-space-3">
+            <img src="assets/media/sample-gallery-14.jpg" alt="" class="img-fit-cover">
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Videos tab -->
   <div class="tab-pane fade" id="nav-videos" role="tabpanel" aria-labelledby="nav-videos-tab" tabindex="0">
-    <div class="masonry masonry-vertical-5">
+    <div class="masonry masonry-pattern-4-1">
       <div class="masonry-item">
         <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto" data-of-video-play>
           {{< video class="object-fit-cover" >}}
@@ -432,6 +437,11 @@ Having a complex gallery with different groups and mixed content types is not a 
       <div class="masonry-item">
         <div class="aspect aspect-16x9">
           <iframe src="https://player.vimeo.com/video/115041822" title="Vimeo video" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="masonry-item">
+        <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
+          <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="YouTube video" allowfullscreen></iframe>
         </div>
       </div>
     </div>

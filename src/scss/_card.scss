@@ -204,9 +204,15 @@
         min-height: 100%;
       }
 
-      figure:has(picture) {
+      figure:has(picture),
+      figure:has(> a) {
         display: flex;
         flex-direction: column;
+
+        > a {
+          display: flex;
+          flex-grow: 1;
+        }
 
         picture {
           display: flex;

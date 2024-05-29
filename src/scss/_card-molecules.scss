@@ -108,7 +108,8 @@
   }
 }
 
-@container (max-width: 13em) {
+// Minify the state under certain container width
+@container (max-width: 209px) {
   .state {
     position: relative;
     box-sizing: content-box;

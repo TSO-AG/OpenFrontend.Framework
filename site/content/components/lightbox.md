@@ -355,7 +355,7 @@ Having a complex gallery with different groups and mixed content types is not a 
 <div class="tab-content" id="nav-tabContent">
   <!-- Mountains tab -->
   <div class="tab-pane fade show active" id="nav-gallery-mountains" role="tabpanel" aria-labelledby="nav-gallery-mountains-tab" tabindex="0">
-    <div class="masonry masonry-pattern-4-1">
+    <div class="masonry masonry-pattern-1">
       <div class="masonry-item">
         <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
           <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox-open="tabs:0">
@@ -389,7 +389,7 @@ Having a complex gallery with different groups and mixed content types is not a 
 
   <!-- Space tab -->
   <div class="tab-pane fade" id="nav-gallery-space" role="tabpanel" aria-labelledby="nav-gallery-space-tab" tabindex="0">
-    <div class="masonry masonry-pattern-4-1">
+    <div class="masonry masonry-pattern-1">
       <div class="masonry-item">
         <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto">
           <a href="assets/media/sample-gallery-11.jpg" data-of-lightbox-open="tabs:gallery-space-1">
@@ -423,7 +423,7 @@ Having a complex gallery with different groups and mixed content types is not a 
 
   <!-- Videos tab -->
   <div class="tab-pane fade" id="nav-videos" role="tabpanel" aria-labelledby="nav-videos-tab" tabindex="0">
-    <div class="masonry masonry-pattern-4-1">
+    <div class="masonry masonry-pattern-1">
       <div class="masonry-item">
         <div class="aspect aspect-16x9 aspect-md-4x3 aspect-xl-auto" data-of-video-play>
           {{< video class="object-fit-cover" >}}

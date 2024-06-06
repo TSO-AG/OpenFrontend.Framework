@@ -125,7 +125,15 @@ function createConfigDraft(outputPath, publicPath) {
       type: 'asset/resource',
       generator: {
         filename: 'icons/[hash].svg'
-      },
+      }
+    })
+    .addLoader({
+      mimetype: 'application/font-woff',
+      scheme: 'data',
+      type: 'asset/resource',
+      generator: {
+        filename: 'fonts/[hash].svg'
+      }
     })
 }
 

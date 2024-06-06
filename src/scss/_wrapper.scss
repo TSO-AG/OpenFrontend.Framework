@@ -1,5 +1,7 @@
 .wrapper {
   // scss-docs-start wrapper-css-vars
+  --#{$prefix}wrapper-padding-y: #{$wrapper-padding-y};
+  --#{$prefix}wrapper-padding-x: #{$wrapper-padding-x};
   --#{$prefix}wrapper-color: #{$wrapper-color};
   --#{$prefix}wrapper-bg-color: #{$wrapper-bg-color};
   --#{$prefix}wrapper-z-index: #{$wrapper-z-index};
@@ -83,6 +85,7 @@
 }
 
 .wrapper-content {
+  padding: var(--#{$prefix}wrapper-padding-y) var(--#{$prefix}wrapper-padding-x);
   line-height: var(--#{$prefix}wrapper-line-height);
   color: var(--#{$prefix}wrapper-color);
 

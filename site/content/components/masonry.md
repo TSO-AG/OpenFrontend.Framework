@@ -13,42 +13,42 @@ toc: true
 {{< example >}}
 <div class="masonry masonry-pattern-1">
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">1</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">2</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">3</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">4</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">5</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">6</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">7</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">8</div>
     </div>
   </div>
@@ -60,37 +60,37 @@ toc: true
 {{< example >}}
 <div class="masonry masonry-pattern-2">
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">1</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">2</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">3</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">4</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">5</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">6</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">7</div>
     </div>
   </div>
@@ -102,37 +102,37 @@ toc: true
 {{< example >}}
 <div class="masonry masonry-pattern-3">
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">1</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">2</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">3</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">4</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">5</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">6</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">7</div>
     </div>
   </div>
@@ -144,7 +144,7 @@ toc: true
 {{< example >}}
 <div class="masonry masonry-pattern-4">
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">1</div>
     </div>
   </div>
@@ -154,32 +154,32 @@ toc: true
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">3</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">4</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">5</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">6</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">7</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">8</div>
     </div>
   </div>
@@ -191,37 +191,37 @@ toc: true
 {{< example >}}
 <div class="masonry masonry-pattern-5">
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">1</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">2</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">3</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">4</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">5</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">6</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">7</div>
     </div>
   </div>
@@ -233,47 +233,47 @@ toc: true
 {{< example >}}
 <div class="masonry masonry-pattern-6">
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">1</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">2</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">3</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">4</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">5</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">6</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">7</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">8</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">9</div>
     </div>
   </div>
@@ -285,62 +285,62 @@ toc: true
 {{< example >}}
 <div class="masonry masonry-pattern-7">
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">1</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">2</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">3</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">4</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">5</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">6</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">7</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">8</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">9</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">10</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">11</div>
     </div>
   </div>
   <div class="masonry-item">
-    <div class="wrapper py-5 text-bg-primary">
+    <div class="wrapper text-bg-primary">
       <div class="wrapper-content text-center">12</div>
     </div>
   </div>

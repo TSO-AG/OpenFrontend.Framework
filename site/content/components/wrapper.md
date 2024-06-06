@@ -12,21 +12,21 @@ toc: true
 
 #### Light color
 {{< example >}}
-<div class="wrapper wrapper-bg-light wrapper-text-dark py-5">
+<div class="wrapper wrapper-bg-light wrapper-text-dark">
   <div class="wrapper-content text-center">Sample wrapper content</div>
 </div>
 {{< /example >}}
 
 #### Dark color
 {{< example >}}
-<div class="wrapper wrapper-bg-dark wrapper-text-light py-5">
+<div class="wrapper wrapper-bg-dark wrapper-text-light">
   <div class="wrapper-content text-center">Sample wrapper content</div>
 </div>
 {{< /example >}}
 
 #### Custom color
 {{< example >}}
-<div class="wrapper py-5" style="--bs-wrapper-bg-color: #f47c00; --bs-wrapper-color: #fff">
+<div class="wrapper" style="--bs-wrapper-bg-color: #f47c00; --bs-wrapper-color: #fff">
   <div class="wrapper-content text-center">Sample wrapper content</div>
 </div>
 {{< /example >}}
@@ -34,7 +34,7 @@ toc: true
 #### Image
 {{< example >}}
 <div class="wrapper" style="--bs-wrapper-color: #fff; min-height: 400px">
-  <div class="wrapper-content p-3 text-center">Sample wrapper content</div>
+  <div class="wrapper-content text-center">Sample wrapper content</div>
 
   <div class="wrapper-bg-media">
     <figure>
@@ -47,7 +47,7 @@ toc: true
 #### Video
 {{< example >}}
 <div class="wrapper" style="--bs-wrapper-color: #fff; min-height: 400px">
-  <div class="wrapper-content p-3 text-center">Sample wrapper content</div>
+  <div class="wrapper-content text-center">Sample wrapper content</div>
 
   <div class="wrapper-bg-media">
     <figure>
@@ -64,7 +64,7 @@ With the `--bs-wrapper-media-overlay` and `--bs-wrapper-media-overlay-opacity` v
 
 {{< example >}}
 <div class="wrapper" style="--bs-wrapper-color: #fff; --bs-wrapper-media-overlay: #f47c00; --bs-wrapper-media-overlay-opacity: 0.8; min-height: 400px">
-  <div class="wrapper-content p-3 text-center">Sample wrapper content</div>
+  <div class="wrapper-content text-center">Sample wrapper content</div>
 
   <div class="wrapper-bg-media">
     <figure>
@@ -82,7 +82,7 @@ With the `--bs-wrapper-media-overlay` and `--bs-wrapper-media-overlay-opacity` v
 #### Headline and text
 {{< example >}}
 <div class="wrapper" style="--bs-wrapper-color: #fff; min-height: 400px">
-  <div class="wrapper-content p-3 wrapper-content-text-shadow fs-5">
+  <div class="wrapper-content wrapper-content-text-shadow fs-5">
     <h2>Your next destination</h2>
     <p>Escape ordinary, experience majestic views!</p>
   </div>
@@ -98,7 +98,7 @@ With the `--bs-wrapper-media-overlay` and `--bs-wrapper-media-overlay-opacity` v
 #### Regular link
 {{< example >}}
 <div class="wrapper" style="--bs-wrapper-color: #fff; min-height: 400px">
-  <div class="wrapper-content p-3 wrapper-content-text-shadow fs-5">
+  <div class="wrapper-content wrapper-content-text-shadow fs-5">
     <h2>Your next destination</h2>
     <p>Escape ordinary, experience majestic views!</p>
     <p>
@@ -120,7 +120,7 @@ Works great with `.wrapper-zoom` class.
 
 {{< example >}}
 <div class="wrapper wrapper-zoom" style="--bs-wrapper-color: #fff; min-height: 400px">
-  <div class="wrapper-content p-3 wrapper-content-text-shadow fs-5">
+  <div class="wrapper-content wrapper-content-text-shadow fs-5">
     <h2>Your next destination</h2>
     <p>Escape ordinary, experience majestic views!</p>
     <p>
@@ -142,7 +142,7 @@ The hidden link will make the whole wrapper clickable, but will not display any 
 
 {{< example >}}
 <div class="wrapper wrapper-zoom" style="--bs-wrapper-color: #fff; min-height: 400px">
-  <div class="wrapper-content p-3 wrapper-content-text-shadow fs-5">
+  <div class="wrapper-content wrapper-content-text-shadow fs-5">
     <h2>Earth from space</h2>
     <p class="mb-0">Touch the stars, gaze at Earth's grace!</p>
     <a href="#" class="stretched-link"><span class="visually-hidden">Book now</span></a>
@@ -166,7 +166,7 @@ The hidden link will make the whole wrapper clickable, but will not display any 
     <div class="state state--open">open</div>
   </div>
 
-  <div class="wrapper-content ps-3 pe-3 pt-5 pb-5 wrapper-content-text-shadow fs-5 text-center">
+  <div class="wrapper-content wrapper-content-text-shadow fs-5 text-center">
     <h2>Your next destination</h2>
     <p class="mb-0">Escape ordinary, experience majestic views!</p>
     <a href="#" class="stretched-link"><span class="visually-hidden">Book now</span></a>
@@ -189,7 +189,7 @@ The hidden link will make the whole wrapper clickable, but will not display any 
 
 #### Content Style
 {{< example >}}
-<div class="wrapper wrapper-bg-light wrapper-text-dark py-5">
+<div class="wrapper wrapper-bg-light wrapper-text-dark">
   <div class="wrapper-content wrapper-content-text-shadow text-center fs-4">Sample wrapper content</div>
 </div>
 {{< /example >}}

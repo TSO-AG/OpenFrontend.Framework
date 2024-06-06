@@ -183,7 +183,7 @@ If you do not want to place a pagination above the slide you can use one of the 
       </div>
       <div class="swiper-slide">
         <div class="wrapper">
-          <div class="wrapper-content ps-5 pe-5 pt-5 pb-5 text-center" style="--bs-wrapper-color: #fff">
+          <div class="wrapper-content text-center" style="--bs-wrapper-color: #fff">
             <h2>Earth from space</h2>
             <p>Touch the stars, gaze at Earth's grace!</p>
           </div>

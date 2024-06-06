@@ -39,10 +39,19 @@ $responsive-values: (
     md: 2rem,
   ),
 ) !default;
-// scss-docs-end spacer-variables-maps
 
 // Spacing
+// scss-docs-start spacer-variables-maps
 $spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: var(--#{$prefix}spacer-1, $spacer * .25),
+  2: var(--#{$prefix}spacer-2, $spacer * .5),
+  3: var(--#{$prefix}spacer-3, $spacer),
+  4: var(--#{$prefix}spacer-4, $spacer * 1.5),
+  5: var(--#{$prefix}spacer-5, $spacer * 3),
+) !default;
+// scss-docs-end spacer-variables-maps
 
 // Components
 
@@ -356,12 +365,6 @@ $logos-item-border-radius: null !default;
 
 // Wrapper
 // scss-docs-start wrapper-variables
-$wrapper-padding-y: 1.5rem !default;
-$wrapper-padding-y-lg: 2.5rem !default;
-$wrapper-padding-y-xl: 5.5rem !default;
-$wrapper-padding-x: 1.5rem !default;
-$wrapper-padding-x-lg: 2.5rem !default;
-$wrapper-padding-x-xl: 4.5rem !default;
 $wrapper-color: var(--#{$prefix}body-color) !default;
 $wrapper-bg-color: null !default;
 $wrapper-bg-color-light: #f8f9fa !default;
@@ -376,6 +379,16 @@ $wrapper-line-height: var(--#{$prefix}body-line-height) !default;
 $wrapper-zoom-transform: scale(1.1) !default;
 $wrapper-content-top-right-y: 10px !default;
 $wrapper-content-top-right-x: $wrapper-content-top-right-y !default;
+$wrapper-padding-factor: 1rem !default;
+$wrapper-paddings: (
+  0: 0,
+  1: $wrapper-padding-factor * 1,
+  2: $wrapper-padding-factor * 2,
+  3: $wrapper-padding-factor * 3,
+  4: $wrapper-padding-factor * 4,
+  5: $wrapper-padding-factor * 5,
+) !default;
+
 // scss-docs-end wrapper-variables
 
 // Social links

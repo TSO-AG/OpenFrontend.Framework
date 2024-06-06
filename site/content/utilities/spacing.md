@@ -188,7 +188,15 @@ Support includes responsive options for all of Bootstrap's grid breakpoints, as 
 
 Spacing utilities are declared via Sass map and then generated with our utilities API.
 
-{{< scss-docs name="spacer-variables-maps" file="node_modules/bootstrap/scss/_variables.scss" >}}
+{{< scss-docs name="spacer-variables-maps" file="src/scss/_variables.scss" >}}
+
+You can overwrite the spacing values by using the CSS variables, for example:
+
+```css
+:root {
+  --bs-spacer-2: clamp(10px, 5vw, 50px);
+}
+```
 
 ### Sass utilities API
 

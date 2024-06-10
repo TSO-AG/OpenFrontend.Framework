@@ -700,6 +700,34 @@ Use class `.card-clickable` to make the whole card clickable. This class is part
 </div>
 {{< /example >}}
 
+## Card media zoom
+
+Use class `.card-media-zoom` to add a zoom effect to an image when hovering over an element.
+
+{{< example >}}
+<div class="card card-clickable card-media-zoom" style="max-width: 22rem;">
+  <div class="card-media">
+    <div class="card-media__visual">
+      {{< placeholder width="100%" height="200" class="img-fluid" text="Responsive image" >}}
+    </div>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-info">Lorem ipsum</h5>
+    <h3 class="card-title"><a href="#" class="stretched-link">Card title</a></h3>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+
+  <div class="card-action">
+    <div class="card-action__buttons">
+      <button type="button" class="btn btn-icon btn-primary stretched-link">
+        More {{< icon name="arrow-right" >}}
+      </button>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
 ## Content types
 
 Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what's supported.

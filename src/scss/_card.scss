@@ -11,6 +11,7 @@
   --#{$prefix}card-title-link-hover-decoration: #{$card-title-link-hover-decoration};
   --#{$prefix}card-horizontal-media-width: #{$card-horizontal-media-width};
   --#{$prefix}card-mini-media-width: #{$card-mini-media-width};
+  --#{$prefix}card-media-zoom-transform: #{$card-media-zoom-transform};
   // scss-docs-end card-css-vars
 
   height: 100%;
@@ -70,6 +71,18 @@
     img {
       width: 100%;
       height: auto;
+    }
+
+    // Zoom image when hovering over an element with the class .card-media-zoom
+    img,
+    svg {
+      .card-media-zoom & {
+        @include transition($card-media-zoom-transition);
+      }
+
+      .card-media-zoom:hover & {
+        transform: var(--#{$prefix}card-media-zoom-transform);
+      }
     }
   }
 }

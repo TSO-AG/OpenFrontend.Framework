@@ -214,6 +214,8 @@ $card-title-link-hover-color: null !default;
 $card-title-link-hover-decoration: null !default;
 $card-horizontal-media-width: 225px !default;
 $card-mini-media-width: 125px !default;
+$card-media-zoom-transition: all .5s ease-in-out !default;
+$card-media-zoom-transform: scale(1.1) !default;
 // scss-docs-end card-variables
 
 // Price

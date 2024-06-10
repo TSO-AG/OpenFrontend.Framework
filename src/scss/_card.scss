@@ -75,7 +75,8 @@
 
     // Zoom image when hovering over an element with the class .card-media-zoom
     img,
-    svg {
+    svg,
+    video {
       .card-media-zoom & {
         @include transition($card-media-zoom-transition);
       }

@@ -90,6 +90,8 @@
 
 .card-body {
   position: relative;
+  container-type: inline-size;
+  container-name: card-body;
 }
 
 .card-info {
@@ -133,13 +135,12 @@
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: .5rem;
-  container-type: inline-size;
 
   .card-title {
     @include text-truncate();
   }
 
-  @container (max-width: 240px) {
+  @container (max-width: 270px) {
     .card-title-star {
       grid-column: 1 / -1;
       margin-top: calc(var(--bs-card-title-spacer-y) * -1);

@@ -28,6 +28,7 @@ const DefaultType = {
 const DefaultEventType = {
   allDay: 'boolean',
   content: 'string',
+  display: 'string|undefined',
   end: 'date|number|string|undefined',
   start: 'date|number|string',
   title: 'string',
@@ -199,9 +200,6 @@ class Calendar extends BaseComponent {
 
         const currentDate = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate(), 0, 0, 0, 0);
         const targetDate = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate(), 0, 0, 0, 0);
-        const dates = [];
-
-        let iterations = 0;
 
         while (currentDate < targetDate) {
           splitEvents.push({

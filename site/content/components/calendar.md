@@ -340,7 +340,8 @@ const events = [
     title: 'All day event',
     content: '<div class="popover-content">…</div>',
     start: '2010-01-01',
-    allDay: true
+    allDay: true,
+    display: 'list-item' // available options: auto, block, list-item, background, inverse-background, none
   },
   {
     title: 'Multiple days event',

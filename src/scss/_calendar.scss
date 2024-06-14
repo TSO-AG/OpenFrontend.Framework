@@ -236,3 +236,10 @@
 .fc-icon-list {
   --#{$prefix}fc-icon: #{escape-svg($calendar-icon-list)};
 }
+
+// Fix the icon mask for some SVG files
+[class*="fc-icon-"]:before {
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}

@@ -32,6 +32,10 @@
   min-height: var(--page-nav-panel-height, 0);
   overflow: hidden;
 
+  .collapsing & {
+    min-height: max(var(--page-nav-panel-last-height, 0), var(--page-nav-panel-height, 0));
+  }
+
   nav {
     --columns: 1;
     --menu-width: 100%;

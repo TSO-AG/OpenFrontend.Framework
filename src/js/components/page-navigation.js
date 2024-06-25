@@ -9,6 +9,7 @@ const CLASS_NAME_SUBMENU_ACTIVE = 'active-level'
 const CLASS_NAME_PANEL_ACTIVE = 'active-panel'
 const CLASS_NAME_PANEL_PARENT = 'active-panel-parent'
 const PANEL_HEIGHT_PROPERTY_NAME = '--page-nav-panel-height'
+const PANEL_LAST_HEIGHT_PROPERTY_NAME = '--page-nav-panel-last-height'
 const ACTIVE_ITEM_SELECTOR = 'span.active'
 const CSS_MENU_BREAKPOINT_PROPERTY_NAME = '--page-menu-breakpoint'
 const HTML_CONTENT_TRIGGER_ATTRIBUTE = 'data-html-content-trigger'
@@ -230,6 +231,17 @@ class PageNavigation extends BaseComponent {
     }
 
     this._element.style.setProperty(PANEL_HEIGHT_PROPERTY_NAME, `${maxHeight}px`)
+
+    // Update the last panel height property for smooth collapse transition
+    if (!this._element.checkVisibility()) {
+      return
+    }
+
+    if (panels.length > 0 && maxHeight > 0) {
+      this._element.style.setProperty(PANEL_LAST_HEIGHT_PROPERTY_NAME, `${maxHeight}px`)
+    } else {
+      this._element.style.removeProperty(PANEL_LAST_HEIGHT_PROPERTY_NAME)
+    }
   }
 }
 

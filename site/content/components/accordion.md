@@ -61,6 +61,70 @@ Click the accordions below to expand/collapse the accordion content.
 </div>
 {{< /example >}}
 
+### Custom icon
+
+To set custom icons for the Accordion, use an element with the class `.accordion-button-icon` inside the button. You can add two icons inside: the first one visible when the Accordion is collapsed, and the second one when expanded. If you add only one icon, it will be used for both states with the transformation `transform: var(--bs-accordion-btn-icon-transform)` applied to it.
+
+{{< example class="bg-body-secondary" >}}
+<div class="accordion accordion-flush" id="accordionCustomIconExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#customIcon-collapseOne" aria-expanded="false" aria-controls="customIcon-collapseOne">
+        Accordion Item #1
+        <div class="accordion-button-icon">
+          <span>{{< icon name="plus-square" >}}</span>
+          <span>{{< icon name="dash-square" >}}</span>
+        </div>
+      </button>
+    </h2>
+    <div id="customIcon-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionCustomIconExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>custom icon</code>. This is the first item's accordion body.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#customIcon-collapseTwo" aria-expanded="false" aria-controls="customIcon-collapseTwo">
+        Accordion Item #2
+        <div class="accordion-button-icon">
+          <span>{{< icon name="chevron-down" >}}</span>
+          <span>{{< icon name="chevron-up" >}}</span>
+        </div>
+      </button>
+    </h2>
+    <div id="customIcon-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionCustomIconExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>custom icon</code>. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#customIcon-collapseThree" aria-expanded="false" aria-controls="customIcon-collapseThree">
+        Accordion Item #3
+        <div class="accordion-button-icon">
+          <span>{{< icon name="arrow-down" >}}</span>
+          <span>{{< icon name="arrow-up" >}}</span>
+        </div>
+      </button>
+    </h2>
+    <div id="customIcon-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionCustomIconExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>custom icon</code>. This is the third item's accordion body. Let's imagine this being filled with some actual content.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#customIcon-collapseFour" aria-expanded="false" aria-controls="customIcon-collapseFour">
+        Accordion Item #4
+        <div class="accordion-button-icon">
+          <span>{{< icon name="arrow-down-circle" >}}</span>
+        </div>
+      </button>
+    </h2>
+    <div id="customIcon-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionCustomIconExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>custom icon</code>. This is the fourth item's accordion body. Let's imagine this being filled with some actual content.</div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
 ### Flush
 
 Add `.accordion-flush` to remove some borders and rounded corners to render accordions edge-to-edge with their parent container.

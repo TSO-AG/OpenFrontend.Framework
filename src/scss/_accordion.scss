@@ -1,0 +1,67 @@
+.accordion {
+  --#{$prefix}accordion-icon-color: #{$accordion-icon-color};
+  --#{$prefix}accordion-icon-active-color: #{$accordion-icon-active-color};
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .accordion {
+      --#{$prefix}accordion-icon-color: #{$accordion-icon-color-dark};
+      --#{$prefix}accordion-icon-active-color: #{$accordion-icon-active-color-dark};
+    }
+  }
+}
+
+
+.accordion-button:has(.accordion-button-icon) {
+  &::after {
+    content: unset;
+  }
+}
+
+.accordion-button-icon {
+  $this: &;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--#{$prefix}accordion-btn-icon-width);
+  height: var(--#{$prefix}accordion-btn-icon-width);
+  margin-left: auto;
+  font-size: var(--#{$prefix}accordion-btn-icon-width);
+  color: var(--#{$prefix}accordion-icon-color);
+
+  > * {
+    position: absolute;
+
+    &:only-child {
+      @include transition(var(--#{$prefix}accordion-btn-icon-transition));
+    }
+
+    &:not(:only-child) {
+      @include transition(var(--#{$prefix}accordion-transition));
+    }
+
+
+    // Hide second icon
+    &:not(:first-child) {
+      opacity: 0;
+    }
+  }
+
+  .accordion-button:not(.collapsed) & {
+    > * {
+      &:only-child {
+        transform: var(--#{$prefix}accordion-btn-icon-transform);
+      }
+
+      &:not(:last-child) {
+        opacity: 0;
+      }
+
+      &:not(:first-child) {
+        opacity: 1;
+      }
+    }
+  }
+}

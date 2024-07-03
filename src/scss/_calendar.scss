@@ -81,7 +81,7 @@
     border-bottom-width: 0;
   }
 
-  .fc-day-other {
+  .fc-day-other:not(.fc-popover) {
     background-color: var(--#{$prefix}calendar-day-other-bg-color);
 
     .fc-daygrid-day-top {

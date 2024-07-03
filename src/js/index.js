@@ -70,7 +70,7 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-bs-toggle="tab"]'), () => import(/* webpackChunkName: "of-tabs" */ './components/tabs'))
   loadForElements(element.querySelectorAll('[data-bs-toggle="tooltip"]'), () => import(/* webpackChunkName: "of-tooltip" */ './components/tooltip'))
   loadForElements(element.querySelectorAll('[data-bs-toggle="dropdown"]'), () => import(/* webpackChunkName: "of-dropdown" */ './components/dropdown'))
-  loadForElements(element.querySelectorAll('[data-bs-toggle="collapse"]'), () => import(/* webpackChunkName: "of-collapse" */ './components/collapse'))
+  loadForElements(element.querySelectorAll('[data-bs-toggle="collapse"], [data-of-collapse-link]'), () => import(/* webpackChunkName: "of-collapse" */ './components/collapse'))
   loadForElements(element.querySelectorAll('[data-bs-toggle="modal"]'), () => import(/* webpackChunkName: "of-modal" */ './components/modal'))
   loadForElements(element.querySelectorAll('[data-bs-toggle="offcanvas"]'), () => import(/* webpackChunkName: "of-offcanvas" */ './components/offcanvas'))
   loadForElements(element.querySelectorAll('[data-bs-toggle="popover"]'), () => import(/* webpackChunkName: "of-popover" */ './components/popover'))

@@ -115,6 +115,24 @@ This example shows how to use the `collapse` component in conjunction with the `
 </div>
 {{< /example >}}
 
+## Expandable Link
+Links with the attribute `data-of-collapse-link` will expand the collapse element on the first click and perform the link’s default action (such as navigating to a URL) on the second click if the collapse is already expanded.
+{{< example >}}
+<p>
+  <a href="https://www.google.com/" target="_blank" class="btn btn-primary" type="button" data-of-collapse-link data-bs-target="#collapseLinkExample" aria-expanded="false" aria-controls="collapseClassExample">
+      Expand on first click, default action on second click
+  </a>
+</p>
+<div>
+  <div class="collapse" id="collapseLinkExample">
+    <div class="card card-body">
+      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
+
 ## Accessibility
 
 Be sure to add `aria-expanded` to the control element. This attribute explicitly conveys the current state of the collapsible element tied to the control to screen readers and similar assistive technologies. If the collapsible element is closed by default, the attribute on the control element should have a value of `aria-expanded="false"`. If you've set the collapsible element to be open by default using the `show` class, set `aria-expanded="true"` on the control instead. The plugin will automatically toggle this attribute on the control based on whether or not the collapsible element has been opened or closed (via JavaScript, or because the user triggered another control element also tied to the same collapsible element). If the control element's HTML element is not a button (e.g., an `<a>` or `<div>`), the attribute `role="button"` should be added to the element.

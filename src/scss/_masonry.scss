@@ -17,6 +17,7 @@
 
 // Make sure that elements with certain aspect-ratio inside can adjust height
 .masonry-item > .aspect {
+  width: 100%;
   overflow: visible;
 }
 

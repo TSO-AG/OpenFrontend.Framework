@@ -585,7 +585,7 @@ Here is the list of all available options (alphabetically):
 | `thumbnail` | `string` | `undefined` | A path to the thumbnail image. This is needed if the lightbox/tab has `thumbnails: true` option. |
 | `thumbnailSizes` | `string` | `undefined` | The `sizes` attribute for responsive thumbnails. |
 | `thumbnailSrcset` | `string` | `undefined` | The `srcset` attribute for responsive thumbnails. |
-| `type` | `string` | `undefined` | The type of item. If not provided, the component will try to autodetect it. Available options are: `iframe`, `image`, `inline`, `video`. |
+| `type` | `string` | `undefined` | The type of item. If not provided, the component will try to autodetect it. Available options are: `external` (for iframe), `image`, `inline`, `video`. |
 {{< /bs-table >}}
 
 Depending on the item `type`, the extra options can be passed on:

@@ -122,8 +122,15 @@ class Calendar extends BaseComponent {
       themeSystem: 'bootstrap',
     }
 
-    if (document.documentElement.lang !== 'en' && LOCALES.hasOwnProperty(document.documentElement.lang)) {
-      options.locale = await LOCALES[document.documentElement.lang]();
+    let currentLocale = document.documentElement.lang;
+
+    // Map the locale with country code to the locale
+    if (currentLocale.length > 2) {
+      currentLocale = currentLocale.substring(0, 2);
+    }
+
+    if (currentLocale !== 'en' && LOCALES.hasOwnProperty(currentLocale)) {
+      options.locale = await LOCALES[currentLocale]();
     }
 
     if (this._config.title) {

@@ -729,3 +729,11 @@ $print-page-size:               a4 !default;
 $print-body-min-width:          992px !default;
 $print-carousel-space-between:  10px !default;
 // scss-docs-end print-variables
+
+
+// Link Cover Content
+// scss-docs-start link-cover-content-variables
+$link-cover-content-bg: rgba(0, 0, 0, .6) !default;
+$link-cover-content-color: #fff !default;
+$link-cover-content-font-size: 1.75rem !default;
+// scss-docs-end link-cover-content-variables

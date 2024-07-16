@@ -1,0 +1,22 @@
+*:has(> .link-cover-content) {
+  position: relative;
+  display: block;
+}
+
+.link-cover-content {
+  // scss-docs-start link-cover-content-css-vars
+  --#{$prefix}link-cover-content-bg: #{$link-cover-content-bg};
+  --#{$prefix}link-cover-content-color: #{$link-cover-content-color};
+  --#{$prefix}link-cover-content-font-size: #{$link-cover-content-font-size};
+  // scss-docs-end link-cover-content-css-vars
+
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--#{$prefix}link-cover-content-font-size);
+  line-height: 1;
+  color: var(--#{$prefix}link-cover-content-color);
+  background: var(--#{$prefix}link-cover-content-bg);
+}

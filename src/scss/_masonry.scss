@@ -215,7 +215,6 @@
 // Pattern 6
 .masonry-pattern-6 {
   @include media-breakpoint-between($masonry-breakpoint, $masonry-group-breakpoint) {
-    grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
 
     > .masonry-item {
@@ -229,7 +228,6 @@
 
   @include media-breakpoint-up($masonry-group-breakpoint) {
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
 
     > .masonry-item {

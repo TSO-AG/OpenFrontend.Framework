@@ -264,3 +264,14 @@ html .glightbox-clean {
     animation: gfadeIn .5s ease;
   }
 }
+
+.gclose,
+.gprev,
+.gnext {
+  font-size: 1rem;
+
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+}

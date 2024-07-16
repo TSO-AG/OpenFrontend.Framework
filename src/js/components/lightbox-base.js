@@ -6,10 +6,18 @@ import { Autoplay, Navigation, Manipulation } from 'swiper/modules'
 
 Swiper.use([Navigation, Autoplay, Manipulation])
 
+function getLightboxIcon(id, defaultIcon) {
+  const script = document.getElementById(id)
+  return script ? script.innerHTML : defaultIcon
+}
+
 const NAME = 'lightbox'
 const LIGHTBOX_WRAPPER_CLASS = 'lightbox-wrapper'
 const LIGHTBOX_THUMBNAILS_CLASS = 'lightbox-thumbnails'
 const LIGHTBOX_URL_HASH_PREFIX = 'lightbox-'
+const LIGHTBOX_ICON_CLOSE = getLightboxIcon('of-lightbox-icon-close', '<svg class="of-icon" viewBox="0 0 16 16"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/></svg>')
+const LIGHTBOX_ICON_PREV = getLightboxIcon('of-lightbox-icon-prev', '<svg class="of-icon" viewBox="0 0 16 16"><path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/></svg>')
+const LIGHTBOX_ICON_NEXT = getLightboxIcon('of-lightbox-icon-next', '<svg class="of-icon" viewBox="0 0 16 16"><path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg>')
 
 const LIGHTBOX_SETTINGS = {
   autoplayVideos: true,
@@ -17,6 +25,11 @@ const LIGHTBOX_SETTINGS = {
   closeOnOutsideClick: false,
   openEffect: 'fade',
   touchNavigation: true,
+  svg: {
+    close: LIGHTBOX_ICON_CLOSE,
+    next: LIGHTBOX_ICON_NEXT,
+    prev: LIGHTBOX_ICON_PREV,
+  },
   plyr: {
     css: () => import('plyr/dist/plyr.css'),
     js: () => import('plyr/src/js/plyr').then(async (module) => {
@@ -51,14 +64,10 @@ const THUMBNAILS_CAROUSEL_HTML = `<div class="gallery-thumbnails carousel carous
   </div>
   <div class="carousel-navigation">
     <button type="button" class="carousel-button-prev btn btn-square btn-primary">
-      <svg class="of-icon">
-        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-      </svg>
+      ${LIGHTBOX_ICON_PREV}
     </button>
     <button type="button" class="carousel-button-next btn btn-square btn-primary">
-      <svg class="of-icon">
-          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-      </svg>
+       ${LIGHTBOX_ICON_NEXT}
     </button>
   </div>
 </div>`

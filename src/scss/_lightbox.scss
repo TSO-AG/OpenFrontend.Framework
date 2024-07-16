@@ -150,6 +150,10 @@
     max-width: none !important; // stylelint-disable-line declaration-no-important
     height: $content-height;
     aspect-ratio: 16/9;
+
+    video {
+      max-width: none !important; // stylelint-disable-line declaration-no-important
+    }
   }
 
   .gslide-video {

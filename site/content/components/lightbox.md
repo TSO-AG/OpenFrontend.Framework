@@ -381,7 +381,7 @@ Having a complex gallery with different groups and mixed content types is not a 
             <div class="aspect aspect-16x9 aspect-md-auto">
               <a href="assets/media/sample-gallery-4.jpg" data-of-lightbox-open="tabs:3" data-link-cover>
                 <img src="assets/media/sample-gallery-4.jpg" alt="" class="img-fit-cover">
-                <div class="link-cover-content">+7</div>
+                <div class="link-cover-content">+6</div>
               </a>
             </div>
           </div>

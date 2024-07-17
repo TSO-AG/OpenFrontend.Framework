@@ -77,8 +77,12 @@ class Calendar extends BaseComponent {
       return
     }
 
+    await this._openPopover(info.el, eventData.content, (this._calendar.view.type === 'listMonth') ? info.jsEvent.target : null);
+  }
+
+  async _openPopover(el, content, clickedEl = null) {
     const popoverOptions = {
-      content: eventData.content,
+      content,
       html: true,
       placement: 'auto',
       sanitize: false,
@@ -89,13 +93,13 @@ class Calendar extends BaseComponent {
       popoverOptions.placement = 'top'
     }
 
-    const popover = await openFrontend.Popover.then(component => component.getOrCreateInstance(info.el, popoverOptions))
+    const popover = await openFrontend.Popover.then(component => component.getOrCreateInstance(el, popoverOptions))
 
     if (popover._isShown()) {
       popover.hide()
       popover.removeClickListener()
     } else {
-      this._hidePopoverOnClickOutside(popover, (this._calendar.view.type === 'listMonth') ? info.jsEvent.target : null)
+      this._hidePopoverOnClickOutside(popover, clickedEl)
       popover.show()
     }
   }
@@ -150,6 +154,8 @@ class Calendar extends BaseComponent {
         }
         break;
       case 'mini':
+        const events = this._getEvents();
+
         options.initialView = 'miniView'
         options.plugins.push(multiMonthPlugin)
         options.multiMonthMinWidth = this._config.miniMonthMinWidth;
@@ -163,8 +169,21 @@ class Calendar extends BaseComponent {
             showNonCurrentDates: false,
           }
         }
-        options.eventDidMount = data => data.el.closest('td')?.classList.add('fc-of-mini-event-day')
-        options.moreLinkDidMount = data => data.el.closest('td')?.classList.add('fc-of-mini-event-day')
+        options.eventDidMount = info => info.el.closest('td')?.classList.add('fc-of-mini-event-day')
+        options.moreLinkClick = async info => {
+          await this._openPopover(
+            info.jsEvent.target,
+            info.allSegs.map(v => events[v.event.id]?.content ? `<div class="popover-body-row">${events[v.event.id].content}</div>` : '').join(''),
+            info.jsEvent.target,
+          )
+
+          // Return a fake string, so nothing is rendered by FullCalendar
+          return '_';
+        }
+        options.moreLinkDidMount = info => {
+          info.el.closest('td')?.classList.add('fc-of-mini-event-day')
+          info.el.title = '' // Remove the tooltip in popover
+        }
         break;
       default:
         throw new Error(`Unsupported layout: ${this._config.layout}`)

@@ -68,7 +68,9 @@
   --#{$prefix}state-color: #{$state-color};
   --#{$prefix}state-border-radius: #{$state-border-radius};
   --#{$prefix}state-icon: #{escape-svg($state-icon)};
+  --#{$prefix}state-icon-color: #{$state-icon-color};
   // scss-docs-end state-css-vars
+  position: relative;
   display: inline-flex;
   column-gap: var(--#{$prefix}state-gap);
   padding: var(--#{$prefix}state-padding-y) var(--#{$prefix}state-padding-x);
@@ -87,13 +89,20 @@
     display: none;
   }
 
+  // Icon
+  @include add-icon(var(--#{$prefix}state-icon), $icon-gap: 0);
+
+  &::before {
+    position: absolute;
+    right: var(--#{$prefix}state-padding-x);
+    color: var(--#{$prefix}state-icon-color);
+  }
+
   &::after {
     width: 1em;
     height: 1em;
     content: "";
     background-color: var(--#{$prefix}state-badge-color);
-    background-image: var(--#{$prefix}state-icon);
-    background-size: contain;
     @include border-radius(50%);
   }
 

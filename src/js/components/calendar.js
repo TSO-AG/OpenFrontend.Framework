@@ -105,10 +105,19 @@ class Calendar extends BaseComponent {
   }
 
   async _getOptions() {
-    const events = this._getEvents();
+    const events = this._getEvents()
+    const eventsCache = new Map()
 
     const options = {
-      events: (fetchInfo, successCallback) => successCallback(events.filter(v => v.start >= fetchInfo.start && v.start < fetchInfo.end)),
+      events: (fetchInfo, successCallback) => {
+        const cacheKey = `${fetchInfo.startStr}_${fetchInfo.endStr}`
+
+        if (!eventsCache.has(cacheKey)) {
+          eventsCache.set(cacheKey, events.filter(v => v.start >= fetchInfo.start && v.start < fetchInfo.end))
+        }
+
+        successCallback(eventsCache.get(cacheKey))
+      },
       eventClick: e => this._openEventPopover(e, events),
       eventTimeFormat: {
         hour: '2-digit',

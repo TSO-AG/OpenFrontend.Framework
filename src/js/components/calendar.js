@@ -108,7 +108,7 @@ class Calendar extends BaseComponent {
     const events = this._getEvents();
 
     const options = {
-      events,
+      events: (fetchInfo, successCallback) => successCallback(events.filter(v => v.start >= fetchInfo.start && v.start < fetchInfo.end)),
       eventClick: e => this._openEventPopover(e, events),
       eventTimeFormat: {
         hour: '2-digit',
@@ -154,8 +154,6 @@ class Calendar extends BaseComponent {
         }
         break;
       case 'mini':
-        const events = this._getEvents();
-
         options.initialView = 'miniView'
         options.plugins.push(multiMonthPlugin)
         options.multiMonthMinWidth = this._config.miniMonthMinWidth;

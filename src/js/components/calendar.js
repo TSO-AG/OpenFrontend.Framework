@@ -113,7 +113,15 @@ class Calendar extends BaseComponent {
         const cacheKey = `${fetchInfo.startStr}_${fetchInfo.endStr}`
 
         if (!eventsCache.has(cacheKey)) {
-          eventsCache.set(cacheKey, events.filter(v => v.start >= fetchInfo.start && v.start < fetchInfo.end))
+          eventsCache.set(cacheKey, events.filter(v => {
+            let start = v.start;
+
+            if (typeof start === 'string') {
+              start = new Date(start);
+            }
+
+            return start >= fetchInfo.start && start < fetchInfo.end;
+          }))
         }
 
         successCallback(eventsCache.get(cacheKey))

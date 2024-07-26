@@ -41,7 +41,23 @@ export function initMultiple(els) {
 // Links with the attribute [data-of-collapse-link] should only expand the collapse
 EventHandler.on(document, 'click.bs.collapse.data-api', '[data-of-collapse-link]', function (event) {
   const collapseElement = SelectorEngine.getElementFromSelector(this)
-  const collapseInstance = Collapse.getOrCreateInstance(collapseElement, { toggle: false })
+  let collapseInstance = Collapse.getInstance(collapseElement)
+
+  if (!collapseInstance) {
+    collapseInstance = Collapse.getOrCreateInstance(collapseElement, { toggle: false })
+
+    const targetElement = event.delegateTarget
+
+    if (targetElement) {
+      collapseElement.addEventListener('show.bs.collapse', () => {
+        targetElement.setAttribute('aria-expanded', 'true')
+      })
+
+      collapseElement.addEventListener('hide.bs.collapse', () => {
+        targetElement.setAttribute('aria-expanded', 'false')
+      })
+    }
+  }
 
   if (!collapseInstance._isShown() && (event.target.tagName === 'A' || (event.delegateTarget && event.delegateTarget.tagName === 'A'))) {
     event.preventDefault()

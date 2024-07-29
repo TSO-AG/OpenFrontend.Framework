@@ -123,6 +123,8 @@ Use [flexbox utilities][flex], [float utilities][float], or [text alignment][tex
 
 ## Size
 
+### Small
+
 Add `.spinner-border-sm` and `.spinner-grow-sm` to make a smaller spinner that can quickly be used within other components.
 
 {{< example >}}
@@ -141,6 +143,19 @@ Or, use custom CSS or inline styles to change the dimensions as needed.
   <span class="visually-hidden">Loading...</span>
 </div>
 <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+{{< /example >}}
+
+### Text size (em)
+
+Add `.spinner-border-em` and `.spinner-grow-em` to make a spinner the same size as text.
+
+{{< example >}}
+<div class="spinner-border spinner-border-em" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow spinner-grow-em" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
 {{< /example >}}

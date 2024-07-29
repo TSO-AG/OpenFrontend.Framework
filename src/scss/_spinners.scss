@@ -1,0 +1,10 @@
+.spinner-border-em {
+  --#{$prefix}spinner-width: #{$spinner-width-em};
+  --#{$prefix}spinner-height: #{$spinner-height-em};
+  --#{$prefix}spinner-border-width: #{$spinner-border-width-em};
+}
+
+.spinner-grow-em {
+  --#{$prefix}spinner-width: #{$spinner-width-em};
+  --#{$prefix}spinner-height: #{$spinner-height-em};
+}

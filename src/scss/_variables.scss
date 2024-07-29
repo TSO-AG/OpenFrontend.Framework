@@ -737,3 +737,10 @@ $link-cover-content-bg: rgba(0, 0, 0, .6) !default;
 $link-cover-content-color: #fff !default;
 $link-cover-content-font-size: 1.75rem !default;
 // scss-docs-end link-cover-content-variables
+
+// Spinners
+// scss-docs-start spinner-border-em-css-vars
+$spinner-width-em: 1em !default;
+$spinner-height-em: $spinner-width-em !default;
+$spinner-border-width-em: .2em !default;
+// scss-docs-end spinner-border-em-css-vars

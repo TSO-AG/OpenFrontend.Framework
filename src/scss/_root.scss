@@ -5,4 +5,6 @@
   @each $name, $pixel-value in $grid-breakpoints {
     --breakpoint-#{$name}: #{$pixel-value};
   }
+
+  scroll-padding-top: var(--#{$prefix}header-sticky-height, 0);
 }

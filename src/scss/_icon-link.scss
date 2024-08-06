@@ -5,7 +5,8 @@
   text-decoration: none;
   backface-visibility: hidden;
 
-  > i {
+  > i,
+  > svg {
     flex-shrink: 0;
     width: $icon-link-icon-size;
     height: $icon-link-icon-size;
@@ -17,7 +18,8 @@
 .icon-link-hover {
   &:hover,
   &:focus-visible {
-    > i {
+    > i,
+    > svg {
       transform: var(--#{$prefix}icon-link-transform, $icon-link-icon-transform);
     }
   }

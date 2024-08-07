@@ -364,4 +364,13 @@
   .card-action {
     position: static;
   }
+
+  .card-media {
+    z-index: 2;
+    pointer-events: none;
+
+    [data-bs-toggle="tooltip"] {
+      pointer-events: auto;
+    }
+  }
 }

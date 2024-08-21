@@ -9,6 +9,7 @@
 .masonry-item {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 
   > * {
     flex-grow: 1;

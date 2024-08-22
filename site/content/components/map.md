@@ -19,9 +19,16 @@ This section provides an example of how to embed Google Maps into your web page 
 
   <div id="map-marker-google" class="visually-hidden">
     <div class="popover-content popover-content-horizontal position-relative">
-      <figure class="popover-content-image">
-        {{< placeholder width="100%" height="130" class="img-fluid" text="Responsive image" >}}
-      </figure>
+      <div class="popover-content-media">
+        <figure class="popover-content-image">
+          {{< placeholder width="100%" height="130" class="img-fluid" text="Responsive image" >}}
+        </figure>
+        <div class="popover-content-media__content popover-content-media__content--top-right">
+          <div class="state state--open">
+            open
+          </div>
+        </div>
+      </div>
       <div class="popover-content-inside">
         <div class="popover-content-info">Product family | Place</div>
         <div class="popover-content-info">DD.MM.YY - DD.MM.YY</div>
@@ -96,9 +103,16 @@ Example HTML Structure
     <!--The div element for the map marker -->
     <div id="map-marker-google" class="visually-hidden">
       <div class="popover-content popover-content-horizontal position-relative">
-        <figure class="popover-content-image">
-          {{< placeholder width="100%" height="130" class="img-fluid" text="Responsive image" >}}
-        </figure>
+        <div class="popover-content-media">
+          <figure class="popover-content-image">
+            {{< placeholder width="100%" height="130" class="img-fluid" text="Responsive image" >}}
+          </figure>
+          <div class="popover-content-media__content popover-content-media__content--top-right">
+            <div class="state state--open">
+              open
+            </div>
+          </div>
+        </div>
         <div class="popover-content-inside">
           <div class="popover-content-info">Product family | Place</div>
           <div class="popover-content-info">DD.MM.YY - DD.MM.YY</div>
@@ -213,9 +227,16 @@ This section provides an example of how to integrate OpenStreetMap into your web
 
   <div id="map-marker-osm" class="visually-hidden">
     <div class="popover-content popover-content-horizontal position-relative">
-      <figure class="popover-content-image">
-        {{< placeholder width="100%" height="130" class="img-fluid" text="Responsive image" >}}
-      </figure>
+      <div class="popover-content-media">
+        <figure class="popover-content-image">
+          {{< placeholder width="100%" height="130" class="img-fluid" text="Responsive image" >}}
+        </figure>
+        <div class="popover-content-media__content popover-content-media__content--top-right">
+          <div class="state state--open">
+            open
+          </div>
+        </div>
+      </div>
       <div class="popover-content-inside">
         <div class="popover-content-info">Product family | Place</div>
         <div class="popover-content-info">DD.MM.YY - DD.MM.YY</div>
@@ -285,9 +306,11 @@ Example HTML Structure
   <!--The div element for the map marker -->
   <div id="map-marker-osm" class="visually-hidden">
     <div class="popover-content popover-content-horizontal position-relative">
+      <div class="popover-content-media">
       <figure class="popover-content-image">
-        {{< placeholder width="100%" height="130" class="img-fluid" text="Responsive image" >}}
-      </figure>
+          {{< placeholder width="100%" height="130" class="img-fluid" text="Responsive image" >}}
+        </figure>
+      </div>
       <div class="popover-content-inside">
         <div class="popover-content-info">Product family | Place</div>
         <div class="popover-content-info">DD.MM.YY - DD.MM.YY</div>

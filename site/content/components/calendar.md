@@ -31,9 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const dummyContent = `
 <div class="popover-content">
-  <figure class="popover-content-image">
-    <img src="assets/media/sample-image.jpg" alt="">
-  </figure>
+  <div class="popover-content-media">
+    <figure class="popover-content-image">
+      <img src="assets/media/sample-image.jpg" alt="">
+    </figure>
+  </div>
   <div class="popover-content-inside">
     <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
     <h6 class="popover-content-title">Yoga at the Park</h6>
@@ -189,9 +191,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const dummyContent = `
 <div class="popover-content">
-  <figure class="popover-content-image">
-    <img src="assets/media/sample-image.jpg" alt="">
-  </figure>
+  <div class="popover-content-media">
+    <figure class="popover-content-image">
+      <img src="assets/media/sample-image.jpg" alt="">
+    </figure>
+  </div>
   <div class="popover-content-inside">
     <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
     <h6 class="popover-content-title">Yoga at the Park</h6>

@@ -148,9 +148,16 @@ You can use the dedicated markup to display the popover content:
     <div class="popover-arrow" style="position:absolute;top:100%;left:calc(50% - 8px)"></div>
     <div class="popover-body">
       <div class="popover-content">
-        <figure class="popover-content-image">
-          <img src="assets/media/sample-image.jpg" alt="">
-        </figure>
+        <div class="popover-content-media">
+          <figure class="popover-content-image">
+            <img src="assets/media/sample-image.jpg" alt="">
+          </figure>
+          <div class="popover-content-media__content popover-content-media__content--top-right">
+            <div class="state state--open">
+              open
+            </div>
+          </div>
+        </div>
         <div class="popover-content-inside">
           <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
           <h6 class="popover-content-title">Yoga at the Park</h6>
@@ -167,9 +174,16 @@ You can use the dedicated markup to display the popover content:
 
 {{< example show_preview="false" >}}
 <div class="popover-content">
-  <figure class="popover-content-image">
-    <img src="assets/media/sample-image.jpg" alt="">
-  </figure>
+  <div class="popover-content-media">
+    <figure class="popover-content-image">
+      <img src="assets/media/sample-image.jpg" alt="">
+    </figure>
+    <div class="popover-content-media__content popover-content-media__content--top-right">
+      <div class="state state--open">
+        open
+      </div>
+    </div>
+  </div>
   <div class="popover-content-inside">
     <div class="popover-content-info">December 16 @ 12:00 - 13:30</div>
     <h6 class="popover-content-title">Yoga at the Park</h6>
@@ -192,9 +206,16 @@ For the content that requires a box wider than higher (like map pin tooltips), y
     <div class="popover-arrow" style="position:absolute;top:100%;left:calc(50% - 8px)"></div>
     <div class="popover-body">
       <div class="popover-content popover-content-horizontal">
-        <figure class="popover-content-image">
-          <img src="assets/media/sample-image.jpg" alt="">
-        </figure>
+        <div class="popover-content-media">
+          <figure class="popover-content-image">
+            <img src="assets/media/sample-image.jpg" alt="">
+          </figure>
+          <div class="popover-content-media__content popover-content-media__content--top-right">
+            <div class="state state--open">
+              open
+            </div>
+          </div>
+        </div>
         <div class="popover-content-inside">
           <div class="popover-content-info">Event | Lyss, CH</div>
           <div class="popover-content-info">21.11.2023 - 27.11.2023</div>
@@ -212,9 +233,16 @@ For the content that requires a box wider than higher (like map pin tooltips), y
 
 {{< example show_preview="false" >}}
 <div class="popover-content popover-content-horizontal">
-  <figure class="popover-content-image">
-    <img src="assets/media/sample-image.jpg" alt="">
-  </figure>
+  <div class="popover-content-media">
+    <figure class="popover-content-image">
+      <img src="assets/media/sample-image.jpg" alt="">
+    </figure>
+    <div class="popover-content-media__content popover-content-media__content--top-right">
+      <div class="state state--open">
+        open
+      </div>
+    </div>
+  </div>
   <div class="popover-content-inside">
     <div class="popover-content-info">Event | Lyss, CH</div>
     <div class="popover-content-info">21.11.2023 - 27.11.2023</div>

@@ -20,6 +20,17 @@ class LightboxRegistry {
             item.href = element.href
           }
 
+          // If the element is inline, convert it to the "content" property with actual node,
+          // so the element is moved to the lightbox and not just copied over
+          if (item.type === 'inline' && item.href) {
+            const inlineElement = document.querySelector(item.href);
+
+            if (inlineElement) {
+              item.content = inlineElement;
+              delete item.href;
+            }
+          }
+
           items.push(item)
 
           // Open the lightbox on click

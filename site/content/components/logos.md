@@ -198,7 +198,7 @@ Note that the `--bs-logos-gap` CSS variable will no longer work here. Instead, d
   </div>
 </div>
 
-<div class="logos logo-carousel">
+<div class="logos logos-carousel">
   <div class="carousel">
     <div class="swiper" data-of-carousel='{
       "slidesPerView": 2,

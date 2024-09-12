@@ -279,3 +279,15 @@ html .glightbox-clean {
 .glightbox-button-hidden {
   display: none;
 }
+
+// Adjust slide content height when no tabs are present to ensure close button visibility
+.gcontainer {
+  &:not(:has(.lightbox-tabs)) {
+    --nav-tabs-height: 4rem;
+    --lightbox-tabs-wrapper-height: calc(var(--nav-tabs-height) + var(--lightbox-tabs-padding-y) * 2);
+
+    &:not(:has(.lightbox-thumbnails)) {
+      --nav-tabs-height: 5rem;
+    }
+  }
+}

@@ -165,6 +165,7 @@ Here is the list of all available options (alphabetically):
 | `number` | `number` | `5` | The number of stars that will be presented. |
 | `readOnly` | `boolean` | `false` | Turns the rating read-only. |
 | `score` | `number` | `undefined` | Initial rating. |
+| `targetScore` | `string` | `undefined` | The query selector of a hidden field to update the value. |
 {{< /bs-table >}}
 
 ### Methods

@@ -12,6 +12,7 @@ const DefaultType = {
   number: 'number',
   readOnly: 'boolean',
   score: '(number|undefined)',
+  targetScore: '(string|undefined)',
 }
 
 const Default = {
@@ -19,6 +20,7 @@ const Default = {
   number: 5,
   readOnly: false,
   score: undefined,
+  targetScore: undefined,
 }
 
 class Rating extends BaseComponent {
@@ -51,6 +53,7 @@ class Rating extends BaseComponent {
     const options = {
       click: value => this._onClickEvent(value),
       half: this._config.half,
+      hints: [],
       number: this._config.number,
       readOnly: this._config.readOnly,
       score: this._config.score,
@@ -59,6 +62,7 @@ class Rating extends BaseComponent {
       starOff: 'star-off',
       starOn: 'star-on',
       starType: 'i',
+      targetScore: this._config.targetScore,
     }
 
     this._raty = new Raty(this._element, options).init()

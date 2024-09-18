@@ -73,6 +73,12 @@
       height: auto;
     }
 
+    .aspect {
+      .card-media-zoom & {
+        overflow: hidden;
+      }
+    }
+
     // Zoom image when hovering over an element with the class .card-media-zoom
     img,
     svg,

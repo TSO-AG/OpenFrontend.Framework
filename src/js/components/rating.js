@@ -53,7 +53,7 @@ class Rating extends BaseComponent {
     const options = {
       click: value => this._onClickEvent(value),
       half: this._config.half,
-      hints: [],
+      hints: Array.from({ length: this._config.number }, (_, index) => index + 1),
       number: this._config.number,
       readOnly: this._config.readOnly,
       score: this._config.score,

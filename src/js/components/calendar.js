@@ -19,6 +19,8 @@ const LOCALES = {
 
 const DefaultType = {
   events: 'array',
+  eventsFeedUrl: 'string|undefined',
+  eventsContentUrl: 'string|undefined',
   layout: 'string',
   miniMonthMinWidth: 'number',
   title: 'string|undefined',
@@ -36,6 +38,8 @@ const DefaultEventType = {
 
 const Default = {
   events: [],
+  eventsFeedUrl: undefined,
+  eventsContentUrl: undefined,
   layout: 'full',
   miniMonthMinWidth: 265,
   title: undefined,
@@ -67,17 +71,40 @@ class Calendar extends BaseComponent {
     this._calendar = new FullCalendar(this._element, await this._getOptions())
     this._calendar.render()
 
+    this._eventsCache = undefined
+    this._eventsSlicedCache = new Map()
+
     this._element.dispatchEvent(new CustomEvent(EVENT_CALENDAR_INITIALIZED))
   }
 
-  async _openEventPopover(info, events) {
-    const eventData = events[info.event.id]
+  async _openEventPopover(info) {
+    const eventId = info.event.id;
+    let content;
 
-    if (!eventData || !eventData.content) {
-      return
+    if (this._config.eventsContentUrl) {
+      content = await this._fetchEventContentFromUrl(eventId);
+    } else {
+      content = this._fetchEventContentFromData(eventId);
     }
 
-    await this._openPopover(info.el, eventData.content, (this._calendar.view.type === 'listMonth') ? info.jsEvent.target : null);
+    if (!content) {
+      return;
+    }
+
+    await this._openPopover(info.el, content, (this._calendar.view.type === 'listMonth') ? info.jsEvent.target : null);
+  }
+
+  _fetchEventContentFromData(eventId) {
+    return this._getEvents()[eventId]?.content;
+  }
+
+  async _fetchEventContentFromUrl(eventId) {
+    return fetch(`${this._config.eventsContentUrl}?event_id=${eventId}`, {
+      method: 'GET',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+    }).then(response => response.text());
   }
 
   async _openPopover(el, content, clickedEl = null) {
@@ -104,29 +131,47 @@ class Calendar extends BaseComponent {
     }
   }
 
-  async _getOptions() {
-    const events = this._getEvents()
-    const eventsCache = new Map()
+  async _fetchEvents(fetchInfo) {
+    if (this._config.eventsFeedUrl) {
+      return this._fetchEventsFromUrl(fetchInfo);
+    }
 
-    const options = {
-      events: (fetchInfo, successCallback) => {
-        const cacheKey = `${fetchInfo.startStr}_${fetchInfo.endStr}`
+    return this._fetchEventsFromData(fetchInfo);
+  }
 
-        if (!eventsCache.has(cacheKey)) {
-          eventsCache.set(cacheKey, events.filter(v => {
-            let start = v.start;
+  async _fetchEventsFromData(fetchInfo) {
+    return new Promise(resolve => {
+      const cacheKey = `${fetchInfo.startStr}_${fetchInfo.endStr}`
 
-            if (typeof start === 'string') {
-              start = new Date(start);
-            }
+      if (!this._eventsSlicedCache.has(cacheKey)) {
+        this._eventsSlicedCache.set(cacheKey, this._getEvents().filter(v => {
+          let start = v.start;
 
-            return start >= fetchInfo.start && start < fetchInfo.end;
-          }))
-        }
+          if (typeof start === 'string') {
+            start = new Date(start);
+          }
 
-        successCallback(eventsCache.get(cacheKey))
+          return start >= fetchInfo.start && start < fetchInfo.end;
+        }))
+      }
+
+      resolve(this._eventsSlicedCache.get(cacheKey))
+    })
+  }
+
+  async _fetchEventsFromUrl(fetchInfo) {
+    return fetch(`${this._config.eventsFeedUrl}?start=${fetchInfo.startStr}&end=${fetchInfo.endStr}`, {
+      method: 'GET',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
       },
-      eventClick: e => this._openEventPopover(e, events),
+    }).then(response => response.json());
+  }
+
+  async _getOptions() {
+    const options = {
+      events: (fetchInfo, successCallback) => this._fetchEvents(fetchInfo).then(successCallback),
+      eventClick: e => this._openEventPopover(e),
       eventTimeFormat: {
         hour: '2-digit',
         minute: '2-digit',
@@ -213,50 +258,54 @@ class Calendar extends BaseComponent {
   }
 
   _getEvents() {
-    this._config.events.forEach(event => this._typeCheckConfig(event, DefaultEventType))
+    if (this._eventsCache === undefined) {
+      this._config.events.forEach(event => this._typeCheckConfig(event, DefaultEventType))
 
-    let events = [...this._config.events];
+      let events = [...this._config.events];
 
-    // Split the multi-day events, so every day has a separate event. For example, if an event lasts
-    // from 1st January till 3rd January, we want to have 3 events: 01.01, 02.01, 03.01. This way we can make
-    // the whole day cell clickable in the calendar, contrary to multi-day event which HTML element
-    // is placed on the first day of the event and spans over the multiple cells.
-    if (this._config.layout === 'mini') {
-      const splitEvents = [];
+      // Split the multi-day events, so every day has a separate event. For example, if an event lasts
+      // from 1st January till 3rd January, we want to have 3 events: 01.01, 02.01, 03.01. This way we can make
+      // the whole day cell clickable in the calendar, contrary to multi-day event which HTML element
+      // is placed on the first day of the event and spans over the multiple cells.
+      if (this._config.layout === 'mini') {
+        const splitEvents = [];
 
-      for (let event of events) {
-        // The event has no "end" property, so it's a single-day event
-        if (!event.hasOwnProperty('end')) {
-          splitEvents.push(event);
-          continue;
+        for (let event of events) {
+          // The event has no "end" property, so it's a single-day event
+          if (!event.hasOwnProperty('end')) {
+            splitEvents.push(event);
+            continue;
+          }
+
+          const startDate = new Date(event.start);
+          const endDate = new Date(event.end);
+
+          // It's a single-day event
+          if (startDate.getFullYear() === endDate.getFullYear() && startDate.getMonth() === endDate.getMonth() && startDate.getDate() === endDate.getDate()) {
+            continue;
+          }
+
+          const currentDate = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate(), 0, 0, 0, 0);
+          const targetDate = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate(), 0, 0, 0, 0);
+
+          while (currentDate < targetDate) {
+            splitEvents.push({
+              ...event,
+              start: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), 0, 0, 0),
+              end: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), 23, 59, 59),
+            });
+
+            currentDate.setDate(currentDate.getDate() + 1);
+          }
         }
 
-        const startDate = new Date(event.start);
-        const endDate = new Date(event.end);
-
-        // It's a single-day event
-        if (startDate.getFullYear() === endDate.getFullYear() && startDate.getMonth() === endDate.getMonth() && startDate.getDate() === endDate.getDate()) {
-          continue;
-        }
-
-        const currentDate = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate(), 0, 0, 0, 0);
-        const targetDate = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate(), 0, 0, 0, 0);
-
-        while (currentDate < targetDate) {
-          splitEvents.push({
-            ...event,
-            start: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), 0, 0, 0),
-            end: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), 23, 59, 59),
-          });
-
-          currentDate.setDate(currentDate.getDate() + 1);
-        }
+        events = splitEvents;
       }
 
-      events = splitEvents;
+      this._eventsCache = events.map((event, index) => ({...event, id: index}));
     }
 
-    return events.map((event, index) => ({...event, id: index}));
+    return this._eventsCache;
   }
 
   _getValidRange(events) {

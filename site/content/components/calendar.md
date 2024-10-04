@@ -326,6 +326,8 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
 | `events` | `array` | `[]` | The events to be displayed. See the data structure below. |
+| `eventsFeedUrl` | `string\|undefined` | `undefined` | The URL to fetch the events feed data from. The appended parameters are `start` and `end`. It must return an event list in JSON format. |
+| `eventsContentUrl` | `string\|undefined` | `undefined` | The URL to fetch the events content data from. The appended parameters is `event_id`. It must return an HTML buffer. |
 | `layout` | `string` | `'full'` | The layout to be used. See the examples above. Available options: `full`, `mini`. |
 | `miniMonthMinWidth` | `number` | `300` | The minimum width for one month in pixels. Applies only if the `layout` is set to `mini`. |
 | `title` | `string\|undefined` | `undefined` | A custom title that will be display on top of the calendar. |

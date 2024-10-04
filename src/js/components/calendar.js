@@ -20,7 +20,10 @@ const LOCALES = {
 const DefaultType = {
   events: 'array',
   eventsFeedUrl: 'string|undefined',
+  eventsFeedUrlStartParam: 'string|undefined',
+  eventsFeedUrlEndParam: 'string|undefined',
   eventsContentUrl: 'string|undefined',
+  eventsContentUrlEventParam: 'string|undefined',
   layout: 'string',
   miniMonthMinWidth: 'number',
   title: 'string|undefined',
@@ -99,7 +102,7 @@ class Calendar extends BaseComponent {
   }
 
   async _fetchEventContentFromUrl(eventId) {
-    return fetch(`${this._config.eventsContentUrl}?event_id=${eventId}`, {
+    return fetch(`${this._config.eventsContentUrl}?${this._config.eventsContentUrlEventParam}=${eventId}`, {
       method: 'GET',
       headers: {
         'X-Requested-With': 'XMLHttpRequest'
@@ -160,7 +163,7 @@ class Calendar extends BaseComponent {
   }
 
   async _fetchEventsFromUrl(fetchInfo) {
-    return fetch(`${this._config.eventsFeedUrl}?start=${fetchInfo.startStr}&end=${fetchInfo.endStr}`, {
+    return fetch(`${this._config.eventsFeedUrl}?${this._config.eventsFeedUrlStartParam}=${fetchInfo.startStr}&${this._config.eventsFeedUrlEndParam}=${fetchInfo.endStr}`, {
       method: 'GET',
       headers: {
         'X-Requested-With': 'XMLHttpRequest'

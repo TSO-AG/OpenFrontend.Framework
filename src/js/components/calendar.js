@@ -84,7 +84,7 @@ class Calendar extends BaseComponent {
     const event = info.event;
     let content;
 
-    if (event.contentUrl) {
+    if (event._def.extendedProps.contentUrl) {
       content = await this._fetchEventContentFromUrl(event);
     } else {
       content = this._fetchEventContentFromData(event);
@@ -102,7 +102,7 @@ class Calendar extends BaseComponent {
   }
 
   async _fetchEventContentFromUrl(event) {
-    return fetch(event.contentUrl, {
+    return fetch(event._def.extendedProps.contentUrl, {
       method: 'GET',
       headers: {
         'X-Requested-With': 'XMLHttpRequest'

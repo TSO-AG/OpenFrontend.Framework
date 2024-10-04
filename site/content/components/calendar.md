@@ -327,10 +327,8 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 | --- | --- | --- | --- |
 | `events` | `array` | `[]` | The events to be displayed. See the data structure below. |
 | `eventsFeedUrl` | `string\|undefined` | `undefined` | The URL to fetch the events feed data from. The appended parameters are defined under `eventsFeedUrlStartParam` and `eventsFeedUrlEndParam`. The endpoint must return an event list in JSON format. |
-| `eventsFeedUrlStartParam` | `string` | `start` | The start date parameter name that will be used in the AJAX request. |
-| `eventsFeedUrlEndParam` | `string` | `end` | The end date parameter name that will be used in the AJAX request. |
-| `eventsContentUrl` | `string\|undefined` | `undefined` | The URL to fetch the events content data from. The appended parameter is defined under `eventsContentUrlEventParam`. The endpoint must return an HTML buffer. |
-| `eventsContentUrlEventParam` | `string` | `event_id` | The event ID parameter name that will be used in the AJAX request. |
+| `eventsFeedUrlStartParam` | `string` | `calendar_start` | The start date parameter name that will be used in the AJAX request. |
+| `eventsFeedUrlEndParam` | `string` | `calendar_end` | The end date parameter name that will be used in the AJAX request. |
 | `layout` | `string` | `'full'` | The layout to be used. See the examples above. Available options: `full`, `mini`. |
 | `miniMonthMinWidth` | `number` | `300` | The minimum width for one month in pixels. Applies only if the `layout` is set to `mini`. |
 | `title` | `string\|undefined` | `undefined` | A custom title that will be display on top of the calendar. |
@@ -354,7 +352,7 @@ const events = [
   },
   {
     title: 'Multiple days event',
-    content: '<div class="popover-content">…</div>',
+    contentUrl: 'https://domain.tld/_ajax/multiple_days_event', // fetch content via AJAX
     start: '2013-01-05',
     end: '2010-01-07',
     allDay: true

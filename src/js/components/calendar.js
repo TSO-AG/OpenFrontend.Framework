@@ -20,10 +20,8 @@ const LOCALES = {
 const DefaultType = {
   events: 'array',
   eventsFeedUrl: 'string|undefined',
-  eventsFeedUrlStartParam: 'string|undefined',
-  eventsFeedUrlEndParam: 'string|undefined',
-  eventsContentUrl: 'string|undefined',
-  eventsContentUrlEventParam: 'string|undefined',
+  eventsFeedUrlStartParam: 'string',
+  eventsFeedUrlEndParam: 'string',
   layout: 'string',
   miniMonthMinWidth: 'number',
   title: 'string|undefined',
@@ -32,7 +30,8 @@ const DefaultType = {
 
 const DefaultEventType = {
   allDay: 'boolean',
-  content: 'string',
+  content: 'string|undefined',
+  contentUrl: 'string|undefined',
   display: 'string|undefined',
   end: 'date|number|string|undefined',
   start: 'date|number|string',
@@ -42,7 +41,8 @@ const DefaultEventType = {
 const Default = {
   events: [],
   eventsFeedUrl: undefined,
-  eventsContentUrl: undefined,
+  eventsFeedUrlStartParam: 'calendar_start',
+  eventsFeedUrlEndParam: 'calendar_end',
   layout: 'full',
   miniMonthMinWidth: 265,
   title: undefined,
@@ -81,13 +81,13 @@ class Calendar extends BaseComponent {
   }
 
   async _openEventPopover(info) {
-    const eventId = info.event.id;
+    const event = info.event;
     let content;
 
-    if (this._config.eventsContentUrl) {
-      content = await this._fetchEventContentFromUrl(eventId);
+    if (event.contentUrl) {
+      content = await this._fetchEventContentFromUrl(event);
     } else {
-      content = this._fetchEventContentFromData(eventId);
+      content = this._fetchEventContentFromData(event);
     }
 
     if (!content) {
@@ -97,12 +97,12 @@ class Calendar extends BaseComponent {
     await this._openPopover(info.el, content, (this._calendar.view.type === 'listMonth') ? info.jsEvent.target : null);
   }
 
-  _fetchEventContentFromData(eventId) {
-    return this._getEvents()[eventId]?.content;
+  _fetchEventContentFromData(event) {
+    return this._getEvents()[event.id]?.content;
   }
 
-  async _fetchEventContentFromUrl(eventId) {
-    return fetch(`${this._config.eventsContentUrl}?${this._config.eventsContentUrlEventParam}=${eventId}`, {
+  async _fetchEventContentFromUrl(event) {
+    return fetch(event.contentUrl, {
       method: 'GET',
       headers: {
         'X-Requested-With': 'XMLHttpRequest'
@@ -253,7 +253,7 @@ class Calendar extends BaseComponent {
     }
 
     // Calculate the earliest and latest date to display
-    if (events.length > 0) {
+    if (!this._config.eventsFeedUrl && this._getEvents().length > 0) {
       options.validRange = this._getValidRange(events);
     }
 

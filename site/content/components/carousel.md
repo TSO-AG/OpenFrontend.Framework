@@ -9,7 +9,9 @@ toc: true
 ## Usage
 The carousel component can be implemented with HTML markup and attribute configurations.
 
-The component uses the [Swiper](https://swiperjs.com/) library.
+{{< callout info >}}
+The component uses the [Swiper](https://swiperjs.com/) library behind the scenes.
+{{< /callout >}}
 
 ## Examples
 

@@ -6,6 +6,10 @@ group: forms
 toc: true
 ---
 
+{{< callout info >}}
+The component uses the [Flatpickr](https://flatpickr.js.org/) library behind the scenes.
+{{< /callout >}}
+
 ## Examples
 
 ### Basic

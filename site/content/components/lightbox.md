@@ -12,7 +12,9 @@ The lightbox can open content of multiple types, including images, videos, ifram
 
 The lightbox groups may contain extra configuration options like tabs or thumbnails.
 
-The component uses the [GLightbox](https://github.com/biati-digital/glightbox) library.
+{{< callout info >}}
+The component uses the [GLightbox](https://github.com/biati-digital/glightbox) library behind the scenes.
+{{< /callout >}}
 
 ## Usage
 

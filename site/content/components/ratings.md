@@ -9,6 +9,10 @@ toc: true
 ## Overview
 By default, it operates on a scale of 1-5 stars, but this can be easily adjusted. Users can rate items or see average ratings, depending on how you set up the component.
 
+{{< callout info >}}
+The component uses the [Raty](https://github.com/wbotelhos/raty) library behind the scenes.
+{{< /callout >}}
+
 ## Examples
 To make the most out of the Ratings component, let’s explore its various configuration options, which are provided via JSON attributes.
 

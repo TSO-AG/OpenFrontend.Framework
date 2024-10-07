@@ -163,7 +163,7 @@ class Calendar extends BaseComponent {
   }
 
   async _fetchEventsFromUrl(fetchInfo) {
-    return fetch(`${this._config.eventsFeedUrl}?${this._config.eventsFeedUrlStartParam}=${fetchInfo.startStr}&${this._config.eventsFeedUrlEndParam}=${fetchInfo.endStr}`, {
+    return fetch(`${this._config.eventsFeedUrl}${this._config.eventsFeedUrl.includes('?') ? '&' : '?'}${this._config.eventsFeedUrlStartParam}=${fetchInfo.startStr}&${this._config.eventsFeedUrlEndParam}=${fetchInfo.endStr}`, {
       method: 'GET',
       headers: {
         'X-Requested-With': 'XMLHttpRequest'

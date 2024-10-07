@@ -253,8 +253,12 @@ class Calendar extends BaseComponent {
     }
 
     // Calculate the earliest and latest date to display
-    if (!this._config.eventsFeedUrl && this._getEvents().length > 0) {
-      options.validRange = this._getValidRange(events);
+    if (!this._config.eventsFeedUrl) {
+      const events = this._getEvents();
+
+      if (events.length > 0) {
+        options.validRange = this._getValidRange(events);
+      }
     }
 
     return options;

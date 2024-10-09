@@ -186,6 +186,16 @@
     // Card
     .card {
       page-break-inside: avoid;
+      height: auto;
+    }
+
+    .col:has(> .card:only-child) {
+      display: flex;
+      flex-direction: column;
+
+      > * {
+        flex-grow: 1;
+      }
     }
   }
 }

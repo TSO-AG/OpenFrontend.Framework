@@ -6,7 +6,7 @@ title: POI List
 <div class="py-5">
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 d-print-none">
         <div class="row align-items-end justify-content-between">
           <div class="col-auto d-none d-lg-block">
             <p class="mb-3 fw-bold">{{< icon name="funnel-fill" >}} Filter</p>
@@ -17,13 +17,13 @@ title: POI List
         </div>
       </div>
 
-      <div class="col-lg-4 col-xxl-3 order-first order-lg-0">
+      <div class="col-lg-4 col-xxl-3 order-first order-lg-0 d-print-none">
         {{< poi-list-filter id="poi-list-grid-view" >}}
       </div>
 
       <div class="col-lg-8 col-xxl-9">
         <div>
-          <div class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 gy-4">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 gy-4 row-cols-print-2">
             <div class="col">
               {{< poi-card >}}
             </div>

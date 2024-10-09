@@ -71,11 +71,11 @@ class Calendar extends BaseComponent {
 
   // Private
   async _initCalendar() {
-    this._calendar = new FullCalendar(this._element, await this._getOptions())
-    this._calendar.render()
-
     this._eventsCache = undefined
     this._eventsSlicedCache = new Map()
+
+    this._calendar = new FullCalendar(this._element, await this._getOptions())
+    this._calendar.render()
 
     this._element.dispatchEvent(new CustomEvent(EVENT_CALENDAR_INITIALIZED))
   }

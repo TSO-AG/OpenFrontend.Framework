@@ -89,6 +89,11 @@
       position: static;
     }
 
+    // Footer
+    footer {
+      @extend %force-print-color;
+    }
+
     // Wrapper
     .wrapper {
       @extend %force-print-color;

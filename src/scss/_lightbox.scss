@@ -110,7 +110,7 @@
   $content-height: calc(100dvh - var(--lightbox-tabs-wrapper-height, 0px) - var(--lightbox-thumbnails-wrapper-height, 0px) - var(--lightbox-description-height, 0px) - var(--lightbox-offset)) !important; // stylelint-disable-line declaration-no-important
 
   .gslide-inline {
-    max-width: none !important; // stylelint-disable-line declaration-no-important
+    max-width: 100% !important; // stylelint-disable-line declaration-no-important
     max-height: calc(100dvh - var(--lightbox-tabs-wrapper-height, 0px) - var(--lightbox-thumbnails-wrapper-height, 0px) - var(--lightbox-offset));
     width: auto !important; // stylelint-disable-line declaration-no-important
     height: $content-height;

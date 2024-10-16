@@ -51,7 +51,7 @@
     top: 0;
     left: var(--menu-width);
     width: var(--menu-width);
-    height: 100%;
+    min-height: 100%;
     margin-bottom: 0;
     @include transition($page-nav-transition);
     background-color: var(--#{$prefix}page-nav-bg);

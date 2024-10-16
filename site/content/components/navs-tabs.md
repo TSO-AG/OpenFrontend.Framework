@@ -276,8 +276,10 @@ Similar to the `.nav-fill` example using a `<nav>`-based navigation.
 
 If you use the `.nav-nowrap` class on your nav component, all navigation links will stay in a single line with horizontal scrolling enabled for overflow content.
 
+Additionally, by adding the `data-of-scroll-shadow` attribute to the nav element, shadow indicators will appear on the left or right side, signaling to the user that more content is available to scroll in that direction. This improves the visibility of scrollable content and enhances the user experience.
+
 {{< example >}}
-<ul class="nav nav-pills nav-nowrap">
+<ul class="nav nav-pills nav-nowrap" data-of-scroll-shadow>
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="#">Active</a>
   </li>

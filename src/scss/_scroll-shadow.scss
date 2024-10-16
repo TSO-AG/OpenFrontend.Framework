@@ -1,0 +1,16 @@
+[data-of-scroll-shadow] {
+  --scroll-shadow-size: 40px;
+  overflow-x: auto;
+
+  &.scroll-shadow-left {
+    mask-image: linear-gradient(270deg, #000 calc(100% - var(--scroll-shadow-size)), transparent);
+  }
+
+  &.scroll-shadow-right {
+    mask-image: linear-gradient(90deg, #000 calc(100% - var(--scroll-shadow-size)), transparent);
+  }
+
+  &.scroll-shadow-left.scroll-shadow-right {
+    mask-image: linear-gradient(to right, #000, #000, transparent 0, #000 var(--scroll-shadow-size), #000 calc(100% - var(--scroll-shadow-size)), transparent);
+  }
+}

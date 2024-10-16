@@ -33,6 +33,33 @@ Use an ordered or unordered list with linked list items to create a minimally st
 </nav>
 {{< /example >}}
 
+## Horizontal nowrap
+
+If you use the `.breadcrumb-nowrap` class on your breadcrumb component, all breadcrumb items will stay in a single line with horizontal scrolling enabled for overflow content.
+
+Additionally, by adding the `data-of-scroll-shadow` attribute, shadow indicators will appear on the left or right side of the breadcrumb, signaling to the user that more content is available to scroll in that direction. This enhances the user’s ability to notice overflow content and improves navigation clarity.
+
+{{< example >}}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb breadcrumb-nowrap" data-of-scroll-shadow>
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Library</a></li>
+    <li class="breadcrumb-item"><a href="#">Item 3</a></li>
+    <li class="breadcrumb-item"><a href="#">Item 4</a></li>
+    <li class="breadcrumb-item"><a href="#">Item 5</a></li>
+    <li class="breadcrumb-item"><a href="#">Item 6</a></li>
+    <li class="breadcrumb-item"><a href="#">Item 7</a></li>
+    <li class="breadcrumb-item"><a href="#">Item 8</a></li>
+    <li class="breadcrumb-item"><a href="#">Item 9</a></li>
+    <li class="breadcrumb-item"><a href="#">Item 10</a></li>
+    <li class="breadcrumb-item"><a href="#">Item 11</a></li>
+    <li class="breadcrumb-item"><a href="#">Item 12</a></li>
+    <li class="breadcrumb-item"><a href="#">Item 13</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Data</li>
+  </ol>
+</nav>
+{{< /example >}}
+
 ## Dividers
 
 Dividers are automatically added in CSS through [`::before`](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) and [`content`](https://developer.mozilla.org/en-US/docs/Web/CSS/content). They can be changed by modifying a local CSS custom property `--bs-breadcrumb-divider`, or through the `$breadcrumb-divider` Sass variable — and `$breadcrumb-divider-flipped` for its RTL counterpart, if needed. We default to our Sass variable, which is set as a fallback to the custom property. This way, you get a global divider that you can override without recompiling CSS at any time.

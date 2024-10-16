@@ -92,6 +92,7 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-of-animation]'), () => import(/* webpackChunkName: "of-animation" */ './components/animation'))
   loadForElements(element.querySelectorAll('[data-of-field-range]'), () => import(/* webpackChunkName: "of-field-range" */ './components/field-range'))
   loadForElements(element.querySelectorAll('[data-of-field-sync]'), () => import(/* webpackChunkName: "of-field-sync" */ './components/field-sync'))
+  loadForElements(element.querySelectorAll('[data-of-scroll-shadow]'), () => import(/* webpackChunkName: "of-scroll-shadow" */ './components/scroll-shadow'))
 }
 
 document.addEventListener('DOMContentLoaded', () => window.initOpenFrontend(document))

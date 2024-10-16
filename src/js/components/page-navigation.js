@@ -7,6 +7,7 @@ const NAME = 'page-navigation'
 
 const CLASS_NAME_SUBMENU_ACTIVE = 'active-level'
 const CLASS_NAME_PANEL_ACTIVE = 'active-panel'
+const CLASS_NAME_PANEL_ACTIVE_CALCULATING = 'active-panel-calculating'
 const CLASS_NAME_PANEL_PARENT = 'active-panel-parent'
 const PANEL_HEIGHT_PROPERTY_NAME = '--page-nav-panel-height'
 const PANEL_LAST_HEIGHT_PROPERTY_NAME = '--page-nav-panel-last-height'
@@ -224,7 +225,10 @@ class PageNavigation extends BaseComponent {
     this._element.style.removeProperty(PANEL_HEIGHT_PROPERTY_NAME)
 
     for (const panel of panels) {
+      panel.classList.add(CLASS_NAME_PANEL_ACTIVE_CALCULATING)
       const panelHeight = panel.scrollHeight
+      panel.classList.remove(CLASS_NAME_PANEL_ACTIVE_CALCULATING)
+
       if (panelHeight > maxHeight) {
         maxHeight = panelHeight
       }

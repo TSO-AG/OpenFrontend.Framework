@@ -41,7 +41,7 @@ Additionally, by adding the `data-of-scroll-shadow` attribute, shadow indicators
 
 {{< example >}}
 <nav aria-label="breadcrumb">
-  <ol class="breadcrumb breadcrumb-nowrap" data-of-scroll-shadow>
+  <ol class="breadcrumb breadcrumb-nowrap scroll-to-end" data-of-scroll-shadow>
     <li class="breadcrumb-item"><a href="#">Home</a></li>
     <li class="breadcrumb-item"><a href="#">Library</a></li>
     <li class="breadcrumb-item"><a href="#">Item 3</a></li>

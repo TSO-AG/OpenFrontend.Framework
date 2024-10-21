@@ -69,7 +69,8 @@
   }
 
   .active-panel-calculating ul {
-    height: 0;
+    height: 100%;
+    min-height: unset;
     overflow: hidden;
   }
 

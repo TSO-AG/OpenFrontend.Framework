@@ -1,3 +1,8 @@
 .min-vh-100-header {
   min-height: calc(100vh - var(--bs-header-height, 0px));
 }
+
+.min-h-100 {
+  height: auto !important; // stylelint-disable-line declaration-no-important
+  min-height: 100%;
+}

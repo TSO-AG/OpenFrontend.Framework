@@ -166,6 +166,7 @@ Here is the list of all available options (alphabetically):
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
 | `half` | `boolean` | `false` | Enables half star selection. |
+| `hints` | `array` | `[]` | Hints used on each star. |
 | `number` | `number` | `5` | The number of stars that will be presented. |
 | `readOnly` | `boolean` | `false` | Turns the rating read-only. |
 | `score` | `number` | `undefined` | Initial rating. |

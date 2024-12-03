@@ -9,6 +9,7 @@ const EVENT_RATING_CLICKED = 'clicked.of.rating'
 
 const DefaultType = {
   half: 'boolean',
+  hints: 'array',
   number: 'number',
   readOnly: 'boolean',
   score: '(number|undefined)',
@@ -17,6 +18,7 @@ const DefaultType = {
 
 const Default = {
   half: false,
+  hints: [],
   number: 5,
   readOnly: false,
   score: undefined,
@@ -53,7 +55,7 @@ class Rating extends BaseComponent {
     const options = {
       click: value => this._onClickEvent(value),
       half: this._config.half,
-      hints: Array.from({ length: this._config.number }, (_, index) => index + 1),
+      hints: this._config.hints.length ? this._config.hints : Array.from({ length: this._config.number }, (_, index) => index + 1),
       number: this._config.number,
       readOnly: this._config.readOnly,
       score: this._config.score,

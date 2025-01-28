@@ -28,7 +28,7 @@ Here is the example markup that needs to be generated:
 
 {{< highlight html >}}
 <nav data-of-anchor-navigation>
-  <ul class="nav nav-underline nav-fill">
+  <ul class="nav nav-underline nav-fill nav-nowrap" data-of-scroll-shadow>
     <li class="nav-item">
       <a class="nav-link" href="#section-1">Section 1</a>
     </li>
@@ -40,6 +40,10 @@ Here is the example markup that needs to be generated:
     </li>
   </ul>
 </nav>
+
+<div id="section-1">…</div>
+<div id="section-2">…</div>
+<div id="section-3">…</div>
 {{< /highlight >}}
 
 ## Usage
@@ -62,6 +66,16 @@ const anchorNavigation = await openFrontend.AnchorNavigation.then(component => c
 // or
 const anchorNavigationAlternative = await openFrontend.AnchorNavigation.then(component => component.getOrCreateInstance('#anchor-navigation', options))
 ```
+
+### Options
+
+You can pass extra options as JSON value of the data attribute. Here is the list of all available options (alphabetically):
+
+{{< bs-table "table" >}}
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `urlHashTracking` | `boolean` | `true` | Enable the URL hash tracking. When the lightbox opens or its slide changes, the URL hash will be updated. |
+{{< /bs-table >}}
 
 ### Events
 

@@ -6,5 +6,5 @@
     --breakpoint-#{$name}: #{$pixel-value};
   }
 
-  scroll-padding-top: var(--#{$prefix}header-sticky-height, 0);
+  scroll-padding-top: calc(var(--#{$prefix}header-sticky-height, 0px) + var(--#{$prefix}anchor-navigation-height, 0px));
 }

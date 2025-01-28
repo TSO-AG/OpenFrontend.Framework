@@ -10,6 +10,8 @@ const EVENT_COMPONENT_INITIALIZED = 'initialized.of.anchor_navigation'
 
 const CLASS_NAME_ACTIVE = 'active'
 
+const CSS_HEIGHT_PROPERTY_NAME = '--bs-anchor-navigation-height'
+
 const SELECTOR_LINKS = '[href]'
 const SELECTOR_NAV_LIST_GROUP = '.nav, .list-group'
 const SELECTOR_NAV_LINKS = '.nav-link'
@@ -17,9 +19,13 @@ const SELECTOR_NAV_ITEMS = '.nav-item'
 const SELECTOR_LIST_ITEMS = '.list-group-item'
 const SELECTOR_LINK_ITEMS = `${SELECTOR_NAV_LINKS}, ${SELECTOR_NAV_ITEMS} > ${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}`
 
-const DefaultType = {}
+const DefaultType = {
+  urlHashTracking: 'boolean',
+}
 
-const Default = {}
+const Default = {
+  urlHashTracking: true,
+}
 
 class AnchorNavigation extends BaseComponent {
   constructor(element, config) {
@@ -31,8 +37,12 @@ class AnchorNavigation extends BaseComponent {
       parentScrollTop: 0
     }
 
+    document.documentElement.style.setProperty(CSS_HEIGHT_PROPERTY_NAME, `${this._element.offsetHeight}px`)
+
     this._initializeTargetsAndObservables()
-    this._initializeObserver()
+    this._initializeObservers()
+    this._initializeUrlHashTracking()
+
     this._element.dispatchEvent(new CustomEvent(EVENT_COMPONENT_INITIALIZED))
   }
 
@@ -54,30 +64,10 @@ class AnchorNavigation extends BaseComponent {
       throw new Error(`The section "${section}" does not exist`)
     }
 
-    const height = Math.max(this._sections.get(section).offsetTop - this._getStickyElementsOffset(), 0)
-
-    if (window.scrollTo) {
-      window.scrollTo({ top: height, behavior: 'smooth' })
-      return
-    }
-
-    // Chrome 60 doesn't support `scrollTo`
-    window.scrollTop = height
+    this._sections.get(section).scrollIntoView({ behavior: 'smooth' });
   }
 
   // Private
-  _getStickyElementsOffset() {
-    let offset = this._element.offsetHeight;
-    const header = document.querySelector('header.header-sticky');
-
-    // Add the sticky header height
-    if (header) {
-      offset = offset + header.offsetHeight;
-    }
-
-    return offset;
-  }
-
   _initializeTargetsAndObservables() {
     this._links = new Map()
     this._sections = new Map()
@@ -85,7 +75,7 @@ class AnchorNavigation extends BaseComponent {
     const links = [...this._element.querySelectorAll(SELECTOR_LINKS)]
 
     for (const anchor of links) {
-      const hash = decodeURI(anchor.hash).substring(1)
+      const hash = this._getSectionNameFromLink(anchor)
 
       // ensure that the anchor has an id and is not disabled
       if (!hash || isDisabled(anchor)) {
@@ -102,6 +92,10 @@ class AnchorNavigation extends BaseComponent {
       anchor.addEventListener('click', e => {
         e.preventDefault();
         this.scrollToSection(hash)
+
+        if (this._config.urlHashTracking) {
+          window.history.pushState({ section: this._getSectionNameFromLink(anchor) }, '', anchor.href)
+        }
       });
 
       this._links.set(hash, anchor)
@@ -109,14 +103,45 @@ class AnchorNavigation extends BaseComponent {
     }
   }
 
-  _initializeObserver() {
-    this._observer = new IntersectionObserver(entries => this._observerCallback(entries), {
+  _initializeObservers() {
+    const intersectionObserver = new IntersectionObserver(entries => this._observerCallback(entries), {
       threshold: 0.5,
     })
 
     for (const section of this._sections.values()) {
-      this._observer.observe(section)
+      intersectionObserver.observe(section)
     }
+
+    new ResizeObserver(entries => {
+      for (const entry of entries) {
+        document.documentElement.style.setProperty(CSS_HEIGHT_PROPERTY_NAME, `${entry.target.offsetHeight}px`)
+      }
+    }).observe(this._element)
+  }
+
+  _initializeUrlHashTracking() {
+    if (!this._config.urlHashTracking) {
+      return;
+    }
+
+    const hash = window.location.hash.substring(1);
+
+    // Scroll the initially provided section
+    if (hash && this._sections.has(hash)) {
+      setTimeout(() => this.scrollToSection(hash), 500)
+    }
+
+    // Disable browser's scroll restoration
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    window.addEventListener('popstate', event => {
+      if (event.state?.section) {
+        event.preventDefault();
+        this.scrollToSection(event.state.section)
+      }
+    });
   }
 
   _observerCallback(entries) {
@@ -182,6 +207,10 @@ class AnchorNavigation extends BaseComponent {
   _clearActiveClass(parent) {
     parent.classList.remove(CLASS_NAME_ACTIVE)
     parent.querySelectorAll(`${SELECTOR_LINKS}.${CLASS_NAME_ACTIVE}`).forEach(v => v.classList.remove(CLASS_NAME_ACTIVE))
+  }
+
+  _getSectionNameFromLink(link) {
+    return decodeURI(link.hash).substring(1)
   }
 }
 

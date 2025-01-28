@@ -73,6 +73,7 @@
   pages:
     - title: Accordion
     - title: Alerts
+    - title: Anchor navigation
     - title: Animations
     - title: Badge
     - title: Breadcrumb

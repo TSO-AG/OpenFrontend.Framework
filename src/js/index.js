@@ -4,6 +4,9 @@ window.openFrontend = {
   get Alert() {
     return new Promise(resolve => import(/* webpackChunkName: "of-alert" */ 'bootstrap/js/src/alert').then(v => resolve(v.default)))
   },
+  get AnchorNavigation() {
+    return new Promise(resolve => import(/* webpackChunkName: "of-anchor-navigation" */ './components/anchor-navigation').then(v => resolve(v.default)))
+  },
   get Animation() {
     return new Promise(resolve => import(/* webpackChunkName: "of-animation" */ './components/animation').then(v => resolve(v.default)))
   },
@@ -74,6 +77,7 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-bs-toggle="modal"]'), () => import(/* webpackChunkName: "of-modal" */ './components/modal'))
   loadForElements(element.querySelectorAll('[data-bs-toggle="offcanvas"]'), () => import(/* webpackChunkName: "of-offcanvas" */ './components/offcanvas'))
   loadForElements(element.querySelectorAll('[data-bs-toggle="popover"]'), () => import(/* webpackChunkName: "of-popover" */ './components/popover'))
+  loadForElements(element.querySelectorAll('[data-of-anchor-navigation]'), () => import(/* webpackChunkName: "of-anchor-navigation" */ './components/anchor-navigation'))
   loadForElements(element.querySelectorAll('[data-of-calendar]'), () => import(/* webpackChunkName: "of-calendar" */ './components/calendar'))
   loadForElements(element.querySelectorAll('[data-of-combo-box]'), () => import(/* webpackChunkName: "of-combo-box" */ './components/combo-box'))
   loadForElements(element.querySelectorAll('[data-of-highlight]'), () => import(/* webpackChunkName: "of-highlight" */ './components/highlight'))

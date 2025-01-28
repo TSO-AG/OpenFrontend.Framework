@@ -41,3 +41,5 @@
       description: "An overview page layout for displaying the blog tips."
     - name: Event Detail
       description: "Event detail page layout presents detailed information about a specific event."
+    - name: One pager
+      description: "A one pager template with smooth anchor navigation."

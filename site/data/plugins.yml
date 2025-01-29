@@ -30,10 +30,6 @@
   description: Create custom overlays. Built on Popper.
   link: components/popovers/
 
-- name: Scrollspy
-  description: Automatically update active nav links based on page scroll.
-  link: components/scrollspy/
-
 - name: Tab
   description: Allow Bootstrap nav components to toggle contents.
   link: components/navs-tabs/

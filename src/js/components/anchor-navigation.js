@@ -190,7 +190,7 @@ class AnchorNavigation extends BaseComponent {
 
     this._clearActiveClass(this._element)
     this._activeTarget = target
-    target.ariaSelected = 'true';
+    target.ariaCurrent = 'true';
     target.classList.add(CLASS_NAME_ACTIVE)
     this._activateParents(target)
     this._scrollLinkIntoView(target)
@@ -230,7 +230,7 @@ class AnchorNavigation extends BaseComponent {
   _clearActiveClass(parent) {
     parent.classList.remove(CLASS_NAME_ACTIVE)
     parent.querySelectorAll(`${SELECTOR_LINKS}.${CLASS_NAME_ACTIVE}`).forEach(v => {
-      v.ariaSelected = 'false';
+      v.removeAttribute('aria-current');
       v.classList.remove(CLASS_NAME_ACTIVE)
     })
   }

@@ -192,6 +192,28 @@ class AnchorNavigation extends BaseComponent {
     this._activeTarget = target
     target.classList.add(CLASS_NAME_ACTIVE)
     this._activateParents(target)
+    this._scrollLinkIntoView(target)
+  }
+
+  _scrollLinkIntoView(link) {
+    const navigation = this._element.querySelector(SELECTOR_NAV_LIST_GROUP);
+
+    // Do not scroll if there is no overflow
+    if (navigation.scrollWidth === navigation.clientWidth) {
+      return;
+    }
+
+    let offset = 0;
+
+    // If the active link width is larger than the element width itself, scroll to the left edge of it
+    if (link.offsetWidth > navigation.clientWidth) {
+      offset = link.offsetLeft - navigation.offsetLeft;
+    } else {
+      // Otherwise, scroll to the center of active link
+      offset = link.offsetLeft - navigation.offsetLeft - (navigation.clientWidth / 2) + (link.offsetWidth / 2);
+    }
+
+    navigation.scrollTo({ left: offset, behavior: 'smooth' });
   }
 
   _activateParents(target) {

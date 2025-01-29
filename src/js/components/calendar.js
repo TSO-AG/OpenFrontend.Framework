@@ -211,6 +211,20 @@ class Calendar extends BaseComponent {
       options.titleFormat = () => this._config.title;
     }
 
+    // Hide the today/prev/next buttons if they are all disabled
+    options.viewDidMount = () => {
+      const buttons = [...this._element.querySelectorAll('button.fc-today-button, button.fc-prev-button, button.fc-next-button')];
+      const hideButtons = buttons.filter(v => v.disabled).length === buttons.length;
+
+      buttons.forEach(button => {
+        if (button.classList.contains('fc-prev-button') || button.classList.contains('fc-next-button')) {
+          button.parentElement.classList.toggle('d-none', hideButtons);
+        }
+
+        button.classList.toggle('d-none', hideButtons);
+      });
+    }
+
     switch (this._config.layout) {
       case 'full':
         options.initialView = 'dayGridMonth'
@@ -262,6 +276,14 @@ class Calendar extends BaseComponent {
       const events = this._getEvents();
 
       if (events.length > 0) {
+        const now = new Date();
+        const initialDate = events.find(v => v.start >= now);
+
+        // Find the initial date, which is the first future event
+        if (initialDate) {
+          options.initialDate = initialDate.start;
+        }
+
         options.validRange = this._getValidRange(events);
       }
     }

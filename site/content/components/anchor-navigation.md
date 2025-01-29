@@ -30,13 +30,13 @@ Here is the example markup that needs to be generated:
 <nav data-of-anchor-navigation>
   <ul class="nav nav-underline nav-fill nav-nowrap" data-of-scroll-shadow>
     <li class="nav-item">
-      <a class="nav-link" href="#section-1">Section 1</a>
+      <a class="nav-link" href="#section-1" aria-controls="section-1" aria-selected="false">Section 1</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#section-2">Section 2</a>
+      <a class="nav-link" href="#section-2" aria-controls="section-2" aria-selected="false">Section 2</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#section-3">Section 3</a>
+      <a class="nav-link" href="#section-3" aria-controls="section-3" aria-selected="false">Section 3</a>
     </li>
   </ul>
 </nav>

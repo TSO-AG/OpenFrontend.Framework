@@ -93,6 +93,13 @@ add the `.img-*` classes to the `<img>` and not to the `<picture>` tag.
 </picture>
 ```
 
+## Placeholder
+{{< example >}}
+<div class="aspect aspect-16x9 placeholder-image">
+  <!-- Add your image here -->
+</div>
+{{< /example >}}
+
 ## CSS
 
 ### Sass variables

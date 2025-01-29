@@ -1,0 +1,27 @@
+.placeholder-image {
+  --#{$prefix}placeholder-bg: #{$placeholder-bg};
+  --#{$prefix}placeholder-bg-glow: #{$placeholder-bg-glow};
+  --#{$prefix}placeholder-image-icon-size: #{$placeholder-image-icon-size};
+  --#{$prefix}placeholder-image-icon: #{escape-svg($placeholder-image-icon)};
+
+  background:
+    var(--#{$prefix}placeholder-image-icon) no-repeat center, linear-gradient(
+      75deg,
+      var(--#{$prefix}placeholder-bg) 0%,
+      var(--#{$prefix}placeholder-bg) 25%,
+      var(--#{$prefix}placeholder-bg-glow) 35%,
+      var(--#{$prefix}placeholder-bg) 45%,
+      var(--#{$prefix}placeholder-bg) 100%
+    );
+  background-size: var(--#{$prefix}placeholder-image-icon-size) var(--#{$prefix}placeholder-image-icon-size), 200% 200%;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: center, 200% 0;
+  }
+  100% {
+    background-position: center, -200% 0;
+  }
+}

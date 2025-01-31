@@ -291,3 +291,13 @@ html .glightbox-clean {
     }
   }
 }
+
+.gloader {
+  display: block !important; // stylelint-disable-line declaration-no-important
+  border-color: currentcolor;
+  border-right-color: transparent;
+
+  .glightbox-closing &  {
+    display: none !important; // stylelint-disable-line declaration-no-important
+  }
+}

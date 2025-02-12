@@ -632,6 +632,25 @@ Depending on the item `type`, the extra options can be passed on:
 | `source` | `string` | `undefined` | The video source. Available options are: `local`, `youtube`, `vimeo`. |
 {{< /bs-table >}}
 
+## Events
+
+The lightbox triggers the global events on the `document`:
+
+```js
+document.addEventListener('open.of.lightbox', event => {
+  console.log(event.detail);
+});
+```
+
+{{< bs-table "table" >}}
+| Event | Description |
+| --- | --- | --- | --- |
+| `open.of.lightbox` | This event is fired when the lightbox is opened. |
+| `close.of.lightbox` | This event is fired when the lightbox is closed. |
+| `slide_changed.of.lightbox` | This event is fired after the slide is changed. |
+| `slide_before_change.of.lightbox` | This event is fired before the slide is changed. |
+{{< /bs-table >}}
+
 ## Examples
 
 ### Image gallery with captions

@@ -12,6 +12,12 @@ function getLightboxIcon(id, defaultIcon) {
 }
 
 const NAME = 'lightbox'
+
+const EVENT_LIGHTBOX_OPEN = 'open.of.lightbox'
+const EVENT_LIGHTBOX_CLOSE = 'close.of.lightbox'
+const EVENT_LIGHTBOX_SLIDE_CHANGED = 'slide_changed.of.lightbox'
+const EVENT_LIGHTBOX_SLIDE_BEFORE_CHANGE = 'slide_before_change.of.lightbox'
+
 const LIGHTBOX_WRAPPER_CLASS = 'lightbox-wrapper'
 const LIGHTBOX_THUMBNAILS_CLASS = 'lightbox-thumbnails'
 const LIGHTBOX_URL_HASH_PREFIX = 'lightbox-'
@@ -188,6 +194,8 @@ class Lightbox extends Config {
 
   // Private - events
   _onClose() {
+    this._dispatchGlobalEvent(EVENT_LIGHTBOX_CLOSE);
+
     if (this._config.thumbnails) {
       this._thumbnailsElement.remove()
       this._thumbnailsElement = null
@@ -199,7 +207,18 @@ class Lightbox extends Config {
     }
   }
 
+  _dispatchGlobalEvent(event, parameters) {
+    parameters = parameters || {};
+    parameters.lightbox = this._lightbox;
+
+    document.dispatchEvent(new CustomEvent(event, {
+      detail: parameters,
+    }));
+  }
+
   _onOpen() {
+    this._dispatchGlobalEvent(EVENT_LIGHTBOX_OPEN);
+
     if (this._config.thumbnails) {
       this._thumbnailsElement = this._getLightboxElement(`.${LIGHTBOX_THUMBNAILS_CLASS}`)
       this._createResizeObserver(this._thumbnailsElement, 'thumbnails-wrapper-height')
@@ -214,6 +233,8 @@ class Lightbox extends Config {
   }
 
   _onSlideBeforeChange({ current }) {
+    this._dispatchGlobalEvent(EVENT_LIGHTBOX_SLIDE_BEFORE_CHANGE, { currentSlide: current });
+
     if (this._config.thumbnails) {
       this._setThumbnailsActiveSlide(current.index)
     }
@@ -224,6 +245,8 @@ class Lightbox extends Config {
   }
 
   _onSlideChanged({ current }) {
+    this._dispatchGlobalEvent(EVENT_LIGHTBOX_SLIDE_CHANGED, { currentSlide: current });
+
     if (this._descriptionObserver && this._currentDescription) {
       this._descriptionObserver.unobserve(this._currentDescription)
     }

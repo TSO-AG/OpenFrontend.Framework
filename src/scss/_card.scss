@@ -312,8 +312,8 @@
         margin-left: auto;
       }
 
-      &--bottom-left,
-      &--bottom-right {
+      &--bottom-left:not(.card-media__content--visible),
+      &--bottom-right:not(.card-media__content--visible) {
         display: none;
       }
     }

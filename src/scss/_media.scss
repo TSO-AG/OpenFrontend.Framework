@@ -1,0 +1,27 @@
+.media-attribution-container {
+  position: relative;
+}
+
+.media-attribution {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  opacity: 0.65;
+  cursor: help;
+  @include transition(opacity .2s ease-in-out);
+
+  &:hover {
+    opacity: 1;
+  }
+
+  > svg {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+  }
+}

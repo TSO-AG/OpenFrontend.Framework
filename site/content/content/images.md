@@ -106,7 +106,7 @@ To display an interactive element that contains media attribution, use the `.med
 
 {{< example >}}
 <figure class="media-attribution-container">
-  <img src="assets/media/sample-gallery-1.jpg" class="aspect aspect-16x9 object-fit-cover img-thumbnail" alt="">
+  <img src="assets/media/sample-gallery-1.jpg" class="aspect aspect-16x9 object-fit-cover" alt="">
 
   <div class="media-attribution" data-bs-toggle="tooltip" data-bs-title='© 2025 John Doe. All rights reserved. <a href="/about/license" target="_blank" rel="noreferrer noopener">Lizenz</a>' data-bs-placement="left" data-bs-html="true" data-bs-theme="light" data-bs-delay='{"show":0,"hide":2000}'>
     <svg class="of-icon" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
@@ -118,8 +118,11 @@ To display an interactive element that contains media attribution, use the `.med
 
 ## CSS
 
+### Variables
+
+{{< scss-docs name="media-attribution-css-vars" file="src/scss/_media.scss" >}}
+
 ### Sass variables
 
-Variables are available for image thumbnails.
-
+{{< scss-docs name="media-attribution-variables" file="src/scss/_variables.scss" >}}
 {{< scss-docs name="thumbnail-variables" file="node_modules/bootstrap/scss/_variables.scss" >}}

@@ -1,3 +1,14 @@
+// scss-docs-start media-attribution-css-vars
+:root {
+  --#{$prefix}media-attribution-width: #{$media-attribution-width};
+  --#{$prefix}media-attribution-height: #{$media-attribution-height};
+  --#{$prefix}media-attribution-opacity: #{$media-attribution-opacity};
+  --#{$prefix}media-attribution-svg-width: #{$media-attribution-svg-width};
+  --#{$prefix}media-attribution-svg-height: #{$media-attribution-svg-height};
+  --#{$prefix}media-attribution-svg-color: #{$media-attribution-svg-color};
+}
+// scss-docs-end media-attribution-css-vars
+
 .media-attribution-container {
   position: relative;
 }
@@ -9,9 +20,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 48px;
-  height: 48px;
-  opacity: 0.65;
+  width: var(--#{$prefix}media-attribution-width);
+  height: var(--#{$prefix}media-attribution-height);
+  opacity: var(--#{$prefix}media-attribution-opacity);
   cursor: help;
   @include transition(opacity .2s ease-in-out);
 
@@ -20,8 +31,8 @@
   }
 
   > svg {
-    width: 24px;
-    height: 24px;
-    color: #fff;
+    width: var(--#{$prefix}media-attribution-svg-width) !important; // Do not let it be adjusted accidentally by other rules
+    height: var(--#{$prefix}media-attribution-svg-height) !important; // Do not let it be adjusted accidentally by other rules
+    color: var(--#{$prefix}media-attribution-svg-color) !important; // Do not let it be adjusted accidentally by other rules
   }
 }

@@ -721,6 +721,16 @@ $lightbox-thumbnails-border-width: $lightbox-tabs-border-width !default;
 $lightbox-thumbnails-border-color: $lightbox-tabs-border-color !default;
 // scss-docs-end lightbox-variables
 
+// Media attribution
+// scss-docs-start media-attribution-variables
+$media-attribution-width: 48px !default;
+$media-attribution-height: 48px !default;
+$media-attribution-opacity: 0.65 !default;
+$media-attribution-svg-width: 24px !default;
+$media-attribution-svg-height: 24px !default;
+$media-attribution-svg-color: #fff !default;
+// scss-docs-end media-attribution-variables
+
 // Map
 // scss-docs-start map-variables
 $map-popover-content-horizontal-image-max-width: clamp(100px, 25vw, 50%) !default;

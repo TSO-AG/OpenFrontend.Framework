@@ -3,6 +3,7 @@ import GLightbox from 'glightbox/src/js/glightbox'
 
 import Swiper from 'swiper'
 import { Autoplay, Navigation, Manipulation } from 'swiper/modules'
+import {Tooltip} from 'bootstrap';
 
 Swiper.use([Navigation, Autoplay, Manipulation])
 
@@ -17,6 +18,7 @@ const EVENT_LIGHTBOX_OPEN = 'open.of.lightbox'
 const EVENT_LIGHTBOX_CLOSE = 'close.of.lightbox'
 const EVENT_LIGHTBOX_SLIDE_CHANGED = 'slide_changed.of.lightbox'
 const EVENT_LIGHTBOX_SLIDE_BEFORE_CHANGE = 'slide_before_change.of.lightbox'
+const EVENT_LIGHTBOX_SLIDE_BEFORE_LOAD = 'slide_before_load.of.lightbox'
 
 const LIGHTBOX_WRAPPER_CLASS = 'lightbox-wrapper'
 const LIGHTBOX_THUMBNAILS_CLASS = 'lightbox-thumbnails'
@@ -115,6 +117,7 @@ class Lightbox extends Config {
     this._lightbox.on('close', this._onClose.bind(this))
     this._lightbox.on('open', this._onOpen.bind(this))
     this._lightbox.on('slide_before_change', this._onSlideBeforeChange.bind(this))
+    this._lightbox.on('slide_before_load', this._onSlideBeforeLoad.bind(this))
     this._lightbox.on('slide_changed', this._onSlideChanged.bind(this))
 
     this._init()
@@ -241,6 +244,33 @@ class Lightbox extends Config {
 
     if (this._config.urlHashTracking) {
       this._updateUrlHashOnSlideChange(current.index)
+    }
+  }
+
+  _onSlideBeforeLoad(data) {
+    this._dispatchGlobalEvent(EVENT_LIGHTBOX_SLIDE_BEFORE_LOAD, data);
+
+    const { slideNode, slideConfig } = data;
+
+    // Add the image attribution
+    if (slideConfig.type === 'image' && slideConfig.attribution) {
+      const attributionEl = document.createElement('div');
+      attributionEl.className = 'gslide-attribution'
+      attributionEl.innerHTML = `<div class="media-attribution" data-bs-theme="light">
+  <svg class="of-icon" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+  </svg>
+</div>`;
+
+      Tooltip.getOrCreateInstance(attributionEl.children[0], {
+        customClass: 'tooltip-lightbox',
+        title: slideConfig.attribution,
+        placement: 'left',
+        html: true,
+        delay: {'show': 0, 'hide': 1500},
+      });
+
+      slideNode.querySelector('.gslide-media').appendChild(attributionEl);
     }
   }
 

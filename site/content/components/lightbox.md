@@ -607,6 +607,7 @@ Depending on the item `type`, the extra options can be passed on:
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
 | `alt` | `string` | `undefined` | The alternative text of an image. |
+| `attribution` | `string` | `undefined` | The attribution displayed as a tooltip in the corner of the image. |
 | `description` | `string` | `undefined` | The caption description displayed as caption. |
 | `href` | `string` | `undefined` | Required. The image source URL. |
 | `sizes` | `string` | `undefined` | The `sizes` attribute for responsive images. |
@@ -662,7 +663,8 @@ document.addEventListener('open.of.lightbox', event => {
       <a href="assets/media/sample-gallery-1.jpg" data-of-lightbox='{
 "group": "image-captions-gallery",
 "title": "Est anim dolor qui",
-"description": "Ad minim sit magna tempor irure dolore mollit qui dolore. Irure ea nisi laborum do voluptate adipisicing amet fugiat nostrud qui anim excepteur. Nulla sit consequat id ut amet esse. Et dolore est non est enim consequat."
+"description": "Ad minim sit magna tempor irure dolore mollit qui dolore. Irure ea nisi laborum do voluptate adipisicing amet fugiat nostrud qui anim excepteur. Nulla sit consequat id ut amet esse. Et dolore est non est enim consequat.",
+"attribution": "© 2025 John Doe. All rights reserved. <a href=\"/about/license\" target=\"_blank\" rel=\"noreferrer noopener\">Lizenz</a>"
 }'>
         <img src="assets/media/sample-gallery-1.jpg" class="aspect aspect-4x3 object-fit-cover img-thumbnail" alt="">
       </a>

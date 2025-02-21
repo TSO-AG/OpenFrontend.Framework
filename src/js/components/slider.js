@@ -55,6 +55,7 @@ class Slider extends BaseComponent {
       slidesPerView: 1,
       effect: 'fade',
       speed: this._config.speed,
+      touchStartPreventDefault: false,
       on: {
         init: () => {
           this._element.dispatchEvent(new CustomEvent(EVENT_SLIDER_INITIALIZED))

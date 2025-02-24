@@ -140,6 +140,12 @@
         grid-area: span 2 / span 2;
       }
     }
+
+    &:not(:has(>.masonry-item:nth-child(5))) {
+      > .masonry-item:nth-child(7n + 1) {
+        grid-area: span 2 / span 1;
+      }
+    }
   }
 }
 

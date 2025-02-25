@@ -167,7 +167,10 @@
     height: var(--lightbox-thumbnails-height);
     cursor: pointer;
     counter-increment: section;
-    background: $gray-100;
+
+    &:not(.placeholder-image) {
+      background: $gray-100;
+    }
 
     &::before {
       position: absolute;

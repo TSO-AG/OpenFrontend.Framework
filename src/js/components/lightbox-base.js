@@ -386,6 +386,7 @@ class Lightbox extends Config {
           }
         }
 
+        slide.classList.add('placeholder-image')
         slide.append(image)
       }
 

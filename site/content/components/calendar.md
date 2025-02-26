@@ -373,6 +373,7 @@ const events = [
 | Event | Description |
 | --- | --- |
 | `initialized.of.calendar` | This event is fired immediately when the calendar is ready. |
+| `before_popover_open.of.calendar` | This event is fired right before the popover is opened. It allows for the popover content manipulation. |
 {{< /bs-table >}}
 
 ```js

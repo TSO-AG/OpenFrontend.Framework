@@ -9,8 +9,12 @@ import bootstrapThemePlugin from '../plugins/fullcalendar/bootstrap-theme';
  * Constants
  */
 const NAME = 'calendar'
+
 const EVENT_CALENDAR_INITIALIZED = 'initialized.of.calendar'
+const EVENT_CALENDAR_BEFORE_POPOVER_OPEN = 'before_popover_open.of.calendar'
+
 const MINI_VIEW_VISIBLE_MONTHS = 2
+
 const LOCALES = {
   de: () => import('@fullcalendar/core/locales/de').then(m => m.default),
   fr: () => import('@fullcalendar/core/locales/fr').then(m => m.default),
@@ -94,7 +98,15 @@ class Calendar extends BaseComponent {
       return;
     }
 
-    await this._openPopover(info.el, content, (this._calendar.view.type === 'listMonth') ? info.jsEvent.target : null);
+    const element = document.createElement('div');
+    element.innerHTML = content;
+
+    // Trigger an event with element, which allows to dynamically change the popover content
+    document.dispatchEvent(new CustomEvent(EVENT_CALENDAR_BEFORE_POPOVER_OPEN, {
+      detail: { element, info },
+    }));
+
+    await this._openPopover(info.el, element.innerHTML, (this._calendar.view.type === 'listMonth') ? info.jsEvent.target : null);
   }
 
   _fetchEventContentFromData(event) {

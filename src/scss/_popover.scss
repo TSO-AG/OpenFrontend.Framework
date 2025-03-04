@@ -32,6 +32,11 @@
     display: flex;
     flex-direction: column;
 
+    &--no-gap {
+      --#{$prefix}popover-content-media-spacer-x: 0;
+      --#{$prefix}popover-content-media-spacer-y: 0;
+    }
+
     &--top-left:not(.popover-content-media__content--full-width),
     &--bottom-left:not(.popover-content-media__content--full-width) {
       max-width: calc(30% - var(--#{$prefix}popover-content-media-spacer-x));

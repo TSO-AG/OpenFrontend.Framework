@@ -105,7 +105,8 @@ class AnchorNavigation extends BaseComponent {
 
   _initializeObservers() {
     const intersectionObserver = new IntersectionObserver(entries => this._observerCallback(entries), {
-      threshold: 0.5,
+      rootMargin: '0px 0px -25%',
+      threshold: [0.1, 0.5, 1]
     })
 
     for (const section of this._sections.values()) {

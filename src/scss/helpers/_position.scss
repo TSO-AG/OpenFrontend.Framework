@@ -5,6 +5,7 @@ body:has(.header-sticky) .sticky-top-header {
 
 // Stuck header variant
 body:has(.header-stuck) .sticky-top-header {
+  top: 0;
   @include transition(top .3s);
 }
 

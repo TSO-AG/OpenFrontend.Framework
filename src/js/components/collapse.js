@@ -1,6 +1,26 @@
-import { Collapse } from 'bootstrap'
+import { Collapse as BootstrapCollapse } from 'bootstrap'
 import SelectorEngine from 'bootstrap/js/src/dom/selector-engine'
 import EventHandler from 'bootstrap/js/src/dom/event-handler'
+
+class Collapse extends BootstrapCollapse {
+  constructor(element, config) {
+    super(element, config);
+
+    // To prevent side effects (like header stuck), indicate that the <body> may be changing its height
+    this._element.addEventListener('show.bs.collapse', () => this.#onAnimationStart())
+    this._element.addEventListener('shown.bs.collapse', () => this.#onAnimationEnd())
+    this._element.addEventListener('hide.bs.collapse', () => this.#onAnimationStart())
+    this._element.addEventListener('hidden.bs.collapse', () => this.#onAnimationEnd())
+  }
+
+  #onAnimationStart() {
+    document.body.setAttribute('data-of-height-changing', '')
+  }
+
+  #onAnimationEnd() {
+    document.body.removeAttribute('data-of-height-changing')
+  }
+}
 
 function toggleClassOnEvent(event, targetEl, className) {
   if (event.target === event.currentTarget) {
@@ -10,38 +30,31 @@ function toggleClassOnEvent(event, targetEl, className) {
   }
 }
 
-export function initMultiple(els) {
-  const onAnimationStart = () => document.body.setAttribute('data-of-height-changing', '');
-  const onAnimationEnd = () => document.body.removeAttribute('data-of-height-changing');
+export function initMultiple(triggers) {
+  for (const trigger of triggers) {
+    for (const element of SelectorEngine.getMultipleElementsFromSelector(trigger)) {
+      const collapseInstance = Collapse.getOrCreateInstance(element, { toggle: false })
 
-  for (const el of els) {
-    const collapseInstance = Collapse.getOrCreateInstance(el, { toggle: false })
+      // Add dynamic class toggling to collapse component
+      let collapseToggleClassOptions
 
-    // Add dynamic class toggling to collapse component
-    let collapseToggleClassOptions
+      try {
+        collapseToggleClassOptions = JSON.parse(trigger.dataset.ofCollapseToggleClass || '{}')
+      } catch (error) {
+        console.error(error) // eslint-disable-line no-console
+        collapseToggleClassOptions = {}
+      }
 
-    try {
-      collapseToggleClassOptions = JSON.parse(el.dataset.ofCollapseToggleClass || '{}')
-    } catch (error) {
-      console.error(error) // eslint-disable-line no-console
-      collapseToggleClassOptions = {}
-    }
+      const { className, targetSelector } = collapseToggleClassOptions
 
-    const { className, targetSelector } = collapseToggleClassOptions
+      if (className && targetSelector) {
+        const targetEl = document.querySelector(targetSelector)
+        const controlledEl = document.querySelector(collapseInstance._config.target)
 
-    if (className && targetSelector) {
-      const targetEl = document.querySelector(targetSelector)
-      const controlledEl = document.querySelector(collapseInstance._config.target)
-
-      if (targetEl && controlledEl) {
-        controlledEl.addEventListener('show.bs.collapse', event => toggleClassOnEvent(event, targetEl, className))
-        controlledEl.addEventListener('hide.bs.collapse', event => toggleClassOnEvent(event, targetEl, className))
-
-        // To prevent side effects (like header stuck), indicate that the <body> may be changing its height
-        controlledEl.addEventListener('show.bs.collapse', onAnimationStart)
-        controlledEl.addEventListener('shown.bs.collapse', onAnimationEnd)
-        controlledEl.addEventListener('hide.bs.collapse', onAnimationStart)
-        controlledEl.addEventListener('hidden.bs.collapse', onAnimationEnd)
+        if (targetEl && controlledEl) {
+          controlledEl.addEventListener('show.bs.collapse', event => toggleClassOnEvent(event, targetEl, className))
+          controlledEl.addEventListener('hide.bs.collapse', event => toggleClassOnEvent(event, targetEl, className))
+        }
       }
     }
   }
@@ -58,13 +71,8 @@ EventHandler.on(document, 'click.bs.collapse.data-api', '[data-of-collapse-link]
     const targetElement = event.delegateTarget
 
     if (targetElement) {
-      collapseElement.addEventListener('show.bs.collapse', () => {
-        targetElement.setAttribute('aria-expanded', 'true')
-      })
-
-      collapseElement.addEventListener('hide.bs.collapse', () => {
-        targetElement.setAttribute('aria-expanded', 'false')
-      })
+      collapseElement.addEventListener('show.bs.collapse', () => targetElement.setAttribute('aria-expanded', 'true'))
+      collapseElement.addEventListener('hide.bs.collapse', () => targetElement.setAttribute('aria-expanded', 'false'))
     }
   }
 
@@ -74,4 +82,4 @@ EventHandler.on(document, 'click.bs.collapse.data-api', '[data-of-collapse-link]
   }
 })
 
-export { Collapse as default } from 'bootstrap'
+export default Collapse;

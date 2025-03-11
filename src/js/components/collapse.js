@@ -3,22 +3,27 @@ import SelectorEngine from 'bootstrap/js/src/dom/selector-engine'
 import EventHandler from 'bootstrap/js/src/dom/event-handler'
 
 class Collapse extends BootstrapCollapse {
+  #heightChangingTimeout = null
+
   constructor(element, config) {
     super(element, config);
 
     // To prevent side effects (like header stuck), indicate that the <body> may be changing its height
-    this._element.addEventListener('show.bs.collapse', () => this.#onAnimationStart())
-    this._element.addEventListener('shown.bs.collapse', () => this.#onAnimationEnd())
-    this._element.addEventListener('hide.bs.collapse', () => this.#onAnimationStart())
-    this._element.addEventListener('hidden.bs.collapse', () => this.#onAnimationEnd())
+    this._element.addEventListener('show.bs.collapse', () => this.#onHeightChangingStart())
+    this._element.addEventListener('shown.bs.collapse', () => this.#onHeightChangingEnd())
+    this._element.addEventListener('hide.bs.collapse', () => this.#onHeightChangingStart())
+    this._element.addEventListener('hidden.bs.collapse', () => this.#onHeightChangingEnd())
   }
 
-  #onAnimationStart() {
+  #onHeightChangingStart() {
     document.body.setAttribute('data-of-height-changing', '')
+    clearTimeout(this.#heightChangingTimeout)
   }
 
-  #onAnimationEnd() {
-    document.body.removeAttribute('data-of-height-changing')
+  #onHeightChangingEnd() {
+    this.#heightChangingTimeout = setTimeout(() => {
+      document.body.removeAttribute('data-of-height-changing')
+    }, 100)
   }
 }
 

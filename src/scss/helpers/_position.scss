@@ -1,3 +1,13 @@
-.sticky-top-header {
+// Sticky header variant
+body:has(.header-sticky) .sticky-top-header {
+  top: var(--#{$prefix}header-sticky-height, 0);
+}
+
+// Stuck header variant
+body:has(.header-stuck) .sticky-top-header {
+  @include transition(top .3s);
+}
+
+body:has(.header-stuck-is-stuck) .sticky-top-header {
   top: var(--#{$prefix}header-sticky-height, 0);
 }

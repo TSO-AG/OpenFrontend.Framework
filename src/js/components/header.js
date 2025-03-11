@@ -148,7 +148,8 @@ class Header extends BaseComponent {
       this._element.classList.add(STICKY_HEADER_CLASS)
     }
 
-    if (this._stuckHeader) {
+    // Update the stuck header, but consider the fact that the document may be changing its height (e.g. via collapsibles)
+    if (this._stuckHeader && !document.body.hasAttribute('data-of-height-changing')) {
       if (scrollY < this._lastScrollTop) {
         this._element.classList.add(STICKY_HEADER_STUCK_CLASS)
       } else {

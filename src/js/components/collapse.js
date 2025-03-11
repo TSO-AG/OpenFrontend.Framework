@@ -11,6 +11,9 @@ function toggleClassOnEvent(event, targetEl, className) {
 }
 
 export function initMultiple(els) {
+  const onAnimationStart = () => document.body.setAttribute('data-of-height-changing', '');
+  const onAnimationEnd = () => document.body.removeAttribute('data-of-height-changing');
+
   for (const el of els) {
     const collapseInstance = Collapse.getOrCreateInstance(el, { toggle: false })
 
@@ -33,6 +36,12 @@ export function initMultiple(els) {
       if (targetEl && controlledEl) {
         controlledEl.addEventListener('show.bs.collapse', event => toggleClassOnEvent(event, targetEl, className))
         controlledEl.addEventListener('hide.bs.collapse', event => toggleClassOnEvent(event, targetEl, className))
+
+        // To prevent side effects (like header stuck), indicate that the <body> may be changing its height
+        controlledEl.addEventListener('show.bs.collapse', onAnimationStart)
+        controlledEl.addEventListener('shown.bs.collapse', onAnimationEnd)
+        controlledEl.addEventListener('hide.bs.collapse', onAnimationStart)
+        controlledEl.addEventListener('hidden.bs.collapse', onAnimationEnd)
       }
     }
   }

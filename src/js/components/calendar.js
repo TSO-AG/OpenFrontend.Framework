@@ -265,6 +265,8 @@ class Calendar extends BaseComponent {
         }
         options.eventDidMount = info => info.el.closest('td')?.classList.add('fc-of-mini-event-day')
         options.moreLinkClick = async info => {
+          const events = this._getEvents();
+
           await this._openPopover(
             info.jsEvent.target,
             info.allSegs.map(v => events[v.event.id]?.content ? `<div class="popover-body-row">${events[v.event.id].content}</div>` : '').join(''),

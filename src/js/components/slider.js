@@ -1,8 +1,8 @@
 import BaseComponent from 'bootstrap/js/src/base-component'
 import Swiper from 'swiper'
-import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules'
+import { Autoplay, Navigation, Pagination, Scrollbar, EffectFade } from 'swiper/modules'
 
-Swiper.use([Navigation, Autoplay, Pagination, EffectFade])
+Swiper.use([Navigation, Autoplay, Pagination, Scrollbar, EffectFade])
 
 /**
  * Constants
@@ -16,7 +16,10 @@ const DefaultType = {
   navigationNext: '(string|undefined)',
   navigationPrev: '(string|undefined)',
   pagination: '(object|string|undefined)',
+  paginationType: '(string|undefined)',
+  scrollbar: '(object|string|undefined)',
   speed: 'number',
+  thumbs: '(string|undefined)',
 }
 
 const Default = {
@@ -25,7 +28,10 @@ const Default = {
   navigationNext: undefined,
   navigationPrev: undefined,
   pagination: undefined,
+  paginationType: undefined,
+  scrollbar: undefined,
   speed: 300,
+  thumbs: undefined,
 }
 
 class Slider extends BaseComponent {
@@ -68,11 +74,26 @@ class Slider extends BaseComponent {
     }
 
     if (this._config.pagination) {
-      options.pagination = {
-        el: this._config.pagination,
-        bulletActiveClass: 'slider-pagination-bullet-active',
-        bulletClass: 'slider-pagination-bullet',
-        clickable: true,
+      options.pagination = this._config.paginationType === 'fraction' ?
+        {
+          el: this._config.pagination,
+          type: 'fraction',
+        } :
+        {
+          el: this._config.pagination,
+          bulletActiveClass: 'slider-pagination-bullet-active',
+          bulletClass: 'slider-pagination-bullet',
+          clickable: true,
+        }
+    }
+
+    if (this._config.scrollbar) {
+      options.scrollbar = {
+        el: this._config.scrollbar,
+        dragClass: 'slider-scrollbar-drag',
+        horizontalClass: 'slider-scrollbar-horizontal',
+        lockClass: 'slider-scrollbar-lock',
+        scrollbarDisabledClass: 'slider-scrollbar-disabled',
       }
     }
 
@@ -85,6 +106,19 @@ class Slider extends BaseComponent {
 
       if (this._config.navigationPrev) {
         options.navigation.prevEl = this._config.navigationPrev
+      }
+    }
+
+    if (this._config.thumbs) {
+      options.thumbs = {
+        swiper: this._config.thumbs
+      }
+
+      options.on = {
+        // Scroll slider to active thumbnail
+        realIndexChange(swiper) {
+          swiper.thumbs.swiper.slideTo(swiper.realIndex)
+        },
       }
     }
 

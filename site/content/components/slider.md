@@ -218,6 +218,107 @@ If you do not want to place a pagination above the slide you can use one of the 
 </div>
 {{< /example >}}
 
+### Thumbs
+{{< example >}}
+<div class="slider">
+  <div class="swiper" data-of-slider='{
+      "pagination": "#slider-pagination-5",
+      "paginationType": "fraction",
+      "navigationNext": "#slider-btn-next-5",
+      "navigationPrev": "#slider-btn-prev-5",
+      "scrollbar": "#slider-scrollbar-5",
+      "loop": true,
+      "thumbs": "#slider-thumbnails-5"
+  }'>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="Slide 1" >}}
+      </div>
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Slide 2" >}}
+      </div>
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Slide 3" >}}
+      </div>
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#222" background="#444" text="Slide 4" >}}
+      </div>
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#111" background="#333" text="Slide 5" >}}
+      </div>
+    </div>
+  </div>
+
+  <div class="slider-thumbs">
+    <div class="carousel">
+      <div id="slider-thumbnails-5" class="swiper" data-of-carousel='{
+          "slidesPerView": "auto",
+          "spaceBetween": 12
+      }'>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="slider-thumb">
+              <div class="slider-thumb-text">
+                Slide 1
+              </div>
+              {{< placeholder width="400" height="280" class="img-fluid img-thumbnail w-100" color="#777" background="#999" text="Slide 1" >}}
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-thumb">
+              <div class="slider-thumb-text">
+                Slide 2
+              </div>
+            {{< placeholder width="400" height="280" class="img-fluid img-thumbnail w-100" color="#666" background="#888" text="Slide 2" >}}
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-thumb">
+              <div class="slider-thumb-text">
+                Slide 3
+              </div>
+            {{< placeholder width="400" height="280" class="img-fluid img-thumbnail w-100" color="#555" background="#777" text="Slide 3" >}}
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-thumb">
+              <div class="slider-thumb-text">
+                Slide 4
+              </div>
+            {{< placeholder width="400" height="280" class="img-fluid img-thumbnail w-100" color="#444" background="#666" text="Slide 4" >}}
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-thumb">
+              <div class="slider-thumb-text">
+                Slide 5
+              </div>
+            {{< placeholder width="400" height="280" class="img-fluid img-thumbnail w-100" color="#333" background="#555" text="Slide 5" >}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slider-thumbs-navigation">
+      <div class="slider-navigation-static">
+         <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="slider-btn-prev-5">
+          {{< icon name="caret-left-fill" >}}
+        </button>
+        <button type="button" class="carousel-button-next btn btn-square btn-primary" id="slider-btn-next-5">
+          {{< icon name="caret-right-fill" >}}
+        </button>
+      </div>
+
+      <div class="slider-scrollbar" id="slider-scrollbar-5"></div>
+
+      <div class="slider-pagination-fraction" id="slider-pagination-5"></div>
+    </div>
+  </div>
+
+</div>
+{{< /example >}}
+
 ## Options
 
 You can pass extra options as JSON value of the data attribute. Here is the list of all available options (alphabetically):
@@ -231,6 +332,7 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 | `navigationPrev` | `object\|string` | `undefined` | The selector of the element that will work like "prev" button after click on it. |
 | `pagination` | `object\|string` | `undefined` | The selector or the pagination element. |
 | `speed` | `number` | `300` | Duration of transition between slides (in milliseconds). |
+| `thumbs` | `object\|string` | `undefined` | The selector or the thumbs element. |
 {{< /bs-table >}}
 
 #### Autoplay parameters

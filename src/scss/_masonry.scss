@@ -47,6 +47,14 @@
         grid-area: span 2 / span 1;
       }
 
+      &:nth-child(8n + 3):last-child { // Adjust size if it's the third and last item
+        grid-area: span 2 / span 1;
+      }
+
+      &:nth-child(8n + 6):last-child { // Adjust size if it's the sixth and last item
+        grid-area: span 2 / span 1;
+      }
+
       &:nth-child(8n + 8) {
         grid-area: span 2 / span 2;
       }

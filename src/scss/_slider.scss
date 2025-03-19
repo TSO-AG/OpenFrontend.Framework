@@ -273,6 +273,10 @@
     color: var(--#{$prefix}slider-thumb-text-color);
     background: var(--#{$prefix}slider-thumb-text-bg);
   }
+
+  figure {
+    margin-bottom: 0;
+  }
 }
 
 .slider-thumbs-navigation {

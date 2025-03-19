@@ -25,6 +25,8 @@
       description: "A POI list page template showcases an organized list of points of interest, making it easy for users to browse and select specific locations or attractions."
     - name: Routing
       description: "A routing page template provides a structured format for displaying general content on a website in a consistent and coherent manner."
+    - name: Slider
+      description: "A slider component that enables users to browse through a set of images or content in a carousel format, providing smooth transitions and interactive navigation."
 
 - category: Pages
   description: "Pages are built with OpenFrontend components that can be used as a starting point for creating multiple web pages with a similar design and structure."

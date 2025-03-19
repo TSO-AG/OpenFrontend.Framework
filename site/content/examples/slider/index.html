@@ -1,0 +1,148 @@
+---
+layout: examples-page
+title: Slider
+language: de
+---
+
+<div class="slider">
+  <div class="swiper" data-of-slider='{
+        "pagination": "#slider-pagination-5",
+        "paginationType": "fraction",
+        "navigationNext": "#slider-btn-next-5",
+        "navigationPrev": "#slider-btn-prev-5",
+        "scrollbar": "#slider-scrollbar-5",
+        "loop": true,
+        "thumbs": "#slider-thumbnails-5"
+    }'>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="wrapper min-vh-100-header" style="--bs-wrapper-padding-x: 0; --bs-wrapper-color: #fff">
+          <div class="container">
+            <div class="wrapper-content text-center">
+              <h2>Winter</h2>
+            </div>
+          </div>
+          <div class="wrapper-bg-media">
+            <figure>
+              {{< image src="img/photos/winter.jpg" alt="Winter" width="1920" >}}
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="wrapper min-vh-100-header" style="--bs-wrapper-padding-x: 0; --bs-wrapper-color: #fff">
+          <div class="container">
+            <div class="wrapper-content text-center">
+              <h2>Fruehling</h2>
+            </div>
+          </div>
+          <div class="wrapper-bg-media">
+            <figure>
+              {{< image src="img/photos/fruehling.jpg" alt="fruehling" width="1920" loading="lazy" >}}
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="wrapper min-vh-100-header" style="--bs-wrapper-padding-x: 0; --bs-wrapper-color: #fff">
+          <div class="container">
+            <div class="wrapper-content text-center">
+              <h2>Video</h2>
+            </div>
+            <div class="wrapper-bg-media">
+              <figure>
+                <video autoplay muted playsinline loop>
+                  <source src="../../assets/media/sample-video.mp4" type="video/mp4">
+                  <source src="../../assets/media/sample-video.ogg" type="video/ogg">
+                </video>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="wrapper min-vh-100-header" style="--bs-wrapper-padding-x: 0; --bs-wrapper-color: #fff">
+          <div class="container">
+            <div class="wrapper-content text-center fs-5">
+              <h2>Herbst</h2>
+            </div>
+          </div>
+          <div class="wrapper-bg-media">
+            <figure>
+              {{< image src="img/photos/herbst.jpg" alt="Herbst" width="1920" loading="lazy" >}}
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slider-thumbs">
+    <div class="carousel">
+      <div id="slider-thumbnails-5" class="swiper" data-of-carousel='{
+      "slidesPerView": "auto",
+      "spaceBetween": 12,
+      "loop": true
+  }'>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="slider-thumb">
+              <div class="slider-thumb-text">
+                Winter
+              </div>
+              <figure>
+                {{< image src="img/photos/winter.jpg" alt="Winter" width="400" >}}
+              </figure>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-thumb">
+              <div class="slider-thumb-text">
+                Fruehling
+              </div>
+              <figure>
+                {{< image src="img/photos/fruehling.jpg" alt="fruehling" width="400" >}}
+              </figure>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-thumb">
+              <div class="slider-thumb-text">
+                Video
+              </div>
+              <figure>
+                {{< image src="img/photos/sommer.jpg" alt="Video" width="400" loading="lazy" >}}
+              </figure>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-thumb">
+              <div class="slider-thumb-text">
+                Herbst
+              </div>
+              <figure>
+                {{< image src="img/photos/herbst.jpg" alt="Herbst" width="400" loading="lazy" >}}
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slider-thumbs-navigation">
+      <div class="slider-navigation-static">
+        <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="slider-btn-prev-5">
+          {{< icon name="caret-left-fill" >}}
+        </button>
+        <button type="button" class="carousel-button-next btn btn-square btn-primary" id="slider-btn-next-5">
+          {{< icon name="caret-right-fill" >}}
+        </button>
+      </div>
+
+      <div class="slider-scrollbar" id="slider-scrollbar-5"></div>
+
+      <div class="slider-pagination-fraction" id="slider-pagination-5"></div>
+    </div>
+  </div>
+
+</div>

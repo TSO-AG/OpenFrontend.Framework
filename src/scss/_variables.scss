@@ -487,6 +487,19 @@ $slider-pagination-bullet-opacity:                1 !default;
 $slider-pagination-bullet-horizontal-gap:         4px !default;
 $slider-pagination-bullet-vertical-gap:           6px !default;
 $slider-navigation-offset-x:                      $slider-offset-x !default;
+$slider-scrollbar-bg-color:                       rgba(255, 255, 255, .5) !default;
+$slider-scrollbar-drag-bg-color:                  rgba(255, 255, 255, 1) !default;
+$slider-scrollbar-size:                           1px !default;
+$slider-scrollbar-drag-size:                      6px !default;
+$slider-pagination-fraction-color:                #fff !default;
+$slider-thumbs-width:                             min(80%, calc(var(--#{$prefix}slider-thumbs-slide-width) * 2.5)) !default;
+$slider-thumbs-top:                               auto !default;
+$slider-thumbs-bottom:                            1rem !default;
+$slider-thumbs-left:                              auto !default;
+$slider-thumbs-right:                             1rem !default;
+$slider-thumbs-slide-width:                       clamp(120px, min(20cqw, 20vw, 40vh), 400px) !default;
+$slider-thumb-text-color:                         #fff !default;
+$slider-thumb-text-bg:                            linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, 0)) !default;
 // scss-docs-end slider-variables
 
 // Heading

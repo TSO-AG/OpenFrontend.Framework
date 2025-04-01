@@ -644,6 +644,7 @@ $page-menu-dark-color:                $header-dark-color !default;
 // scss-docs-end page-menu-dark-variables
 
 // scss-docs-start page-navigation-variables
+$page-nav-type-column:                   3 !default;
 $page-nav-transition:                    left .3s ease-in-out, transform .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out !default;
 $page-nav-panel-bg:                      var(--#{$prefix}body-bg) !default;
 $page-nav-link-padding-y:                .5rem !default;

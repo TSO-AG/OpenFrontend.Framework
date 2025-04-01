@@ -1,5 +1,6 @@
 .page-nav {
   // scss-docs-start page-nav-css-vars
+  --#{$prefix}page-nav-column: #{$page-nav-type-column};
   --#{$prefix}page-nav-bg: #{$page-nav-panel-bg};
   --#{$prefix}page-nav-link-padding-x: #{$page-nav-link-padding-x};
   --#{$prefix}page-nav-link-padding-y: #{$page-nav-link-padding-y};
@@ -26,8 +27,8 @@
   --#{$prefix}page-nav-type-desktop-level-1-gap-y: #{$page-nav-type-desktop-level-1-gap-y};
   --#{$prefix}page-nav-type-desktop-level-1-padding-x: #{$page-nav-type-desktop-level-1-padding-x};
   --#{$prefix}page-nav-type-desktop-level-1-padding-y: #{$page-nav-type-desktop-level-1-padding-y};
-
   // scss-docs-end page-nav-css-vars
+
   container-type: inline-size;
   min-height: var(--page-nav-panel-height, 0);
   overflow: hidden;
@@ -101,7 +102,7 @@
 
   @container (min-width: 35em) {
     nav {
-      --columns: 3;
+      --columns: var(--#{$prefix}page-nav-column);
 
       .page-nav-level-3 {
         left: 100%;

@@ -357,6 +357,10 @@ class Calendar extends BaseComponent {
   }
 
   _getValidRange(events) {
+    if (events.length === 0) {
+      return {};
+    }
+
     const earliestDate = new Date(events.map(v => v.start).reduce((prev, curr) => prev < curr ? prev : curr));
     let latestDate = events.filter(v => v.hasOwnProperty('end')).map(v => v.end).reduce((prev, curr) => prev > curr ? prev : curr, 0);
 

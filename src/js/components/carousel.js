@@ -14,6 +14,21 @@ function getCssRoot() {
   return cssRoot
 }
 
+function initSwiperVisibilityHandler(swiper, swiperElement) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        swiper.update();
+        observer.disconnect();
+      }
+    });
+  }, {
+    threshold: 0
+  });
+
+  observer.observe(swiperElement);
+}
+
 /**
  * Constants
  */
@@ -129,7 +144,11 @@ class Carousel extends BaseComponent {
       }
     }
 
-    new Swiper(this._element, options)
+    const carousel = new Swiper(this._element, options);
+
+    if (this._config.futureSlidesVisible) {
+      initSwiperVisibilityHandler(carousel, this._element);
+    }
   }
 
   _prepareBreakpointConfiguration(inputBreakpoints) {
@@ -165,6 +184,8 @@ class Carousel extends BaseComponent {
     return matches ? matches[0] : undefined
   }
 }
+
+
 
 export function initMultiple(els) {
   for (const el of els) {

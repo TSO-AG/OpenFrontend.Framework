@@ -14,6 +14,7 @@ function getCssRoot() {
   return cssRoot
 }
 
+// This helper is to ensure the carousel behaves correctly even when it is initially hidden and shown on demand (e.g. inside tabs)
 function initSwiperVisibilityHandler(swiper, swiperElement) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

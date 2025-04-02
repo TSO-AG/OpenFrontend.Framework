@@ -181,10 +181,7 @@ class Calendar extends BaseComponent {
         headers: {
           'X-Requested-With': 'XMLHttpRequest'
         },
-      }).then(response => response.json()).then(events => {
-        this._calendar.setOption('validRange', this._getValidRange(events))
-        resolve(events);
-      });
+      }).then(response => response.json()).then(events => resolve(events));
     });
   }
 

@@ -220,11 +220,15 @@ class Calendar extends BaseComponent {
       options.titleFormat = () => this._config.title;
     }
 
-    // Hide the today/prev/next buttons if they are all disabled
+    options.datesSet = () => {
+      this._updateTodayButton()
+    }
+
     options.viewDidMount = () => {
       const buttons = [...this._element.querySelectorAll('button.fc-today-button, button.fc-prev-button, button.fc-next-button')];
       const hideButtons = buttons.filter(v => v.disabled).length === buttons.length;
 
+      // Hide the today/prev/next buttons if they are all disabled
       buttons.forEach(button => {
         if (button.classList.contains('fc-prev-button') || button.classList.contains('fc-next-button')) {
           button.parentElement.classList.toggle('d-none', hideButtons);
@@ -232,6 +236,8 @@ class Calendar extends BaseComponent {
 
         button.classList.toggle('d-none', hideButtons);
       });
+
+      this._updateTodayButton()
     }
 
     switch (this._config.layout) {
@@ -300,6 +306,17 @@ class Calendar extends BaseComponent {
     }
 
     return options;
+  }
+
+  // Wrap the today button text with <span>
+  _updateTodayButton() {
+    const todayButton = this._element.querySelector('button.fc-today-button');
+
+    if (!todayButton) {
+      return;
+    }
+
+    todayButton.innerHTML = `<span>${this._calendar.getOption('buttonText').today}</span>`;
   }
 
   _getEvents() {

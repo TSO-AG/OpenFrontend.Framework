@@ -146,6 +146,70 @@ You can reduce the paddings of the links by adding the `.nav-condensed` class.
 </ul>
 {{< /example >}}
 
+### Icons
+
+You can add the icons to navigation with `.nav-icons` classes.
+
+{{< example >}}
+<ul class="nav nav-icons">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">
+      {{< icon name="star-fill" >}}
+      <span>Active</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      {{< icon name="question-circle-fill" >}}
+      <span>Link</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      {{< icon name="cloud-arrow-down-fill" >}}
+      <span>Link</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled">
+      {{< icon name="shield-fill-x" >}}
+      <span>Disabled</span>
+    </a>
+  </li>
+</ul>
+{{< /example >}}
+
+Also consider the variant with vertically places icons using the  `.nav-icons-vertical` class.
+
+{{< example >}}
+<ul class="nav nav-icons nav-icons-vertical">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">
+      {{< icon name="star-fill" >}}
+      <span>Active</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      {{< icon name="question-circle-fill" >}}
+      <span>Link</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      {{< icon name="cloud-arrow-down-fill" >}}
+      <span>Link</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled">
+      {{< icon name="shield-fill-x" >}}
+      <span>Disabled</span>
+    </a>
+  </li>
+</ul>
+{{< /example >}}
+
 ### Tabs
 
 Takes the basic nav from above and adds the `.nav-tabs` class to generate a tabbed interface. Use them to create tabbable regions with our [tab JavaScript plugin](#javascript-behavior).

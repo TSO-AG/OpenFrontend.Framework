@@ -8,12 +8,6 @@ class Collapse extends BootstrapCollapse {
   constructor(element, config) {
     super(element, config);
 
-    // Dispatch the global event, when the collapse is shown
-    this._element.addEventListener('show.bs.collapse', () => this.#dispatchGlobalEvent('show.bs.collapse'))
-    this._element.addEventListener('shown.bs.collapse', () => this.#dispatchGlobalEvent('shown.bs.collapse'))
-    this._element.addEventListener('hide.bs.collapse', () => this.#dispatchGlobalEvent('hide.bs.collapse'))
-    this._element.addEventListener('hidden.bs.collapse', () => this.#dispatchGlobalEvent('hidden.bs.collapse'))
-
     // To prevent side effects (like header stuck), indicate that the <body> may be changing its height
     this._element.addEventListener('show.bs.collapse', () => this.#onHeightChangingStart())
     this._element.addEventListener('shown.bs.collapse', () => this.#onHeightChangingEnd())
@@ -30,15 +24,6 @@ class Collapse extends BootstrapCollapse {
     this.#heightChangingTimeout = setTimeout(() => {
       document.body.removeAttribute('data-of-height-changing')
     }, 100)
-  }
-
-  #dispatchGlobalEvent(event, parameters) {
-    parameters = parameters || {};
-    parameters.element = this._element;
-
-    document.dispatchEvent(new CustomEvent(event, {
-      detail: parameters,
-    }));
   }
 }
 

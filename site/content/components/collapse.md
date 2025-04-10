@@ -115,7 +115,7 @@ This example shows how to use the `collapse` component in conjunction with the `
 </div>
 {{< /example >}}
 
-## Expandable Link
+## Expandable link
 Links with the attribute `data-of-collapse-link` will expand the collapse element on the first click and perform the link’s default action (such as navigating to a URL) on the second click if the collapse is already expanded.
 {{< example >}}
 <p>

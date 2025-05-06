@@ -1,4 +1,5 @@
 import { loadForElements } from './helpers/module-loader'
+import { detectUserAgent } from './helpers/ua';
 
 window.openFrontend = {
   get Alert() {
@@ -99,4 +100,7 @@ window.initOpenFrontend = function (element) {
   loadForElements(element.querySelectorAll('[data-of-scroll-shadow]'), () => import(/* webpackChunkName: "of-scroll-shadow" */ './components/scroll-shadow'))
 }
 
-document.addEventListener('DOMContentLoaded', () => window.initOpenFrontend(document))
+document.addEventListener('DOMContentLoaded', () => {
+  detectUserAgent(document.body)
+  window.initOpenFrontend(document)
+})

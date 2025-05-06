@@ -13,11 +13,11 @@
   > a:only-child {
     display: block;
   }
+}
 
-  // Avoid potential elastic/phantom scroll issue on Safari iOS
-  > .min-h-100 {
-    min-height: calc(100% - 0.1px) !important;
-  }
+// Avoid potential elastic/phantom scroll issue on Safari iOS
+body.ios-safari .aspect > .min-h-100 {
+  min-height: calc(100% - 1px) !important;
 }
 
 img.aspect { // stylelint-disable-line selector-no-qualifying-type

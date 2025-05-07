@@ -84,8 +84,8 @@ const THUMBNAILS_CAROUSEL_SETTINGS = {
   slidesPerView: 'auto',
   spaceBetween: 10,
   navigation: {
-    nextEl: '.carousel-button-next',
-    prevEl: '.carousel-button-prev',
+    nextEl: '.lightbox-thumbnails .carousel-button-next',
+    prevEl: '.lightbox-thumbnails .carousel-button-prev',
   },
   slideToClickedSlide: true,
   watchOverflow: true,
@@ -202,6 +202,8 @@ class Lightbox extends Config {
     if (this._config.thumbnails) {
       this._thumbnailsElement.remove()
       this._thumbnailsElement = null
+
+      this._thumbnailsCarousel.destroy(true)
       this._thumbnailsCarousel = null
     }
 
@@ -346,7 +348,7 @@ class Lightbox extends Config {
         return
       }
 
-      this._setThumbnailsActiveSlide(this._thumbnailsCarousel?.realIndex || 0)
+      this._setThumbnailsActiveSlide(this._thumbnailsCarousel.realIndex)
     })
   }
 

@@ -346,7 +346,7 @@ class Lightbox extends Config {
         return
       }
 
-      this._setThumbnailsActiveSlide(this._thumbnailsCarousel.realIndex)
+      this._setThumbnailsActiveSlide(this._thumbnailsCarousel?.realIndex || 0)
     })
   }
 

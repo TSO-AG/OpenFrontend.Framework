@@ -340,13 +340,13 @@ You can use the `wheelBreakpoint` option to define at what breakpoint the slider
     }'>
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="Slide 1" >}}
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100 h-100" color="#555" background="#777" text="Slide 1" >}}
       </div>
       <div class="swiper-slide">
-        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Slide 2" >}}
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100 h-100" color="#444" background="#666" text="Slide 2" >}}
       </div>
       <div class="swiper-slide">
-        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Slide 3" >}}
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100 h-100" color="#333" background="#555" text="Slide 3" >}}
       </div>
     </div>
   </div>

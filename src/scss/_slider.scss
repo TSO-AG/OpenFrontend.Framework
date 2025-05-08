@@ -310,10 +310,16 @@
 
     @include media-breakpoint-up(md) {
       top: 50%;
-      left: 0;
-      width: 50vw;
-      height: 50vw;
-      transform: translateX(-75%) translateY(-50%);
+      right: 100%;
+      left: auto;
+      width: fit-content;
+      height: 130%;
+      transform: translateX(25%) translateY(-50%);
+
+      svg {
+        float: right;
+        height: 100%;
+      }
     }
 
     > * {

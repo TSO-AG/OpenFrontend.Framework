@@ -20,6 +20,8 @@ const DefaultType = {
   scrollbar: '(object|string|undefined)',
   speed: 'number',
   thumbs: '(string|undefined)',
+  wheel: '(string|undefined)',
+  wheelBreakpoint: 'string',
 }
 
 const Default = {
@@ -32,6 +34,8 @@ const Default = {
   scrollbar: undefined,
   speed: 300,
   thumbs: undefined,
+  wheel: undefined,
+  wheelBreakpoint: 'md',
 }
 
 class Slider extends BaseComponent {
@@ -74,55 +78,136 @@ class Slider extends BaseComponent {
     }
 
     if (this._config.pagination) {
-      options.pagination = this._config.paginationType === 'fraction' ?
-        {
-          el: this._config.pagination,
-          type: 'fraction',
-        } :
-        {
-          el: this._config.pagination,
-          bulletActiveClass: 'slider-pagination-bullet-active',
-          bulletClass: 'slider-pagination-bullet',
-          clickable: true,
-        }
+      this._applyPaginationOptions(options)
     }
 
     if (this._config.scrollbar) {
-      options.scrollbar = {
-        el: this._config.scrollbar,
-        dragClass: 'slider-scrollbar-drag',
-        horizontalClass: 'slider-scrollbar-horizontal',
-        lockClass: 'slider-scrollbar-lock',
-        scrollbarDisabledClass: 'slider-scrollbar-disabled',
-      }
+      this._applyScrollbarOptions(options)
     }
 
     if (this._config.navigationPrev || this._config.navigationNext) {
-      options.navigation = {}
-
-      if (this._config.navigationNext) {
-        options.navigation.nextEl = this._config.navigationNext
-      }
-
-      if (this._config.navigationPrev) {
-        options.navigation.prevEl = this._config.navigationPrev
-      }
+      this._applyNavigationOptions(options)
     }
 
     if (this._config.thumbs) {
-      options.thumbs = {
-        swiper: this._config.thumbs
-      }
+      this._applyThumbsOptions(options)
+    }
 
-      options.on = {
-        // Scroll slider to active thumbnail
-        realIndexChange(swiper) {
-          swiper.thumbs.swiper.slideTo(swiper.realIndex)
-        },
-      }
+    if (this._config.wheel) {
+      this._applyWheelOptions(options)
     }
 
     new Swiper(this._element, options)
+  }
+
+  _applyNavigationOptions(options) {
+    options.navigation = {}
+
+    if (this._config.navigationNext) {
+      options.navigation.nextEl = this._config.navigationNext
+    }
+
+    if (this._config.navigationPrev) {
+      options.navigation.prevEl = this._config.navigationPrev
+    }
+  }
+
+  _applyThumbsOptions(options) {
+    options.thumbs = {
+      swiper: this._config.thumbs
+    }
+
+    options.on = options.on || {}
+    options.on.realIndexChange = swiper => swiper.thumbs.swiper.slideTo(swiper.realIndex)
+  }
+
+  _applyWheelOptions(options) {
+    const wheelEl = (typeof this._config.wheel === 'string') ? document.querySelector(this._config.wheel) : this._config.wheel;
+
+    if (!wheelEl) {
+      return;
+    }
+
+    const wheelChildEl = wheelEl.children[0];
+
+    if (!wheelChildEl) {
+      return;
+    }
+
+    // Get all circles:
+    // 1. exclude the first one – it's the big circle path
+    // 2. take odd elements – each circle is made of two elements (fill & stroke)
+    const circleElements = [...wheelChildEl.querySelectorAll('circle:not(:first-child)')].filter((_, index) => index % 2 === 0);
+    const mobileBreakpoint = parseInt(getComputedStyle(document.documentElement).getPropertyValue(`--breakpoint-${this._config.wheelBreakpoint}`), 10);
+    const desktopIndexOffset = 2;
+
+    const isMobile = () => window.innerWidth < mobileBreakpoint;
+    const getSlideDirection = () => isMobile() ? 'horizontal' : 'vertical';
+    const markActiveCircle = () => circleElements.forEach((el, i) => el.style.display = (i === currentIndex) ? 'block' : 'none')
+
+    const rotateWheel = direction => {
+      currentRotation -= direction * 45;
+      wheelChildEl.style.transform = `rotate(${currentRotation}deg)`;
+    }
+
+    const updateWheel = direction => {
+      currentIndex = (currentIndex + direction + circleElements.length) % circleElements.length;
+      rotateWheel(direction);
+      markActiveCircle();
+    }
+
+    let currentIndex = isMobile() ? 0 : desktopIndexOffset;
+    let currentRotation = 0;
+    let isLastViewMobile = isMobile()
+
+    markActiveCircle();
+
+    options.direction = getSlideDirection();
+    options.effect = 'slide';
+
+    options.on = options.on || {};
+    options.on.slideNextTransitionStart = () => updateWheel(1);
+    options.on.slidePrevTransitionStart = () => updateWheel(-1);
+    options.on.resize = swiper => {
+      swiper.changeDirection(getSlideDirection());
+
+      // The view has been switched, so we need to adjust the active circle
+      if (isMobile() && !isLastViewMobile) {
+        isLastViewMobile = true;
+        rotateWheel(desktopIndexOffset)
+      } else if (!isMobile() && isLastViewMobile) {
+        isLastViewMobile = false;
+        rotateWheel(desktopIndexOffset * -1)
+      }
+    }
+  }
+
+  _applyPaginationOptions(options) {
+    if (this._config.paginationType === 'fraction') {
+      options.pagination = {
+        el: this._config.pagination,
+        type: 'fraction',
+      };
+
+      return;
+    }
+
+    options.pagination = {
+      el: this._config.pagination,
+      bulletActiveClass: 'slider-pagination-bullet-active',
+      bulletClass: 'slider-pagination-bullet',
+      clickable: true,
+    }
+  }
+
+  _applyScrollbarOptions(options) {
+    options.scrollbar = {
+      el: this._config.scrollbar,
+      dragClass: 'slider-scrollbar-drag',
+      horizontalClass: 'slider-scrollbar-horizontal',
+      lockClass: 'slider-scrollbar-lock',
+      scrollbarDisabledClass: 'slider-scrollbar-disabled',
+    }
   }
 }
 

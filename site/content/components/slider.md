@@ -315,7 +315,77 @@ If you do not want to place a pagination above the slide you can use one of the 
       <div class="slider-pagination-fraction" id="slider-pagination-5"></div>
     </div>
   </div>
+</div>
+{{< /example >}}
 
+### Wheel slider
+
+Add the wheel to the slider, which shows the current slide. This is a purely decorative element. The SVG must follow the similar structure as the one in the example.
+
+{{< callout info >}}
+**Heads up!** Be sure to set a fixed slider height, as the slider on the desktop is in vertical mode.
+{{< /callout >}}
+
+You can use the `wheelBreakpoint` option to define at what breakpoint the slider will be switched to mobile/desktop mode.
+
+{{< example >}}
+<div class="slider slider-with-wheel" style="height:400px">
+  <div class="swiper" data-of-slider='{
+      "loop": true,
+      "navigationNext": "#slider-wheel-next",
+      "navigationPrev": "#slider-wheel-prev",
+      "pagination": "#slider-wheel-pagination",
+      "paginationType": "fraction",
+      "wheel": "#slider-wheel"
+    }'>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="Slide 1" >}}
+      </div>
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Slide 2" >}}
+      </div>
+      <div class="swiper-slide">
+        {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Slide 3" >}}
+      </div>
+    </div>
+  </div>
+
+  <div id="slider-wheel" class="slider-wheel">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 740">
+      <circle cx="370.33" cy="370.221" r="350.5" style="fill:none;stroke:currentColor"/>
+      <circle cx="370.33" cy="19.324" r="16" style="fill:none;stroke:currentColor"/>
+      <circle cx="370.33" cy="19.324" r="7" style="fill:currentColor"/>
+      <circle cx="618.199" cy="122.268" r="16" style="fill:none;stroke:currentColor"/>
+      <circle cx="618.199" cy="122.268" r="7" style="fill:currentColor"/>
+      <circle cx="720.676" cy="370.221" r="16" style="fill:none;stroke:currentColor"/>
+      <circle cx="720.676" cy="370.221" r="7" style="fill:currentColor"/>
+      <circle cx="617.732" cy="618.199" r="16" style="fill:none;stroke:currentColor"/>
+      <circle cx="617.732" cy="618.199" r="7" style="fill:currentColor"/>
+      <circle cx="369.67" cy="720.676" r="16" style="fill:none;stroke:currentColor"/>
+      <circle cx="369.67" cy="720.676" r="7" style="fill:currentColor"/>
+      <circle cx="121.801" cy="617.732" r="16" style="fill:none;stroke:currentColor"/>
+      <circle cx="121.801" cy="617.732" r="7" style="fill:currentColor"/>
+      <circle cx="19.324" cy="370.221" r="16" style="fill:none;stroke:currentColor"/>
+      <circle cx="19.324" cy="370.221" r="7" style="fill:currentColor"/>
+      <circle cx="122.268" cy="121.801" r="16" style="fill:none;stroke:currentColor"/>
+      <circle cx="122.268" cy="121.801" r="7" style="fill:currentColor"/>
+    </svg>
+  </div>
+
+  <div class="slider-navigation">
+    <button type="button" class="slider-button-prev btn btn-square text-white" id="slider-wheel-prev">
+      <span class="d-none d-md-block">{{< icon name="arrow-up" >}}</span>
+      <span class="d-md-none">{{< icon name="arrow-left" >}}</span>
+    </button>
+
+    <div class="slider-pagination-fraction" id="slider-wheel-pagination"></div>
+
+    <button type="button" class="slider-button-next btn btn-square text-white" id="slider-wheel-next">
+      <span class="d-none d-md-block">{{< icon name="arrow-down" >}}</span>
+      <span class="d-md-none">{{< icon name="arrow-right" >}}</span>
+    </button>
+  </div>
 </div>
 {{< /example >}}
 
@@ -332,7 +402,9 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 | `navigationPrev` | `object\|string` | `undefined` | The selector of the element that will work like "prev" button after click on it. |
 | `pagination` | `object\|string` | `undefined` | The selector or the pagination element. |
 | `speed` | `number` | `300` | Duration of transition between slides (in milliseconds). |
-| `thumbs` | `object\|string` | `undefined` | The selector or the thumbs element. |
+| `thumbs` | `object\|string` | `undefined` | The selector of the thumbs element. |
+| `wheel` | `object\|string` | `undefined` | The selector of the wheel element. |
+| `wheelBreakpoint` | `string` | `md` | The breakpoint at which the wheel slider will be switched to mobile/desktop mode. |
 {{< /bs-table >}}
 
 #### Autoplay parameters

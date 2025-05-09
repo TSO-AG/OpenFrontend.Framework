@@ -323,7 +323,7 @@ If you do not want to place a pagination above the slide you can use one of the 
 Add the wheel to the slider, which shows the current slide. This is a purely decorative element. The SVG must follow the similar structure as the one in the example.
 
 {{< callout info >}}
-**Heads up!** Be sure to set a fixed slider height, as the slider on the desktop is in vertical mode.
+**Heads up!** Be sure to set a fixed slider height, as the slider on the desktop is in vertical mode. You may want to use `.vh-100-header` and `.max-vh-100-header` CSS classes.
 {{< /callout >}}
 
 You can use the `wheelBreakpoint` option to define at what breakpoint the slider will be switched to mobile/desktop mode.

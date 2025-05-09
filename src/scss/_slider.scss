@@ -300,13 +300,13 @@
 
   .slider-wheel {
     position: absolute;
-    top: 60%;
-    left: calc(50% - 50vw);
+    top: 100%;
+    left: 50%;
     z-index: 1;
-    width: 100vw;
-    height: 100vw;
+    width: 130%;
     color: $white;
     pointer-events: none;
+    transform: translateY(-25%) translateX(-50%);
 
     @include media-breakpoint-up(md) {
       top: 50%;

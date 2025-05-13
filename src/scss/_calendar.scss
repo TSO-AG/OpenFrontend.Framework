@@ -164,6 +164,12 @@
     }
   }
 
+  .fc-list-event-title-link-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+  }
+
   a:not([href]) {
     color: inherit;
     text-decoration: inherit;

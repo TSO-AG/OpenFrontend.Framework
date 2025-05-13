@@ -244,6 +244,13 @@ class Calendar extends BaseComponent {
       case 'full':
         options.initialView = 'dayGridMonth'
         options.plugins.push(dayGridPlugin, listPlugin)
+        options.listDayFormat = {
+          month: 'long',
+          year: 'numeric',
+          day: 'numeric',
+          weekday: 'long',
+        };
+        options.listDaySideFormat = false;
         options.headerToolbar.end = this._config.viewToggler ? 'dayGridMonth,listMonth today prev,next' : 'today prev,next'
         options.views = {
           dayGridMonth: {
@@ -251,6 +258,26 @@ class Calendar extends BaseComponent {
             dayMaxEvents: 1,
           }
         }
+        options.eventDidMount = info => {
+          const link = info.el.querySelector('.fc-list-event-title a');
+
+          if (!link) {
+            return;
+          }
+
+          const eventProps = info.event._def.extendedProps;
+
+          if (eventProps.subtitle) {
+            link.innerHTML = `<div class="fc-list-event-title-link-text">${link.textContent}</div><div class="fc-list-event-title-link-location">${eventProps.subtitle}</div>`;
+          }
+
+          if (eventProps.location) {
+            link.innerHTML = `<div class="fc-list-event-title-link-wrapper">
+<div class="fc-list-event-title-link-content">${link.innerHTML}</div>
+<div class="fc-list-event-title-link-location">${eventProps.location}</div>
+</div>`;
+          }
+        };
         break;
       case 'mini':
         options.initialView = 'miniView'

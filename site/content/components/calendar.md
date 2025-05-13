@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'All day event',
         content: dummyContent,
         start: getDate(8),
-        allDay: true,
+        allDay: true
       },
       {
         title: 'Multiple days event',
@@ -66,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
         start: getDate(6),
         end: getDate(10),
         allDay: true,
+        location: 'New York City',
+        subtitle: 'Great party at Times Square'
       },
       {
         title: 'Exact time event',
@@ -348,20 +350,22 @@ const events = [
     content: '<div class="popover-content">…</div>',
     start: '2010-01-01',
     allDay: true,
-    display: 'list-item' // available options: auto, block, list-item, background, inverse-background, none
+    display: 'list-item', // available options: auto, block, list-item, background, inverse-background, none
+    location: 'New York', // optional, visible only in list month view
+    subtitle: 'Great party at Times Square', // optional, visible only in list month view
   },
   {
     title: 'Multiple days event',
     contentUrl: 'https://domain.tld/_ajax/multiple_days_event', // fetch content via AJAX
     start: '2013-01-05',
     end: '2010-01-07',
-    allDay: true
+    allDay: true,
   },
   {
     title: 'Event at specific time',
     content: '<div class="popover-content">…</div>',
     start: '2010-01-09T12:30:00',
-    allDay: false
+    allDay: false,
   }
 ];
 ```

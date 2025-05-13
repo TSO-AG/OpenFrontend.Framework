@@ -266,17 +266,24 @@ class Calendar extends BaseComponent {
           }
 
           const eventProps = info.event._def.extendedProps;
+          let buffer = `<div class="fc-list-event-title-link-text">${link.textContent}</div>`;
 
           if (eventProps.subtitle) {
-            link.innerHTML = `<div class="fc-list-event-title-link-text">${link.textContent}</div><div class="fc-list-event-title-link-location">${eventProps.subtitle}</div>`;
+            buffer += `<div class="fc-list-event-title-link-location">${eventProps.subtitle}</div>`;
+          }
+
+          if (eventProps.teaser) {
+            buffer += `<div class="fc-list-event-title-link-teaser">${eventProps.teaser}</div>`;
           }
 
           if (eventProps.location) {
-            link.innerHTML = `<div class="fc-list-event-title-link-wrapper">
-<div class="fc-list-event-title-link-content">${link.innerHTML}</div>
+            buffer = `<div class="fc-list-event-title-link-wrapper">
+<div class="fc-list-event-title-link-content">${buffer}</div>
 <div class="fc-list-event-title-link-location">${eventProps.location}</div>
 </div>`;
           }
+
+          link.innerHTML = buffer;
         };
         break;
       case 'mini':

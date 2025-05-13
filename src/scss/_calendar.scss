@@ -170,6 +170,10 @@
     gap: 2em;
   }
 
+  .fc-list-event-title-link-location {
+    white-space: nowrap;
+  }
+
   a:not([href]) {
     color: inherit;
     text-decoration: inherit;

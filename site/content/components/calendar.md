@@ -67,7 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
         end: getDate(10),
         allDay: true,
         location: 'New York City',
-        subtitle: 'Great party at Times Square'
+        subtitle: 'Great party at Times Square',
+        teaser: '<p>At times, a square becomes the stage for a truly great gathering — vibrant, spontaneous, and full of shared energy. Whether it’s music, laughter, or simple conversation, these moments transform the space into something more than geometry: a celebration of community.</p>'
       },
       {
         title: 'Exact time event',
@@ -353,6 +354,7 @@ const events = [
     display: 'list-item', // available options: auto, block, list-item, background, inverse-background, none
     location: 'New York', // optional, visible only in list month view
     subtitle: 'Great party at Times Square', // optional, visible only in list month view
+    teaser: '<p>At times, a square becomes the stage for a truly great gathering — vibrant, spontaneous, and full of shared energy. Whether it’s music, laughter, or simple conversation, these moments transform the space into something more than geometry: a celebration of community.</p>', // optional, visible only in list month view
   },
   {
     title: 'Multiple days event',

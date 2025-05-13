@@ -269,7 +269,7 @@ class Calendar extends BaseComponent {
           let buffer = `<div class="fc-list-event-title-link-text">${link.textContent}</div>`;
 
           if (eventProps.subtitle) {
-            buffer += `<div class="fc-list-event-title-link-location">${eventProps.subtitle}</div>`;
+            buffer += `<div class="fc-list-event-title-link-subtitle">${eventProps.subtitle}</div>`;
           }
 
           if (eventProps.teaser) {

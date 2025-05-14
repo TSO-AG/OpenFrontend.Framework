@@ -1,16 +1,25 @@
 .min-vh-100-header {
   min-height: calc(100vh - var(--bs-header-height, 0px));
-  min-height: calc(100dvh - var(--bs-header-height, 0px));
+
+  @supports (height: 100dvh) {
+    min-height: calc(100dvh - var(--bs-header-height, 0px));
+  }
 }
 
 .vh-100-header {
   height: calc(100vh - var(--bs-header-height, 0px));
-  height: calc(100dvh - var(--bs-header-height, 0px));
+
+  @supports (height: 100dvh) {
+    height: calc(100dvh - var(--bs-header-height, 0px));
+  }
 }
 
 .max-vh-100-header {
   max-height: calc(100vh - var(--bs-header-height, 0px));
-  max-height: calc(100dvh - var(--bs-header-height, 0px));
+
+  @supports (height: 100dvh) {
+    max-height: calc(100dvh - var(--bs-header-height, 0px));
+  }
 }
 
 .min-h-100 {

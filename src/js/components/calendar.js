@@ -203,6 +203,7 @@ class Calendar extends BaseComponent {
       height: 'auto',
       plugins: [bootstrapThemePlugin],
       themeSystem: 'bootstrap',
+      stickyHeaderDates: false,
     }
 
     let currentLocale = document.documentElement.lang;

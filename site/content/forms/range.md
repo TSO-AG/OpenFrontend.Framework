@@ -44,6 +44,10 @@ By default, range inputs "snap" to integer values. To change this, you can speci
 
 ## CSS
 
+### Variables
+
+{{< scss-docs name="form-range-css-vars" file="src/scss/form/_form-range.scss" >}}
+
 ### Sass variables
 
 {{< scss-docs name="form-range-variables" file="node_modules/bootstrap/scss/_variables.scss" >}}

@@ -1,23 +1,52 @@
 .form-range {
-  --range-thumb-bg: #{$form-range-thumb-bg};
+  // scss-docs-start form-range-css-vars
+  --#{$prefix}form-range-track-bg: #{$form-range-track-bg};
+  --#{$prefix}form-range-thumb-bg: #{$form-range-thumb-bg};
+  --#{$prefix}form-range-thumb-focus-box-shadow: #{$form-range-thumb-focus-box-shadow};
+  --#{$prefix}form-range-thumb-active-bg: #{$form-range-thumb-active-bg};
+  --#{$prefix}form-range-thumb-disabled-bg: #{$form-range-thumb-disabled-bg};
+  // scss-docs-end form-range-css-vars
+
+  &:focus {
+    &::-webkit-slider-thumb { box-shadow: var(--#{$prefix}form-range-thumb-focus-box-shadow); }
+    &::-moz-range-thumb     { box-shadow: var(--#{$prefix}form-range-thumb-focus-box-shadow); }
+  }
 
   &::-webkit-slider-runnable-track {
-    @include gradient-x(var(--range-thumb-bg) var(--range-value), $form-range-track-bg var(--range-value))
+    @include gradient-x(var(--#{$prefix}form-range-thumb-bg) var(--range-value), var(--#{$prefix}form-range-track-bg) var(--range-value));
+    @include box-shadow(var(--#{$prefix}form-range-track-box-shadow));
   }
 
   &::-moz-range-track {
-    @include gradient-x(var(--range-thumb-bg) var(--range-value), $form-range-track-bg var(--range-value))
+    @include gradient-x(var(--#{$prefix}form-range-thumb-bg) var(--range-value), var(--#{$prefix}form-range-track-bg) var(--range-value));
+    @include box-shadow(var(--#{$prefix}form-range-track-box-shadow));
   }
 
   &:disabled {
-    --range-thumb-bg: #{$form-range-thumb-disabled-bg};
+    --#{$prefix}form-range-thumb-bg: var(--#{$prefix}form-range-thumb-disabled-bg);
+
+    &::-webkit-slider-thumb {
+      background-color: var(--#{$prefix}form-range-thumb-bg);
+    }
+
+    &::-moz-range-thumb {
+      background-color: var(--#{$prefix}form-range-thumb-bg);
+    }
   }
 
   &::-webkit-slider-thumb {
-    background-color: var(--range-thumb-bg);
+    background-color: var(--#{$prefix}form-range-thumb-bg);
+
+    &:active {
+      @include gradient-bg(var(--#{$prefix}form-range-thumb-active-bg));
+    }
   }
 
   &::-moz-range-thumb {
-    background-color: var(--range-thumb-bg);
+    background-color: var(--#{$prefix}form-range-thumb-bg);
+
+    &:active {
+      @include gradient-bg(var(--#{$prefix}form-range-thumb-active-bg));
+    }
   }
 }

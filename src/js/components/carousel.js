@@ -94,7 +94,7 @@ class Carousel extends BaseComponent {
   _initCarousel() {
     const options = {
       autoHeight: this._config.autoHeight,
-      loop: this._config.loop,
+      loop: this._getLoopSetting(),
       slidesPerView: this._config.slidesPerView,
       spaceBetween: this._config.spaceBetween,
       speed: this._config.speed,
@@ -150,6 +150,18 @@ class Carousel extends BaseComponent {
     if (this._config.futureSlidesVisible) {
       initSwiperVisibilityHandler(carousel, this._element);
     }
+  }
+
+  // Get the loop settings considering the number of slides (see https://github.com/nolimits4web/swiper/issues/6600)
+  _getLoopSetting() {
+    if (!this._config.loop) {
+      return false;
+    }
+
+    const slidesCount = this._element.querySelectorAll('.swiper-slide').length;
+    const slidesPerView = this._config.slidesPerView;
+
+    return slidesCount >= (slidesPerView * 2);
   }
 
   _prepareBreakpointConfiguration(inputBreakpoints) {

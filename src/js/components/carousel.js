@@ -94,7 +94,6 @@ class Carousel extends BaseComponent {
   _initCarousel() {
     const options = {
       autoHeight: this._config.autoHeight,
-      loop: this._getLoopSetting(),
       slidesPerView: this._config.slidesPerView,
       spaceBetween: this._config.spaceBetween,
       speed: this._config.speed,
@@ -145,6 +144,9 @@ class Carousel extends BaseComponent {
       }
     }
 
+    // Determine whether to enable loop or not after we have all the options
+    options.loop = this._getLoopSetting(options);
+
     const carousel = new Swiper(this._element, options);
 
     if (this._config.futureSlidesVisible) {
@@ -152,16 +154,35 @@ class Carousel extends BaseComponent {
     }
   }
 
-  // Get the loop settings considering the number of slides (see https://github.com/nolimits4web/swiper/issues/6600)
-  _getLoopSetting() {
+  // Get the loop setting considering the number of slides (see https://github.com/nolimits4web/swiper/issues/6600)
+  _getLoopSetting(options) {
     if (!this._config.loop) {
       return false;
     }
 
     const slidesCount = this._element.querySelectorAll('.swiper-slide').length;
-    const slidesPerView = this._config.slidesPerView;
+    let slidesPerView = options.slidesPerView;
 
-    return slidesCount >= (slidesPerView * 2);
+    // Check if there is a matching breakpoint that has this setting
+    if (options.breakpoints) {
+      const matchingBreakpoint = Object.entries(options.breakpoints)
+        .map(([value, settings]) => ({ value: parseInt(value, 10), settings }))
+        .filter(({ value, settings }) => settings.hasOwnProperty('slidesPerView') && window.matchMedia(`(min-width: ${value}px)`).matches)
+        .sort((a, b) => b.value - a.value)[0];
+
+      if (matchingBreakpoint) {
+        slidesPerView = matchingBreakpoint.settings.slidesPerView;
+      }
+    }
+
+    let loopedSlides = options.slidesPerGroup || 1;
+
+    if (options.loopAdditionalSlides) {
+      loopedSlides += options.loopAdditionalSlides + 1;
+    }
+
+    // See the calculation in swiper-core.mjs around line 1905
+    return slidesCount >= (slidesPerView + loopedSlides)
   }
 
   _prepareBreakpointConfiguration(inputBreakpoints) {

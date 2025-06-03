@@ -103,6 +103,10 @@ You can specify the number of slides to show in the viewport with the `slidesPer
 ### Loop & autoplay
 Autoplay starts automatically cycling through slides. Loop continues play after the last slide.
 
+{{< callout info >}}
+For loop to work, the number of slides must be greater or equal than `slidesPerView + 1`.
+{{< /callout >}}
+
 {{< example >}}
 <div class="heading-action">
     <h3>Example heading</h3>
@@ -395,6 +399,10 @@ You can configure different slide display settings based on different viewport w
 ### Future slides visible
 
 It is a carousel design where upcoming slides are partially visible, providing a glimpse of what's ahead and creating a continuous, engaging visual flow.
+
+{{< callout info >}}
+For loop to work, the number of slides must be greater or equal than `slidesPerView + 2`.
+{{< /callout >}}
 
 {{< example >}}
 

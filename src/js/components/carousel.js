@@ -94,8 +94,8 @@ class Carousel extends BaseComponent {
   _initCarousel() {
     const options = {
       autoHeight: this._config.autoHeight,
-      slidesPerView: this._config.slidesPerView,
-      spaceBetween: this._config.spaceBetween,
+      slidesPerView: parseInt(this._config.slidesPerView, 10),
+      spaceBetween: parseInt(this._config.spaceBetween, 10),
       speed: this._config.speed,
       on: {
         init: () => {
@@ -171,7 +171,7 @@ class Carousel extends BaseComponent {
         .sort((a, b) => b.value - a.value)[0];
 
       if (matchingBreakpoint) {
-        slidesPerView = matchingBreakpoint.settings.slidesPerView;
+        slidesPerView = parseInt(matchingBreakpoint.settings.slidesPerView, 10);
       }
     }
 

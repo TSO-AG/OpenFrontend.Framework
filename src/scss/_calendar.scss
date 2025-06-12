@@ -63,6 +63,10 @@
     }
   }
 
+  .fc .fc-scroller {
+    overflow-x: auto !important;
+  }
+
   .fc-list,
   .fc-scrollgrid,
   td,

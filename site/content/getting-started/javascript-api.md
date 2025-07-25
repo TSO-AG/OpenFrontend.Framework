@@ -14,33 +14,7 @@ All components are initialized automatically, but you can still initialize some 
 
 ### Automatic initialization
 
-When the `DOMContentLoaded` event is fired, OpenFrontend will look for all DOM elements containing component-specific selectors and initialize them immediately. This way, we ensure that we load and run the required JavaScript on the current page.
-
-For example, the [Ticker]({{< docsref "/components/ticker" >}}) component would be loaded and initialized only if an element with `data-of-ticker` attribute is present in the DOM:
-
-```html
-<div class="ticker" data-of-ticker></div>
-```
-
-However, the component elements may be added to the DOM after the `DOMContentLoaded` event is fired (e.g., via Ajax request). In that case, OpenFrontend will *not* initialize them automatically.
-
-There are two ways to tackle this problem: initialize components semi-automatically or manually.
-
-### Semi-automatic initialization
-
-You can call the global method `initOpenFrontend(element)`, which will traverse through all elements inside the container and initialize the components just like it would do on the `DOMContentLoaded` event.
-
-For example, if you would like to initialize components on a newly added HTML buffer:
-
-```js
-const container = document.getElementById('#ajax-container')
-
-// Add new elements to the DOM
-container.innerHTML = await fetch('endpoint/buffer').then(r => r.text())
-
-// Initialize OpenFrontend for newly added elements
-window.initOpenFrontend(container)
-```
+OpenFrontend operates fully automatically by default—no manual initialization is required. It leverages a `MutationObserver` under the hood to monitor both existing and dynamically added elements in the DOM.
 
 ### Manual initialization
 

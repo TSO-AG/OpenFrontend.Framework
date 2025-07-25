@@ -70,37 +70,60 @@ window.openFrontend = {
   },
 }
 
-window.initOpenFrontend = function (element) {
-  loadForElements(element.querySelectorAll('[data-bs-toggle="tab"]'), () => import(/* webpackChunkName: "of-tabs" */ './components/tabs'))
-  loadForElements(element.querySelectorAll('[data-bs-toggle="tooltip"]'), () => import(/* webpackChunkName: "of-tooltip" */ './components/tooltip'))
-  loadForElements(element.querySelectorAll('[data-bs-toggle="dropdown"]'), () => import(/* webpackChunkName: "of-dropdown" */ './components/dropdown'))
-  loadForElements(element.querySelectorAll('[data-bs-toggle="collapse"], [data-of-collapse-link]'), () => import(/* webpackChunkName: "of-collapse" */ './components/collapse'))
-  loadForElements(element.querySelectorAll('[data-bs-toggle="modal"]'), () => import(/* webpackChunkName: "of-modal" */ './components/modal'))
-  loadForElements(element.querySelectorAll('[data-bs-toggle="offcanvas"]'), () => import(/* webpackChunkName: "of-offcanvas" */ './components/offcanvas'))
-  loadForElements(element.querySelectorAll('[data-bs-toggle="popover"]'), () => import(/* webpackChunkName: "of-popover" */ './components/popover'))
-  loadForElements(element.querySelectorAll('[data-of-anchor-navigation]'), () => import(/* webpackChunkName: "of-anchor-navigation" */ './components/anchor-navigation'))
-  loadForElements(element.querySelectorAll('[data-of-calendar]'), () => import(/* webpackChunkName: "of-calendar" */ './components/calendar'))
-  loadForElements(element.querySelectorAll('[data-of-combo-box]'), () => import(/* webpackChunkName: "of-combo-box" */ './components/combo-box'))
-  loadForElements(element.querySelectorAll('[data-of-highlight]'), () => import(/* webpackChunkName: "of-highlight" */ './components/highlight'))
-  loadForElements(element.querySelectorAll('[data-of-carousel]'), () => import(/* webpackChunkName: "of-carousel" */ './components/carousel'))
-  loadForElements(element.querySelectorAll('[data-of-slider]'), () => import(/* webpackChunkName: "of-slider" */ './components/slider'))
-  loadForElements(element.querySelectorAll('[data-of-elements-filter]'), () => import(/* webpackChunkName: "of-datepicker" */ './components/elements-filter'))
-  loadForElements(element.querySelectorAll('[data-of-datepicker]'), () => import(/* webpackChunkName: "of-datepicker" */ './components/datepicker'))
-  loadForElements(element.querySelectorAll('[data-of-lightbox],[data-of-lightbox-config],[data-of-lightbox-open]'), () => import(/* webpackChunkName: "of-lightbox" */ './components/lightbox'))
-  loadForElements(element.querySelectorAll('[data-of-table-sort]'), () => import(/* webpackChunkName: "of-tablesort" */ './components/tablesort'))
-  loadForElements(element.querySelectorAll('[data-of-quantity-picker]'), () => import(/* webpackChunkName: "of-quantity-picker" */ './components/quantity-picker'))
-  loadForElements(element.querySelectorAll('[data-of-rating]'), () => import(/* webpackChunkName: "of-rating" */ './components/rating'))
-  loadForElements(element.querySelectorAll('[data-of-video-play]'), () => import(/* webpackChunkName: "of-video-play" */ './components/video-play'))
-  loadForElements(element.querySelectorAll('[data-of-ticker]'), () => import(/* webpackChunkName: "of-ticker" */ './components/ticker'))
-  loadForElements(element.querySelectorAll('[data-of-page-navigation]'), () => import(/* webpackChunkName: "of-page-navigation" */ './components/page-navigation'))
-  loadForElements(element.querySelectorAll('[data-of-header]'), () => import(/* webpackChunkName: "of-page-header" */ './components/header'))
-  loadForElements(element.querySelectorAll('[data-of-animation]'), () => import(/* webpackChunkName: "of-animation" */ './components/animation'))
-  loadForElements(element.querySelectorAll('[data-of-field-range]'), () => import(/* webpackChunkName: "of-field-range" */ './components/field-range'))
-  loadForElements(element.querySelectorAll('[data-of-field-sync]'), () => import(/* webpackChunkName: "of-field-sync" */ './components/field-sync'))
-  loadForElements(element.querySelectorAll('[data-of-scroll-shadow]'), () => import(/* webpackChunkName: "of-scroll-shadow" */ './components/scroll-shadow'))
-}
+const components = [
+  { selector: '[data-bs-toggle="tab"]', callback: () => import(/* webpackChunkName: "of-tabs" */ './components/tabs') },
+  { selector: '[data-bs-toggle="tooltip"]', callback: () => import(/* webpackChunkName: "of-tooltip" */ './components/tooltip') },
+  { selector: '[data-bs-toggle="dropdown"]', callback: () => import(/* webpackChunkName: "of-dropdown" */ './components/dropdown') },
+  { selector: '[data-bs-toggle="collapse"], [data-of-collapse-link]', callback: () => import(/* webpackChunkName: "of-collapse" */ './components/collapse') },
+  { selector: '[data-bs-toggle="modal"]', callback: () => import(/* webpackChunkName: "of-modal" */ './components/modal') },
+  { selector: '[data-bs-toggle="offcanvas"]', callback: () => import(/* webpackChunkName: "of-offcanvas" */ './components/offcanvas') },
+  { selector: '[data-bs-toggle="popover"]', callback: () => import(/* webpackChunkName: "of-popover" */ './components/popover') },
+  { selector: '[data-of-anchor-navigation]', callback: () => import(/* webpackChunkName: "of-anchor-navigation" */ './components/anchor-navigation') },
+  { selector: '[data-of-calendar]', callback: () => import(/* webpackChunkName: "of-calendar" */ './components/calendar') },
+  { selector: '[data-of-combo-box]', callback: () => import(/* webpackChunkName: "of-combo-box" */ './components/combo-box') },
+  { selector: '[data-of-highlight]', callback: () => import(/* webpackChunkName: "of-highlight" */ './components/highlight') },
+  { selector: '[data-of-carousel]', callback: () => import(/* webpackChunkName: "of-carousel" */ './components/carousel') },
+  { selector: '[data-of-slider]', callback: () => import(/* webpackChunkName: "of-slider" */ './components/slider') },
+  { selector: '[data-of-elements-filter]', callback: () => import(/* webpackChunkName: "of-datepicker" */ './components/elements-filter') },
+  { selector: '[data-of-datepicker]', callback: () => import(/* webpackChunkName: "of-datepicker" */ './components/datepicker') },
+  { selector: '[data-of-lightbox],[data-of-lightbox-config],[data-of-lightbox-open]', callback: () => import(/* webpackChunkName: "of-lightbox" */ './components/lightbox') },
+  { selector: '[data-of-table-sort]', callback: () => import(/* webpackChunkName: "of-tablesort" */ './components/tablesort') },
+  { selector: '[data-of-quantity-picker]', callback: () => import(/* webpackChunkName: "of-quantity-picker" */ './components/quantity-picker') },
+  { selector: '[data-of-rating]', callback: () => import(/* webpackChunkName: "of-rating" */ './components/rating') },
+  { selector: '[data-of-video-play]', callback: () => import(/* webpackChunkName: "of-video-play" */ './components/video-play') },
+  { selector: '[data-of-ticker]', callback: () => import(/* webpackChunkName: "of-ticker" */ './components/ticker') },
+  { selector: '[data-of-page-navigation]', callback: () => import(/* webpackChunkName: "of-page-navigation" */ './components/page-navigation') },
+  { selector: '[data-of-header]', callback: () => import(/* webpackChunkName: "of-page-header" */ './components/header') },
+  { selector: '[data-of-animation]', callback: () => import(/* webpackChunkName: "of-animation" */ './components/animation') },
+  { selector: '[data-of-field-range]', callback: () => import(/* webpackChunkName: "of-field-range" */ './components/field-range') },
+  { selector: '[data-of-field-sync]', callback: () => import(/* webpackChunkName: "of-field-sync" */ './components/field-sync') },
+  { selector: '[data-of-scroll-shadow]', callback: () => import(/* webpackChunkName: "of-scroll-shadow" */ './components/scroll-shadow') },
+]
 
 document.addEventListener('DOMContentLoaded', () => {
-  detectUserAgent(document.body)
-  window.initOpenFrontend(document)
-})
+  // Detect the user agent in the first place
+  detectUserAgent(document.body);
+
+  // Initial setup for the existing elements
+  components.forEach(component => loadForElements(document.querySelectorAll(component.selector), () => component.callback()));
+
+  // Set up a MutationObserver to detect when new elements are added
+  new MutationObserver(mutationsList => mutationsList.forEach(mutation => {
+    if (mutation.type === 'childList') {
+      mutation.addedNodes.forEach(node => {
+        if (node.nodeType === Node.ELEMENT_NODE) {
+          components.forEach(component => {
+            const elements = [...node.querySelectorAll(component.selector)];
+
+            // Push the node itself, if it matches the criteria
+            if (node.matches(component.selector)) {
+              elements.push(node)
+            }
+
+            loadForElements(elements, () => component.callback())
+          })
+        }
+      });
+    }
+  })).observe(document.body, { childList: true, subtree: true });
+});

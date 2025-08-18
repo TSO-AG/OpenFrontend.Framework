@@ -34,11 +34,8 @@ class PageNavigation extends BaseComponent {
     this._initTriggers()
     this._initHTMLPanels()
 
-    // Display active level after navigation initialization only on desktop
-    const breakpointMenu = getComputedStyle(element).getPropertyValue(CSS_MENU_BREAKPOINT_PROPERTY_NAME).trim()
-    if (window.matchMedia(`(min-width: ${breakpointMenu})`).matches) {
-      this._openActivePagePanels()
-    }
+    // Display active level after navigation initialization
+    this._openActivePagePanels()
 
     // Set the panel-height property when the navigation size changes due to resolution change or collapse component action
     new ResizeObserver(() => {

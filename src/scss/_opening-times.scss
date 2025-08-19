@@ -35,9 +35,4 @@
     padding: var(--#{$prefix}opening-times-padding-y-body) var(--#{$prefix}opening-times-padding-x);
     vertical-align: var(--#{$prefix}opening-times-align);
   }
-
-  tbody td > * {
-    display: block;
-    white-space: nowrap;
-  }
 }

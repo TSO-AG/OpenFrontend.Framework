@@ -12,7 +12,7 @@ const CLASS_NAME_PANEL_PARENT = 'active-panel-parent'
 const PANEL_HEIGHT_PROPERTY_NAME = '--page-nav-panel-height'
 const PANEL_LAST_HEIGHT_PROPERTY_NAME = '--page-nav-panel-last-height'
 const ACTIVE_ITEM_SELECTOR = 'span.active'
-const CSS_MENU_BREAKPOINT_PROPERTY_NAME = '--page-menu-breakpoint'
+const CSS_MENU_COLUMN_PROPERTY_NAME = '--columns'
 const HTML_CONTENT_TRIGGER_ATTRIBUTE = 'data-html-content-trigger'
 const HTML_CONTENT_TRIGGER_SELECTOR = `[${HTML_CONTENT_TRIGGER_ATTRIBUTE}]`
 
@@ -35,7 +35,7 @@ class PageNavigation extends BaseComponent {
     this._initHTMLPanels()
 
     // Display active level after navigation initialization
-    this._openActivePagePanels()
+    this._openActivePanelsOnVisible()
 
     // Set the panel-height property when the navigation size changes due to resolution change or collapse component action
     new ResizeObserver(() => {
@@ -105,12 +105,32 @@ class PageNavigation extends BaseComponent {
     }
   }
 
+  _openActivePanelsOnVisible() {
+    // Wait for element to be visible before reading CSS column properties in _openActivePagePanels
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        this._openActivePagePanels()
+        this._setHighestPanelHeight()
+        observer.disconnect()
+      }
+    })
+
+    observer.observe(this._element)
+  }
+
   _openActivePagePanels() {
     // Find first active item
     const activeItem = this._element.querySelector(ACTIVE_ITEM_SELECTOR)
 
     if (activeItem) {
-      let currentElement = activeItem
+      let currentElement
+
+      // In single-column layout: make the entire column (ul) visible to show the active page
+      // In multi-column layout: start from the active item to show both parent and children columns
+      const cssColumnsValue = getComputedStyle(activeItem).getPropertyValue(CSS_MENU_COLUMN_PROPERTY_NAME).trim()
+      const cssColumns = Math.min(...(cssColumnsValue.match(/\d+/g) || ['1']).map(Number))
+
+      currentElement = cssColumns === 1 ? activeItem.closest('ul') : activeItem
 
       // Open all panels that are parents of activeItem
       while (currentElement && currentElement !== this._element) {
@@ -167,7 +187,7 @@ class PageNavigation extends BaseComponent {
 
     this._hideAllHtmlPanels()
 
-    let lastActivePanel = this._element.querySelectorAll(`.${CLASS_NAME_SUBMENU_ACTIVE}`).item(this._element.querySelectorAll(`.${CLASS_NAME_SUBMENU_ACTIVE}`).length - 1);
+    let lastActivePanel = this._element.querySelectorAll(`.${CLASS_NAME_SUBMENU_ACTIVE}`).item(this._element.querySelectorAll(`.${CLASS_NAME_SUBMENU_ACTIVE}`).length - 1)
 
     if (lastActivePanel && !lastActivePanel.matches(HTML_CONTENT_TRIGGER_SELECTOR)) {
       lastActivePanel = lastActivePanel.closest(HTML_CONTENT_TRIGGER_SELECTOR)

@@ -100,10 +100,8 @@ const components = [
   { selector: '[data-of-scroll-shadow]', callback: () => import(/* webpackChunkName: "of-scroll-shadow" */ './components/scroll-shadow') },
 ]
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Detect the user agent in the first place
-  detectUserAgent(document.body);
+// Detect the user agent in the first place
+detectUserAgent(document.body);
 
-  // Then initialize the components
-  initComponents(components);
-});
+// Then initialize the components
+initComponents(components);

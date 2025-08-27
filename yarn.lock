@@ -4813,9 +4813,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flatpickr@patch:flatpickr@npm%3A4.6.13#~/.yarn/patches/flatpickr-npm-4.6.13-06399933fc.patch":
+"flatpickr@patch:flatpickr@npm%3A4.6.13#./.yarn/patches/flatpickr-npm-4.6.13-06399933fc.patch::locator=openfrontend-framework%40workspace%3A.":
   version: 4.6.13
-  resolution: "flatpickr@patch:flatpickr@npm%3A4.6.13#~/.yarn/patches/flatpickr-npm-4.6.13-06399933fc.patch::version=4.6.13&hash=3c1efe"
+  resolution: "flatpickr@patch:flatpickr@npm%3A4.6.13#./.yarn/patches/flatpickr-npm-4.6.13-06399933fc.patch::version=4.6.13&hash=3c1efe&locator=openfrontend-framework%40workspace%3A."
   checksum: 10c0/334469f501d9ac3f2f6aa9beefe2268bd8adec311b7ac21fc9b364571e15869551330efd78db2bc99a78d2b7e9559349a8b86fbcf65a204f0c941b2bc4d5b0fd
   languageName: node
   linkType: hard
@@ -7125,7 +7125,7 @@ __metadata:
     eslint-plugin-markdown: "npm:^3.0.0"
     eslint-plugin-unicorn: "npm:^48.0.0"
     file-loader: "npm:^6.2.0"
-    flatpickr: "patch:flatpickr@npm%3A4.6.13#~/.yarn/patches/flatpickr-npm-4.6.13-06399933fc.patch"
+    flatpickr: "patch:flatpickr@npm%3A4.6.13#./.yarn/patches/flatpickr-npm-4.6.13-06399933fc.patch"
     glightbox: "https://github.com/qzminski/glightbox#bugfix/csp"
     highlight.js: "npm:^11.7.0"
     hugo-bin: "npm:^0.119.0"

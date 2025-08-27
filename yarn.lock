@@ -3481,9 +3481,9 @@ __metadata:
   linkType: hard
 
 "core-js@npm:^3.26.1":
-  version: 3.36.1
-  resolution: "core-js@npm:3.36.1"
-  checksum: 10c0/4f0ad2464535d809ba659226feca15bff14b9b5452518bddff8d81b9c94b0227b3027d9838f22f1dce664958acb4107b935cc0037695ae545edc2a303bca98bf
+  version: 3.45.1
+  resolution: "core-js@npm:3.45.1"
+  checksum: 10c0/c38e5fae5a05ee3a129c45e10056aafe61dbb15fd35d27e0c289f5490387541c89741185e0aeb61acb558559c6697e016c245cca738fa169a73f2b06cd30e6b6
   languageName: node
   linkType: hard
 
@@ -6318,9 +6318,9 @@ __metadata:
   linkType: hard
 
 "loadjs@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "loadjs@npm:4.2.0"
-  checksum: 10c0/da0dff873148ca0507e84fd5b975f95a015f1cc30552df1958b6f47c9c0e134f29df5cc88db3fed72faade725ce3954378365bd0df2092117e432df430fa4c97
+  version: 4.3.0
+  resolution: "loadjs@npm:4.3.0"
+  checksum: 10c0/8884520a7c5f3b0f6e4d3bc01d200c73b9c468986bea26acb54939d4a3f5da08f40f712812fadc1ff6030fca936e8c9eeb842aaafd287e32ca0ce6ae9f10e759
   languageName: node
   linkType: hard
 
@@ -7129,7 +7129,7 @@ __metadata:
     glightbox: "https://github.com/qzminski/glightbox#bugfix/csp"
     highlight.js: "npm:^11.7.0"
     hugo-bin: "npm:^0.119.0"
-    plyr: "npm:^3.7.8"
+    plyr: "npm:3.7.8"
     postcss-cli: "npm:^10.1.0"
     postcss-loader: "npm:^7.3.3"
     raty-js: "npm:^4.2.0"
@@ -7478,7 +7478,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plyr@npm:^3.7.8":
+"plyr@npm:3.7.8":
   version: 3.7.8
   resolution: "plyr@npm:3.7.8"
   dependencies:
@@ -10015,9 +10015,9 @@ __metadata:
   linkType: hard
 
 "url-polyfill@npm:^1.1.12":
-  version: 1.1.12
-  resolution: "url-polyfill@npm:1.1.12"
-  checksum: 10c0/69633c42e3182271d01d2f2f4acd889a9f54b88fd7b2f45fd84fed19eca7cfa98fb6bfbd43d9cd9fad222a11a2dffb562b8435cdaa67fca5e25e3da638741679
+  version: 1.1.13
+  resolution: "url-polyfill@npm:1.1.13"
+  checksum: 10c0/c44dcbf9c910ef554b839b65a0abfc76f7de5e91bf13f3e08014014602a2c3f5bb4247be7c2f31b98a404cbbecbec5c040b92e13b288475d2eb0fde57163e33b
   languageName: node
   linkType: hard
 

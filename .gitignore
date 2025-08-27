@@ -26,3 +26,8 @@ Thumbs.db
 
 # Folders to ignore
 /node_modules
+
+# Do not ignore .yarn patches
+!.yarn
+.yarn/*
+!.yarn/patches

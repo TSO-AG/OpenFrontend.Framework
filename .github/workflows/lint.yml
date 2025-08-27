@@ -18,6 +18,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Enable Corepack
+        run: Corepack enable
+
       - name: Install JS dependencies
         run: yarn install
 
@@ -35,6 +38,9 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Enable Corepack
+        run: Corepack enable
 
       - name: Install JS dependencies
         run: yarn install

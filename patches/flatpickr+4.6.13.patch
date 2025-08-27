@@ -1,0 +1,96 @@
+diff --git a/node_modules/flatpickr/dist/esm/index.js b/node_modules/flatpickr/dist/esm/index.js
+index 6e4d05f..ad0386a 100644
+--- a/node_modules/flatpickr/dist/esm/index.js
++++ b/node_modules/flatpickr/dist/esm/index.js
+@@ -1,32 +1,13 @@
+-var __assign = (this && this.__assign) || function () {
+-    __assign = Object.assign || function(t) {
+-        for (var s, i = 1, n = arguments.length; i < n; i++) {
+-            s = arguments[i];
+-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+-                t[p] = s[p];
+-        }
+-        return t;
+-    };
+-    return __assign.apply(this, arguments);
+-};
+-var __spreadArrays = (this && this.__spreadArrays) || function () {
+-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+-            r[k] = a[j];
+-    return r;
+-};
+ import { defaults as defaultOptions, HOOKS, } from "./types/options";
+ import English from "./l10n/default";
+ import { arrayify, debounce, int, pad } from "./utils";
+ import { clearNode, createElement, createNumberInput, findParent, toggleClass, getEventTarget, } from "./utils/dom";
+ import { compareDates, createDateParser, createDateFormatter, duration, isBetween, getDefaultHours, calculateSecondsSinceMidnight, parseSeconds, } from "./utils/dates";
+ import { tokenRegex, monthToStr } from "./utils/formatting";
+-import "./utils/polyfills";
+ var DEBOUNCED_CHANGE_MS = 300;
+ function FlatpickrInstance(element, instanceConfig) {
+     var self = {
+-        config: __assign(__assign({}, defaultOptions), flatpickr.defaultConfig),
++        config: Object.assign(Object.assign({}, defaultOptions), flatpickr.defaultConfig),
+         l10n: English,
+     };
+     self.parseDate = createDateParser({ config: self.config, l10n: self.l10n });
+@@ -760,9 +741,9 @@ function FlatpickrInstance(element, instanceConfig) {
+             return;
+         }
+         var firstDayOfWeek = self.l10n.firstDayOfWeek;
+-        var weekdays = __spreadArrays(self.l10n.weekdays.shorthand);
++        var weekdays = [...self.l10n.weekdays.shorthand];
+         if (firstDayOfWeek > 0 && firstDayOfWeek < weekdays.length) {
+-            weekdays = __spreadArrays(weekdays.splice(firstDayOfWeek, weekdays.length), weekdays.splice(0, firstDayOfWeek));
++            weekdays = [...weekdays.slice(firstDayOfWeek), ...weekdays.slice(0, firstDayOfWeek)];
+         }
+         for (var i = self.config.showMonths; i--;) {
+             self.weekdayContainer.children[i].innerHTML = "\n      <span class='flatpickr-weekday'>\n        " + weekdays.join("</span><span class='flatpickr-weekday'>") + "\n      </span>\n      ";
+@@ -1307,7 +1288,7 @@ function FlatpickrInstance(element, instanceConfig) {
+             "enableSeconds",
+             "disableMobile",
+         ];
+-        var userConfig = __assign(__assign({}, JSON.parse(JSON.stringify(element.dataset || {}))), instanceConfig);
++        var userConfig = Object.assign(Object.assign({}, JSON.parse(JSON.stringify(element.dataset || {}))), instanceConfig);
+         var formats = {};
+         self.config.parseDate = userConfig.parseDate;
+         self.config.formatDate = userConfig.formatDate;
+@@ -1406,7 +1387,7 @@ function FlatpickrInstance(element, instanceConfig) {
+         if (typeof self.config.locale !== "object" &&
+             typeof flatpickr.l10ns[self.config.locale] === "undefined")
+             self.config.errorHandler(new Error("flatpickr: invalid locale " + self.config.locale));
+-        self.l10n = __assign(__assign({}, flatpickr.l10ns.default), (typeof self.config.locale === "object"
++        self.l10n = Object.assign(Object.assign({}, flatpickr.l10ns.default), (typeof self.config.locale === "object"
+             ? self.config.locale
+             : self.config.locale !== "default"
+                 ? flatpickr.l10ns[self.config.locale]
+@@ -1416,7 +1397,7 @@ function FlatpickrInstance(element, instanceConfig) {
+         tokenRegex.M = "(" + self.l10n.months.shorthand.join("|") + ")";
+         tokenRegex.F = "(" + self.l10n.months.longhand.join("|") + ")";
+         tokenRegex.K = "(" + self.l10n.amPM[0] + "|" + self.l10n.amPM[1] + "|" + self.l10n.amPM[0].toLowerCase() + "|" + self.l10n.amPM[1].toLowerCase() + ")";
+-        var userConfig = __assign(__assign({}, instanceConfig), JSON.parse(JSON.stringify(element.dataset || {})));
++        var userConfig = Object.assign(Object.assign({}, instanceConfig), JSON.parse(JSON.stringify(element.dataset || {})));
+         if (userConfig.time_24hr === undefined &&
+             flatpickr.defaultConfig.time_24hr === undefined) {
+             self.config.time_24hr = self.l10n.time_24hr;
+@@ -2020,14 +2001,14 @@ var flatpickr = function (selector, config) {
+ };
+ flatpickr.defaultConfig = {};
+ flatpickr.l10ns = {
+-    en: __assign({}, English),
+-    default: __assign({}, English),
++    en: Object.assign({}, English),
++    default: Object.assign({}, English),
+ };
+ flatpickr.localize = function (l10n) {
+-    flatpickr.l10ns.default = __assign(__assign({}, flatpickr.l10ns.default), l10n);
++    flatpickr.l10ns.default = Object.assign(Object.assign({}, flatpickr.l10ns.default), l10n);
+ };
+ flatpickr.setDefaults = function (config) {
+-    flatpickr.defaultConfig = __assign(__assign({}, flatpickr.defaultConfig), config);
++    flatpickr.defaultConfig = Object.assign(Object.assign({}, flatpickr.defaultConfig), config);
+ };
+ flatpickr.parseDate = createDateParser({});
+ flatpickr.formatDate = createDateFormatter({});

@@ -1,6 +1,5 @@
 const fs = require('node:fs')
 const path = require('node:path')
-const md5Dir = require('md5-dir')
 const Encore = require('@symfony/webpack-encore')
 
 class CreateHtaccessPlugin {

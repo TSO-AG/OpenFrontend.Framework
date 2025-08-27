@@ -9,7 +9,8 @@
     "docs-build": "if [ -z ${BASE_URL+x} ]; then echo \"$BASE_URL is not defined\"; else encore production --progress --config-name docs-dist --env=BASE_URL=$BASE_URL && encore production --progress --config-name docs-src --env=BASE_URL=$BASE_URL && hugo --cleanDestinationDir --printUnusedTemplates --baseURL $BASE_URL; fi",
     "docs-serve": "encore dev --config-name docs-dist && encore dev --config-name docs-src && concurrently 'encore dev --watch --config-name docs-dist' 'hugo server --port 9001 --disableFastRender --printUnusedTemplates'",
     "css-lint": "stylelint \"**/*.{css,scss}\"",
-    "js-lint": "eslint --report-unused-disable-directives --ext .html,.js,.md ."
+    "js-lint": "eslint --report-unused-disable-directives --ext .html,.js,.md .",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@fullcalendar/core": "^6.1.9",
@@ -41,9 +42,10 @@
     "eslint-plugin-unicorn": "^48.0.0",
     "file-loader": "^6.2.0",
     "hugo-bin": "^0.119.0",
-    "md5-dir": "^0.3.0",
+    "patch-package": "^8.0.0",
     "postcss-cli": "^10.1.0",
     "postcss-loader": "^7.3.3",
+    "postinstall-postinstall": "^2.1.0",
     "sass": "^1.57.1",
     "sass-loader": "^13.0.0",
     "stylelint": "^15.10.2",
@@ -54,5 +56,5 @@
   "hugo-bin": {
     "buildTags": "extended"
   },
-  "packageManager": "yarn@1.22.22+sha256.c17d3797fb9a9115bf375e31bfd30058cac6bc9c3b8807a3d8cb2094794b51ca"
+  "packageManager": "yarn@4.9.4"
 }

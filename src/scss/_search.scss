@@ -87,7 +87,7 @@
     font-size: var(--#{$prefix}search-result-url-font-size);
   }
 
-  a {
+  &-link {
     @extend .stretched-link;
     text-decoration: none;
   }

@@ -59,7 +59,7 @@ The markup below shows how you can display the search result on your page:
   </figure>
 
   <div class="search-result-content">
-    <h4><a href="#">Mea culpa</a></h4>
+    <h4><a href="#" class="search-result-link">Mea culpa</a></h4>
     <p>Incididunt id commodo laboris. Laborum <mark>culpa</mark> anim excepteur duis tempor exercitation consectetur deserunt aliqua duis nostrud <mark>culpa</mark>. Mollit id ut id sunt magna amet.</p>
     <p class="search-result-url">https://example.tld/lorem/mea-culpa.html</p>
   </div>

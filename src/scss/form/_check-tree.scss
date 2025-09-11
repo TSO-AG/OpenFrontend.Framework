@@ -1,0 +1,26 @@
+.form-check-tree {
+  @include list-unstyled();
+
+  li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    > ul {
+      width: 100%;
+    }
+
+    &:not([aria-expanded="true"]) > ul {
+      display: none;
+    }
+  }
+
+  button[aria-expanded="false"] .form-check-tree-icon-collapse {
+    display: none;
+  }
+
+  button[aria-expanded="true"] .form-check-tree-icon-expand {
+    display: none;
+  }
+}

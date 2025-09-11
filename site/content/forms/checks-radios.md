@@ -70,6 +70,99 @@ Add the `disabled` attribute and the associated `<label>`s are automatically sty
 </div>
 {{< /example >}}
 
+### Tree
+
+{{< example >}}
+<ul role="tree" class="form-check-tree" data-of-check-tree>
+  <li role="treeitem" aria-expanded="false">
+    <button class="btn btn-icon btn-sm" type="button" aria-expanded="false" aria-controls="check-tree-sub-1">
+      <span class="form-check-tree-icon-expand">{{< icon name="chevron-right" >}}</span>
+      <span class="form-check-tree-icon-collapse">{{< icon name="chevron-down" >}}</span>
+    </button>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="check-tree-1">
+      <label class="form-check-label" for="check-tree-1">Item 1</label>
+    </div>
+
+    <ul id="check-tree-sub-1" role="group">
+      <li role="treeitem">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="check-tree-1-1">
+          <label class="form-check-label" for="check-tree-1-1">Item 1.1</label>
+        </div>
+      </li>
+      <li role="treeitem">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="check-tree-1-2">
+          <label class="form-check-label" for="check-tree-1-2">Item 1.2</label>
+        </div>
+      </li>
+    </ul>
+  </li>
+
+  <li role="treeitem" aria-expanded="false">
+    <button class="btn btn-icon btn-sm" type="button" aria-expanded="false" aria-controls="check-tree-sub-2">
+      <span class="form-check-tree-icon-expand">{{< icon name="chevron-right" >}}</span>
+      <span class="form-check-tree-icon-collapse">{{< icon name="chevron-down" >}}</span>
+    </button>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="check-tree-2">
+      <label class="form-check-label" for="check-tree-2">Item 2</label>
+    </div>
+
+    <ul id="check-tree-sub-2" role="group">
+      <li role="treeitem">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="check-tree-2-1">
+          <label class="form-check-label" for="check-tree-2-1">Item 2.1</label>
+        </div>
+      </li>
+      <li role="treeitem">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="check-tree-2-2">
+          <label class="form-check-label" for="check-tree-2-2">Item 2.2</label>
+        </div>
+      </li>
+      <li role="treeitem" aria-expanded="false">
+        <button class="btn btn-icon btn-sm" type="button" aria-expanded="false" aria-controls="check-tree-sub-2-3">
+          <span class="form-check-tree-icon-expand">{{< icon name="chevron-right" >}}</span>
+          <span class="form-check-tree-icon-collapse">{{< icon name="chevron-down" >}}</span>
+        </button>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="check-tree-2-3">
+          <label class="form-check-label" for="check-tree-2-3">Item 2.3</label>
+        </div>
+
+        <ul id="check-tree-sub-2-3" role="group">
+          <li role="treeitem">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="check-tree-2-3-1">
+              <label class="form-check-label" for="check-tree-2-3-1">Item 2.3.1</label>
+            </div>
+          </li>
+          <li role="treeitem">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="check-tree-2-3-2">
+              <label class="form-check-label" for="check-tree-2-3-2">Item 2.3.2</label>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="check-tree-3">
+      <label class="form-check-label" for="check-tree-3">Item 3</label>
+    </div>
+  </li>
+</ul>
+{{< /example >}}
+
 ## Radios
 
 {{< example >}}

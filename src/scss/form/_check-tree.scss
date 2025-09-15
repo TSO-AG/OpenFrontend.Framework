@@ -1,14 +1,51 @@
 .form-check-tree {
+  // scss-docs-start form-check-tree-css-vars
+  --#{$prefix}form-check-tree-gap-x: #{$form-check-tree-gap-x};
+  --#{$prefix}form-check-tree-gap-y: #{$form-check-tree-gap-y};
+  --#{$prefix}form-check-tree-button-icon-width: #{$form-check-tree-button-icon-width};
+  --#{$prefix}form-check-tree-button-icon-height: #{$form-check-tree-button-icon-height};
+  --#{$prefix}form-check-tree-button-icon-font-size: #{$form-check-tree-button-icon-font-size};
+  --#{$prefix}form-check-tree-check-padding-start: #{$form-check-tree-check-padding-start};
+  --#{$prefix}form-check-child-padding-start: calc(var(--#{$prefix}form-check-tree-button-icon-width) + var(--#{$prefix}form-check-tree-gap-x) + var(--#{$prefix}form-check-tree-check-padding-start));
+  // scss-docs-end form-check-tree-css-vars
+  display: grid;
+  row-gap: var(--#{$prefix}form-check-tree-gap-y);
   @include list-unstyled();
 
+  .btn-icon {
+    --bs-btn-padding-y: 0;
+    --bs-btn-padding-x: 0;
+    --bs-btn-font-size: var(--#{$prefix}form-check-tree-button-icon-font-size);
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: var(--#{$prefix}form-check-tree-button-icon-width);
+    height: var(--#{$prefix}form-check-tree-button-icon-height);
+    line-height: 1;
+  }
+
+  .form-check {
+    margin-bottom: 0;
+  }
+
+  ul {
+    @include list-unstyled();
+    display: grid;
+    row-gap: var(--#{$prefix}form-check-tree-gap-y);
+    padding-left: var(--#{$prefix}form-check-child-padding-start);
+  }
+
   li {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--#{$prefix}form-check-tree-gap-y) var(--#{$prefix}form-check-tree-gap-x);
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+
+    &:has(> .form-check:first-child) {
+      grid-template-columns: 1fr auto;
+    }
 
     > ul {
-      width: 100%;
+      grid-column: 1 / -1;
     }
 
     &:not([aria-expanded="true"]) > ul {

@@ -95,6 +95,7 @@ This component is commonly used for multi-level selection scenarios such as perm
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="check-tree-1-1">
           <label class="form-check-label" for="check-tree-1-1">Item 1</label>
+          <span class="badge bg-secondary">53</span>
         </div>
 
         <ul id="check-tree-1-sub-1" role="group">
@@ -102,12 +103,14 @@ This component is commonly used for multi-level selection scenarios such as perm
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="check-tree-1-1-1">
               <label class="form-check-label" for="check-tree-1-1-1">Item 1.1</label>
+              <span class="badge bg-secondary">20</span>
             </div>
           </li>
           <li role="treeitem">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="check-tree-1-1-2">
               <label class="form-check-label" for="check-tree-1-1-2">Item 1.2</label>
+              <span class="badge bg-secondary">33</span>
             </div>
           </li>
         </ul>
@@ -122,6 +125,7 @@ This component is commonly used for multi-level selection scenarios such as perm
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="check-tree-1-2">
           <label class="form-check-label" for="check-tree-1-2">Item 2</label>
+          <span class="badge bg-secondary">18</span>
         </div>
 
         <ul id="check-tree-1-sub-2" role="group">
@@ -129,12 +133,14 @@ This component is commonly used for multi-level selection scenarios such as perm
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="check-tree-1-2-1">
               <label class="form-check-label" for="check-tree-1-2-1">Item 2.1</label>
+              <span class="badge bg-secondary">2</span>
             </div>
           </li>
           <li role="treeitem">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="check-tree-1-2-2">
               <label class="form-check-label" for="check-tree-1-2-2">Item 2.2</label>
+              <span class="badge bg-secondary">7</span>
             </div>
           </li>
           <li role="treeitem" aria-expanded="false">
@@ -146,6 +152,7 @@ This component is commonly used for multi-level selection scenarios such as perm
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="check-tree-1-2-3">
               <label class="form-check-label" for="check-tree-1-2-3">Item 2.3</label>
+              <span class="badge bg-secondary">9</span>
             </div>
 
             <ul id="check-tree-1-sub-2-3" role="group">
@@ -153,12 +160,14 @@ This component is commonly used for multi-level selection scenarios such as perm
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="check-tree-1-2-3-1">
                   <label class="form-check-label" for="check-tree-1-2-3-1">Item 2.3.1</label>
+                  <span class="badge bg-secondary">2</span>
                 </div>
               </li>
               <li role="treeitem">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="check-tree-1-2-3-2">
                   <label class="form-check-label" for="check-tree-1-2-3-2">Item 2.3.2</label>
+                  <span class="badge bg-secondary">7</span>
                 </div>
               </li>
             </ul>
@@ -170,6 +179,7 @@ This component is commonly used for multi-level selection scenarios such as perm
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="check-tree-1-3">
           <label class="form-check-label" for="check-tree-1-3">Item 3</label>
+          <span class="badge bg-secondary">9</span>
         </div>
       </li>
     </ul>
@@ -186,6 +196,7 @@ This component is commonly used for multi-level selection scenarios such as perm
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="check-tree-2-1">
           <label class="form-check-label" for="check-tree-2-1">Item 1</label>
+          <span class="badge bg-secondary">53</span>
         </div>
 
         <ul id="check-tree-2-sub-1" role="group">
@@ -193,12 +204,14 @@ This component is commonly used for multi-level selection scenarios such as perm
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="check-tree-2-1-1">
               <label class="form-check-label" for="check-tree-2-1-1">Item 1.1</label>
+              <span class="badge bg-secondary">20</span>
             </div>
           </li>
           <li role="treeitem">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="check-tree-2-1-2">
               <label class="form-check-label" for="check-tree-2-1-2">Item 1.2</label>
+              <span class="badge bg-secondary">33</span>
             </div>
           </li>
         </ul>
@@ -213,6 +226,7 @@ This component is commonly used for multi-level selection scenarios such as perm
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="check-tree-2-2">
           <label class="form-check-label" for="check-tree-2-2">Item 2</label>
+          <span class="badge bg-secondary">18</span>
         </div>
 
         <ul id="check-tree-2-sub-2" role="group">
@@ -220,12 +234,14 @@ This component is commonly used for multi-level selection scenarios such as perm
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="check-tree-2-2-1">
               <label class="form-check-label" for="check-tree-2-2-1">Item 2.1</label>
+              <span class="badge bg-secondary">2</span>
             </div>
           </li>
           <li role="treeitem">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="check-tree-2-2-2">
               <label class="form-check-label" for="check-tree-2-2-2">Item 2.2</label>
+              <span class="badge bg-secondary">7</span>
             </div>
           </li>
           <li role="treeitem" aria-expanded="false">
@@ -237,6 +253,7 @@ This component is commonly used for multi-level selection scenarios such as perm
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="check-tree-2-2-3">
               <label class="form-check-label" for="check-tree-2-2-3">Item 2.3</label>
+              <span class="badge bg-secondary">9</span>
             </div>
 
             <ul id="check-tree-2-sub-2-3" role="group">
@@ -244,12 +261,14 @@ This component is commonly used for multi-level selection scenarios such as perm
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="check-tree-2-2-3-1">
                   <label class="form-check-label" for="check-tree-2-2-3-1">Item 2.3.1</label>
+                  <span class="badge bg-secondary">2</span>
                 </div>
               </li>
               <li role="treeitem">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="check-tree-2-2-3-2">
                   <label class="form-check-label" for="check-tree-2-2-3-2">Item 2.3.2</label>
+                  <span class="badge bg-secondary">7</span>
                 </div>
               </li>
             </ul>
@@ -261,6 +280,7 @@ This component is commonly used for multi-level selection scenarios such as perm
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="check-tree-2-3">
           <label class="form-check-label" for="check-tree-2-3">Item 3</label>
+          <span class="badge bg-secondary">9</span>
         </div>
       </li>
     </ul>
@@ -284,12 +304,14 @@ This component is commonly used for multi-level selection scenarios such as perm
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="check-tree-3-1-1">
               <label class="form-check-label" for="check-tree-3-1-1">Item 1.1</label>
+              <span class="badge bg-secondary">53</span>
             </div>
           </li>
           <li role="treeitem">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="check-tree-3-1-2">
               <label class="form-check-label" for="check-tree-3-1-2">Item 1.2</label>
+              <span class="badge bg-secondary">20</span>
             </div>
           </li>
         </ul>
@@ -299,6 +321,7 @@ This component is commonly used for multi-level selection scenarios such as perm
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="check-tree-3-2">
           <label class="form-check-label" for="check-tree-3-2">Item 2</label>
+          <span class="badge bg-secondary">33</span>
         </div>
 
         <button class="btn btn-icon" type="button" aria-expanded="false" aria-controls="check-tree-3-sub-2">
@@ -311,18 +334,21 @@ This component is commonly used for multi-level selection scenarios such as perm
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="check-tree-3-2-1">
               <label class="form-check-label" for="check-tree-3-2-1">Item 2.1</label>
+              <span class="badge bg-secondary">2</span>
             </div>
           </li>
           <li role="treeitem">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="check-tree-3-2-2">
               <label class="form-check-label" for="check-tree-3-2-2">Item 2.2</label>
+              <span class="badge bg-secondary">7</span>
             </div>
           </li>
           <li role="treeitem" aria-expanded="false">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="check-tree-3-2-3">
               <label class="form-check-label" for="check-tree-3-2-3">Item 2.3</label>
+              <span class="badge bg-secondary">9</span>
             </div>
 
             <button class="btn btn-icon" type="button" aria-expanded="false" aria-controls="check-tree-3-sub-2-3">
@@ -335,12 +361,14 @@ This component is commonly used for multi-level selection scenarios such as perm
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="check-tree-3-2-3-1">
                   <label class="form-check-label" for="check-tree-3-2-3-1">Item 2.3.1</label>
+                  <span class="badge bg-secondary">2</span>
                 </div>
               </li>
               <li role="treeitem">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="check-tree-3-2-3-2">
                   <label class="form-check-label" for="check-tree-3-2-3-2">Item 2.3.2</label>
+                  <span class="badge bg-secondary">7</span>
                 </div>
               </li>
             </ul>
@@ -352,6 +380,7 @@ This component is commonly used for multi-level selection scenarios such as perm
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="check-tree-3-3">
           <label class="form-check-label" for="check-tree-3-3">Item 3</label>
+          <span class="badge bg-secondary">9</span>
         </div>
       </li>
     </ul>

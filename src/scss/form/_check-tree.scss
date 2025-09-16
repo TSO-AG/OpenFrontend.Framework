@@ -5,6 +5,7 @@
   --#{$prefix}form-check-tree-button-icon-width: #{$form-check-tree-button-icon-width};
   --#{$prefix}form-check-tree-button-icon-height: #{$form-check-tree-button-icon-height};
   --#{$prefix}form-check-tree-button-icon-font-size: #{$form-check-tree-button-icon-font-size};
+  --#{$prefix}form-check-tree-input-top-when-badge: #{$form-check-tree-input-top-when-badge};
   --#{$prefix}form-check-child-padding-start: calc(var(--#{$prefix}form-check-tree-button-icon-width) + var(--#{$prefix}form-check-tree-gap-x));
   // scss-docs-end form-check-tree-css-vars
   display: grid;
@@ -24,6 +25,13 @@
 
   .form-check {
     margin-bottom: 0;
+
+    &:has(.badge) {
+      .form-check-input {
+        position: relative;
+        top: var(--#{$prefix}form-check-tree-input-top-when-badge);
+      }
+    }
   }
 
   ul {

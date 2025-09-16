@@ -80,6 +80,7 @@ const components = [
   { selector: '[data-bs-toggle="popover"]', callback: () => import(/* webpackChunkName: "of-popover" */ './components/popover') },
   { selector: '[data-of-anchor-navigation]', callback: () => import(/* webpackChunkName: "of-anchor-navigation" */ './components/anchor-navigation') },
   { selector: '[data-of-calendar]', callback: () => import(/* webpackChunkName: "of-calendar" */ './components/calendar') },
+  { selector: '[data-of-check-tree]', callback: () => import(/* webpackChunkName: "of-check-tree" */ './components/check-tree') },
   { selector: '[data-of-combo-box]', callback: () => import(/* webpackChunkName: "of-combo-box" */ './components/combo-box') },
   { selector: '[data-of-highlight]', callback: () => import(/* webpackChunkName: "of-highlight" */ './components/highlight') },
   { selector: '[data-of-carousel]', callback: () => import(/* webpackChunkName: "of-carousel" */ './components/carousel') },

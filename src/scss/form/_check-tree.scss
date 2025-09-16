@@ -5,8 +5,7 @@
   --#{$prefix}form-check-tree-button-icon-width: #{$form-check-tree-button-icon-width};
   --#{$prefix}form-check-tree-button-icon-height: #{$form-check-tree-button-icon-height};
   --#{$prefix}form-check-tree-button-icon-font-size: #{$form-check-tree-button-icon-font-size};
-  --#{$prefix}form-check-tree-check-padding-start: #{$form-check-tree-check-padding-start};
-  --#{$prefix}form-check-child-padding-start: calc(var(--#{$prefix}form-check-tree-button-icon-width) + var(--#{$prefix}form-check-tree-gap-x) + var(--#{$prefix}form-check-tree-check-padding-start));
+  --#{$prefix}form-check-child-padding-start: calc(var(--#{$prefix}form-check-tree-button-icon-width) + var(--#{$prefix}form-check-tree-gap-x));
   // scss-docs-end form-check-tree-css-vars
   display: grid;
   row-gap: var(--#{$prefix}form-check-tree-gap-y);
@@ -32,6 +31,12 @@
     display: grid;
     row-gap: var(--#{$prefix}form-check-tree-gap-y);
     padding-left: var(--#{$prefix}form-check-child-padding-start);
+  }
+
+  &:has(.btn-icon:first-child) {
+    li:not(:has(ul)) {
+      margin-left: var(--#{$prefix}form-check-child-padding-start);
+    }
   }
 
   li {

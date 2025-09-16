@@ -72,6 +72,14 @@ Add the `disabled` attribute and the associated `<label>`s are automatically sty
 
 ### Tree
 
+The tree component renders a hierarchical list of items with checkboxes. Each node can be expanded or collapsed to reveal nested children. Selection is managed per node, with support for the following states:
+
+- Checked – the item is fully selected.
+- Unchecked – the item is not selected.
+- Indeterminate – the item’s selection is partially determined by its children.
+
+This component is commonly used for multi-level selection scenarios such as permissions, categories, or structured data.
+
 {{< example >}}
 <div class="row">
   <div class="col-md-4">

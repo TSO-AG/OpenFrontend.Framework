@@ -129,7 +129,7 @@
     }
   }
 
-  .gslide-image img {
+  .gslide:not(.zoomed) .gslide-image img {
     @include transition(max-height .2s);
     max-height: $content-height;
   }

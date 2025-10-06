@@ -86,9 +86,6 @@ class CheckTree extends BaseComponent {
           parentField.indeterminate = false;
           break;
       }
-      console.log(parentField)
-      console.log(allFields);
-      console.log(`checkedFields: ${checkedFields} / ${allFields.length}`);
     })
   }
 

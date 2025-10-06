@@ -71,10 +71,10 @@ To set custom icons for the Accordion, use an element with the class `.accordion
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#customIcon-collapseOne" aria-expanded="false" aria-controls="customIcon-collapseOne">
         Accordion Item #1
-        <div class="accordion-button-icon">
+        <span class="accordion-button-icon">
           <span>{{< icon name="plus-square" >}}</span>
           <span>{{< icon name="dash-square" >}}</span>
-        </div>
+        </span>
       </button>
     </h2>
     <div id="customIcon-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionCustomIconExample">
@@ -85,10 +85,10 @@ To set custom icons for the Accordion, use an element with the class `.accordion
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#customIcon-collapseTwo" aria-expanded="false" aria-controls="customIcon-collapseTwo">
         Accordion Item #2
-        <div class="accordion-button-icon">
+        <span class="accordion-button-icon">
           <span>{{< icon name="chevron-down" >}}</span>
           <span>{{< icon name="chevron-up" >}}</span>
-        </div>
+        </span>
       </button>
     </h2>
     <div id="customIcon-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionCustomIconExample">
@@ -99,10 +99,10 @@ To set custom icons for the Accordion, use an element with the class `.accordion
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#customIcon-collapseThree" aria-expanded="false" aria-controls="customIcon-collapseThree">
         Accordion Item #3
-        <div class="accordion-button-icon">
+        <span class="accordion-button-icon">
           <span>{{< icon name="arrow-down" >}}</span>
           <span>{{< icon name="arrow-up" >}}</span>
-        </div>
+        </span>
       </button>
     </h2>
     <div id="customIcon-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionCustomIconExample">
@@ -113,9 +113,9 @@ To set custom icons for the Accordion, use an element with the class `.accordion
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#customIcon-collapseFour" aria-expanded="false" aria-controls="customIcon-collapseFour">
         Accordion Item #4
-        <div class="accordion-button-icon">
+        <span class="accordion-button-icon">
           <span>{{< icon name="arrow-down-circle" >}}</span>
-        </div>
+        </span>
       </button>
     </h2>
     <div id="customIcon-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionCustomIconExample">

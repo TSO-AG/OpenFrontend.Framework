@@ -674,6 +674,26 @@ And with vertical pills. Ideally, for vertical tabs, you should also add `aria-o
 </div>
 ```
 
+### Linking to tabs
+
+You can automatically activate any tab on a page by using its ID in the URL hash. For example, if your tab pane is defined as:
+
+```html
+<button id="tab-123" data-bs-toggle="tab">Tab 123</button>
+```
+
+You can link directly to it by appending the ID to the page URL:
+
+```html
+https://domain.tld/page.html#tab-123
+```
+
+When the page loads, the tab pane with that ID will be displayed automatically.
+
+{{< callout warning >}}
+Always reference the tab **button** ID in the URL (e.g. `#tab-123`), **not** the tab **pane** ID (e.g. `#tab-123-pane`).
+{{< /callout >}}
+
 ### Accessibility
 
 Dynamic tabbed interfaces, as described in the [ARIA Authoring Practices Guide tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/), require `role="tablist"`, `role="tab"`, `role="tabpanel"`, and additional `aria-` attributes in order to convey their structure, functionality, and current state to users of assistive technologies (such as screen readers). As a best practice, we recommend using `<button>` elements for the tabs, as these are controls that trigger a dynamic change, rather than links that navigate to a new page or location.

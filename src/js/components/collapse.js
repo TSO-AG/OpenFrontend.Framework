@@ -13,6 +13,12 @@ class Collapse extends BootstrapCollapse {
     this._element.addEventListener('shown.bs.collapse', () => this.#onHeightChangingEnd())
     this._element.addEventListener('hide.bs.collapse', () => this.#onHeightChangingStart())
     this._element.addEventListener('hidden.bs.collapse', () => this.#onHeightChangingEnd())
+
+    // Open the element if it's present in the URL hash
+    if (window.location.hash === `#${this._element.id}`) {
+      this._element.addEventListener('shown.bs.collapse', () => this._triggerArray[0].scrollIntoView({ behavior: 'smooth' }), { once: true })
+      this.show();
+    }
   }
 
   #onHeightChangingStart() {

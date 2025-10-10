@@ -209,6 +209,24 @@ Omit the `data-bs-parent` attribute on each `.accordion-collapse` to make accord
 </div>
 {{< /example >}}
 
+## Linking to accordions
+
+You can automatically open any accordion element on a page by using its ID in the URL hash. For example, if your accordion element is defined as:
+
+```html
+<div id="accordion-123" class="accordion-collapse collapse">
+    ...
+</div>
+```
+
+You can link directly to it by appending the ID to the page URL:
+
+```html
+https://domain.tld/page.html#accordion-123
+```
+
+When the page loads, the accordion section with that ID will expand automatically.
+
 ## Accessibility
 
 Please read the [collapse accessibility section]({{< docsref "/components/collapse#accessibility" >}}) for more information.

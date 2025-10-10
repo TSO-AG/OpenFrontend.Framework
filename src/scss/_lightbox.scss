@@ -247,6 +247,12 @@ html .glightbox-clean {
     .gslide-title {
       color: inherit;
     }
+
+    // Hide description when there is a zoom on the image (mobile devices)
+    &:has(.gslide-image img[style*="transform"]) .gslide-description { // stylelint-disable-line
+      pointer-events: none;
+      opacity: 0;
+    }
   }
 
   .gslide-media {

@@ -19,8 +19,11 @@ function initSwiperVisibilityHandler(swiper, swiperElement) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        swiper.update();
-        observer.disconnect();
+        // Fix Firefox bug when carousel is inside a tab
+        setTimeout(() => {
+          swiper.update()
+        }, 10)
+        observer.disconnect()
       }
     });
   }, {

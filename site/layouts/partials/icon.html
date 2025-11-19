@@ -1,9 +1,9 @@
 {{- $src := default "assets/icons/bootstrap-icons.svg" .src -}}
 {{- $name := default "" .name -}}
-{{- $width := default "32" .width -}}
-{{- $height := default "32" .height -}}
+{{- $width := default "16" .width -}}
+{{- $height := default "16" .height -}}
 {{- $ariaLabel := default "" .ariaLabel -}}
 
-<svg class="of-icon{{ with .class }} {{ . }}{{ end }}" width="{{ $width }}" height="{{ $height }}" fill="currentColor"{{ if $ariaLabel }} aria-label="{{ $ariaLabel }}"{{ end }}>
-	<use href="/{{ $src }}#{{ $name }}"/>
+<svg class="of-icon{{ with .class }} {{ . }}{{ end }}" width="{{ $width }}" height="{{ $height }}"{{ if $ariaLabel }} aria-label="{{ $ariaLabel }}"{{ end }}>
+  <use href="/{{ $src }}#{{ $name }}"/>
 </svg>

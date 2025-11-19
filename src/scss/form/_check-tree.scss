@@ -13,13 +13,14 @@
   @include list-unstyled();
 
   .btn-icon {
-    --bs-btn-padding-y: 0;
-    --bs-btn-padding-x: 0;
-    --bs-btn-font-size: var(--#{$prefix}form-check-tree-button-icon-font-size);
+    --#{$prefix}btn-padding-y: 0;
+    --#{$prefix}btn-padding-x: 0;
+    --#{$prefix}btn-font-size: var(--#{$prefix}form-check-tree-button-icon-font-size);
     flex-wrap: nowrap;
     justify-content: center;
     width: var(--#{$prefix}form-check-tree-button-icon-width);
     height: var(--#{$prefix}form-check-tree-button-icon-height);
+    font-size: min(var(--#{$prefix}form-check-tree-button-icon-height), var(--#{$prefix}form-check-tree-button-icon-width));
     line-height: 1;
   }
 

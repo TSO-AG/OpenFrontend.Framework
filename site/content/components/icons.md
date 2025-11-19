@@ -54,8 +54,8 @@ Do you prefer larger or smaller circle icons? You can add `.icon-circle-lg` for 
 <span class="icon-circle icon-circle-primary icon-circle-sm">
   {{< icon name="question-circle-fill" >}}
 </span>
-<span class="icon-circle icon-circle-secondary icon-circle-sm">{
-  {< icon name="question-circle-fill" >}}
+<span class="icon-circle icon-circle-secondary icon-circle-sm">
+  {{< icon name="question-circle-fill" >}}
 </span>
 {{< /example >}}
 

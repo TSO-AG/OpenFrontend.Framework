@@ -134,14 +134,21 @@ class Slider extends BaseComponent {
       return;
     }
 
+    // To be set in isMobile() function
+    let mobileBreakpoint;
+
     // Get all circles:
     // 1. exclude the first one – it's the big circle path
     // 2. take odd elements – each circle is made of two elements (fill & stroke)
     const circleElements = [...wheelChildEl.querySelectorAll('circle:not(:first-child)')].filter((_, index) => index % 2 === 0);
-    const mobileBreakpoint = parseInt(getComputedStyle(document.documentElement).getPropertyValue(`--breakpoint-${this._config.wheelBreakpoint}`), 10);
     const desktopIndexOffset = 2;
 
-    const isMobile = () => window.innerWidth < mobileBreakpoint;
+    const isMobile = () => {
+      mobileBreakpoint = mobileBreakpoint || parseInt(getComputedStyle(document.documentElement).getPropertyValue(`--breakpoint-${this._config.wheelBreakpoint}`), 10);
+
+      return window.innerWidth < (mobileBreakpoint || 768);
+    };
+
     const getSlideDirection = () => isMobile() ? 'horizontal' : 'vertical';
     const markActiveCircle = () => circleElements.forEach((el, i) => el.style.display = (i === currentIndex) ? 'block' : 'none')
 

@@ -1,0 +1,59 @@
+.icon-card {
+  // scss-docs-start icon-card-css-vars
+  --#{$prefix}icon-card-gap: #{$icon-card-gap};
+  --#{$prefix}icon-card-padding: #{$icon-card-padding};
+  --#{$prefix}icon-card-aspect-ratio: #{$icon-card-aspect-ratio};
+  --#{$prefix}icon-card-background: #{$icon-card-background};
+  --#{$prefix}icon-card-border-color: #{$icon-card-border-color};
+  --#{$prefix}icon-card-border-width: #{$icon-card-border-width};
+  --#{$prefix}icon-card-border-style: #{$icon-card-border-style};
+  --#{$prefix}icon-card-border-radius: #{$icon-card-border-radius};
+  --#{$prefix}icon-card-icon-color: #{$icon-card-icon-color};
+  --#{$prefix}icon-card-icon-font-size: #{$icon-card-icon-font-size};
+  // scss-docs-end icon-card-css-vars
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  aspect-ratio: var(--#{$prefix}icon-card-aspect-ratio);
+  gap: var(--#{$prefix}icon-card-gap);
+  padding: var(--#{$prefix}icon-card-padding);
+  background-color: var(--#{$prefix}icon-card-background);
+  border-color: var(--#{$prefix}icon-card-border-color);
+  border-width: var(--#{$prefix}icon-card-border-width);
+  border-style: var(--#{$prefix}icon-card-border-style);
+  border-radius: var(--#{$prefix}icon-card-border-radius);
+
+  &:has(.stretched-link) {
+    position: relative;
+    // TODO: hover effects??
+  }
+}
+
+.icon-card-icon {
+  min-width: 1em;
+  font-size: var(--#{$prefix}icon-card-icon-font-size);
+  color: var(--#{$prefix}icon-card-icon-color);
+}
+
+.icon-card-title {
+  // TODO – similar to .card-title?
+}
+
+.icon-card-subtitle {
+  // TODO – similar to .card-subtitle or .card-info?
+}
+
+.icon-card-wrapper {
+  // scss-docs-start icon-card-wrapper-css-vars
+  --#{$prefix}icon-card-wrapper-columns: #{$icon-card-wrapper-columns};
+  --#{$prefix}icon-card-wrapper-gap: #{$icon-card-wrapper-gap};
+  // scss-docs-end icon-card-wrapper-css-vars
+
+  display: grid;
+  grid-template-columns: var(--#{$prefix}icon-card-wrapper-columns);
+  grid-auto-rows: auto;
+  gap: var(--#{$prefix}icon-card-wrapper-gap);
+}

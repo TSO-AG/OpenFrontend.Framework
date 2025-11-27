@@ -430,16 +430,19 @@ $icon-box-icon-font-size:   null !default;
 
 // Icon card
 // scss-docs-start icon-card-variables
-$icon-card-gap:              .5rem !default;
-$icon-card-padding:          2rem !default;
-$icon-card-aspect-ratio:     1 !default;
-$icon-card-background:       var(--#{$prefix}gray-100) !default;
-$icon-card-border-color:     var(--#{$prefix}gray-200) !default;
-$icon-card-border-width:     1px !default;
-$icon-card-border-style:     solid !default;
-$icon-card-border-radius:    1rem !default;
-$icon-card-icon-color:       $primary !default;
-$icon-card-icon-font-size:   2em !default;
+$icon-card-gap:                 1rem !default;
+$icon-card-padding:             1rem !default;
+$icon-card-aspect-ratio:        1 !default;
+$icon-card-background:          var(--#{$prefix}gray-100) !default;
+$icon-card-border-color:        var(--#{$prefix}gray-200) !default;
+$icon-card-border-width:        1px !default;
+$icon-card-border-style:        solid !default;
+$icon-card-border-radius:       1rem !default;
+$icon-card-icon-padding:        1rem !default;
+$icon-card-icon-background:     $primary !default;
+$icon-card-icon-border-radius:  50% !default;
+$icon-card-icon-color:          $white !default;
+$icon-card-icon-font-size:      2em !default;
 // scss-docs-end icon-card-variables
 
 // scss-docs-start icon-card-wrapper-variables

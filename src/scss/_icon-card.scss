@@ -8,8 +8,11 @@
   --#{$prefix}icon-card-border-width: #{$icon-card-border-width};
   --#{$prefix}icon-card-border-style: #{$icon-card-border-style};
   --#{$prefix}icon-card-border-radius: #{$icon-card-border-radius};
+  --#{$prefix}icon-card-icon-background: #{$icon-card-icon-background};
+  --#{$prefix}icon-card-icon-border-radius: #{$icon-card-icon-border-radius};
   --#{$prefix}icon-card-icon-color: #{$icon-card-icon-color};
   --#{$prefix}icon-card-icon-font-size: #{$icon-card-icon-font-size};
+  --#{$prefix}icon-card-icon-padding: #{$icon-card-icon-padding};
   // scss-docs-end icon-card-css-vars
 
   display: flex;
@@ -33,8 +36,12 @@
 }
 
 .icon-card-icon {
+  aspect-ratio: 1;
   min-width: 1em;
+  padding: var(--#{$prefix}icon-card-icon-padding);
   font-size: var(--#{$prefix}icon-card-icon-font-size);
+  background: var(--#{$prefix}icon-card-icon-background);
+  border-radius: var(--#{$prefix}icon-card-icon-border-radius);
   color: var(--#{$prefix}icon-card-icon-color);
 }
 

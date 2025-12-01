@@ -13,7 +13,7 @@ It's particularly useful for showcasing contact information, such as phone numbe
 ## Simple icon card
 
 {{< example >}}
-<div class="icon-card" style="width:200px">
+<div class="icon-card icon-card-square" style="width:200px">
   <div class="icon-card-icon">
     {{< icon name="star-fill" >}}
   </div>
@@ -27,7 +27,7 @@ It's particularly useful for showcasing contact information, such as phone numbe
 ## Clickable icon card
 
 {{< example >}}
-<div class="icon-card" style="width:200px">
+<div class="icon-card icon-card-square" style="width:200px">
   <div class="icon-card-icon">
     {{< icon name="link-45deg" >}}
   </div>
@@ -43,77 +43,59 @@ It's particularly useful for showcasing contact information, such as phone numbe
 ## Multiple icon cards
 
 {{< example >}}
-<div class="icon-card-wrapper">
-  <div class="icon-card">
-    <div class="icon-card-icon">
-      {{< icon name="1-square" >}}
-    </div>
-    <div class="icon-card-content">
-      <div class="icon-card-subtitle">Subtitle</div>
-      <div class="icon-card-title">Title</div>
-    </div>
-  </div>
-  <div class="icon-card">
-    <div class="icon-card-icon">
-      {{< icon name="2-square" >}}
-    </div>
-    <div class="icon-card-content">
-      <div class="icon-card-subtitle">Subtitle</div>
-      <div class="icon-card-title">Title</div>
+<div class="row gy-gutter">
+  <div class="col-6 col-md-4">
+    <div class="icon-card icon-card-square">
+      <div class="icon-card-icon">{{< icon name="1-square" >}}</div>
+      <div class="icon-card-content">
+        <div class="icon-card-subtitle">Subtitle</div>
+        <div class="icon-card-title">Title</div>
+      </div>
     </div>
   </div>
-  <div class="icon-card">
-    <div class="icon-card-icon">
-      {{< icon name="3-square" >}}
-    </div>
-    <div class="icon-card-content">
-      <div class="icon-card-subtitle">Subtitle</div>
-      <div class="icon-card-title">Title</div>
-    </div>
-  </div>
-  <div class="icon-card">
-    <div class="icon-card-icon">
-      {{< icon name="4-square" >}}
-    </div>
-    <div class="icon-card-content">
-      <div class="icon-card-subtitle">Subtitle</div>
-      <div class="icon-card-title">Title</div>
+  <div class="col-6 col-md-4">
+    <div class="icon-card icon-card-square">
+      <div class="icon-card-icon">{{< icon name="2-square" >}}</div>
+      <div class="icon-card-content">
+        <div class="icon-card-subtitle">Subtitle</div>
+        <div class="icon-card-title">Title</div>
+      </div>
     </div>
   </div>
-  <div class="icon-card">
-    <div class="icon-card-icon">
-      {{< icon name="5-square" >}}
-    </div>
-    <div class="icon-card-content">
-      <div class="icon-card-subtitle">Subtitle</div>
-      <div class="icon-card-title">Title</div>
-    </div>
-  </div>
-  <div class="icon-card">
-    <div class="icon-card-icon">
-      {{< icon name="6-square" >}}
-    </div>
-    <div class="icon-card-content">
-      <div class="icon-card-subtitle">Subtitle</div>
-      <div class="icon-card-title">Title</div>
+  <div class="col-6 col-md-4">
+    <div class="icon-card icon-card-square">
+      <div class="icon-card-icon">{{< icon name="3-square" >}}</div>
+      <div class="icon-card-content">
+        <div class="icon-card-subtitle">Subtitle</div>
+        <div class="icon-card-title">Title</div>
+      </div>
     </div>
   </div>
-  <div class="icon-card">
-    <div class="icon-card-icon">
-      {{< icon name="7-square" >}}
-    </div>
-    <div class="icon-card-content">
-      <div class="icon-card-subtitle">Subtitle</div>
-      <div class="icon-card-title">Title</div>
+  <div class="col-6 col-md-4">
+    <div class="icon-card icon-card-square">
+      <div class="icon-card-icon">{{< icon name="4-square" >}}</div>
+      <div class="icon-card-content">
+        <div class="icon-card-subtitle">Subtitle</div>
+        <div class="icon-card-title">Title</div>
+      </div>
     </div>
   </div>
-  <div class="icon-card">
-    <div class="icon-card-icon">
-      {{< icon name="8-square" >}}
+  <div class="col-6 col-md-4">
+    <div class="icon-card icon-card-square">
+      <div class="icon-card-icon">{{< icon name="5-square" >}}</div>
+      <div class="icon-card-content">
+        <div class="icon-card-subtitle">Subtitle</div>
+        <div class="icon-card-title">Title</div>
+      </div>
     </div>
-    <div class="icon-card-content">
-      <div class="icon-card-subtitle">Subtitle</div>
-      <div class="icon-card-title">Title</div>
+  </div>
+  <div class="col-6 col-md-4">
+    <div class="icon-card icon-card-square">
+      <div class="icon-card-icon">{{< icon name="6-square" >}}</div>
+      <div class="icon-card-content">
+        <div class="icon-card-subtitle">Subtitle</div>
+        <div class="icon-card-title">Title</div>
+      </div>
     </div>
   </div>
 </div>
@@ -125,10 +107,8 @@ It's particularly useful for showcasing contact information, such as phone numbe
 
 {{< scss-docs name="icon-card-css-vars" file="src/scss/_icon-card.scss" >}}
 
-{{< scss-docs name="icon-card-wrapper-css-vars" file="src/scss/_icon-card.scss" >}}
-
 ### Scss variables
 
 {{< scss-docs name="icon-card-variables" file="src/scss/_variables.scss" >}}
 
-{{< scss-docs name="icon-card-wrapper-variables" file="src/scss/_variables.scss" >}}
+{{< scss-docs name="icon-card-variables" file="src/scss/_variables-dark.scss" >}}

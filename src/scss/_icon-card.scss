@@ -1,27 +1,41 @@
 .icon-card {
   // scss-docs-start icon-card-css-vars
   --#{$prefix}icon-card-gap: #{$icon-card-gap};
-  --#{$prefix}icon-card-padding: #{$icon-card-padding};
-  --#{$prefix}icon-card-aspect-ratio: #{$icon-card-aspect-ratio};
+  --#{$prefix}icon-card-padding-x: #{$icon-card-padding-x};
+  --#{$prefix}icon-card-padding-y: #{$icon-card-padding-y};
   --#{$prefix}icon-card-background: #{$icon-card-background};
+  --#{$prefix}icon-card-hover-background: #{$icon-card-hover-background};
   --#{$prefix}icon-card-border-color: #{$icon-card-border-color};
+  --#{$prefix}icon-card-border-hover-color: #{$icon-card-border-hover-color};
   --#{$prefix}icon-card-border-width: #{$icon-card-border-width};
   --#{$prefix}icon-card-border-style: #{$icon-card-border-style};
   --#{$prefix}icon-card-border-radius: #{$icon-card-border-radius};
   --#{$prefix}icon-card-icon-background: #{$icon-card-icon-background};
+  --#{$prefix}icon-card-icon-hover-background: #{$icon-card-icon-hover-background};
   --#{$prefix}icon-card-icon-border-radius: #{$icon-card-icon-border-radius};
   --#{$prefix}icon-card-icon-color: #{$icon-card-icon-color};
+  --#{$prefix}icon-card-icon-hover-color: #{$icon-card-icon-hover-color};
   --#{$prefix}icon-card-icon-font-size: #{$icon-card-icon-font-size};
   --#{$prefix}icon-card-icon-padding: #{$icon-card-icon-padding};
+  --#{$prefix}icon-card-title-margin-bottom: #{$icon-card-title-margin-bottom};
+  --#{$prefix}icon-card-title-font-size: #{$icon-card-title-font-size};
+  --#{$prefix}icon-card-title-color: #{$icon-card-title-color};
+  --#{$prefix}icon-card-title-link-color: #{$icon-card-title-link-color};
+  --#{$prefix}icon-card-title-link-hover-color: #{$icon-card-title-link-hover-color};
+  --#{$prefix}icon-card-title-link-decoration: #{$icon-card-title-link-decoration};
+  --#{$prefix}icon-card-title-link-hover-decoration: #{$icon-card-title-link-hover-decoration};
+  --#{$prefix}icon-card-subtitle-margin-bottom: #{$icon-card-subtitle-margin-bottom};
+  --#{$prefix}icon-card-subtitle-font-size: #{$icon-card-subtitle-font-size};
+  --#{$prefix}icon-card-subtitle-color: #{$icon-card-subtitle-color};
+  --#{$prefix}icon-card-subtitle-hover-color: #{$icon-card-subtitle-hover-color};
   // scss-docs-end icon-card-css-vars
 
   display: flex;
   flex-direction: column;
   gap: var(--#{$prefix}icon-card-gap);
   align-items: center;
-  justify-content: center;
-  aspect-ratio: var(--#{$prefix}icon-card-aspect-ratio);
-  padding: var(--#{$prefix}icon-card-padding);
+  min-height: 100%;
+  padding: var(--#{$prefix}icon-card-padding-y) var(--#{$prefix}icon-card-padding-x);
   text-align: center;
   background-color: var(--#{$prefix}icon-card-background);
   border-color: var(--#{$prefix}icon-card-border-color);
@@ -29,10 +43,46 @@
   border-width: var(--#{$prefix}icon-card-border-width);
   border-radius: var(--#{$prefix}icon-card-border-radius);
 
+  > *:first-child {
+    margin-top: auto;
+  }
+
+  > *:last-child {
+    margin-bottom: auto;
+  }
+
   &:has(.stretched-link) {
     position: relative;
-    // TODO: hover effects??
+    @include transition($icon-card-transition-box);
+
+    .icon-card-icon {
+      @include transition($icon-card-transition-icon);
+    }
+
+    .icon-card-title a,
+    .icon-card-subtitle {
+      @include transition($icon-card-transition-text);
+    }
   }
+
+  &:has(.stretched-link:hover) {
+    background-color: var(--#{$prefix}icon-card-hover-background);
+    border-color: var(--#{$prefix}icon-card-border-hover-color);
+
+    .icon-card-icon {
+      color: var(--#{$prefix}icon-card-icon-hover-color);
+      background: var(--#{$prefix}icon-card-icon-hover-background);
+    }
+
+    .icon-card-subtitle {
+      color: var(--#{$prefix}icon-card-subtitle-hover-color);
+    }
+  }
+}
+
+.icon-card-square {
+  aspect-ratio: 1;
+  overflow-y: auto;
 }
 
 .icon-card-icon {
@@ -46,21 +96,43 @@
 }
 
 .icon-card-title {
-  // TODO – similar to .card-title?
+  margin-bottom: var(--#{$prefix}icon-card-title-margin-bottom);
+  font-size: var(--#{$prefix}icon-card-title-font-size);
+  color: var(--#{$prefix}icon-card-title-color);
+
+  a {
+    color: var(--#{$prefix}icon-card-title-link-color);
+    text-decoration: var(--#{$prefix}icon-card-title-link-decoration);
+
+    &:hover {
+      color: var(--#{$prefix}icon-card-title-link-hover-color);
+      text-decoration: var(--#{$prefix}icon-card-title-link-hover-decoration);
+    }
+  }
 }
 
 .icon-card-subtitle {
-  // TODO – similar to .card-subtitle or .card-info?
+  margin-bottom: var(--#{$prefix}icon-card-subtitle-margin-bottom);
+  font-size: var(--#{$prefix}icon-card-subtitle-font-size);
+  color: var(--#{$prefix}icon-card-subtitle-color);
 }
 
-.icon-card-wrapper {
-  // scss-docs-start icon-card-wrapper-css-vars
-  --#{$prefix}icon-card-wrapper-columns: #{$icon-card-wrapper-columns};
-  --#{$prefix}icon-card-wrapper-gap: #{$icon-card-wrapper-gap};
-  // scss-docs-end icon-card-wrapper-css-vars
-
-  display: grid;
-  grid-template-columns: var(--#{$prefix}icon-card-wrapper-columns);
-  grid-auto-rows: auto;
-  gap: var(--#{$prefix}icon-card-wrapper-gap);
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .icon-card  {
+      --#{$prefix}icon-card-background: #{$icon-card-background-dark};
+      --#{$prefix}icon-card-hover-background: #{$icon-card-hover-background-dark};
+      --#{$prefix}icon-card-border-color: #{$icon-card-border-color-dark};
+      --#{$prefix}icon-card-border-hover-color: #{$icon-card-border-hover-color-dark};
+      --#{$prefix}icon-card-icon-background: #{$icon-card-icon-background-dark};
+      --#{$prefix}icon-card-icon-hover-background: #{$icon-card-icon-hover-background-dark};
+      --#{$prefix}icon-card-icon-color: #{$icon-card-icon-color-dark};
+      --#{$prefix}icon-card-icon-hover-color: #{$icon-card-icon-hover-color-dark};
+      --#{$prefix}icon-card-title-color: #{$icon-card-title-color-dark};
+      --#{$prefix}icon-card-title-link-color: #{$icon-card-title-link-color-dark};
+      --#{$prefix}icon-card-title-link-hover-color: #{$icon-card-title-link-hover-color-dark};
+      --#{$prefix}icon-card-subtitle-color: #{$icon-card-subtitle-color-dark};
+      --#{$prefix}icon-card-subtitle-hover-color: #{$icon-card-subtitle-hover-color-dark};
+    }
+  }
 }

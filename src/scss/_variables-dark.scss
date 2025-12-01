@@ -27,3 +27,20 @@ $calendar-today-bg-color-dark:               rgba(255, 255, 255, .05) !default;
 $calendar-table-cell-shaded-dark:            none !default;
 $calendar-list-event-hover-bg-color-dark:    rgba(255, 255, 255, .05) !default;
 // scss-docs-end calendar-dark-variables
+
+// Icon card
+// scss-docs-start icon-card-variables
+$icon-card-background-dark:                    null !default;
+$icon-card-hover-background-dark:              var(--#{$prefix}gray-800) !default;
+$icon-card-border-color-dark:                  var(--#{$prefix}border-color-translucent) !default;
+$icon-card-border-hover-color-dark:            $icon-card-border-color-dark !default;
+$icon-card-icon-background-dark:               $primary !default;
+$icon-card-icon-hover-background-dark:         $icon-card-icon-background-dark !default;
+$icon-card-icon-color-dark:                    $white !default;
+$icon-card-icon-hover-color-dark:              $icon-card-icon-color-dark !default;
+$icon-card-title-color-dark:                   null !default;
+$icon-card-title-link-color-dark:              $icon-card-title-color-dark !default;
+$icon-card-title-link-hover-color-dark:        #fff !default;
+$icon-card-subtitle-color-dark:                var(--#{$prefix}secondary-color) !default;
+$icon-card-subtitle-hover-color-dark:          $icon-card-subtitle-color !default;
+// scss-docs-end icon-card-variables

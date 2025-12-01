@@ -430,25 +430,39 @@ $icon-box-icon-font-size:   null !default;
 
 // Icon card
 // scss-docs-start icon-card-variables
-$icon-card-gap:                 1rem !default;
-$icon-card-padding:             1rem !default;
-$icon-card-aspect-ratio:        1 !default;
-$icon-card-background:          var(--#{$prefix}gray-100) !default;
-$icon-card-border-color:        var(--#{$prefix}gray-200) !default;
-$icon-card-border-width:        1px !default;
-$icon-card-border-style:        solid !default;
-$icon-card-border-radius:       1rem !default;
-$icon-card-icon-padding:        1rem !default;
-$icon-card-icon-background:     $primary !default;
-$icon-card-icon-border-radius:  50% !default;
-$icon-card-icon-color:          $white !default;
-$icon-card-icon-font-size:      2em !default;
+$icon-card-gap:                           1rem !default;
+$icon-card-padding-y:                     1rem !default;
+$icon-card-padding-x:                     $icon-card-padding-y !default;
+$icon-card-background:                    var(--#{$prefix}gray-100) !default;
+$icon-card-hover-background:              var(--#{$prefix}gray-200) !default;
+$icon-card-border-color:                  var(--#{$prefix}border-color-translucent) !default;
+$icon-card-border-hover-color:            $icon-card-border-color !default;
+$icon-card-border-width:                  var(--#{$prefix}border-width) !default;
+$icon-card-border-style:                  solid !default;
+$icon-card-border-radius:                 var(--#{$prefix}border-radius) !default;
+$icon-card-icon-padding:                  1rem !default;
+$icon-card-icon-background:               $primary !default;
+$icon-card-icon-hover-background:         $icon-card-icon-background !default;
+$icon-card-icon-border-radius:            50% !default;
+$icon-card-icon-color:                    $white !default;
+$icon-card-icon-hover-color:              $icon-card-icon-color !default;
+$icon-card-icon-font-size:                2em !default;
+$icon-card-title-margin-bottom:           0 !default;
+$icon-card-title-font-size:               1.25rem !default;
+$icon-card-title-color:                   #000 !default;
+$icon-card-title-link-color:              $icon-card-title-color !default;
+$icon-card-title-link-decoration:         null !default;
+$icon-card-title-link-hover-color:        null !default;
+$icon-card-title-link-hover-decoration:   null !default;
+$icon-card-subtitle-margin-bottom:        .25em !default;
+$icon-card-subtitle-font-size:            .8rem !default;
+$icon-card-subtitle-color:                var(--#{$prefix}secondary-color) !default;
+$icon-card-subtitle-hover-color:          $icon-card-subtitle-color !default;
+$icon-card-transition-box:                background-color .2s ease-in-out, border-color .2s ease-in-out !default;
+$icon-card-transition-icon:               background-color .2s ease-in-out, color .2s ease-in-out !default;
+$icon-card-transition-text:               color .2s ease-in-out !default;
 // scss-docs-end icon-card-variables
 
-// scss-docs-start icon-card-wrapper-variables
-$icon-card-wrapper-columns:  repeat(4, 1fr) !default;
-$icon-card-wrapper-gap:      .5rem !default;
-// scss-docs-end icon-card-wrapper-variables
 
 // Masonry
 // scss-docs-start masonry-variables

@@ -17,16 +17,16 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  aspect-ratio: var(--#{$prefix}icon-card-aspect-ratio);
   gap: var(--#{$prefix}icon-card-gap);
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: var(--#{$prefix}icon-card-aspect-ratio);
   padding: var(--#{$prefix}icon-card-padding);
+  text-align: center;
   background-color: var(--#{$prefix}icon-card-background);
   border-color: var(--#{$prefix}icon-card-border-color);
-  border-width: var(--#{$prefix}icon-card-border-width);
   border-style: var(--#{$prefix}icon-card-border-style);
+  border-width: var(--#{$prefix}icon-card-border-width);
   border-radius: var(--#{$prefix}icon-card-border-radius);
 
   &:has(.stretched-link) {
@@ -36,13 +36,13 @@
 }
 
 .icon-card-icon {
-  aspect-ratio: 1;
   min-width: 1em;
+  aspect-ratio: 1;
   padding: var(--#{$prefix}icon-card-icon-padding);
   font-size: var(--#{$prefix}icon-card-icon-font-size);
+  color: var(--#{$prefix}icon-card-icon-color);
   background: var(--#{$prefix}icon-card-icon-background);
   border-radius: var(--#{$prefix}icon-card-icon-border-radius);
-  color: var(--#{$prefix}icon-card-icon-color);
 }
 
 .icon-card-title {

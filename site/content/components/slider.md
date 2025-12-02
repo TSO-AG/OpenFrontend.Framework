@@ -397,6 +397,7 @@ You can pass extra options as JSON value of the data attribute. Here is the list
 | Option | Type | Default | Explanation |
 | --- | --- | --- | --- |
 | `autoplay` | `object\|boolean` | `undefined` | Object with autoplay parameters or boolean `true` to enable with default settings. |
+| `crossFade` | `boolean` | `false` | Set to `true` to enable the cross-fade effect. This should be set to `true` in order to avoid seeing content behind or underneath. It's especially useful when the slide has no background. |
 | `loop` | `boolean` | `false` | Set to `true` to enable continuous loop mode. Because of nature of how the loop mode works (it will rearrange slides), total number of slides must be `>= slidesPerView * 2`. |
 | `navigationNext` | `object\|string` | `undefined` | The selector of the element that will work like "next" button after click on it . |
 | `navigationPrev` | `object\|string` | `undefined` | The selector of the element that will work like "prev" button after click on it. |

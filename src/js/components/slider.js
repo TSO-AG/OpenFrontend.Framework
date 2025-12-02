@@ -12,6 +12,7 @@ const EVENT_SLIDER_INITIALIZED = 'initialized.of.slider'
 
 const DefaultType = {
   autoplay: '(object|boolean|undefined)',
+  crossFade: 'boolean',
   loop: 'boolean',
   navigationNext: '(string|undefined)',
   navigationPrev: '(string|undefined)',
@@ -26,6 +27,7 @@ const DefaultType = {
 
 const Default = {
   autoplay: false,
+  crossFade: false,
   loop: false,
   navigationNext: undefined,
   navigationPrev: undefined,
@@ -64,6 +66,9 @@ class Slider extends BaseComponent {
       loop: this._config.loop,
       slidesPerView: 1,
       effect: 'fade',
+      fadeEffect: {
+        crossFade: this._config.crossFade,
+      },
       speed: this._config.speed,
       touchStartPreventDefault: false,
       on: {

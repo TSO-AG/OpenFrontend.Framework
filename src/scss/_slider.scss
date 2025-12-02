@@ -35,6 +35,7 @@
 
 .slider {
   position: relative;
+  min-width: 0;
 
   .swiper-slide {
     display: flex;

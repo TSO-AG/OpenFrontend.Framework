@@ -299,7 +299,7 @@
   }
 }
 
-@mixin card-mini-media {
+@mixin card-mini-media($hide-action: true) {
   .card-media {
     --#{$prefix}card-media-width: var(--#{$prefix}card-mini-media-width);
 
@@ -319,10 +319,15 @@
     }
   }
 
-  .card-action,
   .card-tags,
   .user-rating {
     display: none;
+  }
+
+  @if $hide-action {
+    .card-action {
+      display: none;
+    }
   }
 
   .card-body > *:last-child,
@@ -342,7 +347,7 @@
   }
 
   @container card (max-width: 620px) {
-    @include card-mini-media();
+    @include card-mini-media(false);
   }
 }
 

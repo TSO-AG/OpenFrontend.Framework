@@ -387,6 +387,24 @@ This component is commonly used for multi-level selection scenarios such as perm
   </div>
 </div>
 {{< /example >}}
+
+#### Programmatic Checkbox Updates
+
+Updating a checkbox programmatically using:
+
+```js
+checkbox.checked = true; // or false
+```
+
+does **not** trigger a full tree refresh. To ensure the widget updates correctly, you must also dispatch the corresponding event:
+
+```js
+checkbox.dispatchEvent(new CustomEvent('field_changed.of.check_tree'))
+```
+
+Both steps are required for the check tree widget to re-evaluate and propagate state changes across the entire structure.
+
+
 ## Radios
 
 {{< example >}}

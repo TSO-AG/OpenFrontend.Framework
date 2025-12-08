@@ -47,6 +47,10 @@ class CheckTree extends BaseComponent {
       field.addEventListener('change', () => this._updateField(field))
       field.addEventListener(CHECK_TREE_CHANGED, () => this._updateField(field))
     });
+
+    this._element.addEventListener(CHECK_TREE_CHANGED, () => {
+      this._fields.forEach(field => this._updateField(field));
+    });
   }
 
   _initTogglers() {

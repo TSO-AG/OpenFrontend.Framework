@@ -40,16 +40,44 @@ class CheckTree extends BaseComponent {
     return NAME
   }
 
+  /**
+   * @return string[]
+   */
+  getValue() {
+    return this._collectValuesFromElement(this._element);
+  }
+
+  /**
+   * @param values string[]
+   * @param events bool
+   */
+  setValue(values, events = true) {
+    // First, clear all the fields
+    this._fields.filter(field => {
+      field.checked = false
+      field.indeterminate = false
+    });
+
+    // Then check every field and update it by the way
+    this._fields.filter(field => values.includes(field.value)).forEach(field => {
+      field.checked = true;
+      this._updateField(field);
+    });
+
+    if (events) {
+      this._element.dispatchEvent(new CustomEvent(CHECK_TREE_CHANGED));
+    }
+  }
+
   // Private
   _initFields() {
     this._fields.forEach(field => {
       this._updateField(field)
-      field.addEventListener('change', () => this._updateField(field))
-      field.addEventListener(CHECK_TREE_CHANGED, () => this._updateField(field))
-    });
 
-    this._element.addEventListener(CHECK_TREE_CHANGED, () => {
-      this._fields.forEach(field => this._updateField(field));
+      field.addEventListener('change', () => {
+        this._updateField(field)
+        this._element.dispatchEvent(new CustomEvent(CHECK_TREE_CHANGED))
+      })
     });
   }
 
@@ -61,6 +89,41 @@ class CheckTree extends BaseComponent {
         this._expandToggler(toggler);
       }
     }));
+  }
+
+  /**
+   * Return all selected values. If all children are selected, only the parent value is returned.
+   */
+  _collectValuesFromElement(el) {
+    const values = [];
+    const fields = el.querySelectorAll(`:scope > li > * > ${SELECTOR_CHECK}`);
+
+    for (const field of fields) {
+      // All children are selected
+      if (field.checked) {
+        values.push(field.value);
+
+        continue;
+      }
+
+      // No children are selected
+      if (!field.checked && !field.indeterminate) {
+        continue;
+      }
+
+      // Some children are selected
+      if (!field.checked && field.indeterminate) {
+        const subtree = this._getFieldSubtree(field);
+
+        if (!subtree) {
+          continue;
+        }
+
+        values.push(...this._collectValuesFromElement(subtree));
+      }
+    }
+
+    return values;
   }
 
   _updateField(field) {

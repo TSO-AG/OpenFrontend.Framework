@@ -388,21 +388,138 @@ This component is commonly used for multi-level selection scenarios such as perm
 </div>
 {{< /example >}}
 
-#### Programmatic Checkbox Updates
+#### Programmatic tree updates
 
-Updating a checkbox programmatically using:
+Use the widget’s API to read or set selected items:
 
-```js
-checkbox.checked = true; // or false
-```
+- `checkTree.getValue()` – Returns the current selection.
+- `checkTree.setValue(values)` – Applies a new selection using an array of values.
 
-does **not** trigger a full tree refresh. To ensure the widget updates correctly, you must also dispatch the corresponding event:
+You can also listen to the `changed.of.check_tree` event to react whenever the selection changes.
 
-```js
-checkbox.dispatchEvent(new CustomEvent('field_changed.of.check_tree'))
-```
+See the example below:
 
-Both steps are required for the check tree widget to re-evaluate and propagate state changes across the entire structure.
+{{< example >}}
+<div class="mb-4">
+  <button id="check-tree-programmatic-set" class="btn btn-primary" type="button">Select some values</button>
+  <button id="check-tree-programmatic-clear" class="btn btn-danger" type="button">Clear all values</button>
+</div>
+
+<div class="mb-4">
+  Selected values: <span id="check-tree-programmatic-values"></span>
+</div>
+
+<ul id="check-tree-programmatic-widget" role="tree" class="form-check-tree" data-of-check-tree>
+  <li role="treeitem" aria-expanded="true">
+    <button class="btn btn-icon" type="button" aria-expanded="true" aria-controls="check-tree-p-sub-1">
+      <span class="form-check-tree-icon-expand">{{< icon name="chevron-right" >}}</span>
+      <span class="form-check-tree-icon-collapse">{{< icon name="chevron-down" >}}</span>
+    </button>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="Item 1" id="check-tree-p-1">
+      <label class="form-check-label" for="check-tree-p-1">Item 1</label>
+    </div>
+
+    <ul id="check-tree-p-sub-1" role="group">
+      <li role="treeitem">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Item 1.1" id="check-tree-p-1-1">
+          <label class="form-check-label" for="check-tree-p-1-1">Item 1.1</label>
+        </div>
+      </li>
+      <li role="treeitem">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Item 1.2" id="check-tree-p-1-2">
+          <label class="form-check-label" for="check-tree-p-1-2">Item 1.2</label>
+        </div>
+      </li>
+    </ul>
+  </li>
+
+  <li role="treeitem" aria-expanded="true">
+    <button class="btn btn-icon" type="button" aria-expanded="true" aria-controls="check-tree-p-sub-2">
+      <span class="form-check-tree-icon-expand">{{< icon name="chevron-right" >}}</span>
+      <span class="form-check-tree-icon-collapse">{{< icon name="chevron-down" >}}</span>
+    </button>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="Item 2" id="check-tree-p-2">
+      <label class="form-check-label" for="check-tree-p-2">Item 2</label>
+    </div>
+
+    <ul id="check-tree-p-sub-2" role="group">
+      <li role="treeitem">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Item 2.1" id="check-tree-p-2-1">
+          <label class="form-check-label" for="check-tree-p-2-1">Item 2.1</label>
+        </div>
+      </li>
+      <li role="treeitem">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Item 2.2" id="check-tree-p-2-2">
+          <label class="form-check-label" for="check-tree-p-2-2">Item 2.2</label>
+        </div>
+      </li>
+      <li role="treeitem" aria-expanded="true">
+        <button class="btn btn-icon" type="button" aria-expanded="true" aria-controls="check-tree-p-sub-2-3">
+          <span class="form-check-tree-icon-expand">{{< icon name="chevron-right" >}}</span>
+          <span class="form-check-tree-icon-collapse">{{< icon name="chevron-down" >}}</span>
+        </button>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Item 2.3" id="check-tree-p-2-3">
+          <label class="form-check-label" for="check-tree-p-2-3">Item 2.3</label>
+        </div>
+
+        <ul id="check-tree-p-sub-2-3" role="group">
+          <li role="treeitem">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Item 2.3.1" id="check-tree-p-2-3-1">
+              <label class="form-check-label" for="check-tree-p-2-3-1">Item 2.3.1</label>
+            </div>
+          </li>
+          <li role="treeitem">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Item 2.3.2" id="check-tree-p-2-3-2">
+              <label class="form-check-label" for="check-tree-p-2-3-2">Item 2.3.2</label>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="Item 3" id="check-tree-p-3">
+      <label class="form-check-label" for="check-tree-p-3">Item 3</label>
+    </div>
+  </li>
+</ul>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    (async () => {
+      const checkTreeElement = document.getElementById('check-tree-programmatic-widget');
+      const checkValuesElement = document.getElementById('check-tree-programmatic-values');
+      const checkTree = await openFrontend.CheckTree.then(component => component.getOrCreateInstance(checkTreeElement));
+
+      checkTreeElement.addEventListener('changed.of.check_tree', () => {
+        checkValuesElement.textContent = checkTree.getValue().join(', ');
+      });
+
+      document.getElementById('check-tree-programmatic-set').addEventListener('click', () => {
+        checkTree.setValue(['Item 1.2', 'Item 2.3', 'Item 3']);
+      });
+
+      document.getElementById('check-tree-programmatic-clear').addEventListener('click', () => {
+        checkTree.setValue([]);
+      });
+    })();
+  });
+</script>
+{{< /example >}}
 
 
 ## Radios

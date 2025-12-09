@@ -20,6 +20,9 @@ window.openFrontend = {
   get Carousel() {
     return new Promise(resolve => import(/* webpackChunkName: "of-carousel" */ './components/carousel').then(v => resolve(v.default)))
   },
+  get CheckTree() {
+    return new Promise(resolve => import(/* webpackChunkName: "of-check-tree" */ './components/check-tree').then(v => resolve(v.default)))
+  },
   get Collapse() {
     return new Promise(resolve => import(/* webpackChunkName: "of-collapse" */ './components/collapse').then(v => resolve(v.default)))
   },

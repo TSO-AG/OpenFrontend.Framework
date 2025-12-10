@@ -72,7 +72,9 @@ class CheckTree extends BaseComponent {
   // Private
   _initFields() {
     this._fields.forEach(field => {
-      this._updateField(field)
+      if (field.checked) {
+        this._updateField(field)
+      }
 
       field.addEventListener('change', () => {
         this._updateField(field)

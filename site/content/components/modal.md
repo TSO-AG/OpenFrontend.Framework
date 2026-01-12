@@ -350,6 +350,35 @@ Add `.modal-dialog-corner` to `.modal-dialog` to position the modal in the botto
 </div>
 ```
 
+### Plain modal
+
+Add `.modal-dialog-plain` to `.modal-dialog` to display a simple and plain modal.
+
+<div class="modal fade" id="exampleModalPlain" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-plain">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body">
+        <p>This is a plain modal.</p>
+        <p>The "close" button is positioned absolutely and above the modal content.</p>
+        <p>This type of modal is great for marketing, e.g. full-size images.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bd-example">
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalPlain">
+    Plain modal
+  </button>
+</div>
+
+```html
+<div class="modal-dialog modal-dialog-plain">
+  ...
+</div>
+```
+
 ### Tooltips and popovers
 
 [Tooltips]({{< docsref "/components/tooltips" >}}) can be placed within modals as needed. When modals are closed, any tooltips and popovers within are also automatically dismissed.

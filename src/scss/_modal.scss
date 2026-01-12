@@ -8,3 +8,12 @@
     transform: translate(calc(var(--#{$prefix}modal-margin) * -1), 0);
   }
 }
+
+.modal-dialog-plain {
+  .btn-close {
+    position: absolute;
+    top: var(--#{$prefix}modal-padding);
+    right: var(--#{$prefix}modal-padding);
+    z-index: 1;
+  }
+}

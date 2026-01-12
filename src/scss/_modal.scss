@@ -14,6 +14,6 @@
     position: absolute;
     top: var(--#{$prefix}modal-padding);
     right: var(--#{$prefix}modal-padding);
-    z-index: 1;
+    z-index: 10;
   }
 }

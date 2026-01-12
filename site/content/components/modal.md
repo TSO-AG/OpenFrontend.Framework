@@ -379,6 +379,56 @@ Add `.modal-dialog-plain` to `.modal-dialog` to display a simple and plain modal
 </div>
 ```
 
+### Modal with carousel
+
+A modal can contain any content — including interactive components like a carousel. This is useful for image galleries, product previews, onboarding flows, or documentation examples where you want to keep users in context.
+
+{{< example >}}
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCarousel">
+  Modal with carousel
+</button>
+
+<div class="modal fade" id="exampleModalCarousel" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-plain">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body">
+        <div class="carousel carousel-navigation-center-inside">
+          <div class="swiper" data-of-carousel='{
+              "pagination": "#carousel-pagination-modal",
+              "navigationNext": "#carousel-btn-next-modal",
+              "navigationPrev": "#carousel-btn-prev-modal"
+          }'>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="Slide 1" >}}
+              </div>
+              <div class="swiper-slide">
+                {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Slide 2" >}}
+              </div>
+              <div class="swiper-slide">
+                {{< placeholder width="755" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Slide 3" >}}
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-pagination carousel-pagination--bottom-center" id="carousel-pagination-modal"></div>
+
+          <div class="carousel-navigation">
+             <button type="button" class="carousel-button-prev btn btn-square btn-primary" id="carousel-btn-prev-modal">
+              {{< icon name="caret-left-fill" >}}
+            </button>
+            <button type="button" class="carousel-button-next btn btn-square btn-primary" id="carousel-btn-next-modal">
+              {{< icon name="caret-right-fill" >}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
 ### Tooltips and popovers
 
 [Tooltips]({{< docsref "/components/tooltips" >}}) can be placed within modals as needed. When modals are closed, any tooltips and popovers within are also automatically dismissed.

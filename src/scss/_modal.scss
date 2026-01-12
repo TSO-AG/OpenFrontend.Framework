@@ -1,0 +1,10 @@
+.modal-dialog-corner {
+  display: flex;
+  align-items: flex-end;
+  margin-right: 0;
+  min-height: calc(100% - var(--#{$prefix}modal-margin) * 2);
+
+  .modal.fade & {
+    transform: translate(calc(var(--#{$prefix}modal-margin) * -1), 0);
+  }
+}

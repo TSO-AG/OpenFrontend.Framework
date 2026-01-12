@@ -316,6 +316,40 @@ Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
 </div>
 ```
 
+### Corner modal
+
+Add `.modal-dialog-corner` to `.modal-dialog` to position the modal in the bottom-right corner.
+
+<div class="modal fade" id="exampleModalCorner" tabindex="-1" aria-labelledby="exampleModalCornerTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-corner">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title fs-5" id="exampleModalCornerTitle">Modal title</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>This is a corner modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bd-example">
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCorner">
+    Corner modal
+  </button>
+</div>
+
+```html
+<div class="modal-dialog modal-dialog-corner">
+  ...
+</div>
+```
+
 ### Tooltips and popovers
 
 [Tooltips]({{< docsref "/components/tooltips" >}}) can be placed within modals as needed. When modals are closed, any tooltips and popovers within are also automatically dismissed.

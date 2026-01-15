@@ -102,7 +102,35 @@ class Slider extends BaseComponent {
       this._applyWheelOptions(options)
     }
 
-    new Swiper(this._element, options)
+    this._initSwiper(options);
+  }
+
+  _initSwiper(options) {
+    const init = () => new Swiper(this._element, options);
+
+    // If the slider is inside collapsed element, initialize it only after it is actually shown.
+    // Otherwise, we may get random bugs like console warnings "Swiper Loop Warning: The number of slides is not enough for loop mode…",
+    if (this._element.closest('.collapse')) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Fix Firefox bug when slider is inside a tab
+            setTimeout(() => {
+              init();
+            }, 10)
+            observer.disconnect()
+          }
+        });
+      }, {
+        threshold: 0
+      });
+
+      observer.observe(this._element);
+
+      return;
+    }
+
+    init();
   }
 
   _applyNavigationOptions(options) {

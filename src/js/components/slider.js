@@ -1,6 +1,7 @@
 import BaseComponent from 'bootstrap/js/src/base-component'
 import Swiper from 'swiper'
 import { Autoplay, Navigation, Pagination, Scrollbar, EffectFade } from 'swiper/modules'
+import {runWhenLaidOut} from '../helpers/run-laid-out';
 
 Swiper.use([Navigation, Autoplay, Pagination, Scrollbar, EffectFade])
 
@@ -102,35 +103,7 @@ class Slider extends BaseComponent {
       this._applyWheelOptions(options)
     }
 
-    this._initSwiper(options);
-  }
-
-  _initSwiper(options) {
-    const init = () => new Swiper(this._element, options);
-
-    // If the slider is inside collapsed element, initialize it only after it is actually shown.
-    // Otherwise, we may get random bugs like console warnings "Swiper Loop Warning: The number of slides is not enough for loop mode…",
-    if (this._element.closest('.collapse')) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Fix Firefox bug when slider is inside a tab
-            setTimeout(() => {
-              init();
-            }, 10)
-            observer.disconnect()
-          }
-        });
-      }, {
-        threshold: 0
-      });
-
-      observer.observe(this._element);
-
-      return;
-    }
-
-    init();
+    runWhenLaidOut(this._element, () => new Swiper(this._element, options));
   }
 
   _applyNavigationOptions(options) {

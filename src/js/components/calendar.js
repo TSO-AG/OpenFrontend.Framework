@@ -4,6 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import listPlugin from '@fullcalendar/list';
 import multiMonthPlugin from '../plugins/fullcalendar/multi-month';
 import bootstrapThemePlugin from '../plugins/fullcalendar/bootstrap-theme';
+import {runWhenLaidOut} from '../helpers/run-laid-out';
 
 /**
  * Constants
@@ -79,9 +80,11 @@ class Calendar extends BaseComponent {
     this._eventsSlicedCache = new Map()
 
     this._calendar = new FullCalendar(this._element, await this._getOptions())
-    this._calendar.render()
 
-    this._element.dispatchEvent(new CustomEvent(EVENT_CALENDAR_INITIALIZED))
+    runWhenLaidOut(this._element, () => {
+      this._calendar.render()
+      this._element.dispatchEvent(new CustomEvent(EVENT_CALENDAR_INITIALIZED))
+    });
   }
 
   async _openEventPopover(info) {

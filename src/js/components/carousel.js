@@ -1,6 +1,7 @@
 import BaseComponent from 'bootstrap/js/src/base-component'
 import Swiper from 'swiper'
 import { Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules'
+import {runWhenLaidOut} from '../helpers/run-laid-out';
 
 Swiper.use([Autoplay, Navigation, Pagination, Thumbs])
 
@@ -12,25 +13,6 @@ function getCssRoot() {
   }
 
   return cssRoot
-}
-
-// This helper is to ensure the carousel behaves correctly even when it is initially hidden and shown on demand (e.g. inside tabs)
-function initSwiperVisibilityHandler(swiper, swiperElement) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Fix Firefox bug when carousel is inside a tab
-        setTimeout(() => {
-          swiper.update()
-        }, 10)
-        observer.disconnect()
-      }
-    });
-  }, {
-    threshold: 0
-  });
-
-  observer.observe(swiperElement);
 }
 
 /**
@@ -152,8 +134,9 @@ class Carousel extends BaseComponent {
 
     const carousel = new Swiper(this._element, options);
 
+    // Ensure the carousel behaves correctly even when it is initially hidden and shown on demand (e.g. inside tabs)
     if (this._config.futureSlidesVisible) {
-      initSwiperVisibilityHandler(carousel, this._element);
+      runWhenLaidOut(this._element, () => carousel.update())
     }
   }
 

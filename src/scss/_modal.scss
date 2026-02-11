@@ -5,6 +5,10 @@
   padding-left: var(--#{$prefix}modal-margin);
   min-height: calc(100% - var(--#{$prefix}modal-margin) * 2);
 
+  @include media-breakpoint-up(sm) {
+    max-width: calc(var(--#{$prefix}modal-width) + var(--#{$prefix}modal-margin));
+  }
+
   .modal.fade & {
     transform: translate(50px, 0);
   }

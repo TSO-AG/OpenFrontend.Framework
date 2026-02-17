@@ -261,7 +261,16 @@ class Calendar extends BaseComponent {
           dayGridMonth: {
             type: 'dayGridMonth',
             dayMaxEvents: 1,
-          }
+          },
+          timeGridWeek: {
+            type: 'timeGridWeek',
+            slotLabelFormat: {
+              hour: '2-digit',
+              minute: '2-digit',
+              meridiem: false,
+              hour12: false,
+            },
+          },
         }
         options.eventDidMount = info => {
           const link = info.el.querySelector('.fc-list-event-title a');

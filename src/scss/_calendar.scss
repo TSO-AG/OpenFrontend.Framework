@@ -44,6 +44,7 @@
 
   /* stylelint-disable selector-class-pattern */
   .fc-dayGridMonth-button,
+  .fc-timeGridWeek-button,
   .fc-listMonth-button {
     @extend .btn-outline-primary;
   }
@@ -249,6 +250,10 @@
 
 .fc-icon-grid {
   --#{$prefix}fc-icon: #{escape-svg($calendar-icon-grid)};
+}
+
+.fc-icon-week {
+  --#{$prefix}fc-icon: #{escape-svg($calendar-icon-week)};
 }
 
 .fc-icon-list {

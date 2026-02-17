@@ -22,6 +22,7 @@ BootstrapTheme.prototype.iconClasses = {
   prevYear: 'fc-icon-prev-year',
   nextYear: 'fc-icon-next-year',
   dayGridMonth: 'fc-icon-grid',
+  timeGridWeek: 'fc-icon-week',
   listMonth: 'fc-icon-list',
 }
 

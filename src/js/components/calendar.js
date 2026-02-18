@@ -260,7 +260,7 @@ class Calendar extends BaseComponent {
         options.views = {
           dayGridMonth: {
             type: 'dayGridMonth',
-            dayMaxEvents: 1,
+            dayMaxEvents: 3,
           },
           timeGridWeek: {
             type: 'timeGridWeek',

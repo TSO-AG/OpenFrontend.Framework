@@ -1,7 +1,6 @@
 import BaseComponent from 'bootstrap/js/src/base-component'
 import {Calendar as FullCalendar} from '@fullcalendar/core'
 import dayGridPlugin from '@fullcalendar/daygrid'
-import timeGridPlugin from '@fullcalendar/timegrid'
 import listPlugin from '@fullcalendar/list';
 import multiMonthPlugin from '../plugins/fullcalendar/multi-month';
 import bootstrapThemePlugin from '../plugins/fullcalendar/bootstrap-theme';
@@ -248,7 +247,7 @@ class Calendar extends BaseComponent {
     switch (this._config.layout) {
       case 'full':
         options.initialView = 'dayGridMonth'
-        options.plugins.push(dayGridPlugin, listPlugin, timeGridPlugin)
+        options.plugins.push(dayGridPlugin, listPlugin)
         options.listDayFormat = {
           month: 'long',
           year: 'numeric',
@@ -256,20 +255,14 @@ class Calendar extends BaseComponent {
           weekday: 'long',
         };
         options.listDaySideFormat = false;
-        options.headerToolbar.end = this._config.viewToggler ? 'dayGridMonth,timeGridWeek,listMonth today prev,next' : 'today prev,next'
+        options.headerToolbar.end = this._config.viewToggler ? 'dayGridMonth,dayGridWeek,listMonth today prev,next' : 'today prev,next'
         options.views = {
           dayGridMonth: {
             type: 'dayGridMonth',
             dayMaxEvents: 3,
           },
           timeGridWeek: {
-            type: 'timeGridWeek',
-            slotLabelFormat: {
-              hour: '2-digit',
-              minute: '2-digit',
-              meridiem: false,
-              hour12: false,
-            },
+            type: 'dayGridWeek',
           },
         }
         options.eventDidMount = info => {

@@ -1425,15 +1425,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fullcalendar/daygrid@npm:~6.1.20":
-  version: 6.1.20
-  resolution: "@fullcalendar/daygrid@npm:6.1.20"
-  peerDependencies:
-    "@fullcalendar/core": ~6.1.20
-  checksum: 10c0/dc71376bc9a8173d000aaf6d395a2bde0d2b89b78e937b1dabec31ac4111a0364f740ebdc1a4efd8ef967d3a8023acc4fac58c7245b6f92828fee28050fc2f35
-  languageName: node
-  linkType: hard
-
 "@fullcalendar/list@npm:^6.1.9":
   version: 6.1.9
   resolution: "@fullcalendar/list@npm:6.1.9"
@@ -1451,17 +1442,6 @@ __metadata:
   peerDependencies:
     "@fullcalendar/core": ~6.1.9
   checksum: 10c0/addb7901f0af75d304e68fde3196d7014a2f2fc1c0307689cd3b3c55b10298f869f4cb48ef5961ced78214fc8c1f100a2b9d86aa3207c282c931d7889fc0ad13
-  languageName: node
-  linkType: hard
-
-"@fullcalendar/timegrid@npm:^6.1.9":
-  version: 6.1.20
-  resolution: "@fullcalendar/timegrid@npm:6.1.20"
-  dependencies:
-    "@fullcalendar/daygrid": "npm:~6.1.20"
-  peerDependencies:
-    "@fullcalendar/core": ~6.1.20
-  checksum: 10c0/072f2b398f1b08cb0878c3081c1cf77883cd3d91aa674f6c7a01935ac19655e18259edb316a3aa081055bc274a66327ed925f7c3d213b64168c05756a8f6dc0a
   languageName: node
   linkType: hard
 
@@ -7132,7 +7112,6 @@ __metadata:
     "@fullcalendar/daygrid": "npm:^6.1.9"
     "@fullcalendar/list": "npm:^6.1.9"
     "@fullcalendar/multimonth": "npm:^6.1.9"
-    "@fullcalendar/timegrid": "npm:^6.1.9"
     "@popperjs/core": "npm:^2.11.8"
     "@symfony/webpack-encore": "npm:^4.0.0"
     animate.css: "npm:^4.1.1"

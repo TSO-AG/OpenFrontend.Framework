@@ -24,3 +24,20 @@
   height: 100%;
   object-fit: cover;
 }
+
+figure:has(.img-caption) {
+  position: relative;
+}
+
+.img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1em;
+  color: $white;
+  background: rgba($black, .2);
+  backdrop-filter: blur(5px);
+  font-size: .85em;
+  line-height: 1.5;
+}

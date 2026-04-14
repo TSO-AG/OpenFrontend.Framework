@@ -100,6 +100,17 @@ add the `.img-*` classes to the `<img>` and not to the `<picture>` tag.
 </div>
 {{< /example >}}
 
+## Image caption
+
+To display an image caption, use the `.img-caption` element:
+
+{{< example >}}
+<figure>
+  <img src="assets/media/sample-gallery-1.jpg" class="aspect aspect-16x9 object-fit-cover" alt="">
+  <figcaption class="img-caption">A wide mountain valley with lush green slopes, scattered flocks of grazing sheep, and distant snow-covered peaks partially obscured by low-hanging clouds and mist.</figcaption>
+</figure>
+{{< /example >}}
+
 ## Media attribution
 
 To display an interactive element that contains media attribution, use the `.media-attribution` element and the [Tooltip]({{< docsref "/components/tooltips" >}}) component as follows:

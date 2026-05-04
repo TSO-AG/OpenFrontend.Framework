@@ -179,7 +179,18 @@ class Lightbox extends Config {
   _init() {
     if (this._config.urlHashTracking) {
       this.open(this._getItemFromUrlHash())
-      window.addEventListener('hashchange', () => this.open(this._getItemFromUrlHash()))
+
+      window.addEventListener('hashchange', () => {
+        const item = this._getItemFromUrlHash();
+
+        // If there is an item, open the lightbox
+        if (item !== null) {
+          this.open(item)
+        } else if (this._lightbox.lightboxOpen) {
+          // If there is no item in the URL hash and lightbox is open, close it
+          this._lightbox.close();
+        }
+      })
     }
   }
 

@@ -752,7 +752,111 @@ Different variants of `.btn`, such at the various outlined styles, are supported
 <label class="btn btn-outline-danger" for="danger-outlined">Danger radio</label>
 {{< /example >}}
 
+## Media
+
+Create media-like checkboxes and radio buttons by using `.form-check-media-*` styles.
+
+### Checkbox media
+
+{{< example >}}
+<div class="form-check-media-group">
+  <div class="form-check-media">
+    <input type="checkbox" class="form-check-media-input" id="form-check-media-1">
+    <label class="form-check-media-label" for="form-check-media-1">
+      <span class="form-check-media-figure">
+        <img src="assets/media/sample-gallery-1.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+        <span class="form-check-media-figcaption">Option 1</span>
+      </span>
+    </label>
+  </div>
+  <div class="form-check-media">
+    <input type="checkbox" class="form-check-media-input" id="form-check-media-2">
+    <label class="form-check-media-label" for="form-check-media-2">
+      <span class="form-check-media-figure">
+        <span class="aspect aspect-4x3">
+          <video class="object-fit-cover" autoplay muted playsinline>
+            <source src="assets/media/sample-video.mp4" type="video/mp4">
+            <source src="assets/media/sample-video.ogg" type="video/ogg">
+          </video>
+        </span>
+        <span class="form-check-media-figcaption">Option 2</span>
+      </span>
+    </label>
+  </div>
+  <div class="form-check-media">
+    <input type="checkbox" class="form-check-media-input" id="form-check-media-3">
+    <label class="form-check-media-label" for="form-check-media-3">
+      <span class="form-check-media-figure">
+        <img src="assets/media/sample-gallery-3.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+        <span class="form-check-media-figcaption">Option 3</span>
+      </span>
+    </label>
+  </div>
+  <div class="form-check-media">
+    <input type="checkbox" class="form-check-media-input" id="form-check-media-4" disabled>
+    <label class="form-check-media-label" for="form-check-media-4">
+      <span class="form-check-media-figure">
+        <img src="assets/media/sample-gallery-4.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+        <span class="form-check-media-figcaption">Option 4</span>
+      </span>
+    </label>
+  </div>
+</div>
+{{< /example >}}
+
+### Radio media
+
+{{< example >}}
+<div class="form-check-media-group">
+  <div class="form-check-media">
+    <input type="radio" class="form-check-media-input" id="form-check-media-radio-1" name="form_check_media_radio">
+    <label class="form-check-media-label" for="form-check-media-radio-1">
+      <span class="form-check-media-figure">
+        <img src="assets/media/sample-gallery-1.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+        <span class="form-check-media-figcaption">Option 1</span>
+      </span>
+    </label>
+  </div>
+  <div class="form-check-media">
+    <input type="radio" class="form-check-media-input" id="form-check-media-radio-2" name="form_check_media_radio">
+    <label class="form-check-media-label" for="form-check-media-radio-2">
+      <span class="form-check-media-figure">
+        <span class="aspect aspect-4x3">
+          <video class="object-fit-cover" autoplay muted playsinline>
+            <source src="assets/media/sample-video.mp4" type="video/mp4">
+            <source src="assets/media/sample-video.ogg" type="video/ogg">
+          </video>
+        </span>
+        <span class="form-check-media-figcaption">Option 2</span>
+      </span>
+    </label>
+  </div>
+  <div class="form-check-media">
+    <input type="radio" class="form-check-media-input" id="form-check-media-radio-3" name="form_check_media_radio">
+    <label class="form-check-media-label" for="form-check-media-radio-3">
+      <span class="form-check-media-figure">
+        <img src="assets/media/sample-gallery-3.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+        <span class="form-check-media-figcaption">Option 3</span>
+      </span>
+    </label>
+  </div>
+  <div class="form-check-media">
+    <input type="radio" class="form-check-media-input" id="form-check-media-radio-4" name="form_check_media_radio" disabled>
+    <label class="form-check-media-label" for="form-check-media-radio-4">
+      <span class="form-check-media-figure">
+        <img src="assets/media/sample-gallery-4.jpg" alt="" class="aspect aspect-4x3 object-fit-cover img-fluid">
+        <span class="form-check-media-figcaption">Option 4</span>
+      </span>
+    </label>
+  </div>
+</div>
+{{< /example >}}
+
 ## CSS
+
+CSS for check media:
+
+{{< scss-docs name="form-check-media-css-vars" file="src/scss/form/_check-media.scss" >}}
 
 CSS for check tree:
 
@@ -767,6 +871,10 @@ Variables for checks:
 Variables for switches:
 
 {{< scss-docs name="form-switch-variables" file="node_modules/bootstrap/scss/_variables.scss" >}}
+
+Variables for check media:
+
+{{< scss-docs name="form-check-media" file="src/scss/_variables.scss" >}}
 
 Variables for check tree:
 

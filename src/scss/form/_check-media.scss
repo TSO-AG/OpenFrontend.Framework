@@ -1,11 +1,7 @@
-.form-check-media-group {
+.form-check-media {
   // scss-docs-start form-check-media-css-vars
-  --#{$prefix}form-check-media-gap-x: #{$form-check-media-gap-x};
-  --#{$prefix}form-check-media-gap-y: #{$form-check-media-gap-y};
   --#{$prefix}form-check-media-padding-x: #{$form-check-media-padding-x};
   --#{$prefix}form-check-media-padding-y: #{$form-check-media-padding-y};
-  --#{$prefix}form-check-media-width: #{$form-check-media-width};
-  --#{$prefix}form-check-media-height: #{$form-check-media-height};
 
   --#{$prefix}form-check-media-bg: #{$form-check-media-bg};
   --#{$prefix}form-check-media-border: #{$form-check-media-border};
@@ -23,16 +19,6 @@
 
   --#{$prefix}form-check-media-disabled-opacity: #{$form-check-media-disabled-opacity};
   // scss-docs-end form-check-media-css-vars
-
-  @include make-row(var(--#{$prefix}form-check-media-gap-x));
-  --#{$prefix}gutter-y: var(--#{$prefix}gutter-y);
-}
-
-.form-check-media {
-  width: var(--#{$prefix}form-check-media-width);
-  height: var(--#{$prefix}form-check-media-height);
-  padding-right: calc(var(--#{$prefix}gutter-x) * .5);
-  padding-left: calc(var(--#{$prefix}gutter-x) * .5);
 }
 
 .form-check-media-input {

@@ -85,14 +85,6 @@ $input-btn-padding-x: .75em !default;
 // Forms
 
 // scss-docs-start form-check-media
-$form-check-media-gap-x:                         .5rem !default;
-$form-check-media-gap-y:                         .5rem !default;
-$form-check-media-padding-x:                     .5rem !default;
-$form-check-media-padding-y:                     .5rem !default;
-$form-check-media-width:                         25% !default;
-$form-check-media-height:                        auto !default;
-$form-check-media-transition:                    null !default;
-
 $form-check-media-bg:                            var(--#{$prefix}body-bg) !default;
 $form-check-media-border:                        var(--#{$prefix}border-width) solid var(--#{$prefix}border-color) !default;
 $form-check-media-border-radius:                 .25em !default;
@@ -101,6 +93,9 @@ $form-check-media-color:                         var(--#{$prefix}secondary-color
 $form-check-media-focus-border:                  #{tint-color($primary, 50%)} !default;
 $form-check-media-focus-box-shadow:              0 0 0 .25rem rgba($primary, .25) !default;
 $form-check-media-font-size:                     .875em !default;
+$form-check-media-padding-x:                     .5rem !default;
+$form-check-media-padding-y:                     .5rem !default;
+$form-check-media-transition:                    null !default;
 
 $form-check-media-checked-color:                 $white !default;
 $form-check-media-checked-bg-color:              $primary !default;

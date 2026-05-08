@@ -759,8 +759,8 @@ Create media-like checkboxes and radio buttons by using `.form-check-media-*` st
 ### Checkbox media
 
 {{< example >}}
-<div class="form-check-media-group">
-  <div class="form-check-media">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 gy-gutter">
+  <div class="form-check-media col">
     <input type="checkbox" class="form-check-media-input" id="form-check-media-1">
     <label class="form-check-media-label" for="form-check-media-1">
       <span class="form-check-media-figure">
@@ -769,7 +769,7 @@ Create media-like checkboxes and radio buttons by using `.form-check-media-*` st
       </span>
     </label>
   </div>
-  <div class="form-check-media">
+  <div class="form-check-media col">
     <input type="checkbox" class="form-check-media-input" id="form-check-media-2">
     <label class="form-check-media-label" for="form-check-media-2">
       <span class="form-check-media-figure">
@@ -783,7 +783,7 @@ Create media-like checkboxes and radio buttons by using `.form-check-media-*` st
       </span>
     </label>
   </div>
-  <div class="form-check-media">
+  <div class="form-check-media col">
     <input type="checkbox" class="form-check-media-input" id="form-check-media-3">
     <label class="form-check-media-label" for="form-check-media-3">
       <span class="form-check-media-figure">
@@ -792,7 +792,7 @@ Create media-like checkboxes and radio buttons by using `.form-check-media-*` st
       </span>
     </label>
   </div>
-  <div class="form-check-media">
+  <div class="form-check-media col">
     <input type="checkbox" class="form-check-media-input" id="form-check-media-4" disabled>
     <label class="form-check-media-label" for="form-check-media-4">
       <span class="form-check-media-figure">
@@ -807,8 +807,8 @@ Create media-like checkboxes and radio buttons by using `.form-check-media-*` st
 ### Radio media
 
 {{< example >}}
-<div class="form-check-media-group">
-  <div class="form-check-media">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 gy-gutter">
+  <div class="form-check-media col">
     <input type="radio" class="form-check-media-input" id="form-check-media-radio-1" name="form_check_media_radio">
     <label class="form-check-media-label" for="form-check-media-radio-1">
       <span class="form-check-media-figure">
@@ -817,7 +817,7 @@ Create media-like checkboxes and radio buttons by using `.form-check-media-*` st
       </span>
     </label>
   </div>
-  <div class="form-check-media">
+  <div class="form-check-media col">
     <input type="radio" class="form-check-media-input" id="form-check-media-radio-2" name="form_check_media_radio">
     <label class="form-check-media-label" for="form-check-media-radio-2">
       <span class="form-check-media-figure">
@@ -831,7 +831,7 @@ Create media-like checkboxes and radio buttons by using `.form-check-media-*` st
       </span>
     </label>
   </div>
-  <div class="form-check-media">
+  <div class="form-check-media col">
     <input type="radio" class="form-check-media-input" id="form-check-media-radio-3" name="form_check_media_radio">
     <label class="form-check-media-label" for="form-check-media-radio-3">
       <span class="form-check-media-figure">
@@ -840,7 +840,7 @@ Create media-like checkboxes and radio buttons by using `.form-check-media-*` st
       </span>
     </label>
   </div>
-  <div class="form-check-media">
+  <div class="form-check-media col">
     <input type="radio" class="form-check-media-input" id="form-check-media-radio-4" name="form_check_media_radio" disabled>
     <label class="form-check-media-label" for="form-check-media-radio-4">
       <span class="form-check-media-figure">

@@ -248,8 +248,19 @@ class Lightbox extends Config {
     }
   }
 
-  _onSlideBeforeChange({ current }) {
+  _onSlideBeforeChange(data) {
+    const { current, prev } = data;
+
     this._dispatchGlobalEvent(EVENT_LIGHTBOX_SLIDE_BEFORE_CHANGE, { currentSlide: current });
+
+    // Hide the open attribution from previous slide
+    if (prev.slideConfig.attribution) {
+      const attribution = prev.slideNode.querySelector('.media-attribution');
+
+      if (attribution) {
+        Tooltip.getOrCreateInstance(attribution).hide();
+      }
+    }
 
     if (this._config.thumbnails) {
       this._setThumbnailsActiveSlide(current.index)
@@ -282,6 +293,9 @@ class Lightbox extends Config {
         html: true,
         delay: {'show': 0, 'hide': 1500},
       });
+
+      // Fix the attribution display no mobile devices
+      attributionEl.addEventListener('touchstart', e => e.stopPropagation(), { passive: false });
 
       slideNode.querySelector('.gslide-media').appendChild(attributionEl);
     }

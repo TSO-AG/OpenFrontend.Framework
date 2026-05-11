@@ -1,0 +1,116 @@
+.form-check-media {
+  // scss-docs-start form-check-media-css-vars
+  --#{$prefix}form-check-media-padding-x: #{$form-check-media-padding-x};
+  --#{$prefix}form-check-media-padding-y: #{$form-check-media-padding-y};
+
+  --#{$prefix}form-check-media-bg: #{$form-check-media-bg};
+  --#{$prefix}form-check-media-border: #{$form-check-media-border};
+  --#{$prefix}form-check-media-border-radius: #{$form-check-media-border-radius};
+  --#{$prefix}form-check-media-box-shadow: #{$form-check-media-box-shadow};
+  --#{$prefix}form-check-media-focus-border: #{$form-check-media-focus-border};
+  --#{$prefix}form-check-media-focus-box-shadow: #{$form-check-media-focus-box-shadow};
+  --#{$prefix}form-check-media-color: #{$form-check-media-color};
+
+  --#{$prefix}form-check-media-checked-color: #{$form-check-media-checked-color};
+  --#{$prefix}form-check-media-checked-bg-color: #{$form-check-media-checked-bg-color};
+  --#{$prefix}form-check-media-checked-bg-image-checkbox: #{escape-svg(#{$form-check-media-checked-bg-image-checkbox})};
+  --#{$prefix}form-check-media-checked-bg-image-radio: #{escape-svg(#{$form-check-media-checked-bg-image-radio})};
+  --#{$prefix}form-check-media-checked-box-shadow: #{$form-check-media-checked-box-shadow};
+
+  --#{$prefix}form-check-media-disabled-opacity: #{$form-check-media-disabled-opacity};
+  // scss-docs-end form-check-media-css-vars
+}
+
+.form-check-media-input {
+  @include visually-hidden();
+
+  &:checked {
+    &[type="checkbox"] + .form-check-media-label {
+      --#{$prefix}form-check-media-checked-bg-image: var(--#{$prefix}form-check-media-checked-bg-image-checkbox);
+    }
+
+    &[type="radio"] + .form-check-media-label {
+      --#{$prefix}form-check-media-checked-bg-image: var(--#{$prefix}form-check-media-checked-bg-image-radio);
+    }
+
+    + .form-check-media-label {
+      box-shadow: var(--#{$prefix}form-check-media-checked-box-shadow);
+
+      &::after {
+        border-color: var(--#{$prefix}form-check-media-checked-bg-color);
+        background-color: var(--#{$prefix}form-check-media-checked-bg-color);
+        background-image: var(--#{$prefix}form-check-media-checked-bg-image);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+
+  &:disabled + .form-check-media-label {
+    opacity: var(--#{$prefix}form-check-media-disabled-opacity);
+    cursor: not-allowed;
+
+    &::after {
+      opacity: calc(var(--#{$prefix}form-check-media-disabled-opacity) / 2);
+    }
+  }
+
+  &:focus-visible + .form-check-media-label {
+    border-color: var(--#{$prefix}form-check-media-focus-border);
+    outline: 0;
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: var(--#{$prefix}form-check-media-box-shadow), var(--#{$prefix}form-check-media-focus-box-shadow);
+    } @else {
+      box-shadow: var(--#{$prefix}form-check-media-focus-box-shadow);
+    }
+  }
+}
+
+.form-check-media-label {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: var(--#{$prefix}form-check-media-padding-x) var(--#{$prefix}form-check-media-padding-y);
+  background-color: var(--#{$prefix}form-check-media-bg);
+  border: var(--#{$prefix}form-check-media-border);
+  box-shadow: var(--#{$prefix}form-check-media-box-shadow);
+  color: var(--#{$prefix}form-check-media-color);
+  cursor: pointer;
+  @include border-radius($form-check-media-border-radius);
+  @include transition($form-check-media-transition);
+
+  // State indicator
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(var(--#{$prefix}form-check-media-padding-y) + 8px);
+    right: calc(var(--#{$prefix}form-check-media-padding-x) + 8px);
+    width: 22px;
+    height: 22px;
+    background: transparent;
+    border-radius: 50%;
+    border: 2px solid $white;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    @include transition($form-check-media-transition);
+  }
+}
+
+.form-check-media-figure {
+  display: block;
+  margin: 0;
+
+  .aspect {
+    display: block;
+  }
+}
+
+.form-check-media-figcaption {
+  display: block;
+  margin-top: $spacer * .5;
+  @include font-size($form-check-media-font-size);
+  text-align: center;
+}
+

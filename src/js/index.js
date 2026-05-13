@@ -20,6 +20,9 @@ window.openFrontend = {
   get Carousel() {
     return new Promise(resolve => import(/* webpackChunkName: "of-carousel" */ './components/carousel').then(v => resolve(v.default)))
   },
+  get Chart() {
+    return new Promise(resolve => import(/* webpackChunkName: "of-chart" */ './components/chart').then(v => resolve(v.default)))
+  },
   get CheckTree() {
     return new Promise(resolve => import(/* webpackChunkName: "of-check-tree" */ './components/check-tree').then(v => resolve(v.default)))
   },
@@ -83,6 +86,7 @@ const components = [
   { selector: '[data-bs-toggle="popover"]', callback: () => import(/* webpackChunkName: "of-popover" */ './components/popover') },
   { selector: '[data-of-anchor-navigation]', callback: () => import(/* webpackChunkName: "of-anchor-navigation" */ './components/anchor-navigation') },
   { selector: '[data-of-calendar]', callback: () => import(/* webpackChunkName: "of-calendar" */ './components/calendar') },
+  { selector: '[data-of-chart]', callback: () => import(/* webpackChunkName: "of-chart" */ './components/chart') },
   { selector: '[data-of-check-tree]', callback: () => import(/* webpackChunkName: "of-check-tree" */ './components/check-tree') },
   { selector: '[data-of-combo-box]', callback: () => import(/* webpackChunkName: "of-combo-box" */ './components/combo-box') },
   { selector: '[data-of-highlight]', callback: () => import(/* webpackChunkName: "of-highlight" */ './components/highlight') },

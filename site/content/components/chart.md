@@ -11,10 +11,10 @@ toc: true
 The Chart is a JavaScript component for rendering data visualizations such as bar, line, and pie charts. You can initialize the component using the `data-of-chart` attribute.
 
 {{< callout info >}}
-The component uses the [Apache ECharts](https://echarts.apache.org) library.
+The component uses the [Apache ECharts](https://echarts.apache.org) library. Note that the library is not fully imported — only the features listed on this page are available.
 {{< /callout >}}
 
-## Supported types
+## Chart types
 
 The Chart component supports multiple series types, each accepting a different data format.
 The type is defined per series inside the series array and maps directly to the [Apache ECharts series types](https://echarts.apache.org/en/option.html#series).
@@ -77,7 +77,7 @@ For the full list of available options per type, refer to the ECharts option doc
 }'></div>
 {{< /example >}}
 
-## Supported components
+## Components
 
 The following ECharts components are included and available out of the box:
 
@@ -85,10 +85,29 @@ The following ECharts components are included and available out of the box:
 | Component | Description |
 | --- | --- |
 | [Aria](https://echarts.apache.org/en/option.html#aria) | Adds accessibility attributes to the chart. Enabled by default and cannot be disabled. |
-| [Grid](https://echarts.apache.org/en/option.html#grid) | Defines the drawing area for `bar` and `line` charts. |
 | [Legend](https://echarts.apache.org/en/option.html#legend) | Displays a legend for identifying series. |
 | [Title](https://echarts.apache.org/en/option.html#title) | Displays a chart title. |
 | [Tooltip](https://echarts.apache.org/en/option.html#tooltip) | Shows data details on hover. |
+{{< /bs-table >}}
+
+## Coordinate systems
+
+The following ECharts coordinate systems are included and available out of the box:
+
+{{< bs-table "table" >}}
+| Coordinate system | Description |
+| --- | --- |
+| [Grid](https://echarts.apache.org/en/option.html#grid) | A Cartesian coordinate system for `bar` and `line` charts. |
+{{< /bs-table >}}
+
+## Renderers
+
+The following ECharts renderers are supported:
+
+{{< bs-table "table" >}}
+| Renderer | Description |
+| --- | --- |
+| [SVG](https://apache.github.io/echarts-handbook/en/best-practices/canvas-vs-svg/) | Renders charts as SVG elements. |
 {{< /bs-table >}}
 
 ## Usage

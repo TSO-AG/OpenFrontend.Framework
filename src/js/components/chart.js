@@ -34,6 +34,8 @@ class Chart extends BaseComponent {
     this._loadModules().then(() => {
       this._initChart();
       this._element.dispatchEvent(new CustomEvent(EVENT_COMPONENT_INITIALIZED))
+    }).catch(error => {
+      console.error(`[Chart] Initialization failed:`, error);
     });
   }
 

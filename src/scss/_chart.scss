@@ -1,0 +1,8 @@
+.chart {
+  // scss-docs-start chart-css-vars
+  --#{$prefix}chart-height: #{$chart-height};
+  // scss-docs-end chart-css-vars
+
+  width: 100%;
+  height: var(--#{$prefix}chart-height);
+}

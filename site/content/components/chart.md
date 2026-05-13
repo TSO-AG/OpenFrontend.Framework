@@ -48,7 +48,7 @@ For the full list of available options per type, refer to the ECharts option doc
     "xAxis": { "type": "category", "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"] },
     "yAxis": { "type": "value" },
     "series": [
-      { "name": "Sales", "type": "line", "data": [120, 200, 150, 80, 170, 110, 130], areaStyle: {} }
+      { "name": "Sales", "type": "line", "data": [120, 200, 150, 80, 170, 110, 130], "areaStyle": {} }
     ]
   }
 }'></div>

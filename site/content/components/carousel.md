@@ -55,7 +55,10 @@ You can specify the number of slides to show in the viewport with the `slidesPer
 
 {{< example >}}
 <div class="carousel carousel-navigation-center">
-  <div class="swiper" data-of-carousel='{
+  <div class="swiper" style="
+      --bs-carousel-slides-per-view: 3;
+      --bs-carousel-space-between: 24px;"
+    data-of-carousel='{
       "slidesPerView": 3,
       "spaceBetween": 24,
       "pagination": "#carousel-pagination-2",
@@ -123,7 +126,10 @@ For loop to work, the number of slides must be greater or equal than `slidesPerV
 </div>
 
 <div class="carousel">
-  <div class="swiper" data-of-carousel='{
+  <div class="swiper" style="
+      --bs-carousel-slides-per-view: 3;
+      --bs-carousel-space-between: 24px;"
+    data-of-carousel='{
       "autoplay": true,
       "loop": true,
       "speed": 600,
@@ -331,6 +337,15 @@ If you do not want to place a pagination above the slide you can use one of the 
 ### Responsive breakpoints
 You can configure different slide display settings based on different viewport widths.
 
+{{< callout info >}}
+Until Swiper initializes, every slide is full width, so only the first one is visible. To make the static (pre-initialized) markup already reflect your `slidesPerView` and `spaceBetween` configuration — and avoid a layout shift on load — set matching CSS variables in the element's `style` attribute. They are only applied while the carousel is `:not(.swiper-initialized)`:
+
+- `--bs-carousel-slides-per-view` and the responsive variants `--bs-carousel-slides-per-view-{sm,md,lg,xl,xxl}`
+- `--bs-carousel-space-between` and the responsive variants `--bs-carousel-space-between-{sm,md,lg,xl,xxl}`
+
+Each breakpoint variant overrides the base value from that breakpoint up, falling back to the closest smaller breakpoint that is set. The `xxl` variant corresponds to the `1400` breakpoint.
+{{< /callout >}}
+
 {{< example >}}
 <div class="heading-action">
     <h3>Example heading</h3>
@@ -347,7 +362,16 @@ You can configure different slide display settings based on different viewport w
 </div>
 
 <div class="carousel">
-  <div class="swiper" data-of-carousel='{
+  <div class="swiper" style="
+      --bs-carousel-slides-per-view: 1;
+      --bs-carousel-slides-per-view-sm: 2;
+      --bs-carousel-slides-per-view-md: 3;
+      --bs-carousel-slides-per-view-xl: 4;
+      --bs-carousel-slides-per-view-xxl: 5;
+      --bs-carousel-space-between: 10px;
+      --bs-carousel-space-between-xl: 15px;
+      --bs-carousel-space-between-xxl: 8px;"
+    data-of-carousel='{
       "slidesPerView": 1,
       "spaceBetween": 10,
       "navigationNext": "#carousel-btn-next-8",
@@ -423,7 +447,12 @@ For loop to work, the number of slides must be greater or equal than `slidesPerV
     </div>
 
     <div class="carousel">
-      <div class="swiper" data-of-carousel='{
+      <div class="swiper" style="
+          --bs-carousel-slides-per-view: 2;
+          --bs-carousel-space-between: 6px;
+          --bs-carousel-space-between-md: 12px;
+          --bs-carousel-space-between-lg: 24px;"
+        data-of-carousel='{
           "autoplay": true,
           "loop": true,
           "speed": 600,
@@ -707,7 +736,14 @@ To create a photo gallery with thumbnails, you can create two separate carousels
 
 <!-- Thumbnails carousel -->
 <div class="carousel carousel-navigation-center">
-  <div id="carousel-thumbnails-1" class="swiper" data-of-carousel='{
+  <div id="carousel-thumbnails-1" class="swiper" style="
+      --bs-carousel-slides-per-view: 2;
+      --bs-carousel-slides-per-view-sm: 3;
+      --bs-carousel-slides-per-view-md: 4;
+      --bs-carousel-slides-per-view-xl: 5;
+      --bs-carousel-slides-per-view-xxl: 6;
+      --bs-carousel-space-between: 10px;"
+    data-of-carousel='{
       "slidesPerView": 2,
       "spaceBetween": 10,
       "navigationNext": "#carousel-btn-next-10",

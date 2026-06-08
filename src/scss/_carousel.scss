@@ -31,6 +31,39 @@
   }
 }
 
+// Builds a CSS custom property whose value cascades through the grid
+// breakpoints. A breakpoint-specific variable (e.g.
+// `--bs-carousel-slides-per-view-md`) overrides the base one from that
+// breakpoint up, falling back to the closest smaller breakpoint that is set.
+@mixin carousel-pre-init-var($property, $variable, $default) {
+  $chain: var(--#{$prefix}#{$variable}, #{$default});
+  #{$property}: $chain;
+
+  @each $name, $width in $grid-breakpoints {
+    @if $width != 0 {
+      $chain: var(--#{$prefix}#{$variable}-#{$name}, #{$chain});
+
+      @include media-breakpoint-up($name) {
+        #{$property}: $chain;
+      }
+    }
+  }
+}
+
+// Pre-initialization layout
+.carousel .swiper:not(.swiper-initialized) {
+  @include carousel-pre-init-var(--#{$prefix}carousel-slides-per-view-computed, carousel-slides-per-view, 1);
+  @include carousel-pre-init-var(--#{$prefix}carousel-space-between-computed, carousel-space-between, 0px);
+
+  .swiper-wrapper {
+    gap: var(--#{$prefix}carousel-space-between-computed);
+  }
+
+  .swiper-slide {
+    width: calc((100% - (var(--#{$prefix}carousel-slides-per-view-computed) - 1) * var(--#{$prefix}carousel-space-between-computed)) / var(--#{$prefix}carousel-slides-per-view-computed));
+  }
+}
+
 // Carousel navigation
 .carousel-navigation {
   $this: &;

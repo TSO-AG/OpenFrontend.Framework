@@ -91,6 +91,7 @@ class AnchorNavigation extends BaseComponent {
 
       anchor.addEventListener('click', e => {
         e.preventDefault();
+        anchor.blur();
         this.scrollToSection(hash)
 
         if (this._config.urlHashTracking) {
@@ -158,6 +159,9 @@ class AnchorNavigation extends BaseComponent {
 
     for (const entry of entries) {
       if (!entry.isIntersecting) {
+        this._activeTarget = null
+        this._clearActiveClass(targetElement(entry))
+
         continue
       }
 

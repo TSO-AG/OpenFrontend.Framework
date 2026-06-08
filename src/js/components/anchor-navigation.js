@@ -158,9 +158,6 @@ class AnchorNavigation extends BaseComponent {
 
     for (const entry of entries) {
       if (!entry.isIntersecting) {
-        this._activeTarget = null
-        this._clearActiveClass(targetElement(entry))
-
         continue
       }
 

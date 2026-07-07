@@ -164,12 +164,12 @@ class PageNavigation extends BaseComponent {
 
   _activateMenuPanel(panel) {
     panel.classList.add(CLASS_NAME_PANEL_ACTIVE)
-    panel.parentElement.querySelector(this._config.submenuSelector)?.setAttribute('aria-expanded', 'true')
+    panel.parentElement.querySelector(this._config.togglePanelButtonsSelector)?.setAttribute('aria-expanded', 'true')
   }
 
   _deactivateMenuPanel(panel) {
     panel.classList.remove(CLASS_NAME_PANEL_ACTIVE)
-    panel.parentElement.querySelector(this._config.submenuSelector)?.setAttribute('aria-expanded', 'false')
+    panel.parentElement.querySelector(this._config.togglePanelButtonsSelector)?.setAttribute('aria-expanded', 'false')
   }
 
   _activateMenuPanelParent(panel) {
@@ -268,7 +268,7 @@ class PageNavigation extends BaseComponent {
 
 export function initMultiple(els) {
   for (const el of els) {
-    PageNavigation.getOrCreateInstance(el, el.dataset.ofPageNavigation ? JSON.parse(el.dataset.ofNavigation) : {})
+    PageNavigation.getOrCreateInstance(el, el.dataset.ofPageNavigation ? JSON.parse(el.dataset.ofPageNavigation) : {})
   }
 }
 

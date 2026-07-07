@@ -31,6 +31,10 @@ class PageNavigation extends BaseComponent {
     super(element, config)
     this._togglePanelButtons = element.querySelectorAll(this._config.togglePanelButtonsSelector)
     this._closePanelButtons = element.querySelectorAll(this._config.closePanelButtonsSelector)
+
+    // TODO: maybe not document. but element's parent? or something?
+    this._megaMenuWrappers = new Map([...document.querySelectorAll('[data-of-mega-menu-content]')].map(el => [el.dataset.ofMegaMenuContent, el]));
+
     this._initTriggers()
     this._initHTMLPanels()
 
@@ -152,12 +156,14 @@ class PageNavigation extends BaseComponent {
   _openPanel(panel) {
     this._activateMenuPanel(panel)
     this._activateMenuPanelParent(panel)
+    this._activateMegaMenu(panel);
     this._updateHtmlPanelDisplay()
   }
 
   _closePanel(panel) {
     this._deactivateMenuPanel(panel)
     this._deactivateMenuPanelParent(panel)
+    this._deactivateMegaMenu(panel);
     this._closeAllPanelChild(panel)
     this._updateHtmlPanelDisplay()
   }
@@ -177,6 +183,61 @@ class PageNavigation extends BaseComponent {
 
     if (parentPanel) {
       parentPanel.classList.add(CLASS_NAME_PANEL_PARENT)
+    }
+  }
+
+  _activateMegaMenu(panel) {
+    const toggle = panel.parentElement.querySelector(this._config.togglePanelButtonsSelector);
+
+    if (!toggle || !toggle.dataset.ofMegaMenuToggle) {
+      return;
+    }
+
+    // TODO DEBUG
+    console.log('activate: ' + toggle.dataset.ofMegaMenuToggle);
+
+    for (const [key, wrapper] of this._megaMenuWrappers) {
+      if (key === toggle.dataset.ofMegaMenuToggle) {
+        wrapper.classList.remove('visually-hidden');
+      } else {
+        wrapper.classList.add('visually-hidden');
+      }
+    }
+  }
+
+  _deactivateMegaMenu(panel) {
+    const toggle = panel.parentElement.querySelector(this._config.togglePanelButtonsSelector);
+
+    if (!toggle || !toggle.dataset.ofMegaMenuToggle) {
+      return;
+    }
+
+    // Hide the current mega menu panel
+    this._megaMenuWrappers.get(toggle.dataset.ofMegaMenuToggle).classList.add('visually-hidden');
+
+    let nextToggle = toggle;
+
+    do {
+      const parentLi = nextToggle.parentElement?.parentElement?.parentElement;
+
+      // We are out of the menu, break
+      if (parentLi?.tagName !== 'LI') {
+        nextToggle = null;
+        break;
+      }
+
+      nextToggle = [...parentLi.children].find(sibling => sibling.matches(this._config.togglePanelButtonsSelector));
+
+      // Break the loop if parent toggle has a mega menu
+      if (nextToggle?.dataset.ofMegaMenuToggle) {
+        break;
+      }
+    } while (nextToggle);
+
+    if (nextToggle) {
+      this._megaMenuWrappers.get(nextToggle.dataset.ofMegaMenuToggle).classList.remove('visually-hidden');
+    } else {
+      this._megaMenuWrappers.get('default')?.classList.remove('visually-hidden');
     }
   }
 

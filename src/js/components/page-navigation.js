@@ -1,4 +1,5 @@
 import BaseComponent from 'bootstrap/js/src/base-component'
+import {isElement} from 'bootstrap/js/src/util';
 
 /**
  * Constants
@@ -9,12 +10,11 @@ const CLASS_NAME_SUBMENU_ACTIVE = 'active-level'
 const CLASS_NAME_PANEL_ACTIVE = 'active-panel'
 const CLASS_NAME_PANEL_ACTIVE_CALCULATING = 'active-panel-calculating'
 const CLASS_NAME_PANEL_PARENT = 'active-panel-parent'
+const CLASS_NAME_PAGE_CONTENT_ACTIVE = 'active-menu-content'
 const PANEL_HEIGHT_PROPERTY_NAME = '--page-nav-panel-height'
 const PANEL_LAST_HEIGHT_PROPERTY_NAME = '--page-nav-panel-last-height'
 const ACTIVE_ITEM_SELECTOR = 'span.active'
 const CSS_MENU_COLUMN_PROPERTY_NAME = '--columns'
-const HTML_CONTENT_TRIGGER_ATTRIBUTE = 'data-html-content-trigger'
-const HTML_CONTENT_TRIGGER_SELECTOR = `[${HTML_CONTENT_TRIGGER_ATTRIBUTE}]`
 
 const DefaultType = {
   togglePanelButtonsSelector: 'string',
@@ -31,8 +31,9 @@ class PageNavigation extends BaseComponent {
     super(element, config)
     this._togglePanelButtons = element.querySelectorAll(this._config.togglePanelButtonsSelector)
     this._closePanelButtons = element.querySelectorAll(this._config.closePanelButtonsSelector)
+    this._menuContentWrappers = new Map([...element.parentElement.querySelectorAll('[data-of-page-menu-content]')].map(el => [el.dataset.ofPageMenuContent, el]));
+
     this._initTriggers()
-    this._initHTMLPanels()
 
     // Display active level after navigation initialization
     this._openActivePanelsOnVisible()
@@ -71,8 +72,10 @@ class PageNavigation extends BaseComponent {
           this._closePanel(panel)
         } else {
           submenu.classList.add(CLASS_NAME_SUBMENU_ACTIVE)
-          this._openPanel(panel)
+          // Do not change the order -> close siblings first, then open the panel.
+          // The order is important and affects page menu content.
           this._closeSiblings(submenu)
+          this._openPanel(panel)
         }
 
         this._setHighestPanelHeight()
@@ -89,19 +92,6 @@ class PageNavigation extends BaseComponent {
           this._setHighestPanelHeight()
         }
       })
-    }
-  }
-
-  _initHTMLPanels() {
-    this._htmlPanels = []
-    this._htmlPanelsLinks = this._element.querySelectorAll(HTML_CONTENT_TRIGGER_SELECTOR)
-    for (const link of this._htmlPanelsLinks) {
-      const htmlPanel = document.getElementById(link.getAttribute(HTML_CONTENT_TRIGGER_ATTRIBUTE))
-
-      if (htmlPanel) {
-        this._htmlPanels.push(htmlPanel)
-        htmlPanel.style.display = 'none'
-      }
     }
   }
 
@@ -152,14 +142,14 @@ class PageNavigation extends BaseComponent {
   _openPanel(panel) {
     this._activateMenuPanel(panel)
     this._activateMenuPanelParent(panel)
-    this._updateHtmlPanelDisplay()
+    this._toggleMenuContentWrappers();
   }
 
   _closePanel(panel) {
     this._deactivateMenuPanel(panel)
     this._deactivateMenuPanelParent(panel)
     this._closeAllPanelChild(panel)
-    this._updateHtmlPanelDisplay()
+    this._toggleMenuContentWrappers();
   }
 
   _activateMenuPanel(panel) {
@@ -180,33 +170,59 @@ class PageNavigation extends BaseComponent {
     }
   }
 
-  _updateHtmlPanelDisplay() {
-    if (this._htmlPanels.length === 0) {
-      return
+  _toggleMenuContentWrappers() {
+    const activePanel = this._element.querySelector(`ul.${CLASS_NAME_PANEL_ACTIVE}:not(.${CLASS_NAME_PANEL_PARENT})`);
+
+    // Hide all but the default content wrapper if there is no active panel
+    if (!activePanel) {
+      this._menuContentWrappers.entries().forEach(([key, wrapper]) => this._toggleMenuContentWrapper(wrapper, key === 'default'));
+      return;
     }
 
-    this._hideAllHtmlPanels()
+    let nextPanel = activePanel;
+    let toggleButton;
 
-    let lastActivePanel = this._element.querySelectorAll(`.${CLASS_NAME_SUBMENU_ACTIVE}`).item(this._element.querySelectorAll(`.${CLASS_NAME_SUBMENU_ACTIVE}`).length - 1)
+    do {
+      const parentLi = nextPanel.parentElement;
 
-    if (lastActivePanel && !lastActivePanel.matches(HTML_CONTENT_TRIGGER_SELECTOR)) {
-      lastActivePanel = lastActivePanel.closest(HTML_CONTENT_TRIGGER_SELECTOR)
-    }
-
-    if (lastActivePanel) {
-      const panelId = lastActivePanel.getAttribute(HTML_CONTENT_TRIGGER_ATTRIBUTE)
-      const panelToShow = this._htmlPanels.find(element => element.id === panelId)
-
-      if (panelToShow) {
-        panelToShow.style.display = 'revert'
+      // Break if we are out of the menu
+      if (parentLi?.tagName !== 'LI') {
+        toggleButton = null;
+        break;
       }
-    }
+
+      toggleButton = [...parentLi.children].find(sibling => sibling.matches(this._config.togglePanelButtonsSelector));
+
+      // Break if there is no toggle button
+      if (!toggleButton) {
+        break;
+      }
+
+      // Break if the next toggle has content wrapper
+      if (toggleButton.dataset.ofPageMenuContentToggle) {
+        break;
+      }
+
+      nextPanel = parentLi.parentElement;
+    } while (nextPanel);
+
+    this._menuContentWrappers.entries().forEach(([key, wrapper]) => this._toggleMenuContentWrapper(wrapper, key === (toggleButton?.dataset.ofPageMenuContentToggle || 'default')));
   }
 
-  _hideAllHtmlPanels() {
-    for (const element of this._htmlPanels) {
-      element.style.display = 'none'
+  _toggleMenuContentWrapper(elementOrIdentifier, show) {
+    let element;
+
+    if (isElement(elementOrIdentifier)) {
+      element = elementOrIdentifier;
+    } else {
+      element = this._menuContentWrappers.get(elementOrIdentifier);
     }
+
+    if (!element) {
+      return;
+    }
+
+    element.classList.toggle(CLASS_NAME_PAGE_CONTENT_ACTIVE, show);
   }
 
   _deactivateMenuPanelParent(panel) {
@@ -237,7 +253,7 @@ class PageNavigation extends BaseComponent {
   }
 
   _setHighestPanelHeight() {
-    const panels = this._element.querySelectorAll('.active-panel')
+    const panels = this._element.querySelectorAll(`.${CLASS_NAME_PANEL_ACTIVE}`)
     let maxHeight = 0
     this._element.style.removeProperty(PANEL_HEIGHT_PROPERTY_NAME)
 

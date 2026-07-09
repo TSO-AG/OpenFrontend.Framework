@@ -21,7 +21,7 @@
         </li>
         <li class="page-nav-submenu">
           <a class="page-nav-link" href="#">Inspirieren</a>
-          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false" aria-label="Expand submenu Inspirieren" aria-haspopup="true">
+          <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-page-menu-content-toggle="inspirieren" aria-expanded="false" aria-label="Expand submenu Inspirieren" aria-haspopup="true">
             {{ partial "icon" (dict "name" "arrow-right") }}
           </button>
           <ul class="page-nav-level-2">
@@ -35,7 +35,7 @@
             </li>
             <li class="page-nav-submenu">
               <a class="page-nav-link" href="#">Lorem ipsum 2 - 2</a>
-              <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false" aria-label="Expand submenu Lorem ipsum 2 - 2" aria-haspopup="true">
+              <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-page-menu-content-toggle="lorem-ipsum-2-2" aria-expanded="false" aria-label="Expand submenu Lorem ipsum 2 - 2" aria-haspopup="true">
                 {{ partial "icon" (dict "name" "arrow-right") }}
               </button>
               <ul class="page-nav-level-3">
@@ -156,7 +156,7 @@
         </li>
         <li class="page-nav-submenu">
           <a href="#" class="page-nav-link">Buchen</a>
-          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false" aria-label="Expand submenu Buchen" aria-haspopup="true">
+          <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-page-menu-content-toggle="buchen" aria-expanded="false" aria-label="Expand submenu Buchen" aria-haspopup="true">
             {{ partial "icon" (dict "name" "arrow-right") }}
           </button>
           <ul class="page-nav-level-2">
@@ -272,76 +272,18 @@
     </div>
   </div>
 
-  <div class="page-menu-content">
-    <h3>Entdecke mehr!</h3>
-
-    <div class="row row-cols-1 gy-4">
-      <div class="col">
-        <div class="card card-mini">
-          <div class="card-media">
-            <div class="card-media__visual">
-              <svg class="bd-placeholder-img img-fluid" width="100%" height="200" xmlns="http://www.w3.org/2000/svg"
-                   role="img" aria-label="Placeholder: Responsive image" preserveAspectRatio="xMidYMid slice"
-                   focusable="false"><title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#868e96"></rect>
-                <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text>
-              </svg>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-info">Stefan Keller, 01.12.2021</h5>
-            <h3 class="card-title h4"><a href="#" class="stretched-link">Familienparadiese entdecken!</a></h3>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card card-mini">
-          <div class="card-media">
-            <div class="card-media__visual">
-              <svg class="bd-placeholder-img img-fluid" width="100%" height="200" xmlns="http://www.w3.org/2000/svg"
-                   role="img" aria-label="Placeholder: Responsive image" preserveAspectRatio="xMidYMid slice"
-                   focusable="false"><title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#868e96"></rect>
-                <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text>
-              </svg>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-info">St.Gallen, 29.06.23 - 02.07.23</h5>
-            <h3 class="card-title h4"><a href="#" class="stretched-link">OpenAir St.Gallen</a></h3>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card card-mini">
-          <div class="card-media">
-            <div class="card-media__visual">
-              <svg class="bd-placeholder-img img-fluid" width="100%" height="200" xmlns="http://www.w3.org/2000/svg"
-                   role="img" aria-label="Placeholder: Responsive image" preserveAspectRatio="xMidYMid slice"
-                   focusable="false"><title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#868e96"></rect>
-                <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text>
-              </svg>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-info">St.Gallen, 12.10.23 - 22.10.23</h5>
-            <h3 class="card-title h4"><a href="#" class="stretched-link">OLMA</a></h3>
-          </div>
-        </div>
-      </div>
+  <div>
+    <div class="page-menu-content active-menu-content" data-of-page-menu-content="default">
+      {{ partial "page-menu-part-html" (dict "htmlHeadline" "Entdecke mehr!") }}
     </div>
-
-    <hr>
-
-    <p>
-      <a class="link-external" href="#">Hotel buchen</a>
-    </p>
-    <p>
-      <a class="link-external" href="#">Restaurantfinder</a>
-    </p>
-    <p>
-      <a class="link-external" href="#">Tourenguide</a>
-    </p>
+    <div class="page-menu-content" data-of-page-menu-content="inspirieren">
+      {{ partial "page-menu-part-html" (dict "htmlHeadline" "Inspirieren") }}
+    </div>
+    <div class="page-menu-content" data-of-page-menu-content="lorem-ipsum-2-2">
+      {{ partial "page-menu-part-html" (dict "htmlHeadline" "Lorem ipsum 2 - 2") }}
+    </div>
+    <div class="page-menu-content" data-of-page-menu-content="buchen">
+      {{ partial "page-menu-part-html" (dict "htmlHeadline" "Buchen") }}
+    </div>
   </div>
 </div>

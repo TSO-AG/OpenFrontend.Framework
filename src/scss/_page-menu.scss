@@ -25,6 +25,10 @@
   }
 }
 
+.page-menu-content:not(.active-menu-content) {
+  display: none !important;
+}
+
 .page-menu-wrapper-dark,
 .header[data-bs-theme="dark"] .page-menu-wrapper {
   // scss-docs-start page-menu-dark-css-vars

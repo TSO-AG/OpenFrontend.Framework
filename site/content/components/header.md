@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Header
-description: TODO
+description: Add a header to your website.
 group: components
 aliases:
   - "/components/"

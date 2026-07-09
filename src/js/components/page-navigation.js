@@ -30,7 +30,7 @@ class PageNavigation extends BaseComponent {
     super(element, config)
     this._togglePanelButtons = element.querySelectorAll(this._config.togglePanelButtonsSelector)
     this._closePanelButtons = element.querySelectorAll(this._config.closePanelButtonsSelector)
-    this._megaMenuWrappers = new Map([...element.parentElement.querySelectorAll('[data-of-mega-menu-content]')].map(el => [el.dataset.ofMegaMenuContent, el]));
+    this._menuContentWrappers = new Map([...element.parentElement.querySelectorAll('[data-of-page-menu-content]')].map(el => [el.dataset.ofPageMenuContent, el]));
 
     this._initTriggers()
 
@@ -139,14 +139,14 @@ class PageNavigation extends BaseComponent {
   _openPanel(panel) {
     this._activateMenuPanel(panel)
     this._activateMenuPanelParent(panel)
-    this._toggleMegaMenuWrappers();
+    this._toggleMenuContentWrappers();
   }
 
   _closePanel(panel) {
     this._deactivateMenuPanel(panel)
     this._deactivateMenuPanelParent(panel)
     this._closeAllPanelChild(panel)
-    this._toggleMegaMenuWrappers();
+    this._toggleMenuContentWrappers();
   }
 
   _activateMenuPanel(panel) {
@@ -167,12 +167,12 @@ class PageNavigation extends BaseComponent {
     }
   }
 
-  _toggleMegaMenuWrappers() {
+  _toggleMenuContentWrappers() {
     const activePanel = this._element.querySelector(`ul.${CLASS_NAME_PANEL_ACTIVE}:not(.${CLASS_NAME_PANEL_PARENT})`);
 
-    // Show the default mega menu wrapper if there is no active panel
+    // Show the default content wrapper if there is no active panel
     if (!activePanel) {
-      this._toggleMegaMenuWrapper('default', true);
+      this._toggleMenuContentWrapper('default', true);
       return;
     }
 
@@ -195,8 +195,8 @@ class PageNavigation extends BaseComponent {
         break;
       }
 
-      // Break if the next toggle has mega menu
-      if (toggleButton.dataset.ofMegaMenuToggle) {
+      // Break if the next toggle has content wrapper
+      if (toggleButton.dataset.ofPageMenuContentToggle) {
         break;
       }
 
@@ -205,23 +205,23 @@ class PageNavigation extends BaseComponent {
 
 
     if (!toggleButton) {
-      this._toggleMegaMenuWrapper('default', true);
+      this._toggleMenuContentWrapper('default', true);
       return;
     }
 
-    for (const [key, wrapper] of this._megaMenuWrappers) {
-      this._toggleMegaMenuWrapper(wrapper, key === toggleButton.dataset.ofMegaMenuToggle);
+    for (const [key, wrapper] of this._menuContentWrappers) {
+      this._toggleMenuContentWrapper(wrapper, key === toggleButton.dataset.ofPageMenuContentToggle);
     }
 
   }
 
-  _toggleMegaMenuWrapper(elementOrIdentifier, show) {
+  _toggleMenuContentWrapper(elementOrIdentifier, show) {
     let element;
 
     if (isElement(elementOrIdentifier)) {
       element = elementOrIdentifier;
     } else {
-      element = this._megaMenuWrappers.get(elementOrIdentifier);
+      element = this._menuContentWrappers.get(elementOrIdentifier);
     }
 
     if (!element) {

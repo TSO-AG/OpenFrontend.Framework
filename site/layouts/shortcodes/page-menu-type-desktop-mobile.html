@@ -99,7 +99,7 @@
         </li>
         <li class="page-nav-submenu" aria-haspopup="true">
           <a class="page-nav-link" href="#">Inspirieren</a>
-          <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-mega-menu-toggle="page-menu-html-content-inspirieren" aria-expanded="false" aria-label="Expand submenu Inspirieren">
+          <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-page-menu-content-toggle="inspirieren" aria-expanded="false" aria-label="Expand submenu Inspirieren">
             {{ partial "icon" (dict "name" "arrow-right") }}
           </button>
           <ul class="page-nav-level-2">
@@ -234,7 +234,7 @@
         </li>
         <li class="page-nav-submenu" aria-haspopup="true">
           <a href="#" class="page-nav-link">Buchen</a>
-          <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-mega-menu-toggle="page-menu-html-content-buchen" aria-expanded="false" aria-label="Expand submenu Buchen">
+          <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-page-menu-content-toggle="buchen" aria-expanded="false" aria-label="Expand submenu Buchen">
             {{ partial "icon" (dict "name" "arrow-right") }}
           </button>
           <ul class="page-nav-level-2">
@@ -270,11 +270,11 @@
     </nav>
   </div>
 
-  <div>
-    <div class="page-menu-content visually-hidden" data-of-mega-menu-content="page-menu-html-content-inspirieren">
+  <div class="page-menu-content">
+    <div class="visually-hidden" data-of-page-menu-content="inspirieren">
       {{ partial "page-menu-part-html" (dict "htmlHeadline" "Inspirieren") }}
     </div>
-    <div class="page-menu-content visually-hidden" data-of-mega-menu-content="page-menu-html-content-buchen">
+    <div class="visually-hidden" data-of-page-menu-content="buchen">
       {{ partial "page-menu-part-html" (dict "htmlHeadline" "Buchen") }}
     </div>
   </div>

@@ -21,7 +21,7 @@
         </li>
         <li class="page-nav-submenu">
           <a class="page-nav-link" href="#">Inspirieren</a>
-          <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-mega-menu-toggle="mega-menu-2" aria-expanded="false" aria-label="Expand submenu Inspirieren" aria-haspopup="true">
+          <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-page-menu-content-toggle="inspirieren" aria-expanded="false" aria-label="Expand submenu Inspirieren" aria-haspopup="true">
             {{ partial "icon" (dict "name" "arrow-right") }}
           </button>
           <ul class="page-nav-level-2">
@@ -35,7 +35,7 @@
             </li>
             <li class="page-nav-submenu">
               <a class="page-nav-link" href="#">Lorem ipsum 2 - 2</a>
-              <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-mega-menu-toggle="mega-menu-2-2" aria-expanded="false" aria-label="Expand submenu Lorem ipsum 2 - 2" aria-haspopup="true">
+              <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-page-menu-content-toggle="lorem-ipsum-2-2" aria-expanded="false" aria-label="Expand submenu Lorem ipsum 2 - 2" aria-haspopup="true">
                 {{ partial "icon" (dict "name" "arrow-right") }}
               </button>
               <ul class="page-nav-level-3">
@@ -156,7 +156,7 @@
         </li>
         <li class="page-nav-submenu">
           <a href="#" class="page-nav-link">Buchen</a>
-          <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-mega-menu-toggle="mega-menu-3" aria-expanded="false" aria-label="Expand submenu Buchen" aria-haspopup="true">
+          <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-page-menu-content-toggle="buchen" aria-expanded="false" aria-label="Expand submenu Buchen" aria-haspopup="true">
             {{ partial "icon" (dict "name" "arrow-right") }}
           </button>
           <ul class="page-nav-level-2">
@@ -273,7 +273,7 @@
   </div>
 
   <div class="page-menu-content">
-    <div data-of-mega-menu-content="default">
+    <div data-of-page-menu-content="default">
       <h3>Entdecke mehr!</h3>
 
       <div class="row row-cols-1 gy-4">
@@ -345,13 +345,13 @@
         <a class="link-external" href="#">Tourenguide</a>
       </p>
     </div>
-    <div class="visually-hidden" data-of-mega-menu-content="mega-menu-2">
+    <div class="visually-hidden" data-of-page-menu-content="inspirieren">
       {{ partial "page-menu-part-html" (dict "htmlHeadline" "Inspirieren") }}
     </div>
-    <div class="visually-hidden" data-of-mega-menu-content="mega-menu-2-2">
+    <div class="visually-hidden" data-of-page-menu-content="lorem-ipsum-2-2">
       {{ partial "page-menu-part-html" (dict "htmlHeadline" "Lorem ipsum 2 - 2") }}
     </div>
-    <div class="visually-hidden" data-of-mega-menu-content="mega-menu-3">
+    <div class="visually-hidden" data-of-page-menu-content="buchen">
       {{ partial "page-menu-part-html" (dict "htmlHeadline" "Buchen") }}
     </div>
   </div>

@@ -14,8 +14,6 @@ const PANEL_HEIGHT_PROPERTY_NAME = '--page-nav-panel-height'
 const PANEL_LAST_HEIGHT_PROPERTY_NAME = '--page-nav-panel-last-height'
 const ACTIVE_ITEM_SELECTOR = 'span.active'
 const CSS_MENU_COLUMN_PROPERTY_NAME = '--columns'
-const HTML_CONTENT_TRIGGER_ATTRIBUTE = 'data-html-content-trigger'
-const HTML_CONTENT_TRIGGER_SELECTOR = `[${HTML_CONTENT_TRIGGER_ATTRIBUTE}]`
 
 const DefaultType = {
   togglePanelButtonsSelector: 'string',
@@ -35,7 +33,6 @@ class PageNavigation extends BaseComponent {
     this._megaMenuWrappers = new Map([...element.parentElement.querySelectorAll('[data-of-mega-menu-content]')].map(el => [el.dataset.ofMegaMenuContent, el]));
 
     this._initTriggers()
-    this._initHTMLPanels()
 
     // Display active level after navigation initialization
     this._openActivePanelsOnVisible()
@@ -95,19 +92,6 @@ class PageNavigation extends BaseComponent {
     }
   }
 
-  _initHTMLPanels() {
-    this._htmlPanels = []
-    this._htmlPanelsLinks = this._element.querySelectorAll(HTML_CONTENT_TRIGGER_SELECTOR)
-    for (const link of this._htmlPanelsLinks) {
-      const htmlPanel = document.getElementById(link.getAttribute(HTML_CONTENT_TRIGGER_ATTRIBUTE))
-
-      if (htmlPanel) {
-        this._htmlPanels.push(htmlPanel)
-        htmlPanel.style.display = 'none'
-      }
-    }
-  }
-
   _openActivePanelsOnVisible() {
     // Wait for element to be visible before reading CSS column properties in _openActivePagePanels
     const observer = new IntersectionObserver(entries => {
@@ -155,7 +139,6 @@ class PageNavigation extends BaseComponent {
   _openPanel(panel) {
     this._activateMenuPanel(panel)
     this._activateMenuPanelParent(panel)
-    this._updateHtmlPanelDisplay()
     this._toggleMegaMenuWrappers();
   }
 
@@ -163,7 +146,6 @@ class PageNavigation extends BaseComponent {
     this._deactivateMenuPanel(panel)
     this._deactivateMenuPanelParent(panel)
     this._closeAllPanelChild(panel)
-    this._updateHtmlPanelDisplay()
     this._toggleMegaMenuWrappers();
   }
 
@@ -247,35 +229,6 @@ class PageNavigation extends BaseComponent {
     }
 
     element.classList.toggle('visually-hidden', !show);
-  }
-
-  _updateHtmlPanelDisplay() {
-    if (this._htmlPanels.length === 0) {
-      return
-    }
-
-    this._hideAllHtmlPanels()
-
-    let lastActivePanel = this._element.querySelectorAll(`.${CLASS_NAME_SUBMENU_ACTIVE}`).item(this._element.querySelectorAll(`.${CLASS_NAME_SUBMENU_ACTIVE}`).length - 1)
-
-    if (lastActivePanel && !lastActivePanel.matches(HTML_CONTENT_TRIGGER_SELECTOR)) {
-      lastActivePanel = lastActivePanel.closest(HTML_CONTENT_TRIGGER_SELECTOR)
-    }
-
-    if (lastActivePanel) {
-      const panelId = lastActivePanel.getAttribute(HTML_CONTENT_TRIGGER_ATTRIBUTE)
-      const panelToShow = this._htmlPanels.find(element => element.id === panelId)
-
-      if (panelToShow) {
-        panelToShow.style.display = 'revert'
-      }
-    }
-  }
-
-  _hideAllHtmlPanels() {
-    for (const element of this._htmlPanels) {
-      element.style.display = 'none'
-    }
   }
 
   _deactivateMenuPanelParent(panel) {

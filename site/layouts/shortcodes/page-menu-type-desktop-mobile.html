@@ -97,9 +97,9 @@
         <li>
           <a href="#" class="page-nav-link active" aria-current="page">Home</a>
         </li>
-        <li class="page-nav-submenu" aria-haspopup="true" data-html-content-trigger="page-menu-html-content-inspiren">
+        <li class="page-nav-submenu" aria-haspopup="true">
           <a class="page-nav-link" href="#">Inspirieren</a>
-          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false" aria-label="Expand submenu Inspirieren">
+          <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-mega-menu-toggle="page-menu-html-content-inspirieren" aria-expanded="false" aria-label="Expand submenu Inspirieren">
             {{ partial "icon" (dict "name" "arrow-right") }}
           </button>
           <ul class="page-nav-level-2">
@@ -232,9 +232,9 @@
             </li>
           </ul>
         </li>
-        <li class="page-nav-submenu" aria-haspopup="true" data-html-content-trigger="page-menu-html-content-buchen">
+        <li class="page-nav-submenu" aria-haspopup="true">
           <a href="#" class="page-nav-link">Buchen</a>
-          <button class="page-nav-link-toggle" data-of-page-menu-toggle aria-expanded="false" aria-label="Expand submenu Buchen">
+          <button class="page-nav-link-toggle" data-of-page-menu-toggle data-of-mega-menu-toggle="page-menu-html-content-buchen" aria-expanded="false" aria-label="Expand submenu Buchen">
             {{ partial "icon" (dict "name" "arrow-right") }}
           </button>
           <ul class="page-nav-level-2">
@@ -257,7 +257,7 @@
             </li>
           </ul>
         </li>
-        <li data-html-content-trigger="page-menu-html-content-erleben">
+        <li>
           <a href="#" class="page-nav-link">Erleben</a>
         </li>
         <li>
@@ -271,14 +271,11 @@
   </div>
 
   <div>
-    <div class="page-menu-content" id="page-menu-html-content-inspiren" data-html-content-panel>
-      {{ partial "page-menu-part-html" (dict "htmlHeadline" "Inspiren HTML") }}
+    <div class="page-menu-content visually-hidden" data-of-mega-menu-content="page-menu-html-content-inspirieren">
+      {{ partial "page-menu-part-html" (dict "htmlHeadline" "Inspirieren") }}
     </div>
-    <div class="page-menu-content" id="page-menu-html-content-buchen" data-html-content-panel>
-      {{ partial "page-menu-part-html" (dict "htmlHeadline" "Buchen HTML") }}
-    </div>
-    <div class="page-menu-content" id="page-menu-html-content-erleben" data-html-content-panel>
-      {{ partial "page-menu-part-html" (dict "htmlHeadline" "Erleben") }}
+    <div class="page-menu-content visually-hidden" data-of-mega-menu-content="page-menu-html-content-buchen">
+      {{ partial "page-menu-part-html" (dict "htmlHeadline" "Buchen") }}
     </div>
   </div>
 </div>

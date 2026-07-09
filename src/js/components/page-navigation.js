@@ -71,6 +71,8 @@ class PageNavigation extends BaseComponent {
           this._closePanel(panel)
         } else {
           submenu.classList.add(CLASS_NAME_SUBMENU_ACTIVE)
+          // Do not change the order -> close siblings first, then open the panel.
+          // The order is important and affects page menu content.
           this._closeSiblings(submenu)
           this._openPanel(panel)
         }

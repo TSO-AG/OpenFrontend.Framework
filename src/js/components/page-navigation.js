@@ -170,9 +170,9 @@ class PageNavigation extends BaseComponent {
   _toggleMenuContentWrappers() {
     const activePanel = this._element.querySelector(`ul.${CLASS_NAME_PANEL_ACTIVE}:not(.${CLASS_NAME_PANEL_PARENT})`);
 
-    // Show the default content wrapper if there is no active panel
+    // Hide all but the default content wrapper if there is no active panel
     if (!activePanel) {
-      this._toggleMenuContentWrapper('default', true);
+      this._menuContentWrappers.entries().forEach(([key, wrapper]) => this._toggleMenuContentWrapper(wrapper, key === 'default'));
       return;
     }
 
@@ -203,16 +203,7 @@ class PageNavigation extends BaseComponent {
       nextPanel = parentLi.parentElement;
     } while (nextPanel);
 
-
-    if (!toggleButton) {
-      this._toggleMenuContentWrapper('default', true);
-      return;
-    }
-
-    for (const [key, wrapper] of this._menuContentWrappers) {
-      this._toggleMenuContentWrapper(wrapper, key === toggleButton.dataset.ofPageMenuContentToggle);
-    }
-
+    this._menuContentWrappers.entries().forEach(([key, wrapper]) => this._toggleMenuContentWrapper(wrapper, key === (toggleButton?.dataset.ofPageMenuContentToggle || 'default')));
   }
 
   _toggleMenuContentWrapper(elementOrIdentifier, show) {
@@ -228,7 +219,7 @@ class PageNavigation extends BaseComponent {
       return;
     }
 
-    element.classList.toggle('visually-hidden', !show);
+    element.classList.toggle('page-menu-content-active', show);
   }
 
   _deactivateMenuPanelParent(panel) {

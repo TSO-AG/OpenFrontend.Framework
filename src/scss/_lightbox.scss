@@ -219,6 +219,11 @@ html .glightbox-clean {
 
   .gdesc-inner {
     padding: 1em;
+
+    // Hide the element completely if there is no title and description
+    &:has(.gslide-title:empty):has(.gslide-desc:empty) {
+      display: none;
+    }
   }
 
   .gslide-title {

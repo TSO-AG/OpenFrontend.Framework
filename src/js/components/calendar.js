@@ -343,6 +343,13 @@ class Calendar extends BaseComponent {
         }
 
         options.validRange = this._getValidRange(events);
+
+        // If there is no initial date and the layout is mini,
+        // set the initial date to the first event's start date.
+        // Otherwise, we would encounter the rendering error.
+        if (!initialDate && this._config.layout === 'mini') {
+          options.initialDate = events[0].start;
+        }
       }
     }
 
@@ -428,30 +435,116 @@ class Calendar extends BaseComponent {
 
     // Create the start/end date ranges
     let start = new Date(earliestDate.getFullYear(), earliestDate.getMonth(), 1);
-    let end = new Date(latestDate.getFullYear(), latestDate.getMonth() + 1, 0);
+    let end = new Date(latestDate.getFullYear(), latestDate.getMonth() + 1, 0); // last day of the month
 
-    // Ensure that there is at least 2-month interval between the start and end date, as we are always showing 2 months.
-    // If the interval would be 1 or 3 months, then we would get a JS error from the FullCalendar.
+    // Special range handling for mini layout
     if (this._config.layout === 'mini') {
-      let months = ((end.getFullYear() - start.getFullYear()) * 12) - start.getMonth() + end.getMonth() + 1;
-
-      // Make sure it's at least two months
-      if (months <= MINI_VIEW_VISIBLE_MONTHS) {
-        months = MINI_VIEW_VISIBLE_MONTHS;
-      } else if (months % MINI_VIEW_VISIBLE_MONTHS !== 0) {
-        // Otherwise, round it up to the next multiple of visible months
-        months = Math.ceil(months / MINI_VIEW_VISIBLE_MONTHS) * MINI_VIEW_VISIBLE_MONTHS;
-      }
-
-      let newEnd = new Date(start);
-      newEnd.setMonth(newEnd.getMonth() + months);
-
-      if (newEnd > end) {
-        end = newEnd;
-      }
+      [start, end] = this._getValidRangeForMini(start, end);
     }
 
     return {start, end}
+  }
+
+  /**
+   * Compute the valid navigation range for the "mini" layout, which shows
+   * MINI_VIEW_VISIBLE_MONTHS calendars side by side (currently 2).
+   *
+   * The plugin always navigates in steps of MINI_VIEW_VISIBLE_MONTHS months,
+   * so the valid range's month span must be an exact multiple of
+   * MINI_VIEW_VISIBLE_MONTHS — otherwise a "next"/"previous" click can land
+   * on a view that's partially outside the range and the plugin throws.
+   *
+   * Example (MINI_VIEW_VISIBLE_MONTHS = 2, events span May–July):
+   * - Starting view [May, June] -> "next" wants [July, August], but August
+   *   is out of range -> range must be extended to include August.
+   * - Starting view [June, July] -> "previous" wants [April, May], a 1-month
+   *   step instead of 2 -> range must be extended to include April.
+   *
+   * This function pads the raw event date range up to the nearest multiple
+   * of MINI_VIEW_VISIBLE_MONTHS, so every navigation step stays inside valid
+   * bounds.
+   */
+  _getValidRangeForMini(start, end) {
+    const startEndSpan = this._getMonthsSpan(start, end);
+
+    // The span is already exactly what we need
+    if (startEndSpan === MINI_VIEW_VISIBLE_MONTHS) {
+      return [start, end];
+    }
+
+    // The span is less than what we need, so we need to "add" extra months
+    if (startEndSpan < MINI_VIEW_VISIBLE_MONTHS) {
+      const newEnd = this._shiftToMonthBoundary(end, MINI_VIEW_VISIBLE_MONTHS - startEndSpan);
+
+      return [start, newEnd];
+    }
+
+    const today = new Date();
+    const startTodaySpan = this._getMonthsSpan(start, today);
+    const todayEndSpan = this._getMonthsSpan(today, end);
+
+    // Extend the start date by "adding" months before it
+    if (startTodaySpan % MINI_VIEW_VISIBLE_MONTHS === 0) {
+      start = this._shiftToMonthBoundary(start, -1);
+    }
+
+    // Extend the end date by "adding" months after it
+    if (todayEndSpan % MINI_VIEW_VISIBLE_MONTHS !== 0) {
+      end = this._shiftToMonthBoundary(end, MINI_VIEW_VISIBLE_MONTHS - (todayEndSpan % MINI_VIEW_VISIBLE_MONTHS));
+    }
+
+    return [start, end];
+  }
+
+  /**
+   * Get the span between months (inclusive). Example:
+   * 04.03.2026 - 04.03.2026 -> 1 month
+   * 04.03.2026 - 20.03.2026 -> 1 month
+   * 04.03.2026 - 20.04.2026 -> 2 months
+   * 04.03.2026 - 20.05.2026 -> 3 months
+   */
+  _getMonthsSpan(start, end) {
+    return ((end.getFullYear() - start.getFullYear()) * 12) - start.getMonth() + end.getMonth() + 1;
+  }
+
+  /**
+   * Shifts `date` by `monthsToAdd` months and snaps the result to a month boundary:
+   * the start of the target month if shifting backward, or the end
+   * of the target month if shifting forward. Day-of-month overflow
+   * is avoided by moving to the 1st before changing the month.
+   *
+   * If `monthsToAdd` is 0, `date` is returned unchanged (no boundary snapping).
+   *
+   * @param {Date} date - The reference date.
+   * @param {number} monthsToAdd - Number of months to shift; negative shifts
+   *   backward (result lands on the 1st of that month), positive shifts forward
+   *   (result lands on the last day of that month).
+   * @returns {Date} A new Date at the target month boundary, or the original
+   *   `date` instance if `monthsToAdd` is 0.
+   */
+  _shiftToMonthBoundary(date, monthsToAdd) {
+    const result = new Date(date);
+
+    if (monthsToAdd === 0) {
+      return date;
+    }
+
+    const targetMonth = result.getMonth() + monthsToAdd;
+
+    // Move to the 1st first, to avoid overflow while switching months
+    result.setDate(1);
+    result.setMonth(targetMonth);
+
+    // Start of the target month
+    if (monthsToAdd < 0) {
+      return result;
+    }
+
+    // End of the target month
+    const lastDayOfTargetMonth = new Date(result.getFullYear(), result.getMonth() + 1, 0).getDate();
+    result.setDate(lastDayOfTargetMonth);
+
+    return result;
   }
 
   _hidePopoverOnClickOutside(popover, actuallyClickedContainerElement) {

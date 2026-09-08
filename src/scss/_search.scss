@@ -61,7 +61,8 @@
       max-width: var(--#{$prefix}search-result-image-width);
     }
 
-    > * {
+    > *:not(picture),
+    > picture > img {
       width: 100%;
       aspect-ratio: var(--#{$prefix}search-result-image-ratio);
 

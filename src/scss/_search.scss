@@ -79,6 +79,7 @@
     display: flex;
     flex-direction: column;
     padding: var(--#{$prefix}search-result-padding-y) var(--#{$prefix}search-result-padding-x);
+    min-width: 0;
   }
 
   &-url {

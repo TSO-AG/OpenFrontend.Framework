@@ -49,6 +49,27 @@ Select a range of dates using the range calendar.
 <input type="text" class="form-control form-datepicker" data-of-datepicker='{"mode": "range"}' placeholder="Select Date...">
 {{< /example >}}
 
+### Date range inputs
+
+As an alternative to a single range calendar (`mode: 'range'`), you can use two separate input fields for the start and end date.
+
+Set `rangeStartInput` and `rangeEndInput` to the CSS selectors of the start and end inputs.
+
+Selecting a start date sets it as the earliest selectable date in the end input, and selecting an end date sets it as the latest selectable date in the start input.
+
+{{< example >}}
+<div class="row row-cols-lg-auto g-3 align-items-center">
+  <div>
+    <label for="datepicker-range-min-input" class="form-label">From</label>
+    <input id="datepicker-range-min-input" type="text" class="form-control form-datepicker" data-of-datepicker='{"rangeEndInput": "#datepicker-range-max-input"}' placeholder="Select Date...">
+  </div>
+  <div>
+    <label for="datepicker-range-max-input" class="form-label">To</label>
+    <input id="datepicker-range-max-input" type="text" class="form-control form-datepicker" data-of-datepicker='{"rangeStartInput": "#datepicker-range-min-input"}' placeholder="Select Date...">
+  </div>
+</div>
+{{< /example >}}
+
 ### Time picker
 
 For time-only selection:
@@ -106,6 +127,8 @@ Here is the list of all available options (alphabetically):
 | `minDate` | `String/Date` | `undefined` | The minimum date that a user can start picking from (inclusive). |
 | `mode` | `String` | `"single"` | "single", "multiple", or "range" |
 | `noCalendar` | `Boolean` | `false` | Hides the day selection in calendar.<br>Use it along with enableTime to create a time picker. |
+| `rangeEndInput` | `String/Element` | `undefined` | The maximum input element for the range picker. |
+| `rangeStartInput` | `String/Element` | `undefined` | The minimum input element for the range picker. |
 | `rangeSeparator` | `String` | `' - '` | The input separator between "from" and "to" dates. |
 {{< /bs-table >}}
 

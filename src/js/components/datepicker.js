@@ -1,5 +1,6 @@
 import flatpickr from 'flatpickr'
 import BaseComponent from 'bootstrap/js/src/base-component';
+import {getElement} from 'bootstrap/js/src/util';
 
 /**
  * Constants
@@ -23,6 +24,8 @@ const DefaultType = {
   minDate: 'string|Date|undefined',
   mode: 'string',
   noCalendar: 'boolean',
+  rangeEndInput: 'string|Element|undefined',
+  rangeStartInput: 'string|Element|undefined',
   rangeSeparator: 'string',
 }
 
@@ -37,6 +40,8 @@ const Default = {
   minDate: undefined,
   mode: 'single',
   noCalendar: false,
+  rangeEndInput: undefined,
+  rangeStartInput: undefined,
   rangeSeparator: ' - ',
 }
 
@@ -86,6 +91,36 @@ class Datepicker extends BaseComponent {
 
     options.locale = options.locale || {};
     options.locale.rangeSeparator = this._config.rangeSeparator;
+
+    if (this._config.rangeEndInput) {
+      const endInput = getElement(this._config.rangeEndInput);
+
+      if (endInput) {
+        options.onChange = ([date]) => {
+          endInput._flatpickr.set('minDate', date ?? null);
+
+          // Clear the end date when it falls before the selected start date
+          if (date && endInput._flatpickr.selectedDates[0] < date) {
+            endInput._flatpickr.clear();
+          }
+        };
+      }
+    }
+
+    if (this._config.rangeStartInput) {
+      const startInput = getElement(this._config.rangeStartInput);
+
+      if (startInput) {
+        options.onChange = ([date]) => {
+          startInput._flatpickr.set('maxDate', date ?? null);
+
+          // Clear the start date when it falls after the selected end date
+          if (date && startInput._flatpickr.selectedDates[0] > date) {
+            startInput._flatpickr.clear();
+          }
+        };
+      }
+    }
 
     return options;
   }

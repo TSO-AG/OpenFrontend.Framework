@@ -93,36 +93,62 @@ class Datepicker extends BaseComponent {
     options.locale.rangeSeparator = this._config.rangeSeparator;
 
     if (this._config.rangeEndInput) {
-      const endInput = getElement(this._config.rangeEndInput);
-
-      if (endInput) {
-        options.onChange = ([date]) => {
-          endInput._flatpickr.set('minDate', date ?? null);
-
-          // Clear the end date when it falls before the selected start date
-          if (date && endInput._flatpickr.selectedDates[0] < date) {
-            endInput._flatpickr.clear();
-          }
-        };
-      }
+      this._linkRangeInput(options, this._config.rangeEndInput, 'minDate');
     }
 
     if (this._config.rangeStartInput) {
-      const startInput = getElement(this._config.rangeStartInput);
-
-      if (startInput) {
-        options.onChange = ([date]) => {
-          startInput._flatpickr.set('maxDate', date ?? null);
-
-          // Clear the start date when it falls after the selected end date
-          if (date && startInput._flatpickr.selectedDates[0] > date) {
-            startInput._flatpickr.clear();
-          }
-        };
-      }
+      this._linkRangeInput(options, this._config.rangeStartInput, 'maxDate');
     }
 
     return options;
+  }
+
+  _linkRangeInput(options, selector, otherLimit) {
+    const otherInput = getElement(selector);
+
+    if (!otherInput) {
+      return;
+    }
+
+    const ownLimit = otherLimit === 'minDate' ? 'maxDate' : 'minDate';
+    const isOutOfRange = (otherDate, date) => ((otherLimit === 'minDate') ? (otherDate < date) : (otherDate > date));
+
+    // Other picker already initialized: take its date as this input's limit
+    const otherDate = otherInput._flatpickr?.selectedDates[0];
+
+    if (otherDate) {
+      options[ownLimit] = otherDate;
+    }
+
+    // Whichever picker initializes second links the pair in both directions
+    options.onReady = ([date], dateStr, instance) => {
+      const otherPicker = otherInput._flatpickr;
+
+      if (!otherPicker) {
+        return;
+      }
+
+      if (date) {
+        otherPicker.set(otherLimit, date);
+      }
+
+      const otherDate = otherPicker.selectedDates[0];
+
+      if (otherDate) {
+        instance.set(ownLimit, otherDate);
+      }
+    };
+
+    options.onChange = ([date]) => {
+      const picker = otherInput._flatpickr;
+
+      picker.set(otherLimit, date ?? null);
+
+      // Clear the other date when it falls outside the new limit
+      if (date && picker.selectedDates[0] && isOutOfRange(picker.selectedDates[0], date)) {
+        picker.clear();
+      }
+    };
   }
 }
 

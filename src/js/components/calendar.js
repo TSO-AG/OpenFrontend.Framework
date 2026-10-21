@@ -342,14 +342,14 @@ class Calendar extends BaseComponent {
           options.initialDate = initialDate.start;
         }
 
-        options.validRange = this._getValidRange(events);
-
         // If there is no initial date and the layout is mini,
         // set the initial date to the first event's start date.
         // Otherwise, we would encounter the rendering error.
         if (!initialDate && this._config.layout === 'mini') {
           options.initialDate = events[0].start;
         }
+
+        options.validRange = this._getValidRange(events, options.initialDate);
       }
     }
 
@@ -418,7 +418,7 @@ class Calendar extends BaseComponent {
     return this._eventsCache;
   }
 
-  _getValidRange(events) {
+  _getValidRange(events, initialDate) {
     if (events.length === 0) {
       return {};
     }
@@ -439,7 +439,7 @@ class Calendar extends BaseComponent {
 
     // Special range handling for mini layout
     if (this._config.layout === 'mini') {
-      [start, end] = this._getValidRangeForMini(start, end);
+      [start, end] = this._getValidRangeForMini(start, end, new Date(initialDate ?? Date.now()));
     }
 
     return {start, end}
@@ -454,43 +454,34 @@ class Calendar extends BaseComponent {
    * MINI_VIEW_VISIBLE_MONTHS — otherwise a "next"/"previous" click can land
    * on a view that's partially outside the range and the plugin throws.
    *
+   * The first view starts at the month of the initial date, so the padding
+   * must be aligned to that month, not to the range start or today's date.
+   *
    * Example (MINI_VIEW_VISIBLE_MONTHS = 2, events span May–July):
    * - Starting view [May, June] -> "next" wants [July, August], but August
    *   is out of range -> range must be extended to include August.
    * - Starting view [June, July] -> "previous" wants [April, May], a 1-month
    *   step instead of 2 -> range must be extended to include April.
    *
-   * This function pads the raw event date range up to the nearest multiple
-   * of MINI_VIEW_VISIBLE_MONTHS, so every navigation step stays inside valid
-   * bounds.
+   * This function pads the raw event date range on both sides of the initial
+   * month up to the nearest multiple of MINI_VIEW_VISIBLE_MONTHS, so every
+   * navigation step stays inside valid bounds.
    */
-  _getValidRangeForMini(start, end) {
-    const startEndSpan = this._getMonthsSpan(start, end);
-
-    // The span is already exactly what we need
-    if (startEndSpan === MINI_VIEW_VISIBLE_MONTHS) {
-      return [start, end];
-    }
-
-    // The span is less than what we need, so we need to "add" extra months
-    if (startEndSpan < MINI_VIEW_VISIBLE_MONTHS) {
-      const newEnd = this._shiftToMonthBoundary(end, MINI_VIEW_VISIBLE_MONTHS - startEndSpan);
-
-      return [start, newEnd];
-    }
-
-    const today = new Date();
-    const startTodaySpan = this._getMonthsSpan(start, today);
-    const todayEndSpan = this._getMonthsSpan(today, end);
+  _getValidRangeForMini(start, end, initialDate) {
+    // Months before the initial month
+    const monthsBefore = this._getMonthsSpan(start, initialDate) - 1;
 
     // Extend the start date by "adding" months before it
-    if (startTodaySpan % MINI_VIEW_VISIBLE_MONTHS === 0) {
-      start = this._shiftToMonthBoundary(start, -1);
+    if (monthsBefore % MINI_VIEW_VISIBLE_MONTHS !== 0) {
+      start = this._shiftToMonthBoundary(start, -(MINI_VIEW_VISIBLE_MONTHS - (monthsBefore % MINI_VIEW_VISIBLE_MONTHS)));
     }
 
+    // Months from the initial month (inclusive) until the end
+    const monthsAfter = this._getMonthsSpan(initialDate, end);
+
     // Extend the end date by "adding" months after it
-    if (todayEndSpan % MINI_VIEW_VISIBLE_MONTHS !== 0) {
-      end = this._shiftToMonthBoundary(end, MINI_VIEW_VISIBLE_MONTHS - (todayEndSpan % MINI_VIEW_VISIBLE_MONTHS));
+    if (monthsAfter % MINI_VIEW_VISIBLE_MONTHS !== 0) {
+      end = this._shiftToMonthBoundary(end, MINI_VIEW_VISIBLE_MONTHS - (monthsAfter % MINI_VIEW_VISIBLE_MONTHS));
     }
 
     return [start, end];

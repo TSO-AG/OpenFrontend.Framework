@@ -4,6 +4,9 @@ export function initComponents(components, nodeCallback) {
   // Initial setup for the existing elements
   components.forEach(component => loadForElements(document.querySelectorAll(component.selector), () => component.callback()));
 
+  // Combined selector of all components, used to quickly skip nodes that contain none of them
+  const allSelectors = components.map(component => component.selector).join(',')
+
   // Set up a MutationObserver to detect when new elements are added
   new MutationObserver(mutationsList => mutationsList.forEach(mutation => {
     if (mutation.type === 'childList') {
@@ -11,6 +14,10 @@ export function initComponents(components, nodeCallback) {
         if (node.nodeType === Node.ELEMENT_NODE) {
           if (typeof nodeCallback === 'function') {
             nodeCallback(node)
+          }
+
+          if (!node.matches(allSelectors) && !node.querySelector(allSelectors)) {
+            return
           }
 
           components.forEach(component => {

@@ -60,7 +60,7 @@ window.openFrontend = {
     return new Promise(resolve => import(/* webpackChunkName: "of-popover" */ './components/popover').then(v => resolve(v.default)))
   },
   get Rating() {
-    return new Promise(resolve => import(/* webpackChunkName: "of-ticker" */ './components/rating').then(v => resolve(v.default)))
+    return new Promise(resolve => import(/* webpackChunkName: "of-rating" */ './components/rating').then(v => resolve(v.default)))
   },
   get Slider() {
     return new Promise(resolve => import(/* webpackChunkName: "of-slider" */ './components/slider').then(v => resolve(v.default)))

@@ -7,6 +7,7 @@ const NAME = 'header'
 const CSS_HEADER_HEIGHT_PROPERTY_NAME = '--bs-header-height'
 const CSS_STICKY_HEADER_HEIGHT_PROPERTY_NAME = '--bs-header-sticky-height'
 const COLLAPSE_ELEMENT_SELECTOR = '.header-collapse'
+const COLLAPSE_LINK_TRIGGER_SELECTOR = 'a[data-bs-toggle="collapse"]'
 const STICKY_HEADER_CLASS = 'header-sticky'
 const STICKY_HEADER_PLACEHOLDER_CLASS = 'header-placeholder'
 const STICKY_HEADER_INIT_CLASS = 'header-sticky-init'
@@ -110,6 +111,27 @@ class Header extends BaseComponent {
         this._closeCollapses(collapse)
       })
     }
+
+    // Links that toggle a collapse act as buttons, so announce them as buttons and activate them with Space as well
+    for (const link of this._element.querySelectorAll(COLLAPSE_LINK_TRIGGER_SELECTOR)) {
+      if (!link.hasAttribute('role')) {
+        link.setAttribute('role', 'button')
+      }
+    }
+
+    this._element.addEventListener('keydown', event => {
+      if (event.key !== ' ' || !event.target.matches(COLLAPSE_LINK_TRIGGER_SELECTOR)) {
+        return
+      }
+
+      // Prevent the page from scrolling
+      event.preventDefault()
+
+      // Do not toggle repeatedly while the key is held down
+      if (!event.repeat) {
+        event.target.click()
+      }
+    })
   }
 
   _getShownCollapses() {

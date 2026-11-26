@@ -1,0 +1,37 @@
+// Skip navigation
+//
+// A link at the beginning of the navigation (`nav a.invisible`) lets keyboard users skip the navigation.
+// Keep it visually hidden, but display it fixed in the top left corner when it gets the focus.
+
+nav a.invisible { // stylelint-disable-line selector-no-qualifying-type
+  // scss-docs-start skip-navigation-css-vars
+  --#{$prefix}skip-navigation-zindex: #{$skip-navigation-zindex};
+  --#{$prefix}skip-navigation-top: #{$skip-navigation-top};
+  --#{$prefix}skip-navigation-left: #{$skip-navigation-left};
+  --#{$prefix}skip-navigation-padding-y: #{$skip-navigation-padding-y};
+  --#{$prefix}skip-navigation-padding-x: #{$skip-navigation-padding-x};
+  --#{$prefix}skip-navigation-color: #{$skip-navigation-color};
+  --#{$prefix}skip-navigation-bg: #{$skip-navigation-bg};
+  --#{$prefix}skip-navigation-border-radius: #{$skip-navigation-border-radius};
+  --#{$prefix}skip-navigation-box-shadow: #{$skip-navigation-box-shadow};
+  // scss-docs-end skip-navigation-css-vars
+
+  // The Bootstrap .invisible class uses "visibility: hidden", which would make the link unfocusable
+  visibility: visible !important; // stylelint-disable-line declaration-no-important
+
+  &:not(:focus-visible) {
+    @include visually-hidden();
+  }
+
+  &:focus-visible {
+    position: fixed;
+    top: var(--#{$prefix}skip-navigation-top);
+    left: var(--#{$prefix}skip-navigation-left);
+    z-index: var(--#{$prefix}skip-navigation-zindex);
+    padding: var(--#{$prefix}skip-navigation-padding-y) var(--#{$prefix}skip-navigation-padding-x);
+    color: var(--#{$prefix}skip-navigation-color);
+    background-color: var(--#{$prefix}skip-navigation-bg);
+    @include border-radius(var(--#{$prefix}skip-navigation-border-radius));
+    @include box-shadow(var(--#{$prefix}skip-navigation-box-shadow));
+  }
+}

@@ -1,4 +1,5 @@
 import BaseComponent from 'bootstrap/js/src/base-component'
+import SelectorEngine from 'bootstrap/js/src/dom/selector-engine'
 
 /**
  * Constants
@@ -132,6 +133,72 @@ class Header extends BaseComponent {
         event.target.click()
       }
     })
+
+    // Keep a logical focus order when the collapse is not placed right after its trigger in the DOM
+    // (e.g. desktop menu links in a <nav>, followed by all of their collapses)
+    this._element.addEventListener('keydown', event => {
+      if (event.key === 'Tab' && !event.altKey && !event.ctrlKey && !event.metaKey) {
+        this._handleTabKey(event)
+      }
+    })
+  }
+
+  _handleTabKey(event) {
+    const { target } = event
+
+    for (const collapse of this._headerCollapseElements) {
+      const trigger = this._getExpandedTrigger(collapse)
+
+      if (!trigger) {
+        continue
+      }
+
+      const documentFocusables = this._getFocusableElements(document.body)
+      const triggerIndex = documentFocusables.indexOf(trigger)
+
+      // The collapse directly follows its trigger, so the natural focus order is fine
+      if (triggerIndex === -1 || collapse.contains(documentFocusables[triggerIndex + 1])) {
+        continue
+      }
+
+      const collapseFocusables = this._getFocusableElements(collapse)
+
+      if (collapseFocusables.length === 0) {
+        continue
+      }
+
+      let nextElement = null
+
+      if (event.shiftKey) {
+        // Shift+Tab on the first element of the collapse -> back to the trigger
+        if (target === collapseFocusables[0]) {
+          nextElement = trigger
+        }
+      } else if (target === trigger) {
+        // Tab on the trigger -> into the collapse
+        nextElement = collapseFocusables[0]
+      } else if (target === collapseFocusables.at(-1)) {
+        // Tab on the last element of the collapse -> the element after the trigger (e.g. the next menu link)
+        nextElement = documentFocusables.slice(triggerIndex + 1).find(el => !collapse.contains(el))
+      }
+
+      if (nextElement) {
+        event.preventDefault()
+        nextElement.focus()
+        return
+      }
+    }
+  }
+
+  // Returns the visible trigger of an open (or opening) collapse
+  _getExpandedTrigger(collapseElement) {
+    return this._getCollapseTriggers(collapseElement)
+      .find(trigger => trigger.getAttribute('aria-expanded') === 'true' && trigger.checkVisibility())
+  }
+
+  _getFocusableElements(element) {
+    // Links without href are not focusable
+    return SelectorEngine.focusableChildren(element).filter(el => el.tagName !== 'A' || el.hasAttribute('href'))
   }
 
   _getShownCollapses() {

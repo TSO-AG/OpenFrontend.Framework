@@ -76,7 +76,22 @@
   .active-panel-parent {
     left: 0;
     z-index: 2;
+  }
+
+  .active-panel {
     visibility: visible;
+  }
+
+  // Show the opened panel immediately (but still hide the covered panels after the transition),
+  // so its links can be focused right away, e.g. the toggle after closing the panel with the 'Back' button
+  .active-panel:not(.active-panel-parent) {
+    @include transition($page-nav-transition, visibility 0s);
+  }
+
+  // The opened panel covers its parent panel, so hide the parent to keep it out of the tab order
+  // (the opened panel stays visible, as it sets its own visibility)
+  .active-panel-parent {
+    visibility: hidden;
   }
 
   // Visible keyboard focus indicator (inset, because the navigation has overflow hidden)
@@ -100,11 +115,17 @@
       --#{$prefix}page-nav-column: 1;
       --#{$prefix}page-nav-level-2-left: 0;
       --#{$prefix}page-nav-level-2-back-display: block;
+      --#{$prefix}page-nav-level-1-parent-visibility: hidden;
     }
 
     nav {
       --columns: min(2, var(--#{$prefix}page-nav-column));
       height: 100%;
+
+      // The level 2 panel is displayed next to the level 1, unless it has the 'Back' button
+      .page-nav-level-1.active-panel-parent {
+        visibility: var(--#{$prefix}page-nav-level-1-parent-visibility, visible);
+      }
 
       .page-nav-level-2 {
         left: var(--#{$prefix}page-nav-level-2-left, 100%);
@@ -116,9 +137,12 @@
           display: var(--#{$prefix}page-nav-level-2-back-display, none);
         }
 
+        &.active-panel:not(.active-panel-parent) {
+          visibility: visible;
+        }
+
         &.active-panel,
         &.active-panel-parent {
-          visibility: visible;
           opacity: 1;
           transform: translateX(0);
         }
@@ -130,12 +154,14 @@
     &--column-1 nav {
       --#{$prefix}page-nav-level-3-left: 0;
       --#{$prefix}page-nav-level-3-back-display: block;
+      --#{$prefix}page-nav-level-2-parent-visibility: hidden;
     }
 
     &--column-2 nav {
       --#{$prefix}page-nav-column: 2;
       --#{$prefix}page-nav-level-3-left: 0;
       --#{$prefix}page-nav-level-3-back-display: block;
+      --#{$prefix}page-nav-level-2-parent-visibility: hidden;
     }
 
     &--column-3 nav {
@@ -144,6 +170,11 @@
 
     &--column-4 nav {
       --#{$prefix}page-nav-column: 4;
+
+      // The level 4 panel is displayed next to the level 3
+      .page-nav-level-3.active-panel-parent {
+        visibility: visible;
+      }
 
       .page-nav-level-4 {
         left: 100%;
@@ -155,9 +186,12 @@
           display: none;
         }
 
+        &.active-panel:not(.active-panel-parent) {
+          visibility: visible;
+        }
+
         &.active-panel,
         &.active-panel-parent {
-          visibility: visible;
           opacity: 1;
           transform: translateX(0);
         }
@@ -166,6 +200,11 @@
 
     nav {
       --columns: var(--#{$prefix}page-nav-column);
+
+      // The level 3 panel is displayed next to the level 2, unless it has the 'Back' button
+      .page-nav-level-2.active-panel-parent {
+        visibility: var(--#{$prefix}page-nav-level-2-parent-visibility, visible);
+      }
 
       .page-nav-level-3 {
         left: var(--#{$prefix}page-nav-level-3-left, 100%);
@@ -177,9 +216,12 @@
           display: var(--#{$prefix}page-nav-level-3-back-display, none);
         }
 
+        &.active-panel:not(.active-panel-parent) {
+          visibility: visible;
+        }
+
         &.active-panel,
         &.active-panel-parent {
-          visibility: visible;
           opacity: 1;
           transform: translateX(0);
         }
@@ -350,6 +392,8 @@
     grid-auto-rows: max-content;
     row-gap: var(--#{$prefix}page-nav-type-desktop-level-1-gap-y);
     column-gap: var(--#{$prefix}page-nav-type-desktop-level-1-gap-x);
+    // All levels are displayed at once, so the parent panel is never covered
+    visibility: visible;
 
     > li {
       padding: var(--#{$prefix}page-nav-type-desktop-level-1-padding-y) var(--#{$prefix}page-nav-type-desktop-level-1-padding-x);

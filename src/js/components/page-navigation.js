@@ -76,6 +76,7 @@ class PageNavigation extends BaseComponent {
           // The order is important and affects page menu content.
           this._closeSiblings(submenu)
           this._openPanel(panel)
+          this._focusPanel(panel)
         }
 
         this._setHighestPanelHeight()
@@ -90,8 +91,51 @@ class PageNavigation extends BaseComponent {
         if (panel?.classList.contains(CLASS_NAME_PANEL_ACTIVE)) {
           this._closePanel(panel)
           this._setHighestPanelHeight()
+
+          // Return the focus to the toggle that opened the panel, as the 'Back' button gets hidden
+          panel.parentElement.querySelector(this._config.togglePanelButtonsSelector)?.focus({ preventScroll: true })
         }
       })
+    }
+  }
+
+  // If the opened panel covers its toggle (single-column layout with a visible 'Back' button),
+  // move the focus into the panel, so keyboard users do not stay on a hidden element
+  _focusPanel(panel) {
+    const backButton = [...panel.children]
+      .find(child => child.matches('.page-nav-back'))
+      ?.querySelector(this._config.closePanelButtonsSelector)
+
+    if (!backButton?.checkVisibility()) {
+      return
+    }
+
+    // Only move the focus if the user has not moved it elsewhere in the meantime
+    const previouslyFocused = document.activeElement
+    const focus = () => {
+      if (document.activeElement === previouslyFocused && panel.classList.contains(CLASS_NAME_PANEL_ACTIVE)) {
+        // Prevent scrolling, as the panel is still being transitioned into the overflow-hidden navigation
+        backButton.focus({ preventScroll: true })
+      }
+    }
+
+    focus()
+
+    // The panel may still be hidden (visibility transition), so try again once it becomes visible
+    if (document.activeElement !== backButton) {
+      const onTransitionEnd = e => {
+        if (e.target === panel && e.propertyName === 'visibility') {
+          panel.removeEventListener('transitionend', onTransitionEnd)
+          focus()
+        }
+      }
+
+      panel.addEventListener('transitionend', onTransitionEnd)
+      // Fallback for the case when there is no transition at all
+      setTimeout(() => {
+        panel.removeEventListener('transitionend', onTransitionEnd)
+        focus()
+      }, 500)
     }
   }
 

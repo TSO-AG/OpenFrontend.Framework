@@ -17,6 +17,10 @@
   --#{$prefix}page-nav-link-toggle-border-style: #{$page-nav-link-toggle-border-style};
   --#{$prefix}page-nav-link-back-color: #{$page-nav-link-back-color};
   --#{$prefix}page-nav-link-back-hover-color: #{$page-nav-link-back-hover-color};
+  --#{$prefix}page-nav-link-focus-outline-width: #{$page-nav-link-focus-outline-width};
+  --#{$prefix}page-nav-link-focus-outline-style: #{$page-nav-link-focus-outline-style};
+  --#{$prefix}page-nav-link-focus-outline-color: #{$page-nav-link-focus-outline-color};
+  --#{$prefix}page-nav-link-focus-outline-offset: #{$page-nav-link-focus-outline-offset};
   --#{$prefix}page-nav-type-grid-column: #{$page-nav-type-grid-column};
   --#{$prefix}page-nav-type-grid-level-2-gap-x: #{$page-nav-type-grid-level-2-gap-x};
   --#{$prefix}page-nav-type-grid-level-2-gap-y: #{$page-nav-type-grid-level-2-gap-y};
@@ -67,6 +71,16 @@
   .active-panel-parent {
     left: 0;
     z-index: 2;
+  }
+
+  // Visible keyboard focus indicator (inset, because the navigation has overflow hidden)
+  .page-nav-link,
+  .page-nav-link-toggle,
+  .page-nav-back-link {
+    &:focus-visible {
+      outline: var(--#{$prefix}page-nav-link-focus-outline-width) var(--#{$prefix}page-nav-link-focus-outline-style) var(--#{$prefix}page-nav-link-focus-outline-color);
+      outline-offset: var(--#{$prefix}page-nav-link-focus-outline-offset);
+    }
   }
 
   .active-panel-calculating ul {
@@ -235,10 +249,6 @@
   .active-level > & {
     color: var(--#{$prefix}page-nav-link-hover-color);
     text-decoration: if($link-hover-decoration == underline, none, null);
-  }
-
-  &:focus-visible {
-    outline: 0;
   }
 
   // Disabled state lightens text

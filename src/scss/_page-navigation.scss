@@ -318,7 +318,8 @@
       // 3 level and all next
       ul {
         position: static;
-        visibility: visible;
+        // Follow the level 2 panel, so the links of the closed panels stay out of the tab order
+        visibility: inherit;
         background: transparent;
         opacity: 1;
         transform: none;

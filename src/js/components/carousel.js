@@ -1,9 +1,9 @@
 import BaseComponent from 'bootstrap/js/src/base-component'
 import Swiper from 'swiper'
-import { Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules'
+import { Autoplay, Navigation, Pagination, Thumbs, Keyboard } from 'swiper/modules'
 import {runWhenLaidOut} from '../helpers/run-laid-out';
 
-Swiper.use([Autoplay, Navigation, Pagination, Thumbs])
+Swiper.use([Autoplay, Navigation, Pagination, Thumbs, Keyboard])
 
 let cssRoot
 
@@ -34,6 +34,7 @@ const DefaultType = {
   speed: 'number',
   futureSlidesVisible: 'boolean',
   thumbs: '(string|undefined)',
+  keyboard: '(object|boolean|undefined)',
 }
 
 const Default = {
@@ -48,6 +49,9 @@ const Default = {
   speed: 300,
   futureSlidesVisible: false,
   thumbs: undefined,
+  keyboard: {
+    enabled: true,
+  },
 }
 
 const BreakpointType = {
@@ -127,6 +131,10 @@ class Carousel extends BaseComponent {
       options.thumbs = {
         swiper: this._config.thumbs
       }
+    }
+
+    if (this._config.keyboard) {
+      options.keyboard = (typeof this._config.keyboard === 'object') ? { enabled: true, ...this._config.keyboard } : true
     }
 
     // Determine whether to enable loop or not after we have all the options

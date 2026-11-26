@@ -559,6 +559,28 @@ toc: true
 </header>
 {{< /example >}}
 
+## Skip navigation
+
+Add a "Skip navigation" link at the beginning of the navigation, so keyboard users can skip it. The link (`nav a.invisible`) is visually hidden until it gets the keyboard focus, and then it is displayed fixed in the top left corner of the viewport. It points to an empty element placed right after the navigation, so the next <kbd>Tab</kbd> continues after the navigation.
+
+Use it for the navigation that is always visible (e.g. the desktop menu). It is not needed inside the menus that open in a collapse, as they can be closed with <kbd>Esc</kbd>.
+
+```html
+<nav>
+  <a href="#skipNavigation1" class="invisible">Skip navigation</a>
+  <ul class="nav">
+    ...
+  </ul>
+</nav>
+<span id="skipNavigation1" class="invisible"></span>
+```
+
+The link can be customized with the CSS variables:
+
+{{< scss-docs name="skip-navigation-css-vars" file="src/scss/helpers/_skip-navigation.scss" >}}
+
+{{< scss-docs name="skip-navigation-variables" file="src/scss/_variables.scss" >}}
+
 ## Helper classes
 
 In the context of the header component, we have added some helper classes that you may use in your elements. Below are the available classes:

@@ -1,9 +1,9 @@
 import BaseComponent from 'bootstrap/js/src/base-component'
 import Swiper from 'swiper'
-import { Autoplay, Navigation, Pagination, Scrollbar, EffectFade } from 'swiper/modules'
+import { Autoplay, Navigation, Pagination, Scrollbar, EffectFade, Keyboard } from 'swiper/modules'
 import {runWhenLaidOut} from '../helpers/run-laid-out';
 
-Swiper.use([Navigation, Autoplay, Pagination, Scrollbar, EffectFade])
+Swiper.use([Navigation, Autoplay, Pagination, Scrollbar, EffectFade, Keyboard])
 
 /**
  * Constants
@@ -24,6 +24,7 @@ const DefaultType = {
   thumbs: '(string|undefined)',
   wheel: '(string|undefined)',
   wheelBreakpoint: 'string',
+  keyboard: '(object|boolean|undefined)',
 }
 
 const Default = {
@@ -39,6 +40,9 @@ const Default = {
   thumbs: undefined,
   wheel: undefined,
   wheelBreakpoint: 'md',
+  keyboard: {
+    enabled: true,
+  },
 }
 
 class Slider extends BaseComponent {
@@ -101,6 +105,10 @@ class Slider extends BaseComponent {
 
     if (this._config.wheel) {
       this._applyWheelOptions(options)
+    }
+
+    if (this._config.keyboard) {
+      options.keyboard = (typeof this._config.keyboard === 'object') ? { enabled: true, ...this._config.keyboard } : true
     }
 
     runWhenLaidOut(this._element, () => new Swiper(this._element, options));

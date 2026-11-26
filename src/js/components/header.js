@@ -123,7 +123,11 @@ class Header extends BaseComponent {
 
     const id = CSS.escape(collapseElement.id)
 
-    return [...document.querySelectorAll(`[data-bs-toggle="collapse"][data-bs-target="#${id}"], [data-bs-toggle="collapse"][href="#${id}"]`)]
+    return [...document.querySelectorAll([
+      `[data-bs-toggle="collapse"][data-bs-target="#${id}"]`,
+      `[data-bs-toggle="collapse"][href="#${id}"]`,
+      `[data-of-collapse-link][data-bs-target="#${id}"]`,
+    ].join(','))]
   }
 
   _isClickOutsideCollapse(event, collapseElement) {

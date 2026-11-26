@@ -63,12 +63,67 @@ class Header extends BaseComponent {
   // Private
   _initTriggers() {
     document.addEventListener('click', event => {
-      for (const collapse of [...this._headerCollapseElements].filter(collapse => collapse.classList.contains('show'))) {
+      for (const collapse of this._getShownCollapses()) {
         if (this._isClickOutsideCollapse(event, collapse)) {
           this._closeCollapses(collapse)
         }
       }
     })
+
+    // Close the open collapse on Escape and return focus to its toggle.
+    // Use the capture phase, so we can skip the event when an open dropdown is about to handle it.
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape' || event.defaultPrevented) {
+        return
+      }
+
+      // Let the dropdown close first
+      if (this._element.querySelector('.dropdown-menu.show')) {
+        return
+      }
+
+      // Let the search input clear its value first
+      if (event.target.matches?.('input[type="search"]') && event.target.value !== '') {
+        return
+      }
+
+      for (const collapse of this._getShownCollapses()) {
+        this._closeCollapses(collapse)
+        this._getCollapseTriggers(collapse).find(trigger => trigger.checkVisibility())?.focus()
+      }
+    }, true)
+
+    // Close the collapse when the keyboard focus leaves it (e.g. tabbing past the last menu item)
+    for (const collapse of this._headerCollapseElements) {
+      collapse.addEventListener('focusout', event => {
+        const target = event.relatedTarget
+
+        // No related target means the focus has left the document or was caused by a click (handled above)
+        if (!target || !collapse.classList.contains('show') || collapse.contains(target)) {
+          return
+        }
+
+        if (this._getCollapseTriggers(collapse).some(trigger => trigger.contains(target))) {
+          return
+        }
+
+        this._closeCollapses(collapse)
+      })
+    }
+  }
+
+  _getShownCollapses() {
+    return [...this._headerCollapseElements].filter(collapse => collapse.classList.contains('show'))
+  }
+
+  _getCollapseTriggers(collapseElement) {
+    if (!collapseElement.id) {
+      return []
+    }
+
+    const id = CSS.escape(collapseElement.id)
+
+    return [...document.querySelectorAll(`[data-bs-toggle="collapse"][data-bs-target="#${id}"], [data-bs-toggle="collapse"][href="#${id}"]`)]
   }
 
   _isClickOutsideCollapse(event, collapseElement) {

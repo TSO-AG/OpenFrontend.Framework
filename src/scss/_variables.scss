@@ -861,12 +861,11 @@ $placeholder-image-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2
 // Skip navigation
 // scss-docs-start skip-navigation-variables
 $skip-navigation-zindex:         1090 !default;
-$skip-navigation-top:            .5rem !default;
-$skip-navigation-left:           .5rem !default;
+$skip-navigation-top:            0 !default;
+$skip-navigation-left:           0 !default;
 $skip-navigation-padding-y:      .5rem !default;
 $skip-navigation-padding-x:      1rem !default;
-$skip-navigation-color:          var(--#{$prefix}link-color) !default;
-$skip-navigation-bg:             var(--#{$prefix}body-bg) !default;
-$skip-navigation-border-radius:  var(--#{$prefix}border-radius) !default;
-$skip-navigation-box-shadow:     var(--#{$prefix}box-shadow) !default;
+$skip-navigation-color:          var(--#{$prefix}body-bg) !default;
+$skip-navigation-bg:             var(--#{$prefix}body-color) !default;
+$skip-navigation-border-radius:  0 !default;
 // scss-docs-end skip-navigation-variables

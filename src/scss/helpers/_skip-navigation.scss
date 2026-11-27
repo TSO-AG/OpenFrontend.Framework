@@ -13,7 +13,6 @@ nav a.invisible { // stylelint-disable-line selector-no-qualifying-type
   --#{$prefix}skip-navigation-color: #{$skip-navigation-color};
   --#{$prefix}skip-navigation-bg: #{$skip-navigation-bg};
   --#{$prefix}skip-navigation-border-radius: #{$skip-navigation-border-radius};
-  --#{$prefix}skip-navigation-box-shadow: #{$skip-navigation-box-shadow};
   // scss-docs-end skip-navigation-css-vars
 
   // The Bootstrap .invisible class uses "visibility: hidden", which would make the link unfocusable
@@ -24,6 +23,7 @@ nav a.invisible { // stylelint-disable-line selector-no-qualifying-type
   }
 
   &:focus-visible {
+    all: unset;
     position: fixed;
     top: var(--#{$prefix}skip-navigation-top);
     left: var(--#{$prefix}skip-navigation-left);
@@ -31,7 +31,7 @@ nav a.invisible { // stylelint-disable-line selector-no-qualifying-type
     padding: var(--#{$prefix}skip-navigation-padding-y) var(--#{$prefix}skip-navigation-padding-x);
     color: var(--#{$prefix}skip-navigation-color);
     background-color: var(--#{$prefix}skip-navigation-bg);
+    cursor: pointer;
     @include border-radius(var(--#{$prefix}skip-navigation-border-radius));
-    @include box-shadow(var(--#{$prefix}skip-navigation-box-shadow));
   }
 }
